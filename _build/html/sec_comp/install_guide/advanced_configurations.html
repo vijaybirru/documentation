@@ -1,0 +1,1665 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Advanced Configurations &mdash; Scalr 0.01 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Extensions" href="../extensions/index.html" />
+    <link rel="prev" title="Scalarizr Installation" href="scalarizr_installation.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/scalr_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Scalr Server Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../install_guide/index.html">Installation &amp; Upgrades</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../install_guide/scalr_server_architecture.html">Scalr Server Architecture and Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalr_server_architecture.html#architecture">Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalr_server_architecture.html#supported-operating-systems">Supported Operating Systems:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalr_server_architecture.html#network-requirements">Network Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../install_guide/scalr_server_installation.html">Scalr Server Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalr_server_installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalr_server_installation.html#for-deb-based-linux-operating-systems">For DEB-based Linux operating systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalr_server_installation.html#for-rpm-based-linux-operating-systems">For RPM-based Linux operating systems</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../install_guide/scalr_server_ha_setup.html">Scalr Server HA Replication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalr_server_ha_setup.html#setting-up-replication-for-the-scalr-database">Setting up Replication for the Scalr Database</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../install_guide/scalr_server_maintenance.html">Scalr Server Maintenance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalr_server_maintenance.html#upgrades">Upgrades</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalr_server_maintenance.html#automated-upgrades">Automated Upgrades</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalr_server_maintenance.html#monitoring-best-practices">Monitoring Best Practices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../install_guide/scalarizr_installation.html">Scalarizr Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalarizr_installation.html#about">About</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalarizr_installation.html#os-requirements">OS Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalarizr_installation.html#network-requirements">Network Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalarizr_installation.html#installing-scalarizr">Installing Scalarizr</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../install_guide/scalarizr_installation.html#how-to-install-scalarizr-on-linux-images">How to Install Scalarizr on Linux Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../install_guide/scalarizr_installation.html#how-to-install-scalarizr-on-windows-images">How to Install Scalarizr on Windows Images</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/scalarizr_installation.html#how-to-create-your-own-scalarizr-repo">How to Create Your Own Scalarizr Repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../install_guide/scalarizr_installation.html#managing-scalr-integrated-repo-service">Managing Scalr Integrated Repo Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../install_guide/scalarizr_installation.html#download-and-set-up-a-custom-repo">Download and Set Up a Custom Repo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../install_guide/scalarizr_installation.html#removing-custom-repo-branches-and-packages">Removing Custom Repo Branches and Packages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../install_guide/advanced_configurations.html">Advanced Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/advanced_configurations.html#proxy">Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/advanced_configurations.html#ldap">LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/advanced_configurations.html#saml">SAML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/advanced_configurations.html#logging">Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/advanced_configurations.html#api">API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/advanced_configurations.html#agent-update">Agent Update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/advanced_configurations.html#vmware">VMware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install_guide/advanced_configurations.html#uncategorized">Uncategorized</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../extensions/index.html">Extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../extensions/ldap.html">Enable LDAP Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../extensions/ldap.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../extensions/saml.html">Enable SAML Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../extensions/saml.html#integration-with-scalr">Integration with Scalr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../extensions/saml.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../extensions/email.html">Enable Email Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../extensions/email.html#configuring-email">Configuring Email</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../extensions/advanced_logging.html">Enable Advanced Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../extensions/advanced_logging.html#requirements">Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scalr Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html">Overview of Scalr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html#deployment-architecture">Deployment Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/index.html#value-of-scalr">Value of Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/index.html#security-and-compliance">Security and Compliance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/index.html#cost-control-visibility">Cost control &amp; Visibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/index.html#platform-flexibility">Platform Flexibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/index.html#team-productivity">Team Productivity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../introduction/terminology.html">Concepts and Terminology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#scalr-architecture">Scalr Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#scalr-scopes">Scalr Scopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#cloud-credentials">Cloud Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#accounts">Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#environments">Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#roles-and-images">Roles and Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#farms-and-farm-roles">Farms and Farm Roles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../introduction/terminology.html#desired-state-engine">Desired State Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#cost-analytics-management">Cost Analytics/Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#policy-engines">Policy Engines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#users-teams-and-access-control">Users, Teams and Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#scripts">Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#webhooks-and-external-integrations">Webhooks and External integrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#storage">Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#kubernetes">Kubernetes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#service-catalog-and-applications">Service Catalog and Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#scalarizer-agent">Scalarizer Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../introduction/terminology.html#external-integrations">External Integrations</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gs_admins/index.html">Getting Started for Admins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../gs_admins/index.html#role-of-account-admins">Role of Account Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gs_admins/index.html#navigating-the-user-interface">Navigating the User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gs_admins/index.html#scalr-scope-configuration">Scalr Scope Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gs_admins/index.html#cloud-configuration-and-credentials">Cloud Configuration and Credentials</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gs_admins/index.html#roles-and-images">Roles and Images</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../gs_admins/index.html#scalr-account-architecture">Scalr Account Architecture</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gs_admins/index.html#organisational-structure">Organisational Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gs_admins/index.html#teams-users-and-acls">Teams, Users and ACLs</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../gs_admins/index.html#account-scope-configuration">Account Scope Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gs_admins/index.html#environments-and-cloud-credentials">Environments and Cloud Credentials</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../gs_admins/index.html#configuring-users-teams-and-acls">Configuring Users, Teams and ACLs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gs_admins/index.html#id1">Roles and Images</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../gs_users/index.html">Getting Started for End Users</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../gs_users/index.html#types-roles-of-end-users">Types/Roles of End users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gs_users/index.html#navigating-the-user-interface">Navigating the User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gs_users/index.html#farms-and-service-catalog">Farms and Service Catalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gs_users/index.html#working-with-applications">Working with Applications</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../images_roles/index.html">Images and Roles in Scalr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../images_roles/registering_images.html">Registering Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../images_roles/creating_roles.html">Building Images from scratch (With Chef)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../images_roles/orchestration.html">Role Orchestration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Infrastructure Management</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../farms/index.html">Farm Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../farms/index.html#farm-roles">Farm Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../farms/index.html#scripts-events-orchestration">Scripts, Events &amp; Orchestration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../farms/index.html#events-reference">Events Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../farms/index.html#custom-events">Custom Events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../farms/index.html#creating-a-custom-event">Creating a Custom Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../farms/index.html#firing-a-custom-event">Firing a Custom Event</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../farms/index.html#network-and-security-group-configuration">Network and Security Group configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../farms/launch.html">Farm Launching and Managing Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../farms/ssh.html">SSH Keys in Scalr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../farms/execution.html">Script Execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../farms/storage.html">Configuring Storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../farms/auto_dicscovery.html">Service Auto Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../farms/link_cloud_services.html">Using Cloud Services in Farms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../farms/service_catalog.html">Service Catalog Offerings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../farms/service_catalog.html#creating-service-catalog-offerings">Creating Service Catalog Offerings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../farms/service_catalog.html#customizing-farm-templates">Customizing Farm Templates</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Organizational Management</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../org/index.html">Implementing your Organization in Scalr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../org/accounts.html">Account Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../org/team_users.html">Teams and Users</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../org/team_users.html#configuring-users">Configuring Users</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../org/team_users.html#scalr-authenticated-users">Scalr Authenticated Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../org/team_users.html#externally-authenticated-users">Externally Authenticated Users</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../org/team_users.html#configuring-teams">Configuring Teams</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../org/acls.html">Access Control Lists</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Scalr Documentation!</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Installation &amp; Upgrades</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="scalr_server_architecture.html">Scalr Server Architecture and Requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scalr_server_architecture.html#architecture">Architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scalr_server_architecture.html#supported-operating-systems">Supported Operating Systems:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scalr_server_architecture.html#network-requirements">Network Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scalr_server_installation.html">Scalr Server Install</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scalr_server_installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scalr_server_installation.html#for-deb-based-linux-operating-systems">For DEB-based Linux operating systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scalr_server_installation.html#for-rpm-based-linux-operating-systems">For RPM-based Linux operating systems</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scalr_server_ha_setup.html">Scalr Server HA Replication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scalr_server_ha_setup.html#setting-up-replication-for-the-scalr-database">Setting up Replication for the Scalr Database</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scalr_server_maintenance.html">Scalr Server Maintenance</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scalr_server_maintenance.html#upgrades">Upgrades</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scalr_server_maintenance.html#automated-upgrades">Automated Upgrades</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scalr_server_maintenance.html#monitoring-best-practices">Monitoring Best Practices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scalarizr_installation.html">Scalarizr Installation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scalarizr_installation.html#about">About</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scalarizr_installation.html#os-requirements">OS Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scalarizr_installation.html#network-requirements">Network Requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scalarizr_installation.html#installing-scalarizr">Installing Scalarizr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scalarizr_installation.html#how-to-create-your-own-scalarizr-repo">How to Create Your Own Scalarizr Repo</a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Advanced Configurations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#proxy">Proxy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ldap">LDAP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#saml">SAML</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#logging">Logging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agent-update">Agent Update</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vmware">VMware</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#uncategorized">Uncategorized</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../extensions/index.html">Extensions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/ldap.html">Enable LDAP Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/ldap.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/saml.html">Enable SAML Authentication</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/saml.html#integration-with-scalr">Integration with Scalr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/saml.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/email.html">Enable Email Integration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/email.html#configuring-email">Configuring Email</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html">Enable Advanced Logging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#requirements">Requirements</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html">Overview of Scalr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#deployment-architecture">Deployment Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#value-of-scalr">Value of Scalr</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/index.html#security-and-compliance">Security and Compliance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/index.html#cost-control-visibility">Cost control &amp; Visibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/index.html#platform-flexibility">Platform Flexibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/index.html#team-productivity">Team Productivity</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html">Concepts and Terminology</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#scalr-architecture">Scalr Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#scalr-scopes">Scalr Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#cloud-credentials">Cloud Credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#accounts">Accounts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#environments">Environments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#roles-and-images">Roles and Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#farms-and-farm-roles">Farms and Farm Roles</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../introduction/terminology.html#desired-state-engine">Desired State Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#cost-analytics-management">Cost Analytics/Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#policy-engines">Policy Engines</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#users-teams-and-access-control">Users, Teams and Access Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#scripts">Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#webhooks-and-external-integrations">Webhooks and External integrations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#storage">Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#kubernetes">Kubernetes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#service-catalog-and-applications">Service Catalog and Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#scalarizer-agent">Scalarizer Agent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#external-integrations">External Integrations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html">Getting Started for Admins</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#role-of-account-admins">Role of Account Admins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#navigating-the-user-interface">Navigating the User Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#scalr-scope-configuration">Scalr Scope Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gs_admins/index.html#cloud-configuration-and-credentials">Cloud Configuration and Credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gs_admins/index.html#roles-and-images">Roles and Images</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#scalr-account-architecture">Scalr Account Architecture</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gs_admins/index.html#organisational-structure">Organisational Structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gs_admins/index.html#teams-users-and-acls">Teams, Users and ACLs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#account-scope-configuration">Account Scope Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../gs_admins/index.html#environments-and-cloud-credentials">Environments and Cloud Credentials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gs_admins/index.html#configuring-users-teams-and-acls">Configuring Users, Teams and ACLs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../gs_admins/index.html#id1">Roles and Images</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html">Getting Started for End Users</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gs_users/index.html#types-roles-of-end-users">Types/Roles of End users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gs_users/index.html#navigating-the-user-interface">Navigating the User Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gs_users/index.html#farms-and-service-catalog">Farms and Service Catalog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gs_users/index.html#working-with-applications">Working with Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html">Building Images from scratch (With Chef)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html">Farm Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#farm-roles">Farm Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#scripts-events-orchestration">Scripts, Events &amp; Orchestration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#events-reference">Events Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#custom-events">Custom Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#network-and-security-group-configuration">Network and Security Group configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html">Farm Launching and Managing Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html">SSH Keys in Scalr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/execution.html">Script Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/auto_dicscovery.html">Service Auto Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/link_cloud_services.html">Using Cloud Services in Farms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/service_catalog.html">Service Catalog Offerings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../farms/service_catalog.html#creating-service-catalog-offerings">Creating Service Catalog Offerings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/service_catalog.html#customizing-farm-templates">Customizing Farm Templates</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../org/index.html">Implementing your Organization in Scalr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/accounts.html">Account Configuration Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html">Teams and Users</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../org/team_users.html#scalr-authenticated-users">Scalr Authenticated Users</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../org/team_users.html#externally-authenticated-users">Externally Authenticated Users</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#configuring-teams">Configuring Teams</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../org/acls.html">Access Control Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cost/index.html">Cost Control Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html">Cost Analytics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#detailed-billing-set-up">Detailed Billing Set Up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#cost-analytics-scopes">Cost Analytics Scopes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cost/analytics.html#scalr-scope-cost-analytics">Scalr Scope Cost Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cost/analytics.html#account-scope-cost-analytics">Account Scope Cost Analytics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cost/analytics.html#environment-scope-cost-analytics">Environment Scope Cost Analytics</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#cost-categorisation">Cost Categorisation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../cost/analytics.html#projects">Projects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../cost/analytics.html#cost-centers">Cost Centers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#budgets">Budgets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#price-lists">Price Lists</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#markups">Markups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#reports">Reports</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cost/management.html">Cost Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html">Global Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gvs/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gvs/index.html#using-global-variables-in-scripts">Using Global Variables in Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gvs/index.html#global-variable-interpolation-in-fields">Global Variable Interpolation in Fields</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gvs/index.html#using-global-variables-in-policies">Using Global Variables in Policies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gvs/index.html#examining-global-variables-in-servers">Examining Global Variables in Servers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/index.html">Best Practices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html">Managing Images in Scalr</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../best_practices/image_management.html#about-images-and-scopes">About Images and Scopes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../best_practices/image_management.html#image-lifecycle-best-practices">Image Lifecycle Best-Practices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../best_practices/image_management.html#updating-a-widely-used-image">Updating a Widely Used Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../best_practices/image_management.html#approach-1-offering-a-new-version-of-an-image">Approach 1: Offering a new version of an image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../best_practices/image_management.html#approach-2-replacing-an-existing-image-with-a-new-version">Approach 2: Replacing an existing image with a new version</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../best_practices/image_management.html#automating-image-management">Automating Image Management</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../best_practices/image_management.html#example-image-publishing-pipeline">Example Image publishing pipeline</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes/index.html">Release Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_notes/scalr/scalr_server_index.html">Scalr Release Notes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../release_notes/scalr/7.9.5.html">7.9.5</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../release_notes/scalr/7.10.0.html">7.10.0</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../release_notes/scalarizr/scalarizr_index.html">Scalarizr Release Notes</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html">Policy Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html#policy-definitions">Policy Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../policies.html#policy-reference">Policy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quotas.html">Resource Quotas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quotas.html#creating-quotas">Creating Quotas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quotas.html#applying-quotas">Applying Quotas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../orchestration.html">Scalr/Account Level Orchestration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations.html">External Integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations.html#webhooks-and-endpoints">Webhooks and Endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integrations.html#configruing-endpoints">Configruing Endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations.html#configuring-webhooks">Configuring Webhooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations.html#webhook-notifications">Webhook Notifications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../acls.html">Access Control Lists</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cost Control &amp; Visibility</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cost/index.html">Cost Control Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cost/analytics.html">Cost Analytics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../cost/analytics.html#detailed-billing-set-up">Detailed Billing Set Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cost/analytics.html#cost-analytics-scopes">Cost Analytics Scopes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cost/analytics.html#scalr-scope-cost-analytics">Scalr Scope Cost Analytics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cost/analytics.html#account-scope-cost-analytics">Account Scope Cost Analytics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cost/analytics.html#environment-scope-cost-analytics">Environment Scope Cost Analytics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../cost/analytics.html#cost-categorisation">Cost Categorisation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../cost/analytics.html#projects">Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../cost/analytics.html#cost-centers">Cost Centers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../cost/analytics.html#budgets">Budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cost/analytics.html#price-lists">Price Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cost/analytics.html#markups">Markups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../cost/analytics.html#reports">Reports</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../cost/management.html">Cost Management</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Parameterisation in Scalr</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../gvs/index.html">Global Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../gvs/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gvs/index.html#using-global-variables-in-scripts">Using Global Variables in Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gvs/index.html#global-variable-interpolation-in-fields">Global Variable Interpolation in Fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gvs/index.html#using-global-variables-in-policies">Using Global Variables in Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../gvs/index.html#examining-global-variables-in-servers">Examining Global Variables in Servers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Best Practices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../best_practices/index.html">Best Practices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../best_practices/image_management.html">Managing Images in Scalr</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../best_practices/image_management.html#about-images-and-scopes">About Images and Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../best_practices/image_management.html#image-lifecycle-best-practices">Image Lifecycle Best-Practices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../best_practices/image_management.html#updating-a-widely-used-image">Updating a Widely Used Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../best_practices/image_management.html#approach-1-offering-a-new-version-of-an-image">Approach 1: Offering a new version of an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../best_practices/image_management.html#approach-2-replacing-an-existing-image-with-a-new-version">Approach 2: Replacing an existing image with a new version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../best_practices/image_management.html#automating-image-management">Automating Image Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../best_practices/image_management.html#example-image-publishing-pipeline">Example Image publishing pipeline</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Release Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../release_notes/index.html">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../release_notes/scalr/scalr_server_index.html">Scalr Release Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../release_notes/scalr/7.9.5.html">7.9.5</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../release_notes/scalr/7.9.5.html#bug-fixes">Bug Fixes:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../release_notes/scalr/7.10.0.html">7.10.0</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../release_notes/scalr/7.10.0.html#announcements">Announcements:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../release_notes/scalr/7.10.0.html#new-features">New Features:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../release_notes/scalr/7.10.0.html#improvements">Improvements:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../release_notes/scalr/7.10.0.html#bug-fixes">Bug Fixes:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../release_notes/scalarizr/scalarizr_index.html">Scalarizr Release Notes</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Scalr</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Scalr Documentation!</a> &raquo;</li>
+        
+          <li><a href="index.html">Installation &amp; Upgrades</a> &raquo;</li>
+        
+      <li>Advanced Configurations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/sec_comp/install_guide/advanced_configurations.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="advanced-configurations">
+<h1>Advanced Configurations<a class="headerlink" href="#advanced-configurations" title="Permalink to this headline">¶</a></h1>
+<p>There are many additional configurations that can be added to the scalr-server.rb to add proxies, ldap authentication, session timeouts , etc. The following matrix is a list of possible additions to the scalr-server.rb. See an example of how these parameters can be added to the scalr-server.rb: <a class="reference external" href="https://github.com/scalr-tutorials/scalr-server-configuration/blob/master/scalr-server.rb_example">https://github.com/scalr-tutorials/scalr-server-configuration/blob/master/scalr-server.rb_example</a></p>
+<div class="section" id="proxy">
+<h2>Proxy<a class="headerlink" href="#proxy" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="42%" />
+<col width="4%" />
+<col width="31%" />
+<col width="7%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Example value(s)</th>
+<th class="head">Default value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>scalr.connections.proxy.host</td>
+<td>The proxy host Scalr should use to communicate with cloud APIs using a proxy.</td>
+<td>String</td>
+<td>hostname, “127.0.0.1”</td>
+<td>localhost</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.proxy.port</td>
+<td>The proxy port Scalr should use.</td>
+<td>Integer</td>
+<td>valid TCP port</td>
+<td>3128</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.proxy.user</td>
+<td>The proxy username Scalr should use.</td>
+<td>String</td>
+<td>scalr</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.proxy.pass</td>
+<td>The proxy password Scalr should use.</td>
+<td>String</td>
+<td>s3cur3pa55w0rd</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.proxy.type</td>
+<td>Proxy type to use.</td>
+<td>Integer</td>
+<td>0 = HTTP4 = SOCKS45 = SOCKS5</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.proxy.authtype</td>
+<td>Type of authentication to use.</td>
+<td>Integer</td>
+<td>1 = Basic Auth2 = Digest Auth4 = GSSNeg8 = NTLM-1 = Any auh type</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.proxy.use_on</td>
+<td>What the proxy should be used for.</td>
+<td>String</td>
+<td>“both” = Server &amp; Agent, “scalr” = Server, “instance” = Agent</td>
+<td>scalr</td>
+</tr>
+<tr class="row-odd"><td>scalr.%PLATFORM%.use_proxy</td>
+<td>Whether Scalr should use a proxy when communicating with the specified
+cloud platform.Substitute %PLATFORM% with one of the following values:
+azure, ec2, gce, openstack, cloudstack, vmware</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-even"><td>scalr.system.webhooks.use_proxy</td>
+<td>Whether Scalr should use a proxy when sending requests using Webhooks.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ldap">
+<span id="id1"></span><h2>LDAP<a class="headerlink" href="#ldap" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="43%" />
+<col width="2%" />
+<col width="30%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Example value(s)</th>
+<th class="head">Default value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>scalr.auth_mode</td>
+<td>The authentication mode that Scalr should use.</td>
+<td>String</td>
+<td>scalr = Password auth”ldap” = LDAP auth”saml” = SAML auth</td>
+<td>scalr</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.ldap.host</td>
+<td>The host Scalr should connect to for LDAP authentication. This should be a reachable LDAP server.</td>
+<td>String</td>
+<td>hostname, “1.2.3.4”</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.ldap.port</td>
+<td>The port Scalr should connect to for LDAP authentication.</td>
+<td>Integer</td>
+<td>valid TCP port</td>
+<td>389</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.ldap.base_dn</td>
+<td>The base DN for users.</td>
+<td>String</td>
+<td>valid base DN</td>
+<td>DC=scalr,DC=local</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.ldap.base_dn_groups</td>
+<td>The base DN for groups.</td>
+<td>String</td>
+<td>valid base DN</td>
+<td>OU=All Groups,DC=scalr,DC=local</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.ldap.user</td>
+<td>A fully qualified username for an administrator of the LDAP server, if you intend to use API with LDAP auth.</td>
+<td>String</td>
+<td>valid admin LDAP user</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.ldap.pass</td>
+<td>Password for the LDAP administrator. Seescalr.connections.ldap.user</td>
+<td>String</td>
+<td>valid admin LDAP pass</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.ldap.group_nesting</td>
+<td>Whether Scalr should use group nesting in LDAP.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>TRUE</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.ldap.domain</td>
+<td>The default domain Scalr should append to usernames when users omit their domain as they login to Scalr.This is only used whenscalr.connections.ldap.bind_typeis set tosimple.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.ldap.bind_type</td>
+<td>The bind type Scalr should use. This can be set toregularorsimple.</td>
+<td>String</td>
+<td>regular = Login name only”simple” = Full Name, Display Name or SAMAccountName”openldap” = Set to this when using openldap</td>
+<td>regular</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.ldap.mail_attribute</td>
+<td>The name of the attribute that contains a user’s email address on the LDAP server.</td>
+<td>String</td>
+<td>valid LDAP attribute</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.ldap.fullname_attribute</td>
+<td>The name of the attribute that contains a user’s fullname on the LDAP server.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>displayName</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.ldap.username_attribute</td>
+<td>The name of the attribute that contains a user’s username on the LDAP server.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.ldap.groupname_attribute</td>
+<td>The name of the attribute that contains a user’s groups on the LDAP server.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.ldap.debug</td>
+<td>Whether or not to enable debug mode (logging) for LDAP.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.ldap.filter.users</td>
+<td>The filter that Scalr should use for LDAP user queries.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>(&amp;(objectCategory=person)(objectClass=user))</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.ldap.filter.groups</td>
+<td>The filter that Scalr should use for LDAP group queries.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>(&amp;(objectClass=group))</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.ldap.group_member_attribute_type</td>
+<td>Only used if bind_type is set to “openldap”. Specifies how group membership is represented.</td>
+<td>String</td>
+<td>unit_netgroup, “regular”, “user_dn”</td>
+<td>regular</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.ldap.group_displayname_attribute</td>
+<td>The name of the attribute that contains the group displayname</td>
+<td>String</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="saml">
+<span id="id2"></span><h2>SAML<a class="headerlink" href="#saml" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="50%" />
+<col width="4%" />
+<col width="23%" />
+<col width="11%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Example value(s)</th>
+<th class="head">Default value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>scalr.connections.saml.strict</td>
+<td>If true, then Scalr will reject unsigned or unencrypted messages if it expects them to be signed or encrypted. Also it will reject the messages if the SAML standard is not strictly followed: Destination, NameId, Conditions … are validated too.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>TRUE</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.debug</td>
+<td>If true, errors will be displayed in the Scalr UI.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.auto_redirect</td>
+<td>If true, users will be automatically redirected on auth and will not be presented with a “Login” button.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.idp.entity_id</td>
+<td>Identifier of the IdP entity. Must be a URI.</td>
+<td>String</td>
+<td><a class="reference external" href="https://idp.domain/saml/metadata">https://idp.domain/saml/metadata</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.idp.single_sign_on_service.url</td>
+<td>URL Target of the IdP where the Scalr will send the Authentication Request Message.</td>
+<td>String</td>
+<td><a class="reference external" href="https://your-labs.idp.domain/trust/saml2/http-post/sso">https://your-labs.idp.domain/trust/saml2/http-post/sso</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.idp.single_sign_on_service.binding</td>
+<td>SAML protocol binding to be used when returning the &lt;Response&gt; message.</td>
+<td>String</td>
+<td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.idp.single_logout_service.url</td>
+<td>URL Location of the IdP where the Scalr will send the SLO Request.</td>
+<td>String</td>
+<td><a class="reference external" href="https://your-labs.idp.domain/trust/saml2/http-redirect/slo">https://your-labs.idp.domain/trust/saml2/http-redirect/slo</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.idp.single_logout_service.binding</td>
+<td>SAML protocol binding to be used when returning the &lt;Response&gt; message.</td>
+<td>String</td>
+<td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.idp.x509cert</td>
+<td>Public x509 certificate of the IdP.</td>
+<td>String</td>
+<td>daksjhdaksjdhakljl</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.idp.cert_fingerprint</td>
+<td>Instead of useing the whole x509cert you can use a fingerprint in order to validate a SAMLResponse. Example to generate sha256 fingerprint:openssl x509 -noout -fingerprint -sha256 -in “idp.crt”</td>
+<td>String</td>
+<td>AA:BB:CC:DD:EE:FF</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.idp.cert_fingerprint_algorithm</td>
+<td>Tell Scalr which algorithm was used to generate the fingerprint.</td>
+<td>String</td>
+<td>sha256, sha384 or sha512</td>
+<td>sha256</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.mapping.groups</td>
+<td>Used to override standard mapping for SAML assertion attributes.  This is used to set the name of the Groups attribute to use in SAML Assertion.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>Groups</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.mapping.separator</td>
+<td>Used to override standard mapping for SAML assertion attributes.  This is used to set the Groups separator.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>,</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.sp.assertion_consumer_service.binding</td>
+<td>Specifies info about where and how the &lt;AuthnResponse&gt; message MUST be returned to the requester, in this case our Service Provider. SAML protocol binding to be used when returning the &lt;Response&gt; message.It supports HTTP-POST binding only.</td>
+<td>String</td>
+<td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST</a></td>
+<td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST</a></td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.sp.single_logout_service.binding</td>
+<td>SLO endpoint info of the IdP.SAML protocol binding to be used when returning the &lt;Response&gt; message. It supports the HTTP-Redirect binding only for this endpoint.</td>
+<td>String</td>
+<td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect</a></td>
+<td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect</a></td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.sp.name_id_format</td>
+<td>Specifies the constraints on the name identifier to be used to represent the requested subject.</td>
+<td>String</td>
+<td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified">urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified</a></td>
+<td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified">urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified</a></td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.sp.entity_id</td>
+<td>Configures override SP entity id endpoint url, typically for ADFS that will not support “?” character in our default URL</td>
+<td>String</td>
+<td><a class="reference external" href="https://your.scalr.host/public/saml/metadata">https://your.scalr.host/public/saml/metadata</a></td>
+<td><a class="reference external" href="https://your.scalr.host/public/saml?metadata">https://your.scalr.host/public/saml?metadata</a></td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.sp.x509cert</td>
+<td>Certificate to use for the Service Provider.</td>
+<td>String</td>
+<td>skjdhasdkjashdjkhsad</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.sp.private_key</td>
+<td>Private key to use for the Service Provider</td>
+<td>String</td>
+<td>abcdefghijklmnopqrstuvwxyz</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.security.name_id_encrypted</td>
+<td>Indicates whether the nameID of the &lt;samlp:logoutRequest&gt; sent by this SP will be encrypted.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.security.authn_requests_signed</td>
+<td>Indicates whether the &lt;samlp:AuthnRequest&gt; messages sent by this SP will be signed.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.security.logout_request_signed</td>
+<td>Indicates whether the &lt;samlp:logoutRequest&gt; messages sent by this SP will be signed.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.security.logout_response_signed</td>
+<td>Indicates whether the &lt;samlp:logoutResponse&gt; messages sent by this SP will be signed.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.security.sign_metadata</td>
+<td>Sign the Metadata. If true it will use SP certs and they must be provided.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.security.want_messages_signed</td>
+<td>Indicates a requirement for the &lt;samlp:Response&gt;, &lt;samlp:LogoutRequest&gt; and &lt;samlp:LogoutResponse&gt; elements received by this SP to be signed.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.security.want_assertions_signed</td>
+<td>Indicates a requirement for the &lt;saml:Assertion&gt; elements received by this SP to be signed.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.security.want_name_id_encrypted</td>
+<td>Indicates a requirement for the NameID received by this SP to be encrypted.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.security.requested_authn_context</td>
+<td>Set to false and no AuthContext will be sent in the AuthNRequest,Set true and you will get an AuthContext ‘exact’ ‘<a class="reference external" href="urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport'Set">urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport’Set</a> an array with the possible auth context values.</td>
+<td>Boolean or Array</td>
+<td>true, false or [“<a class="reference external" href="urn:oasis:names:tc:SAML:2.0:ac:classes:Password">urn:oasis:names:tc:SAML:2.0:ac:classes:Password</a>”, “<a class="reference external" href="urn:oasis:names:tc:SAML:2.0:ac:classes:X509">urn:oasis:names:tc:SAML:2.0:ac:classes:X509</a>”]</td>
+<td>TRUE</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.saml.security.want_xml_validation</td>
+<td>Indicates if the SP will validate all received xmls. (In order to validate the xml, ‘strict’ and ‘want_xml_validation’ must be true).</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>TRUE</td>
+</tr>
+<tr class="row-odd"><td>scalr.connections.saml.security.signature_algorithm</td>
+<td>Algorithm that Scalr will use on signing process.</td>
+<td>String</td>
+<td>sha256, sha384 or sha512</td>
+<td>sha256</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="53%" />
+<col width="3%" />
+<col width="19%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Example value(s)</th>
+<th class="head">Default value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>scalr.system.scripting.logs_storage</td>
+<td>The location where Scalr should store Orchestration Log.</td>
+<td>String</td>
+<td>scalr = On Scalr server”instance” = On affected instance</td>
+<td>instance</td>
+</tr>
+<tr class="row-odd"><td>scalr.system.scripting.default_instance_log_rotation_period</td>
+<td>The default duration (in seconds) logs should be kept when stored on instances.Users can override this setting in the Farm Designer: Advanced Tab - Orchestration.</td>
+<td>Integer</td>
+<td>1-99999</td>
+<td>3600</td>
+</tr>
+<tr class="row-even"><td>scalr.logger.audit.enabled</td>
+<td>Whether the audit log should be enabled.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-odd"><td>scalr.logger.audit.path</td>
+<td>Unix socket path or IP/Hostname to fluentd for audit log.</td>
+<td>String</td>
+<td>/path/to/socket.sock, “hostname”</td>
+<td>localhost</td>
+</tr>
+<tr class="row-even"><td>scalr.logger.audit.port</td>
+<td>Port that fluentd is listening on for the audit log.</td>
+<td>Integer</td>
+<td>any TCP/UDP port</td>
+<td>8888</td>
+</tr>
+<tr class="row-odd"><td>scalr.logger.audit.proto</td>
+<td>Protocol to use when communicating with fluentd for the audit log.</td>
+<td>String</td>
+<td>http, “tcp” “udp”</td>
+<td>http</td>
+</tr>
+<tr class="row-even"><td>scalr.logger.audit.timeout</td>
+<td>The connection to fluentd will timeout after this time has passed (in seconds) for the audit log.</td>
+<td>Integer</td>
+<td>1-999</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>scalr.logger.audit.tag</td>
+<td>All audit logs will be tagged with this string.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>audit</td>
+</tr>
+<tr class="row-even"><td>scalr.logger.api.enabled</td>
+<td>Whether the API log should be enabled.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-odd"><td>scalr.logger.api.path</td>
+<td>Unix socket path or IP/Hostname to fluentd for API log.</td>
+<td>String</td>
+<td>/path/to/socket.sock, “hostname”</td>
+<td>localhost</td>
+</tr>
+<tr class="row-even"><td>scalr.logger.api.port</td>
+<td>Port that fluentd is listening on for the API log.</td>
+<td>Integer</td>
+<td>any TCP/UDP port</td>
+<td>8888</td>
+</tr>
+<tr class="row-odd"><td>scalr.logger.api.proto</td>
+<td>Protocol to use when communicating with fluentd for the API log.</td>
+<td>String</td>
+<td>http, “tcp”, “udp”</td>
+<td>http</td>
+</tr>
+<tr class="row-even"><td>scalr.logger.api.timeout</td>
+<td>The connection to fluentd will timeout after this time has passed (in seconds) for the API log.</td>
+<td>Integer</td>
+<td>1-999</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>scalr.logger.api.tag</td>
+<td>All API logs will be tagged with this string.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>api</td>
+</tr>
+<tr class="row-even"><td>scalr.logger.user.enabled</td>
+<td>Whether the user log should be enabled.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-odd"><td>scalr.logger.user.path</td>
+<td>Unix socket path or IP/Hostname to fluentd for user log.</td>
+<td>String</td>
+<td>/path/to/socket.sock, “hostname”</td>
+<td>localhost</td>
+</tr>
+<tr class="row-even"><td>scalr.logger.user.port</td>
+<td>Port that fluentd is listening on for the user log.</td>
+<td>Integer</td>
+<td>any TCP/UDP port</td>
+<td>8888</td>
+</tr>
+<tr class="row-odd"><td>scalr.logger.user.proto</td>
+<td>Protocol to use when communicating with fluentd for the user log.</td>
+<td>String</td>
+<td>http, “tcp”, “udp”</td>
+<td>http</td>
+</tr>
+<tr class="row-even"><td>scalr.logger.user.timeout</td>
+<td>The connection to fluentd will timeout after this time has passed (in seconds) for the user log.</td>
+<td>Integer</td>
+<td>1-999</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>scalr.logger.user.tag</td>
+<td>All user logs will be tagged with this string.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>user</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="51%" />
+<col width="8%" />
+<col width="19%" />
+<col width="7%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Example value(s)</th>
+<th class="head">Default value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>scalr.system.api.enabled</td>
+<td>Whether the APIv2 should be enabled or not.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>TRUE</td>
+</tr>
+<tr class="row-odd"><td>scalr.system.api.oauth.enabled</td>
+<td>Set to true to enable oauth for the APIv2.</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.system.api.disable_v1</td>
+<td>Set to true to disable APIv1</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-odd"><td>scalr.system.api.allowed_origins</td>
+<td>Defines which domain(s) to allow in theAccess-Control-Allow-Origin header.This header is not sent by default.</td>
+<td>Array or String</td>
+<td>[” domain1.com”, ” domain2.com”] or “*”</td>
+<td>~</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="agent-update">
+<h2>Agent Update<a class="headerlink" href="#agent-update" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="30%" />
+<col width="4%" />
+<col width="31%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Example value(s)</th>
+<th class="head">Default value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>scalr. scalarizr_update.mode</td>
+<td>&#160;</td>
+<td>String</td>
+<td>client, “solo”</td>
+<td>client</td>
+</tr>
+<tr class="row-odd"><td>scalr. scalarizr_update.default_repo</td>
+<td>&#160;</td>
+<td>String</td>
+<td>latest, “stable”</td>
+<td>stable</td>
+</tr>
+<tr class="row-even"><td>scalr. scalarizr_update.repos.[repo_name]. deb_repo_url</td>
+<td>The URL for this repository’s Debian Scalarizr packages.</td>
+<td>String</td>
+<td><a class="reference external" href="http://repo.scalr.net/apt-plain">http://repo.scalr.net/apt-plain</a> stable/</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr. scalarizr_update.repos.[repo_name]. rpm_repo_url</td>
+<td>The URL for this repository’s RPM Scalarizr packages.</td>
+<td>String</td>
+<td><a class="reference external" href="http://repo.scalr.net/rpm/stable/rhel/$releasever/$basearch">http://repo.scalr.net/rpm/stable/rhel/$releasever/$basearch</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr. scalarizr_update.repos.[repo_name]. win_repo_url</td>
+<td>The URL for this repository’s Windows Scalarizr packages.</td>
+<td>String</td>
+<td><a class="reference external" href="http://repo.scalr.net/win/stable">http://repo.scalr.net/win/stable</a></td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vmware">
+<h2>VMware<a class="headerlink" href="#vmware" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="72%" />
+<col width="3%" />
+<col width="5%" />
+<col width="5%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Example value(s)</th>
+<th class="head">Default value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>scalr.vmware.datastore_vm_launch_buffer</td>
+<td>Configures the amount of free storage (in GB) that should be available on a datastore to launch the instance. Before launching an instance we will check that datastore has required_space (template+additional disks) + configure buffer.</td>
+<td>Integer</td>
+<td>200, 300</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr.vmware.placement.host_metrics_weight.cpu</td>
+<td>Configures CPU metrics weight for VMware computer resource automatic placement.  Higher values for this setting hold more weight in automatic selection.</td>
+<td>Integer</td>
+<td>1, 2</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.vmware.placement.host_metrics_weight.memory</td>
+<td>Configures memory metrics weight for VMware computer resource automatic placement.  Higher values for this setting hold more weight in automatic selection.</td>
+<td>Integer</td>
+<td>1, 2</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr.vmware.placement.host_metrics_weight.disk</td>
+<td>Configures disk metrics weight for VMware computer resource automatic placement.  Higher values for this setting hold more weight in automatic selection.</td>
+<td>Integer</td>
+<td>1, 2</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="uncategorized">
+<h2>Uncategorized<a class="headerlink" href="#uncategorized" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="40%" />
+<col width="2%" />
+<col width="32%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Example value(s)</th>
+<th class="head">Default value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>scalr.system.instances_connection_timeout</td>
+<td>The duration (in seconds) Scalr should wait before timing out when attempting to establish a connection with Scalarizr on a Scalr host.</td>
+<td>Integer</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>scalr.system.server_terminate_timeout</td>
+<td>The duration Scalr should wait before terminating a server that was not forcefully terminated. This should be a relative date format usable for the PHP strtotime function .</td>
+<td>String</td>
+<td>&#160;</td>
+<td>#ERROR!</td>
+</tr>
+<tr class="row-even"><td>scalr.system.default_disable_firewall_management</td>
+<td>Whether Scalr should, by default, disable the automated management of iptables in Scalarizr. Users can override this setting in the Farm Designer: Advanced Tab - General .</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-odd"><td>scalr.system.scripting.default_abort_init_on_script_fail</td>
+<td>The default for the option to fail Servers when a Blocking BeforeHostUp Script fails. Users can override this setting in the Farm Designer: Advanced Tab - Orchestration .</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-even"><td>scalr.aws.security_group_name</td>
+<td>The name Scalr should use for its IP Pool Security Group. This security group is used to allow access from Scalr to the instances it manages. THIS IS USED FOR ALL CLOUDS, NOT ONLY FOR AWS.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>scalr.ip-pool</td>
+</tr>
+<tr class="row-odd"><td>scalr.aws.ip_pool</td>
+<td>The IPs that Scalr should whitelist as part of its IP Pool Security Group. See: scalr.aws.security_group_name . THIS IS USED FOR ALL CLOUDS, NOT ONLY FOR AWS.</td>
+<td>Array</td>
+<td>&#160;</td>
+<td>[]</td>
+</tr>
+<tr class="row-even"><td>scalr.aws.plugins.enabled</td>
+<td>The list of AWS Scalr plugins that should be enabled. The only supported plugin as of Scalr 4.5 is statistics . THIS IS USED FOR ALL CLOUDS, NOT ONLY FOR AWS.</td>
+<td>Array</td>
+<td>&#160;</td>
+<td>[]</td>
+</tr>
+<tr class="row-odd"><td>scalr.aws.plugins.statistics.storage_max_size</td>
+<td>The maximum storage size (in bytes) that should be allocated for statistics collected by the AWS statistics plugin. THIS IS USED FOR ALL CLOUDS, NOT ONLY FOR AWS.</td>
+<td>Integer</td>
+<td>&#160;</td>
+<td>268435456</td>
+</tr>
+<tr class="row-even"><td>scalr.openstack.user_data_method</td>
+<td>The method Scalr should use to communicate user data (including Scalarizr connection details) to OpenStack instances.</td>
+<td>String</td>
+<td>meta-data = Use Metadata API “personality = Server Personalities “both” = Use both</td>
+<td>both</td>
+</tr>
+<tr class="row-odd"><td>scalr.openstack.use_config_drive</td>
+<td>Enable or Disable Config Drive for Openstack</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>TRUE</td>
+</tr>
+<tr class="row-even"><td>scalr.connections.mysql.driver</td>
+<td>The driver Scalr should use to connect to MySQL. This driver should be compatible for use in a data source name for ADOdb .</td>
+<td>String</td>
+<td>&#160;</td>
+<td>mysqli</td>
+</tr>
+<tr class="row-odd"><td>scalr.email.address</td>
+<td>The Email Address Scalr should use for outbound email notifications.</td>
+<td>String</td>
+<td><a class="reference external" href="mailto:email&#37;&#52;&#48;example&#46;com">email<span>&#64;</span>example<span>&#46;</span>com</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.email.name</td>
+<td>The From Name Scalr should use for outbound email notifications.</td>
+<td>String</td>
+<td>My Name</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr.email.delimiter</td>
+<td>The line delimiter Scalr should use for outound email notifications. Use crlf for Windows-style line-endings, and lf for UNIX- style line-endings.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>crlf</td>
+</tr>
+<tr class="row-even"><td>scalr.gce.instance_username</td>
+<td>Optionally configure a custom username for GCE instances</td>
+<td>String</td>
+<td>cloud-user</td>
+<td>scalr</td>
+</tr>
+<tr class="row-odd"><td>scalr. %PLATFORM% .instances_connection_policy</td>
+<td>Controls the instances connection policy on a per-cloud basis. “auto” tries the public IP and fallbacks to the private IP if the server has no public IP.</td>
+<td>String</td>
+<td>public, “local”, “auto”</td>
+<td>auto</td>
+</tr>
+<tr class="row-even"><td>scalr.script.timeout.sync</td>
+<td>The default timeout (in seconds) Scalr should use for blocking scripts .</td>
+<td>Integer</td>
+<td>&#160;</td>
+<td>180</td>
+</tr>
+<tr class="row-odd"><td>scalr.script.timeout.async</td>
+<td>The default timeout (in seconds) Scalr should use for non-blocking scripts .</td>
+<td>Integer</td>
+<td>&#160;</td>
+<td>1200</td>
+</tr>
+<tr class="row-even"><td>scalr.ui.server_display_convention</td>
+<td>The Server identifier Scalr should use in the UI (e.g. in the Script Execute Menu).</td>
+<td>String</td>
+<td>auto = Use external IP, fallback to internal IP “hostname” = Use hostname “public” = Use external IP “private” = Use internal IP</td>
+<td>auto</td>
+</tr>
+<tr class="row-odd"><td>scalr.ui.login_warning</td>
+<td>Warning text to be displayed to users on the login page.Â  Formatted with HTML tags.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.ui.wiki_url</td>
+<td>The URL the documentation button should link to in Scalr.</td>
+<td>String</td>
+<td>&#160;</td>
+<td><a class="reference external" href="http://wiki.scalr.com">http://wiki.scalr.com</a></td>
+</tr>
+<tr class="row-odd"><td>scalr.ui.recaptcha.public_key</td>
+<td>The public key Scalr should use for reCAPTCHA login bruteforce protection.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>scalr.ui.recaptcha.private_key</td>
+<td>The private key Scalr should use for reCAPTCHA login bruteforce protection.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scalr.security.user.session.timeout</td>
+<td>Scalr UI will be locked if a user has been inactive for the defined period of time.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>#ERROR!</td>
+</tr>
+<tr class="row-even"><td>scalr.security.user.session.lifetime</td>
+<td>Session will expire after this time, regardless of activity.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>#ERROR!</td>
+</tr>
+<tr class="row-odd"><td>scalr.security.user.session.cookie_lifetime</td>
+<td>If user chooses to “remember me” upon login, the session cookie will be kept this long.</td>
+<td>String</td>
+<td>&#160;</td>
+<td>#ERROR!</td>
+</tr>
+<tr class="row-even"><td>scalr.security.user.suspension. inactivity_days</td>
+<td>Suspend user accounts that have not been used for this number of days. (0=disable)</td>
+<td>Integer</td>
+<td>&#160;</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>scalr.security.user.suspension. failed_login_attempts</td>
+<td>User account will be suspended after this number of failed login attempts. (0=disable)</td>
+<td>Integer</td>
+<td>&#160;</td>
+<td>10</td>
+</tr>
+<tr class="row-even"><td>scalr.%PLATFORM%.action_on_missing_server</td>
+<td>Defines what action should be taken if the cloud API reports a server missing compared to what’s in the Scalr Database.</td>
+<td>String</td>
+<td>terminate = Terminate instance “flag” = Mark as missing “ignore” = Ignore</td>
+<td>terminate</td>
+</tr>
+<tr class="row-odd"><td>scalr.%PLATFORM%.action_on_failed_server</td>
+<td>Defines what action should be taken if the cloud API reports a server as failed compared to what’s in the Scalr Database.</td>
+<td>String</td>
+<td>terminate = Terminate instance “alert” = Same as Ignore, but will later support additional alerts in the UI “ignore” = Ignore</td>
+<td>terminate</td>
+</tr>
+<tr class="row-even"><td>scalr.allowed_clouds</td>
+<td>List of Cloud Platforms that are available in this Scalr installation.</td>
+<td>Array</td>
+<td>[“hpcloud”, “mirantis”, “azure”, “ec2”, “openstack”, “cloudstack”, “idcf”, “gce”, ” ocs”, “rackspacenguk”, “rackspacengus”, “cisco”, “vmware”, “vio”]</td>
+<td>[“hpcloud”,”azure”, “ec2”, “openstack”, “cloudstack”, “gce”,”vmware”]</td>
+</tr>
+<tr class="row-odd"><td>scalr.license_manager.use_proxy</td>
+<td>Sets the License manager to use proxy</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>FALSE</td>
+</tr>
+<tr class="row-even"><td>scalr.license_manager.ssl_verify</td>
+<td>Sets the License manager to verify ssl</td>
+<td>Boolean</td>
+<td>true, false</td>
+<td>TRUE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../extensions/index.html" class="btn btn-neutral float-right" title="Extensions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="scalarizr_installation.html" class="btn btn-neutral" title="Scalarizr Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, scalr_team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.01',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

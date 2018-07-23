@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; Scalr 0.01 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Scalr Cost Manager" href="cost_manager.html" />
+    <link rel="prev" title="Introduction" href="index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/scalr_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Scalr Server Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide/index.html">Installation &amp; Upgrades</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extensions/index.html">Extensions</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Power User Guide</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Introduction</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#about">About</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-a-scalr-environment-link-a-cloud">Create a Scalr Environment &amp; Link a Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#imports-images-and-creates-roles">Imports images and creates roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-policy">Set policy</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cost_manager.html">Scalr Cost Manager</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../power_user_concepts/index.html">Concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouds/index.html">Clouds - Configuring for Scalr</a></li>
+</ul>
+<p class="caption"><span class="caption-text">End User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../end_user_getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../end_user_concepts/index.html">Concepts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API &amp; CLI Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/index.html">CLI</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/index.html">Tutorials</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Best Practices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/index.html">Best Practices</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Release Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/index.html">Release Notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Scalr</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Introduction</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/power_user_introduction/getting_started.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about">
+<h2>About<a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>In Scalr we consider a “Power User” someone who will own a Scalr account/organizational unit and setup the general direction for provisioning for their organization. Some of the responsibilities would be :</p>
+<ul class="simple">
+<li>Add Cloud Credentials</li>
+<li>Manage Scalr environments</li>
+<li>Connect Scalr to clouds</li>
+<li>Create users and teams</li>
+<li>Imports images and creates roles</li>
+<li>Set policy</li>
+</ul>
+<p>The following will be a guide that walks you through the bare minimum to setup an environment to provision resources.</p>
+</div>
+<div class="section" id="create-a-scalr-environment-link-a-cloud">
+<h2>Create a Scalr Environment &amp; Link a Cloud<a class="headerlink" href="#create-a-scalr-environment-link-a-cloud" title="Permalink to this headline">¶</a></h2>
+<p>To create any resources in Scalr, they must be created in a Scalr environment (blue level). In this step we will create an environment and link a cloud to it.</p>
+<ul class="simple">
+<li>Log into Scalr and make sure you are at the account (green) level.</li>
+<li>Click on the Environments tab either at the top tool bar or in the Scalr menu on the top left.</li>
+<li>Click on New Environment and give it a name.</li>
+<li>Click on Clouds and click on the link on the right that corresponds with the cloud you would like to add a cloud credential for. You may have already created credentials, if so you can use an existing one. If you have not created a credential, click on Add Credentials and enter the cloud credentials.</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/link_cloud.png"><img alt="../_images/link_cloud.png" src="../_images/link_cloud.png" style="width: 1041.6000000000001px; height: 561.6px;" /></a>
+<a class="reference internal image-reference" href="../_images/add_credential.png"><img alt="../_images/add_credential.png" src="../_images/add_credential.png" style="width: 836.8000000000001px; height: 402.40000000000003px;" /></a>
+<p>Make sure to click save at the bottom of the page before moving on.</p>
+</div>
+<div class="section" id="imports-images-and-creates-roles">
+<h2>Imports images and creates roles<a class="headerlink" href="#imports-images-and-creates-roles" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have a cloud linked, we can take the next step to provisioning a server which is importing an image and linking it to a Scalr role.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you do not have an image with Scalarizr on it, please follow these instructions to do that: &lt;Enter scalarizr instructions here&gt;</p>
+</div>
+<ul class="simple">
+<li>Find the image ID for the image that you previously added Scalarizr to.</li>
+<li>Go to the your Scalr account (green level), click on images, and click on add new:</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/new_image.png"><img alt="../_images/new_image.png" src="../_images/new_image.png" style="width: 505.6px; height: 334.40000000000003px;" /></a>
+<ul class="simple">
+<li>In this example we will add a AWS image by adding the AMI ID:</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/import_image.png"><img alt="../_images/import_image.png" src="../_images/import_image.png" style="width: 1269.6000000000001px; height: 449.6px;" /></a>
+<p>This will automatically import details about the image, you will just need to add the OS family and version.</p>
+<ul class="simple">
+<li>Now that the image is imported, you will create a role. Go to the your Scalr account (green level), click on roles, and click on add new role:</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/new_role.png"><img alt="../_images/new_role.png" src="../_images/new_role.png" style="width: 428.0px; height: 368.8px;" /></a>
+<ul class="simple">
+<li>On the new role page you will have to enter the following information at a minimum:<ul>
+<li>Role name</li>
+<li>OS Family and Version</li>
+<li>Category</li>
+<li>Images - Add the image that you just imported</li>
+</ul>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/new_role2.png"><img alt="../_images/new_role2.png" src="../_images/new_role2.png" style="width: 774.4000000000001px; height: 721.6px;" /></a>
+<p>You now have the bare minimum setup for you end users to provision resources. But, to get more out of Scalr we suggest setting up policy so your users deploy in a safe way!</p>
+</div>
+<div class="section" id="set-policy">
+<h2>Set policy<a class="headerlink" href="#set-policy" title="Permalink to this headline">¶</a></h2>
+<p>The Scalr Policy Engine is a powerful platform that can be used to create, manage and enforce Governance Policies, allowing your users to continue to take advantage of the speed and flexibility enabled by Cloud services, without increasing risk for your organization.  Scalr lets you enforce policies for an entire Environment, such as restricting instance types, restricting networks or mandating security requirements.  Each policy is defined by its type, which describes the goal of the policy, optional conditions that limit the scope this policy will apply to, and for some policy types that need it, additional configuration settings.</p>
+<p>In this example, we will create some basic policies to ensure your users provision in a VPC.</p>
+<ul class="simple">
+<li>Make sure you are in your Scalr account (green level) and click on the Scalr menu on the top left and go down to policy groups:</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/policy_groups.png"><img alt="../_images/policy_groups.png" src="../_images/policy_groups.png" style="width: 469.6px; height: 415.20000000000005px;" /></a>
+<ul class="simple">
+<li>Click on New Policy Group, then give the policy a name, and change the type to AWS:</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/new_policy.png"><img alt="../_images/new_policy.png" src="../_images/new_policy.png" style="width: 1080.8px; height: 274.40000000000003px;" /></a>
+<ul class="simple">
+<li>Click on New Policy on the right-hand side and select “aws.network.require_vpc”:</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/vpc_policy.png"><img alt="../_images/vpc_policy.png" src="../_images/vpc_policy.png" style="width: 608.0px; height: 429.6px;" /></a>
+<ul class="simple">
+<li>Check off “Require resources to be created in a VPC” and save.</li>
+<li>Once you are returned to the policy group page, click save again to save the policy group.</li>
+</ul>
+<p>Now that you have a policy created, we will assign it to an environment so that it is enforced on new farms.</p>
+<ul class="simple">
+<li>Click on the environments tab on the top of the account toolbar.</li>
+<li>Click on the environment that you want to assign the policy to and then click on policies:</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/assign_policy.png"><img alt="../_images/assign_policy.png" src="../_images/assign_policy.png" style="width: 1260.0px; height: 347.20000000000005px;" /></a>
+<ul class="simple">
+<li>On the right-hand side you will see link icons, click on the link of the policy type that you created, then click on the policy that you created and Link to Environment:</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/link_policy.png"><img alt="../_images/link_policy.png" src="../_images/link_policy.png" style="width: 1009.6px; height: 472.0px;" /></a>
+<p>Congratulations! You now have the basics of account management in Scalr. Please see the other Power User sections to learn some more advanced concepts.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="cost_manager.html" class="btn btn-neutral float-right" title="Scalr Cost Manager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, scalr_team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.01',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

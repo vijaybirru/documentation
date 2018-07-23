@@ -1,0 +1,31 @@
+7.9.5
+=====
+
+Release Date: 22/Jun/18
+
+Bug Fixes:
+--------------
+
+* [SCALRCORE-7091] - UI > Problem with searchfield's pickers
+* [SCALRCORE-8822] - UI > Add refresh plugin for cached AWS VPC lists
+* [SCALRCORE-8861] - UI > AT > Bootstrap configs list isn't available if Ansible Tower server is down
+* [SCALRCORE-8944] - UI > IE 11 > TypeError: Object doesn't support property or method getField
+* [SCALRCORE-9105] - UI > Clear accountId in browser storage before login with SAML
+* [SCALRCORE-9152] - UI > Cost Analytics > Projects > Hide all archived projects
+* [SCALRCORE-8912] - Core > AT > Orchestration Jobs > ResumeComplete Event > Server's Hostname doesn't change
+* [SCALRCORE-9032] - Core > Unchecking Bootstrap with Ansible doesn't remove the link to the configuration.
+* [SCALRCORE-9013] - Kubernetes > /stats/summary endpoint is unavailable in 1.9.8-gke.0 + version of kubelet
+* [SCALRCORE-9060] - AWS > RDS > dbInstance and dbCluster port option modification not available
+* [SCALRCORE-9097] - AWS > RDS > Error when accessing RDS Instances
+* [SCALRCORE-8925] - AWS > RDS > Clusters > Animated statuses
+* [SCALRCORE-9108] - AWS > RDS > Load Cluster Parameter Groups with additional parameters
+* [SCALRCORE-9136] - AWS > EC2 > M5/C5 instance types are not available in some regions
+* [SCALRCORE-9068] - OpenStack > Keystone client ignored proxy settings
+* [SCALRCORE-9140] - Openstack > RestClient > curl redirects setting was ignored
+* [SCALRCORE-9106] - GCE > Networks > Add pagination for getNetworks
+* [SCALRCORE-9127] - VMware > Servers > Not able to change instance type on an existing VM
+* [SCALRCORE-9150] - Monitor > Upgrade for removing duplicate alerts
+* [SCALRCORE-9125] - Monitor > increase resample period for cpu utilization
+* [SCALRCORE-9104] - Monitor > Successful checks sometimes don't deactivate server alerts
+* [SCALRCORE-8995] - RDS cluster > Create > New Cluster appears only after page refresh
+* [SCALRCORE-8986] - Rackspace > Servers dashboard > storages are remove after refresh

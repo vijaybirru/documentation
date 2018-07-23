@@ -1,0 +1,10 @@
+.. include:: ../GLOBAL.rst
+
+|SCALR| Scope Configuration
+===========================
+
+Cloud Credentials
+-----------------
+
+Roles and Images
+----------------

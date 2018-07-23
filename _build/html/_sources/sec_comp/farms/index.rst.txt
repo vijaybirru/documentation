@@ -1,0 +1,19 @@
+.. include:: ../GLOBAL.rst
+
+Farm Configuration
+==================
+
+Farm Roles
+----------
+
+Scripts, Events & Orchestration
+-------------------------------
+
+Events Reference
+^^^^^^^^^^^^^^^^
+
+Custom Events
+-------------
+
+Network and Security Group configuration
+----------------------------------------
