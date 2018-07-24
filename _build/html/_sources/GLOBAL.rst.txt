@@ -28,14 +28,22 @@
             :scale: 25%
 
 .. |SCOPE_SCALR| image:: /images/scope_scalr.png
-                 :scale: 50%
+                 :scale: 40%
 
 .. |SCOPE_ACC| image:: /images/scope_acc.png
-                 :scale: 50%
+                 :scale: 40%
 
 .. |SCOPE_ENV| image:: /images/scope_env.png
-                 :scale: 50%
+                 :scale: 40%
 
+.. |SCOPE_ROLE| image:: /images/scope_role.png
+                 :scale: 40%
+
+.. |SCOPE_FARM| image:: /images/scope_farm.png
+                 :scale: 40%
+
+.. |SCOPE_F_ROLE| image:: /images/scope_f_role.png
+                 :scale: 40%
 
 
 .. |SCALR_SERVER_RB| replace:: In a multi-node configuration, the scalr-server.rb file should be exactly the same across all Scalr server nodes. Remember to run ``scalr-server-ctl reconfigure`` on all nodes whenever you make an update to the scalr-server.rb configuration file.
