@@ -7,9 +7,13 @@
     white-space: normal;
 }
 
+.wy-nav-content {
+    max-width: none;
+}
+
+/* override table no-wrap */
+.wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal;
+}
+
 body { font-family: 'Helvetica'; }
-
-/*
-body { font-family: 'myFancyFont', Times, serif; }
-
-OpenSansSemiBold,Arial,sens-serif;

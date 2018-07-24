@@ -12,9 +12,6 @@ Navigating the User Interface
 |SCALR| Scope Configuration
 ---------------------------
 
-Cloud Configuration and Credentials
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. include:: ../clouds/index.rst
 
 Roles and Images
