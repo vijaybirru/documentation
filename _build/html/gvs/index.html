@@ -343,10 +343,15 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Global Variables</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-global-variables">Creating Global Variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-global-variables-in-scripts">Using Global Variables in Scripts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#global-variable-interpolation-in-fields">Global Variable Interpolation in Fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-global-variables-in-policies">Using Global Variables in Policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#examining-global-variables-in-servers">Examining Global Variables in Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#built-in-scalr-variables">Built-in Scalr Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#server-scope-built-in-variables">Server Scope Built-In Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#server-scope-built-in-cost-variables">Server Scope Built-In Cost Variables</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -512,18 +517,302 @@
 <h1>Global Variables<a class="headerlink" href="#global-variables" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="definition-and-scope">
 <h2>Definition and Scope<a class="headerlink" href="#definition-and-scope" title="Permalink to this headline">¶</a></h2>
+<p>Global Variables are multi-purpose key value store objects that can be used for input from users or admins for the following:</p>
+<ul class="simple">
+<li>Tagging</li>
+<li>Script Input</li>
+<li>Naming Conventions</li>
+<li>Etc</li>
+</ul>
+<p>Global Variables are encrypted in the Scalr database and can also be pulled down from the Scalr server by the Scalarizr agent when needed.</p>
+</div>
+<div class="section" id="creating-global-variables">
+<h2>Creating Global Variables<a class="headerlink" href="#creating-global-variables" title="Permalink to this headline">¶</a></h2>
+<p>Global Variables can be created, updated, edited, or deleted at the Scalr, Account, Environment, Farm, or Farm Role scopes. To create a Global Variable at the Scalr, Account, or Environment scopes you can click on the Scalr icon on the top left: <a class="reference internal" href="../_images/scalr_icon_env.png"><img alt="SCALR_ICON" src="../_images/scalr_icon_env.png" style="width: 55.3px; height: 33.599999999999994px;" /></a></p>
+<p>Then click on Global Variables: <a class="reference internal" href="../_images/gv.png"><img alt="GV" src="../_images/gv.png" style="width: 130.9px; height: 26.599999999999998px;" /></a></p>
+<p>You have a few options when creating a Global Variable:</p>
+<a class="reference internal image-reference" href="../_images/new_gv.png"><img alt="../_images/new_gv.png" src="../_images/new_gv.png" style="width: 271.59999999999997px; height: 381.5px;" /></a>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="10%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>Metadata</td>
+<td>Name of the Global Variable</td>
+</tr>
+<tr class="row-odd"><td>Category</td>
+<td>Metadata</td>
+<td>Category that the Global Variable falls into</td>
+</tr>
+<tr class="row-even"><td>Description</td>
+<td>Metadata</td>
+<td>Description of the Global Variable</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../_images/hidden.png"><img alt="HID" src="../_images/hidden.png" style="width: 29.4px; height: 22.2px;" /></a> Hidden</td>
+<td>Flag</td>
+<td>The value cannot be seen at a lower scope</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/locked.png"><img alt="LOCK" src="../_images/locked.png" style="width: 29.4px; height: 21.599999999999998px;" /></a> Locked</td>
+<td>Flag</td>
+<td>The value cannot be changed at a lower scope</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../_images/mandatory.png"><img alt="MAN" src="../_images/mandatory.png" style="width: 28.799999999999997px; height: 19.8px;" /></a> Mandatory</td>
+<td>Flag</td>
+<td>The value must be set at a specific scope</td>
+</tr>
+<tr class="row-even"><td>Custom</td>
+<td>Format</td>
+<td>A regular expression can be created for pattern validation</td>
+</tr>
+<tr class="row-odd"><td>JSON</td>
+<td>Format</td>
+<td>The values must be in a JSON format</td>
+</tr>
+<tr class="row-even"><td>List</td>
+<td>Format</td>
+<td>The values will be presented in a dropdown</td>
+</tr>
+</tbody>
+</table>
+<p>Once the Global Variable is created, click save and you will be able to use it in the various use cases below.</p>
 </div>
 <div class="section" id="using-global-variables-in-scripts">
 <h2>Using Global Variables in Scripts<a class="headerlink" href="#using-global-variables-in-scripts" title="Permalink to this headline">¶</a></h2>
+<p>Global Variables can be passed to scripts that are executed through Scalr orchestration. The following examples are scripts executed on a server whose scope includes a Global Variable with the name “MyGlobalVariable”.</p>
+<p>Bash:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">echo</span> <span class="nv">$MyGlobalVariable</span>
+</pre></div>
 </div>
-<div class="section" id="global-variable-interpolation-in-fields">
-<h2>Global Variable Interpolation in Fields<a class="headerlink" href="#global-variable-interpolation-in-fields" title="Permalink to this headline">¶</a></h2>
+<p>Powershell:</p>
+<div class="highlight-Powershell notranslate"><div class="highlight"><pre><span></span><span class="c">#!powershell</span>
+<span class="nv">$env:MyGlobalVariable</span>
+</pre></div>
+</div>
+<p>Python:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">print</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;MyGlobalVariable&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ruby:</p>
+<div class="highlight-Ruby notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env ruby</span>
+<span class="nb">print</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;MyGlobalVariable&quot;</span><span class="o">]</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="using-global-variables-in-policies">
 <h2>Using Global Variables in Policies<a class="headerlink" href="#using-global-variables-in-policies" title="Permalink to this headline">¶</a></h2>
+<p>Another powerful use of Global Variables is to use them in policy. We commonly see them used in a tagging or naming policies. To do this, go to Policy at the Account scope:</p>
+<a class="reference internal image-reference" href="../_images/policy_account.png"><img alt="../_images/policy_account.png" src="../_images/policy_account.png" style="width: 307.29999999999995px; height: 442.4px;" /></a>
+<p>In this example, I am going to create a tagging policy in the cloud provider which will have a tag name of “scalr_tag” and the tag value will be the value of a Global Variable named “MyGlobalVariable”. Based on the brackets {} being around the value, Scalr knows to pull that as a Global Variable and insert that value into the cloud provider.</p>
+<a class="reference internal image-reference" href="../_images/gv_tag_policy.png"><img alt="../_images/gv_tag_policy.png" src="../_images/gv_tag_policy.png" style="width: 476.7px; height: 484.4px;" /></a>
+<p>This same concept can be used for other policies that allow for free form input, like hostname and instance name policies.</p>
 </div>
 <div class="section" id="examining-global-variables-in-servers">
 <h2>Examining Global Variables in Servers<a class="headerlink" href="#examining-global-variables-in-servers" title="Permalink to this headline">¶</a></h2>
+<p>So far we have seen how Global Variables can be used within the Scalr UI, scripts, and policies. Global Variables can also be referenced while working within the operating system by using the Scalarizr agent admin command: <code class="docutils literal notranslate"><span class="pre">szradm</span></code>. For more information click on this link: <strong>NEED TO ADD LINK*</strong></p>
+</div>
+<div class="section" id="built-in-scalr-variables">
+<h2>Built-in Scalr Variables<a class="headerlink" href="#built-in-scalr-variables" title="Permalink to this headline">¶</a></h2>
+<p>All of the variables above have been Global Variables that are provided by either an admin or user input. Scalr can also automatically define a certain amount of “built-in” Global Variables, and inject them in the server Scope. These Global Variables are always available, and they are prefixed with “SCALR” to avoid collisions with your own variables. Here is the list of the variables that can be accessed the same way as Global Variables:</p>
+<div class="section" id="server-scope-built-in-variables">
+<h3>Server Scope Built-In Variables<a class="headerlink" href="#server-scope-built-in-variables" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="62%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Environment Variable</th>
+<th class="head">Description</th>
+<th class="head">Sample Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SCALR_IMAGE_ID</td>
+<td>Cloud Image Identifier</td>
+<td>ami-43935d2a</td>
+</tr>
+<tr class="row-odd"><td>SCALR_EXTERNAL_IP</td>
+<td>External IP Address of the Server (only provided if the IP exists)</td>
+<td>107.108.109.110</td>
+</tr>
+<tr class="row-even"><td>SCALR_INTERNAL_IP</td>
+<td>Internal IP Address of the Server (only provided if the IP exists)</td>
+<td>10.11.12.13</td>
+</tr>
+<tr class="row-odd"><td>SCALR_ROLE_NAME</td>
+<td>Name of the Scalr Role this Server belongs to. This is not the Farm Role Alias.</td>
+<td>app-apache-ubuntu-ebs</td>
+</tr>
+<tr class="row-even"><td>SCALR_ROLE_OS</td>
+<td>Operating System of the Role</td>
+<td>Ubuntu, etc</td>
+</tr>
+<tr class="row-odd"><td>SCALR_ISDBMASTER</td>
+<td>Whether this Instance is a Role Master (only provided).</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>SCALR_INSTANCE_INDEX</td>
+<td>Index of this Instance within its Farm Role</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><td>SCALR_INSTANCE_FARM_INDEX</td>
+<td>Index of this instance within its Farm</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>SCALR_SERVER_TYPE</td>
+<td>Instance type</td>
+<td>c3.large</td>
+</tr>
+<tr class="row-odd"><td>SCALR_SERVER_HOSTNAME</td>
+<td>The hostname for this Server</td>
+<td>app-1.example.com</td>
+</tr>
+<tr class="row-even"><td>SCALR_LAUNCHED_BY_EMAIL</td>
+<td>The system email of the user who launched the instance</td>
+<td><a class="reference external" href="mailto:someone&#37;&#52;&#48;company&#46;com">someone<span>&#64;</span>company<span>&#46;</span>com</a></td>
+</tr>
+<tr class="row-odd"><td>SCALR_LAUNCHED_BY_ID</td>
+<td>The system ID of the user who launched the instance</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>SCALR_SERVER_ID</td>
+<td>The Server ID for this Server. This is an internal Scalr record key.</td>
+<td>0abb9535-9d1a-4dc4-a38c-7b7b26db7bb0</td>
+</tr>
+<tr class="row-odd"><td>SCALR_FARM_ID</td>
+<td>The Farm ID of the Farm this Server belongs to. This is an internal Scalr record key.</td>
+<td>5334</td>
+</tr>
+<tr class="row-even"><td>SCALR_FARM_ROLE_ID</td>
+<td>The Farm Role ID of the Farm Role this Server belongs to. This is an internal Scalr record key.</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>SCALR_FARM_ROLE_ALIAS</td>
+<td>The Farm Role Alias of the Farm Role this Server belongs to.</td>
+<td>myrole</td>
+</tr>
+<tr class="row-even"><td>SCALR_FARM_NAME</td>
+<td>The Name of the Farm this Server belongs to.</td>
+<td>My App Production</td>
+</tr>
+<tr class="row-odd"><td>SCALR_FARM_HASH</td>
+<td>The Farm Hash of the Farm this Server belongs to. This is an internal Scalr record key.</td>
+<td>cc55739bfdf844</td>
+</tr>
+<tr class="row-even"><td>SCALR_FARM_OWNER_EMAIL</td>
+<td>The email address of the owner of the Farm this Server belongs to.</td>
+<td><a class="reference external" href="mailto:user&#37;&#52;&#48;scalr&#46;com">user<span>&#64;</span>scalr<span>&#46;</span>com</a></td>
+</tr>
+<tr class="row-odd"><td>SCALR_BEHAVIORS</td>
+<td>A comma-separated list of the Scalr built-in automations that are active for this Server.</td>
+<td>apache,nginx</td>
+</tr>
+<tr class="row-even"><td>SCALR_ENV_ID</td>
+<td>The ID of the Environment this Server belongs to. This is an internal Scalr record key.</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>SCALR_ENV_NAME</td>
+<td>The Name of the Environment this Server belongs to.</td>
+<td>Staging</td>
+</tr>
+<tr class="row-even"><td>SCALR_CLOUD_LOCATION</td>
+<td>The Location where this Server is. This value is provided by your Cloud Platform.</td>
+<td>us-east-1</td>
+</tr>
+<tr class="row-odd"><td>SCALR_CLOUD_SERVER_ID</td>
+<td>The Cloud ID for this Server. This value is provided by your Cloud Platform.</td>
+<td>i-866f40a8</td>
+</tr>
+<tr class="row-even"><td>SCALR_CLOUD_LOCATION_ZONE</td>
+<td>A more precise location for this Server, if available. This value is provided by your Cloud Platform.</td>
+<td>us-east-1a</td>
+</tr>
+<tr class="row-odd"><td>SCALR_CLOUD_PLATFORM</td>
+<td>A description of the Cloud Platform.  Available in Scalr  &gt;=7.5.2.</td>
+<td>openstack, ec2, etc</td>
+</tr>
+<tr class="row-even"><td>SCALR_ACCOUNT_ID</td>
+<td>The Scalr Account ID.  This is an internal Scalr record key. Available in Scalr  &gt;=7.5.2.</td>
+<td>1, 5, etc</td>
+</tr>
+<tr class="row-odd"><td>SCALR_ACCOUNT_NAME</td>
+<td>The Scalr Account Name.  This is an internal Scalr record key. Available in Scalr  &gt;=7.5.2.</td>
+<td>Account1, Oil and Gas, Healthcare, etc.</td>
+</tr>
+<tr class="row-even"><td>SCALR_INSTANCE_ID</td>
+<td>Equivalent to SCALR_CLOUD_SERVER_ID . This Global Variable is a legacy AWS specific variable.</td>
+<td>i-866f40a8</td>
+</tr>
+<tr class="row-odd"><td>SCALR_AMI_ID</td>
+<td>Equivalent to SCALR_IMAGE_ID . This Global Variable is a legacy AWS specific variable.</td>
+<td>ami-43935d2a</td>
+</tr>
+<tr class="row-even"><td>SCALR_REGION</td>
+<td>Equivalent to SCALR_CLOUD_LOCATION . This Global Variable is a legacy AWS specific variable.</td>
+<td>us-east-1</td>
+</tr>
+<tr class="row-odd"><td>SCALR_AVAIL_ZONE</td>
+<td>Equivalent to SCALR_CLOUD_LOCATION_ZONE . This Global Variable is a legacy AWS specific variable.</td>
+<td>us-east-1a</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="server-scope-built-in-cost-variables">
+<h3>Server Scope Built-In Cost Variables<a class="headerlink" href="#server-scope-built-in-cost-variables" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="63%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Environment Variable</th>
+<th class="head">Description</th>
+<th class="head">Sample Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SCALR_COST_CENTER_ID</td>
+<td>The ID of the Cost Center this Server is associated with (through the Project the Farm it belongs to is associated with).</td>
+<td>c3146a74-3135-451e-b09e-d9882965d57f</td>
+</tr>
+<tr class="row-odd"><td>SCALR_COST_CENTER_BC</td>
+<td>The Billing Code of the Cost Center this Server is associated with.</td>
+<td>CLOUD-EUROPE</td>
+</tr>
+<tr class="row-even"><td>SCALR_COST_CENTER_NAME</td>
+<td>The Name of the Cost Center this Server is associated with.</td>
+<td>Europe Cloud Infrastructure</td>
+</tr>
+<tr class="row-odd"><td>SCALR_PROJECT_ID</td>
+<td>The ID of the Project this Server is associated with (through the Farm it belongs to ).</td>
+<td>05650aa6-e472-4bae-8532-c57503eb5bb4</td>
+</tr>
+<tr class="row-even"><td>SCALR_PROJECT_BC</td>
+<td>The Billing Code of the Project this Server is associated with (through the Farm it belongs to).</td>
+<td>CLOUD-EUROPE-IDENTITY</td>
+</tr>
+<tr class="row-odd"><td>SCALR_PROJECT_NAME</td>
+<td>The Name of the Project this Server is associated with (through the Farm it belongs to ).</td>
+<td>Europe Cloud Identity Management Infrastructure</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 
