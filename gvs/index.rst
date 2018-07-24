@@ -6,6 +6,8 @@ Global Variables
 Definition and Scope
 --------------------
 
+|SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV| |SCOPE_ROLE| |SCOPE_FARM| |SCOPE_F_ROLE|
+
 Global Variables are multi-purpose key value store objects that can be used for input from users or admins for the following:
 
 * Tagging
