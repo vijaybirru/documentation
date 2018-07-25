@@ -3,6 +3,8 @@
 External Integrations
 =====================
 
+.. _webhooks:
+
 Webhooks and Endpoints
 ======================
 

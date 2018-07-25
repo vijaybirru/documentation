@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Connecting Scalr to AWS" href="../clouds/connecting_aws.html" />
+    <link rel="next" title="Getting Started for End Users" href="../gs_users/index.html" />
     <link rel="prev" title="Concepts and Terminology" href="../introduction/terminology.html" /> 
 
   
@@ -203,40 +203,8 @@
 <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started for Admins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#role-of-account-admins">Role of Account Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#role-of-an-administrator">Role of an Administrator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#navigating-the-user-interface">Navigating the User Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scalr-scope-configuration">Scalr Scope Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#cloud-configuration-and-credentials">Cloud Configuration and Credentials</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#roles-and-images">Roles and Images</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#scalr-account-architecture">Scalr Account Architecture</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#organisational-structure">Organisational Structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#teams-users-and-acls">Teams, Users and ACLs</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#account-scope-configuration">Account Scope Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#environments-and-cloud-credentials">Environments and Cloud Credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">Cloud Configuration and Credentials</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#linking-cloud-credentials">Linking Cloud Credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configuring-users-teams-and-acls">Configuring Users, Teams and ACLs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Roles and Images</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gs_users/index.html">Getting Started for End Users</a><ul>
@@ -252,7 +220,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Building Images from scratch (With Chef)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
 </ul>
@@ -286,8 +254,11 @@
 </ul>
 <p class="caption"><span class="caption-text">Organizational Management</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../org/index.html">Implementing your Organization in Scalr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../org/index.html">Implementing your Organisation in Scalr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#configuring-environments">Configuring Environments</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Teams and Users</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
@@ -521,73 +492,164 @@
             
   <div class="section" id="getting-started-for-admins">
 <h1>Getting Started for Admins<a class="headerlink" href="#getting-started-for-admins" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="role-of-account-admins">
-<h2>Role of Account Admins<a class="headerlink" href="#role-of-account-admins" title="Permalink to this headline">¶</a></h2>
+<p>This page provides the basic information needed by Scalr and Account admins to get Scalr up and running and configured for end users to start work.</p>
+<p><strong>Prerequisite:</strong> Scalr Server has been installed (See <a class="reference internal" href="../install_guide/scalr_server_installation.html#install"><span class="std std-ref">Scalr Server Install</span></a>) and you are able to login as either a Scalr or Account admin.</p>
+<div class="section" id="role-of-an-administrator">
+<h2>Role of an Administrator<a class="headerlink" href="#role-of-an-administrator" title="Permalink to this headline">¶</a></h2>
+<p>An Administrator’s role can vary from organisation to organisation and admin tasks can be performed at various scopes within Scalr. Some tasks can only be done at one specific scope and some are available at all 3 scopes.</p>
+<p>All tasks can be performed by clicking on the appropriate on the main menu button <img alt="MENU_SCALR" src="../_images/menu_scalr.png" /> .</p>
+<p>The table below describes the core tasks that Admins must perform in order for End Users to be able to login, configure farms and deploy cloud infrastructure.
+This is NOT a comprehensive list of all features and functionality available in Scalr</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="11%" />
+<col width="14%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Task</th>
+<th class="head">Scopes</th>
+<th class="head">Menu Item</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Set up Cost Centers</td>
+<td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></td>
+<td>Cost Analytics</td>
+<td>Cost Centers are critical to enabling useful sub-divisions of Cost Analytics.
+Each Account must be associated with a Cost Center, so it is advisable to
+set up Cost Centers before setting up Accounts.
+More detail can be found at <a class="reference internal" href="../cost/index.html#cost-control"><span class="std std-ref">Cost Control Overview</span></a>.</td>
+</tr>
+<tr class="row-odd"><td>Create Accounts</td>
+<td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></td>
+<td>Accounts</td>
+<td>Accounts must be created to match the desired organisational structure.
+Accounts must be allocated a Cost Center and assigned an owner to be
+the Account administrator.
+More detail can be found at <a class="reference internal" href="../org/accounts.html#accounts"><span class="std std-ref">Account Configuration</span></a>.</td>
+</tr>
+<tr class="row-even"><td>Set Up Users</td>
+<td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
+<td>Users</td>
+<td>If users are NOT being external authenticated via LDAP or SAML they must be created
+in Scalr. See <a class="reference internal" href="../org/team_users.html#teams-users"><span class="std std-ref">Teams and Users</span></a>.</td>
+</tr>
+<tr class="row-odd"><td>Configure ACLs</td>
+<td><a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
+<td>ACL</td>
+<td>Scalr comes with 3 pre-configured ACL’s. You can use these or create your own to
+match your requirements. See <a class="reference internal" href="../sec_comp/acls.html#access-control"><span class="std std-ref">Access Control Lists</span></a>.</td>
+</tr>
+<tr class="row-even"><td>Set up Teams</td>
+<td><a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
+<td>Teams</td>
+<td>Access to environments is configured via Teams. Teams must be created, linked
+to ACL’s and assigned Users as team members. If you are using LDAP for
+authentication the teams will automatically appear in Scalr based on the
+LDAP group names. You cannot set up or change LDAP based teams with Scalr,
+but you must still allocate an ACL.
+See <a class="reference internal" href="../org/team_users.html#teams-users"><span class="std std-ref">Teams and Users</span></a>.</td>
+</tr>
+<tr class="row-odd"><td>Configure Cloud Credentials</td>
+<td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
+<td>Cloud Credentials</td>
+<td>Cloud authentication details for access to the Cloud API(s) must be set
+and linked to Environments. See <a class="reference internal" href="../clouds/index.html#cloud-creds"><span class="std std-ref">Cloud Configuration and Credentials</span></a>.</td>
+</tr>
+<tr class="row-even"><td>Create Environments</td>
+<td><a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
+<td>Environments</td>
+<td>Each Account requires one or more environments for users to login into.
+These must be linked to one or more sets of Cloud Credentials and access must
+be granted to the appropriate Teams. Environments can also be linked to Policy Groups
+and Resource Quotas if they are being used. See <a class="reference internal" href="../org/accounts.html#environments"><span class="std std-ref">Configuring Environments</span></a>.</td>
+</tr>
+<tr class="row-odd"><td>Register Images</td>
+<td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env1.png"><img alt="LE" src="../_images/scope_env1.png" style="width: 26.0px; height: 23.6px;" /></a></td>
+<td>Images</td>
+<td>Images must be registered in Scalr before they can be used in Roles. This can be
+simple manual registration or Images can be created from existing cloud servers.
+See <a class="reference internal" href="../images_roles/registering_images.html#register-images"><span class="std std-ref">Registering Images</span></a> and <a class="reference internal" href="../images_roles/creating_images_nonscalr.html#images-from-servers"><span class="std std-ref">Creating Images and Roles from Non-Scalr Servers</span></a>.</td>
+</tr>
+<tr class="row-even"><td>Configure Roles</td>
+<td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env1.png"><img alt="LE" src="../_images/scope_env1.png" style="width: 26.0px; height: 23.6px;" /></a></td>
+<td>Roles</td>
+<td>Roles associated with Images must be created and configured with any required
+Orchestration capabilities. This can be done from scratch or it can be done by
+importing existing cloud servers as new Images and Roles.
+See <a class="reference internal" href="../images_roles/creating_roles.html#roles"><span class="std std-ref">Creating Roles</span></a> and <a class="reference internal" href="../images_roles/creating_images_nonscalr.html#images-from-servers"><span class="std std-ref">Creating Images and Roles from Non-Scalr Servers</span></a>.</td>
+</tr>
+</tbody>
+</table>
+<p>The table below lists some of the optional tasks admins can perform before allowing end users access to Scalr. The tasks relate to implementing enterprise and business unit wide governance.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="11%" />
+<col width="14%" />
+<col width="56%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Task</th>
+<th class="head">Scopes</th>
+<th class="head">Menu Item</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Set up Governance Policies</td>
+<td><a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
+<td>Policy Engine</td>
+<td>Governance policies can be implemented at Account level to control many
+aspects of cloud deployments, e.g. to ensure compliance, adhere to standard,
+control cost and much more. See <a class="reference internal" href="../sec_comp/policies.html#policy-engine"><span class="std std-ref">Policy Engine</span></a>.</td>
+</tr>
+<tr class="row-odd"><td>Create Scripts</td>
+<td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env1.png"><img alt="LE" src="../_images/scope_env1.png" style="width: 26.0px; height: 23.6px;" /></a></td>
+<td>Scripts</td>
+<td>Scripts can be created at all scopes within Scalr. They are used perform actions
+on running servers and can includethings like ensuring mandatory software upgrades
+and patches are applied, or they can simply perform local actions relevant to
+individual Farm Roles. Scripts should be created by administrators if they are
+required for Scalr or Account scope Orchestration rules, including
+orchestration rules applied to Roles at these scopes. See <a class="reference internal" href="../scripts/index.html#scripts"><span class="std std-ref">Scripts</span></a>.</td>
+</tr>
+<tr class="row-even"><td>Create Global Variables</td>
+<td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env1.png"><img alt="LE" src="../_images/scope_env1.png" style="width: 26.0px; height: 23.6px;" /></a></td>
+<td>Global Variables</td>
+<td>The same applies to Global Variables. These can be created at all scopes.
+See <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a>.</td>
+</tr>
+<tr class="row-odd"><td>Set up Orchestration Rules</td>
+<td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
+<td>Orchestration</td>
+<td>If you require orchestration rules to be applied consistently across all Accounts
+and Environments these should be created by administrators.
+See <a class="reference internal" href="../sec_comp/orchestration.html#sa-orchestration"><span class="std std-ref">Scalr/Account Level Orchestration</span></a>.</td>
+</tr>
+<tr class="row-even"><td>Set up Endpoints and Webhooks</td>
+<td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env1.png"><img alt="LE" src="../_images/scope_env1.png" style="width: 26.0px; height: 23.6px;" /></a></td>
+<td>Integration Hub</td>
+<td>Administrators must set up and Enterprise or Account wide external integrations
+via Webhooks and associate them with appropriate events. Examples of this are for
+integration an IPAM system or a CMDB. See <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhooks and Endpoints</span></a>.</td>
+</tr>
+<tr class="row-odd"><td>Set up Resource Quotas</td>
+<td><a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
+<td>Resource Quotas</td>
+<td>Account admins can apply Resource Quotas (disk, memory etc) to all their
+environments to help control cost. This is often relevant in non-production
+environments where larger resource allocations are not required.
+See <a class="reference internal" href="../sec_comp/quotas.html#quotas"><span class="std std-ref">Resource Quotas</span></a></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="navigating-the-user-interface">
 <h2>Navigating the User Interface<a class="headerlink" href="#navigating-the-user-interface" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="scalr-scope-configuration">
-<h2>Scalr Scope Configuration<a class="headerlink" href="#scalr-scope-configuration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="cloud-configuration-and-credentials">
-<span id="cloud-creds"></span><h3>Cloud Configuration and Credentials<a class="headerlink" href="#cloud-configuration-and-credentials" title="Permalink to this headline">¶</a></h3>
-<p>Scalr must be configured to connect to the Cloud API’s of the clouds you wish to manage through Scalr. This configuration is called “Cloud Credentials”. Cloud Credentials are linked to environments to enable Farms to be configured to use your clouds. An Environment can be linked to multiple clouds which enables DevOps to implement distributed deployments, and/or provide users with the option to choose a cloud when using Self Service deployment through the Service Catalog.</p>
-<p>Cloud credentials in Scalr can be configured globally at the Scalr scope for all Accounts and Environments or at the Account Scope so they are restricted to Environments within the Account.</p>
-<p>For details on configuring Scalr for the different cloud services, please follow the appropriate link(s) below.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="roles-and-images">
-<h3>Roles and Images<a class="headerlink" href="#roles-and-images" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="scalr-account-architecture">
-<h2>Scalr Account Architecture<a class="headerlink" href="#scalr-account-architecture" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="organisational-structure">
-<h3>Organisational Structure<a class="headerlink" href="#organisational-structure" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="teams-users-and-acls">
-<h3>Teams, Users and ACLs<a class="headerlink" href="#teams-users-and-acls" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="account-scope-configuration">
-<span id="account-configuration"></span><h2>Account Scope Configuration<a class="headerlink" href="#account-scope-configuration" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="environments-and-cloud-credentials">
-<span id="environment-configuration"></span><h3>Environments and Cloud Credentials<a class="headerlink" href="#environments-and-cloud-credentials" title="Permalink to this headline">¶</a></h3>
-<p>Environments Blah balh</p>
-<p>If your Scalr Administrator has not configured the clouds and cloud credentials at the Scalr scope this must be done at the Account scope.</p>
-</div>
-<div class="section" id="id1">
-<span id="id2"></span><h3>Cloud Configuration and Credentials<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>Scalr must be configured to connect to the Cloud API’s of the clouds you wish to manage through Scalr. This configuration is called “Cloud Credentials”. Cloud Credentials are linked to environments to enable Farms to be configured to use your clouds. An Environment can be linked to multiple clouds which enables DevOps to implement distributed deployments, and/or provide users with the option to choose a cloud when using Self Service deployment through the Service Catalog.</p>
-<p>Cloud credentials in Scalr can be configured globally at the Scalr scope for all Accounts and Environments or at the Account Scope so they are restricted to Environments within the Account.</p>
-<p>For details on configuring Scalr for the different cloud services, please follow the appropriate link(s) below.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="linking-cloud-credentials">
-<h3>Linking Cloud Credentials<a class="headerlink" href="#linking-cloud-credentials" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="configuring-users-teams-and-acls">
-<span id="users-teams"></span><h3>Configuring Users, Teams and ACLs<a class="headerlink" href="#configuring-users-teams-and-acls" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="id3">
-<h3>Roles and Images<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-</div>
 </div>
 </div>
 
@@ -599,7 +661,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../clouds/connecting_aws.html" class="btn btn-neutral float-right" title="Connecting Scalr to AWS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../gs_users/index.html" class="btn btn-neutral float-right" title="Getting Started for End Users" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../introduction/terminology.html" class="btn btn-neutral" title="Concepts and Terminology" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

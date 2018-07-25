@@ -1,4 +1,11 @@
 .. include:: ../GLOBAL.rst
 
-Account Configuration Overview
-==============================
+.. _accounts:
+
+|ACCOUNT| Configuration
+=======================
+
+.. _environments:
+
+Configuring |Environments|
+--------------------------
