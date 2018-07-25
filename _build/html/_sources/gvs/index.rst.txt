@@ -1,5 +1,7 @@
 .. include:: ../GLOBAL.rst
 
+.. _gvs:
+
 Global Variables
 ================
 

@@ -79,8 +79,9 @@ Scalr Documentation!
 
 .. toctree::
    :maxdepth: 3
-   :caption: Parameterisation in Scalr
+   :caption: Customised Configuration in Scalr
 
+   scripts/index
    gvs/index
 
 .. toctree::

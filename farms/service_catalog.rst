@@ -1,5 +1,7 @@
 .. include:: ../GLOBAL.rst
 
+.. _service_catalog:
+
 Service Catalog Offerings
 =========================
 

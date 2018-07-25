@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -232,6 +231,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#linking-cloud-credentials">Linking Cloud Credentials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#configuring-users-teams-and-acls">Configuring Users, Teams and ACLs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#id3">Roles and Images</a></li>
 </ul>
@@ -342,8 +342,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/management.html">Cost Management</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Parameterisation in Scalr</span></p>
+<p class="caption"><span class="caption-text">Customised Configuration in Scalr</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gvs/index.html">Global Variables</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#creating-global-variables">Creating Global Variables</a></li>
@@ -570,7 +571,7 @@
 <li>Typically accounts are Business Units that bring together teams working to a common purpose.</li>
 <li>There will be multiple accounts which can define common governance policies for all their environments as well as also configuring additional cloud access credentials, roles, images etc over and above those defined at the Scalr scope.</li>
 <li>Accounts are also responsible for configuring Teams and Access Control Lists (ACLs) to control who can do what and which resources they can use.</li>
-<li>Cost Analytics can (with permission) be further configure and analysed through the definition of additional Projects, Budgets and Pricing.</li>
+<li>Cost Analytics can (with permission) be further configured and analysed through the definition of additional Projects, Budgets and Pricing.</li>
 </ul>
 <p class="last"><a class="reference internal" href="../_images/account.png"><img alt="AS" src="../_images/account.png" style="width: 441.7px; height: 27.299999999999997px;" /></a></p>
 </td>
@@ -622,6 +623,7 @@
 <li>Account level Orchestration rules</li>
 <li>Cost Management</li>
 </ul>
+<p>For details on configuring accounts see <a class="reference internal" href="../gs_admins/index.html#account-configuration"><span class="std std-ref">Account Scope Configuration</span></a>.</p>
 </div>
 <div class="section" id="environments">
 <h2>Environments<a class="headerlink" href="#environments" title="Permalink to this headline">¶</a></h2>
@@ -633,6 +635,7 @@
 <a class="reference internal image-reference" href="../_images/environment-full.png"><img alt="../_images/environment-full.png" src="../_images/environment-full.png" style="width: 917.6999999999999px; height: 32.199999999999996px;" /></a>
 <p>Menu for a Service Catalog Environment user:</p>
 <a class="reference internal image-reference" href="../_images/environment-sc.png"><img alt="../_images/environment-sc.png" src="../_images/environment-sc.png" style="width: 352.79999999999995px; height: 31.499999999999996px;" /></a>
+<p>For details on configuring environments see <a class="reference internal" href="../gs_admins/index.html#environment-configuration"><span class="std std-ref">Environments and Cloud Credentials</span></a>.</p>
 </div>
 <div class="section" id="images-and-roles">
 <h2>Images and Roles<a class="headerlink" href="#images-and-roles" title="Permalink to this headline">¶</a></h2>
@@ -651,15 +654,16 @@
 <li>Images users have created from customized servers with additional pre-installed software and configurations.</li>
 </ul>
 <p>Base and user created images can easily be imported into Scalr and converted to scalarized images through the Scalr UI.</p>
-<p><strong>Roles</strong> provide an abstraction layer over the top of the images and within Scalr a Role is the reusable building block for servers deployed through Scalr. A Role can be associated with multiple similar images from multiple clouds. All similar images linked to a role will have the same base operating system and version, and the same pre-installed software and configuration. This may or may not include Scalarizer, but all images in a role must be the same in this respect. The effect of this abstraction is that any user can potentially chose which cloud to use when launching a farm/application and they will get exactly the same features and behaviour. A role can also include a set of orchestration rules and global variables which ensures consistent configuration of an server regardless of which Farm it is used in and which cloud it is deployed in.</p>
+<p><strong>Roles</strong> provide an abstraction layer over the top of the images. Within Scalr a Role is the reusable building block for provisioning servers through Scalr. A Role can be associated with multiple similar images from multiple clouds. All similar images linked to a role will have the same base operating system and version, and the same pre-installed software and configuration. This may or may not include Scalarizer, but all images in a role must be the same in this respect. The effect of this abstraction is that any user can potentially chose which cloud to use when launching a farm/application and they will get exactly the same features and behaviour. A role can also include a set of orchestration rules and global variables which ensures consistent configuration of an server regardless of which Farm it is used in and which cloud it is deployed in.</p>
 <p>Images and Roles can be configured at all three scopes within Scalr and are inherited by the lower scopes. Roles can link to Images from the same or higher scopes. Images and Roles can only be edited at the scope where they were created, but they can be cloned at lower scopes and the can be promoted from lower scopes to higher scopes.</p>
-<a class="reference internal image-reference" href="../_images/Images_Roles.png"><img alt="../_images/Images_Roles.png" src="../_images/Images_Roles.png" style="width: 543.5px; height: 514.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/Images_Roles.png"><img alt="../_images/Images_Roles.png" src="../_images/Images_Roles.png" style="width: 569.0px; height: 535.5px;" /></a>
+<p>For details on working with Images and Roles see <a class="reference internal" href="../images_roles/index.html#images-roles"><span class="std std-ref">Images and Roles in Scalr</span></a>.</p>
 </div>
 <div class="section" id="farms-and-farm-roles">
 <h2>Farms and Farm Roles<a class="headerlink" href="#farms-and-farm-roles" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
 <p>A Farm is the collection of Roles, Orchestration rules, network configuration, cloud services and much more that defines the desired deployment state of a cloud based system. A Farm can include any number of Roles that work together to provide a service, such as a basic 3-tier app that includes a load balancer, a web app layer and a database layer. The Farm can include all the required automation to bootstrap servers with the required software and auto discover the related services being provided by other roles, e.g. registering web app servers with the load balancer.</p>
-<p>When a Role is added to a Farm this is known as a “Farm Role”. It inherits all the attributes of the Role itself but extends the configuration to include selection of clouds, locations, network, security groups etc. In other words it turns a role into something that can actually be deployed as a functioning server in the cloud. The Farm Role can also be parameterised through the use of Global Variables to enable end users to make choices about certain aspects of the deployment at the time it is launched</p>
+<p>When a Role is added to a Farm this is known as a “Farm Role”. It inherits all the attributes of the Role itself but extends the configuration to include selection of clouds, locations, network, security groups, additional orchestration   rules etc. In other words it turns a role into something that can actually be deployed as a functioning server in the cloud. The Farm Role can also be parameterised through the use of Global Variables to enable end users to make choices about certain aspects of the deployment at the time it is launched</p>
 <div class="section" id="desired-state-engine">
 <h3>Desired State Engine<a class="headerlink" href="#desired-state-engine" title="Permalink to this headline">¶</a></h3>
 <p>The underlying principle behind a Farm configuration is that it defines the desired state of a deployment. When a Farm is launched Scalr’s Desired State Engine (DSE) begins a continuous cycle of monitoring the cloud infrastructure to determine if the Farm is in the desired state or not. If any variance from the desired state is identified Scalr will take action to address this. At initial launch this will cause all the required servers to be started. During later cycles the DSE may detect the need to both stop and start servers. If a Farm is reconfigured to reduce the maximum number of servers for a role then any extra servers will be terminated. This can also happen with Auto Scaling as demand changes.</p>
@@ -667,14 +671,16 @@
 <p class="first admonition-title">Warning</p>
 <p class="last">Reconfiguring a running farm can result in servers being stopped and started. Take great care when reconfiguring farms that are for business critical services.</p>
 </div>
+<p>For details on configuring Farms and Farm Roles see <a class="reference internal" href="../farms/index.html#farms"><span class="std std-ref">Farm Configuration</span></a>.</p>
 </div>
 </div>
 <div class="section" id="service-catalog-and-applications">
 <h2>Service Catalog and Applications<a class="headerlink" href="#service-catalog-and-applications" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
-<p>Scalr provides a cloud self service capability through the Service Catalog. Non IT users can be give Service Catalog access to Scalr to enable them to request and launch pre-configured applications and services at the click of a button. A Service Catalog entry is simply a service offering that has been created from a fully developed and tested Farm. Developers can publish their Farm at any time to enable other teams and users to requests Applications from these Service Catalog entries and thereby rapidly deploy cloud services without the complexity of making requests through Central IT. The Service Catalog based applications are controlled by the Policy Engine and ACL’s in the same way as the original Farms.</p>
+<p>Scalr provides a cloud self service capability through the Service Catalog. Non IT users can be given Service Catalog access to Scalr to enable them to request and launch pre-configured applications and services at the click of a button. A Service Catalog entry is simply a service offering that has been created from a fully developed and tested Farm. Developers can publish their Farm at any time to enable other teams and users to request Applications from these Service Catalog entries, and thereby rapidly deploy cloud services without the complexity of making requests through Central IT. The Service Catalog based applications are controlled by the governance and security policies in the <a class="reference internal" href="#policy-engine-intro"><span class="std std-ref">Policy Engine</span></a> in the same way as the original Farms.</p>
 <p>Service Catalog offerings can also be parameterised to allow end users some limited choices when requesting an applications, such as which cloud and locations to use, choice of instance sizes and networks etc.</p>
 <p>Service Catalog offerings are publish at the Environment scope but can be prompted to Account and Scalr scope.</p>
+<p>For details on publishing Service Catalog offerings see <a class="reference internal" href="../farms/service_catalog.html#service-catalog"><span class="std std-ref">Service Catalog Offerings</span></a>.</p>
 </div>
 <div class="section" id="cost-analytics-manager">
 <h2>Cost Analytics/Manager<a class="headerlink" href="#cost-analytics-manager" title="Permalink to this headline">¶</a></h2>
@@ -686,9 +692,9 @@
 </ul>
 <blockquote>
 <div><ul class="simple">
-<li>Definition of Cost Centers and Projects for aligning expenditure to organisational budgets</li>
-<li>Custom Price Lists for internal clouds and to override default price lists from public clouds</li>
-<li>Conditional price Markups to allow the addition of cost overheads to per instance for internal cross charging</li>
+<li>Definition of Cost Centers and Projects for aligning expenditure to organisational budgets.</li>
+<li>Custom Price Lists for internal clouds and to override default price lists from public clouds.</li>
+<li>Conditional price Markups to allow the addition of cost overheads to per instance.</li>
 <li>Definition of Budgets and associated notifications to enable close control of expenditure.</li>
 <li>Comprehensive reporting across all accounts and environments.</li>
 </ul>
@@ -708,9 +714,10 @@
 <li>Environment Scope only has reporting capability limited to the individual Environment and it’s Farms.</li>
 </ul>
 <p><strong>Cost Manager</strong> is a new feature that is currently under development and released in preview mode only. Cost Manager’s role will be to take cost management to the next level by providing guidance on right sizing and ultimately provide the ability to automate right sizing and cost saving actions.</p>
+<p>For more details on the cost control features of Scalr see <a class="reference internal" href="../cost/index.html#cost-control"><span class="std std-ref">Cost Control Overview</span></a>.</p>
 </div>
 <div class="section" id="policy-engine">
-<h2>Policy Engine<a class="headerlink" href="#policy-engine" title="Permalink to this headline">¶</a></h2>
+<span id="policy-engine-intro"></span><h2>Policy Engine<a class="headerlink" href="#policy-engine" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></p>
 <p>The Policy Engine is the Core of Scalr’s ability to ensure consistent and repeatable implementation of governance, compliance and security policies across all accounts and environments. The Scalr Policy Engine sits between users and the clouds, validating their actions but at the same time allowing users to continue to take advantage of the speed and flexibility enabled by Cloud services, without increasing risk for your organization.  Scalr lets you enforce policies for an entire Environment, such as restricting instance types, restricting networks or mandating security requirements.  Each policy is defined by its type, which describes the goal of the policy, optional conditions that limit the scope this policy will apply to, and for some policy types that need it, additional configuration settings.</p>
 <p>When you provision a new Policy Group in an Environment, all user interaction with Scalr will be validated by the Policy Engine.  We also validate all actions from Scalr to clouds with the policy engine as well.  New Policies do not automatically apply to running farms. They will only be fully taken into account for Farms launched after the enforcement of the policy.  For previously running Farms, Scalr will not terminate existing instances that violate newly enforced Policies, but will not allow for violation of the policy in the future.</p>
@@ -718,32 +725,38 @@
 <p class="first admonition-title">Note</p>
 <p class="last">Example: If a policy disables t1.micro instance type in an environment but a Farm has a Farm Role configured to use this type, existing servers will not be terminated but no new instances will be launched until configuration is updated to an allowed instance type.  If there is autoscaling configured, Scalr will throw an error stating that the instance type is not allowed.</p>
 </div>
+<p>For details on configuring the Policy Engine see <a class="reference internal" href="../sec_comp/policies.html#policy-engine"><span class="std std-ref">Policy Engine</span></a>.</p>
 </div>
 <div class="section" id="users-teams-and-access-control">
 <h2>Users, Teams and Access Control<a class="headerlink" href="#users-teams-and-access-control" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></p>
 <p>Users, Teams and Access Control Lists (ACLs) are the authorization and functional control components of Scalr.</p>
-<p><strong>Access Control Lists</strong> define the functional aspects of Scalr that are available to individual Teams. ACLs can range from granting full access to everything, though total Read Only access and on to very limited functionality, such as for a Service Catalog user.</p>
+<p><strong>Access Control Lists</strong> define the functional aspects of Scalr that are available to individual Teams. ACLs can range from granting full access to everything, through total Read Only access and on to very limited functionality, such as for a Service Catalog user.</p>
 <p>[pictures]</p>
 <p><strong>Teams</strong> group users together to provide them with access to environments and to apply a common ACL to all team members. Users can belong to multiple teams.</p>
 <p><strong>Users</strong> are individuals who login to Scalr. Users can be designated as Administrators which will give them access to the Scalr scope. Users can either be authenticated within Scalr or Scalr can be configured to authenticate against an external system via LDAP or SAML. A user is a unique entity in Scalr and can be given access to multiple accounts and multiple environments via team membership.</p>
+<p>For details on configuring Users, Teams and ACL’s see <a class="reference internal" href="../gs_admins/index.html#users-teams"><span class="std std-ref">Configuring Users, Teams and ACLs</span></a>.</p>
 </div>
 <div class="section" id="global-variables">
 <h2>Global Variables<a class="headerlink" href="#global-variables" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a> <a class="reference internal" href="../_images/scope_farm.png"><img alt="SCOPE_FARM" src="../_images/scope_farm.png" style="width: 26.8px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></p>
 <p>Global Variables are a key value store built in to Scalr and are stored encrypted in the main Scalr database. They are used to pass configuration data from the Scalr User Interface down to your Servers. Global Variables can be defined at all scopes of Scalr. They can be defined as simple single values, validation lists or JSON objects.</p>
 <p>Within the Scalr UI certain fields support Global Variable Interpolation. These fields can be set with the name of a Global Variable rather than an actual value. The actual value used is then determined from Global Variable at the time of execution, e.g. when launching a farm. Fields that support Global Variable Interpolation are marked with <img alt="GVI" src="../_images/gvi.png" /> .</p>
+<p>For details on configuring Global Variables see <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a>.</p>
 </div>
 <div class="section" id="orchestration">
 <h2>Orchestration<a class="headerlink" href="#orchestration" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a> <a class="reference internal" href="../_images/scope_farm.png"><img alt="SCOPE_FARM" src="../_images/scope_farm.png" style="width: 26.8px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></p>
 <p>Orchestration is the process of provisioning, configuring and managing servers in the cloud. In it’s simplest form orchestration is just the act of provisioning and starting a server from a given Image and later terminating that server. However Scalr provides a sophisticated Orchestration engine that defines rules for event based script execution, or scheduled execution of scripts on running servers. Through this engine the entire life cycle of a server can be customised by performing actions such as installing software on startup, performing service auto discovery and adjusting configs, scaling, external integrations and much more. There are more than 10 built in events that can trigger orchestration rules and all scopes can also define custom events that can be triggered via scripts, API calls and through the UI.</p>
 <p>Orchestration rules can be defined in Roles so that they apply to all related Farm Roles in any Farm. Additional Orchestration rules can also be defined on Farms and Farm Roles where they they have the added capability to execute scripts in servers for other Farm Roles within the Farm.</p>
+<p>For details on configuring orchestration in Roles see <a class="reference internal" href="../images_roles/orchestration.html#role-orchestration"><span class="std std-ref">Role Orchestration</span></a>.
+For details on configuring orchestration in Farms and Farm Roles see <a class="reference internal" href="../farms/index.html#farms"><span class="std std-ref">Farm Configuration</span></a>.</p>
 </div>
 <div class="section" id="scripts">
 <h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a> <a class="reference internal" href="../_images/scope_farm.png"><img alt="SCOPE_FARM" src="../_images/scope_farm.png" style="width: 26.8px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></p>
-<p>Scripts in Scalr are used in conjunction with Orchestration and can also be executed on a on-off basis if required. Scripts can perform ANY action that is valid within the context that they are run and can be written in any scripting language including shell, python, perl and Power Shell (for Windows). They are written exactly as you would normally write scripts, and they have access to all the Global Variables that exist within the context of the Farm Role that the target server is running in. Scripts can be defined</p>
+<p>Scripts in Scalr are used in conjunction with Orchestration and can also be executed on a on-off basis if required. Scripts can perform ANY action that is valid within the context that they are run and can be written in any scripting language including shell, python, perl and Power Shell (for Windows). They are written exactly as you would normally write scripts, and they have access to all the Global Variables that exist within the context of the Farm Role that the target server is running in. Scripts can be defined at all scopes within Scalr.</p>
+<p>For details on working with Scripts see <a class="reference internal" href="../scripts/index.html#scripts"><span class="std std-ref">Scripts</span></a>.</p>
 </div>
 <div class="section" id="webhooks-endpoints-and-external-integrations">
 <h2>Webhooks, Endpoints and External Integrations<a class="headerlink" href="#webhooks-endpoints-and-external-integrations" title="Permalink to this headline">¶</a></h2>
@@ -809,10 +822,7 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {
