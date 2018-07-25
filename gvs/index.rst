@@ -105,12 +105,12 @@ Ruby:
 Using Global Variables in Policies
 ----------------------------------
 
-Another powerful use of Global Variables is to use them in policy. We commonly see them used in a tagging or naming policies. To do this, go to Policy at the |Account| scope:
+Another powerful use of Global Variables is to use them in policy. A common use case is to use them in conjunction with tagging or naming policies. To do this, go to Policy at the |Account| scope:
 
 .. image:: images/policy_account.png
    :scale: 70%
 
-In this example, I am going to create a tagging policy in the cloud provider which will have a tag name of "scalr_tag" and the tag value will be the value of a Global Variable named "MyGlobalVariable". Based on the brackets {} being around the value, Scalr knows to pull that as a Global Variable and insert that value into the cloud provider.
+In the example below, a tagging policy is created in the cloud provider which will have a tag name of "scalr_tag" and the tag value will be the value of a Global Variable named "MyGlobalVariable". Based on the brackets {} being around the value, Scalr knows to pull that as a Global Variable and insert that value into the cloud provider.
 
 .. image:: images/gv_tag_policy.png
    :scale: 70%
@@ -120,13 +120,13 @@ This same concept can be used for other policies that allow for free form input,
 Examining Global Variables in Servers
 -------------------------------------
 
-So far we have seen how Global Variables can be used within the Scalr UI, scripts, and policies. Global Variables can also be referenced while working within the operating system by using the Scalarizr agent admin command: ``szradm``. For more information click on this link: **NEED TO ADD LINK***
+Global Variables can also be referenced while working within the operating system by using the Scalarizr agent admin command: ``szradm``. For more information click on this link: **NEED TO ADD LINK***
 
 
 Built-in Scalr Variables
 ------------------------
 
-All of the variables above have been Global Variables that are provided by either an admin or user input. Scalr can also automatically define a certain amount of "built-in" Global Variables, and inject them in the server Scope. These Global Variables are always available, and they are prefixed with "SCALR" to avoid collisions with your own variables. Here is the list of the variables that can be accessed the same way as Global Variables:
+All of the variables above have been Global Variables that are provided by either an admin or user input. Scalr can also automatically define a certain amount of "built-in" Global Variables and inject them in the server Scope. These Global Variables are always available and they are prefixed with "SCALR" to avoid collisions with your own variables. Here is the list of the variables that can be accessed the same way as Global Variables:
 
 Server Scope Built-In Variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

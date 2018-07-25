@@ -616,19 +616,19 @@
 </div>
 <div class="section" id="using-global-variables-in-policies">
 <h2>Using Global Variables in Policies<a class="headerlink" href="#using-global-variables-in-policies" title="Permalink to this headline">¶</a></h2>
-<p>Another powerful use of Global Variables is to use them in policy. We commonly see them used in a tagging or naming policies. To do this, go to Policy at the Account scope:</p>
+<p>Another powerful use of Global Variables is to use them in policy. A common use case is to use them in conjunction with tagging or naming policies. To do this, go to Policy at the Account scope:</p>
 <a class="reference internal image-reference" href="../_images/policy_account.png"><img alt="../_images/policy_account.png" src="../_images/policy_account.png" style="width: 307.29999999999995px; height: 442.4px;" /></a>
-<p>In this example, I am going to create a tagging policy in the cloud provider which will have a tag name of “scalr_tag” and the tag value will be the value of a Global Variable named “MyGlobalVariable”. Based on the brackets {} being around the value, Scalr knows to pull that as a Global Variable and insert that value into the cloud provider.</p>
+<p>In the example below, a tagging policy is created in the cloud provider which will have a tag name of “scalr_tag” and the tag value will be the value of a Global Variable named “MyGlobalVariable”. Based on the brackets {} being around the value, Scalr knows to pull that as a Global Variable and insert that value into the cloud provider.</p>
 <a class="reference internal image-reference" href="../_images/gv_tag_policy.png"><img alt="../_images/gv_tag_policy.png" src="../_images/gv_tag_policy.png" style="width: 476.7px; height: 484.4px;" /></a>
 <p>This same concept can be used for other policies that allow for free form input, like hostname and instance name policies.</p>
 </div>
 <div class="section" id="examining-global-variables-in-servers">
 <h2>Examining Global Variables in Servers<a class="headerlink" href="#examining-global-variables-in-servers" title="Permalink to this headline">¶</a></h2>
-<p>So far we have seen how Global Variables can be used within the Scalr UI, scripts, and policies. Global Variables can also be referenced while working within the operating system by using the Scalarizr agent admin command: <code class="docutils literal notranslate"><span class="pre">szradm</span></code>. For more information click on this link: <strong>NEED TO ADD LINK*</strong></p>
+<p>Global Variables can also be referenced while working within the operating system by using the Scalarizr agent admin command: <code class="docutils literal notranslate"><span class="pre">szradm</span></code>. For more information click on this link: <strong>NEED TO ADD LINK*</strong></p>
 </div>
 <div class="section" id="built-in-scalr-variables">
 <h2>Built-in Scalr Variables<a class="headerlink" href="#built-in-scalr-variables" title="Permalink to this headline">¶</a></h2>
-<p>All of the variables above have been Global Variables that are provided by either an admin or user input. Scalr can also automatically define a certain amount of “built-in” Global Variables, and inject them in the server Scope. These Global Variables are always available, and they are prefixed with “SCALR” to avoid collisions with your own variables. Here is the list of the variables that can be accessed the same way as Global Variables:</p>
+<p>All of the variables above have been Global Variables that are provided by either an admin or user input. Scalr can also automatically define a certain amount of “built-in” Global Variables and inject them in the server Scope. These Global Variables are always available and they are prefixed with “SCALR” to avoid collisions with your own variables. Here is the list of the variables that can be accessed the same way as Global Variables:</p>
 <div class="section" id="server-scope-built-in-variables">
 <h3>Server Scope Built-In Variables<a class="headerlink" href="#server-scope-built-in-variables" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="docutils">
