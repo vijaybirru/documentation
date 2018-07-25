@@ -130,7 +130,7 @@ This same concept can be used for other policies that allow for free form input,
 Examining Global Variables in Servers
 -------------------------------------
 
-Global Variables can also be referenced while working within the operating system by using the Scalarizr agent admin command: ``szradm``. For more information click on this link: **NEED TO ADD LINK***
+Global Variables can also be referenced while working within the operating system by using the Scalarizr agent admin command: ``szradm``. To find out more, go to the :ref:`szradm` in the Scalarizr section of the documentation.
 
 
 Built-in Scalr Variables
