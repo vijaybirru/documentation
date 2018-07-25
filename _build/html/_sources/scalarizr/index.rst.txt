@@ -12,6 +12,8 @@ Monitoring Scalarizr
 Updating the Scalarizr Agent
 ----------------------------
 
+.. _szradm:
+
 Scalarizr Administrative Interface
 ==================================
 
