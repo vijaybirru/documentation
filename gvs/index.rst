@@ -19,6 +19,14 @@ Global Variables are multi-purpose key value store objects that can be used for 
 
 Global Variables are encrypted in the Scalr database and can also be pulled down from the Scalr server by the Scalarizr agent when needed.
 
+When accessing a Global Variable, Scalr follows the following algorithm:
+
+* If the variable exists in the Scope you're trying to access, it will be returned
+* If the variable does not exist in the Scope you're trying to access, or has an empty value, its parent scopes will be inspected to attempt returning the value
+
+.. note::
+   Note that the Farm Role Scope has two parents: the Farm Scope and the Role Scope. The Farm Scope is prioritized over the Role Scope.
+
 Creating Global Variables
 -------------------------
 
@@ -209,13 +217,69 @@ Server Scope Built-In Cost Variables
 +========================+===========================================================================================================================+=================================================+
 | SCALR_COST_CENTER_ID   | The ID of the Cost Center this Server is associated with (through the Project the Farm it belongs to is associated with). | c3146a74-3135-451e-b09e-d9882965d57f            |
 +------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
-| SCALR_COST_CENTER_BC   | The Billing Code of the Cost Center this Server is associated with.                                                       | CLOUD-EUROPE                                    |
+| SCALR_COST_CENTER_BC   | The Billing Code of the Cost Center this Server is associated with.                                                       | BU-1-code                                       |
 +------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
-| SCALR_COST_CENTER_NAME | The Name of the Cost Center this Server is associated with.                                                               | Europe Cloud Infrastructure                     |
+| SCALR_COST_CENTER_NAME | The Name of the Cost Center this Server is associated with.                                                               | Businesses Unit A                               |
 +------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
 | SCALR_PROJECT_ID       | The ID of the Project this Server is associated with (through the Farm it belongs to ).                                   | 05650aa6-e472-4bae-8532-c57503eb5bb4            |
 +------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
-| SCALR_PROJECT_BC       | The Billing Code of the Project this Server is associated with (through the Farm it belongs to).                          | CLOUD-EUROPE-IDENTITY                           |
+| SCALR_PROJECT_BC       | The Billing Code of the Project this Server is associated with (through the Farm it belongs to).                          | Application-123                                 |
 +------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
 | SCALR_PROJECT_NAME     | The Name of the Project this Server is associated with (through the Farm it belongs to ).                                 | Europe Cloud Identity Management Infrastructure |
 +------------------------+---------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------+
+
+Scalr UI Default Global Variables
+---------------------------------
+
+The following special Global Variables can be used to set default behavior of your Farm Roles in the |Account|, |Environment|, or Role scopes. An example of when to use a UI default variable is if you have an environment in which you know that no servers should be auto-scaled, you can set SCALR_UI_DEFAULT_AUTO_SCALING to "0" at the |Environment| level and all farms will inherently have auto-scaling disabled by default.
+
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| Name                                                           | Accepted value(s)    | Description                                                                                                                           |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_AWS_EC2_INITIATED_SHUTDOWN_BEHAVIOR           | stop/terminate       | "AWS EC2 instance initiated shutdown behavior is suspend (""stop"") or terminate (""terminate"")."                                    |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_STORAGE_RE_USE                                | 0/1                  | Reuse block storage device if an instance is replaced.                                                                                |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_REBOOT_AFTER_HOST_INIT                        | 0/1                  | Reboot after HostInit Scripts have executed.                                                                                          |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_AUTO_SCALING                                  | 0/1                  | Auto-scaling is disabled (0) or enabled (1).                                                                                          |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_ABORT_INITIALIZATION_ON_ORCHESTRATION_FAILURE | 0/1                  | Abort Server initialization when a Blocking HostInit or BeforeHostUp Script fails (non-zero exit code).                               |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_{PLATFORM}_LOCATION                           | "us-east-1           | Location for a cloud platform.  Value must be valid for the cloud platform.                                                           |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_{PLATFORM}_INSTANCE_TYPE                      | "t2.small            | Location for a cloud platform.  Value must be valid for the cloud platform.                                                           |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_CHEF_SERVER                                   | chef.example.com     | Chef server for Chef-bootstrapped Roles.                                                                                              |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_AZURE_RESOURCE_GROUP                          | ExampleResourceGroup | Resource Group for Azure Roles.                                                                                                       |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_AWS_SUBNETS                                   | subnet-6407ef00      | Subnets for AWS EC2 Roles.                                                                                                            |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_AWS_EC2_SECURITY_GROUPS                       | sg-0f0c4e68          | Security Groups for AWS EC2 Roles.                                                                                                    |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_INITIALIZATION_TIMEOUT                        | Integer              | Terminate instance if it will not send 'hostInit' or 'hostUp' event after launch in the defined time frame. Value defined in seconds. |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_AWS_RDS_MAINTENANCE_WINDOW                    | dd:hh:mm - dd:hh:mm  | Set the preferred maintenance window for AWS RDS. dd defines day of the week (mon-sun)                                                |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_AWS_RDS_BACKUP_WINDOW                         | hh:mm - hh:mm        | Set the preferred backup window for AWS RDS.                                                                                          |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_AWS_RDS_BACKUP_RETENTION_PERIOD               | Integer              | Period of days to retain backup.  Value defined in days.                                                                              |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_AWS_EC2_KMS_KEY                               | example-key          | Default KMS key for EBS Volume                                                                                                        |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_AWS_RDS_KMS_KEY                               | example-key          | Default KMS key for RDS                                                                                                               |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_DISABLE_NTP_MANAGEMENT                        | 0/1                  | "Scalarizr agent NTP management is enabled by default. (0) .  To Disable NTP management                                               |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_AWS_IAM_INSTANCE_PROFILE                      | iam-profile-1        | The default IAM profile to use                                                                                                        |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_GCE_PUBLIC_IP_USAGE                           | 0/1                  | Sets public IPs on all instances or none.                                                                                             |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_AWS_EFS_KMS_KEY                               | example-key          | The KMS key alias or the full ARN for an encrypted Elastic File System.                                                               |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+| SCALR_UI_DEFAULT_GCE_SERVICE_ACCOUNT                           | service-account      | The default GCE service account to use.                                                                                               |
++----------------------------------------------------------------+----------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+   If a default GV violates a Governance Policy, it will be ignored.

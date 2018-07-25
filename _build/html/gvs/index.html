@@ -355,6 +355,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#server-scope-built-in-cost-variables">Server Scope Built-In Cost Variables</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#scalr-ui-default-global-variables">Scalr UI Default Global Variables</a></li>
 </ul>
 </li>
 </ul>
@@ -529,6 +530,15 @@
 <li>Etc</li>
 </ul>
 <p>Global Variables are encrypted in the Scalr database and can also be pulled down from the Scalr server by the Scalarizr agent when needed.</p>
+<p>When accessing a Global Variable, Scalr follows the following algorithm:</p>
+<ul class="simple">
+<li>If the variable exists in the Scope you’re trying to access, it will be returned</li>
+<li>If the variable does not exist in the Scope you’re trying to access, or has an empty value, its parent scopes will be inspected to attempt returning the value</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that the Farm Role Scope has two parents: the Farm Scope and the Role Scope. The Farm Scope is prioritized over the Role Scope.</p>
+</div>
 </div>
 <div class="section" id="creating-global-variables">
 <h2>Creating Global Variables<a class="headerlink" href="#creating-global-variables" title="Permalink to this headline">¶</a></h2>
@@ -796,11 +806,11 @@
 </tr>
 <tr class="row-odd"><td>SCALR_COST_CENTER_BC</td>
 <td>The Billing Code of the Cost Center this Server is associated with.</td>
-<td>CLOUD-EUROPE</td>
+<td>BU-1-code</td>
 </tr>
 <tr class="row-even"><td>SCALR_COST_CENTER_NAME</td>
 <td>The Name of the Cost Center this Server is associated with.</td>
-<td>Europe Cloud Infrastructure</td>
+<td>Businesses Unit A</td>
 </tr>
 <tr class="row-odd"><td>SCALR_PROJECT_ID</td>
 <td>The ID of the Project this Server is associated with (through the Farm it belongs to ).</td>
@@ -808,7 +818,7 @@
 </tr>
 <tr class="row-even"><td>SCALR_PROJECT_BC</td>
 <td>The Billing Code of the Project this Server is associated with (through the Farm it belongs to).</td>
-<td>CLOUD-EUROPE-IDENTITY</td>
+<td>Application-123</td>
 </tr>
 <tr class="row-odd"><td>SCALR_PROJECT_NAME</td>
 <td>The Name of the Project this Server is associated with (through the Farm it belongs to ).</td>
@@ -816,6 +826,115 @@
 </tr>
 </tbody>
 </table>
+</div>
+</div>
+<div class="section" id="scalr-ui-default-global-variables">
+<h2>Scalr UI Default Global Variables<a class="headerlink" href="#scalr-ui-default-global-variables" title="Permalink to this headline">¶</a></h2>
+<p>The following special Global Variables can be used to set default behavior of your Farm Roles in the Account, Environment, or Role scopes. An example of when to use a UI default variable is if you have an environment in which you know that no servers should be auto-scaled, you can set SCALR_UI_DEFAULT_AUTO_SCALING to “0” at the Environment level and all farms will inherently have auto-scaling disabled by default.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="10%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Name</td>
+<td>Accepted value(s)</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_EC2_INITIATED_SHUTDOWN_BEHAVIOR</td>
+<td>stop/terminate</td>
+<td>“AWS EC2 instance initiated shutdown behavior is suspend (“”stop”“) or terminate (“”terminate”“).”</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_STORAGE_RE_USE</td>
+<td>0/1</td>
+<td>Reuse block storage device if an instance is replaced.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_REBOOT_AFTER_HOST_INIT</td>
+<td>0/1</td>
+<td>Reboot after HostInit Scripts have executed.</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_AUTO_SCALING</td>
+<td>0/1</td>
+<td>Auto-scaling is disabled (0) or enabled (1).</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_ABORT_INITIALIZATION_ON_ORCHESTRATION_FAILURE</td>
+<td>0/1</td>
+<td>Abort Server initialization when a Blocking HostInit or BeforeHostUp Script fails (non-zero exit code).</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_{PLATFORM}_LOCATION</td>
+<td>“us-east-1</td>
+<td>Location for a cloud platform.&nbsp; Value must be valid for the cloud platform.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_{PLATFORM}_INSTANCE_TYPE</td>
+<td>“t2.small</td>
+<td>Location for a cloud platform.&nbsp; Value must be valid for the cloud platform.</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_CHEF_SERVER</td>
+<td>chef.example.com</td>
+<td>Chef server for Chef-bootstrapped Roles.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AZURE_RESOURCE_GROUP</td>
+<td>ExampleResourceGroup</td>
+<td>Resource Group for Azure Roles.</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_AWS_SUBNETS</td>
+<td>subnet-6407ef00</td>
+<td>Subnets for AWS EC2 Roles.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_EC2_SECURITY_GROUPS</td>
+<td>sg-0f0c4e68</td>
+<td>Security Groups for AWS EC2 Roles.</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_INITIALIZATION_TIMEOUT</td>
+<td>Integer</td>
+<td>Terminate instance if it will not send ‘hostInit’ or ‘hostUp’ event after launch in the defined time frame. Value defined in seconds.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_RDS_MAINTENANCE_WINDOW</td>
+<td>dd:hh:mm - dd:hh:mm</td>
+<td>Set the preferred maintenance window for AWS RDS. dd defines day of the week (mon-sun)</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_AWS_RDS_BACKUP_WINDOW</td>
+<td>hh:mm - hh:mm</td>
+<td>Set the preferred backup window for AWS RDS.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_RDS_BACKUP_RETENTION_PERIOD</td>
+<td>Integer</td>
+<td>Period of days to retain backup.  Value defined in days.</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_AWS_EC2_KMS_KEY</td>
+<td>example-key</td>
+<td>Default KMS key for EBS Volume</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_RDS_KMS_KEY</td>
+<td>example-key</td>
+<td>Default KMS key for RDS</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_DISABLE_NTP_MANAGEMENT</td>
+<td>0/1</td>
+<td>“Scalarizr agent NTP management is enabled by default. (0) .  To Disable NTP management</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_IAM_INSTANCE_PROFILE</td>
+<td>iam-profile-1</td>
+<td>The default IAM profile to use</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_GCE_PUBLIC_IP_USAGE</td>
+<td>0/1</td>
+<td>Sets public IPs on all instances or none.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_EFS_KMS_KEY</td>
+<td>example-key</td>
+<td>The KMS key alias or the full ARN for an encrypted Elastic File System.</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_GCE_SERVICE_ACCOUNT</td>
+<td>service-account</td>
+<td>The default GCE service account to use.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If a default GV violates a Governance Policy, it will be ignored.</p>
 </div>
 </div>
 </div>
