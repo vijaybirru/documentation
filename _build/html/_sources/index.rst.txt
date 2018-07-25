@@ -79,10 +79,12 @@ Scalr Documentation!
 
 .. toctree::
    :maxdepth: 3
-   :caption: Customised Configuration in Scalr
+   :caption: Configuration Management in Scalr
 
    scripts/index
    gvs/index
+   chef/index
+   ansible/index
 
 .. toctree::
    :maxdepth: 3
