@@ -1,6 +1,164 @@
-.. include ../GLOBAL.rst
+.. include:: ../GLOBAL.rst
 
 .. _navigating:
 
 Navigating the User Interface
 =============================
+
+This section provides a guide to the Scalr User Interface. It will show you how the various functional features of the UI, but it will NOT show you every feature of Scalr.
+
+The details of the UI, including the menu buttons and functionality, will vary according to the Scope you are logged in to, and the permissions you have been granted via :ref:`access_control`. This section of the documentation will show screen shots and examples based on a user having full access to Scalr at the |ENVIRONMENT| Scope. If you do not see all the options shown in these examples when you login to Scalr please contact your administrator.
+
+
+.. |SAV1| image:: images/save_1.png
+
+.. |SAV2| image:: images/save_2.png
+
+.. |SAV3| image:: images/save_3.png
+
+.. note:: DO NOT FORGET TO SAVE. When you are creating or editing anything in Scalr you must always click on the appropriate "Save" button. The button will either be located at the bottom of the screen, or the bottom of a pop-up dialogue. The Save button can appear in different formats, including have an associated options drop down. |SAV1| |SAV2| |SAV3|
+
+.. |REFRESH| image:: images/refresh.png
+
+.. warning:: The Scalr UI is highly optimised to provide fast response times and rapid loading of data, especially lists of items such as Images, Roles, Farms etc. Every list has a refresh button |REFRESH|. For an optimal experience always use the list refresh button to refresh the list rather than your browsers page refresh option.
+
+Scope Differences
+-----------------
+
+Aside from functionality the only difference between the UI for each scope is the colour as shown in these examples of the Bookmark Bar.
+
+.. |SB| image:: images/scalr.png
+
+.. |AB| image:: images/account.png
+
+.. |EB| image:: images/environment.png
+
+============= ==============================================================================
+Scope         Colour
+============= ==============================================================================
+|SCALR|       |SB|
+|ACCOUNT|     |AB|
+|ENVIRONMENT| |EB|
+============= ==============================================================================
+
+UI Overview
+-----------
+
+This screen shot shows an overview of the entire UI.
+
+.. image:: images/ui-overview.png
+   :scale: 50%
+
+Main Menu
+---------
+|SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV|
+
+The Main Menu gives you access to all the functionality that is available to you. The Main Menu is opened by clicking on |MENU_ENV| in the top left corner.
+
+The menu can be filtered by typing text into the filter box at the top. This will reduce the menu down to to items that include that text at any level in the menu. As you can see from this example, typing "server" in the filter reveals top level items that have sub-menu's containing the word "server".
+
+.. image:: images/mm-filter.png
+
+Bookmarks Bar
+-------------
+|SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV|
+
+The Bookmarks Bar provides quick access to commonly used menu items. It defaults to the items shown in the table above but can easily be edited to include the items most relevant to you.
+
+You can edit the contents of the bookmarks bar in two ways.
+
+**Pin a Menu Item**
+
+.. |PIN| image:: images/pin.png
+         :scale: 50%
+
+When you select an item from the Main Menu that is not already in the Bookmarks Bar, it will be temporarily added to the Bookmarks Bar until you select a different menu item.
+Temporary bookmark items have an associated pin button |PIN|. Click the pin to add the item to the Bookmarks Bar permanently.
+
+.. image:: images/pin_1.png
+
+.. image:: images/pin_2.png
+
+**Edit and Re-Order Via Settings**
+
+To remove or re-order Bookmarks Bar items you must navigate to settings. Click on the profile menu icon top right and select settings.
+
+.. image:: images/settings_1.png
+           :scale: 50%
+
+* Remove bookmarks by clicking the "x" next to the name.
+* Re-order the bookmarks by dragging and dropping
+* Suppress the confirmation if desired.
+
+.. image:: images/settings_2.png
+           :scale: 50%
+
+Click "Save" at the bottom of the screen when done.
+
+Profile Menu
+------------
+|SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV|
+
+.. image:: images/settings_1.png
+           :scale: 50%
+
+The Profile menu also gives access to some security and UI related features.
+
+================= ======
+**API access**    The API Access option can be used to enable API Access and to obtain an API Key ID and Access Key ID for configuring the Scalr API.
+                  API Key's only provide access at the Scope they are created at and scopes below that. See :ref:`api` for more details.
+**Security**      The Security option can be used to make password changes and for creating an IP Access Whitelist.
+**Settings**      The Settings option can be used to make profile changes, attach an avatar, configure RSS Feed for Logs, change timezones,
+                  configure the Dashboard, and for making Grid layout changes.
+**Logout**        The Logout option will log you out of your session at the current scope. If you logged into to an |ACCOUNT| from |SCALR| scope
+                  you will be taken back to you |SCALR| scope session.
+================= ======
+
+|Environments| Menu
+-------------------
+
+The |Environments| Menu is used to select and manage working |Environments| within an |ACCOUNT|. Click on an |ENVIRONMENT| within this menu to switch between your available |Environments|.
+
+The current working |ENVIRONMENT| will contain a dot as a visual indicator of the current selection, as shown below.
+Click on the green |ACCOUNT| name to be taken to the |ACCOUNT| Dashboard.
+If you have access to multiple |ACCOUNTS| you can use the "Switch |Accounts| " button to change to another |ACCOUNT|.
+
+.. image:: images/env_menu.png
+
+List Views
+----------
+
+Lists are used all over the Scalr UI and have a common layout that includes the Search/Action tool bar, column headings and the list itself.
+Some lists will have a "New ...." button as shown in this Images example.
+
+.. image:: images/list_1.png
+   :scale: 50%
+
+.. |ASET| image:: images/list_settings.png
+          :scale: 50%
+
+Some lists will include Action and a Settings |ASET| buttons as well.
+When a list is selected via the main menu it will show an unfiltered list as can be seen in this example list of Servers.
+
+.. image:: images/list_2.png
+   :scale: 50%
+
+List can also be navigated to from some other context and will be filtered according to the context. E.g the Servers list can be reached Farms list and will then only show the servers for that farm due to the pre-applied search filter.
+
+.. image:: images/list_farms.png
+   :scale: 50%
+
+.. image:: images/list_filtered.png
+   :scale: 50%
+
+Action buttons can appear in both the list tool bar and alongside each item in the list. The toolbar action buttons can be used to apply the same action to multiple items in the list. These action buttons will be greyed out until at least one item in the list is checked.
+
+.. |A1| image:: images/list_actions_grey.png
+
+.. |A2| image:: images/list_actions.png
+
+================= ==============
+No items selected Items selected
+================= ==============
+|A1|              |A2|
+================= ==============

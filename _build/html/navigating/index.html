@@ -212,7 +212,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#working-with-applications">Working with Applications</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Navigating the User Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Navigating the User Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#scope-differences">Scope Differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ui-overview">UI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main-menu">Main Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bookmarks-bar">Bookmarks Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#profile-menu">Profile Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environments-menu">Environments Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-views">List Views</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul>
@@ -499,6 +508,141 @@
             
   <div class="section" id="navigating-the-user-interface">
 <span id="navigating"></span><h1>Navigating the User Interface<a class="headerlink" href="#navigating-the-user-interface" title="Permalink to this headline">¶</a></h1>
+<p>This section provides a guide to the Scalr User Interface. It will show you how the various functional features of the UI, but it will NOT show you every feature of Scalr.</p>
+<p>The details of the UI, including the menu buttons and functionality, will vary according to the Scope you are logged in to, and the permissions you have been granted via <a class="reference internal" href="../sec_comp/acls.html#access-control"><span class="std std-ref">Access Control Lists</span></a>. This section of the documentation will show screen shots and examples based on a user having full access to Scalr at the Environment Scope. If you do not see all the options shown in these examples when you login to Scalr please contact your administrator.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">DO NOT FORGET TO SAVE. When you are creating or editing anything in Scalr you must always click on the appropriate “Save” button. The button will either be located at the bottom of the screen, or the bottom of a pop-up dialogue. The Save button can appear in different formats, including have an associated options drop down. <img alt="SAV1" src="../_images/save_1.png" /> <img alt="SAV2" src="../_images/save_2.png" /> <img alt="SAV3" src="../_images/save_3.png" /></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The Scalr UI is highly optimised to provide fast response times and rapid loading of data, especially lists of items such as Images, Roles, Farms etc. Every list has a refresh button <img alt="REFRESH" src="../_images/refresh.png" />. For an optimal experience always use the list refresh button to refresh the list rather than your browsers page refresh option.</p>
+</div>
+<div class="section" id="scope-differences">
+<h2>Scope Differences<a class="headerlink" href="#scope-differences" title="Permalink to this headline">¶</a></h2>
+<p>Aside from functionality the only difference between the UI for each scope is the colour as shown in these examples of the Bookmark Bar.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Scope</th>
+<th class="head">Colour</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Scalr</td>
+<td><img alt="SB" src="../_images/scalr1.png" /></td>
+</tr>
+<tr class="row-odd"><td>Account</td>
+<td><img alt="AB" src="../_images/account1.png" /></td>
+</tr>
+<tr class="row-even"><td>Environment</td>
+<td><img alt="EB" src="../_images/environment1.png" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ui-overview">
+<h2>UI Overview<a class="headerlink" href="#ui-overview" title="Permalink to this headline">¶</a></h2>
+<p>This screen shot shows an overview of the entire UI.</p>
+<a class="reference internal image-reference" href="../_images/ui-overview.png"><img alt="../_images/ui-overview.png" src="../_images/ui-overview.png" style="width: 801.0px; height: 641.0px;" /></a>
+</div>
+<div class="section" id="main-menu">
+<h2>Main Menu<a class="headerlink" href="#main-menu" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
+<p>The Main Menu gives you access to all the functionality that is available to you. The Main Menu is opened by clicking on <a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 35.0px; height: 22.0px;" /></a> in the top left corner.</p>
+<p>The menu can be filtered by typing text into the filter box at the top. This will reduce the menu down to to items that include that text at any level in the menu. As you can see from this example, typing “server” in the filter reveals top level items that have sub-menu’s containing the word “server”.</p>
+<img alt="../_images/mm-filter.png" src="../_images/mm-filter.png" />
+</div>
+<div class="section" id="bookmarks-bar">
+<h2>Bookmarks Bar<a class="headerlink" href="#bookmarks-bar" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
+<p>The Bookmarks Bar provides quick access to commonly used menu items. It defaults to the items shown in the table above but can easily be edited to include the items most relevant to you.</p>
+<p>You can edit the contents of the bookmarks bar in two ways.</p>
+<p><strong>Pin a Menu Item</strong></p>
+<p>When you select an item from the Main Menu that is not already in the Bookmarks Bar, it will be temporarily added to the Bookmarks Bar until you select a different menu item.
+Temporary bookmark items have an associated pin button <a class="reference internal" href="../_images/pin.png"><img alt="PIN" src="../_images/pin.png" style="width: 23.5px; height: 22.5px;" /></a>. Click the pin to add the item to the Bookmarks Bar permanently.</p>
+<img alt="../_images/pin_1.png" src="../_images/pin_1.png" />
+<img alt="../_images/pin_2.png" src="../_images/pin_2.png" />
+<p><strong>Edit and Re-Order Via Settings</strong></p>
+<p>To remove or re-order Bookmarks Bar items you must navigate to settings. Click on the profile menu icon top right and select settings.</p>
+<a class="reference internal image-reference" href="../_images/settings_1.png"><img alt="../_images/settings_1.png" src="../_images/settings_1.png" style="width: 100.0px; height: 144.0px;" /></a>
+<ul class="simple">
+<li>Remove bookmarks by clicking the “x” next to the name.</li>
+<li>Re-order the bookmarks by dragging and dropping</li>
+<li>Suppress the confirmation if desired.</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/settings_2.png"><img alt="../_images/settings_2.png" src="../_images/settings_2.png" style="width: 686.5px; height: 166.0px;" /></a>
+<p>Click “Save” at the bottom of the screen when done.</p>
+</div>
+<div class="section" id="profile-menu">
+<h2>Profile Menu<a class="headerlink" href="#profile-menu" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
+<a class="reference internal image-reference" href="../_images/settings_1.png"><img alt="../_images/settings_1.png" src="../_images/settings_1.png" style="width: 100.0px; height: 144.0px;" /></a>
+<p>The Profile menu also gives access to some security and UI related features.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="89%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>API access</strong></td>
+<td>The API Access option can be used to enable API Access and to obtain an API Key ID and Access Key ID for configuring the Scalr API.
+API Key’s only provide access at the Scope they are created at and scopes below that. See <a class="reference internal" href="../api/index.html#api"><span class="std std-ref">Scalr API and CLI</span></a> for more details.</td>
+</tr>
+<tr class="row-even"><td><strong>Security</strong></td>
+<td>The Security option can be used to make password changes and for creating an IP Access Whitelist.</td>
+</tr>
+<tr class="row-odd"><td><strong>Settings</strong></td>
+<td>The Settings option can be used to make profile changes, attach an avatar, configure RSS Feed for Logs, change timezones,
+configure the Dashboard, and for making Grid layout changes.</td>
+</tr>
+<tr class="row-even"><td><strong>Logout</strong></td>
+<td>The Logout option will log you out of your session at the current scope. If you logged into to an Account from Scalr scope
+you will be taken back to you Scalr scope session.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="environments-menu">
+<h2>Environments Menu<a class="headerlink" href="#environments-menu" title="Permalink to this headline">¶</a></h2>
+<p>The Environments Menu is used to select and manage working Environments within an Account. Click on an Environment within this menu to switch between your available Environments.</p>
+<p>The current working Environment will contain a dot as a visual indicator of the current selection, as shown below.
+Click on the green Account name to be taken to the Account Dashboard.
+If you have access to multiple accounts you can use the “Switch Accounts ” button to change to another Account.</p>
+<img alt="../_images/env_menu.png" src="../_images/env_menu.png" />
+</div>
+<div class="section" id="list-views">
+<h2>List Views<a class="headerlink" href="#list-views" title="Permalink to this headline">¶</a></h2>
+<p>Lists are used all over the Scalr UI and have a common layout that includes the Search/Action tool bar, column headings and the list itself.
+Some lists will have a “New ….” button as shown in this Images example.</p>
+<a class="reference internal image-reference" href="../_images/list_1.png"><img alt="../_images/list_1.png" src="../_images/list_1.png" style="width: 573.5px; height: 128.0px;" /></a>
+<p>Some lists will include Action and a Settings <a class="reference internal" href="../_images/list_settings.png"><img alt="ASET" src="../_images/list_settings.png" style="width: 25.5px; height: 17.0px;" /></a> buttons as well.
+When a list is selected via the main menu it will show an unfiltered list as can be seen in this example list of Servers.</p>
+<a class="reference internal image-reference" href="../_images/list_2.png"><img alt="../_images/list_2.png" src="../_images/list_2.png" style="width: 798.5px; height: 134.0px;" /></a>
+<p>List can also be navigated to from some other context and will be filtered according to the context. E.g the Servers list can be reached Farms list and will then only show the servers for that farm due to the pre-applied search filter.</p>
+<a class="reference internal image-reference" href="../_images/list_farms.png"><img alt="../_images/list_farms.png" src="../_images/list_farms.png" style="width: 798.0px; height: 223.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/list_filtered.png"><img alt="../_images/list_filtered.png" src="../_images/list_filtered.png" style="width: 798.0px; height: 72.0px;" /></a>
+<p>Action buttons can appear in both the list tool bar and alongside each item in the list. The toolbar action buttons can be used to apply the same action to multiple items in the list. These action buttons will be greyed out until at least one item in the list is checked.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="55%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">No items selected</th>
+<th class="head">Items selected</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><img alt="A1" src="../_images/list_actions_grey.png" /></td>
+<td><img alt="A2" src="../_images/list_actions.png" /></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
