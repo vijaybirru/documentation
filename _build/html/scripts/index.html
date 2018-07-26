@@ -152,7 +152,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../extensions/advanced_logging.html">Enable Advanced Logging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#fluentd-configuration">Fluentd Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#scalr-configuration">Scalr Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#log-examples">Log Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#agent">Agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#api">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#audit">Audit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#user">User</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -321,7 +329,19 @@
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management in Scalr</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Scripts</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-scripts">Creating Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#writing-a-script">Writing a Script</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#executing-scripts">Executing Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#farm-role-orchestration">Farm Role Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#manually-on-farms-farm-roles-or-servers">Manually On Farms, Farm Roles, or Servers</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../gvs/index.html">Global Variables</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#creating-global-variables">Creating Global Variables</a></li>
@@ -505,6 +525,175 @@
             
   <div class="section" id="scripts">
 <span id="id1"></span><h1>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="definition-and-scope">
+<h2>Definition and Scope<a class="headerlink" href="#definition-and-scope" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
+<p>Scripts can be used to automate various configuration items on the operating system that Scalr is provisioning. Scalr supports generic scripting, it is not a proprietary language.</p>
+</div>
+<div class="section" id="creating-scripts">
+<h2>Creating Scripts<a class="headerlink" href="#creating-scripts" title="Permalink to this headline">¶</a></h2>
+<p>Scripts can be created, updated, edited, or deleted at the Scalr, Account, or Environment scopes. To create a script you can click on the Scalr icon on the top left of any of the scopes, in this example it is at the Environment scope: <a class="reference internal" href="../_images/scalr_icon_env1.png"><img alt="SCALR_ICON" src="../_images/scalr_icon_env1.png" style="width: 55.3px; height: 33.599999999999994px;" /></a>
+Once you are in the scripts page, click on New Script:</p>
+<a class="reference internal image-reference" href="../_images/new_script.png"><img alt="../_images/new_script.png" src="../_images/new_script.png" style="width: 489.0px; height: 439.2px;" /></a>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="6%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item</th>
+<th class="head">Format</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>String</td>
+<td>Name of the script</td>
+</tr>
+<tr class="row-odd"><td>Description</td>
+<td>String</td>
+<td>Description of the script</td>
+</tr>
+<tr class="row-even"><td>Deprecated</td>
+<td>Binary</td>
+<td>Scripts can be deprecated to prevent further use</td>
+</tr>
+<tr class="row-odd"><td>Shared</td>
+<td>Binary</td>
+<td>Determines if a script can be used at a lower level. This is only seen at the Account and Scalr scopes</td>
+</tr>
+<tr class="row-even"><td>Execution Mode</td>
+<td>Binary</td>
+<td>Blocking: Scalarizr will wait for your Script to finish executing before firing and processing further events
+Non-Blocking: Scalarizr will not wait for your Script to finish executing before firing and processing further events</td>
+</tr>
+<tr class="row-odd"><td>Timeout</td>
+<td>Integer</td>
+<td>Length in seconds before the script should timeout</td>
+</tr>
+<tr class="row-even"><td>Script Content</td>
+<td>String</td>
+<td>Script contents</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="writing-a-script">
+<h3>Writing a Script<a class="headerlink" href="#writing-a-script" title="Permalink to this headline">¶</a></h3>
+<p>Your Scripts should start with a shebang line: <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)" target="_blank">Shebang Info</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a>. Scalr will use the interpreter specified in the shebang line and execute your Script with it. The script runs on:</p>
+<ul class="simple">
+<li>Linux - If the first line starts with #! /*</li>
+<li>Windows - If the first line starts with a #!windows, #!cmd or a #!powershell</li>
+<li>Cross-platform - If the first line is Linux shebang, and the second line is Windows shebang following this format: <cite>#!windows command= extension=</cite></li>
+</ul>
+<p>Shell:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+</pre></div>
+</div>
+<p>Python:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+import os
+</pre></div>
+</div>
+<p>Windows batch file:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!cmd - executes Script as Batch file (.bat)</span>
+</pre></div>
+</div>
+<p>Powershell:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!powershell - executes Script in powershell</span>
+</pre></div>
+</div>
+<p>Cross Platform:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#!windows extension=py</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="executing-scripts">
+<h2>Executing Scripts<a class="headerlink" href="#executing-scripts" title="Permalink to this headline">¶</a></h2>
+<p>There are a couple ways to execute scripts in Scalr:</p>
+<ul class="simple">
+<li>As part of a Farm Role: As part of a Farm Role design, a user can add scripts to the orchestration tab and assign a lifecycle event to trigger the script.</li>
+<li>As part of a Role: Users can add a script to a Role and assign a lifecycle event to trigger the script. When this Role gets added to a Farm it becomes a Farm Role and the script will be inherited as part of the orchestration.</li>
+<li>Manually Triggered: Users can select a Farm or Farm Role and manually trigger a script on the running servers within the Farm or Farm Role. A single server within a Farm can also be selected to trigger a script on. This is a good way to test scripts before placing them within Farm Role orchestation.</li>
+</ul>
+<div class="section" id="farm-role-orchestration">
+<h3>Farm Role Orchestration<a class="headerlink" href="#farm-role-orchestration" title="Permalink to this headline">¶</a></h3>
+<p>To assign a script for execution within the context of a Farm Role, go to the orchestration tab within the Farm Role and click new rule:</p>
+<a class="reference internal image-reference" href="../_images/farm_role_scripts.png"><img alt="../_images/farm_role_scripts.png" src="../_images/farm_role_scripts.png" style="width: 453.0px; height: 364.8px;" /></a>
+<p>Script Orchestration Options:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Trigger Event</td>
+<td>The lifecycle event at which the script should be executed.</td>
+</tr>
+<tr class="row-odd"><td>Target - Triggering Server</td>
+<td>The script will get executed on the server that is building.</td>
+</tr>
+<tr class="row-even"><td>Target - All Servers in the Farm</td>
+<td>All servers in the farm, whether already running or being provisioned, will have the script executed on them.</td>
+</tr>
+<tr class="row-odd"><td>Target - All Farm Roles with Selected Tags</td>
+<td>All servers within a farm role(s) that have a specific tag assigned to it, whether already running or being provisioned, will have the script executed on them</td>
+</tr>
+<tr class="row-even"><td>Target - All Farm Roles with Selected OS</td>
+<td>All servers within a farm role(s) that have a specific OS, whether already running or being provisioned, will have the script executed on them.</td>
+</tr>
+<tr class="row-odd"><td>Target - Selected Farm Roles</td>
+<td>All servers within a specific farm role, whether already running or being provisioned, will have the script executed on them.</td>
+</tr>
+<tr class="row-even"><td>Action - Scalr Script</td>
+<td>A script created within Scalr will be executed on the server.</td>
+</tr>
+<tr class="row-odd"><td>Action - Local Script</td>
+<td>A script already on the OS will be executed a path to the script must be provided.</td>
+</tr>
+<tr class="row-even"><td>Action - URL Script</td>
+<td>A script will be pulled from a URL and executed on the server. The URL must be the link to the raw code.</td>
+</tr>
+<tr class="row-odd"><td>Action - AT Job</td>
+<td>If Ansible Tower is configured a Job Template can be executed on the server.</td>
+</tr>
+<tr class="row-even"><td>Action - Chef</td>
+<td>If Chef Server is configured a Cookbook can be executed on the server.</td>
+</tr>
+<tr class="row-odd"><td>Execution Mode</td>
+<td>The mode is inherited from the script but can be overwritten. See above for more detail.</td>
+</tr>
+<tr class="row-even"><td>Timeout</td>
+<td>The timeout is inherited from the script but can be overwritten. See above for more detail.</td>
+</tr>
+<tr class="row-odd"><td>Order</td>
+<td>The order in which the script should run compared to other scripts.</td>
+</tr>
+<tr class="row-even"><td>Run As</td>
+<td>What OS user the script should run as.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="manually-on-farms-farm-roles-or-servers">
+<h3>Manually On Farms, Farm Roles, or Servers<a class="headerlink" href="#manually-on-farms-farm-roles-or-servers" title="Permalink to this headline">¶</a></h3>
+<p>As mentioned above, scripts created within Scalr can also be manually executed on running servers. There are two ways to do this:</p>
+<ul class="simple">
+<li>Click on scripts on the main toolbar, find your script, and click execute <a class="reference internal" href="../_images/execute_script.png"><img alt="EXECUTE_SCRIPT" src="../_images/execute_script.png" style="width: 25.9px; height: 17.5px;" /></a>. Choose whether the script should be executed on the entire Farm, a specific Farm Role, or a specific Server.</li>
+<li>Click on the Farm, Farm Role, or Server dropdown and click Execute Script.</li>
+</ul>
+</div>
+</div>
 </div>
 
 

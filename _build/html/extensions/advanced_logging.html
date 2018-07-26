@@ -152,7 +152,15 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Enable Advanced Logging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fluentd-configuration">Fluentd Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scalr-configuration">Scalr Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#log-examples">Log Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agent">Agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audit">Audit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user">User</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -315,7 +323,19 @@
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management in Scalr</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#creating-scripts">Creating Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#writing-a-script">Writing a Script</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#executing-scripts">Executing Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#farm-orchestration">Farm Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#on-farms-farm-roles-or-servers">On Farms, Farm Roles, or Servers</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../gvs/index.html">Global Variables</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#creating-global-variables">Creating Global Variables</a></li>
@@ -501,10 +521,247 @@
             
   <div class="section" id="enable-advanced-logging">
 <h1>Enable Advanced Logging<a class="headerlink" href="#enable-advanced-logging" title="Permalink to this headline">¶</a></h1>
+<p>Advanced logging can be turned on for administrators to gather more information for the following type of logs:</p>
+<ul class="simple">
+<li>Agent Logs - This log will contain all events related to Orchestration. It will contain the same events as found under Orchestration Log in the Scalr UI.</li>
+<li>API Logs - This log contains failed API requests and responses.</li>
+<li>Audit Logs - This log contains different events that happened in Scalr and who triggered them.  It is designed to collect all user initiated actions which should be audited.</li>
+<li>User Logs - This log cotains the system logs that you can see in the UI under System Logs.</li>
+</ul>
 <p>Scalr supports real time logging to a fluentd backend which can be configured to act as a funnel before getting stored on any storage backend, such as Plain Text Files, ElasticSearch, MongoDB, or Splunk.</p>
-<div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
-<p>A running fluentd installation with a configured storage backend. More on installing fluentd.</p>
+<p>A running Fluentd installation with a configured storage backend is required.. More on installing fluentd here: <a href="https://www.fluentd.org/download" target="_blank">Fluentd Information</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a>.</p>
+<div class="section" id="fluentd-configuration">
+<h2>Fluentd Configuration<a class="headerlink" href="#fluentd-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Once you have installed Fluentd, you’ll want to update the config file located in <code class="docutils literal notranslate"><span class="pre">/etc/td-agent/td-agent.conf</span></code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1">####</span>
+<span class="c1">## Output descriptions:</span>
+<span class="c1">##</span>
+
+<span class="c1"># Treasure Data (http://www.treasure-data.com/) provides cloud based data</span>
+<span class="c1"># analytics platform, which easily stores and processes data from td-agent.</span>
+<span class="c1"># FREE plan is also provided.</span>
+<span class="c1"># @see http://docs.fluentd.org/articles/http-to-td</span>
+<span class="c1">#</span>
+<span class="c1"># This section matches events whose tag is td.DATABASE.TABLE</span>
+&lt;match td.*.*&gt;
+  <span class="nb">type</span> tdlog
+  apikey YOUR_API_KEY
+
+  auto_create_table
+  buffer_type file
+  buffer_path /var/log/td-agent/buffer/td
+
+  &lt;secondary&gt;
+  <span class="nb">type</span> file
+  path /var/log/td-agent/failed_records
+  &lt;/secondary&gt;
+  &lt;/match&gt;
+
+  <span class="c1">## match tag=debug.** and dump to console</span>
+  &lt;match *&gt;
+  <span class="nb">type</span> stdout
+  &lt;/match&gt;
+
+  <span class="c1">####</span>
+  <span class="c1">## Source descriptions:</span>
+  <span class="c1">##</span>
+
+  <span class="c1">## built-in TCP input</span>
+  <span class="c1">## @see http://docs.fluentd.org/articles/in_forward</span>
+  &lt;source&gt;
+  <span class="nb">type</span> forward
+  &lt;/source&gt;
+
+  <span class="c1">## built-in UNIX socket input</span>
+  <span class="c1">#&lt;source&gt;</span>
+  <span class="c1">#  type unix</span>
+  <span class="c1">#&lt;/source&gt;</span>
+
+  <span class="c1"># HTTP input</span>
+  <span class="c1"># POST http://localhost:8888/&lt;tag&gt;?json=&lt;json&gt;</span>
+  <span class="c1"># POST http://localhost:8888/td.myapp.login?json={&quot;user&quot;%3A&quot;me&quot;}</span>
+  <span class="c1"># @see http://docs.fluentd.org/articles/in_http</span>
+  &lt;source&gt;
+  <span class="nb">type</span> http
+  <span class="nb">bind</span> <span class="m">0</span>.0.0.0
+  port <span class="m">8888</span>
+  &lt;/source&gt;
+
+  <span class="c1">## live debugging agent</span>
+  &lt;source&gt;
+  <span class="nb">type</span> debug_agent
+  <span class="nb">bind</span> <span class="m">0</span>.0.0.0
+  port <span class="m">24230</span>
+  &lt;/source&gt;
+
+  <span class="c1">###Tagging for Scalr###</span>
+  &lt;match user.***&gt;
+  <span class="nb">type</span> stdout
+  &lt;/match&gt;
+  &lt;match audit.***&gt;
+  <span class="nb">type</span> stdout
+  &lt;/match&gt;
+  &lt;match api.***&gt;
+  <span class="nb">type</span> stdout
+  &lt;/match&gt;
+  &lt;match agent.***&gt;
+  <span class="nb">type</span> stdout
+  &lt;/match&gt;
+</pre></div>
+</div>
+<p>Once you have updated the configuration, restart the td-agent service.</p>
+</div>
+<div class="section" id="scalr-configuration">
+<h2>Scalr Configuration<a class="headerlink" href="#scalr-configuration" title="Permalink to this headline">¶</a></h2>
+<p>To enable the advanced logging, add the following to the scalr-server.rb file:</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="o">[</span><span class="ss">:configuration</span><span class="o">]</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;scalr&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="s2">&quot;logger&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="s2">&quot;agent&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="s2">&quot;enabled&quot;</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">&quot;proto&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;http&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;port&quot;</span> <span class="o">=&gt;</span> <span class="mi">8888</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;audit&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="s2">&quot;enabled&quot;</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">&quot;proto&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;http&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;port&quot;</span> <span class="o">=&gt;</span> <span class="mi">8888</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;api&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="s2">&quot;enabled&quot;</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">&quot;proto&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;http&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;port&quot;</span> <span class="o">=&gt;</span> <span class="mi">8888</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;user&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="s2">&quot;enabled&quot;</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">&quot;proto&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;http&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;port&quot;</span> <span class="o">=&gt;</span> <span class="mi">8888</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In most cases, the settings above should be fine for your setup. If you do need to change the settings, the full list of fields can be found in the <a class="reference internal" href="../install_guide/advanced_configurations.html#logging"><span class="std std-ref">Logging</span></a> section of our advanced configurations page.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In a multi-node configuration, the scalr-server.rb file should be exactly the same across all Scalr server nodes. Remember to run <code class="docutils literal notranslate"><span class="pre">scalr-server-ctl</span> <span class="pre">reconfigure</span></code> on all nodes whenever you make an update to the scalr-server.rb configuration file.</p>
+</div>
+<p>If everything is configured correctly, you will see the logs in <code class="docutils literal notranslate"><span class="pre">/var/log/td-agent/td-agent.log</span></code>. You can then forward these logs off to your logging solution of choice.</p>
+</div>
+<div class="section" id="log-examples">
+<h2>Log Examples<a class="headerlink" href="#log-examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="agent">
+<h3>Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="c1"># Common tags are here</span>
+    ...
+    <span class="c1"># Event specific</span>
+    <span class="s2">&quot;orchestration.result.event.id&quot;</span>: <span class="s2">&quot;69dd4b5a-402c-4506-8650-becd9cf683d8&quot;</span>,  <span class="c1">#</span>
+    <span class="s2">&quot;orchestration.result.event.name&quot;</span>: <span class="s2">&quot;HostUp&quot;</span>,  <span class="c1"># The name of the event</span>
+    <span class="s2">&quot;orchestration.result.event.triggered_by&quot;</span>: <span class="s2">&quot;d7c42fd5-9aa6-48c7-88e9-1abd34248e06&quot;</span>, <span class="c1"># Identifier of the Scalr server that caused this event</span>
+    <span class="s2">&quot;orchestration.result.execution_id&quot;</span>: <span class="s2">&quot;9ab98d17-4440-4fbc-a75d-acecea71b2de&quot;</span>,  <span class="c1"># Identifier of this execution on Scalr.</span>
+    <span class="s2">&quot;orchestration.result.return_code&quot;</span>: <span class="m">0</span>,  <span class="c1"># OS process exit code.</span>
+    <span class="s2">&quot;orchestration.result.script.name&quot;</span>: <span class="s2">&quot;Linux_ping_pong&quot;</span>,   <span class="c1"># The name of the Script</span>
+    <span class="s2">&quot;orchestration.result.stderr&quot;</span>: <span class="s2">&quot;&quot;</span>,  <span class="c1"># Base64 encoded OS process stderr</span>
+    <span class="s2">&quot;orchestration.result.stdout&quot;</span>: <span class="s2">&quot;cG9uZwo=\n&quot;</span>,  <span class="c1"># Base64 encoded OS process stdout</span>
+    <span class="s2">&quot;orchestration.result.target.env_id&quot;</span>: <span class="s2">&quot;5&quot;</span>,  <span class="c1"># Identifier of the Environment the target Server corresponds to</span>
+    <span class="s2">&quot;orchestration.result.target.farm_id&quot;</span>: <span class="s2">&quot;9800016&quot;</span>,  <span class="c1"># Identifier of the Farm the target Server corresponds to</span>
+    <span class="s2">&quot;orchestration.result.target.farm_role_id&quot;</span>: <span class="s2">&quot;70&quot;</span>,  <span class="c1"># Identifier of the Farm Role the target Server corresponds to</span>
+    <span class="s2">&quot;orchestration.result.target.server_id&quot;</span>: <span class="s2">&quot;d7c42fd5-9aa6-48c7-88e9-1abd34248e06&quot;</span>,  <span class="c1"># Identifier of the Server the script executed on</span>
+    <span class="s2">&quot;orchestration.result.time_elapsed&quot;</span>: <span class="m">0</span>.012,  <span class="c1"># Execution time in seconds</span>
+    <span class="s2">&quot;tags&quot;</span>: <span class="o">[</span>
+      <span class="s2">&quot;agent&quot;</span>,
+      <span class="s2">&quot;orchestration.result&quot;</span>
+      <span class="o">]</span>
+   <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="api">
+<h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="c1"># common tags are here</span>
+  ...
+
+  <span class="c1"># API error specific</span>
+  <span class="s2">&quot;api.error.request.method&quot;</span>: <span class="s2">&quot;POST&quot;</span> <span class="c1"># Request method</span>
+  <span class="s2">&quot;api.error.request.url&quot;</span>: <span class="s2">&quot;https://my.scalr.net/api/v1beta0/user/5/images&quot;</span>, <span class="c1"># Request URL like &quot;&lt;schema&gt;://&lt;user&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;?&lt;query&gt;&quot;</span>
+  <span class="s2">&quot;api.error.request.headers&quot;</span>: <span class="o">[</span> <span class="c1"># The key-value array of the request headers</span>
+    <span class="s2">&quot;Content-Type&quot;</span>: <span class="s2">&quot;application/json; charset=utf-8&quot;</span>,
+    <span class="s2">&quot;X-Scalr-Key-Id&quot;</span>: <span class="s2">&quot;APIK5D9MNIFPBASMXMLJ&quot;</span>,
+    ...
+    <span class="o">]</span>,
+    <span class="s2">&quot;api.error.request.body&quot;</span>: <span class="s2">&quot;{&#39;name&#39;: &#39;foobar&#39;, &#39;cloudImageId&#39;: &#39;i-100500&#39;, &#39;cloudPlatform&#39;: &#39;ec2&#39;, &#39;architecture&#39;: &#39;x86&#39;, &#39;os&#39;: &#39;ubuntu&#39;}&quot;</span>, <span class="c1"># String representation of the request body</span>
+    <span class="s2">&quot;api.error.response.status&quot;</span>: <span class="m">400</span>, <span class="c1"># Response status code</span>
+    <span class="s2">&quot;api.error.response.headers&quot;</span>: <span class="o">[</span> <span class="c1"># The key-value array of the response headers</span>
+    <span class="s2">&quot;Status&quot;</span>: <span class="s2">&quot;InvalidStructure&quot;</span>,
+    ...
+    <span class="o">]</span>,
+    <span class="s2">&quot;api.error.response.body&quot;</span>: <span class="s2">&quot;{...}&quot;</span> <span class="c1"># String representation of the response body</span>
+    <span class="s2">&quot;tags&quot;</span>: <span class="o">[</span><span class="s2">&quot;api&quot;</span>, <span class="s2">&quot;api.error&quot;</span><span class="o">]</span> <span class="c1"># The list of tags</span>
+  <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="audit">
+<h3>Audit<a class="headerlink" href="#audit" title="Permalink to this headline">¶</a></h3>
+<p>Below is an example of the audit log for a server launch, the following events are also supported:</p>
+<ul class="simple">
+<li>User Login</li>
+<li>User Logout</li>
+<li>Farm Launch</li>
+<li>Farm Terminate</li>
+<li>Farm Ownership Change</li>
+<li>Script Execute</li>
+<li>Server Launch</li>
+<li>Server Terminate</li>
+<li>Server Suspend</li>
+<li>Server Resume</li>
+<li>Cloud Resource Remove</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>server.launch <span class="o">{</span>
+    <span class="c1"># common tags are here</span>
+    ...
+    <span class="c1"># Event specific</span>
+    <span class="s2">&quot;server.launch.server_id&quot;</span>: <span class="s2">&quot;2f928baa-4c81-43cb-a280-7c514012bf26&quot;</span>, <span class="c1"># Identifier of the Server being launched</span>
+    <span class="s2">&quot;server.launch.farm.id&quot;</span>: <span class="m">12000</span>, <span class="c1"># Identifier of the Farm that the Server belongs to</span>
+    <span class="s2">&quot;server.launch.farm_role.id&quot;</span>: <span class="m">130000</span>, <span class="c1"># Identifier of the Farm Role that the Server belongs to</span>
+    <span class="s2">&quot;server.launch.platform&quot;</span>: <span class="s2">&quot;ec2&quot;</span>, <span class="c1"># The platform name where the Server is located</span>
+    <span class="s2">&quot;server.launch.type&quot;</span>: <span class="s2">&quot;m1.small&quot;</span>, <span class="c1"># The name of the instance type of the Server</span>
+    <span class="s2">&quot;server.launch.cloud_location&quot;</span>: <span class="s2">&quot;us-east-1&quot;</span>, <span class="c1"># The region where the Server is located</span>
+    <span class="s2">&quot;server.launch.os.id&quot;</span>: <span class="s2">&quot;centos-6-x&quot;</span>, <span class="c1"># The Identifier of the Os that corresponds to the Server</span>
+    <span class="s2">&quot;server.launch.environment.id&quot;</span>: <span class="m">1234</span>, <span class="c1"># Identifier of the Environment that the Server belongs to</span>
+    <span class="s2">&quot;server.launch.account.id&quot;</span>: <span class="m">123</span>, <span class="c1"># Identifier of the Account that the Server belongs to</span>
+    <span class="s2">&quot;server.launch.reason.code&quot;</span>: <span class="m">2</span>, <span class="c1"># The reason code that caused the Server to be launched</span>
+    <span class="s2">&quot;server.launch.reason.text&quot;</span>: <span class="s2">&quot;Scaling up&quot;</span>, <span class="c1"># The verbose message of the launch reason</span>
+    <span class="s2">&quot;tags&quot;</span>: <span class="o">[</span><span class="s2">&quot;audit&quot;</span>, <span class="s2">&quot;server.launch&quot;</span><span class="o">]</span>
+    <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="user">
+<h3>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="c1"># common tags are here</span>
+  <span class="s2">&quot;timestamp&quot;</span>: <span class="s2">&quot;2015-10-13T08:31:15-05:00&quot;</span>, <span class="c1"># RFC-3339 Timestamp when the event happened in server timezone (date --rfc-3339=seconds)</span>
+
+  <span class="c1"># Event specific (for server terminate for example)</span>
+  <span class="s2">&quot;user.log.severity&quot;</span>: <span class="s2">&quot;warn&quot;</span>, <span class="c1"># Severity of the event. info | warn | error | ... etc in the lowercase</span>
+  <span class="s2">&quot;user.log.message&quot;</span>: <span class="s2">&quot;Terminating server &#39;45ea21c9-4a80-4597-8393-19070f47fd44&#39; (Platform: ec2) (ServerTerminate).&quot;</span>
+  <span class="s2">&quot;user.log.farm_id&quot;</span>: <span class="m">3454</span>, <span class="c1"># Identifier of the Farm</span>
+  <span class="s2">&quot;user.log.env_id&quot;</span>: <span class="m">12</span>, <span class="c1"># Identifier of the Environment</span>
+  <span class="s2">&quot;user.log.farm_role_id&quot;</span>: <span class="m">48349</span>, <span class="c1"># Identifier of the Farm Role (if exists)</span>
+  <span class="s2">&quot;user.log.server_id&quot;</span>: <span class="s2">&quot;45ea21c9-4a80-4597-8393-19070f47fd44&quot;</span>, <span class="c1"># UUID of the Scalr Server (if exists)</span>
+  <span class="s2">&quot;tags&quot;</span>: <span class="o">[</span><span class="s2">&quot;event&quot;</span>, <span class="s2">&quot;user.log&quot;</span><span class="o">]</span>
+  <span class="o">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
