@@ -108,7 +108,7 @@ An |ACCOUNT| administrator will be responsible for managing and configuring the 
 * Account level Orchestration rules
 * Cost Management
 
-For details on configuring |ACCOUNTS| see :ref:`account_configuration`.
+For details on configuring |ACCOUNTS| see :ref:`accounts`.
 
 |Environments|
 --------------
@@ -131,7 +131,7 @@ Menu for a Service Catalog |ENVIRONMENT| user:
 .. image:: images/environment-sc.png
    :scale: 70%
 
-For details on configuring |ENVIRONMENTS| see :ref:`environment_configuration`.
+For details on configuring |ENVIRONMENTS| see :ref:`environments`.
 
 Images and Roles
 ----------------
@@ -243,7 +243,7 @@ Users, Teams and Access Control Lists (ACLs) are the authorization and functiona
 
 **Users** are individuals who login to Scalr. Users can be designated as Administrators which will give them access to the |SCALR| scope. Users can either be authenticated within Scalr or Scalr can be configured to authenticate against an external system via LDAP or SAML. A user is a unique entity in Scalr and can be given access to multiple |ACCOUNTS| and multiple |ENVIRONMENTS| via team membership.
 
-For details on configuring Users, Teams and ACL's see :ref:`users_teams`.
+For details on configuring Users, Teams and ACL's see :ref:`teams_users`.
 
 Global Variables
 ----------------

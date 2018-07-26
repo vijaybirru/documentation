@@ -47,6 +47,8 @@
 
 .. |MENU_SCALR| image:: /images/menu_scalr.png
 
+.. |MENU_ACC| image:: /images/menu_acc.png
+
 
 
 .. |SCALR_SERVER_RB| replace:: In a multi-node configuration, the scalr-server.rb file should be exactly the same across all Scalr server nodes. Remember to run ``scalr-server-ctl reconfigure`` on all nodes whenever you make an update to the scalr-server.rb configuration file.

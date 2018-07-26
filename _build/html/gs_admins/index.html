@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -204,7 +203,6 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started for Admins</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#role-of-an-administrator">Role of an Administrator</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#navigating-the-user-interface">Navigating the User Interface</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gs_users/index.html">Getting Started for End Users</a><ul>
@@ -214,6 +212,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#working-with-applications">Working with Applications</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../navigating/index.html">Navigating the User Interface</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul>
@@ -314,7 +313,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/management.html">Cost Management</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Customised Configuration in Scalr</span></p>
+<p class="caption"><span class="caption-text">Configuration Management in Scalr</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gvs/index.html">Global Variables</a><ul>
@@ -329,6 +328,14 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#scalr-ui-default-global-variables">Scalr UI Default Global Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chef/index.html">Chef Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#definition-and-scope">Definition and Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ansible/index.html">Ansible Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
 </ul>
 </li>
 </ul>
@@ -496,8 +503,47 @@
 <p><strong>Prerequisite:</strong> Scalr Server has been installed (See <a class="reference internal" href="../install_guide/scalr_server_installation.html#install"><span class="std std-ref">Scalr Server Install</span></a>) and you are able to login as either a Scalr or Account admin.</p>
 <div class="section" id="role-of-an-administrator">
 <h2>Role of an Administrator<a class="headerlink" href="#role-of-an-administrator" title="Permalink to this headline">¶</a></h2>
-<p>An Administrator’s role can vary from organisation to organisation and admin tasks can be performed at various scopes within Scalr. Some tasks can only be done at one specific scope and some are available at all 3 scopes.</p>
-<p>All tasks can be performed by clicking on the appropriate on the main menu button <img alt="MENU_SCALR" src="../_images/menu_scalr.png" /> .</p>
+<p>An Administrator’s role can vary from organisation to organisation and admin tasks can be performed at various scopes within Scalr. Some tasks can only be done at one specific scope and some are available at all 3 scopes. The unique aspects of these roles can be summarised as follows.</p>
+<ul class="simple">
+<li><strong>Scalr Admin</strong></li>
+</ul>
+<blockquote>
+<div><ul>
+<li><p class="first">Set up Accounts</p>
+</li>
+<li><p class="first">Set Cost Centers (and other aspects Cost Analytics)</p>
+</li>
+<li><p class="first">Configuration items to be used across all accounts</p>
+<blockquote>
+<div><ul class="simple">
+<li>Scripts, Global Variables and Orchestration rules.</li>
+<li>Images and roles</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p class="first"><strong>Account Admin</strong></p>
+<ul>
+<li><p class="first">Create Environments</p>
+</li>
+<li><p class="first">Set up governance policies via the Policy Engine</p>
+</li>
+<li><p class="first">Set up Users, Teams and Access Control Lists</p>
+</li>
+<li><p class="first">Configuration items to be used across all Environments in the Account.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Scripts, Global Variables and Orchestration rules.</li>
+<li>Images and roles</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>All tasks can be performed by clicking on the appropriate on the main menu button <img alt="MENU_SCALR" src="../_images/menu_scalr.png" /> <img alt="MENU_ACC" src="../_images/menu_acc.png" />.</p>
 <p>The table below describes the core tasks that Admins must perform in order for End Users to be able to login, configure farms and deploy cloud infrastructure.
 This is NOT a comprehensive list of all features and functionality available in Scalr</p>
 <table border="1" class="docutils">
@@ -648,9 +694,6 @@ See <a class="reference internal" href="../sec_comp/quotas.html#quotas"><span cl
 </tbody>
 </table>
 </div>
-<div class="section" id="navigating-the-user-interface">
-<h2>Navigating the User Interface<a class="headerlink" href="#navigating-the-user-interface" title="Permalink to this headline">¶</a></h2>
-</div>
 </div>
 
 
@@ -709,10 +752,7 @@ See <a class="reference internal" href="../sec_comp/quotas.html#quotas"><span cl
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

@@ -10,9 +10,28 @@ This page provides the basic information needed by |SCALR| and |ACCOUNT| admins 
 Role of an Administrator
 ---------------------------
 
-An Administrator's role can vary from organisation to organisation and admin tasks can be performed at various scopes within Scalr. Some tasks can only be done at one specific scope and some are available at all 3 scopes.
+An Administrator's role can vary from organisation to organisation and admin tasks can be performed at various scopes within Scalr. Some tasks can only be done at one specific scope and some are available at all 3 scopes. The unique aspects of these roles can be summarised as follows.
 
-All tasks can be performed by clicking on the appropriate on the main menu button |MENU_SCALR| .
+* **Scalr Admin**
+
+ * Set up Accounts
+ * Set Cost Centers (and other aspects Cost Analytics)
+ * Configuration items to be used across all |ACCOUNTS|
+
+    * Scripts, Global Variables and Orchestration rules.
+    * Images and roles
+
+* **Account Admin**
+
+  * Create |Environments|
+  * Set up governance policies via the Policy Engine
+  * Set up Users, Teams and Access Control Lists
+  * Configuration items to be used across all |Environments| in the |ACCOUNT|.
+
+     * Scripts, Global Variables and Orchestration rules.
+     * Images and roles
+
+All tasks can be performed by clicking on the appropriate on the main menu button |MENU_SCALR| |MENU_ACC|.
 
 The table below describes the core tasks that Admins must perform in order for End Users to be able to login, configure farms and deploy cloud infrastructure.
 This is NOT a comprehensive list of all features and functionality available in Scalr
@@ -89,6 +108,3 @@ Set up Resource Quotas         |LA|             Resource Quotas       |ACCOUNT| 
                                                                       |ENVIRONMENTS| where larger resource allocations are not required.
                                                                       See :ref:`quotas`
 =============================  ================ ===================== ===========
-
-Navigating the User Interface
------------------------------

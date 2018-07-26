@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -203,43 +202,7 @@
 <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../gs_admins/index.html">Getting Started for Admins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#role-of-scalr-administrator">Role of Scalr Administrator</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#mandatory-scalr-admin-tasks">Mandatory Scalr Admin Tasks</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#navigating-the-user-interface">Navigating the User Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#scalr-scope-configuration">Scalr Scope Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#cloud-configuration-and-credentials">Cloud Configuration and Credentials</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#roles-and-images">Roles and Images</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#scalr-account-architecture">Scalr Account Architecture</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#organisational-structure">Organisational Structure</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#account-scope-configuration">Account Scope Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#teams-users-and-acls">Teams, Users and ACLs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#environments-and-cloud-credentials">Environments and Cloud Credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#id1">Cloud Configuration and Credentials</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#linking-cloud-credentials">Linking Cloud Credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#configuring-users-teams-and-acls">Configuring Users, Teams and ACLs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#id3">Roles and Images</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#role-of-an-administrator">Role of an Administrator</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gs_users/index.html">Getting Started for End Users</a><ul>
@@ -249,13 +212,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#working-with-applications">Working with Applications</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../navigating/index.html">Navigating the User Interface</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Building Images from scratch (With Chef)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
 </ul>
@@ -290,7 +254,10 @@
 <p class="caption"><span class="caption-text">Organizational Management</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../org/index.html">Implementing your Organisation in Scalr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#configuring-environments">Configuring Environments</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Teams and Users</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
@@ -346,7 +313,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/management.html">Cost Management</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Customised Configuration in Scalr</span></p>
+<p class="caption"><span class="caption-text">Configuration Management in Scalr</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../gvs/index.html">Global Variables</a><ul>
@@ -361,6 +328,14 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#scalr-ui-default-global-variables">Scalr UI Default Global Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chef/index.html">Chef Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#definition-and-scope">Definition and Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ansible/index.html">Ansible Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
 </ul>
 </li>
 </ul>
@@ -628,7 +603,7 @@
 <li>Account level Orchestration rules</li>
 <li>Cost Management</li>
 </ul>
-<p>For details on configuring accounts see <a class="reference internal" href="../gs_admins/index.html#account-configuration"><span class="std std-ref">Account Scope Configuration</span></a>.</p>
+<p>For details on configuring accounts see <a class="reference internal" href="../org/accounts.html#accounts"><span class="std std-ref">Account Configuration</span></a>.</p>
 </div>
 <div class="section" id="environments">
 <h2>Environments<a class="headerlink" href="#environments" title="Permalink to this headline">¶</a></h2>
@@ -640,7 +615,7 @@
 <a class="reference internal image-reference" href="../_images/environment-full.png"><img alt="../_images/environment-full.png" src="../_images/environment-full.png" style="width: 917.6999999999999px; height: 32.199999999999996px;" /></a>
 <p>Menu for a Service Catalog Environment user:</p>
 <a class="reference internal image-reference" href="../_images/environment-sc.png"><img alt="../_images/environment-sc.png" src="../_images/environment-sc.png" style="width: 352.79999999999995px; height: 31.499999999999996px;" /></a>
-<p>For details on configuring environments see <a class="reference internal" href="../gs_admins/index.html#environment-configuration"><span class="std std-ref">Environments and Cloud Credentials</span></a>.</p>
+<p>For details on configuring environments see <a class="reference internal" href="../org/accounts.html#environments"><span class="std std-ref">Configuring Environments</span></a>.</p>
 </div>
 <div class="section" id="images-and-roles">
 <h2>Images and Roles<a class="headerlink" href="#images-and-roles" title="Permalink to this headline">¶</a></h2>
@@ -740,7 +715,7 @@
 <p>[pictures]</p>
 <p><strong>Teams</strong> group users together to provide them with access to environments and to apply a common ACL to all team members. Users can belong to multiple teams.</p>
 <p><strong>Users</strong> are individuals who login to Scalr. Users can be designated as Administrators which will give them access to the Scalr scope. Users can either be authenticated within Scalr or Scalr can be configured to authenticate against an external system via LDAP or SAML. A user is a unique entity in Scalr and can be given access to multiple accounts and multiple environments via team membership.</p>
-<p>For details on configuring Users, Teams and ACL’s see <a class="reference internal" href="../gs_admins/index.html#users-teams"><span class="std std-ref">Configuring Users, Teams and ACLs</span></a>.</p>
+<p>For details on configuring Users, Teams and ACL’s see <a class="reference internal" href="../org/team_users.html#teams-users"><span class="std std-ref">Teams and Users</span></a>.</p>
 </div>
 <div class="section" id="global-variables">
 <h2>Global Variables<a class="headerlink" href="#global-variables" title="Permalink to this headline">¶</a></h2>
@@ -827,10 +802,7 @@ For details on configuring orchestration in Farms and Farm Roles see <a class="r
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

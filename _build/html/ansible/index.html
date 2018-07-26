@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -203,40 +202,7 @@
 <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../gs_admins/index.html">Getting Started for Admins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#role-of-account-admins">Role of Account Admins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#navigating-the-user-interface">Navigating the User Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#scalr-scope-configuration">Scalr Scope Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#cloud-configuration-and-credentials">Cloud Configuration and Credentials</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#roles-and-images">Roles and Images</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#scalr-account-architecture">Scalr Account Architecture</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#organisational-structure">Organisational Structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#teams-users-and-acls">Teams, Users and ACLs</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#account-scope-configuration">Account Scope Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#environments-and-cloud-credentials">Environments and Cloud Credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#id1">Cloud Configuration and Credentials</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#linking-cloud-credentials">Linking Cloud Credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#configuring-users-teams-and-acls">Configuring Users, Teams and ACLs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#id3">Roles and Images</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#role-of-an-administrator">Role of an Administrator</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gs_users/index.html">Getting Started for End Users</a><ul>
@@ -246,13 +212,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#working-with-applications">Working with Applications</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../navigating/index.html">Navigating the User Interface</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Building Images from scratch (With Chef)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
 </ul>
@@ -286,8 +253,11 @@
 </ul>
 <p class="caption"><span class="caption-text">Organizational Management</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../org/index.html">Implementing your Organization in Scalr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../org/index.html">Implementing your Organisation in Scalr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#configuring-environments">Configuring Environments</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Teams and Users</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
@@ -590,10 +560,7 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

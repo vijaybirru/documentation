@@ -23,6 +23,7 @@ Scalr Documentation!
 
    gs_admins/index
    gs_users/index
+   navigating/index
 
 .. toctree::
    :maxdepth: 3
