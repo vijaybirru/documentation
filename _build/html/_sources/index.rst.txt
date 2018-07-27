@@ -27,6 +27,13 @@ Scalr Documentation!
 
 .. toctree::
    :maxdepth: 3
+   :caption: Farm Fast Start
+
+   fast_start/index
+
+
+.. toctree::
+   :maxdepth: 3
    :caption: Cloud Images and Templates
 
    images_roles/index

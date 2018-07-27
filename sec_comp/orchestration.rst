@@ -23,7 +23,7 @@ Creating Orchestration Rules
 .. |SCALR_ICON| image:: images/scalr_icon_env.png
    :scale: 70%
 
-To create an orchestration rule at the |SCALR|, |ACCOUNT|, or |ENVIRONMENT| scopes you can click on the Scalr icon on the top left |SCALR_ICON| and then click on Orchestration. After you click on New Rule the following page will show up:
+To create an orchestration rule at the |SCALR|, |ACCOUNT|, or |ENVIRONMENT| scopes, click on the Scalr icon on the top left |SCALR_ICON| and then click on Orchestration. After you click on New Rule the following page will show up:
 
 .. image:: images/new_orch.png
    :scale: 70%
