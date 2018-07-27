@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Scalr/Account Level Orchestration &mdash; Scalr 0.01 documentation</title>
+  <title>Scalr/Account/Environment Level Orchestration &mdash; Scalr 0.01 documentation</title>
   
 
   
@@ -297,7 +297,11 @@
 <li class="toctree-l1"><a class="reference internal" href="quotas.html">Resource Quotas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quotas.html#creating-quotas">Creating Quotas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quotas.html#applying-quotas">Applying Quotas</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Scalr/Account Level Orchestration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Scalr/Account/Environment Level Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-orchestration-rules">Creating Orchestration Rules</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="integrations.html">External Integrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integrations.html#webhooks-and-endpoints">Webhooks and Endpoints</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="integrations.html#configruing-endpoints">Configruing Endpoints</a></li>
@@ -508,7 +512,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Scalr/Account Level Orchestration</li>
+      <li>Scalr/Account/Environment Level Orchestration</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -527,8 +531,70 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="scalr-account-level-orchestration">
-<span id="sa-orchestration"></span><h1>Scalr/Account Level Orchestration<a class="headerlink" href="#scalr-account-level-orchestration" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="scalr-account-environment-level-orchestration">
+<span id="sa-orchestration"></span><h1>Scalr/Account/Environment Level Orchestration<a class="headerlink" href="#scalr-account-environment-level-orchestration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="definition-and-scope">
+<h2>Definition and Scope<a class="headerlink" href="#definition-and-scope" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
+<p>Just like a script can be assigned to run within a Farm Role, it can also be assigned to run across all servers within the Scalr, Account, or Environment scopes. This type of Orchestration is typically used to enforce policies, for example:</p>
+<ul class="simple">
+<li>Security toolsets that must be applied to all servers.</li>
+<li>Lifecycle events that must be applied to all servers, i.e. join a domain.</li>
+</ul>
+<p>If an Orchestration rule is created at one of these scopes, it cannot be removed at the lower scope and ALL servers at the lower scope will have the rule applied to it.</p>
+</div>
+<div class="section" id="creating-orchestration-rules">
+<h2>Creating Orchestration Rules<a class="headerlink" href="#creating-orchestration-rules" title="Permalink to this headline">¶</a></h2>
+<p>To create an orchestration rule at the Scalr, Account, or Environment scopes you can click on the Scalr icon on the top left <a class="reference internal" href="../_images/scalr_icon_env2.png"><img alt="SCALR_ICON" src="../_images/scalr_icon_env2.png" style="width: 55.3px; height: 33.599999999999994px;" /></a> and then click on Orchestration. After you click on New Rule the following page will show up:</p>
+<a class="reference internal image-reference" href="../_images/new_orch.png"><img alt="../_images/new_orch.png" src="../_images/new_orch.png" style="width: 510.29999999999995px; height: 414.4px;" /></a>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Trigger Event</td>
+<td>The lifecycle event at which the script should be executed.</td>
+</tr>
+<tr class="row-odd"><td>Target - Triggering Server</td>
+<td>The script will run the server being built. Optionally: Will this rule apply to ALL operating systems or a specific operating system?</td>
+</tr>
+<tr class="row-even"><td>Target - All Roles with Selected Tags</td>
+<td>All servers built from a role that has a specific tag assigned to it will have the script executed on it.</td>
+</tr>
+<tr class="row-odd"><td>Action - Scalr Script</td>
+<td>A script created within Scalr will be executed on the server.</td>
+</tr>
+<tr class="row-even"><td>Action - Local Script</td>
+<td>A script already on the OS will be executed, a path to the script must be provided.</td>
+</tr>
+<tr class="row-odd"><td>Action - URL Script</td>
+<td>A script will be pulled from a URL and executed on the server. The URL must be the link to the raw code.</td>
+</tr>
+<tr class="row-even"><td>Execution Mode</td>
+<td>The mode is inherited from the script but can be overwritten. See <a class="reference internal" href="../scripts/index.html#scripts"><span class="std std-ref">Scripts</span></a> for more detail.</td>
+</tr>
+<tr class="row-odd"><td>Timeout</td>
+<td>The timeout is inherited from the script but can be overwritten. See above for more detail.</td>
+</tr>
+<tr class="row-even"><td>Order</td>
+<td>The order in which the script should run compared to other scripts.</td>
+</tr>
+<tr class="row-odd"><td>Run As</td>
+<td>What OS user the script should run as.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Linux Scripts will not execute on Windows Servers, and vice-versa, unless the script is a cross platform script.</p>
+</div>
+</div>
 </div>
 
 
