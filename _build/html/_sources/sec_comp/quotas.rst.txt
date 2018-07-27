@@ -10,7 +10,7 @@ Definition and Scope
 
 |SCOPE_ACC|
 
-In order to ensure control over how much access to resources is granted to users, Scalr will enforce limitations on the volume of consumption afforded to users. Resource Quotas allow for a Scalr administrator to set hard limits on the consumption of cloud resources.
+In order to ensure control over how much access to resources is granted to users, Scalr will enforce limitations on the volume of consumption afforded to users. Resource Quotas allow for a Scalr administrator to set hard limits on the consumption of cloud resources per environment.
 
 Creating Quotas
 ---------------
