@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -232,6 +231,14 @@
 </ul>
 </li>
 </ul>
+<p class="caption"><span class="caption-text">Farm Fast Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fast_start/index.html">Building a Simple Farm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fast_start/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fast_start/index.html#fast-farm-build">Fast Farm Build</a></li>
+</ul>
+</li>
+</ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a></li>
@@ -290,10 +297,37 @@
 </ul>
 <p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="index.html">Security and Compliance Overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Policy Engine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#policy-definitions">Policy Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#policy-reference">Policy Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Security and Compliance Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#policy-engine-introduction">Policy Engine Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#resource-quotas-introduction">Resource Quotas Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#orchestration-rules-introduction">Orchestration Rules Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#role-based-access-control-introduction">Role Based Access Control Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#governance-through-external-integrations">Governance Through External Integrations</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Policy Engine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-policy-groups">Creating Policy Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-policies">Creating Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-global-variable-in-policies">Using Global Variable in Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#policy-tags">Policy Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linking-policy-groups-to-environments">Linking Policy Groups to Environments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#policy-reference">Policy Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-policies">Configuration Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#container-policies">Container Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reclamation-policies">Reclamation Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cloud-service-gateway-policies">Cloud Service Gateway Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cloud-generic-policies">Cloud Generic Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aws-policies">AWS Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#azure-policies">Azure Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#google-compute-engine-policies">Google Compute Engine Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#openstack-policies">Openstack Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vmware-policies">VMware Policies</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="quotas.html">Resource Quotas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quotas.html#creating-quotas">Creating Quotas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quotas.html#applying-quotas">Applying Quotas</a></li>
@@ -529,12 +563,534 @@
             
   <div class="section" id="policy-engine">
 <span id="id1"></span><h1>Policy Engine<a class="headerlink" href="#policy-engine" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></p>
+<p>The Policy Engine is part of the Account Scope, thus enabling business units to implement consistent governance policies across all their cloud environments.</p>
+<a class="reference internal image-reference" href="../_images/policy_menu.png"><img alt="../_images/policy_menu.png" src="../_images/policy_menu.png" style="width: 281.0px; height: 425.5px;" /></a>
+<p>There are three steps to defining and enabling policies.</p>
+<ol class="arabic simple">
+<li>Create a Policy Group.</li>
+<li>Add Policies and policy conditions to the Policy Group.</li>
+<li>Link the Policy group to the required environments.</li>
+</ol>
+<p>Policy conditions provide fine grained control over the application of a policy, allowing for policy variations across different clouds, locations cloud accounts and more.
+Scalr also provide the ability to implement policies based on <a class="reference internal" href="#policy-tags"><span class="std std-ref">Policy Tags</span></a>.</p>
+<div class="section" id="creating-policy-groups">
+<h2>Creating Policy Groups<a class="headerlink" href="#creating-policy-groups" title="Permalink to this headline">¶</a></h2>
+<p>Policies are defined by clicking on Policy Engine -&gt; Policy Groups -&gt; NEW POLICY GROUP which will display this screen.</p>
+<a class="reference internal image-reference" href="../_images/pg_blank.png"><img alt="../_images/pg_blank.png" src="../_images/pg_blank.png" style="width: 974.0px; height: 245.0px;" /></a>
+<p>Policy Groups require a Name and Type. The Type determines the options available for Policy Rules and includes types related to all clouds and cloud specific types. Cloud specific types will only appear in the drop down if there are Cloud Credentials configured for that cloud at either the Scalr scope or in the currently active Account.</p>
+<a class="reference internal image-reference" href="../_images/pg_types.png"><img alt="../_images/pg_types.png" src="../_images/pg_types.png" style="width: 296.8px; height: 301.2px;" /></a>
+<p>The Policy Reference below explains the policy types and their associated rules.</p>
 </div>
-<div class="section" id="policy-definitions">
-<h1>Policy Definitions<a class="headerlink" href="#policy-definitions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="creating-policies">
+<h2>Creating Policies<a class="headerlink" href="#creating-policies" title="Permalink to this headline">¶</a></h2>
+<p>Click on “New Policy” to add a policy rule. Policies available to the chosen Policy Group type will be displayed. This example show “Configuration” policies.</p>
+<a class="reference internal image-reference" href="../_images/cfg_policies.png"><img alt="../_images/cfg_policies.png" src="../_images/cfg_policies.png" style="width: 389.6px; height: 394.8px;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For type type “Reclamation” there are no further options and you will be taken straight to the screen to configure the reclamation policy. <a class="reference internal" href="../_images/reclamation.png"><img alt="REC" src="../_images/reclamation.png" style="width: 292.2px; height: 216.9px;" /></a></p>
+</div>
+<p>Click a policy and you will be presented with a screen specific to that policy on which you can set policy conditions and details of the policy itself. This is an example of <code class="docutils literal notranslate"><span class="pre">scalr.server.hostname.template</span></code> policy.</p>
+<a class="reference internal image-reference" href="../_images/policy_example.png"><img alt="../_images/policy_example.png" src="../_images/policy_example.png" style="width: 389.6px; height: 345.20000000000005px;" /></a>
+<p>All Conditions are optional.</p>
+<p>Make sure the status is set to “ENFORCED” to enable the policy.</p>
+<p>After defining the policy you can add further policies to the policy group. Remember to click “Save” <a class="reference internal" href="../_images/save.png"><img alt="SAVE" src="../_images/save.png" style="width: 37.199999999999996px; height: 27.599999999999998px;" /></a>.</p>
+<div class="section" id="using-global-variable-in-policies">
+<h3>Using Global Variable in Policies<a class="headerlink" href="#using-global-variable-in-policies" title="Permalink to this headline">¶</a></h3>
+<p>Global Variables in Policies make it possible to vary the details of the Policy at any level where Global Variables can be set. A good example of this is a policy that enforces tagging on servers. The <code class="docutils literal notranslate"><span class="pre">cloud.tags</span></code> policy is available for all cloud types and provides a list of tags that must be applied to servers from every Farm Role the policy applies to. In this example the policy effectively applies to all Farm Roles in all environments the Policy Group is linked to.</p>
+<img alt="../_images/gv_tag_policy1.png" src="../_images/gv_tag_policy1.png" />
+<p>By using a Global Variable name (in this example. <cite>{MyGlobalVariable}</cite>) rather than an actual value, the value applied to the tag will be determined from the Global Variable at the time the server is launched, based on the value of the variable at that time. Depending on where the variable is defined and it’s permissions the value could be set as low down as the Farm Role scope.</p>
+<p>For more details see <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a>.</p>
+</div>
+</div>
+<div class="section" id="policy-tags">
+<span id="id2"></span><h2>Policy Tags<a class="headerlink" href="#policy-tags" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></p>
+<p>Policy Tags provide fine grained control over which Roles a policy will apply to. Policy Tags are defined by the Scalr Administrator at Scalr scope and can be applied to Policies and Roles to determine which Roles a Policy applies to. Policy Tags must be defined at the Scalr scope BEFORE they can be used in Policies at the Account scope.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Policy Tags are entirely separate for role tags. Although Policy Tags are applied to Roles in the same way as normal role tags it is NOT possible to use existing role tags as Policy Tags. You must define new Policy Tags for this purpose.</p>
+</div>
+<p>To create Policy Tags login as the Scalr Admin at Scalr Scope and navigate to <strong>Policy Engine -&gt; Policy Tags</strong>. Click on NEW POLICY TAG and enter a name for the tag.</p>
+<p><a class="reference internal" href="../_images/policy_tag_menu.png"><img alt="PT" src="../_images/policy_tag_menu.png" style="width: 366.8px; height: 437.6px;" /></a> <a class="reference internal" href="../_images/new_policy_tag.png"><img alt="NPT" class="align-top" src="../_images/new_policy_tag.png" style="width: 681.8px; height: 156.79999999999998px;" /></a></p>
+<p>To apply Policies Tags to a Policy include these in the conditions of the policy.</p>
+<a class="reference internal image-reference" href="../_images/apply_pol_tag.png"><img alt="../_images/apply_pol_tag.png" src="../_images/apply_pol_tag.png" style="width: 389.6px; height: 280.0px;" /></a>
+<p>Back at Scalr scope under <strong>Policy Engine -&gt; Policy Tags</strong> you will be able to see which accounts are using each Policy Tag.</p>
+<a class="reference internal image-reference" href="../_images/tag_usage.png"><img alt="../_images/tag_usage.png" src="../_images/tag_usage.png" style="width: 681.8px; height: 119.69999999999999px;" /></a>
+</div>
+<div class="section" id="linking-policy-groups-to-environments">
+<h2>Linking Policy Groups to Environments<a class="headerlink" href="#linking-policy-groups-to-environments" title="Permalink to this headline">¶</a></h2>
+<p>Policy Groups will only take effect when they are linked to Environments. You can only link one Policy Group of each type to an Environment.</p>
+<p>Click on ENVIRONMENTS in the Bookmarks Bar or Main menu and select the environment you wish to link Policy Groups to.</p>
+<img alt="../_images/link_1.png" src="../_images/link_1.png" />
+<p>Click on the link icon on the right-hand side, link the required Policy Group to the environment, and save.</p>
+<img alt="../_images/link_2.png" src="../_images/link_2.png" />
+</div>
 </div>
 <div class="section" id="policy-reference">
 <h1>Policy Reference<a class="headerlink" href="#policy-reference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="configuration-policies">
+<h2>Configuration Policies<a class="headerlink" href="#configuration-policies" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Description</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>scalr.server.hostname.source</td>
+<td>Enforces a source for the computation of the Servers hostnames. This policy is commonly used in conjunction with a Hostname Template policy or a Hostname Webhook endpoint policy.</td>
+<td><strong>Affects the Network Tab of Farm Roles in the Farm Designer</strong>. If you activate this policy, the Server Hostname Source will no longer be customizable in the Network Tab.</td>
+</tr>
+<tr class="row-odd"><td>scalr.server.hostname.template</td>
+<td>Enforcea a custom Hostname Template for your Servers. Enter the Hostname Template here, and Scalr will use it to generate the hostname for your Servers</td>
+<td><strong>Affects the Netwok Tab of Farm Roles in the Farm Designer</strong>. If you activate this policy, the Server Hostname Template will no longer be customizable in the Network Tab.</td>
+</tr>
+<tr class="row-even"><td>scalr.server.hostname.integrations_endpoint</td>
+<td>Enforces a given Webhook endpoint to retrieve the hostname of your Servers from. Select an endpoint from the list of configured endpoints, and Scalr will use it to generate the hostname for your Servers</td>
+<td><strong>Affects the Netwok Tab of Farm Roles in the Farm Designer</strong>. If you activate this policy, the Server Hostname Webhook endpoint will no longer be customizable in Network Tab.</td>
+</tr>
+<tr class="row-odd"><td>scalr.server.hostname.validation_pattern</td>
+<td>This policy creates a validation pattern for hostnames. If the hostname generated for a Server does not match the validation pattern, Scalr will abort the provisioning of the Server.</td>
+<td>Validation patterns are defined as Regular Expressions (REGEX).</td>
+</tr>
+<tr class="row-even"><td>chef.servers</td>
+<td>Enforces the use of a specific Chef Server to configure cloud severs.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>chef.environments</td>
+<td>Enforces the use of a specific Chef Environment to configure cloud severs.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>ansibletower.bootstrap_configurations</td>
+<td>Enforces the use of a specific Ansible Tower Bootstrap Configuration to configure cloud severs.</td>
+<td>AT Bootstrap config must have previously be defined at Scalr or Account scope.</td>
+</tr>
+<tr class="row-odd"><td>ansibletower.require_bootstrap_enable</td>
+<td>Enforces the use of an Ansible Tower Bootstrap Configuration.</td>
+<td>Force the Bootstrap Ansible Tower on the FarmRole Scope. When creating a farm with FarmTemplate, all the Farm Roles without Bootstrap Ansible Tower enabled will be ignored.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="container-policies">
+<h2>Container Policies<a class="headerlink" href="#container-policies" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Description</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>docker.container.privileged.escalating_exec_usage</td>
+<td>Limit exec and attach commands to privileged containers.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>docker.container.privileged.usage</td>
+<td>Limit privileged containers usage</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>docker.image.sources</td>
+<td>Restricts Docker to using specific registries</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>docker.network.ports</td>
+<td>Limits the Network Ports that can be opened on a container</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>docker.volume.mounts</td>
+<td>Limits which volume mounts can be usd inside a container.</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="reclamation-policies">
+<h2>Reclamation Policies<a class="headerlink" href="#reclamation-policies" title="Permalink to this headline">¶</a></h2>
+<p>Reclamation policies enforce automatic termination of Farms after specified periods. This helps to ensure unwanted servers are not running up costs after they are no longer required. Admins can set Reclamation policies on typically fixed duration environments such as QA testing, short term projects etc. Reclamation polices define 3 things.</p>
+<ol class="arabic simple">
+<li>The duration of a Farms running lifetime.</li>
+<li>Notifications to be sent prior to automatic termination.</li>
+<li>Maximum number and duration of lease extension requests a Farm owner can make (Standard Requests).</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Farm owners can make Non-Standard Lease Extension requests. Standard requests are considered pre-approved and will come into effect immediately. Non-standard requests must be approved by the Account Admin before they will come into effect.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/reclamation.png"><img alt="../_images/reclamation.png" src="../_images/reclamation.png" style="width: 487.0px; height: 361.5px;" /></a>
+</div>
+<div class="section" id="cloud-service-gateway-policies">
+<h2>Cloud Service Gateway Policies<a class="headerlink" href="#cloud-service-gateway-policies" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Description</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>csg.resource.name.prefix</td>
+<td>Enforces a required prefix for available resource properties of resources supported in CSG</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>csg.resource.name.validation_pattern</td>
+<td>Template for validating the available properties of the resource cluster supported by CSG</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cloud-generic-policies">
+<h2>Cloud Generic Policies<a class="headerlink" href="#cloud-generic-policies" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">AWS</th>
+<th class="head">GCP</th>
+<th class="head">Azure</th>
+<th class="head">OpenStack</th>
+<th class="head">VMware</th>
+<th class="head">Description</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>cloud.instance.name.template</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>X</td>
+<td>&#160;</td>
+<td>Enforces a format for inatance names.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>cloud.instance.types</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>Limits the available instance types</td>
+<td>If only one instance type is allowed the instance type drop down in the Farm Designer and Service Catalog will be disabled.</td>
+</tr>
+<tr class="row-even"><td>cloud.locations</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>Limits the cloud locations that available</td>
+<td>If only one location is allowed the instance type drop down in the Farm Designer and Service Catalog will be disabled.</td>
+</tr>
+<tr class="row-odd"><td>cloud.networks</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>Limits the specific networks that can be used</td>
+<td>Some conditions are madatory for this policy, such as Credentials and Location for AWS.</td>
+</tr>
+<tr class="row-even"><td>cloud.resource.name.prefix</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>Mandatory prefix for cloud resources.</td>
+<td>Cuurently only applies to AWS resources in ELB, RDS and S3.</td>
+</tr>
+<tr class="row-odd"><td>cloud.resource.name.validation_pattern</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>This policy creates a validation pattern for resources. If the name for a resource does not match the validation pattern, Scalr will abort the provisioning of the resource.</td>
+<td>Validation patterns are defined as Regular Expressions (REGEX). Cuurently only applies to AWS resources in ELB, RDS and S3.</td>
+</tr>
+<tr class="row-even"><td>cloud.security_groups</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>X</td>
+<td>&#160;</td>
+<td>Sets or Restricts Security Groups that can be used.</td>
+<td><strong>Affects Custom and System Security Groups</strong>. Unless you select the “Allow user to specify additional security groups” option, Custom Security Groups are disabled for your Farm Roles. In any case, System Security Groups are disabled.</td>
+</tr>
+<tr class="row-odd"><td>cloud.ssh.key_pair</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>X</td>
+<td>&#160;</td>
+<td>Sets the SSH Key pair to be used.</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>cloud.storage.maximum_size</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>Enforces a maximum size for storage volumes in GB</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>cloud.storage.volume_types</td>
+<td>X</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>X</td>
+<td>&#160;</td>
+<td>Enforces limitations allowed volume types</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>cloud.subnets</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>Limits the specific subnets that can be used</td>
+<td>Some conditions are madatory for this policy, such as Credentials and Location for AWS.</td>
+</tr>
+<tr class="row-odd"><td>cloud.tags</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+<td>Ensures the tag(s) are added to servers</td>
+<td>Note that the actual tag name can be specified via a Global Variable, thus, with tge required permissions, the name can be defined down at Farm Role Scope. In this form the policy simply ensures that a tag of any name is applied.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="aws-policies">
+<h2>AWS Policies<a class="headerlink" href="#aws-policies" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Description</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>aws.iam.instance_profiles</td>
+<td>Restricts IAM instance profiles that can be applied to instances</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>aws.kms.keys</td>
+<td>Restircts the KMS keys that can be used for encrypting storage</td>
+<td>This does NOT enfiorce encryption, it only limits the KMS keys that can be used.</td>
+</tr>
+<tr class="row-even"><td>aws.network.require_vpc</td>
+<td>Enforces the use of VPC’s</td>
+<td>AWS Classic will not be availble.</td>
+</tr>
+<tr class="row-odd"><td>aws.network.subnet_type</td>
+<td>Restricts subnets available to the specified types, i.e Public or Private</td>
+<td>Note this is an Either/Or selection.</td>
+</tr>
+<tr class="row-even"><td>aws.rds.instance_types</td>
+<td>Restricts the instance types available for RDS database instances</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>aws.rds.instance.require_multi_az</td>
+<td>Requires RDS to be deployed in multiple AZ’s for resilience</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>aws.storage.require_encryption</td>
+<td>Enforces encryption of EBS volumes..</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="azure-policies">
+<h2>Azure Policies<a class="headerlink" href="#azure-policies" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Description</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>azure.network.public_ip_usage</td>
+<td>Enforces or Prevents public IPs on Servers</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>azure.resource_groups</td>
+<td>Restricts Resource Groups that can be used</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>azure.storage_accounts</td>
+<td>Limits the storage accounts that can be used</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>azure.availability_sets</td>
+<td>Limits the availability sets that can be used</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="google-compute-engine-policies">
+<h2>Google Compute Engine Policies<a class="headerlink" href="#google-compute-engine-policies" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Description</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>gce.custom_instance_type.maximum_ram</td>
+<td>Imposes and upper limit RAM for custom instance types</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>gce.custom_instance_type.maximum_vcpus</td>
+<td>Imposes and upper limit vCPUs for custom instance types</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>gce.network.public_ip_usage</td>
+<td>Enforces or Prevents public IPs on Servers</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>gce.network.tags</td>
+<td>Defines a list of allowed network tags</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>gce.service_accounts</td>
+<td>Defines a list of allowed service accounts</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="openstack-policies">
+<h2>Openstack Policies<a class="headerlink" href="#openstack-policies" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Description</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>openstack.network.floating_ip_usage</td>
+<td>Enforces or Prevents floating IPs on Servers</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>openstack.network.floating_ip_pools</td>
+<td>Limits the use of IP Pools</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vmware-policies">
+<h2>VMware Policies<a class="headerlink" href="#vmware-policies" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Description</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>vmware.compute_resources</td>
+<td>Restricts Compute Resources that can be used</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>vmware.resource_pools</td>
+<td>Restricts allowed resource pools</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>vmware.folders</td>
+<td>Restricts allowed Folders</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>vmware.storage.placements</td>
+<td>A combined list of Datastore and Datastore Cluster that are available for use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>vmware.custom_specs</td>
+<td>Restricts allowed Custom Specs</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>vmware.host_systems</td>
+<td>Restricts allowed Host Systems</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>vmware.network.ip_pools</td>
+<td>Restricts allowed IP Pools</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>vmware.network.ip_pools_usage</td>
+<td>Enforces or Prevents the use of IP Pools</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>vmware.storage.provisioning_type</td>
+<td>Restricts the provisioning types, e.g. Thikc, Thin, how to zero etc.</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -593,10 +1149,7 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

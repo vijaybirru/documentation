@@ -1,4 +1,0 @@
-.. include:: GLOBAL.rst
-
-|SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV| |SCOPE_ROLE| |SCOPE_FARM| |SCOPE_F_ROLE| Scope Key
-========================================================================================

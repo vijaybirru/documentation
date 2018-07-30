@@ -35,10 +35,12 @@ Fast Farm Build
 1. Login to Scalr and navigate to a suitable |ENVIRONMENT| scope via the |ENVIRONMENT| menu.
 
 .. image:: images/env_menu.png
+   :scale: 50%
 
 2. On the Dashboard enter a Farm name and Project in the "CREATE NEW FARM" widget and click "CREATE NEW FARM"
 
 .. image:: images/farm_widg.png
+   :scale: 50%
 
 3. Click on "ADD FARM ROLE", the click on "Base". Select a small Instance Type and adjust the network settings as required. Your Admin can advise you on which network to use. When ready click on "ADD TO FARM".
 

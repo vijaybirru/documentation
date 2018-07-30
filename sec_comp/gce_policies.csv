@@ -1,0 +1,6 @@
+Type,Description,Notes
+gce.custom_instance_type.maximum_ram,Imposes and upper limit RAM for custom instance types,
+gce.custom_instance_type.maximum_vcpus,Imposes and upper limit vCPUs for custom instance types,
+gce.network.public_ip_usage,Enforces or Prevents public IPs on Servers,
+gce.network.tags,Defines a list of allowed network tags,
+gce.service_accounts,Defines a list of allowed service accounts,

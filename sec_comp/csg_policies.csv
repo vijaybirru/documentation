@@ -1,0 +1,3 @@
+Type,Description,Notes
+csg.resource.name.prefix,Enforces a required prefix for available resource properties of resources supported in CSG,
+csg.resource.name.validation_pattern,Template for validating the available properties of the resource cluster supported by CSG,

@@ -1,0 +1,10 @@
+Type,Description,Notes
+vmware.compute_resources,Restricts Compute Resources that can be used,
+vmware.resource_pools,Restricts allowed resource pools,
+vmware.folders,Restricts allowed Folders,
+vmware.storage.placements,A combined list of Datastore and Datastore Cluster that are available for use,
+vmware.custom_specs,Restricts allowed Custom Specs,
+vmware.host_systems,Restricts allowed Host Systems,
+vmware.network.ip_pools,Restricts allowed IP Pools,
+vmware.network.ip_pools_usage,Enforces or Prevents the use of IP Pools,
+vmware.storage.provisioning_type,"Restricts the provisioning types, e.g. Thikc, Thin, how to zero etc.",

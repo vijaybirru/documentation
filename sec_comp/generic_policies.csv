@@ -1,0 +1,13 @@
+Type,AWS,GCP,Azure,OpenStack,VMware,Description,Notes
+cloud.instance.name.template,X,,,X,,Enforces a format for inatance names.,
+cloud.instance.types,X,X,X,X,X,Limits the available instance types,If only one instance type is allowed the instance type drop down in the Farm Designer and Service Catalog will be disabled.
+cloud.locations,X,X,X,X,X,Limits the cloud locations that available,If only one location is allowed the instance type drop down in the Farm Designer and Service Catalog will be disabled.
+cloud.networks,X,X,X,X,X,Limits the specific networks that can be used,"Some conditions are madatory for this policy, such as Credentials and Location for AWS."
+cloud.resource.name.prefix,X,,,,,Mandatory prefix for cloud resources. ,"Cuurently only applies to AWS resources in ELB, RDS and S3."
+cloud.resource.name.validation_pattern,X,,,,,"This policy creates a validation pattern for resources. If the name for a resource does not match the validation pattern, Scalr will abort the provisioning of the resource.","Validation patterns are defined as Regular Expressions (REGEX). Cuurently only applies to AWS resources in ELB, RDS and S3."
+cloud.security_groups,X,,,X,,Sets or Restricts Security Groups that can be used.,"**Affects Custom and System Security Groups**. Unless you select the ""Allow user to specify additional security groups"" option, Custom Security Groups are disabled for your Farm Roles. In any case, System Security Groups are disabled."
+cloud.ssh.key_pair,X,,,X,,Sets the SSH Key pair to be used.,
+cloud.storage.maximum_size,X,X,X,X,X,Enforces a maximum size for storage volumes in GB,
+cloud.storage.volume_types,X,,,X,,Enforces limitations allowed volume types,
+cloud.subnets,X,X,X,X,X,Limits the specific subnets that can be used,"Some conditions are madatory for this policy, such as Credentials and Location for AWS."
+cloud.tags,X,X,X,X,X,Ensures the tag(s) are added to servers,"Note that the actual tag name can be specified via a Global Variable, thus, with tge required permissions, the name can be defined down at Farm Role Scope. In this form the policy simply ensures that a tag of any name is applied."

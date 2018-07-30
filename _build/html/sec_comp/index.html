@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -232,6 +231,14 @@
 </ul>
 </li>
 </ul>
+<p class="caption"><span class="caption-text">Farm Fast Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fast_start/index.html">Building a Simple Farm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fast_start/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fast_start/index.html#fast-farm-build">Fast Farm Build</a></li>
+</ul>
+</li>
+</ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a></li>
@@ -290,9 +297,17 @@
 </ul>
 <p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Security and Compliance Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Security and Compliance Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#policy-engine-introduction">Policy Engine Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resource-quotas-introduction">Resource Quotas Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#orchestration-rules-introduction">Orchestration Rules Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#role-based-access-control-introduction">Role Based Access Control Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#governance-through-external-integrations">Governance Through External Integrations</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="policies.html">Policy Engine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="policies.html#policy-definitions">Policy Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="policies.html#linking-policy-groups-to-environments">Linking Policy Groups to Environments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="policies.html#policy-reference">Policy Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quotas.html">Resource Quotas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quotas.html#creating-quotas">Creating Quotas</a></li>
@@ -529,6 +544,41 @@
             
   <div class="section" id="security-and-compliance-overview">
 <h1>Security and Compliance Overview<a class="headerlink" href="#security-and-compliance-overview" title="Permalink to this headline">¶</a></h1>
+<p>Scalr provides the capability to rigorously implement policies and rules that ensure security rules, compliance requirements and standards are fully and consistently implemented across all cloud infrastructure, regardless of which and how many cloud service(s) are being used. This “Governance” can be implemented through several different features Scalr and this section of our documentation describes the purpose of each governance related feature and how to implement the policies and rules.</p>
+<div class="section" id="policy-engine-introduction">
+<h2>Policy Engine Introduction<a class="headerlink" href="#policy-engine-introduction" title="Permalink to this headline">¶</a></h2>
+<p>The Scalr Policy Engine is a powerful platform that can be used to create, manage and enforce Governance Policies, allowing your users to continue to take advantage of the speed and flexibility enabled by Cloud services, without increasing risk for your organization.  Scalr lets you enforce policies for an entire Environment, such as restricting instance types, restricting networks or mandating security requirements.  Each policy is defined by its type, which describes the goal of the policy, optional conditions that limit the scope this policy will apply to, and for some policy types that need it, additional configuration settings.</p>
+<p>Scalr policy engine sits between the user and Scalr, as well as between Scalr and clouds.  When you provision a new Policy Group, all user interaction with Scalr will be validated by the Policy Engine.  Scalr also validates all actions from Scalr to clouds via the policy engine as well.  New Policies do not automatically apply to running farms. They will only be fully taken into account for Farms launched after the enforcement of the policy.  For previously Running Farms, Scalr will not terminate existing instances that violate newly enforced Policies, but will not allow for violation of the policy in the future.</p>
+</div>
+<div class="section" id="resource-quotas-introduction">
+<h2>Resource Quotas Introduction<a class="headerlink" href="#resource-quotas-introduction" title="Permalink to this headline">¶</a></h2>
+<p>Resource Quotas in Scalr provide a simple mechanism to limit consumption of resources in clouds and thereby control cost. Resource quotas can be set for Memory (RAM), number of servers and vCPU’s on a cloud by cloud basis and applied selectively to different Environments. Thus a development team working in AWS could have different quotas to the Production system also running in AWS or anywhere else.</p>
+</div>
+<div class="section" id="orchestration-rules-introduction">
+<h2>Orchestration Rules Introduction<a class="headerlink" href="#orchestration-rules-introduction" title="Permalink to this headline">¶</a></h2>
+<p>Orchestration Rules are a mechanism that enables scripts to be on servers under a variety of circumstances. The circumstances include built-in server life cycle events, custom events and scheduled tasks. Orchestration rules can be defined at many levels through out Scalr, including Farms and Farm Roles. But in the context of governance Scalr allows for event based Orchestration Rules to be defined at the Scalr scope (Enterprise) and Account scope (Business Unit) so that the rules are applied to all Environments below these scopes.</p>
+<p>Examples of using Orchestration Rules for governance are as follows.</p>
+<ul class="simple">
+<li>Ensuring mandatory security upgrades/patches are applied</li>
+<li>Ensuring Virus checkers are installed and activated</li>
+<li>Configuring external authentication at server level</li>
+</ul>
+</div>
+<div class="section" id="role-based-access-control-introduction">
+<h2>Role Based Access Control Introduction<a class="headerlink" href="#role-based-access-control-introduction" title="Permalink to this headline">¶</a></h2>
+<p>The Policy Engine and Resource Quotas control how you use the cloud. Role Based Access Control (RBAC) is all about controlling who does what with the cloud (and Scalr). Scalr provides fine grained control of Scalr and Cloud functionality through Access Control Lists (ACLs) and Teams. Teams are assigned and ACL which then applies to all members of the team. The ACLs will alter the appearance of the Scalr UI, causing buttons and fields to be hidden, filtering of lists limitation to read only access if required. Thus an Enterprise or Business Unit can define functional roles and implement these through the ACL’s and Teams in Scalr. From a governance perspective this ensures only duly authorised staff are carrying out specific actions in the context of provisioning and managing cloud infrastructure.</p>
+</div>
+<div class="section" id="governance-through-external-integrations">
+<h2>Governance Through External Integrations<a class="headerlink" href="#governance-through-external-integrations" title="Permalink to this headline">¶</a></h2>
+<p>Enterprises often already have systems in place to implement governance policies. This can include things like</p>
+<ul class="simple">
+<li>IPAM systems</li>
+<li>CMDB systems for tracking infrastructure</li>
+<li>Approval systems</li>
+<li>Centralised user authentication</li>
+</ul>
+<p>Scalr can be configured to directly authenticate against external LDAP and SAML bases systems and also includes the capability to define Webhooks and Endpoints for integration to 3rd party configuration management and approval systems, such as ServiceNow.</p>
+</div>
 </div>
 
 
@@ -587,10 +637,7 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {
