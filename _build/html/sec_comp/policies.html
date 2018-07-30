@@ -298,10 +298,10 @@
 <p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Security and Compliance Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#policy-engine-introduction">Policy Engine Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#resource-quotas-introduction">Resource Quotas Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#orchestration-rules-introduction">Orchestration Rules Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#role-based-access-control-introduction">Role Based Access Control Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#policy-engine">Policy Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#resource-quotas">Resource Quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#orchestration-rules">Orchestration Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#role-based-access-control">Role Based Access Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#governance-through-external-integrations">Governance Through External Integrations</a></li>
 </ul>
 </li>
@@ -328,10 +328,17 @@
 <li class="toctree-l2"><a class="reference internal" href="#vmware-policies">VMware Policies</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="quotas.html">Resource Quotas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quotas.html#creating-quotas">Creating Quotas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quotas.html#applying-quotas">Applying Quotas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="orchestration.html">Scalr/Account Level Orchestration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quotas.html">Resource Quotas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quotas.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quotas.html#creating-quotas">Creating Quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quotas.html#applying-quotas">Applying Quotas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="orchestration.html">Scalr/Account/Environment Level Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="orchestration.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orchestration.html#creating-orchestration-rules">Creating Orchestration Rules</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="integrations.html">External Integrations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="integrations.html#webhooks-and-endpoints">Webhooks and Endpoints</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="integrations.html#configruing-endpoints">Configruing Endpoints</a></li>
@@ -598,7 +605,7 @@ Scalr also provide the ability to implement policies based on <a class="referenc
 <div class="section" id="using-global-variable-in-policies">
 <h3>Using Global Variable in Policies<a class="headerlink" href="#using-global-variable-in-policies" title="Permalink to this headline">¶</a></h3>
 <p>Global Variables in Policies make it possible to vary the details of the Policy at any level where Global Variables can be set. A good example of this is a policy that enforces tagging on servers. The <code class="docutils literal notranslate"><span class="pre">cloud.tags</span></code> policy is available for all cloud types and provides a list of tags that must be applied to servers from every Farm Role the policy applies to. In this example the policy effectively applies to all Farm Roles in all environments the Policy Group is linked to.</p>
-<img alt="../_images/gv_tag_policy1.png" src="../_images/gv_tag_policy1.png" />
+<a class="reference internal image-reference" href="../_images/gv_tag_policy1.png"><img alt="../_images/gv_tag_policy1.png" src="../_images/gv_tag_policy1.png" style="width: 487.0px; height: 494.5px;" /></a>
 <p>By using a Global Variable name (in this example. <cite>{MyGlobalVariable}</cite>) rather than an actual value, the value applied to the tag will be determined from the Global Variable at the time the server is launched, based on the value of the variable at that time. Depending on where the variable is defined and it’s permissions the value could be set as low down as the Farm Role scope.</p>
 <p>For more details see <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a>.</p>
 </div>
@@ -646,15 +653,15 @@ Scalr also provide the ability to implement policies based on <a class="referenc
 <tbody valign="top">
 <tr class="row-even"><td>scalr.server.hostname.source</td>
 <td>Enforces a source for the computation of the Servers hostnames. This policy is commonly used in conjunction with a Hostname Template policy or a Hostname Webhook endpoint policy.</td>
-<td><strong>Affects the Network Tab of Farm Roles in the Farm Designer</strong>. If you activate this policy, the Server Hostname Source will no longer be customizable in the Network Tab.</td>
+<td><strong>Affects the Network Tab of Farm Roles in the Farm Designer</strong>. <br> If you activate this policy, the Server Hostname Source will no longer be customizable in the Network Tab.</td>
 </tr>
 <tr class="row-odd"><td>scalr.server.hostname.template</td>
-<td>Enforcea a custom Hostname Template for your Servers. Enter the Hostname Template here, and Scalr will use it to generate the hostname for your Servers</td>
-<td><strong>Affects the Netwok Tab of Farm Roles in the Farm Designer</strong>. If you activate this policy, the Server Hostname Template will no longer be customizable in the Network Tab.</td>
+<td>Enforces a custom Hostname Template for your Servers. Enter the Hostname Template here, and Scalr will use it to generate the hostname for your Servers</td>
+<td><strong>Affects the Netwok Tab of Farm Roles in the Farm Designer</strong>. <br> If you activate this policy, the Server Hostname Template will no longer be customizable in the Network Tab.</td>
 </tr>
 <tr class="row-even"><td>scalr.server.hostname.integrations_endpoint</td>
 <td>Enforces a given Webhook endpoint to retrieve the hostname of your Servers from. Select an endpoint from the list of configured endpoints, and Scalr will use it to generate the hostname for your Servers</td>
-<td><strong>Affects the Netwok Tab of Farm Roles in the Farm Designer</strong>. If you activate this policy, the Server Hostname Webhook endpoint will no longer be customizable in Network Tab.</td>
+<td><strong>Affects the Netwok Tab of Farm Roles in the Farm Designer</strong>. <br> If you activate this policy, the Server Hostname Webhook endpoint will no longer be customizable in Network Tab.</td>
 </tr>
 <tr class="row-odd"><td>scalr.server.hostname.validation_pattern</td>
 <td>This policy creates a validation pattern for hostnames. If the hostname generated for a Server does not match the validation pattern, Scalr will abort the provisioning of the Server.</td>

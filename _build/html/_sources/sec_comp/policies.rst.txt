@@ -69,6 +69,7 @@ Using Global Variable in Policies
 Global Variables in Policies make it possible to vary the details of the Policy at any level where Global Variables can be set. A good example of this is a policy that enforces tagging on servers. The ``cloud.tags`` policy is available for all cloud types and provides a list of tags that must be applied to servers from every Farm Role the policy applies to. In this example the policy effectively applies to all Farm Roles in all environments the Policy Group is linked to.
 
 .. image:: images/gv_tag_policy.png
+   :scale: 50%
 
 By using a Global Variable name (in this example. `{MyGlobalVariable}`) rather than an actual value, the value applied to the tag will be determined from the Global Variable at the time the server is launched, based on the value of the variable at that time. Depending on where the variable is defined and it's permissions the value could be set as low down as the Farm Role scope.
 
@@ -122,6 +123,11 @@ Click on the link icon on the right-hand side, link the required Policy Group to
 
 Policy Reference
 ================
+
+.. |BR| raw:: html
+
+   <br>
+
 
 Configuration Policies
 ----------------------
