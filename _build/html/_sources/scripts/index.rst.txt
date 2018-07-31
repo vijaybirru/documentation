@@ -24,6 +24,7 @@ Once you are in the scripts page, click on New Script:
 .. image:: images/new_script.png
    :scale: 60%
 
+<<<<<<< Updated upstream
 +----------------+---------+-------------------------------------------------------------------------------------------------------------------------+
 | Item           | Format  | Description                                                                                                             |
 +================+=========+=========================================================================================================================+
@@ -42,6 +43,26 @@ Once you are in the scripts page, click on New Script:
 +----------------+---------+-------------------------------------------------------------------------------------------------------------------------+
 | Script Content | String  | Script contents                                                                                                         |
 +----------------+---------+-------------------------------------------------------------------------------------------------------------------------+
+=======
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
+| Item           | Format  | Description                                                                                                           |
++================+=========+=======================================================================================================================+
+| Name           | String  | Name of the script                                                                                                    |
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
+| Description    | String  | Description of the script                                                                                             |
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
+| Deprecated     | Binary  | Scripts can be deprecated to prevent further use                                                                      |
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
+| Shared         | Binary  | Determines if a script can be used at a lower level. This is only seen at the |Account| and |Scalr| scopes            |
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
+| Execution Mode | Binary  | Blocking: Scalarizr will wait for your Script to finish executing before firing and processing further events         |
+|                |         | Non-Blocking: Scalarizr will not wait for your Script to finish executing before firing and processing further events |
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
+| Timeout        | Integer | Length in seconds before the script should timeout                                                                    |
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
+| Script Content | String  | Script contents                                                                                                       |
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
+>>>>>>> Stashed changes
 
 Writing a Script
 ^^^^^^^^^^^^^^^^
@@ -50,7 +71,11 @@ Writing a Script
 
    <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)" target="_blank">Shebang Info</a>
 
+<<<<<<< Updated upstream
 Your Scripts should start with a shebang line: |shebang_link| |NEWWIN|. Scalr will use the interpreter specified in the shebang line and execute your script with it. The script runs on:
+=======
+Your Scripts should start with a shebang line: |shebang_link| |NEWWIN|. Scalr will use the interpreter specified in the shebang line and execute your Script with it. The script runs on:
+>>>>>>> Stashed changes
 
 * Linux - If the first line starts with #! /*
 
