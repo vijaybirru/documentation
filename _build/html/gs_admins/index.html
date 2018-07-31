@@ -614,15 +614,15 @@
 </ul>
 </li>
 </ul>
-<p>All tasks can be performed by clicking on the appropriate on the main menu button <a class="reference internal" href="../_images/menu_scalr.png"><img alt="MENU_SCALR" src="../_images/menu_scalr.png" style="width: 36.0px; height: 21.5px;" /></a> <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 34.5px; height: 22.0px;" /></a>.</p>
+<p>All tasks can be performed by clicking on the appropriate on the main menu button <a class="reference internal" href="../_images/menu_scalr.png"><img alt="MENU_SCALR" src="../_images/menu_scalr.png" style="width: 46.0px; height: 31.0px;" /></a> <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a>.</p>
 <p>The table below describes the core tasks that Admins must perform in order for End Users to be able to login, configure farms and deploy cloud infrastructure.
 This is NOT a comprehensive list of all features and functionality available in Scalr</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="18%" />
-<col width="11%" />
-<col width="14%" />
-<col width="57%" />
+<col width="10%" />
+<col width="4%" />
+<col width="5%" />
+<col width="81%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Task</th>
@@ -635,79 +635,104 @@ This is NOT a comprehensive list of all features and functionality available in 
 <tr class="row-even"><td>Set up Cost Centers</td>
 <td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></td>
 <td>Cost Analytics</td>
-<td>Cost Centers are critical to enabling useful sub-divisions of Cost Analytics.
-Each Account must be associated with a Cost Center, so it is advisable to
-set up Cost Centers before setting up Accounts.
-More detail can be found at <a class="reference internal" href="../cost/index.html#cost-control"><span class="std std-ref">Cost Control Overview</span></a>.</td>
+<td><div class="first last line-block">
+<div class="line">Cost Centers are critical to enabling useful sub-divisions of Cost Analytics.</div>
+<div class="line">Each Account must be associated with a Cost Center, so it is advisable to set up Cost Centers before setting up Accounts.</div>
+<div class="line">More detail can be found at <a class="reference internal" href="../cost/index.html#cost-control"><span class="std std-ref">Cost Control Overview</span></a>.</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>Create Accounts</td>
 <td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></td>
 <td>Accounts</td>
-<td>Accounts must be created to match the desired organisational structure.
-Accounts must be allocated a Cost Center and assigned an owner to be
-the Account administrator.
-More detail can be found at <a class="reference internal" href="../org/accounts.html#accounts"><span class="std std-ref">Account Configuration</span></a>.</td>
+<td><div class="first last line-block">
+<div class="line">Accounts must be created to match the desired organisational structure.</div>
+<div class="line">Accounts must be allocated a Cost Center and assigned an owner to be the Account administrator.</div>
+<div class="line">More detail can be found at <a class="reference internal" href="../org/accounts.html#accounts"><span class="std std-ref">Account Configuration</span></a>.</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>Set Up Users</td>
 <td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
 <td>Users</td>
-<td>If users are NOT being external authenticated via LDAP or SAML they must be created
-in Scalr. See <a class="reference internal" href="../org/team_users.html#teams-users"><span class="std std-ref">Teams and Users</span></a>.</td>
+<td><div class="first line-block">
+<div class="line">If users are NOT being external authenticated via LDAP or SAML they must be created in Scalr.</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Users are unique throughout Scalr and can have access to multiple accounts. They can be created at Scalr or Account scope but it is recommended that all User and Team management is done at Account scope. The exception being that only the Scalr admin can assign Global and Cost Manager Admin privileges to a user.</p>
+</div>
+<div class="last line-block">
+<div class="line">See <a class="reference internal" href="../org/team_users.html#teams-users"><span class="std std-ref">Teams and Users</span></a>.</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>Configure ACLs</td>
 <td><a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
 <td>ACL</td>
-<td>Scalr comes with 3 pre-configured ACL’s. You can use these or create your own to
-match your requirements. See <a class="reference internal" href="../sec_comp/acls.html#access-control"><span class="std std-ref">Access Control Lists</span></a>.</td>
+<td><div class="first last line-block">
+<div class="line">Scalr comes with 3 pre-configured ACL’s. You can use these or create your own to match your requirements.</div>
+<div class="line">See <a class="reference internal" href="../sec_comp/acls.html#access-control"><span class="std std-ref">Access Control Lists</span></a>.</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>Set up Teams</td>
 <td><a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
 <td>Teams</td>
-<td>Access to environments is configured via Teams. Teams must be created, linked
-to ACL’s and assigned Users as team members. If you are using LDAP for
-authentication the teams will automatically appear in Scalr based on the
-LDAP group names. You cannot set up or change LDAP based teams with Scalr,
-but you must still allocate an ACL.
-See <a class="reference internal" href="../org/team_users.html#teams-users"><span class="std std-ref">Teams and Users</span></a>.</td>
+<td><div class="first last line-block">
+<div class="line">Access to environments is configured via Teams. Teams must be created, linked to ACL’s and assigned Users as team members.</div>
+<div class="line">Teams must be linked to each environment they require access to.</div>
+<div class="line">If you are using LDAP for authentication the teams will automatically appear in Scalr based on the LDAP group names. You cannot set up or change LDAP based teams within Scalr, but you must still allocate an ACL.</div>
+<div class="line">See <a class="reference internal" href="../org/team_users.html#teams-users"><span class="std std-ref">Teams and Users</span></a>.</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>Configure Cloud Credentials</td>
 <td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
 <td>Cloud Credentials</td>
-<td>Cloud authentication details for access to the Cloud API(s) must be set
-and linked to Environments. See <a class="reference internal" href="../clouds/index.html#cloud-creds"><span class="std std-ref">Cloud Configuration and Credentials</span></a>.</td>
+<td><div class="first last line-block">
+<div class="line">Cloud authentication details for access to the Cloud API(s) must be set and linked to Environments.</div>
+<div class="line">See <a class="reference internal" href="../clouds/index.html#cloud-creds"><span class="std std-ref">Cloud Configuration and Credentials</span></a>.</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>Create Environments</td>
 <td><a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
 <td>Environments</td>
-<td>Each Account requires one or more environments for users to login into.
-These must be linked to one or more sets of Cloud Credentials and access must
-be granted to the appropriate Teams. Environments can also be linked to Policy Groups
-and Resource Quotas if they are being used. See <a class="reference internal" href="../org/accounts.html#environments"><span class="std std-ref">Configuring Environments</span></a>.</td>
+<td><div class="first last line-block">
+<div class="line">Each Account requires one or more environments for users to login into. These must be linked to one or more sets of Cloud Credentials and access must be granted to the appropriate Teams.</div>
+<div class="line">Environments can also be linked to Policy Groups and Resource Quotas if they are being used.</div>
+<div class="line">See <a class="reference internal" href="../org/accounts.html#environments"><span class="std std-ref">Configuring Environments</span></a>.</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>Register Images</td>
 <td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env1.png"><img alt="LE" src="../_images/scope_env1.png" style="width: 26.0px; height: 23.6px;" /></a></td>
 <td>Images</td>
-<td>Images must be registered in Scalr before they can be used in Roles. This can be
-simple manual registration or Images can be created from existing cloud servers.
-See <a class="reference internal" href="../images_roles/registering_images.html#register-images"><span class="std std-ref">Registering Images</span></a> and <a class="reference internal" href="../images_roles/creating_images_nonscalr.html#images-from-servers"><span class="std std-ref">Creating Images and Roles from Non-Scalr Servers</span></a>.</td>
+<td><div class="first last line-block">
+<div class="line">Images must be registered in Scalr before they can be used in Roles. This can be simple manual registration or Images can be created from existing cloud servers.</div>
+<div class="line">See <a class="reference internal" href="../images_roles/registering_images.html#register-images"><span class="std std-ref">Registering Images</span></a> and <a class="reference internal" href="../images_roles/creating_images_nonscalr.html#images-from-servers"><span class="std std-ref">Creating Images and Roles from Non-Scalr Servers</span></a>.</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>Configure Roles</td>
 <td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env1.png"><img alt="LE" src="../_images/scope_env1.png" style="width: 26.0px; height: 23.6px;" /></a></td>
 <td>Roles</td>
-<td>Roles associated with Images must be created and configured with any required
-Orchestration capabilities. This can be done from scratch or it can be done by
-importing existing cloud servers as new Images and Roles.
-See <a class="reference internal" href="../images_roles/creating_roles.html#roles"><span class="std std-ref">Creating Roles</span></a> and <a class="reference internal" href="../images_roles/creating_images_nonscalr.html#images-from-servers"><span class="std std-ref">Creating Images and Roles from Non-Scalr Servers</span></a>.</td>
+<td><div class="first last line-block">
+<div class="line">Roles associated with Images must be created and configured with any required Orchestration capabilities. This can be done from scratch or it can be done by importing existing cloud servers as new Images and Roles.</div>
+<div class="line">See <a class="reference internal" href="../images_roles/creating_roles.html#roles"><span class="std std-ref">Creating Roles</span></a> and <a class="reference internal" href="../images_roles/creating_images_nonscalr.html#images-from-servers"><span class="std std-ref">Creating Images and Roles from Non-Scalr Servers</span></a>.</div>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
 <p>The table below lists some of the optional tasks admins can perform before allowing end users access to Scalr. The tasks relate to implementing enterprise and business unit wide governance.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="19%" />
-<col width="11%" />
-<col width="14%" />
-<col width="56%" />
+<col width="12%" />
+<col width="5%" />
+<col width="6%" />
+<col width="77%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Task</th>
@@ -720,47 +745,57 @@ See <a class="reference internal" href="../images_roles/creating_roles.html#role
 <tr class="row-even"><td>Set up Governance Policies</td>
 <td><a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
 <td>Policy Engine</td>
-<td>Governance policies can be implemented at Account level to control many
-aspects of cloud deployments, e.g. to ensure compliance, adhere to standard,
-control cost and much more. See <a class="reference internal" href="../sec_comp/policies.html#policy-engine"><span class="std std-ref">Policy Engine</span></a>.</td>
+<td><div class="first last line-block">
+<div class="line">Governance policies can be implemented at Account level to control many aspects of cloud deployments, e.g. to ensure compliance, adhere to standard, control cost and much more.</div>
+<div class="line">See <a class="reference internal" href="../sec_comp/policies.html#policy-engine"><span class="std std-ref">Policy Engine</span></a>.</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>Create Scripts</td>
 <td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env1.png"><img alt="LE" src="../_images/scope_env1.png" style="width: 26.0px; height: 23.6px;" /></a></td>
 <td>Scripts</td>
-<td>Scripts can be created at all scopes within Scalr. They are used perform actions
-on running servers and can includethings like ensuring mandatory software upgrades
-and patches are applied, or they can simply perform local actions relevant to
-individual Farm Roles. Scripts should be created by administrators if they are
-required for Scalr or Account scope Orchestration rules, including
-orchestration rules applied to Roles at these scopes. See <a class="reference internal" href="../scripts/index.html#scripts"><span class="std std-ref">Scripts</span></a>.</td>
+<td><div class="first last line-block">
+<div class="line">Scripts can be created at all scopes within Scalr. They are used perform actions on running servers and can include things like ensuring mandatory software upgrades and patches are applied, or they can simply perform local actions relevant to individual Farm Roles.</div>
+<div class="line">Scripts should be created by administrators if they are required for Scalr or Account scope Orchestration rules, including orchestration rules applied to Roles at these scopes.</div>
+<div class="line">See <a class="reference internal" href="../scripts/index.html#scripts"><span class="std std-ref">Scripts</span></a>.</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>Create Global Variables</td>
 <td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env1.png"><img alt="LE" src="../_images/scope_env1.png" style="width: 26.0px; height: 23.6px;" /></a></td>
 <td>Global Variables</td>
-<td>The same applies to Global Variables. These can be created at all scopes.
-See <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a>.</td>
+<td><div class="first last line-block">
+<div class="line">Global Variables should be created by administrators if they are required for Scalr or Account scope Orchestration rules, including orchestration rules applied to Roles at these scopes. Global variables can be created at all scopes.</div>
+<div class="line">See <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a>.</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>Set up Orchestration Rules</td>
 <td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
 <td>Orchestration</td>
-<td>If you require orchestration rules to be applied consistently across all Accounts
-and Environments these should be created by administrators.
-See <a class="reference internal" href="../sec_comp/orchestration.html#sa-orchestration"><span class="std std-ref">Scalr/Account/Environment Level Orchestration</span></a>.</td>
+<td><div class="first last line-block">
+<div class="line">If you require orchestration rules to be applied consistently across all Accounts and Environments these should be created by administrators.</div>
+<div class="line">See <a class="reference internal" href="../sec_comp/orchestration.html#sa-orchestration"><span class="std std-ref">Scalr/Account/Environment Level Orchestration</span></a>.</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td>Set up Endpoints and Webhooks</td>
 <td><a class="reference internal" href="../_images/scope_scalr1.png"><img alt="LS" src="../_images/scope_scalr1.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env1.png"><img alt="LE" src="../_images/scope_env1.png" style="width: 26.0px; height: 23.6px;" /></a></td>
 <td>Integration Hub</td>
-<td>Administrators must set up and Enterprise or Account wide external integrations
-via Webhooks and associate them with appropriate events. Examples of this are for
-integration an IPAM system or a CMDB. See <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhooks and Endpoints</span></a>.</td>
+<td><div class="first last line-block">
+<div class="line">Administrators must set up Enterprise or Account wide external integrations via Webhooks and associate them with appropriate events. Examples of this are for integration with an IPAM system or a CMDB.</div>
+<div class="line">See <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhooks and Endpoints</span></a>.</div>
+</div>
+</td>
 </tr>
 <tr class="row-odd"><td>Set up Resource Quotas</td>
 <td><a class="reference internal" href="../_images/scope_acc1.png"><img alt="LA" src="../_images/scope_acc1.png" style="width: 25.6px; height: 23.6px;" /></a></td>
 <td>Resource Quotas</td>
-<td>Account admins can apply Resource Quotas (disk, memory etc) to all their
-environments to help control cost. This is often relevant in non-production
-environments where larger resource allocations are not required.
-See <a class="reference internal" href="../sec_comp/quotas.html#quotas"><span class="std std-ref">Resource Quotas</span></a></td>
+<td><div class="first last line-block">
+<div class="line">Account admins can apply Resource Quotas (disk, memory etc) to all their environments to help control cost. This is often relevant in non-production environments where larger resource allocations are not required.</div>
+<div class="line">See <a class="reference internal" href="../sec_comp/quotas.html#quotas"><span class="std std-ref">Resource Quotas</span></a></div>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
