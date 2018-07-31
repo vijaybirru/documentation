@@ -56,6 +56,10 @@
 
 .. |SCALR_SERVER_RB| replace:: In a multi-node configuration, the scalr-server.rb file should be exactly the same across all Scalr server nodes. Remember to run ``scalr-server-ctl reconfigure`` on all nodes whenever you make an update to the scalr-server.rb configuration file.
 
+.. |scalr_github_link| raw:: html
+
+   <a href="https://github.com/scalr-tutorials" target="_blank">Scalr Github</a>
+
 .. |BR| raw:: html
 
    <br>

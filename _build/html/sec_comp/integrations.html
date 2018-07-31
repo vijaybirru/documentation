@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>External Integrations &mdash; Scalr 0.01 documentation</title>
+  <title>Webhooks and Endpoints &mdash; Scalr 0.01 documentation</title>
   
 
   
@@ -337,11 +337,15 @@
 <li class="toctree-l2"><a class="reference internal" href="orchestration.html#creating-orchestration-rules">Creating Orchestration Rules</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">External Integrations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#webhooks-and-endpoints">Webhooks and Endpoints</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#configruing-endpoints">Configruing Endpoints</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Webhooks and Endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-endpoints">Configuring Endpoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuring-webhooks">Configuring Webhooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#webhook-notifications">Webhook Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#webhook-payloads">Webhook Payloads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#webhook-security-and-authentication">Webhook Security and Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#webhook-history">Webhook History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#highly-available-webhooks">Highly Available Webhooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-webhooks">Example Webhooks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="acls.html">Access Control Lists</a></li>
@@ -547,7 +551,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>External Integrations</li>
+      <li>Webhooks and Endpoints</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -566,19 +570,288 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="external-integrations">
-<span id="integrations"></span><h1>External Integrations<a class="headerlink" href="#external-integrations" title="Permalink to this headline">¶</a></h1>
-</div>
-<div class="section" id="webhooks-and-endpoints">
+  <div class="section" id="webhooks-and-endpoints">
 <span id="webhooks"></span><h1>Webhooks and Endpoints<a class="headerlink" href="#webhooks-and-endpoints" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="configruing-endpoints">
-<h2>Configruing Endpoints<a class="headerlink" href="#configruing-endpoints" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="definition-and-scope">
+<h2>Definition and Scope<a class="headerlink" href="#definition-and-scope" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
+<p>Webhooks are very simple, yet very powerful to integrate with external tools like a CMDB, IPAM, ITSM or Monitoring tools. Using Webhooks, Scalr delivers HTTP notifications (API calls) to external services of your choosing when lifecycle events occur on your infrastructure, such as server being provisioned or decommissioned. While Scalr Orchestration could be used to integration with external tools, there are a few constraints with orchestration as a script runs on the server you are provisioning rather than a central location:</p>
+<ul class="simple">
+<li>Those external tools may be firewalled off, and not accessible from your instances. This is commonplace for CMDBs.</li>
+<li>Those external tools may require credentials that you wouldn’t feel comfortable distributing to all your instances.</li>
+<li>Those external tools may need to be notified when instances go down or crash, in which case there may not be an instance to run the action on. This is typical for an alerting system.</li>
+</ul>
+<p>Unlike Orchestration, Webhook Notifications are delivered by Scalr itself to those external tools, which effectively lifts those limitations.</p>
+<a class="reference internal image-reference" href="../_images/webhook_diagram.png"><img alt="../_images/webhook_diagram.png" src="../_images/webhook_diagram.png" style="width: 454.99999999999994px; height: 288.4px;" /></a>
+</div>
+<div class="section" id="configuring-endpoints">
+<h2>Configuring Endpoints<a class="headerlink" href="#configuring-endpoints" title="Permalink to this headline">¶</a></h2>
+<p>Before creating a Webhook, an endpoint in which the webhook will contact is needed. The endpoint is the URL of the application that is running the webhook, to create an endpoint at the Account scope, click on the Scalr icon on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a> and then click on Integration Hub &gt; Endpoints.</p>
+<a class="reference internal image-reference" href="../_images/new_endpoint.png"><img alt="../_images/new_endpoint.png" src="../_images/new_endpoint.png" style="width: 460.59999999999997px; height: 152.6px;" /></a>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>The name of the endpoint.</td>
+</tr>
+<tr class="row-odd"><td>URL</td>
+<td>The URL the endpoint can be reached at.</td>
+</tr>
+<tr class="row-even"><td>Status</td>
+<td>A radio button to turn make the endpoint active/ inactive within Scalr.</td>
+</tr>
+<tr class="row-odd"><td>Shared</td>
+<td>Determines if the endpoint can be used at a lower level. This is only seen at the Account and Scalr scopes.</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="configuring-webhooks">
 <h2>Configuring Webhooks<a class="headerlink" href="#configuring-webhooks" title="Permalink to this headline">¶</a></h2>
+<p>The next step is to configure the Webhook, to do this at the Account scope, click on the Scalr icon on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a> and then click on Integration Hub &gt; Webhooks.</p>
+<a class="reference internal image-reference" href="../_images/new_webhook.png"><img alt="../_images/new_webhook.png" src="../_images/new_webhook.png" style="width: 458.49999999999994px; height: 424.9px;" /></a>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>Name of the webhook</td>
+</tr>
+<tr class="row-odd"><td>Endpoints</td>
+<td>The endpoint URL which should be used for this webhook.</td>
+</tr>
+<tr class="row-even"><td>Events</td>
+<td>The event at which the webhook call should be triggered.</td>
+</tr>
+<tr class="row-odd"><td>Farms</td>
+<td>Which farm(s) the webhook should trigger on. If left blank it will be trigger on all farms within the scope that the webhook is set.</td>
+</tr>
+<tr class="row-even"><td>Advanced Settings - Timeout</td>
+<td>The length of time in which Scalrt should get a response back from the webhook before timing out.</td>
+</tr>
+<tr class="row-odd"><td>Advance Settings - Max. Delivery Attempts</td>
+<td>How many times Scalr should attempt to send a payload if it initially fails to send.</td>
+</tr>
+<tr class="row-even"><td>Do not expose private GlobalVariables in webhook payload</td>
+<td>If a Global Variable is marked as hidden and this is checked then the Global Variable will not be passed in the payload</td>
+</tr>
+<tr class="row-odd"><td>User Data</td>
+<td>Webhook user data can be used to add extra information to Webhook Notifications. Webhook User Data is passed as-is in the userData field of the Webhook Notification’s payload so if you configure it in a specific format (i.e. JSON) you will need to manually decode it in your webhook handler.</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="section" id="webhook-notifications">
-<h2>Webhook Notifications<a class="headerlink" href="#webhook-notifications" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="webhook-payloads">
+<h2>Webhook Payloads<a class="headerlink" href="#webhook-payloads" title="Permalink to this headline">¶</a></h2>
+<p>A Webhook payload will dump all data it knows about a server built in Scalr to the endpoint application. This includes the Built-In Variables and Global Variables, which you can find out more about here: <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a>. The application that is running on the endpoint should be configured in a way that is parses for the relevant data.</p>
+<p>Webhook Payloads are dispatched as an HTTP POST request to your Endpoint. Notable features of the request include:</p>
+<ul class="simple">
+<li>A JSON body containing the Webhook Notification</li>
+<li>A Date HTTP Header, containing the timestamp when the Webhook Notification was dispatched</li>
+<li>A X-Signature HTTP Header, containing a cryptographic signature of the Webhook Notification</li>
+<li>A X-Scalr-Webhook-Id HTTP Header, containing the ID of the Webhook Notification</li>
+</ul>
+<p>The JSON body contains the following keys:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>eventName</td>
+<td>The name of the event that triggered this Webhook Notification</td>
+</tr>
+<tr class="row-odd"><td>eventId</td>
+<td>The ID of the event that triggered this Webhook Notification</td>
+</tr>
+<tr class="row-even"><td>timestamp</td>
+<td>The UTC time (formatted as an HTTP date) when the the event that triggered this Webhook Notification fired.</td>
+</tr>
+<tr class="row-odd"><td>data</td>
+<td>View Webhook User Data above.</td>
+</tr>
+<tr class="row-even"><td>userData</td>
+<td>The list of Global Variables that are in scope for the element that fired the Event that triggered this Webhook Notification. The list may vary depending on the Event.</td>
+</tr>
+<tr class="row-odd"><td>configurationId</td>
+<td>The internal ID of the Webhook configuration that triggered this Webhook Notification.</td>
+</tr>
+<tr class="row-even"><td>endpointId</td>
+<td>The internal ID of the webhook endpoint the Webhook Notification is sent to.</td>
+</tr>
+</tbody>
+</table>
+<p>Sample Payload:</p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;configurationId&quot;</span><span class="p">:</span> <span class="s2">&quot;d6e3a602-4a86-4871-9c02-931b543c6df8&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;SCALR_ACCOUNT_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_ACCOUNT_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;ACME Operations&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_BEHAVIORS&quot;</span><span class="p">:</span> <span class="s2">&quot;base&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_CLOUD_LOCATION&quot;</span><span class="p">:</span> <span class="s2">&quot;europe-west1-b&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_CLOUD_LOCATION_ZONE&quot;</span><span class="p">:</span> <span class="s2">&quot;europe-west1-b&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_CLOUD_PLATFORM&quot;</span><span class="p">:</span> <span class="s2">&quot;gce&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_CLOUD_SERVER_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;bdc02d5b-613f-4c34-b4fc-04f01db4f118&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_COST_CENTER_BC&quot;</span><span class="p">:</span> <span class="s2">&quot;CC-01&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_COST_CENTER_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;3f54770e-bf1a-11e3-92c5-000feae9c516&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_COST_CENTER_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;ACME Operations&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_ENV_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_ENV_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;IT Labs US&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_ACCOUNT_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_ACCOUNT_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;ACME Operations&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_BEHAVIORS&quot;</span><span class="p">:</span> <span class="s2">&quot;base&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_CLOUD_LOCATION&quot;</span><span class="p">:</span> <span class="s2">&quot;europe-west1-b&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_CLOUD_LOCATION_ZONE&quot;</span><span class="p">:</span> <span class="s2">&quot;europe-west1-b&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_CLOUD_PLATFORM&quot;</span><span class="p">:</span> <span class="s2">&quot;gce&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_CLOUD_SERVER_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;bdc02d5b-613f-4c34-b4fc-04f01db4f118&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_COST_CENTER_BC&quot;</span><span class="p">:</span> <span class="s2">&quot;CC-01&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_COST_CENTER_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;3f54770e-bf1a-11e3-92c5-000feae9c516&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_COST_CENTER_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;ACME Operations&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_ENV_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_ENV_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;IT Labs US&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_EXTERNAL_IP&quot;</span><span class="p">:</span> <span class="s2">&quot;104.155.70.102&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_FARM_HASH&quot;</span><span class="p">:</span> <span class="s2">&quot;501a9f8cab6b5f&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_FARM_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;1824&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_FARM_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;Temp Scalr sandbox&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_FARM_OWNER_EMAIL&quot;</span><span class="p">:</span> <span class="s2">&quot;aloys@scalr.com&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_FARM_ROLE_ALIAS&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_FARM_ROLE_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;2682&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_FARM_TEAM&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;333d5bfa&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_IMAGE_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;scalr-demo/images/ubuntu1604-gce-scalr-1497530014&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_INSTANCE_FARM_INDEX&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_INSTANCE_INDEX&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_INTERNAL_IP&quot;</span><span class="p">:</span> <span class="s2">&quot;10.132.0.3&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_ISDBMASTER&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_LAUNCHED_BY_EMAIL&quot;</span><span class="p">:</span> <span class="s2">&quot;aloys@scalr.com&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_LAUNCHED_BY_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;80&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;HostUp&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_PROJECT_BC&quot;</span><span class="p">:</span> <span class="s2">&quot;PR-01&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_PROJECT_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;30c59dba-fc9b-4d0f-83ec-4b5043b12f72&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_PROJECT_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;IT Lab&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_ROLE_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_SERVER_HOSTNAME&quot;</span><span class="p">:</span> <span class="s2">&quot;scalrserver01&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_SERVER_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;bdc02d5b-613f-4c34-b4fc-04f01db4f118&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EVENT_SERVER_TYPE&quot;</span><span class="p">:</span> <span class="s2">&quot;n1-standard-4&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_EXTERNAL_IP&quot;</span><span class="p">:</span> <span class="s2">&quot;104.155.70.102&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_FARM_HASH&quot;</span><span class="p">:</span> <span class="s2">&quot;501a9f8cab6b5f&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_FARM_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;1824&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_FARM_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;Temp Scalr sandbox&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_FARM_OWNER_EMAIL&quot;</span><span class="p">:</span> <span class="s2">&quot;aloys@scalr.com&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_FARM_ROLE_ALIAS&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_FARM_ROLE_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;2682&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_FARM_TEAM&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;333d5bfa&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_IMAGE_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;scalr-demo/images/ubuntu1604-gce-scalr-1497530014&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_INSTANCE_FARM_INDEX&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_INSTANCE_INDEX&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_INTERNAL_IP&quot;</span><span class="p">:</span> <span class="s2">&quot;10.132.0.3&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_ISDBMASTER&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_LAUNCHED_BY_EMAIL&quot;</span><span class="p">:</span> <span class="s2">&quot;aloys@scalr.com&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_LAUNCHED_BY_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;80&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_PROJECT_BC&quot;</span><span class="p">:</span> <span class="s2">&quot;PR-01&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_PROJECT_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;30c59dba-fc9b-4d0f-83ec-4b5043b12f72&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_PROJECT_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;IT Lab&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_ROLE_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_SERVER_HOSTNAME&quot;</span><span class="p">:</span> <span class="s2">&quot;scalrserver01&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_SERVER_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;bdc02d5b-613f-4c34-b4fc-04f01db4f118&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;SCALR_SERVER_TYPE&quot;</span><span class="p">:</span> <span class="s2">&quot;n1-standard-4&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;endpointId&quot;</span><span class="p">:</span> <span class="s2">&quot;4dd66e35-9955-45cc-a6fb-f24e945bf16a&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;eventId&quot;</span><span class="p">:</span> <span class="s2">&quot;417692b9-2f1e-4d08-a7a5-fbb8954a288d&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;eventName&quot;</span><span class="p">:</span> <span class="s2">&quot;HostUp&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;Wed 06 Sep 2017 12:21:17 UTC&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;userData&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="webhook-security-and-authentication">
+<h2>Webhook Security and Authentication<a class="headerlink" href="#webhook-security-and-authentication" title="Permalink to this headline">¶</a></h2>
+<p>Scalr adds a cryptographic signature to Webhook Notifications in order for you to be able to validate that they were indeed generated by Scalr.</p>
+<p>To validate Webhook Notifications, follow this procedure:</p>
+<ul class="simple">
+<li>Obtain the Webhook Endpoint Signing Key for your Endpoint, this is shown as soon as the Webhook is created. Note that the Signing Key is unique to an Endpoint.</li>
+<li>When receiving a Webhook message, compute its signature using the following algorithm (see below for code samples)<ul>
+<li>Concatenate the JSON message payload and the Date header</li>
+<li>Compute a HMAC digest of the concatenated message, using the SHA-1 algorithm</li>
+<li>Retrieve the hexadecimal value of the HMAC digest (this is the signature)</li>
+</ul>
+</li>
+<li>Compare the signature you computed to the one that is found in the X-Signature HTTP Header. For maximum security, ensure you perform a constant-time comparison.<ul>
+<li>If the signatures match, the message is authentic, and was indeed sent by Scalr</li>
+<li>If the signatures do not match, the message is a forgery, and was not sent by Scalr</li>
+</ul>
+</li>
+</ul>
+<p>To compute a Webhook Notification signature in PHP, use the following algorithm. We assume that the $payload variable contains the request JSON payload, and that timestamp contains the Date Header.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">$canonical_string</span> <span class="o">=</span> <span class="nv">$payload</span> . <span class="nv">$timestamp</span><span class="p">;</span>
+<span class="nv">$signature</span> <span class="o">=</span> hash_hmac<span class="o">(</span><span class="s1">&#39;SHA1&#39;</span>, <span class="nv">$canonical_string</span>, <span class="nv">$endpoint</span>-&gt;securityKey<span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="webhook-history">
+<h2>Webhook History<a class="headerlink" href="#webhook-history" title="Permalink to this headline">¶</a></h2>
+<p>To track Webhook calls as well as troubleshoot if you suspect an integration is failing, there is a Webhook History section that will provide this information. It shows if the call was completed/failed as well as exit codes:</p>
+</div>
+<div class="section" id="highly-available-webhooks">
+<h2>Highly Available Webhooks<a class="headerlink" href="#highly-available-webhooks" title="Permalink to this headline">¶</a></h2>
+<p>Highly-available Webhooks can be simply deployed using DNS-based high availability. To achieve this, you should ensure that:</p>
+<ul class="simple">
+<li>A DNS name is assigned to the webhook service (e.g. webhook.scalr.corp.com).</li>
+<li>The Webhook Endpoint is Scalr is configured with this DNS name.</li>
+<li>The Webhook server itself can be replicated to make it highly available. Since most webhook handlers are stateless, this should not be an issue.</li>
+<li>Several instances of the webhook server are deployed.</li>
+<li>The DNS server returns several A records for the webhook service, one for each webhook server instance.</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="p">;</span> &lt;&lt;&gt;&gt; DiG <span class="m">9</span>.10.6 &lt;&lt;&gt;&gt; webhook.scalr.corp.com
+<span class="p">;;</span> global options: +cmd
+<span class="p">;;</span> Got answer:
+<span class="p">;;</span> -&gt;&gt;HEADER<span class="s">&lt;&lt;- opco</span>de: QUERY, status: NOERROR, id: <span class="m">60289</span>
+<span class="p">;;</span> flags: qr rd ra ad<span class="p">;</span> QUERY: <span class="m">1</span>, ANSWER: <span class="m">2</span>, AUTHORITY: <span class="m">0</span>, ADDITIONAL: <span class="m">1</span>
+
+<span class="p">;;</span> OPT PSEUDOSECTION:
+<span class="p">;</span> EDNS: version: <span class="m">0</span>, flags:<span class="p">;</span> udp: <span class="m">4096</span>
+<span class="p">;;</span> QUESTION SECTION:
+<span class="p">;</span>webhook.scalr.corp.com. IN A
+
+<span class="p">;;</span> ANSWER SECTION:
+webhook.scalr.corp.com. <span class="m">3600</span> IN A <span class="m">35</span>.187.188.42
+webhook.scalr.corp.com. <span class="m">3600</span> IN A <span class="m">35</span>.195.169.152
+
+<span class="p">;;</span> Query time: <span class="m">15</span> msec
+<span class="p">;;</span> SERVER: <span class="m">192</span>.168.5.1#53<span class="o">(</span><span class="m">192</span>.168.5.1<span class="o">)</span>
+<span class="p">;;</span> WHEN: Mon Jun <span class="m">25</span> <span class="m">20</span>:17:15 CEST <span class="m">2018</span>
+<span class="p">;;</span> MSG SIZE rcvd: <span class="m">90</span>
+</pre></div>
+</div>
+<p>If your webhook server is deployed from Scalr, and your Scalr installation is integrated with your DNS system, steps 4 and 5 can be as simple as scaling up the Farm Role of the webhook.</p>
+<p>If all these conditions are met, Scalr will correctly and quickly retry webhook requests if one of the servers becomes unavailable, making the webhook integration highly available. As long as one server is reachable, you will not see any errors in the Scalr webhook log.</p>
+<p>Naturally, this should be coupled with a monitoring and alerting system to ensure that this doesn’t just hide failures.</p>
+</div>
+<div class="section" id="example-webhooks">
+<h2>Example Webhooks<a class="headerlink" href="#example-webhooks" title="Permalink to this headline">¶</a></h2>
+<p>To see examples of Webhooks please visit our Github site: <a href="https://github.com/scalr-tutorials" target="_blank">Scalr Github</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></p>
 </div>
 </div>
 

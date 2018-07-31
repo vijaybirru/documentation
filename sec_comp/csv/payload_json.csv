@@ -1,0 +1,8 @@
+Parameter,Description
+eventName,The name of the event that triggered this Webhook Notification
+eventId,The ID of the event that triggered this Webhook Notification
+timestamp,The UTC time (formatted as an HTTP date) when the the event that triggered this Webhook Notification fired.
+data,View Webhook User Data above.
+userData,The list of Global Variables that are in scope for the element that fired the Event that triggered this Webhook Notification. The list may vary depending on the Event.
+configurationId,The internal ID of the Webhook configuration that triggered this Webhook Notification.
+endpointId,The internal ID of the webhook endpoint the Webhook Notification is sent to.

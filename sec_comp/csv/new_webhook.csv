@@ -1,0 +1,9 @@
+Field ,Description
+Name,Name of the webhook
+Endpoints,The endpoint URL which should be used for this webhook.
+Events,The event at which the webhook call should be triggered.
+Farms,Which farm(s) the webhook should trigger on. If left blank it will be trigger on all farms within the scope that the webhook is set.
+Advanced Settings - Timeout,The length of time in which Scalrt should get a response back from the webhook before timing out.
+Advance Settings - Max. Delivery Attempts,How many times Scalr should attempt to send a payload if it initially fails to send.
+Do not expose private GlobalVariables in webhook payload,If a Global Variable is marked as hidden and this is checked then the Global Variable will not be passed in the payload
+User Data,Webhook user data can be used to add extra information to Webhook Notifications. Webhook User Data is passed as-is in the userData field of the Webhook Notification's payload so if you configure it in a specific format (i.e. JSON) you will need to manually decode it in your webhook handler.
