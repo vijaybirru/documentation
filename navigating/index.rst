@@ -11,14 +11,19 @@ The details of the UI, including the menu buttons and functionality, will vary a
 
 
 .. |SAV1| image:: images/save_1.png
+          :scale: 50%
 
 .. |SAV2| image:: images/save_2.png
+          :scale: 50%
 
 .. |SAV3| image:: images/save_3.png
+          :scale: 50%
 
 .. warning:: DO NOT FORGET TO SAVE. When you are creating or editing anything in Scalr you must always click on the appropriate "Save" button. The button will either be located at the bottom of the screen, or the bottom of a pop-up dialogue. The Save button can appear in different formats, including have an associated options drop down. |SAV1| |SAV2| |SAV3|
 
 .. |REFRESH| image:: images/refresh.png
+             :scale: 40%
+
 
 .. note:: The Scalr UI is highly optimised to provide fast response times and rapid loading of data, especially lists of items such as Images, Roles, Farms etc. Every list has a refresh button |REFRESH|. For an optimal experience always use the list refresh button to refresh the list rather than your browsers page refresh option.
 
@@ -58,6 +63,8 @@ The Main Menu gives you access to all the functionality that is available to you
 The menu can be filtered by typing text into the filter box at the top. This will reduce the menu down to to items that include that text at any level in the menu. As you can see from this example, typing "server" in the filter reveals top level items that have sub-menu's containing the word "server".
 
 .. image:: images/mm-filter.png
+   :scale: 30%
+
 
 Bookmarks Bar
 -------------
@@ -70,14 +77,16 @@ You can edit the contents of the bookmarks bar in two ways.
 **Pin a Menu Item**
 
 .. |PIN| image:: images/pin.png
-         :scale: 50%
+         :scale: 30%
 
 When you select an item from the Main Menu that is not already in the Bookmarks Bar, it will be temporarily added to the Bookmarks Bar until you select a different menu item.
 Temporary bookmark items have an associated pin button |PIN|. Click the pin to add the item to the Bookmarks Bar permanently.
 
 .. image:: images/pin_1.png
+   :scale: 70%
 
 .. image:: images/pin_2.png
+   :scale: 70%
 
 **Edit and Re-Order Via Settings**
 
@@ -124,6 +133,8 @@ Click on the green |ACCOUNT| name to be taken to the |ACCOUNT| Dashboard.
 If you have access to multiple |ACCOUNTS| you can use the "Switch |Accounts| " button to change to another |ACCOUNT|.
 
 .. image:: images/env_menu.png
+   :scale: 50%
+
 
 List Views
 ----------
@@ -135,7 +146,7 @@ Some lists will have a "New ...." button as shown in this Images example.
    :scale: 50%
 
 .. |ASET| image:: images/list_settings.png
-          :scale: 50%
+          :scale: 30%
 
 .. |DROP| image:: images/drop_button.png
           :scale: 30%
@@ -143,8 +154,10 @@ Some lists will have a "New ...." button as shown in this Images example.
 Some lists will include Action and a Settings |ASET| buttons as well. |BR| Action buttons can appear in both the list tool bar and alongside each item in the list. The toolbar action buttons can be used to apply the same action to multiple items in the list. These action buttons will be greyed out until at least one item in the list is checked. Note that the |DROP| button is a drop down list of all the actions than can be taken on the specific farm.
 
 .. |A1| image:: images/list_actions_grey.png
+        :scale: 50%
 
 .. |A2| image:: images/list_actions.png
+        :scale: 50%
 
 ================= ==============
 No items selected Items selected
@@ -155,12 +168,12 @@ No items selected Items selected
 When a list is selected via the main menu it will show an unfiltered list as can be seen in this example list of Servers.
 
 .. image:: images/list_2.png
-   :scale: 50%
+   :scale: 70%
 
 A list can also be navigated to from some other context and will be filtered according to the context. E.g the Servers list can be reached from the Farms list and will then only show the servers for that farm due to the pre-applied search filter.
 
 .. image:: images/list_farms.png
-   :scale: 50%
+   :scale: 70%
 
 .. image:: images/list_filtered.png
-   :scale: 50%
+   :scale: 70%

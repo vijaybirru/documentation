@@ -18,7 +18,7 @@ Creating Quotas
 .. |SCALR_ACC_ICON| image:: images/scalr_icon_acc.png
    :scale: 70%
 
-To create an orchestration rule at the |ACCOUNT| scope, click on the Scalr icon on the top left |SCALR_ACC_ICON| and then click on Resource Quotas. After you click on New Resource Quota the following page will show up:
+To create a Resource Quota at the |ACCOUNT| scope, click on the Scalr icon on the top left |SCALR_ACC_ICON| and then click on Resource Quotas. After you click on New Resource Quota the following page will show up:
 
 .. image:: images/new_resource_quota.png
    :scale: 70%
