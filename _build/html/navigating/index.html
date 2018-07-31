@@ -298,10 +298,10 @@
 <p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/index.html">Security and Compliance Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#policy-engine-introduction">Policy Engine Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#resource-quotas-introduction">Resource Quotas Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#orchestration-rules-introduction">Orchestration Rules Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#role-based-access-control-introduction">Role Based Access Control Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#policy-engine">Policy Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#resource-quotas">Resource Quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#orchestration-rules">Orchestration Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#role-based-access-control">Role Based Access Control</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#governance-through-external-integrations">Governance Through External Integrations</a></li>
 </ul>
 </li>
@@ -572,12 +572,12 @@
 <span id="navigating"></span><h1>Navigating the User Interface<a class="headerlink" href="#navigating-the-user-interface" title="Permalink to this headline">¶</a></h1>
 <p>This section provides a guide to the Scalr User Interface. It will show you how the various functional features of the UI, but it will NOT show you every feature of Scalr.</p>
 <p>The details of the UI, including the menu buttons and functionality, will vary according to the Scope you are logged in to, and the permissions you have been granted via <a class="reference internal" href="../sec_comp/acls.html#access-control"><span class="std std-ref">Access Control Lists</span></a>. This section of the documentation will show screen shots and examples based on a user having full access to Scalr at the Environment Scope. If you do not see all the options shown in these examples when you login to Scalr please contact your administrator.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">DO NOT FORGET TO SAVE. When you are creating or editing anything in Scalr you must always click on the appropriate “Save” button. The button will either be located at the bottom of the screen, or the bottom of a pop-up dialogue. The Save button can appear in different formats, including have an associated options drop down. <img alt="SAV1" src="../_images/save_1.png" /> <img alt="SAV2" src="../_images/save_2.png" /> <img alt="SAV3" src="../_images/save_3.png" /></p>
-</div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
+<p class="last">DO NOT FORGET TO SAVE. When you are creating or editing anything in Scalr you must always click on the appropriate “Save” button. The button will either be located at the bottom of the screen, or the bottom of a pop-up dialogue. The Save button can appear in different formats, including have an associated options drop down. <img alt="SAV1" src="../_images/save_1.png" /> <img alt="SAV2" src="../_images/save_2.png" /> <img alt="SAV3" src="../_images/save_3.png" /></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
 <p class="last">The Scalr UI is highly optimised to provide fast response times and rapid loading of data, especially lists of items such as Images, Roles, Farms etc. Every list has a refresh button <img alt="REFRESH" src="../_images/refresh.png" />. For an optimal experience always use the list refresh button to refresh the list rather than your browsers page refresh option.</p>
 </div>
 <div class="section" id="scope-differences">
@@ -681,13 +681,7 @@ If you have access to multiple accounts you can use the “Switch Accounts ” b
 <p>Lists are used all over the Scalr UI and have a common layout that includes the Search/Action tool bar, column headings and the list itself.
 Some lists will have a “New ….” button as shown in this Images example.</p>
 <a class="reference internal image-reference" href="../_images/list_1.png"><img alt="../_images/list_1.png" src="../_images/list_1.png" style="width: 573.5px; height: 128.0px;" /></a>
-<p>Some lists will include Action and a Settings <a class="reference internal" href="../_images/list_settings.png"><img alt="ASET" src="../_images/list_settings.png" style="width: 25.5px; height: 17.0px;" /></a> buttons as well.
-When a list is selected via the main menu it will show an unfiltered list as can be seen in this example list of Servers.</p>
-<a class="reference internal image-reference" href="../_images/list_2.png"><img alt="../_images/list_2.png" src="../_images/list_2.png" style="width: 798.5px; height: 134.0px;" /></a>
-<p>List can also be navigated to from some other context and will be filtered according to the context. E.g the Servers list can be reached Farms list and will then only show the servers for that farm due to the pre-applied search filter.</p>
-<a class="reference internal image-reference" href="../_images/list_farms.png"><img alt="../_images/list_farms.png" src="../_images/list_farms.png" style="width: 798.0px; height: 223.0px;" /></a>
-<a class="reference internal image-reference" href="../_images/list_filtered.png"><img alt="../_images/list_filtered.png" src="../_images/list_filtered.png" style="width: 798.0px; height: 72.0px;" /></a>
-<p>Action buttons can appear in both the list tool bar and alongside each item in the list. The toolbar action buttons can be used to apply the same action to multiple items in the list. These action buttons will be greyed out until at least one item in the list is checked.</p>
+<p>Some lists will include Action and a Settings <a class="reference internal" href="../_images/list_settings.png"><img alt="ASET" src="../_images/list_settings.png" style="width: 25.5px; height: 17.0px;" /></a> buttons as well. <br> Action buttons can appear in both the list tool bar and alongside each item in the list. The toolbar action buttons can be used to apply the same action to multiple items in the list. These action buttons will be greyed out until at least one item in the list is checked. Note that the <a class="reference internal" href="../_images/drop_button.png"><img alt="DROP" src="../_images/drop_button.png" style="width: 29.7px; height: 27.599999999999998px;" /></a> button is a drop down list of all the actions than can be taken on the specific farm.</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="55%" />
@@ -704,6 +698,11 @@ When a list is selected via the main menu it will show an unfiltered list as can
 </tr>
 </tbody>
 </table>
+<p>When a list is selected via the main menu it will show an unfiltered list as can be seen in this example list of Servers.</p>
+<a class="reference internal image-reference" href="../_images/list_2.png"><img alt="../_images/list_2.png" src="../_images/list_2.png" style="width: 798.5px; height: 134.0px;" /></a>
+<p>A list can also be navigated to from some other context and will be filtered according to the context. E.g the Servers list can be reached from the Farms list and will then only show the servers for that farm due to the pre-applied search filter.</p>
+<a class="reference internal image-reference" href="../_images/list_farms.png"><img alt="../_images/list_farms.png" src="../_images/list_farms.png" style="width: 798.0px; height: 223.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/list_filtered.png"><img alt="../_images/list_filtered.png" src="../_images/list_filtered.png" style="width: 798.0px; height: 72.0px;" /></a>
 </div>
 </div>
 

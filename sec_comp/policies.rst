@@ -124,11 +124,6 @@ Click on the link icon on the right-hand side, link the required Policy Group to
 Policy Reference
 ================
 
-.. |BR| raw:: html
-
-   <br>
-
-
 Configuration Policies
 ----------------------
 

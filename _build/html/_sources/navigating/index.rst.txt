@@ -16,11 +16,11 @@ The details of the UI, including the menu buttons and functionality, will vary a
 
 .. |SAV3| image:: images/save_3.png
 
-.. note:: DO NOT FORGET TO SAVE. When you are creating or editing anything in Scalr you must always click on the appropriate "Save" button. The button will either be located at the bottom of the screen, or the bottom of a pop-up dialogue. The Save button can appear in different formats, including have an associated options drop down. |SAV1| |SAV2| |SAV3|
+.. warning:: DO NOT FORGET TO SAVE. When you are creating or editing anything in Scalr you must always click on the appropriate "Save" button. The button will either be located at the bottom of the screen, or the bottom of a pop-up dialogue. The Save button can appear in different formats, including have an associated options drop down. |SAV1| |SAV2| |SAV3|
 
 .. |REFRESH| image:: images/refresh.png
 
-.. warning:: The Scalr UI is highly optimised to provide fast response times and rapid loading of data, especially lists of items such as Images, Roles, Farms etc. Every list has a refresh button |REFRESH|. For an optimal experience always use the list refresh button to refresh the list rather than your browsers page refresh option.
+.. note:: The Scalr UI is highly optimised to provide fast response times and rapid loading of data, especially lists of items such as Images, Roles, Farms etc. Every list has a refresh button |REFRESH|. For an optimal experience always use the list refresh button to refresh the list rather than your browsers page refresh option.
 
 Scope Differences
 -----------------
@@ -137,21 +137,10 @@ Some lists will have a "New ...." button as shown in this Images example.
 .. |ASET| image:: images/list_settings.png
           :scale: 50%
 
-Some lists will include Action and a Settings |ASET| buttons as well.
-When a list is selected via the main menu it will show an unfiltered list as can be seen in this example list of Servers.
+.. |DROP| image:: images/drop_button.png
+          :scale: 30%
 
-.. image:: images/list_2.png
-   :scale: 50%
-
-List can also be navigated to from some other context and will be filtered according to the context. E.g the Servers list can be reached Farms list and will then only show the servers for that farm due to the pre-applied search filter.
-
-.. image:: images/list_farms.png
-   :scale: 50%
-
-.. image:: images/list_filtered.png
-   :scale: 50%
-
-Action buttons can appear in both the list tool bar and alongside each item in the list. The toolbar action buttons can be used to apply the same action to multiple items in the list. These action buttons will be greyed out until at least one item in the list is checked.
+Some lists will include Action and a Settings |ASET| buttons as well. |BR| Action buttons can appear in both the list tool bar and alongside each item in the list. The toolbar action buttons can be used to apply the same action to multiple items in the list. These action buttons will be greyed out until at least one item in the list is checked. Note that the |DROP| button is a drop down list of all the actions than can be taken on the specific farm.
 
 .. |A1| image:: images/list_actions_grey.png
 
@@ -162,3 +151,16 @@ No items selected Items selected
 ================= ==============
 |A1|              |A2|
 ================= ==============
+
+When a list is selected via the main menu it will show an unfiltered list as can be seen in this example list of Servers.
+
+.. image:: images/list_2.png
+   :scale: 50%
+
+A list can also be navigated to from some other context and will be filtered according to the context. E.g the Servers list can be reached from the Farms list and will then only show the servers for that farm due to the pre-applied search filter.
+
+.. image:: images/list_farms.png
+   :scale: 50%
+
+.. image:: images/list_filtered.png
+   :scale: 50%
