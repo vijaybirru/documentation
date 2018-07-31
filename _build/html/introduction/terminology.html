@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Getting Started for Admins" href="../gs_admins/index.html" />
+    <link rel="next" title="Installation &amp; Upgrades" href="../install_guide/index.html" />
     <link rel="prev" title="Overview of Scalr" href="index.html" /> 
 
   
@@ -83,7 +83,45 @@
               
             
             
-              <p class="caption"><span class="caption-text">Scalr Server Admin Guide</span></p>
+              <p class="caption"><span class="caption-text">Scalr Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview of Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#multi-cloud-support">Multi-Cloud Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#high-level-declarative-primitives-vs-low-level-imperative-instructions">High-Level Declarative Primitives vs Low-Level Imperative Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#usable-by-both-developers-and-it">Usable by Both Developers and IT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#scalr-architecture">Scalr Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#software-architecture">Software Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#deployment-architecture">Deployment Architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Concepts and Terminology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#scalr-scopes">Scalr Scopes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#login-scopes">Login Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-scopes">Configuration Scopes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#cloud-credentials">Cloud Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accounts">Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environments">Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#images-and-roles">Images and Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#farms-and-farm-roles">Farms and Farm Roles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#desired-state-engine">Desired State Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#service-catalog-and-applications">Service Catalog and Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cost-analytics-manager">Cost Analytics/Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#policy-engine">Policy Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#users-teams-and-access-control">Users, Teams and Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#global-variables">Global Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#orchestration">Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scripts">Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#webhooks-endpoints-and-external-integrations">Webhooks, Endpoints and External Integrations</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scalr Server Admin Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install_guide/index.html">Installation &amp; Upgrades</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/scalr_server_architecture.html">Scalr Server Architecture and Requirements</a><ul>
@@ -164,47 +202,6 @@
 </li>
 </ul>
 </li>
-</ul>
-</li>
-</ul>
-<p class="caption"><span class="caption-text">Scalr Introduction</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="index.html">Overview of Scalr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#deployment-architecture">Deployment Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html#value-of-scalr">Value of Scalr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#security-and-compliance">Security and Compliance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#cost-control-visibility">Cost control &amp; Visibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#platform-flexibility">Platform Flexibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#team-productivity">Team Productivity</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Concepts and Terminology</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#scalr-architecture">Scalr Architecture</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#software-architecture">Software Architecture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#deployment-architecture">Deployment Architecture</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#scalr-scopes">Scalr Scopes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#login-scopes">Login Scopes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configuration-scopes">Configuration Scopes</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#cloud-credentials">Cloud Credentials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#accounts">Accounts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#environments">Environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#images-and-roles">Images and Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#farms-and-farm-roles">Farms and Farm Roles</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#desired-state-engine">Desired State Engine</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#service-catalog-and-applications">Service Catalog and Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cost-analytics-manager">Cost Analytics/Manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#policy-engine">Policy Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#users-teams-and-access-control">Users, Teams and Access Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#global-variables">Global Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#orchestration">Orchestration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scripts">Scripts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#webhooks-endpoints-and-external-integrations">Webhooks, Endpoints and External Integrations</a></li>
 </ul>
 </li>
 </ul>
@@ -571,23 +568,6 @@
             
   <div class="section" id="concepts-and-terminology">
 <h1>Concepts and Terminology<a class="headerlink" href="#concepts-and-terminology" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="scalr-architecture">
-<h2>Scalr Architecture<a class="headerlink" href="#scalr-architecture" title="Permalink to this headline">¶</a></h2>
-<p>Scalr is comprised of two main software components.</p>
-<ol class="arabic simple">
-<li><strong>Scalr Server</strong>. This is installed on one or hosts and provides the user interface, API’s, meta data storage and all necessary processes to interface with the API’s of clouds and manage the instances/servers running in the cloud. Scalr Server is sometimes referred to as Scalr Core.</li>
-<li><strong>Scalarizer Agent</strong>. The agent is installed in all instances/servers running in clouds that are managed by Scalr. It’s purpose is to execute actions in the instances upon receipt of those actions from the Scalr Server, and to provide monitoring and status information back to the Scalr Server.</li>
-</ol>
-<p>Scalr Server can be installed on a single host but this would typically only be done for non-critical installations, such as staging or pre-prod environment. For production use Scalr should be installed on multiple hosts and configured with HA and redundancy to ensure continuity of service.</p>
-<div class="section" id="software-architecture">
-<h3>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this headline">¶</a></h3>
-<a class="reference internal image-reference" href="../_images/sw_arch.png"><img alt="../_images/sw_arch.png" src="../_images/sw_arch.png" style="width: 513.5px; height: 306.5px;" /></a>
-</div>
-<div class="section" id="deployment-architecture">
-<h3>Deployment Architecture<a class="headerlink" href="#deployment-architecture" title="Permalink to this headline">¶</a></h3>
-<a class="reference internal image-reference" href="../_images/arch.png"><img alt="../_images/arch.png" src="../_images/arch.png" style="width: 556.5px; height: 527.5px;" /></a>
-</div>
-</div>
 <div class="section" id="scalr-scopes">
 <h2>Scalr Scopes<a class="headerlink" href="#scalr-scopes" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="login-scopes">
@@ -826,7 +806,7 @@ For details on configuring orchestration in Farms and Farm Roles see <a class="r
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../gs_admins/index.html" class="btn btn-neutral float-right" title="Getting Started for Admins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../install_guide/index.html" class="btn btn-neutral float-right" title="Installation &amp; Upgrades" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Overview of Scalr" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -4,18 +4,18 @@ Scalr Documentation!
 ====================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Scalr Server Admin Guide
-
-   install_guide/index
-   extensions/index
-
-.. toctree::
    :maxdepth: 3
    :caption: Scalr Introduction
 
    introduction/index
    introduction/terminology
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Scalr Server Admin Guide
+
+   install_guide/index
+   extensions/index
 
 .. toctree::
    :maxdepth: 3

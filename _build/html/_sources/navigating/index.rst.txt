@@ -5,6 +5,8 @@
 Navigating the User Interface
 =============================
 
+.. image:: images/test.png
+
 This section provides a guide to the Scalr User Interface. It will show you how the various functional features of the UI, but it will NOT show you every feature of Scalr.
 
 The details of the UI, including the menu buttons and functionality, will vary according to the Scope you are logged in to, and the permissions you have been granted via :ref:`access_control`. This section of the documentation will show screen shots and examples based on a user having full access to Scalr at the |ENVIRONMENT| Scope. If you do not see all the options shown in these examples when you login to Scalr please contact your administrator.
