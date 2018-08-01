@@ -49,8 +49,7 @@ Enterprises often already have systems in place to implement governance policies
 * IPAM systems
 * CMDB systems for tracking infrastructure
 * Approval systems
-* Centralised user authentication
 
 Scalr can be configured to directly authenticate against external LDAP and SAML bases systems and also includes the capability to define Webhooks and Endpoints for integration to 3rd party configuration management and approval systems, such as ServiceNow.
 
-For more details see :ref:`integrations` and :ref:`webhooks`
+For more details see :ref:`webhooks`

@@ -339,6 +339,7 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Webhooks and Endpoints</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuring-endpoints">Configuring Endpoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuring-webhooks">Configuring Webhooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#webhook-payloads">Webhook Payloads</a></li>
@@ -575,18 +576,27 @@
 <div class="section" id="definition-and-scope">
 <h2>Definition and Scope<a class="headerlink" href="#definition-and-scope" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
-<p>Webhooks are very simple, yet very powerful to integrate with external tools like a CMDB, IPAM, ITSM or Monitoring tools. Using Webhooks, Scalr delivers HTTP notifications (API calls) to external services of your choosing when lifecycle events occur on your infrastructure, such as server being provisioned or decommissioned. While Scalr Orchestration could be used to integration with external tools, there are a few constraints with orchestration as a script runs on the server you are provisioning rather than a central location:</p>
+<p>Webhooks are very simple, yet very powerful way to integrate with external systems such as a CMDB, IPAM, ITSM or Monitoring tools. Using Webhooks, Scalr delivers HTTP notifications to external services of your choosing when lifecycle events occur on your infrastructure, such as server being provisioned or decommissioned. While Scalr Orchestration could be used to integrate with external systems, there are a few constraints with orchestration as a script runs on the server you are provisioning rather than a central location:</p>
 <ul class="simple">
-<li>Those external tools may be firewalled off, and not accessible from your instances. This is commonplace for CMDBs.</li>
-<li>Those external tools may require credentials that you wouldn’t feel comfortable distributing to all your instances.</li>
-<li>Those external tools may need to be notified when instances go down or crash, in which case there may not be an instance to run the action on. This is typical for an alerting system.</li>
+<li>Those external systems may be firewalled off, and not accessible from your instances. This is commonplace for CMDBs.</li>
+<li>Those external systems may require credentials that you wouldn’t feel comfortable distributing to all your instances.</li>
+<li>Those external systems may need to be notified when instances go down or crash, in which case there may not be an instance to run the action on. This is typical for an alerting system.</li>
 </ul>
-<p>Unlike Orchestration, Webhook Notifications are delivered by Scalr itself to those external tools, which effectively lifts those limitations.</p>
+<p>Unlike Orchestration, Webhook Notifications are delivered by Scalr itself to those external systems, which effectively lifts those limitations.</p>
 <a class="reference internal image-reference" href="../_images/webhook_diagram.png"><img alt="../_images/webhook_diagram.png" src="../_images/webhook_diagram.png" style="width: 454.99999999999994px; height: 288.4px;" /></a>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>To setup an integration with an external system the following will be needed:</p>
+<ul class="simple">
+<li>A Webhook App</li>
+<li>An Endpoint that is serving the Webhook App</li>
+<li>A Webhook configured in Scalr</li>
+</ul>
 </div>
 <div class="section" id="configuring-endpoints">
 <h2>Configuring Endpoints<a class="headerlink" href="#configuring-endpoints" title="Permalink to this headline">¶</a></h2>
-<p>Before creating a Webhook, an endpoint in which the webhook will contact is needed. The endpoint is the URL of the application that is running the webhook, to create an endpoint at the Account scope, click on the Scalr icon on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a> and then click on Integration Hub &gt; Endpoints.</p>
+<p>Before creating a Webhook, an endpoint is needed for the webhook to contact. The endpoint is the URL of the application that is running the webhook. To create an endpoint at the Account or Scalr scopes, click on the Scalr icon on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a> and then click on Integration Hub &gt; Endpoints.</p>
 <a class="reference internal image-reference" href="../_images/new_endpoint.png"><img alt="../_images/new_endpoint.png" src="../_images/new_endpoint.png" style="width: 460.59999999999997px; height: 152.6px;" /></a>
 <table border="1" class="docutils">
 <colgroup>
@@ -616,7 +626,7 @@
 </div>
 <div class="section" id="configuring-webhooks">
 <h2>Configuring Webhooks<a class="headerlink" href="#configuring-webhooks" title="Permalink to this headline">¶</a></h2>
-<p>The next step is to configure the Webhook, to do this at the Account scope, click on the Scalr icon on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a> and then click on Integration Hub &gt; Webhooks.</p>
+<p>The next step is to configure the Webhook, to do this at the Account or Scalr scope, click on the Scalr icon on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a> and then click on Integration Hub &gt; Webhooks.</p>
 <a class="reference internal image-reference" href="../_images/new_webhook.png"><img alt="../_images/new_webhook.png" src="../_images/new_webhook.png" style="width: 458.49999999999994px; height: 424.9px;" /></a>
 <table border="1" class="docutils">
 <colgroup>
@@ -642,7 +652,7 @@
 <td>Which farm(s) the webhook should trigger on. If left blank it will be trigger on all farms within the scope that the webhook is set.</td>
 </tr>
 <tr class="row-even"><td>Advanced Settings - Timeout</td>
-<td>The length of time in which Scalrt should get a response back from the webhook before timing out.</td>
+<td>The length of time in which Scalr should get a response back from the webhook before timing out.</td>
 </tr>
 <tr class="row-odd"><td>Advance Settings - Max. Delivery Attempts</td>
 <td>How many times Scalr should attempt to send a payload if it initially fails to send.</td>
@@ -812,7 +822,8 @@
 </div>
 <div class="section" id="webhook-history">
 <h2>Webhook History<a class="headerlink" href="#webhook-history" title="Permalink to this headline">¶</a></h2>
-<p>To track Webhook calls as well as troubleshoot if you suspect an integration is failing, there is a Webhook History section that will provide this information. It shows if the call was completed/failed as well as exit codes:</p>
+<p>To track Webhook calls as well as troubleshoot if you suspect an integration is failing, there is a Webhook History section that will provide this information. To look at the Webhook History, go to the Account or Scalr scope, click on the Scalr icon on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a> and then click on Integration Hub &gt; Webhooks &gt; History.</p>
+<a class="reference internal image-reference" href="../_images/webhook_history.png"><img alt="../_images/webhook_history.png" src="../_images/webhook_history.png" style="width: 1113.0px; height: 285.59999999999997px;" /></a>
 </div>
 <div class="section" id="highly-available-webhooks">
 <h2>Highly Available Webhooks<a class="headerlink" href="#highly-available-webhooks" title="Permalink to this headline">¶</a></h2>

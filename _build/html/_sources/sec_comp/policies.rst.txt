@@ -18,7 +18,7 @@ There are three steps to defining and enabling policies.
 2. Add Policies and policy conditions to the Policy Group.
 3. Link the Policy group to the required |ENVIRONMENTS|.
 
-Policy conditions provide fine grained control over the application of a policy, allowing for policy variations across different clouds, locations cloud accounts and more.
+Policy conditions provide fine grained control over the application of a policy, allowing for policy variations across different clouds, locations, accounts and more.
 Scalr also provide the ability to implement policies based on :ref:`policy_tags`.
 
 Creating Policy Groups

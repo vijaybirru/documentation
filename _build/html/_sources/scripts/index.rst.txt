@@ -53,7 +53,7 @@ Once you are in the scripts page, click on New Script:
 +----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
 | Deprecated     | Binary  | Scripts can be deprecated to prevent further use                                                                      |
 +----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
-| Shared         | Binary  | Determines if a script can be used at a lower level. This is only seen at the |Account| and |Scalr| scopes            |
+| Shared         | Binary  | Determines if a script can be used at a lower level. This is only seen at the |Account| and |Scalr| scopes.           |
 +----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
 | Execution Mode | Binary  | Blocking: Scalarizr will wait for your Script to finish executing before firing and processing further events         |
 |                |         | Non-Blocking: Scalarizr will not wait for your Script to finish executing before firing and processing further events |

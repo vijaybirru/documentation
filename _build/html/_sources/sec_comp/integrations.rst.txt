@@ -10,23 +10,30 @@ Definition and Scope
 
 |SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV|
 
-Webhooks are very simple, yet very powerful to integrate with external tools like a CMDB, IPAM, ITSM or Monitoring tools. Using Webhooks, Scalr delivers HTTP notifications (API calls) to external services of your choosing when lifecycle events occur on your infrastructure, such as server being provisioned or decommissioned. While Scalr Orchestration could be used to integration with external tools, there are a few constraints with orchestration as a script runs on the server you are provisioning rather than a central location:
+Webhooks are very simple, yet very powerful way to integrate with external systems such as a CMDB, IPAM, ITSM or Monitoring tools. Using Webhooks, Scalr delivers HTTP notifications to external services of your choosing when lifecycle events occur on your infrastructure, such as server being provisioned or decommissioned. While Scalr Orchestration could be used to integrate with external systems, there are a few constraints with orchestration as a script runs on the server you are provisioning rather than a central location:
 
-* Those external tools may be firewalled off, and not accessible from your instances. This is commonplace for CMDBs.
-* Those external tools may require credentials that you wouldn’t feel comfortable distributing to all your instances.
-* Those external tools may need to be notified when instances go down or crash, in which case there may not be an instance to run the action on. This is typical for an alerting system.
+* Those external systems may be firewalled off, and not accessible from your instances. This is commonplace for CMDBs.
+* Those external systems may require credentials that you wouldn’t feel comfortable distributing to all your instances.
+* Those external systems may need to be notified when instances go down or crash, in which case there may not be an instance to run the action on. This is typical for an alerting system.
 
-Unlike Orchestration, Webhook Notifications are delivered by Scalr itself to those external tools, which effectively lifts those limitations.
+Unlike Orchestration, Webhook Notifications are delivered by Scalr itself to those external systems, which effectively lifts those limitations.
 
 .. image:: images/webhook_diagram.png
    :scale: 70%
 
+Overview
+--------
 
+To setup an integration with an external system the following will be needed:
+
+* A Webhook App
+* An Endpoint that is serving the Webhook App
+* A Webhook configured in Scalr
 
 Configuring Endpoints
 ---------------------
 
-Before creating a Webhook, an endpoint in which the webhook will contact is needed. The endpoint is the URL of the application that is running the webhook, to create an endpoint at the |ACCOUNT| scope, click on the Scalr icon on the top left |MENU_ACC| and then click on Integration Hub > Endpoints.
+Before creating a Webhook, an endpoint is needed for the webhook to contact. The endpoint is the URL of the application that is running the webhook. To create an endpoint at the |ACCOUNT| or |SCALR| scopes, click on the Scalr icon on the top left |MENU_ACC| and then click on Integration Hub > Endpoints.
 
 .. image:: images/new_endpoint.png
    :scale: 70%
@@ -47,7 +54,7 @@ Before creating a Webhook, an endpoint in which the webhook will contact is need
 Configuring Webhooks
 --------------------
 
-The next step is to configure the Webhook, to do this at the |ACCOUNT| scope, click on the Scalr icon on the top left |MENU_ACC| and then click on Integration Hub > Webhooks.
+The next step is to configure the Webhook, to do this at the |ACCOUNT| or |SCALR| scope, click on the Scalr icon on the top left |MENU_ACC| and then click on Integration Hub > Webhooks.
 
 .. image:: images/new_webhook.png
    :scale: 70%
@@ -191,7 +198,10 @@ To compute a Webhook Notification signature in PHP, use the following algorithm.
 Webhook History
 ---------------
 
-To track Webhook calls as well as troubleshoot if you suspect an integration is failing, there is a Webhook History section that will provide this information. It shows if the call was completed/failed as well as exit codes:
+To track Webhook calls as well as troubleshoot if you suspect an integration is failing, there is a Webhook History section that will provide this information. To look at the Webhook History, go to the |ACCOUNT| or |SCALR| scope, click on the Scalr icon on the top left |MENU_ACC| and then click on Integration Hub > Webhooks > History.
+
+.. image:: images/webhook_history.png
+   :scale: 70%
 
 Highly Available Webhooks
 --------------------------
