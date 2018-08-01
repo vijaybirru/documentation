@@ -1,3 +1,5 @@
+.. _admin_scalarizr:
+
 Scalarizr Installation
 =========================
 
@@ -73,7 +75,11 @@ Open the administrator powershell and execute:
 
    iex ((New-Object Net.WebClient).DownloadString('https://<YOUR_SCALR_URL>/public/windows/latest/install_scalarizr.ps1'))
 
+.. note::
 
+  Scalarizr should not be set to automatically start on Windows servers. The Scalarizr update client will automatically start Scalarizr once it has completed the update.
+
+.. _scalarizr_repo:
 
 How to Create Your Own Scalarizr Repo
 --------------------------------------
