@@ -639,7 +639,7 @@
 </div>
 <div class="section" id="farm-role">
 <h3>Farm Role:<a class="headerlink" href="#farm-role" title="Permalink to this headline">¶</a></h3>
-<p>To update these setting for a single Farm Role, go to the Farms page, find your farm, click on the <a class="reference internal" href="../_images/wrench.png"><img alt="WRENCH" src="../_images/wrench.png" style="width: 45.6px; height: 40.800000000000004px;" /></a> , click on the Farm Role you want to updated, and then go to the bottom of the Advanced tab:</p>
+<p>To update these setting for a single Farm Role, go to the Farms page, find your farm, click on the <a class="reference internal" href="../_images/wrench.png"><img alt="WRENCH" src="../_images/wrench.png" style="width: 45.6px; height: 40.800000000000004px;" /></a> , click on the Farm Role you want to update, and then go to the bottom of the Advanced tab:</p>
 <a class="reference internal image-reference" href="../_images/farm_role_advanced_settings.png"><img alt="../_images/farm_role_advanced_settings.png" src="../_images/farm_role_advanced_settings.png" style="width: 832.3px; height: 546.0px;" /></a>
 <p>In the Repository section you can select which repository you want all of the servers to point to, there may only be one depending on how the Scalr admin has setup your Scalr Server Repo.</p>
 <p>You can also schedule the time that Scalarizr should check for updates, this follows standard crontab notation.</p>
@@ -653,12 +653,31 @@
 <div class="section" id="scalarizr-logs">
 <h2>Scalarizr Logs<a class="headerlink" href="#scalarizr-logs" title="Permalink to this headline">¶</a></h2>
 <p>The following are the Scalarizr log locations:</p>
-<ul class="simple">
-<li>/var/log/scalarizr.log - The general log that shows Scalarizr events.</li>
-<li>/var/log/scalarizr_debug.log - The debug version of the scalarizr.log.</li>
-<li>/var/log/scalarizr_update.log - The log that shows the initial Scalarizr update when a server is launched as well as polling for updates to Scalarizr.</li>
-<li>/var/log/scalrizr/scripting/* - The location where Scalr orchestration output is saved.</li>
-</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Log Location</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>/var/log/scalarizr.log</td>
+<td>The general log that shows Scalarizr events.</td>
+</tr>
+<tr class="row-odd"><td>/var/log/scalarizr_debug.log</td>
+<td>The debug version of the scalarizr.log</td>
+</tr>
+<tr class="row-even"><td>/var/log/scalarizr_update.log</td>
+<td>The log that shows the initial Scalarizr update when a server is launched as well as polling for updates to Scalarizr.</td>
+</tr>
+<tr class="row-odd"><td>/var/log/scalrizr/scripting/*</td>
+<td>The location where Scalr orchestration output is saved.</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="section" id="scalarizr-administrative-interface">
@@ -666,7 +685,7 @@
 <p>Scalarizr provides a command line interface (szradm) allowing users to perform a variety of tasks inluding:</p>
 <ul class="simple">
 <li>Firing events</li>
-<li>Querying environments for updated information (i.e. Global Variables)</li>
+<li>Querying environments information about the server or farm.</li>
 </ul>
 <p>To access the szradm interface go to the following locations:</p>
 <p>Linux:</p>
@@ -679,7 +698,7 @@
 </div>
 <div class="section" id="firing-custom-events">
 <h2>Firing Custom Events<a class="headerlink" href="#firing-custom-events" title="Permalink to this headline">¶</a></h2>
-<p>Szradm can be used to fire Custom Events, seem more information on Custom Events here:</p>
+<p>Szradm can be used to fire Custom Events, see more information on Custom Events here: NEED TO ADD A LINK HERE</p>
 <p>Here is an example of firing a custom event from Scalarizr:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fire the &quot;Hello&quot; Custom Event</span>
 $ szradm fire-event Hello
@@ -693,13 +712,34 @@ $ szradm fire-event Hello
 <h3>queryenv list-roles<a class="headerlink" href="#queryenv-list-roles" title="Permalink to this headline">¶</a></h3>
 <p>The ListRoles QueryEnv call returns a list of the Farm Roles and associated server(s) that make up the Farm the calling Server belongs to.</p>
 <p>The list retuned by ListRoles may be filtered using the following parameters:</p>
-<ul class="simple">
-<li>behaviour=&lt;behavior&gt; filters the result to only include Servers whose behaviors include &lt;behavior&gt; (Note: be mindful of the English spelling in the behaviour parameter)</li>
-<li>role=&lt;role name&gt; filters the result to only includes Servers whose Role name (not Farm Role Alias) matches &lt;role name&gt;</li>
-<li>role-id=&lt;role id&gt; filters the result to only includes Servers whose Role ID (not Farm Role ID) matches &lt;role id&gt;</li>
-<li>farm-role-id=&lt;farm role id&gt; filters the result to only includes Servers whose Farm Role ID matches &lt;farm role id&gt;</li>
-<li>showInitServers=1 - by default the response does not include Servers in Initializing State. Pass this flag to include them.</li>
-</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>behaviour=&lt;behavior&gt;</td>
+<td>Filters the result to only include Servers whose behaviors include &lt;behavior&gt; (Note: be mindful of the English spelling in the behaviour parameter)</td>
+</tr>
+<tr class="row-odd"><td>role=&lt;role name&gt;</td>
+<td>Filters the result to only includes Servers whose Role name (not Farm Role Alias) matches &lt;role name&gt;</td>
+</tr>
+<tr class="row-even"><td>role-id=&lt;role id&gt;</td>
+<td>Filters the result to only includes Servers whose Role ID (not Farm Role ID) matches &lt;role id&gt;</td>
+</tr>
+<tr class="row-odd"><td>farm-role-id=&lt;farm role id&gt;</td>
+<td>Filters the result to only includes Servers whose Farm Role ID matches &lt;farm role id&gt;</td>
+</tr>
+<tr class="row-even"><td>showInitServers=1</td>
+<td>By default the response does not include Servers in Initializing State. Pass this flag to include them.</td>
+</tr>
+</tbody>
+</table>
 <p>Example Output:</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span>root@haproxy-1:~# szradm queryenv --format=json list-roles
 {
@@ -955,16 +995,28 @@ $ szradm fire-event Hello
 <li>Farm-Role-Scope Global Variables for the Farm Role that the Server making the call is an instance of.</li>
 </ul>
 <p>You must pass the following options when calling the SetGlobalVariable Queryenv call:</p>
-<ul class="simple">
-<li>scope=&lt;scope&gt; is the Global Variable Scope on which to set the Global Variable. it should be one of:<ul>
-<li>server for the Server Scope.</li>
-<li>farmrole for the Farm-Role Scope.</li>
-<li>farm for the Farm Scope.</li>
-</ul>
-</li>
-<li>param-name=&lt;global variable name&gt; is the name of the Global Variable you want to set.</li>
-<li>param-value=&lt;global variable value&gt; is the value you want to set for the Global Variable.</li>
-</ul>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>scope=&lt;scope&gt;</td>
+<td>This is the Global Variable scope where the Global Variable should be set. Values can be : server/farm/farmrole</td>
+</tr>
+<tr class="row-odd"><td>param-name=&lt;global variable name&gt;</td>
+<td>The name of the Global Variable you want to set.</td>
+</tr>
+<tr class="row-even"><td>param-value=&lt;global variable value&gt;</td>
+<td>The value you want to set for the Global Variable.</td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span># Set a Global variable on the Server Scop
 root@haproxy-1:~# szradm queryenv set-global-variable scope=server param-name=ServerVar param-value=ServerValue
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;

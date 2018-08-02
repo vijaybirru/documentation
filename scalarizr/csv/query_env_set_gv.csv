@@ -1,0 +1,4 @@
+Parameter,Description
+scope=<scope>,This is the Global Variable scope where the Global Variable should be set. Values can be : server/farm/farmrole
+param-name=<global variable name>,The name of the Global Variable you want to set.
+param-value=<global variable value>,The value you want to set for the Global Variable.

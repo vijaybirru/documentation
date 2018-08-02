@@ -104,10 +104,10 @@ Scalarizr Logs
 
 The following are the Scalarizr log locations:
 
-* /var/log/scalarizr.log - The general log that shows Scalarizr events.
-* /var/log/scalarizr_debug.log - The debug version of the scalarizr.log.
-* /var/log/scalarizr_update.log - The log that shows the initial Scalarizr update when a server is launched as well as polling for updates to Scalarizr.
-* /var/log/scalrizr/scripting/* - The location where Scalr orchestration output is saved.
+.. csv-table::
+   :header-rows: 1
+   :file: csv/log_location.csv
+   :widths: 20,80
 
 .. _szradm:
 
@@ -157,11 +157,10 @@ The ListRoles QueryEnv call returns a list of the Farm Roles and associated serv
 
 The list retuned by ListRoles may be filtered using the following parameters:
 
-* behaviour=<behavior> filters the result to only include Servers whose behaviors include <behavior> (Note: be mindful of the English spelling in the behaviour parameter)
-* role=<role name> filters the result to only includes Servers whose Role name (not Farm Role Alias) matches <role name>
-* role-id=<role id> filters the result to only includes Servers whose Role ID (not Farm Role ID) matches <role id>
-* farm-role-id=<farm role id> filters the result to only includes Servers whose Farm Role ID matches <farm role id>
-* showInitServers=1 - by default the response does not include Servers in Initializing State. Pass this flag to include them.
+.. csv-table::
+   :header-rows: 1
+   :file: csv/query_env_listroles.csv
+   :widths: 20,80
 
 Example Output:
 
@@ -426,14 +425,10 @@ The SetGlobalVariable Queryenv call allows you to set:
 
 You must pass the following options when calling the SetGlobalVariable Queryenv call:
 
-* scope=<scope> is the Global Variable Scope on which to set the Global Variable. it should be one of:
-
-  * server for the Server Scope.
-  * farmrole for the Farm-Role Scope.
-  * farm for the Farm Scope.
-
-* param-name=<global variable name> is the name of the Global Variable you want to set.
-* param-value=<global variable value> is the value you want to set for the Global Variable.
+.. csv-table::
+   :header-rows: 1
+   :file: csv/query_env_set_gv.csv
+   :widths: 20,80
 
 .. code-block:: JSON
 
