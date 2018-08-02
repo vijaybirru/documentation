@@ -16,9 +16,9 @@
 
 .. |ENVIRONMENT| replace:: Environment
 
-.. |ACCOUNTS| replace:: accounts
+.. |ACCOUNTS| replace:: Accounts
 
-.. |ENVIRONMENTS| replace:: environments
+.. |ENVIRONMENTS| replace:: Environments
 
 .. |Accounts| replace:: Accounts
 
