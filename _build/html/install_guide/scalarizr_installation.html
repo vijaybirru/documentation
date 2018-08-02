@@ -155,6 +155,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#how-to-install-scalarizr-on-windows-images">How to Install Scalarizr on Windows Images</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#scalarizr-logs">Scalarizr Logs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#how-to-create-your-own-scalarizr-repo">How to Create Your Own Scalarizr Repo</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#managing-scalr-integrated-repo-service">Managing Scalr Integrated Repo Service</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#download-and-set-up-a-custom-repo">Download and Set Up a Custom Repo</a></li>
@@ -801,8 +802,37 @@
 </div>
 </div>
 </div>
+<div class="section" id="scalarizr-logs">
+<span id="scalarizr-repo"></span><h2>Scalarizr Logs<a class="headerlink" href="#scalarizr-logs" title="Permalink to this headline">¶</a></h2>
+<p>The following are the Scalarizr log locations:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Log Location</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>/var/log/scalarizr.log</td>
+<td>The general log that shows Scalarizr events.</td>
+</tr>
+<tr class="row-odd"><td>/var/log/scalarizr_debug.log</td>
+<td>The debug version of the scalarizr.log</td>
+</tr>
+<tr class="row-even"><td>/var/log/scalarizr_update.log</td>
+<td>The log that shows the initial Scalarizr update when a server is launched as well as polling for updates to Scalarizr.</td>
+</tr>
+<tr class="row-odd"><td>/var/log/scalrizr/scripting/*</td>
+<td>The location where Scalr orchestration output is saved.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="how-to-create-your-own-scalarizr-repo">
-<span id="scalarizr-repo"></span><h2>How to Create Your Own Scalarizr Repo<a class="headerlink" href="#how-to-create-your-own-scalarizr-repo" title="Permalink to this headline">¶</a></h2>
+<h2>How to Create Your Own Scalarizr Repo<a class="headerlink" href="#how-to-create-your-own-scalarizr-repo" title="Permalink to this headline">¶</a></h2>
 <p>Setting up a Scalr integrated custom repository is very easy.  This capability allows for simple management of your custom repo, the available packages, and your custom release branches right from the Scalr server CLI!  Below are a few key points to note about the “repos” service:</p>
 <ul class="simple">
 <li>This service acts as a separate component from other services on the Scalr server.  If desired, it can be put on a dedicated server just like other Scalr components.</li>

@@ -102,12 +102,16 @@ If there is a need to update Scalarizr without waiting for the scheduled update,
 Scalarizr Logs
 --------------
 
+.. Term-Scalr-Logs-Start
+
 The following are the Scalarizr log locations:
 
 .. csv-table::
    :header-rows: 1
    :file: csv/log_location.csv
    :widths: 20,80
+
+.. Term-Scalr-Logs-Stop
 
 .. _szradm:
 
@@ -136,7 +140,7 @@ Windows:
 Firing Custom Events
 --------------------
 
-Szradm can be used to fire Custom Events, see more information on Custom Events here: NEED TO ADD A LINK HERE
+Szradm can be used to fire Custom Events, see more information on Custom Events here: :ref:`custom_events`
 
 Here is an example of firing a custom event from Scalarizr:
 

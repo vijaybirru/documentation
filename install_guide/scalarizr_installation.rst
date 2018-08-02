@@ -81,6 +81,13 @@ Open the administrator powershell and execute:
 
 .. _scalarizr_repo:
 
+Scalarizr Logs
+--------------
+
+.. include:: /scalarizr/index.rst
+   :start-after: Term-Scalr-Logs-Start
+   :end-before: Term-Scalr-Logs-Stop
+
 How to Create Your Own Scalarizr Repo
 --------------------------------------
 

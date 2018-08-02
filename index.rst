@@ -93,6 +93,7 @@ Scalr Documentation!
    gvs/index
    chef/index
    ansible/index
+   custom_events/index
 
 .. toctree::
    :maxdepth: 3
