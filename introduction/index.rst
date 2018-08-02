@@ -7,7 +7,7 @@ Scalr is a Cloud Management Platform that provides the capability to manage clou
 * Centralised implementation of Cloud Governance to ensure consistent implementation of Security and Compliance policies across all cloud deployments.
 * Cost visibility and control through a single pane of glass.
 
-All of this is provided whilst retaining the the flexibility and productivity that organisations require by putting the control and governance in the hands managers and administrators, but leaving the development and configuration of cloud deployments in the hands of developers, testers and project teams.
+All of this is provided whilst retaining the the flexibility and productivity that organisations require by putting the control and governance in the hands of managers and administrators, but leaving the development and configuration of cloud deployments in the hands of developers, testers and project teams.
 
 Multi-Cloud Support
 -------------------
