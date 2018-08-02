@@ -22,28 +22,30 @@ The Scalr application is organised into 3 levels of login access that are known 
 .. |ES| image:: images/environment.png
    :scale: 70%
 
-============================= ============================= ======================================================================================
-Scope                         Usage                         Description
-============================= ============================= ======================================================================================
-|SCALR| |SCOPE_SCALR|         Scalr Administration          - There is a single admin level in Scalr where global configuration elements and |ACCOUNTS| are managed.
-                                                            - Scalr Administrators can configure cloud access credentials, roles, images and much more for common usage by all |ACCOUNTS| and |ENVIRONMENTS|.
-                                                            - Users are also managed at the |SCALR| scope.
-                                                            - Cost Analytics and Cost Management are configured and analysed through the definition of Cost Centers, Projects, Budgets and Pricing.
+.. tabularcolumns:: |\Y{0.20}|\Y{0.20}|\Y{0.60}
 
-                                                            |SS|
-|ACCOUNT| |SCOPE_ACC|         Organisation Units            - Typically |ACCOUNTS| are Business Units that bring together teams working to a common purpose.
-                                                            - There will be multiple |ACCOUNTS| which can define common governance policies for all their environments as well as also configuring additional cloud access credentials, roles, images etc over and above those defined at the |SCALR| scope.
-                                                            - |Accounts| are also responsible for configuring Teams and Access Control Lists (ACLs) to control who can do what and which resources they can use.
-                                                            - Cost Analytics can (with permission) be further configured and analysed through the definition of additional Projects, Budgets and Pricing.
+================================= ============================= ======================================================================================
+Scope                             Usage                         Description
+================================= ============================= ======================================================================================
+|SCALR| |SCOPE_SCALR|             Scalr Administration          - There is a single admin level in Scalr where global configuration elements and |ACCOUNTS| are managed.
+                                                                - Scalr Administrators can configure cloud access credentials, roles, images and much more for common usage by all |ACCOUNTS| and |ENVIRONMENTS|.
+                                                                - Users are also managed at the |SCALR| scope.
+                                                                - Cost Analytics and Cost Management are configured and analysed through the definition of Cost Centers, Projects, Budgets and Pricing.
 
-                                                            |AS|
-|ENVIRONMENT| |SCOPE_ENV|     Deployment Environments       - |Environments| bring together the resources required to deploy infrastructure to the cloud.
-                                                            - It is at the |ENVIRONMENT| scope that deployment infrastructures, known as "Farms" are defined. Farms bring together roles, cloud services and orchestration rules to enable simple deployment of an entire application infrastructure with a single click. Orchestration rules are used to install packages, deploy custom software and much more.
-                                                            - There will typically be multiple |ENVIRONMENTS| per |ACCOUNT| that can also configure additional roles, images etc over and above those defined at the higher scopes.
-                                                            - Farms can also be published as Service Catalog offerings to allow non-technical end users to select and deploy applications in real time without the need to raise requests to the central IT department.
+                                                                |SS|
+|ACCOUNT| |SCOPE_ACC|             Organisation Units            - Typically |ACCOUNTS| are Business Units that bring together teams working to a common purpose.
+                                                                - Within |ACCOUNTS|, you can specify cloud credentials and define common governance policies and resource quota groups that can be assigned to multiple |ENVIRONMENTS|. You can also establish Roles/Images that can be made available across multiple |ENVIRONMENTS|.
+                                                                - |Accounts| are also responsible for configuring Teams and Access Control Lists (ACLs) to control who can do what and which resources they can use.
+                                                                - Cost Analytics can (with permission) be further configured and analysed through the definition of additional Projects, Budgets and Pricing.
 
-                                                            |ES|
-============================= ============================= ======================================================================================
+                                                                |AS|
+|ENVIRONMENT| |SCOPE_ENV|         Deployment Environments       - |Environments| bring together the resources required to deploy infrastructure to the cloud.
+                                                                - It is at the |ENVIRONMENT| scope that deployment infrastructures, known as "Farms" are defined. Farms bring together roles, cloud services and orchestration rules to enable simple deployment of an entire application infrastructure with a single click. Orchestration rules are used to install packages, deploy custom software and much more.
+                                                                - There will typically be multiple |ENVIRONMENTS| per |ACCOUNT| that can also configure additional roles, images etc over and above those defined at the higher scopes.
+                                                                - Farms can also be published as Service Catalog offerings to allow non-technical end users to select and deploy applications in real time without the need to raise requests to the central IT department.
+
+                                                                |ES|
+================================= ============================= ======================================================================================
 
 The following diagram shows the high level hierarchical relationships between the 3 scopes.
 

@@ -626,7 +626,7 @@
 <p>The Scalr application is organised into 3 levels of login access that are known as “Scopes”. These scopes provide a hierarchy of access, functionality and object inheritance that enables a customer to match Scalr to their organisational structure, and to manage, control and monitor their deployments of cloud based infrastructure. The 3 scopes are as follows.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="7%" />
+<col width="8%" />
 <col width="7%" />
 <col width="85%" />
 </colgroup>
@@ -640,8 +640,8 @@
 <tr class="row-even"><td>Scalr <a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></td>
 <td>Scalr Administration</td>
 <td><ul class="first simple">
-<li>There is a single admin level in Scalr where global configuration elements and accounts are managed.</li>
-<li>Scalr Administrators can configure cloud access credentials, roles, images and much more for common usage by all accounts and environments.</li>
+<li>There is a single admin level in Scalr where global configuration elements and Accounts are managed.</li>
+<li>Scalr Administrators can configure cloud access credentials, roles, images and much more for common usage by all Accounts and Environments.</li>
 <li>Users are also managed at the Scalr scope.</li>
 <li>Cost Analytics and Cost Management are configured and analysed through the definition of Cost Centers, Projects, Budgets and Pricing.</li>
 </ul>
@@ -651,8 +651,8 @@
 <tr class="row-odd"><td>Account <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></td>
 <td>Organisation Units</td>
 <td><ul class="first simple">
-<li>Typically accounts are Business Units that bring together teams working to a common purpose.</li>
-<li>There will be multiple accounts which can define common governance policies for all their environments as well as also configuring additional cloud access credentials, roles, images etc over and above those defined at the Scalr scope.</li>
+<li>Typically Accounts are Business Units that bring together teams working to a common purpose.</li>
+<li>Within Accounts, you can specify cloud credentials and define common governance policies and resource quota groups that can be assigned to multiple Environments. You can also establish Roles/Images that can be made available across multiple Environments.</li>
 <li>Accounts are also responsible for configuring Teams and Access Control Lists (ACLs) to control who can do what and which resources they can use.</li>
 <li>Cost Analytics can (with permission) be further configured and analysed through the definition of additional Projects, Budgets and Pricing.</li>
 </ul>
@@ -664,7 +664,7 @@
 <td><ul class="first simple">
 <li>Environments bring together the resources required to deploy infrastructure to the cloud.</li>
 <li>It is at the Environment scope that deployment infrastructures, known as “Farms” are defined. Farms bring together roles, cloud services and orchestration rules to enable simple deployment of an entire application infrastructure with a single click. Orchestration rules are used to install packages, deploy custom software and much more.</li>
-<li>There will typically be multiple environments per Account that can also configure additional roles, images etc over and above those defined at the higher scopes.</li>
+<li>There will typically be multiple Environments per Account that can also configure additional roles, images etc over and above those defined at the higher scopes.</li>
 <li>Farms can also be published as Service Catalog offerings to allow non-technical end users to select and deploy applications in real time without the need to raise requests to the central IT department.</li>
 </ul>
 <p class="last"><a class="reference internal" href="../_images/environment.png"><img alt="ES" src="../_images/environment.png" style="width: 667.0999999999999px; height: 26.599999999999998px;" /></a></p>
@@ -695,7 +695,7 @@
 <div class="section" id="accounts">
 <h2>Accounts<a class="headerlink" href="#accounts" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/account.png"><img alt="AS" src="../_images/account.png" style="width: 441.7px; height: 27.299999999999997px;" /></a></p>
-<p>Accounts are the core of implementing a federated IT organisational structure in Scalr. An Account brings together the configuration resources, access permissions (ACLs) and governance policies that are applicable to to an organisational unit within an enterprise, thus ensuring consistent and suitably managed use of cloud environments. Accounts typically map to Business Units within an enterprise and are further sub-divided into environments for the different teams and/or functional areas within the BU, such as Dev, QA, Sales etc.</p>
+<p>Accounts are the core of implementing a federated IT organisational structure in Scalr. An Account brings together the configuration resources, access permissions (ACLs) and governance policies that are applicable to to an organisational unit within an enterprise, thus ensuring consistent and suitably managed use of cloud environments. Accounts typically map to Business Units within an enterprise and are further sub-divided into Environments for the different teams and/or functional areas within the BU, such as Dev, QA, Sales etc.</p>
 <p>There can be multiple Accounts within Scalr and these will be created by the Scalr administrator.</p>
 <p>An Account administrator will be responsible for managing and configuring the following aspects of Scalr.</p>
 <ul class="simple">
@@ -706,7 +706,7 @@
 <li>Account level Orchestration rules</li>
 <li>Cost Management</li>
 </ul>
-<p>For details on configuring accounts see <a class="reference internal" href="../org/accounts.html#accounts"><span class="std std-ref">Account Configuration</span></a>.</p>
+<p>For details on configuring Accounts see <a class="reference internal" href="../org/accounts.html#accounts"><span class="std std-ref">Account Configuration</span></a>.</p>
 </div>
 <div class="section" id="environments">
 <h2>Environments<a class="headerlink" href="#environments" title="Permalink to this headline">¶</a></h2>
@@ -718,7 +718,7 @@
 <a class="reference internal image-reference" href="../_images/environment-full.png"><img alt="../_images/environment-full.png" src="../_images/environment-full.png" style="width: 917.6999999999999px; height: 32.199999999999996px;" /></a>
 <p>Menu for a Service Catalog Environment user:</p>
 <a class="reference internal image-reference" href="../_images/environment-sc.png"><img alt="../_images/environment-sc.png" src="../_images/environment-sc.png" style="width: 352.79999999999995px; height: 31.499999999999996px;" /></a>
-<p>For details on configuring environments see <a class="reference internal" href="../org/accounts.html#environments"><span class="std std-ref">Configuring Environments</span></a>.</p>
+<p>For details on configuring Environments see <a class="reference internal" href="../org/accounts.html#environments"><span class="std std-ref">Configuring Environments</span></a>.</p>
 </div>
 <div class="section" id="images-and-roles">
 <h2>Images and Roles<a class="headerlink" href="#images-and-roles" title="Permalink to this headline">¶</a></h2>
@@ -785,11 +785,11 @@
 <li>Custom Price Lists for internal clouds and to override default price lists from public clouds.</li>
 <li>Conditional price Markups to allow the addition of cost overheads to per instance.</li>
 <li>Definition of Budgets and associated notifications to enable close control of expenditure.</li>
-<li>Comprehensive reporting across all accounts and environments.</li>
+<li>Comprehensive reporting across all Accounts and Environments.</li>
 </ul>
 </div></blockquote>
 <ul class="simple">
-<li>Account Scope includes a subset of the features available at Scalr scope and provides cost visibility only for the individual Account and it’s environments.</li>
+<li>Account Scope includes a subset of the features available at Scalr scope and provides cost visibility only for the individual Account and it’s Environments.</li>
 </ul>
 <blockquote>
 <div><ul class="simple">
@@ -808,7 +808,7 @@
 <div class="section" id="policy-engine">
 <span id="policy-engine-intro"></span><h2>Policy Engine<a class="headerlink" href="#policy-engine" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></p>
-<p>The Policy Engine is the Core of Scalr’s ability to ensure consistent and repeatable implementation of governance, compliance and security policies across all accounts and environments. The Scalr Policy Engine sits between users and the clouds, validating their actions but at the same time allowing users to continue to take advantage of the speed and flexibility enabled by Cloud services, without increasing risk for your organization.  Scalr lets you enforce policies for an entire Environment, such as restricting instance types, restricting networks or mandating security requirements.  Each policy is defined by its type, which describes the goal of the policy, optional conditions that limit the scope this policy will apply to, and for some policy types that need it, additional configuration settings.</p>
+<p>The Policy Engine is the Core of Scalr’s ability to ensure consistent and repeatable implementation of governance, compliance and security policies across all Accounts and Environments. The Scalr Policy Engine sits between users and the clouds, validating their actions but at the same time allowing users to continue to take advantage of the speed and flexibility enabled by Cloud services, without increasing risk for your organization.  Scalr lets you enforce policies for an entire Environment, such as restricting instance types, restricting networks or mandating security requirements.  Each policy is defined by its type, which describes the goal of the policy, optional conditions that limit the scope this policy will apply to, and for some policy types that need it, additional configuration settings.</p>
 <p>When you provision a new Policy Group in an Environment, all user interaction with Scalr will be validated by the Policy Engine.  We also validate all actions from Scalr to clouds with the policy engine as well.  New Policies do not automatically apply to running farms. They will only be fully taken into account for Farms launched after the enforcement of the policy.  For previously running Farms, Scalr will not terminate existing instances that violate newly enforced Policies, but will not allow for violation of the policy in the future.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -823,7 +823,7 @@
 <p><strong>Access Control Lists</strong> define the functional aspects of Scalr that are available to individual Teams. ACLs can range from granting full access to everything, through total Read Only access and on to very limited functionality, such as for a Service Catalog user.</p>
 <p>[pictures]</p>
 <p><strong>Teams</strong> group users together to provide them with access to environments and to apply a common ACL to all team members. Users can belong to multiple teams.</p>
-<p><strong>Users</strong> are individuals who login to Scalr. Users can be designated as Administrators which will give them access to the Scalr scope. Users can either be authenticated within Scalr or Scalr can be configured to authenticate against an external system via LDAP or SAML. A user is a unique entity in Scalr and can be given access to multiple accounts and multiple environments via team membership.</p>
+<p><strong>Users</strong> are individuals who login to Scalr. Users can be designated as Administrators which will give them access to the Scalr scope. Users can either be authenticated within Scalr or Scalr can be configured to authenticate against an external system via LDAP or SAML. A user is a unique entity in Scalr and can be given access to multiple Accounts and multiple Environments via team membership.</p>
 <p>For details on configuring Users, Teams and ACL’s see <a class="reference internal" href="../org/team_users.html#teams-users"><span class="std std-ref">Teams and Users</span></a>.</p>
 </div>
 <div class="section" id="global-variables">
