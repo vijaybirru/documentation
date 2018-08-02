@@ -19,7 +19,7 @@ Please work through the sections listed below to understand the full details of 
    :titlesonly:
 
    registering_images
-   creating_images_nonscalr
    creating_roles
+   creating_images_nonscalr
    multi_cloud
    orchestration

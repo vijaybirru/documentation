@@ -31,15 +31,14 @@ Scalr Documentation!
 
    fast_start/index
 
-
 .. toctree::
    :maxdepth: 3
    :caption: Cloud Images and Templates
 
    images_roles/index
    images_roles/registering_images
-   images_roles/creating_images_nonscalr
    images_roles/creating_roles
+   images_roles/creating_images_nonscalr
    images_roles/multi_cloud
    images_roles/orchestration
 
@@ -129,6 +128,13 @@ Scalr Documentation!
    :caption: Best Practices
 
    best_practices/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Tutorials
+
+   tutorials/3-tier-app
+
 
 .. toctree::
    :maxdepth: 2
