@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -239,8 +238,27 @@
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#aws-images">AWS Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#azure-images">Azure Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#gce-images">GCE Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#openstack-images">Openstack Images</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#aws-images">AWS Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#azure-images">Azure Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#gce-images">GCE Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#openstack-images">Openstack Images</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
@@ -250,7 +268,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../farms/index.html">Farm Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-roles">Farm Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#scripts-events-orchestration">Scripts, Events &amp; Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-role-orchestration">Farm Role Orchestration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#events-reference">Events Reference</a></li>
 </ul>
 </li>
@@ -339,6 +357,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html">Webhooks and Endpoints</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#overview">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configuring-endpoints">Configuring Endpoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configuring-webhooks">Configuring Webhooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-payloads">Webhook Payloads</a></li>
@@ -571,7 +590,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="concepts-and-terminology">
-<h1>Concepts and Terminology<a class="headerlink" href="#concepts-and-terminology" title="Permalink to this headline">¶</a></h1>
+<span id="terminology"></span><h1>Concepts and Terminology<a class="headerlink" href="#concepts-and-terminology" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="scalr-scopes">
 <h2>Scalr Scopes<a class="headerlink" href="#scalr-scopes" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="login-scopes">
@@ -691,6 +710,12 @@
 </ul>
 <p>Base and user created images can easily be imported into Scalr and converted to scalarized images through the Scalr UI.</p>
 <p><strong>Roles</strong> provide an abstraction layer over the top of the images. Within Scalr a Role is the reusable building block for provisioning servers through Scalr. A Role can be associated with multiple similar images from multiple clouds. All similar images linked to a role will have the same base operating system and version, and the same pre-installed software and configuration. This may or may not include Scalarizer, but all images in a role must be the same in this respect. The effect of this abstraction is that any user can potentially chose which cloud to use when launching a farm/application and they will get exactly the same features and behaviour. A role can also include a set of orchestration rules and global variables which ensures consistent configuration of an server regardless of which Farm it is used in and which cloud it is deployed in.</p>
+<p>Roles tie together:</p>
+<ul class="simple">
+<li>One or more similar (i.e. with the same OS) Images, located in different clouds or locations.</li>
+<li>Automation, through Orchestration Rules.</li>
+<li>Configuration, through Role-Scope Global Variables.</li>
+</ul>
 <p>Images and Roles can be configured at all three scopes within Scalr and are inherited by the lower scopes. Roles can link to Images from the same or higher scopes. Images and Roles can only be edited at the scope where they were created, but they can be cloned at lower scopes and the can be promoted from lower scopes to higher scopes.</p>
 <a class="reference internal image-reference" href="../_images/Images_Roles.png"><img alt="../_images/Images_Roles.png" src="../_images/Images_Roles.png" style="width: 569.0px; height: 535.5px;" /></a>
 <p>For details on working with Images and Roles see <a class="reference internal" href="../images_roles/index.html#images-roles"><span class="std std-ref">Images and Roles in Scalr</span></a>.</p>
@@ -858,10 +883,7 @@ For details on configuring orchestration in Farms and Farm Roles see <a class="r
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

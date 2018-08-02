@@ -1,5 +1,7 @@
 .. include:: ../GLOBAL.rst
 
+.. _terminology:
+
 Concepts and Terminology
 ========================
 
@@ -119,6 +121,8 @@ Images and Roles
    | **Server vs Instance vs VM**
    | Scalr uses the term "Server" to refer to virtual machines running in the cloud. The term used for this varies from cloud to cloud. AWS and GCP use "Instance", Azure uses "Virtual Machine" for example. Throughout the Scalr documentation we will use the term "server".
 
+.. Term-Images-Role-Start
+
 **Images** (aka, AMI, template etc) are the main building blocks for building cloud infrastructure in all clouds. Images are used to create servers in a cloud. Scalr also indirectly makes use of Images stored in the clouds, but in order to do this it requires a record within it's own internal meta data of every image that can be used. Thus an image in Scalr is simply a unique registration of an image that exists in a cloud. Images are used indirectly through Roles and Farm Roles within Scalr. There are three broad types of image.
 
 * Images provided by Scalr that include Scalr's agent called Scalarizer. These Scalr images are ready made to provide the full functionality of Scalr as the agent enables control and monitoring functions. Scalr images are currently available in AWS, GCP and Azure.
@@ -129,10 +133,18 @@ Base and user created images can easily be imported into Scalr and converted to 
 
 **Roles** provide an abstraction layer over the top of the images. Within Scalr a Role is the reusable building block for provisioning servers through Scalr. A Role can be associated with multiple similar images from multiple clouds. All similar images linked to a role will have the same base operating system and version, and the same pre-installed software and configuration. This may or may not include Scalarizer, but all images in a role must be the same in this respect. The effect of this abstraction is that any user can potentially chose which cloud to use when launching a farm/application and they will get exactly the same features and behaviour. A role can also include a set of orchestration rules and global variables which ensures consistent configuration of an server regardless of which Farm it is used in and which cloud it is deployed in.
 
+Roles tie together:
+
+* One or more similar (i.e. with the same OS) Images, located in different clouds or locations.
+* Automation, through Orchestration Rules.
+* Configuration, through Role-Scope Global Variables.
+
 Images and Roles can be configured at all three scopes within Scalr and are inherited by the lower scopes. Roles can link to Images from the same or higher scopes. Images and Roles can only be edited at the scope where they were created, but they can be cloned at lower scopes and the can be promoted from lower scopes to higher scopes.
 
 .. image:: images/Images_Roles.png
    :scale: 50%
+
+.. Term-Images-Role-End
 
 For details on working with Images and Roles see :ref:`images_roles`.
 

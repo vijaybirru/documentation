@@ -1,5 +1,7 @@
 .. include:: ../GLOBAL.rst
 
+.. _discovery_manager:
+
 Discovery Manager
 =================
 

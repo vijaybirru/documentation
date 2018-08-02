@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -239,8 +238,29 @@
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="index.html">Images and Roles in Scalr</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Registering Images</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Images and Roles in Scalr</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Registering Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aws-images">AWS Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#azure-images">Azure Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gce-images">GCE Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#openstack-images">Openstack Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vmware-images">VMware Images</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_roles.html">Creating Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="orchestration.html">Role Orchestration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Registering Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aws-images">AWS Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#azure-images">Azure Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gce-images">GCE Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#openstack-images">Openstack Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vmware-images">VMware Images</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creating_roles.html">Creating Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
@@ -250,7 +270,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../farms/index.html">Farm Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-roles">Farm Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#scripts-events-orchestration">Scripts, Events &amp; Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-role-orchestration">Farm Role Orchestration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#events-reference">Events Reference</a></li>
 </ul>
 </li>
@@ -339,6 +359,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html">Webhooks and Endpoints</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#overview">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configuring-endpoints">Configuring Endpoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configuring-webhooks">Configuring Webhooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-payloads">Webhook Payloads</a></li>
@@ -551,6 +572,8 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
+          <li><a href="index.html">Images and Roles in Scalr</a> &raquo;</li>
+        
       <li>Registering Images</li>
     
     
@@ -572,6 +595,256 @@
             
   <div class="section" id="registering-images">
 <span id="register-images"></span><h1>Registering Images<a class="headerlink" href="#registering-images" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
+<p>Step one of using Scalr to configure and deploy infrastructure is to register one or more images that you wish to use as the basis for the servers you are going to deploy. As mentioned previously, an Image in Scalr is simply a meta data record of an actual Image or Template in a cloud that you use. It is a 1:1 mapping.</p>
+<p>Images in Scalr have slight differences to they way they map to cloud imnages depending on the Cloud the actual image or template is in.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Cloud</th>
+<th class="head">Image Mapping</th>
+<th class="head">Notes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>AWS EC2</td>
+<td>AMI</td>
+<td>Requires a Scalr Image for every AWS location as each is a unique AMI</td>
+</tr>
+<tr class="row-odd"><td>Azure</td>
+<td>Image</td>
+<td>Azure Image is common to all regions so only one Scalr Image per Azure Image</td>
+</tr>
+<tr class="row-even"><td>GCP</td>
+<td>Image</td>
+<td>GCP Image is common to all regions so only one Scalr Image per GCP Image</td>
+</tr>
+<tr class="row-odd"><td>Openstack</td>
+<td>Image</td>
+<td>One Scalr Image per Openstack Region Image</td>
+</tr>
+<tr class="row-even"><td>VMware</td>
+<td>Template</td>
+<td>One Scalr Image per VMware Location Image</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is recommended that images registered in Scalr should have Scalarizer installed. If you Intend to use images with Scalr <a class="reference internal" href="orchestration.html#role-orchestration"><span class="std std-ref">Role Orchestration</span></a> or <a class="reference internal" href="../farms/index.html#farm-role-orchestration"><span class="std std-ref">Farm Role Orchestration</span></a> the Scalarizer agent MUST be installed. If you do not have Scalarizer installed in any images see <a class="reference internal" href="creating_images_nonscalr.html#images-from-servers"><span class="std std-ref">Creating Images and Roles from Non-Scalr Servers</span></a>.  See <a class="reference internal" href="../discovery/index.html#discovery-manager"><span class="std std-ref">Discovery Manager</span></a> for more details on agentless options.</p>
+</div>
+<p>Images can be registered at any scope in Scalr and made available to the lower scopes.</p>
+<p>Image functionality is accessed via Images in the Main menu or Bookmarks bar at any scope. Note that you can jump straight to New Image from the main menu or click on “Images” and then “New Image” at the top of the list.</p>
+<p><a class="reference internal" href="../_images/image_menu.png"><img alt="IMG_MENU" src="../_images/image_menu.png" style="width: 392.5px; height: 487.0px;" /></a> <a class="reference internal" href="../_images/image_list.png"><img alt="IMG_LIST" src="../_images/image_list.png" style="width: 743.0px; height: 152.5px;" /></a></p>
+<p>You will now be presented with the New Image screen where you must select the Cloud for the Image you are registering. The details required vary from cloud to cloud.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For all images you must manually set details of the installed operating system, and indicate if Scalarizer is installed. Scalr cannot verify this information so make sure it is correct.</p>
+</div>
+<ul class="simple">
+<li><a class="reference internal" href="#aws-images">AWS Images</a></li>
+<li><a class="reference internal" href="#azure-images">Azure Images</a></li>
+<li><a class="reference internal" href="#gce-images">GCE Images</a></li>
+<li><a class="reference internal" href="#openstack-images">Openstack Images</a></li>
+<li><a class="reference internal" href="#vmware-images">VMware Images</a></li>
+</ul>
+<div class="section" id="aws-images">
+<h2>AWS Images<a class="headerlink" href="#aws-images" title="Permalink to this headline">¶</a></h2>
+<p><strong>Image ID in AWS</strong> : The Image ID is the AMI ID of the form <code class="docutils literal notranslate"><span class="pre">ami-xxxxxxxx</span></code>.</p>
+<ul class="simple">
+<li>Navigate to EC2 -&gt; Images -&gt; AMI in the AWS Console.</li>
+<li>Copy the AMI from the AMI column for the Image to be registered</li>
+</ul>
+<p>In Scalr select the Credentials and Location of the image, enter the AMI ID and click on “NEXT”. You will see a screen similar to this.</p>
+<a class="reference internal image-reference" href="../_images/new_aws.png"><img alt="../_images/new_aws.png" src="../_images/new_aws.png" style="width: 594.4px; height: 189.20000000000002px;" /></a>
+<p>Add the additional details and set the requited options as described below and the click on “REGISTER”</p>
+<table border="1" class="colwidths-given docutils" id="id1">
+<caption><span class="caption-text">AWS Image Options</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item</th>
+<th class="head">Details</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>OS Family and Version</td>
+<td><strong>Mandatory</strong> Select the appropriate operating system family and Version</td>
+</tr>
+<tr class="row-odd"><td>Size</td>
+<td>Enter the size in GB if known or leave blank</td>
+</tr>
+<tr class="row-even"><td>Scalr Agent Installed</td>
+<td>Unset this if importing a non-scalarizer image</td>
+</tr>
+<tr class="row-odd"><td>Shared</td>
+<td>Unset this if you DO NOT want to share this image with lower scopes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="azure-images">
+<h2>Azure Images<a class="headerlink" href="#azure-images" title="Permalink to this headline">¶</a></h2>
+<p><strong>Image ID in Azure</strong> : This is the URN of the image in the form <code class="docutils literal notranslate"><span class="pre">PublisherName/Offer/SKUs/verisone</span></code>. URN’s can only be obtained via the Azure API.</p>
+<ul class="simple">
+<li>Using the Azure API list available images and copy the URN you require. The API command is <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">vm</span> <span class="pre">image</span> <span class="pre">list</span></code></li>
+</ul>
+<p>In Scalr add the CLOUD LOCATION if this is NOT a Marketplace image, and enter the image URN. Then click on “NEXT”. You will see a screen similar to this.</p>
+<a class="reference internal image-reference" href="../_images/new_azure.png"><img alt="../_images/new_azure.png" src="../_images/new_azure.png" style="width: 594.4px; height: 272.0px;" /></a>
+<p>Add the additional details and set the requited options as described below and the click on “REGISTER”</p>
+<table border="1" class="colwidths-given docutils" id="id2">
+<caption><span class="caption-text">Azure Image Options</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item</th>
+<th class="head">Details</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>OS Family and Version</td>
+<td><strong>Mandatory</strong> Select the appropriate operating system family and Version</td>
+</tr>
+<tr class="row-odd"><td>Size</td>
+<td>Enter the size in GB if known or leave blank</td>
+</tr>
+<tr class="row-even"><td>Scalr Agent Installed</td>
+<td>Unset this if importing a non-scalarizer image</td>
+</tr>
+<tr class="row-odd"><td>Shared</td>
+<td>Unset this if you DO NOT want to share this image with lower scopes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="gce-images">
+<h2>GCE Images<a class="headerlink" href="#gce-images" title="Permalink to this headline">¶</a></h2>
+<p><strong>Image ID in GCE</strong> : This is the URI of the image in the form <code class="docutils literal notranslate"><span class="pre">PROJECT-ID/path/to/image</span></code>.</p>
+<ul class="simple">
+<li>In the GCP Console navigate to Images and click on the image to be registered.</li>
+<li>Click on “REST” <a class="reference internal" href="../_images/rest.png"><img alt="REST" src="../_images/rest.png" style="width: 117.0px; height: 39.0px;" /></a></li>
+<li>Locate “selflink” and copy the part of the URI after <code class="docutils literal notranslate"><span class="pre">projects/</span></code>. e.g. <code class="docutils literal notranslate"><span class="pre">scalr-demo/global/images/base64-ubuntu-14-04-1456237068</span></code></li>
+</ul>
+<p>In Scalr paste the URI into the CLOUD IMAGE ID field and click on “NEXT”. You will see a screen similar to this.</p>
+<a class="reference internal image-reference" href="../_images/new_gce.png"><img alt="../_images/new_gce.png" src="../_images/new_gce.png" style="width: 594.4px; height: 204.4px;" /></a>
+<p>Add the additional details and set the requited options as described below and the click on “REGISTER”.</p>
+<table border="1" class="colwidths-given docutils" id="id3">
+<caption><span class="caption-text">GCE Image Options</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item</th>
+<th class="head">Details</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td><strong>Mandatory</strong> This name is only used in Scalr and does not change the name used in GCE</td>
+</tr>
+<tr class="row-odd"><td>OS Family and Version</td>
+<td><strong>Mandatory</strong> Select the appropriate operating system family and Version</td>
+</tr>
+<tr class="row-even"><td>Size</td>
+<td>Enter the size in GB if known or leave blank</td>
+</tr>
+<tr class="row-odd"><td>Scalr Agent Installed</td>
+<td>Unset this if importing a non-scalarizer image</td>
+</tr>
+<tr class="row-even"><td>Shared</td>
+<td>Unset this if you DO NOT want to share this image with lower scopes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="openstack-images">
+<h2>Openstack Images<a class="headerlink" href="#openstack-images" title="Permalink to this headline">¶</a></h2>
+<p><strong>Image ID in Openstack</strong> : This is the UUID of the image in the form <code class="docutils literal notranslate"><span class="pre">xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</span></code>.</p>
+<ul class="simple">
+<li>In the Openstack console chose the Project and optionally the Region from the drop down <a class="reference internal" href="../_images/openstack_drop.png"><img alt="OPENSTACK_DROP" src="../_images/openstack_drop.png" style="width: 169.5px; height: 33.9px;" /></a>.</li>
+<li>Navigate to Images and click on the desired image.</li>
+<li>The UUID you need is the ID field in the “Image” section.</li>
+</ul>
+<p>In Scalr enter the Region Name into CLOUD LOCATION and paste the UUID into the CLOUD IMAGE ID field, then click on “NEXT”. You will see a screen similar to this.</p>
+<p>Note: If you do not have regions set up in your Openstack environment then use “RegionOne”.</p>
+<a class="reference internal image-reference" href="../_images/new_openstack.png"><img alt="../_images/new_openstack.png" src="../_images/new_openstack.png" style="width: 594.4px; height: 216.4px;" /></a>
+<p>Add the additional details and set the requited options as described below and the click on “REGISTER”.</p>
+<table border="1" class="colwidths-given docutils" id="id4">
+<caption><span class="caption-text">Openstack Image Options</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item</th>
+<th class="head">Details</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td><strong>Mandatory</strong> This name is only used in Scalr and does not change the name used in GCE</td>
+</tr>
+<tr class="row-odd"><td>OS Family and Version</td>
+<td><strong>Mandatory</strong> Select the appropriate operating system family and Version</td>
+</tr>
+<tr class="row-even"><td>Size</td>
+<td>Enter the size in GB if known or leave blank</td>
+</tr>
+<tr class="row-odd"><td>Scalr Agent Installed</td>
+<td>Unset this if importing a non-scalarizer image</td>
+</tr>
+<tr class="row-even"><td>Shared</td>
+<td>Unset this if you DO NOT want to share this image with lower scopes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vmware-images">
+<h2>VMware Images<a class="headerlink" href="#vmware-images" title="Permalink to this headline">¶</a></h2>
+<p><strong>Image ID in VMware</strong> : Scalr will look up the available images in VMware and provide a list in a drop down once the Cloud Credentials and Location have been entered.</p>
+<a class="reference internal image-reference" href="../_images/new_vmware.png"><img alt="../_images/new_vmware.png" src="../_images/new_vmware.png" style="width: 417.5px; height: 487.0px;" /></a>
+<p>Click on “NEXT”. You will see a screen similar to this.</p>
+<a class="reference internal image-reference" href="../_images/new_vmware_2.png"><img alt="../_images/new_vmware_2.png" src="../_images/new_vmware_2.png" style="width: 594.4px; height: 266.0px;" /></a>
+<p>Add the additional details and set the requited options as described below and the click on “REGISTER”.</p>
+<table border="1" class="colwidths-given docutils" id="id5">
+<caption><span class="caption-text">VMware Image Options</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item</th>
+<th class="head">Details</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td><strong>Mandatory</strong> Use the pre-filled name or amend as required. This name is only used in Scalr and does not change the name used in GCE</td>
+</tr>
+<tr class="row-odd"><td>OS Family and Version</td>
+<td><strong>Mandatory</strong> Select the appropriate operating system family and Version</td>
+</tr>
+<tr class="row-even"><td>Size</td>
+<td>Enter the size in GB if known or leave blank</td>
+</tr>
+<tr class="row-odd"><td>Scalr Agent Installed</td>
+<td>Unset this if importing a non-scalarizer image</td>
+</tr>
+<tr class="row-even"><td>Shared</td>
+<td>Unset this if you DO NOT want to share this image with lower scopes</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -630,10 +903,7 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {
