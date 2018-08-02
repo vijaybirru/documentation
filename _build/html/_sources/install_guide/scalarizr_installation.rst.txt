@@ -3,7 +3,9 @@
 Scalarizr Installation
 =========================
 
-Scalarizr is Scalr's management agent. It is optionally installed on every Scalr-managed Server (Instance), and used for Orchestration and monitoring.
+.. Term-Scalarizr-About-Start
+
+Scalarizr is Scalr's management agent. It is optionally installed on every Scalr-managed Server, and used for orchestration and monitoring.
 
 About
 ------
@@ -22,6 +24,8 @@ Monitoring                                    No              Yes
 Storage Volume addition	                      No              Yes
 Software Firewall/ iptables management		    No              Yes
 ========================================    ============   ==================
+
+.. Term-Scalarizr-About-End
 
 OS Requirements
 ---------------

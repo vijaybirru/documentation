@@ -3,10 +3,11 @@
 Scalarizr
 ==========
 
-Prerequisites
---------------
+.. include:: /install_guide/scalarizr_installation.rst
+   :start-after: Term-Scalarizr-About-Start
+   :end-before: Term-Scalarizr-About-End
 
-This page focuses on how to monitor, update, and use Scalarizr. If you do not have Scalarizr installed yet or to learn more about it, please go to the administration section: :ref:`admin_scalarizr`
+This page will focus on how to monitor, update, and use Scalarizr once it is deployed. If you do not have Scalarizr installed yet or want to learn more about it, please go to the Scalarizr administration section: :ref:`admin_scalarizr`
 
 Monitoring Scalarizr
 --------------------
