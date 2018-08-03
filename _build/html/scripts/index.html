@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -293,7 +294,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/launch.html">Farm Launching and Managing Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/ssh.html">SSH Keys in Scalr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../farms/ssh.html">SSH Keys in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#accessing-keys">Accessing Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#adding-policy-for-keys">Adding Policy for Keys</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/execution.html">Script Execution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/auto_dicscovery.html">Service Auto Discovery</a></li>
@@ -638,45 +644,50 @@
 <p>Scripts can be created, updated, edited, or deleted at the Scalr, Account, or Environment scopes. To create a script you can click on the Scalr icon on the top left of any of the scopes, in this example it is at the Environment scope: <a class="reference internal" href="../_images/scalr_icon_env1.png"><img alt="SCALR_ICON" src="../_images/scalr_icon_env1.png" style="width: 55.3px; height: 33.599999999999994px;" /></a>
 Once you are in the scripts page, click on New Script:</p>
 <a class="reference internal image-reference" href="../_images/new_script.png"><img alt="../_images/new_script.png" src="../_images/new_script.png" style="width: 544.1999999999999px; height: 517.8px;" /></a>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
-+—————-+———+————————————————————————————————————————-+
-| Item           | Format  | Description                                                                                                             |
-+================+=========+=========================================================================================================================+
-| Name           | String  | Name of the script                                                                                                      |
-+—————-+———+————————————————————————————————————————-+
-| Description    | String  | Description of the script                                                                                               |
-+—————-+———+————————————————————————————————————————-+
-| Deprecated     | Binary  | Scripts can be deprecated to prevent further use                                                                        |
-+—————-+———+————————————————————————————————————————-+
-| Shared         | Binary  | Determines if a script can be used at a lower level. This is only seen at the Account and Scalr scopes              |
-+—————-+———+————————————————————————————————————————-+
-| Execution Mode | Binary  | | Blocking: Scalarizr will wait for your Script to finish executing before firing and processing further events         |
-|                |         | | Non-Blocking: Scalarizr will not wait for your Script to finish executing before firing and processing further events |
-+—————-+———+————————————————————————————————————————-+
-| Timeout        | Integer | Length in seconds before the script should timeout                                                                      |
-+—————-+———+————————————————————————————————————————-+
-| Script Content | String  | Script contents                                                                                                         |
-+—————-+———+————————————————————————————————————————-+
-=======
-+—————-+———+———————————————————————————————————————–+
-| Item           | Format  | Description                                                                                                           |
-+================+=========+=======================================================================================================================+
-| Name           | String  | Name of the script                                                                                                    |
-+—————-+———+———————————————————————————————————————–+
-| Description    | String  | Description of the script                                                                                             |
-+—————-+———+———————————————————————————————————————–+
-| Deprecated     | Binary  | Scripts can be deprecated to prevent further use                                                                      |
-+—————-+———+———————————————————————————————————————–+
-| Shared         | Binary  | Determines if a script can be used at a lower level. This is only seen at the Account and Scalr scopes.           |
-+—————-+———+———————————————————————————————————————–+
-| Execution Mode | Binary  | Blocking: Scalarizr will wait for your Script to finish executing before firing and processing further events         |
-|                |         | Non-Blocking: Scalarizr will not wait for your Script to finish executing before firing and processing further events |
-+—————-+———+———————————————————————————————————————–+
-| Timeout        | Integer | Length in seconds before the script should timeout                                                                    |
-+—————-+———+———————————————————————————————————————–+
-| Script Content | String  | Script contents                                                                                                       |
-+—————-+———+———————————————————————————————————————–+
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="6%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item</th>
+<th class="head">Format</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>String</td>
+<td>Name of the script</td>
+</tr>
+<tr class="row-odd"><td>Description</td>
+<td>String</td>
+<td>Description of the script</td>
+</tr>
+<tr class="row-even"><td>Deprecated</td>
+<td>Binary</td>
+<td>Scripts can be deprecated to prevent further use</td>
+</tr>
+<tr class="row-odd"><td>Shared</td>
+<td>Binary</td>
+<td>Determines if a script can be used at a lower level. This is only seen at the Account and Scalr scopes.</td>
+</tr>
+<tr class="row-even"><td>Execution Mode</td>
+<td>Binary</td>
+<td>Blocking: Scalarizr will wait for your Script to finish executing before firing and processing further events
+Non-Blocking: Scalarizr will not wait for your Script to finish executing before firing and processing further events</td>
+</tr>
+<tr class="row-odd"><td>Timeout</td>
+<td>Integer</td>
+<td>Length in seconds before the script should timeout</td>
+</tr>
+<tr class="row-even"><td>Script Content</td>
+<td>String</td>
+<td>Script contents</td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="writing-a-script">
 <h3>Writing a Script<a class="headerlink" href="#writing-a-script" title="Permalink to this headline">¶</a></h3>
 <p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
@@ -854,7 +865,10 @@ import os
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {
