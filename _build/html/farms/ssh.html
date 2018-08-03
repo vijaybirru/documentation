@@ -638,24 +638,24 @@
 <div class="section" id="definition-and-scope">
 <h2>Definition and Scope<a class="headerlink" href="#definition-and-scope" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
-<p>Upon launching servers, Scalr automatically generates a new SSH Keypair and makes it available to users. These key pairs can be used to remotely log into servers. If you have different authentication methods like password auth, this can still be used, Scalr will not interfere with it. When launching a Windows server, Scalr will create an SSH key and/or a password. Some clouds require a SSH key to decrypt the Windows password.</p>
+<p>Upon launching servers, Scalr automatically generates a new SSH Keypair and makes it available to users. These key pairs can be used to remotely log into servers. If you have different authentication methods like password auth, this can still be used, Scalr will not interfere with it. When launching a Windows server, Scalr will create a SSH key and/or a password. Some clouds require a SSH key to decrypt the Windows password.</p>
 </div>
 <div class="section" id="accessing-keys">
 <h2>Accessing Keys<a class="headerlink" href="#accessing-keys" title="Permalink to this headline">¶</a></h2>
 <p>If you do not have policy set, Scalr will automatically generate a new key per Farm. All servers within a farm will use the same key, keys can be downloaded in PEM or PPK format depending on what you need. There are two ways to access keys depending on the permissions that are set:</p>
 <ol class="arabic simple">
-<li>Go to the Farms or Servers page in the Environment scope, find your server or farm, click on the dropdown on the left hand side <a class="reference internal" href="../_images/dropdown.png"><img alt="DROPDOWN" src="../_images/dropdown.png" style="width: 44.800000000000004px; height: 41.6px;" /></a>, and click on Server Credentials.</li>
+<li>Go to the Farms or Servers page in the Environment scope, find your server or farm, click on the dropdown on the right hand side <a class="reference internal" href="../_images/dropdown.png"><img alt="DROPDOWN" src="../_images/dropdown.png" style="width: 44.800000000000004px; height: 41.6px;" /></a>, and click on Server Credentials.</li>
 </ol>
 <a class="reference internal image-reference" href="../_images/server_cred_dropdown.png"><img alt="../_images/server_cred_dropdown.png" src="../_images/server_cred_dropdown.png" style="width: 983.4999999999999px; height: 301.0px;" /></a>
 <a class="reference internal image-reference" href="../_images/server_cred_options.png"><img alt="../_images/server_cred_options.png" src="../_images/server_cred_options.png" style="width: 374.5px; height: 277.2px;" /></a>
 <ol class="arabic simple" start="2">
-<li>Go to the main Scalr dropdown on the top left <a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a> and click on SSH keys. Once the SSH key page shows up, find the SSH key for your Farm and download the key:</li>
+<li>Go to the main Scalr menu dropdown on the top left <a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a> and click on SSH keys. Once the SSH key page shows up, find the SSH key for your Farm and download the key:</li>
 </ol>
 <a class="reference internal image-reference" href="../_images/ssh_keys_page.png"><img alt="../_images/ssh_keys_page.png" src="../_images/ssh_keys_page.png" style="width: 854.6999999999999px; height: 543.1999999999999px;" /></a>
 </div>
 <div class="section" id="usernames">
 <h2>Usernames<a class="headerlink" href="#usernames" title="Permalink to this headline">¶</a></h2>
-<p>To log into the servers with your keypair you will need to use the correct usernames:</p>
+<p>To log into the servers with your keypair you will need to use the correct username for each cloud:</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="20%" />
