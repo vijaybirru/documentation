@@ -297,6 +297,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">SSH Keys in Scalr</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#accessing-keys">Accessing Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usernames">Usernames</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#adding-policy-for-keys">Adding Policy for Keys</a></li>
 </ul>
 </li>
@@ -653,8 +654,44 @@
 </ol>
 <a class="reference internal image-reference" href="../_images/ssh_keys_page.png"><img alt="../_images/ssh_keys_page.png" src="../_images/ssh_keys_page.png" style="width: 854.6999999999999px; height: 543.1999999999999px;" /></a>
 </div>
+<div class="section" id="usernames">
+<h2>Usernames<a class="headerlink" href="#usernames" title="Permalink to this headline">¶</a></h2>
+<p>To log into the servers with your keypair you will need to use the correct usernames:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Cloud</th>
+<th class="head">Username</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>AWS</td>
+<td>root or a predefined username on the image.</td>
+</tr>
+<tr class="row-odd"><td>Azure</td>
+<td>scalr</td>
+</tr>
+<tr class="row-even"><td>Google</td>
+<td>scalr or the username associated with the key if a policy is used.</td>
+</tr>
+<tr class="row-odd"><td>VMware</td>
+<td>root or a predefined username on the image.</td>
+</tr>
+<tr class="row-even"><td>Openstack</td>
+<td>root or a predefined username on the image.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="adding-policy-for-keys">
 <h2>Adding Policy for Keys<a class="headerlink" href="#adding-policy-for-keys" title="Permalink to this headline">¶</a></h2>
+<p>Some organizations like to enforce policies around how users log into their servers. In this case, a policy can be created to ensure a specific key is used for ALL servers within an Environment. This key must exist in the cloud provider for it to be used by a policy. End users will <em>not</em> be able to download this key, it is up to the administrators to tell the users how to log into the servers.</p>
+<p>To create a policy for SSH keys, go to the Account scope, click on the main Scalr menu <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a>, click on Policy Engine &gt; Policy Groups. In here you can either add to an existing cloud Policy or create a new one, search for cloud.ssh.key_pair and enter the name of the key as it appears in the cloud provider:</p>
+<a class="reference internal image-reference" href="../_images/key_policy.png"><img alt="../_images/key_policy.png" src="../_images/key_policy.png" style="width: 486.49999999999994px; height: 376.59999999999997px;" /></a>
+<p>To learn more about the Policy Engine, please go here: <a class="reference internal" href="../sec_comp/policies.html#policy-engine"><span class="std std-ref">Policy Engine</span></a></p>
 </div>
 </div>
 

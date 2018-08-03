@@ -35,12 +35,22 @@ If you do not have policy set, Scalr will automatically generate a new key per F
 .. image:: images/ssh_keys_page.png
   :scale: 70%
 
+Usernames
+---------
+
+To log into the servers with your keypair you will need to use the correct usernames:
+
+.. csv-table::
+   :header-rows: 1
+   :file: csv/ssh_usernames.csv
+   :widths: 20,80
+
 Adding Policy for Keys
 ----------------------
 
-Some organizations like to enforce policies around how users log into their servers. In this case, a policy can be created to ensure a specific key is used for ALL servers within an |ENVIRONMENT|. End users will *not* be able to download this key, it is up to the administrators to tell the users how to log into the servers.
+Some organizations like to enforce policies around how users log into their servers. In this case, a policy can be created to ensure a specific key is used for ALL servers within an |ENVIRONMENT|. This key must exist in the cloud provider for it to be used by a policy. End users will *not* be able to download this key, it is up to the administrators to tell the users how to log into the servers.
 
-To create a policy for SSH keys, go to the |ACCOUNT SCOPE|, click on the main Scalr menu |MENU_ACC|, click on Policy Engine > Policy Groups. In here you can either add to an existing cloud Policy or create a new one:
+To create a policy for SSH keys, go to the |ACCOUNT| scope, click on the main Scalr menu |MENU_ACC|, click on Policy Engine > Policy Groups. In here you can either add to an existing cloud Policy or create a new one, search for cloud.ssh.key_pair and enter the name of the key as it appears in the cloud provider:
 
 .. image:: images/key_policy.png
   :scale: 70%

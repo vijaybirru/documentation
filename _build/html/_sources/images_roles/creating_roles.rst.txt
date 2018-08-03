@@ -48,6 +48,7 @@ You will now be presented with the New Role screen where you configure all the R
    Description,No,Describes the purpose of the Role and any special details that may be relevant
    Tags,No,You can include previously defined :ref:`policy_tags` to associate the Role with governance policies defined in the :ref:`policy_engine`. You can also add your own tags to help with role grouping related Roles and for use in :ref:`cost_management` for cost reporting.
    Quick Start,No,Enable this to include this role in the Quick Start menu of the Farm Designer
+   Use Scalr-Agent,Yes,Enabled by default and required for `Role Orchestration`_ and :ref:`auto_scaling`. If this is disabled the "Configure Built-In Automation wheel" |CONFIGURE| will be disabled but the option to Use Cloud-Init will appear. 
    Images,Yes,You must link the Role to at least one Image (see below). When you click on ADD IMAGES you will only see images with the same OS Family/Version that have Scalarizer or CloudInit installed.
 
 When adding Images to Roles you need to be aware of the different ways Images are configured in each cloud.

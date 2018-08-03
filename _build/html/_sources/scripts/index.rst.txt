@@ -51,11 +51,7 @@ Writing a Script
 
    <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)" target="_blank">Shebang Info</a>
 
-<<<<<<< Updated upstream
 Your Scripts should start with a shebang line: |shebang_link| |NEWWIN|. Scalr will use the interpreter specified in the shebang line and execute your script with it. The script runs on:
-=======
-Your Scripts should start with a shebang line: |shebang_link| |NEWWIN|. Scalr will use the interpreter specified in the shebang line and execute your Script with it. The script runs on:
->>>>>>> Stashed changes
 
 * Linux - If the first line starts with #! /*
 
