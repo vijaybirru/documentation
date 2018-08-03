@@ -1,0 +1,5 @@
+Log Location,Description
+/var/log/scalarizr.log,The general log that shows Scalarizr events.
+/var/log/scalarizr_debug.log,The debug version of the scalarizr.log
+/var/log/scalarizr_update.log,The log that shows the initial Scalarizr update when a server is launched as well as polling for updates to Scalarizr.
+/var/log/scalrizr/scripting/*,The location where Scalr orchestration output is saved.

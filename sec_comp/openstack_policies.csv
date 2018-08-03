@@ -1,0 +1,3 @@
+Type,Description,Notes
+openstack.network.floating_ip_usage,Enforces or Prevents floating IPs on Servers,
+openstack.network.floating_ip_pools,Limits the use of IP Pools,

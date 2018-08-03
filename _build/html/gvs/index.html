@@ -29,8 +29,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Scaling Applications" href="../scaling/index.html" />
-    <link rel="prev" title="Cost Management" href="../cost/management.html" /> 
+    <link rel="next" title="Chef Integration" href="../chef/index.html" />
+    <link rel="prev" title="Scripts" href="../scripts/index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -82,7 +82,45 @@
               
             
             
-              <p class="caption"><span class="caption-text">Scalr Server Admin Guide</span></p>
+              <p class="caption"><span class="caption-text">Scalr Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview of Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#multi-cloud-support">Multi-Cloud Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#high-level-declarative-primitives-vs-low-level-imperative-instructions">High-Level Declarative Primitives vs Low-Level Imperative Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#usable-by-both-developers-and-it">Usable by Both Developers and IT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html#scalr-architecture">Scalr Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#software-architecture">Software Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#deployment-architecture">Deployment Architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/terminology.html">Concepts and Terminology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scalr-scopes">Scalr Scopes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#login-scopes">Login Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#configuration-scopes">Configuration Scopes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#cloud-credentials">Cloud Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#accounts">Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#environments">Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#images-and-roles">Images and Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#farms-and-farm-roles">Farms and Farm Roles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#desired-state-engine">Desired State Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#service-catalog-and-applications">Service Catalog and Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#cost-analytics-manager">Cost Analytics/Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#policy-engine">Policy Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#users-teams-and-access-control">Users, Teams and Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#global-variables">Global Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#orchestration">Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scripts">Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#webhooks-endpoints-and-external-integrations">Webhooks, Endpoints and External Integrations</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scalr Server Admin Guide</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../install_guide/index.html">Installation &amp; Upgrades</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/scalr_server_architecture.html">Scalr Server Architecture and Requirements</a><ul>
@@ -116,6 +154,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#how-to-install-scalarizr-on-windows-images">How to Install Scalarizr on Windows Images</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#scalarizr-logs">Scalarizr Logs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#how-to-create-your-own-scalarizr-repo">How to Create Your Own Scalarizr Repo</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#managing-scalr-integrated-repo-service">Managing Scalr Integrated Repo Service</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#download-and-set-up-a-custom-repo">Download and Set Up a Custom Repo</a></li>
@@ -152,82 +191,24 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../extensions/advanced_logging.html">Enable Advanced Logging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#fluentd-configuration">Fluentd Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#scalr-configuration">Scalr Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#log-examples">Log Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#agent">Agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#api">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#audit">Audit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#user">User</a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<p class="caption"><span class="caption-text">Scalr Introduction</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview of Scalr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html#deployment-architecture">Deployment Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html#value-of-scalr">Value of Scalr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#security-and-compliance">Security and Compliance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#cost-control-visibility">Cost control &amp; Visibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#platform-flexibility">Platform Flexibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#team-productivity">Team Productivity</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/terminology.html">Concepts and Terminology</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scalr-architecture">Scalr Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scalr-scopes">Scalr Scopes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#cloud-credentials">Cloud Credentials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#accounts">Accounts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#environments">Environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#roles-and-images">Roles and Images</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#farms-and-farm-roles">Farms and Farm Roles</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#desired-state-engine">Desired State Engine</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#cost-analytics-management">Cost Analytics/Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#policy-engines">Policy Engines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#users-teams-and-access-control">Users, Teams and Access Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scripts">Scripts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#webhooks-and-external-integrations">Webhooks and External integrations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#storage">Storage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#kubernetes">Kubernetes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#service-catalog-and-applications">Service Catalog and Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scalarizer-agent">Scalarizer Agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#external-integrations">External Integrations</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../gs_admins/index.html">Getting Started for Admins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#role-of-account-admins">Role of Account Admins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#navigating-the-user-interface">Navigating the User Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#scalr-scope-configuration">Scalr Scope Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#cloud-configuration-and-credentials">Cloud Configuration and Credentials</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#roles-and-images">Roles and Images</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#scalr-account-architecture">Scalr Account Architecture</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#organisational-structure">Organisational Structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#teams-users-and-acls">Teams, Users and ACLs</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#account-scope-configuration">Account Scope Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#environments-and-cloud-credentials">Environments and Cloud Credentials</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#configuring-users-teams-and-acls">Configuring Users, Teams and ACLs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#id1">Roles and Images</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#role-of-an-administrator">Role of an Administrator</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gs_users/index.html">Getting Started for End Users</a><ul>
@@ -237,13 +218,52 @@
 <li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#working-with-applications">Working with Applications</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../navigating/index.html">Navigating the User Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#scope-differences">Scope Differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#ui-overview">UI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#main-menu">Main Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#bookmarks-bar">Bookmarks Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#profile-menu">Profile Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#environments-menu">Environments Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#list-views">List Views</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Farm Fast Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fast_start/index.html">Building a Simple Farm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fast_start/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fast_start/index.html#fast-farm-build">Fast Farm Build</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#aws-images">AWS Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#azure-images">Azure Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#gce-images">GCE Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#openstack-images">Openstack Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#aws-images">AWS Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#azure-images">Azure Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#gce-images">GCE Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#openstack-images">Openstack Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Building Images from scratch (With Chef)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
 </ul>
@@ -251,7 +271,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../farms/index.html">Farm Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-roles">Farm Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#scripts-events-orchestration">Scripts, Events &amp; Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-role-orchestration">Farm Role Orchestration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#events-reference">Events Reference</a></li>
 </ul>
 </li>
@@ -277,8 +297,11 @@
 </ul>
 <p class="caption"><span class="caption-text">Organizational Management</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../org/index.html">Implementing your Organization in Scalr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../org/index.html">Implementing your Organisation in Scalr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#configuring-environments">Configuring Environments</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Teams and Users</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
@@ -293,19 +316,58 @@
 </ul>
 <p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/index.html">Security and Compliance Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html">Policy Engine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html#policy-definitions">Policy Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html#policy-reference">Policy Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/quotas.html">Resource Quotas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/quotas.html#creating-quotas">Creating Quotas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/quotas.html#applying-quotas">Applying Quotas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/orchestration.html">Scalr/Account Level Orchestration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html">External Integrations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html#webhooks-and-endpoints">Webhooks and Endpoints</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configruing-endpoints">Configruing Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/index.html">Security and Compliance Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#policy-engine">Policy Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#resource-quotas">Resource Quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#orchestration-rules">Orchestration Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#role-based-access-control">Role Based Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#governance-through-external-integrations">Governance Through External Integrations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html">Policy Engine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#creating-policy-groups">Creating Policy Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#creating-policies">Creating Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/policies.html#using-global-variable-in-policies">Using Global Variable in Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#policy-tags">Policy Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#linking-policy-groups-to-environments">Linking Policy Groups to Environments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html#policy-reference">Policy Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#configuration-policies">Configuration Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#container-policies">Container Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#reclamation-policies">Reclamation Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#cloud-service-gateway-policies">Cloud Service Gateway Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#cloud-generic-policies">Cloud Generic Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#aws-policies">AWS Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#azure-policies">Azure Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#google-compute-engine-policies">Google Compute Engine Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#openstack-policies">Openstack Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#vmware-policies">VMware Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/quotas.html">Resource Quotas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/quotas.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/quotas.html#creating-quotas">Creating Quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/quotas.html#applying-quotas">Applying Quotas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/orchestration.html">Scalr/Account/Environment Level Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#creating-orchestration-rules">Creating Orchestration Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html">Webhooks and Endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configuring-endpoints">Configuring Endpoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configuring-webhooks">Configuring Webhooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-notifications">Webhook Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-payloads">Webhook Payloads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-security-and-authentication">Webhook Security and Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-history">Webhook History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#highly-available-webhooks">Highly Available Webhooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#example-webhooks">Example Webhooks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a></li>
@@ -334,16 +396,44 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/management.html">Cost Management</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Parameterisation in Scalr</span></p>
+<p class="caption"><span class="caption-text">Configuration Management in Scalr</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Global Variables</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-global-variables-in-scripts">Using Global Variables in Scripts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#global-variable-interpolation-in-fields">Global Variable Interpolation in Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-global-variables-in-policies">Using Global Variables in Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#examining-global-variables-in-servers">Examining Global Variables in Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#creating-scripts">Creating Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#writing-a-script">Writing a Script</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#executing-scripts">Executing Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#farm-role-orchestration">Farm Role Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#manually-on-farms-farm-roles-or-servers">Manually On Farms, Farm Roles, or Servers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Global Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-global-variables">Creating Global Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-global-variables-in-scripts">Using Global Variables in Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-global-variables-in-policies">Using Global Variables in Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examining-global-variables-in-servers">Examining Global Variables in Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#built-in-scalr-variables">Built-in Scalr Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#server-scope-built-in-variables">Server Scope Built-In Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#server-scope-built-in-cost-variables">Server Scope Built-In Cost Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#scalr-ui-default-global-variables">Scalr UI Default Global Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chef/index.html">Chef Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#definition-and-scope">Definition and Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ansible/index.html">Ansible Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Demand Management</span></p>
 <ul>
@@ -392,14 +482,34 @@
 </ul>
 <p class="caption"><span class="caption-text">Scalarizr agent</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html">Managing Scalarizr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#access-requirements-for-scalarizr-agent">Access requirements for Scalarizr agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#monitoring-scalarizr">Monitoring Scalarizr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#updating-the-scalarizr-agent">Updating the Scalarizr Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html">Scalarizr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#monitoring-scalarizr">Monitoring Scalarizr</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#servers-dashboard">Servers Dashboard:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#server-general-details">Server General Details:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#farm-dashboard">Farm Dashboard:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html#scalarizr-administrative-interface">Scalarizr Administrative Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html#scalarizr-logs">Scalarizr Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#updating-the-scalarizr-agent">Updating the Scalarizr Agent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#farm">Farm:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#farm-role">Farm Role:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#forcing-an-update">Forcing an Update:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#scalarizr-logs">Scalarizr Logs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html#scalarizr-administrative-interface">Scalarizr Administrative Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#firing-custom-events">Firing Custom Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#querying-environments">Querying Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#queryenv-list-roles">queryenv list-roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#queryenv-list-global-variables">queryenv list-global-variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#szradm-queryenv-get-server-user-data">szradm queryenv get-server-user-data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#szradm-queryenv-set-global-variable">szradm queryenv set-global-variable</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Best Practices</span></p>
 <ul>
@@ -416,6 +526,10 @@
 </li>
 </ul>
 </li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Release Notes</span></p>
 <ul>
@@ -504,21 +618,424 @@
            <div itemprop="articleBody">
             
   <div class="section" id="global-variables">
-<h1>Global Variables<a class="headerlink" href="#global-variables" title="Permalink to this headline">¶</a></h1>
+<span id="gvs"></span><h1>Global Variables<a class="headerlink" href="#global-variables" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="definition-and-scope">
 <h2>Definition and Scope<a class="headerlink" href="#definition-and-scope" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a> <a class="reference internal" href="../_images/scope_farm.png"><img alt="SCOPE_FARM" src="../_images/scope_farm.png" style="width: 26.8px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></p>
+<p>Global Variables are multi-purpose key value store objects that can be used for input from users or admins for the following:</p>
+<ul class="simple">
+<li>Tagging</li>
+<li>Script Input</li>
+<li>Naming Conventions</li>
+<li>Etc</li>
+</ul>
+<p>Global Variables are encrypted in the Scalr database and can also be pulled down from the Scalr server by the Scalarizr agent when needed.</p>
+<p>When accessing a Global Variable, Scalr follows the following algorithm:</p>
+<ul class="simple">
+<li>If the variable exists in the Scope you’re trying to access, it will be returned</li>
+<li>If the variable does not exist in the Scope you’re trying to access, or has an empty value, its parent scopes will be inspected to attempt returning the value</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that the Farm Role Scope has two parents: the Farm Scope and the Role Scope. The Farm Scope is prioritized over the Role Scope.</p>
+</div>
+</div>
+<div class="section" id="creating-global-variables">
+<h2>Creating Global Variables<a class="headerlink" href="#creating-global-variables" title="Permalink to this headline">¶</a></h2>
+<p>Global Variables can be created, updated, edited, or deleted at the Scalr, Account, Environment, Farm, or Farm Role scopes. To create a Global Variable at the Scalr, Account, or Environment scopes you can click on the Scalr icon on the top left: <a class="reference internal" href="../_images/scalr_icon_env.png"><img alt="SCALR_ICON" src="../_images/scalr_icon_env.png" style="width: 55.3px; height: 33.599999999999994px;" /></a></p>
+<p>Then click on Global Variables: <a class="reference internal" href="../_images/gv.png"><img alt="GV" src="../_images/gv.png" style="width: 130.9px; height: 26.599999999999998px;" /></a></p>
+<p>You have a few options when creating a Global Variable:</p>
+<a class="reference internal image-reference" href="../_images/new_gv.png"><img alt="../_images/new_gv.png" src="../_images/new_gv.png" style="width: 271.59999999999997px; height: 381.5px;" /></a>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="10%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>Metadata</td>
+<td>Name of the Global Variable</td>
+</tr>
+<tr class="row-odd"><td>Category</td>
+<td>Metadata</td>
+<td>Category that the Global Variable falls into</td>
+</tr>
+<tr class="row-even"><td>Description</td>
+<td>Metadata</td>
+<td>Description of the Global Variable</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../_images/hidden.png"><img alt="HID" src="../_images/hidden.png" style="width: 29.4px; height: 22.2px;" /></a> Hidden</td>
+<td>Flag</td>
+<td>The value cannot be seen at a lower scope</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../_images/locked.png"><img alt="LOCK" src="../_images/locked.png" style="width: 47.4px; height: 39.6px;" /></a> Locked</td>
+<td>Flag</td>
+<td>The value cannot be changed at a lower scope</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../_images/mandatory.png"><img alt="MAN" src="../_images/mandatory.png" style="width: 28.799999999999997px; height: 19.8px;" /></a> Mandatory</td>
+<td>Flag</td>
+<td>The value must be set at a specific scope</td>
+</tr>
+<tr class="row-even"><td>Custom</td>
+<td>Format</td>
+<td>A regular expression can be created for pattern validation</td>
+</tr>
+<tr class="row-odd"><td>JSON</td>
+<td>Format</td>
+<td>The values must be in a JSON format</td>
+</tr>
+<tr class="row-even"><td>List</td>
+<td>Format</td>
+<td>The values will be presented in a dropdown</td>
+</tr>
+</tbody>
+</table>
+<p>Once the Global Variable is created, click save and you will be able to use it in the various use cases below.</p>
 </div>
 <div class="section" id="using-global-variables-in-scripts">
 <h2>Using Global Variables in Scripts<a class="headerlink" href="#using-global-variables-in-scripts" title="Permalink to this headline">¶</a></h2>
+<p>Global Variables can be passed to scripts that are executed through Scalr orchestration. The following examples are scripts executed on a server whose scope includes a Global Variable with the name “MyGlobalVariable”.</p>
+<p>Bash:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">echo</span> <span class="nv">$MyGlobalVariable</span>
+</pre></div>
 </div>
-<div class="section" id="global-variable-interpolation-in-fields">
-<h2>Global Variable Interpolation in Fields<a class="headerlink" href="#global-variable-interpolation-in-fields" title="Permalink to this headline">¶</a></h2>
+<p>Powershell:</p>
+<div class="highlight-Powershell notranslate"><div class="highlight"><pre><span></span><span class="c">#!powershell</span>
+<span class="nv">$env:MyGlobalVariable</span>
+</pre></div>
+</div>
+<p>Python:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">print</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;MyGlobalVariable&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ruby:</p>
+<div class="highlight-Ruby notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env ruby</span>
+<span class="nb">print</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;MyGlobalVariable&quot;</span><span class="o">]</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="using-global-variables-in-policies">
 <h2>Using Global Variables in Policies<a class="headerlink" href="#using-global-variables-in-policies" title="Permalink to this headline">¶</a></h2>
+<p>Another powerful use of Global Variables is to use them in policy. A common use case is to use them in conjunction with tagging or naming policies. To do this, go to Policy at the Account scope:</p>
+<a class="reference internal image-reference" href="../_images/policy_account.png"><img alt="../_images/policy_account.png" src="../_images/policy_account.png" style="width: 307.29999999999995px; height: 442.4px;" /></a>
+<p>In the example below, a tagging policy is created in the cloud provider which will have a tag name of “scalr_tag” and the tag value will be the value of a Global Variable named “MyGlobalVariable”. Based on the brackets {} being around the value, Scalr knows to pull that as a Global Variable and insert that value into the cloud provider.</p>
+<a class="reference internal image-reference" href="../_images/gv_tag_policy.png"><img alt="../_images/gv_tag_policy.png" src="../_images/gv_tag_policy.png" style="width: 476.7px; height: 484.4px;" /></a>
+<p>This same concept can be used for other policies that allow for free form input, like hostname and instance name policies.</p>
 </div>
 <div class="section" id="examining-global-variables-in-servers">
 <h2>Examining Global Variables in Servers<a class="headerlink" href="#examining-global-variables-in-servers" title="Permalink to this headline">¶</a></h2>
+<p>Global Variables can also be referenced while working within the operating system by using the Scalarizr agent admin command: <code class="docutils literal notranslate"><span class="pre">szradm</span></code>. To find out more, go to the <a class="reference internal" href="../scalarizr/index.html#szradm"><span class="std std-ref">Scalarizr Administrative Interface</span></a> in the Scalarizr section of the documentation.</p>
+</div>
+<div class="section" id="built-in-scalr-variables">
+<h2>Built-in Scalr Variables<a class="headerlink" href="#built-in-scalr-variables" title="Permalink to this headline">¶</a></h2>
+<p>All of the variables above have been Global Variables that are provided by either an admin or user input. Scalr can also automatically define a certain amount of “built-in” Global Variables and inject them in the server Scope. These Global Variables are always available and they are prefixed with “SCALR” to avoid collisions with your own variables. Here is the list of the variables that can be accessed the same way as Global Variables:</p>
+<div class="section" id="server-scope-built-in-variables">
+<h3>Server Scope Built-In Variables<a class="headerlink" href="#server-scope-built-in-variables" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="62%" />
+<col width="23%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Environment Variable</th>
+<th class="head">Description</th>
+<th class="head">Sample Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SCALR_IMAGE_ID</td>
+<td>Cloud Image Identifier</td>
+<td>ami-43935d2a</td>
+</tr>
+<tr class="row-odd"><td>SCALR_EXTERNAL_IP</td>
+<td>External IP Address of the Server (only provided if the IP exists)</td>
+<td>107.108.109.110</td>
+</tr>
+<tr class="row-even"><td>SCALR_INTERNAL_IP</td>
+<td>Internal IP Address of the Server (only provided if the IP exists)</td>
+<td>10.11.12.13</td>
+</tr>
+<tr class="row-odd"><td>SCALR_ROLE_NAME</td>
+<td>Name of the Scalr Role this Server belongs to. This is not the Farm Role Alias.</td>
+<td>app-apache-ubuntu-ebs</td>
+</tr>
+<tr class="row-even"><td>SCALR_ROLE_OS</td>
+<td>Operating System of the Role</td>
+<td>Ubuntu, etc</td>
+</tr>
+<tr class="row-odd"><td>SCALR_ISDBMASTER</td>
+<td>Whether this Instance is a Role Master (only provided).</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>SCALR_INSTANCE_INDEX</td>
+<td>Index of this Instance within its Farm Role</td>
+<td>2</td>
+</tr>
+<tr class="row-odd"><td>SCALR_INSTANCE_FARM_INDEX</td>
+<td>Index of this instance within its Farm</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>SCALR_SERVER_TYPE</td>
+<td>Instance type</td>
+<td>c3.large</td>
+</tr>
+<tr class="row-odd"><td>SCALR_SERVER_HOSTNAME</td>
+<td>The hostname for this Server</td>
+<td>app-1.example.com</td>
+</tr>
+<tr class="row-even"><td>SCALR_LAUNCHED_BY_EMAIL</td>
+<td>The system email of the user who launched the instance</td>
+<td><a class="reference external" href="mailto:someone&#37;&#52;&#48;company&#46;com">someone<span>&#64;</span>company<span>&#46;</span>com</a></td>
+</tr>
+<tr class="row-odd"><td>SCALR_LAUNCHED_BY_ID</td>
+<td>The system ID of the user who launched the instance</td>
+<td>1</td>
+</tr>
+<tr class="row-even"><td>SCALR_SERVER_ID</td>
+<td>The Server ID for this Server. This is an internal Scalr record key.</td>
+<td>0abb9535-9d1a-4dc4-a38c-7b7b26db7bb0</td>
+</tr>
+<tr class="row-odd"><td>SCALR_FARM_ID</td>
+<td>The Farm ID of the Farm this Server belongs to. This is an internal Scalr record key.</td>
+<td>5334</td>
+</tr>
+<tr class="row-even"><td>SCALR_FARM_ROLE_ID</td>
+<td>The Farm Role ID of the Farm Role this Server belongs to. This is an internal Scalr record key.</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>SCALR_FARM_ROLE_ALIAS</td>
+<td>The Farm Role Alias of the Farm Role this Server belongs to.</td>
+<td>myrole</td>
+</tr>
+<tr class="row-even"><td>SCALR_FARM_NAME</td>
+<td>The Name of the Farm this Server belongs to.</td>
+<td>My App Production</td>
+</tr>
+<tr class="row-odd"><td>SCALR_FARM_HASH</td>
+<td>The Farm Hash of the Farm this Server belongs to. This is an internal Scalr record key.</td>
+<td>cc55739bfdf844</td>
+</tr>
+<tr class="row-even"><td>SCALR_FARM_OWNER_EMAIL</td>
+<td>The email address of the owner of the Farm this Server belongs to.</td>
+<td><a class="reference external" href="mailto:user&#37;&#52;&#48;scalr&#46;com">user<span>&#64;</span>scalr<span>&#46;</span>com</a></td>
+</tr>
+<tr class="row-odd"><td>SCALR_BEHAVIORS</td>
+<td>A comma-separated list of the Scalr built-in automations that are active for this Server.</td>
+<td>apache,nginx</td>
+</tr>
+<tr class="row-even"><td>SCALR_ENV_ID</td>
+<td>The ID of the Environment this Server belongs to. This is an internal Scalr record key.</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>SCALR_ENV_NAME</td>
+<td>The Name of the Environment this Server belongs to.</td>
+<td>Staging</td>
+</tr>
+<tr class="row-even"><td>SCALR_CLOUD_LOCATION</td>
+<td>The Location where this Server is. This value is provided by your Cloud Platform.</td>
+<td>us-east-1</td>
+</tr>
+<tr class="row-odd"><td>SCALR_CLOUD_SERVER_ID</td>
+<td>The Cloud ID for this Server. This value is provided by your Cloud Platform.</td>
+<td>i-866f40a8</td>
+</tr>
+<tr class="row-even"><td>SCALR_CLOUD_LOCATION_ZONE</td>
+<td>A more precise location for this Server, if available. This value is provided by your Cloud Platform.</td>
+<td>us-east-1a</td>
+</tr>
+<tr class="row-odd"><td>SCALR_CLOUD_PLATFORM</td>
+<td>A description of the Cloud Platform.  Available in Scalr  &gt;=7.5.2.</td>
+<td>openstack, ec2, etc</td>
+</tr>
+<tr class="row-even"><td>SCALR_ACCOUNT_ID</td>
+<td>The Scalr Account ID.  This is an internal Scalr record key. Available in Scalr  &gt;=7.5.2.</td>
+<td>1, 5, etc</td>
+</tr>
+<tr class="row-odd"><td>SCALR_ACCOUNT_NAME</td>
+<td>The Scalr Account Name.  This is an internal Scalr record key. Available in Scalr  &gt;=7.5.2.</td>
+<td>Account1, Oil and Gas, Healthcare, etc.</td>
+</tr>
+<tr class="row-even"><td>SCALR_INSTANCE_ID</td>
+<td>Equivalent to SCALR_CLOUD_SERVER_ID . This Global Variable is a legacy AWS specific variable.</td>
+<td>i-866f40a8</td>
+</tr>
+<tr class="row-odd"><td>SCALR_AMI_ID</td>
+<td>Equivalent to SCALR_IMAGE_ID . This Global Variable is a legacy AWS specific variable.</td>
+<td>ami-43935d2a</td>
+</tr>
+<tr class="row-even"><td>SCALR_REGION</td>
+<td>Equivalent to SCALR_CLOUD_LOCATION . This Global Variable is a legacy AWS specific variable.</td>
+<td>us-east-1</td>
+</tr>
+<tr class="row-odd"><td>SCALR_AVAIL_ZONE</td>
+<td>Equivalent to SCALR_CLOUD_LOCATION_ZONE . This Global Variable is a legacy AWS specific variable.</td>
+<td>us-east-1a</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="server-scope-built-in-cost-variables">
+<h3>Server Scope Built-In Cost Variables<a class="headerlink" href="#server-scope-built-in-cost-variables" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%" />
+<col width="63%" />
+<col width="25%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Environment Variable</th>
+<th class="head">Description</th>
+<th class="head">Sample Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>SCALR_COST_CENTER_ID</td>
+<td>The ID of the Cost Center this Server is associated with (through the Project the Farm it belongs to is associated with).</td>
+<td>c3146a74-3135-451e-b09e-d9882965d57f</td>
+</tr>
+<tr class="row-odd"><td>SCALR_COST_CENTER_BC</td>
+<td>The Billing Code of the Cost Center this Server is associated with.</td>
+<td>BU-1-code</td>
+</tr>
+<tr class="row-even"><td>SCALR_COST_CENTER_NAME</td>
+<td>The Name of the Cost Center this Server is associated with.</td>
+<td>Businesses Unit A</td>
+</tr>
+<tr class="row-odd"><td>SCALR_PROJECT_ID</td>
+<td>The ID of the Project this Server is associated with (through the Farm it belongs to ).</td>
+<td>05650aa6-e472-4bae-8532-c57503eb5bb4</td>
+</tr>
+<tr class="row-even"><td>SCALR_PROJECT_BC</td>
+<td>The Billing Code of the Project this Server is associated with (through the Farm it belongs to).</td>
+<td>Application-123</td>
+</tr>
+<tr class="row-odd"><td>SCALR_PROJECT_NAME</td>
+<td>The Name of the Project this Server is associated with (through the Farm it belongs to ).</td>
+<td>Europe Cloud Identity Management Infrastructure</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="scalr-ui-default-global-variables">
+<h2>Scalr UI Default Global Variables<a class="headerlink" href="#scalr-ui-default-global-variables" title="Permalink to this headline">¶</a></h2>
+<p>The following special Global Variables can be used to set default behavior of your Farm Roles in the Account, Environment, or Role scopes. An example of when to use a UI default variable is if you have an environment in which you know that no servers should be auto-scaled, you can set SCALR_UI_DEFAULT_AUTO_SCALING to “0” at the Environment level and all farms will inherently have auto-scaling disabled by default.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="10%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Name</td>
+<td>Accepted value(s)</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_EC2_INITIATED_SHUTDOWN_BEHAVIOR</td>
+<td>stop/terminate</td>
+<td>“AWS EC2 instance initiated shutdown behavior is suspend (“”stop”“) or terminate (“”terminate”“).”</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_STORAGE_RE_USE</td>
+<td>0/1</td>
+<td>Reuse block storage device if an instance is replaced.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_REBOOT_AFTER_HOST_INIT</td>
+<td>0/1</td>
+<td>Reboot after HostInit Scripts have executed.</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_AUTO_SCALING</td>
+<td>0/1</td>
+<td>Auto-scaling is disabled (0) or enabled (1).</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_ABORT_INITIALIZATION_ON_ORCHESTRATION_FAILURE</td>
+<td>0/1</td>
+<td>Abort Server initialization when a Blocking HostInit or BeforeHostUp Script fails (non-zero exit code).</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_{PLATFORM}_LOCATION</td>
+<td>“us-east-1</td>
+<td>Location for a cloud platform.&nbsp; Value must be valid for the cloud platform.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_{PLATFORM}_INSTANCE_TYPE</td>
+<td>“t2.small</td>
+<td>Location for a cloud platform.&nbsp; Value must be valid for the cloud platform.</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_CHEF_SERVER</td>
+<td>chef.example.com</td>
+<td>Chef server for Chef-bootstrapped Roles.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AZURE_RESOURCE_GROUP</td>
+<td>ExampleResourceGroup</td>
+<td>Resource Group for Azure Roles.</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_AWS_SUBNETS</td>
+<td>subnet-6407ef00</td>
+<td>Subnets for AWS EC2 Roles.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_EC2_SECURITY_GROUPS</td>
+<td>sg-0f0c4e68</td>
+<td>Security Groups for AWS EC2 Roles.</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_INITIALIZATION_TIMEOUT</td>
+<td>Integer</td>
+<td>Terminate instance if it will not send ‘hostInit’ or ‘hostUp’ event after launch in the defined time frame. Value defined in seconds.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_RDS_MAINTENANCE_WINDOW</td>
+<td>dd:hh:mm - dd:hh:mm</td>
+<td>Set the preferred maintenance window for AWS RDS. dd defines day of the week (mon-sun)</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_AWS_RDS_BACKUP_WINDOW</td>
+<td>hh:mm - hh:mm</td>
+<td>Set the preferred backup window for AWS RDS.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_RDS_BACKUP_RETENTION_PERIOD</td>
+<td>Integer</td>
+<td>Period of days to retain backup.  Value defined in days.</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_AWS_EC2_KMS_KEY</td>
+<td>example-key</td>
+<td>Default KMS key for EBS Volume</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_RDS_KMS_KEY</td>
+<td>example-key</td>
+<td>Default KMS key for RDS</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_DISABLE_NTP_MANAGEMENT</td>
+<td>0/1</td>
+<td>“Scalarizr agent NTP management is enabled by default. (0) .  To Disable NTP management</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_IAM_INSTANCE_PROFILE</td>
+<td>iam-profile-1</td>
+<td>The default IAM profile to use</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_GCE_PUBLIC_IP_USAGE</td>
+<td>0/1</td>
+<td>Sets public IPs on all instances or none.</td>
+</tr>
+<tr class="row-even"><td>SCALR_UI_DEFAULT_AWS_EFS_KMS_KEY</td>
+<td>example-key</td>
+<td>The KMS key alias or the full ARN for an encrypted Elastic File System.</td>
+</tr>
+<tr class="row-odd"><td>SCALR_UI_DEFAULT_GCE_SERVICE_ACCOUNT</td>
+<td>service-account</td>
+<td>The default GCE service account to use.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If a default GV violates a Governance Policy, it will be ignored.</p>
+</div>
 </div>
 </div>
 
@@ -530,10 +1047,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../scaling/index.html" class="btn btn-neutral float-right" title="Scaling Applications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../chef/index.html" class="btn btn-neutral float-right" title="Chef Integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../cost/management.html" class="btn btn-neutral" title="Cost Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../scripts/index.html" class="btn btn-neutral" title="Scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -584,7 +1101,20 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #e8ebed;
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      background: #333;
+      font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    }
+  </style>
+
 
 </body>
 </html>

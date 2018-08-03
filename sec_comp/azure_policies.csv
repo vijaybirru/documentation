@@ -1,0 +1,5 @@
+Type,Description,Notes
+azure.network.public_ip_usage,Enforces or Prevents public IPs on Servers,
+azure.resource_groups,Restricts Resource Groups that can be used,
+azure.storage_accounts,Limits the storage accounts that can be used,
+azure.availability_sets,Limits the availability sets that can be used,

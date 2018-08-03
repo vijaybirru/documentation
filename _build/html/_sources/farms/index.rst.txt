@@ -1,13 +1,17 @@
 .. include:: ../GLOBAL.rst
 
+.. _farms:
+
 Farm Configuration
 ==================
 
 Farm Roles
 ----------
 
-Scripts, Events & Orchestration
--------------------------------
+.. _farm_role_orchestration:
+
+Farm Role Orchestration
+-----------------------
 
 Events Reference
 ^^^^^^^^^^^^^^^^

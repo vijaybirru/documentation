@@ -4,6 +4,13 @@ Scalr Documentation!
 ====================
 
 .. toctree::
+   :maxdepth: 3
+   :caption: Scalr Introduction
+
+   introduction/index
+   introduction/terminology
+
+.. toctree::
    :maxdepth: 2
    :caption: Scalr Server Admin Guide
 
@@ -12,17 +19,17 @@ Scalr Documentation!
 
 .. toctree::
    :maxdepth: 3
-   :caption: Scalr Introduction
-
-   introduction/index
-   introduction/terminology
-
-.. toctree::
-   :maxdepth: 3
    :caption: Getting Started
 
    gs_admins/index
    gs_users/index
+   navigating/index
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Farm Fast Start
+
+   fast_start/index
 
 .. toctree::
    :maxdepth: 3
@@ -30,8 +37,8 @@ Scalr Documentation!
 
    images_roles/index
    images_roles/registering_images
-   images_roles/creating_images_nonscalr
    images_roles/creating_roles
+   images_roles/creating_images_nonscalr
    images_roles/multi_cloud
    images_roles/orchestration
 
@@ -79,9 +86,13 @@ Scalr Documentation!
 
 .. toctree::
    :maxdepth: 3
-   :caption: Parameterisation in Scalr
+   :caption: Configuration Management in Scalr
 
+   scripts/index
    gvs/index
+   chef/index
+   ansible/index
+   custom_events/index
 
 .. toctree::
    :maxdepth: 3
@@ -117,6 +128,13 @@ Scalr Documentation!
    :caption: Best Practices
 
    best_practices/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Tutorials
+
+   tutorials/3-tier-app
+
 
 .. toctree::
    :maxdepth: 2

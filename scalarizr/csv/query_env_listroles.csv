@@ -1,0 +1,6 @@
+Parameter,Description
+behaviour=<behavior>,Filters the result to only include Servers whose behaviors include <behavior> (Note: be mindful of the English spelling in the behaviour parameter)
+role=<role name>,Filters the result to only includes Servers whose Role name (not Farm Role Alias) matches <role name>
+role-id=<role id>,Filters the result to only includes Servers whose Role ID (not Farm Role ID) matches <role id>
+farm-role-id=<farm role id>,Filters the result to only includes Servers whose Farm Role ID matches <farm role id>
+showInitServers=1,By default the response does not include Servers in Initializing State. Pass this flag to include them.

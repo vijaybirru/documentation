@@ -99,4 +99,9 @@ Adding OpenStack Credentials to Scalr
 .. image:: images/OpenStack-creds_2.png
   :scale: 70%
 
+.. |CACHE| image:: images/cache-clear.png
+           :scale: 40%
+
+.. note:: The Openstack credentials screen includes cache clear button |CACHE|. Scalr maintains a cache of Openstack Flavors (instance sizes) which it refreshes every 24 hours. If you make changes to Flavors in Openstack, and these are not being reflected in Scalr, you can click on the "CLEAR" button and Scalr will refresh the cache.
+
 You can now proceed to adding these credentials to your |ENVIRONMENTS|.

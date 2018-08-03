@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Overview of Scalr" href="../introduction/index.html" />
+    <link rel="next" title="Getting Started for Admins" href="../gs_admins/index.html" />
     <link rel="prev" title="Enable Email Integration" href="email.html" /> 
 
   
@@ -82,7 +82,45 @@
               
             
             
-              <p class="caption"><span class="caption-text">Scalr Server Admin Guide</span></p>
+              <p class="caption"><span class="caption-text">Scalr Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview of Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#multi-cloud-support">Multi-Cloud Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#high-level-declarative-primitives-vs-low-level-imperative-instructions">High-Level Declarative Primitives vs Low-Level Imperative Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#usable-by-both-developers-and-it">Usable by Both Developers and IT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html#scalr-architecture">Scalr Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#software-architecture">Software Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#deployment-architecture">Deployment Architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/terminology.html">Concepts and Terminology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scalr-scopes">Scalr Scopes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#login-scopes">Login Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#configuration-scopes">Configuration Scopes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#cloud-credentials">Cloud Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#accounts">Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#environments">Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#images-and-roles">Images and Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#farms-and-farm-roles">Farms and Farm Roles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#desired-state-engine">Desired State Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#service-catalog-and-applications">Service Catalog and Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#cost-analytics-manager">Cost Analytics/Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#policy-engine">Policy Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#users-teams-and-access-control">Users, Teams and Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#global-variables">Global Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#orchestration">Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scripts">Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#webhooks-endpoints-and-external-integrations">Webhooks, Endpoints and External Integrations</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scalr Server Admin Guide</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../install_guide/index.html">Installation &amp; Upgrades</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/scalr_server_architecture.html">Scalr Server Architecture and Requirements</a><ul>
@@ -116,6 +154,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#how-to-install-scalarizr-on-windows-images">How to Install Scalarizr on Windows Images</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#scalarizr-logs">Scalarizr Logs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#how-to-create-your-own-scalarizr-repo">How to Create Your Own Scalarizr Repo</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#managing-scalr-integrated-repo-service">Managing Scalr Integrated Repo Service</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#download-and-set-up-a-custom-repo">Download and Set Up a Custom Repo</a></li>
@@ -152,82 +191,24 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Enable Advanced Logging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fluentd-configuration">Fluentd Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scalr-configuration">Scalr Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#log-examples">Log Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agent">Agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#api">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#audit">Audit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user">User</a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-<p class="caption"><span class="caption-text">Scalr Introduction</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview of Scalr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html#deployment-architecture">Deployment Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html#value-of-scalr">Value of Scalr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#security-and-compliance">Security and Compliance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#cost-control-visibility">Cost control &amp; Visibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#platform-flexibility">Platform Flexibility</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#team-productivity">Team Productivity</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../introduction/terminology.html">Concepts and Terminology</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scalr-architecture">Scalr Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scalr-scopes">Scalr Scopes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#cloud-credentials">Cloud Credentials</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#accounts">Accounts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#environments">Environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#roles-and-images">Roles and Images</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#farms-and-farm-roles">Farms and Farm Roles</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#desired-state-engine">Desired State Engine</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#cost-analytics-management">Cost Analytics/Management</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#policy-engines">Policy Engines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#users-teams-and-access-control">Users, Teams and Access Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scripts">Scripts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#webhooks-and-external-integrations">Webhooks and External integrations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#storage">Storage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#kubernetes">Kubernetes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#service-catalog-and-applications">Service Catalog and Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scalarizer-agent">Scalarizer Agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#external-integrations">External Integrations</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../gs_admins/index.html">Getting Started for Admins</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#role-of-account-admins">Role of Account Admins</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#navigating-the-user-interface">Navigating the User Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#scalr-scope-configuration">Scalr Scope Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#cloud-configuration-and-credentials">Cloud Configuration and Credentials</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#roles-and-images">Roles and Images</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#scalr-account-architecture">Scalr Account Architecture</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#organisational-structure">Organisational Structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#teams-users-and-acls">Teams, Users and ACLs</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#account-scope-configuration">Account Scope Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#environments-and-cloud-credentials">Environments and Cloud Credentials</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_aws.html">Connecting Scalr to AWS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#configuring-users-teams-and-acls">Configuring Users, Teams and ACLs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../gs_admins/index.html#id1">Roles and Images</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#role-of-an-administrator">Role of an Administrator</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gs_users/index.html">Getting Started for End Users</a><ul>
@@ -237,13 +218,52 @@
 <li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#working-with-applications">Working with Applications</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../navigating/index.html">Navigating the User Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#scope-differences">Scope Differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#ui-overview">UI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#main-menu">Main Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#bookmarks-bar">Bookmarks Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#profile-menu">Profile Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#environments-menu">Environments Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#list-views">List Views</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Farm Fast Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fast_start/index.html">Building a Simple Farm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fast_start/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fast_start/index.html#fast-farm-build">Fast Farm Build</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#aws-images">AWS Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#azure-images">Azure Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#gce-images">GCE Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#openstack-images">Openstack Images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#aws-images">AWS Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#azure-images">Azure Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#gce-images">GCE Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#openstack-images">Openstack Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Building Images from scratch (With Chef)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
 </ul>
@@ -251,7 +271,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../farms/index.html">Farm Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-roles">Farm Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#scripts-events-orchestration">Scripts, Events &amp; Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-role-orchestration">Farm Role Orchestration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#events-reference">Events Reference</a></li>
 </ul>
 </li>
@@ -277,8 +297,11 @@
 </ul>
 <p class="caption"><span class="caption-text">Organizational Management</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../org/index.html">Implementing your Organization in Scalr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account Configuration Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../org/index.html">Implementing your Organisation in Scalr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#configuring-environments">Configuring Environments</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Teams and Users</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
@@ -293,19 +316,58 @@
 </ul>
 <p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/index.html">Security and Compliance Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html">Policy Engine</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html#policy-definitions">Policy Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html#policy-reference">Policy Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/quotas.html">Resource Quotas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/quotas.html#creating-quotas">Creating Quotas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/quotas.html#applying-quotas">Applying Quotas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/orchestration.html">Scalr/Account Level Orchestration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html">External Integrations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html#webhooks-and-endpoints">Webhooks and Endpoints</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configruing-endpoints">Configruing Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/index.html">Security and Compliance Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#policy-engine">Policy Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#resource-quotas">Resource Quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#orchestration-rules">Orchestration Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#role-based-access-control">Role Based Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#governance-through-external-integrations">Governance Through External Integrations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html">Policy Engine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#creating-policy-groups">Creating Policy Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#creating-policies">Creating Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/policies.html#using-global-variable-in-policies">Using Global Variable in Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#policy-tags">Policy Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#linking-policy-groups-to-environments">Linking Policy Groups to Environments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html#policy-reference">Policy Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#configuration-policies">Configuration Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#container-policies">Container Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#reclamation-policies">Reclamation Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#cloud-service-gateway-policies">Cloud Service Gateway Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#cloud-generic-policies">Cloud Generic Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#aws-policies">AWS Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#azure-policies">Azure Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#google-compute-engine-policies">Google Compute Engine Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#openstack-policies">Openstack Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#vmware-policies">VMware Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/quotas.html">Resource Quotas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/quotas.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/quotas.html#creating-quotas">Creating Quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/quotas.html#applying-quotas">Applying Quotas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/orchestration.html">Scalr/Account/Environment Level Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#creating-orchestration-rules">Creating Orchestration Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html">Webhooks and Endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configuring-endpoints">Configuring Endpoints</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configuring-webhooks">Configuring Webhooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-notifications">Webhook Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-payloads">Webhook Payloads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-security-and-authentication">Webhook Security and Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-history">Webhook History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#highly-available-webhooks">Highly Available Webhooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#example-webhooks">Example Webhooks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a></li>
@@ -334,16 +396,44 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/management.html">Cost Management</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Parameterisation in Scalr</span></p>
+<p class="caption"><span class="caption-text">Configuration Management in Scalr</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../gvs/index.html">Global Variables</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#definition-and-scope">Definition and Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#using-global-variables-in-scripts">Using Global Variables in Scripts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#global-variable-interpolation-in-fields">Global Variable Interpolation in Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#using-global-variables-in-policies">Using Global Variables in Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#examining-global-variables-in-servers">Examining Global Variables in Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#creating-scripts">Creating Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#writing-a-script">Writing a Script</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#executing-scripts">Executing Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#farm-role-orchestration">Farm Role Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#manually-on-farms-farm-roles-or-servers">Manually On Farms, Farm Roles, or Servers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gvs/index.html">Global Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#creating-global-variables">Creating Global Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#using-global-variables-in-scripts">Using Global Variables in Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#using-global-variables-in-policies">Using Global Variables in Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#examining-global-variables-in-servers">Examining Global Variables in Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#built-in-scalr-variables">Built-in Scalr Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gvs/index.html#server-scope-built-in-variables">Server Scope Built-In Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gvs/index.html#server-scope-built-in-cost-variables">Server Scope Built-In Cost Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#scalr-ui-default-global-variables">Scalr UI Default Global Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chef/index.html">Chef Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#definition-and-scope">Definition and Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ansible/index.html">Ansible Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Demand Management</span></p>
 <ul>
@@ -392,14 +482,34 @@
 </ul>
 <p class="caption"><span class="caption-text">Scalarizr agent</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html">Managing Scalarizr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#access-requirements-for-scalarizr-agent">Access requirements for Scalarizr agent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#monitoring-scalarizr">Monitoring Scalarizr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#updating-the-scalarizr-agent">Updating the Scalarizr Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html">Scalarizr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#monitoring-scalarizr">Monitoring Scalarizr</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#servers-dashboard">Servers Dashboard:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#server-general-details">Server General Details:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#farm-dashboard">Farm Dashboard:</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html#scalarizr-administrative-interface">Scalarizr Administrative Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html#scalarizr-logs">Scalarizr Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#updating-the-scalarizr-agent">Updating the Scalarizr Agent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#farm">Farm:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#farm-role">Farm Role:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#forcing-an-update">Forcing an Update:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#scalarizr-logs">Scalarizr Logs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html#scalarizr-administrative-interface">Scalarizr Administrative Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#firing-custom-events">Firing Custom Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#querying-environments">Querying Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#queryenv-list-roles">queryenv list-roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#queryenv-list-global-variables">queryenv list-global-variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#szradm-queryenv-get-server-user-data">szradm queryenv get-server-user-data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#szradm-queryenv-set-global-variable">szradm queryenv set-global-variable</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Best Practices</span></p>
 <ul>
@@ -416,6 +526,10 @@
 </li>
 </ul>
 </li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Release Notes</span></p>
 <ul>
@@ -507,10 +621,247 @@
             
   <div class="section" id="enable-advanced-logging">
 <h1>Enable Advanced Logging<a class="headerlink" href="#enable-advanced-logging" title="Permalink to this headline">¶</a></h1>
+<p>Advanced logging can be turned on for administrators to gather more information for the following type of logs:</p>
+<ul class="simple">
+<li>Agent Logs - This log will contain all events related to Orchestration. It will contain the same events as found under Orchestration Log in the Scalr UI.</li>
+<li>API Logs - This log contains failed API requests and responses.</li>
+<li>Audit Logs - This log contains different events that happened in Scalr and who triggered them.  It is designed to collect all user initiated actions which should be audited.</li>
+<li>User Logs - This log cotains the system logs that you can see in the UI under System Logs.</li>
+</ul>
 <p>Scalr supports real time logging to a fluentd backend which can be configured to act as a funnel before getting stored on any storage backend, such as Plain Text Files, ElasticSearch, MongoDB, or Splunk.</p>
-<div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
-<p>A running fluentd installation with a configured storage backend. More on installing fluentd.</p>
+<p>A running Fluentd installation with a configured storage backend is required.. More on installing fluentd here: <a href="https://www.fluentd.org/download" target="_blank">Fluentd Information</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a>.</p>
+<div class="section" id="fluentd-configuration">
+<h2>Fluentd Configuration<a class="headerlink" href="#fluentd-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Once you have installed Fluentd, you’ll want to update the config file located in <code class="docutils literal notranslate"><span class="pre">/etc/td-agent/td-agent.conf</span></code></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1">####</span>
+<span class="c1">## Output descriptions:</span>
+<span class="c1">##</span>
+
+<span class="c1"># Treasure Data (http://www.treasure-data.com/) provides cloud based data</span>
+<span class="c1"># analytics platform, which easily stores and processes data from td-agent.</span>
+<span class="c1"># FREE plan is also provided.</span>
+<span class="c1"># @see http://docs.fluentd.org/articles/http-to-td</span>
+<span class="c1">#</span>
+<span class="c1"># This section matches events whose tag is td.DATABASE.TABLE</span>
+&lt;match td.*.*&gt;
+  <span class="nb">type</span> tdlog
+  apikey YOUR_API_KEY
+
+  auto_create_table
+  buffer_type file
+  buffer_path /var/log/td-agent/buffer/td
+
+  &lt;secondary&gt;
+  <span class="nb">type</span> file
+  path /var/log/td-agent/failed_records
+  &lt;/secondary&gt;
+  &lt;/match&gt;
+
+  <span class="c1">## match tag=debug.** and dump to console</span>
+  &lt;match *&gt;
+  <span class="nb">type</span> stdout
+  &lt;/match&gt;
+
+  <span class="c1">####</span>
+  <span class="c1">## Source descriptions:</span>
+  <span class="c1">##</span>
+
+  <span class="c1">## built-in TCP input</span>
+  <span class="c1">## @see http://docs.fluentd.org/articles/in_forward</span>
+  &lt;source&gt;
+  <span class="nb">type</span> forward
+  &lt;/source&gt;
+
+  <span class="c1">## built-in UNIX socket input</span>
+  <span class="c1">#&lt;source&gt;</span>
+  <span class="c1">#  type unix</span>
+  <span class="c1">#&lt;/source&gt;</span>
+
+  <span class="c1"># HTTP input</span>
+  <span class="c1"># POST http://localhost:8888/&lt;tag&gt;?json=&lt;json&gt;</span>
+  <span class="c1"># POST http://localhost:8888/td.myapp.login?json={&quot;user&quot;%3A&quot;me&quot;}</span>
+  <span class="c1"># @see http://docs.fluentd.org/articles/in_http</span>
+  &lt;source&gt;
+  <span class="nb">type</span> http
+  <span class="nb">bind</span> <span class="m">0</span>.0.0.0
+  port <span class="m">8888</span>
+  &lt;/source&gt;
+
+  <span class="c1">## live debugging agent</span>
+  &lt;source&gt;
+  <span class="nb">type</span> debug_agent
+  <span class="nb">bind</span> <span class="m">0</span>.0.0.0
+  port <span class="m">24230</span>
+  &lt;/source&gt;
+
+  <span class="c1">###Tagging for Scalr###</span>
+  &lt;match user.***&gt;
+  <span class="nb">type</span> stdout
+  &lt;/match&gt;
+  &lt;match audit.***&gt;
+  <span class="nb">type</span> stdout
+  &lt;/match&gt;
+  &lt;match api.***&gt;
+  <span class="nb">type</span> stdout
+  &lt;/match&gt;
+  &lt;match agent.***&gt;
+  <span class="nb">type</span> stdout
+  &lt;/match&gt;
+</pre></div>
+</div>
+<p>Once you have updated the configuration, restart the td-agent service.</p>
+</div>
+<div class="section" id="scalr-configuration">
+<h2>Scalr Configuration<a class="headerlink" href="#scalr-configuration" title="Permalink to this headline">¶</a></h2>
+<p>To enable the advanced logging, add the following to the scalr-server.rb file:</p>
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="o">[</span><span class="ss">:configuration</span><span class="o">]</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s2">&quot;scalr&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="s2">&quot;logger&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="s2">&quot;agent&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="s2">&quot;enabled&quot;</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">&quot;proto&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;http&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;port&quot;</span> <span class="o">=&gt;</span> <span class="mi">8888</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;audit&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="s2">&quot;enabled&quot;</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">&quot;proto&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;http&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;port&quot;</span> <span class="o">=&gt;</span> <span class="mi">8888</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;api&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="s2">&quot;enabled&quot;</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">&quot;proto&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;http&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;port&quot;</span> <span class="o">=&gt;</span> <span class="mi">8888</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;user&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="s2">&quot;enabled&quot;</span> <span class="o">=&gt;</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">&quot;proto&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;http&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;path&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;port&quot;</span> <span class="o">=&gt;</span> <span class="mi">8888</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>In most cases, the settings above should be fine for your setup. If you do need to change the settings, the full list of fields can be found in the <a class="reference internal" href="../install_guide/advanced_configurations.html#logging"><span class="std std-ref">Logging</span></a> section of our advanced configurations page.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In a multi-node configuration, the scalr-server.rb file should be exactly the same across all Scalr server nodes. Remember to run <code class="docutils literal notranslate"><span class="pre">scalr-server-ctl</span> <span class="pre">reconfigure</span></code> on all nodes whenever you make an update to the scalr-server.rb configuration file.</p>
+</div>
+<p>If everything is configured correctly, you will see the logs in <code class="docutils literal notranslate"><span class="pre">/var/log/td-agent/td-agent.log</span></code>. You can then forward these logs off to your logging solution of choice.</p>
+</div>
+<div class="section" id="log-examples">
+<h2>Log Examples<a class="headerlink" href="#log-examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="agent">
+<h3>Agent<a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+    <span class="c1"># Common tags are here</span>
+    ...
+    <span class="c1"># Event specific</span>
+    <span class="s2">&quot;orchestration.result.event.id&quot;</span>: <span class="s2">&quot;69dd4b5a-402c-4506-8650-becd9cf683d8&quot;</span>,  <span class="c1">#</span>
+    <span class="s2">&quot;orchestration.result.event.name&quot;</span>: <span class="s2">&quot;HostUp&quot;</span>,  <span class="c1"># The name of the event</span>
+    <span class="s2">&quot;orchestration.result.event.triggered_by&quot;</span>: <span class="s2">&quot;d7c42fd5-9aa6-48c7-88e9-1abd34248e06&quot;</span>, <span class="c1"># Identifier of the Scalr server that caused this event</span>
+    <span class="s2">&quot;orchestration.result.execution_id&quot;</span>: <span class="s2">&quot;9ab98d17-4440-4fbc-a75d-acecea71b2de&quot;</span>,  <span class="c1"># Identifier of this execution on Scalr.</span>
+    <span class="s2">&quot;orchestration.result.return_code&quot;</span>: <span class="m">0</span>,  <span class="c1"># OS process exit code.</span>
+    <span class="s2">&quot;orchestration.result.script.name&quot;</span>: <span class="s2">&quot;Linux_ping_pong&quot;</span>,   <span class="c1"># The name of the Script</span>
+    <span class="s2">&quot;orchestration.result.stderr&quot;</span>: <span class="s2">&quot;&quot;</span>,  <span class="c1"># Base64 encoded OS process stderr</span>
+    <span class="s2">&quot;orchestration.result.stdout&quot;</span>: <span class="s2">&quot;cG9uZwo=\n&quot;</span>,  <span class="c1"># Base64 encoded OS process stdout</span>
+    <span class="s2">&quot;orchestration.result.target.env_id&quot;</span>: <span class="s2">&quot;5&quot;</span>,  <span class="c1"># Identifier of the Environment the target Server corresponds to</span>
+    <span class="s2">&quot;orchestration.result.target.farm_id&quot;</span>: <span class="s2">&quot;9800016&quot;</span>,  <span class="c1"># Identifier of the Farm the target Server corresponds to</span>
+    <span class="s2">&quot;orchestration.result.target.farm_role_id&quot;</span>: <span class="s2">&quot;70&quot;</span>,  <span class="c1"># Identifier of the Farm Role the target Server corresponds to</span>
+    <span class="s2">&quot;orchestration.result.target.server_id&quot;</span>: <span class="s2">&quot;d7c42fd5-9aa6-48c7-88e9-1abd34248e06&quot;</span>,  <span class="c1"># Identifier of the Server the script executed on</span>
+    <span class="s2">&quot;orchestration.result.time_elapsed&quot;</span>: <span class="m">0</span>.012,  <span class="c1"># Execution time in seconds</span>
+    <span class="s2">&quot;tags&quot;</span>: <span class="o">[</span>
+      <span class="s2">&quot;agent&quot;</span>,
+      <span class="s2">&quot;orchestration.result&quot;</span>
+      <span class="o">]</span>
+   <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="api">
+<h3>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="c1"># common tags are here</span>
+  ...
+
+  <span class="c1"># API error specific</span>
+  <span class="s2">&quot;api.error.request.method&quot;</span>: <span class="s2">&quot;POST&quot;</span> <span class="c1"># Request method</span>
+  <span class="s2">&quot;api.error.request.url&quot;</span>: <span class="s2">&quot;https://my.scalr.net/api/v1beta0/user/5/images&quot;</span>, <span class="c1"># Request URL like &quot;&lt;schema&gt;://&lt;user&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;?&lt;query&gt;&quot;</span>
+  <span class="s2">&quot;api.error.request.headers&quot;</span>: <span class="o">[</span> <span class="c1"># The key-value array of the request headers</span>
+    <span class="s2">&quot;Content-Type&quot;</span>: <span class="s2">&quot;application/json; charset=utf-8&quot;</span>,
+    <span class="s2">&quot;X-Scalr-Key-Id&quot;</span>: <span class="s2">&quot;APIK5D9MNIFPBASMXMLJ&quot;</span>,
+    ...
+    <span class="o">]</span>,
+    <span class="s2">&quot;api.error.request.body&quot;</span>: <span class="s2">&quot;{&#39;name&#39;: &#39;foobar&#39;, &#39;cloudImageId&#39;: &#39;i-100500&#39;, &#39;cloudPlatform&#39;: &#39;ec2&#39;, &#39;architecture&#39;: &#39;x86&#39;, &#39;os&#39;: &#39;ubuntu&#39;}&quot;</span>, <span class="c1"># String representation of the request body</span>
+    <span class="s2">&quot;api.error.response.status&quot;</span>: <span class="m">400</span>, <span class="c1"># Response status code</span>
+    <span class="s2">&quot;api.error.response.headers&quot;</span>: <span class="o">[</span> <span class="c1"># The key-value array of the response headers</span>
+    <span class="s2">&quot;Status&quot;</span>: <span class="s2">&quot;InvalidStructure&quot;</span>,
+    ...
+    <span class="o">]</span>,
+    <span class="s2">&quot;api.error.response.body&quot;</span>: <span class="s2">&quot;{...}&quot;</span> <span class="c1"># String representation of the response body</span>
+    <span class="s2">&quot;tags&quot;</span>: <span class="o">[</span><span class="s2">&quot;api&quot;</span>, <span class="s2">&quot;api.error&quot;</span><span class="o">]</span> <span class="c1"># The list of tags</span>
+  <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="audit">
+<h3>Audit<a class="headerlink" href="#audit" title="Permalink to this headline">¶</a></h3>
+<p>Below is an example of the audit log for a server launch, the following events are also supported:</p>
+<ul class="simple">
+<li>User Login</li>
+<li>User Logout</li>
+<li>Farm Launch</li>
+<li>Farm Terminate</li>
+<li>Farm Ownership Change</li>
+<li>Script Execute</li>
+<li>Server Launch</li>
+<li>Server Terminate</li>
+<li>Server Suspend</li>
+<li>Server Resume</li>
+<li>Cloud Resource Remove</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>server.launch <span class="o">{</span>
+    <span class="c1"># common tags are here</span>
+    ...
+    <span class="c1"># Event specific</span>
+    <span class="s2">&quot;server.launch.server_id&quot;</span>: <span class="s2">&quot;2f928baa-4c81-43cb-a280-7c514012bf26&quot;</span>, <span class="c1"># Identifier of the Server being launched</span>
+    <span class="s2">&quot;server.launch.farm.id&quot;</span>: <span class="m">12000</span>, <span class="c1"># Identifier of the Farm that the Server belongs to</span>
+    <span class="s2">&quot;server.launch.farm_role.id&quot;</span>: <span class="m">130000</span>, <span class="c1"># Identifier of the Farm Role that the Server belongs to</span>
+    <span class="s2">&quot;server.launch.platform&quot;</span>: <span class="s2">&quot;ec2&quot;</span>, <span class="c1"># The platform name where the Server is located</span>
+    <span class="s2">&quot;server.launch.type&quot;</span>: <span class="s2">&quot;m1.small&quot;</span>, <span class="c1"># The name of the instance type of the Server</span>
+    <span class="s2">&quot;server.launch.cloud_location&quot;</span>: <span class="s2">&quot;us-east-1&quot;</span>, <span class="c1"># The region where the Server is located</span>
+    <span class="s2">&quot;server.launch.os.id&quot;</span>: <span class="s2">&quot;centos-6-x&quot;</span>, <span class="c1"># The Identifier of the Os that corresponds to the Server</span>
+    <span class="s2">&quot;server.launch.environment.id&quot;</span>: <span class="m">1234</span>, <span class="c1"># Identifier of the Environment that the Server belongs to</span>
+    <span class="s2">&quot;server.launch.account.id&quot;</span>: <span class="m">123</span>, <span class="c1"># Identifier of the Account that the Server belongs to</span>
+    <span class="s2">&quot;server.launch.reason.code&quot;</span>: <span class="m">2</span>, <span class="c1"># The reason code that caused the Server to be launched</span>
+    <span class="s2">&quot;server.launch.reason.text&quot;</span>: <span class="s2">&quot;Scaling up&quot;</span>, <span class="c1"># The verbose message of the launch reason</span>
+    <span class="s2">&quot;tags&quot;</span>: <span class="o">[</span><span class="s2">&quot;audit&quot;</span>, <span class="s2">&quot;server.launch&quot;</span><span class="o">]</span>
+    <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="user">
+<h3>User<a class="headerlink" href="#user" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+  <span class="c1"># common tags are here</span>
+  <span class="s2">&quot;timestamp&quot;</span>: <span class="s2">&quot;2015-10-13T08:31:15-05:00&quot;</span>, <span class="c1"># RFC-3339 Timestamp when the event happened in server timezone (date --rfc-3339=seconds)</span>
+
+  <span class="c1"># Event specific (for server terminate for example)</span>
+  <span class="s2">&quot;user.log.severity&quot;</span>: <span class="s2">&quot;warn&quot;</span>, <span class="c1"># Severity of the event. info | warn | error | ... etc in the lowercase</span>
+  <span class="s2">&quot;user.log.message&quot;</span>: <span class="s2">&quot;Terminating server &#39;45ea21c9-4a80-4597-8393-19070f47fd44&#39; (Platform: ec2) (ServerTerminate).&quot;</span>
+  <span class="s2">&quot;user.log.farm_id&quot;</span>: <span class="m">3454</span>, <span class="c1"># Identifier of the Farm</span>
+  <span class="s2">&quot;user.log.env_id&quot;</span>: <span class="m">12</span>, <span class="c1"># Identifier of the Environment</span>
+  <span class="s2">&quot;user.log.farm_role_id&quot;</span>: <span class="m">48349</span>, <span class="c1"># Identifier of the Farm Role (if exists)</span>
+  <span class="s2">&quot;user.log.server_id&quot;</span>: <span class="s2">&quot;45ea21c9-4a80-4597-8393-19070f47fd44&quot;</span>, <span class="c1"># UUID of the Scalr Server (if exists)</span>
+  <span class="s2">&quot;tags&quot;</span>: <span class="o">[</span><span class="s2">&quot;event&quot;</span>, <span class="s2">&quot;user.log&quot;</span><span class="o">]</span>
+  <span class="o">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -522,7 +873,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../introduction/index.html" class="btn btn-neutral float-right" title="Overview of Scalr" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../gs_admins/index.html" class="btn btn-neutral float-right" title="Getting Started for Admins" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="email.html" class="btn btn-neutral" title="Enable Email Integration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -576,7 +927,20 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #e8ebed;
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      background: #333;
+      font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+    }
+  </style>
+
 
 </body>
 </html>

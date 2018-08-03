@@ -1,0 +1,6 @@
+Type,Description,Notes
+docker.container.privileged.escalating_exec_usage,Limit exec and attach commands to privileged containers.,
+docker.container.privileged.usage,Limit privileged containers usage,
+docker.image.sources,Restricts Docker to using specific registries,
+docker.network.ports,Limits the Network Ports that can be opened on a container,
+docker.volume.mounts,Limits which volume mounts can be usd inside a container.,

@@ -1,7 +1,11 @@
+.. _admin_scalarizr:
+
 Scalarizr Installation
 =========================
 
-Scalarizr is Scalr's management agent. It is optionally installed on every Scalr-managed Server (Instance), and used for Orchestration and monitoring.
+.. Term-Scalarizr-About-Start
+
+Scalarizr is Scalr's management agent. It is optionally installed on every Scalr-managed Server, and used for orchestration and monitoring.
 
 About
 ------
@@ -20,6 +24,8 @@ Monitoring                                    No              Yes
 Storage Volume addition	                      No              Yes
 Software Firewall/ iptables management		    No              Yes
 ========================================    ============   ==================
+
+.. Term-Scalarizr-About-End
 
 OS Requirements
 ---------------
@@ -73,7 +79,18 @@ Open the administrator powershell and execute:
 
    iex ((New-Object Net.WebClient).DownloadString('https://<YOUR_SCALR_URL>/public/windows/latest/install_scalarizr.ps1'))
 
+.. note::
 
+  Scalarizr should not be set to automatically start on Windows servers. The Scalarizr update client will automatically start Scalarizr once it has completed the update.
+
+.. _scalarizr_repo:
+
+Scalarizr Logs
+--------------
+
+.. include:: /scalarizr/index.rst
+   :start-after: Term-Scalr-Logs-Start
+   :end-before: Term-Scalr-Logs-Stop
 
 How to Create Your Own Scalarizr Repo
 --------------------------------------

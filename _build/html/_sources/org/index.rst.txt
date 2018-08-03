@@ -1,4 +1,4 @@
 .. include:: ../GLOBAL.rst
 
-Implementing your Organization in Scalr
+Implementing your Organisation in Scalr
 =======================================
