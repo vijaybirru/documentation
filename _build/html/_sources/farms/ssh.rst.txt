@@ -10,9 +10,7 @@ Definition and Scope
 
 |SCOPE_ENV|
 
-Upon launching Linux Servers, Scalr automatically generates a new SSH Keypair and makes it available to users. These key pairs can be used to remotely log into servers. If you have different authentication methods like password auth, this can still be used, Scalr will not interfere with it.
-
-Upon launching Windows Servers, Scalr will create an SSH key and/or a password. Some clouds require a SSH key to decrypt the Windows password.
+Upon launching servers, Scalr automatically generates a new SSH Keypair and makes it available to users. These key pairs can be used to remotely log into servers. If you have different authentication methods like password auth, this can still be used, Scalr will not interfere with it. When launching a Windows server, Scalr will create an SSH key and/or a password. Some clouds require a SSH key to decrypt the Windows password.
 
 Accessing Keys
 --------------
