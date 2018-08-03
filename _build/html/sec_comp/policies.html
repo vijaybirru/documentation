@@ -92,7 +92,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html#scalr-architecture">Scalr Architecture</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#software-architecture">Software Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#deployment-architecture">Deployment Architecture</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/terminology.html">Concepts and Terminology</a><ul>
@@ -248,10 +247,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#editing-roles">Editing Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
@@ -262,10 +266,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#editing-roles">Editing Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Infrastructure Management</span></p>
 <ul>
@@ -483,7 +492,7 @@
 <p class="caption"><span class="caption-text">Scalarizr agent</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html">Scalarizr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#about">About</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#monitoring-scalarizr">Monitoring Scalarizr</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#servers-dashboard">Servers Dashboard:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#server-general-details">Server General Details:</a></li>
@@ -644,7 +653,7 @@ Scalr also provide the ability to implement policies based on <a class="referenc
 <a class="reference internal image-reference" href="../_images/cfg_policies.png"><img alt="../_images/cfg_policies.png" src="../_images/cfg_policies.png" style="width: 389.6px; height: 394.8px;" /></a>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">For type type “Reclamation” there are no further options and you will be taken straight to the screen to configure the reclamation policy. <a class="reference internal" href="../_images/reclamation.png"><img alt="REC" src="../_images/reclamation.png" style="width: 292.2px; height: 216.9px;" /></a></p>
+<p class="last">For type “Reclamation” there are no further options and you will be taken straight to the screen to configure the reclamation policy. <a class="reference internal" href="../_images/reclamation.png"><img alt="REC" src="../_images/reclamation.png" style="width: 292.2px; height: 216.9px;" /></a></p>
 </div>
 <p>Click a policy and you will be presented with a screen specific to that policy on which you can set policy conditions and details of the policy itself. This is an example of <code class="docutils literal notranslate"><span class="pre">scalr.server.hostname.template</span></code> policy.</p>
 <a class="reference internal image-reference" href="../_images/policy_example.png"><img alt="../_images/policy_example.png" src="../_images/policy_example.png" style="width: 389.6px; height: 345.20000000000005px;" /></a>

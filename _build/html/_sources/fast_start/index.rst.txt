@@ -21,7 +21,7 @@ This page does exactly that. No frills rapid farm building to create a simple we
 Overview
 --------
 
-We will be doing the following using and Ubuntu Role. Don't worry if Linux or Ubuntu isn't your thing, you wont even need to login to linux to get this working.
+We will be doing the following using an Ubuntu Role. Don't worry if Linux or Ubuntu isn't your thing, you wont even need to login to Linux to get this working.
 
 * Create a Farm
 * Add a Farm Role

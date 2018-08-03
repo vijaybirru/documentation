@@ -40,7 +40,6 @@ Scalr Documentation!
    images_roles/creating_roles
    images_roles/creating_images_nonscalr
    images_roles/multi_cloud
-   images_roles/orchestration
 
 .. toctree::
    :maxdepth: 3

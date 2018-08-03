@@ -92,7 +92,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#scalr-architecture">Scalr Architecture</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#software-architecture">Software Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#deployment-architecture">Deployment Architecture</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="terminology.html">Concepts and Terminology</a><ul>
@@ -483,7 +482,7 @@
 <p class="caption"><span class="caption-text">Scalarizr agent</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html">Scalarizr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#about">About</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#monitoring-scalarizr">Monitoring Scalarizr</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#servers-dashboard">Servers Dashboard:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#server-general-details">Server General Details:</a></li>
@@ -622,14 +621,14 @@
 <p>Scalr is a Cloud Management Platform that provides the capability to manage cloud infrastructure across all the major cloud platforms. Scalr’s core capabilities are as follows.</p>
 <ul class="simple">
 <li>Cloud agnostic definition of infrastructure enabling single application configurations to be used across multiple cloud platforms. Configure once, Deploy Many.</li>
-<li>Centralised implementation of Cloud Governance to ensure consistent implementation of Security and Compliance policies across all cloud deployments.</li>
+<li>Capability to centralise and delegate policy administration through Software Defined Cloud Governance to ensure consistent implementation of Security and Compliance policies across all cloud deployments.</li>
 <li>Cost visibility and control through a single pane of glass.</li>
 </ul>
-<p>All of this is provided whilst retaining the the flexibility and productivity that organisations require by putting the control and governance in the hands managers and administrators, but leaving the development and configuration of cloud deployments in the hands of developers, testers and project teams.</p>
+<p>All of this is provided whilst retaining the the flexibility and productivity that organisations require by putting the control and governance in the hands of managers and administrators, but leaving the development and configuration of cloud deployments in the hands of developers, testers and project teams.</p>
 <div class="section" id="multi-cloud-support">
 <h2>Multi-Cloud Support<a class="headerlink" href="#multi-cloud-support" title="Permalink to this headline">¶</a></h2>
 <p>Scalr provides a single UI, API, and CLI to manage resources across any Cloud Platform, public or private.</p>
-<p>Scalr strives to expose a common set of features across all clouds, but does not limit the feature set available to users (e.g. IAM Instance Profiles are available through Scalr for AWS, even if they have no equivalent in other clouds).</p>
+<p>Scalr strives to expose a common set of features across all clouds, but does not limit the feature set available to users (e.g. IAM Instance Profiles are available through Scalr for AWS, even if they have no equivalent in other clouds). In addition Scalr provides robust support for the different Cloud Services provided by the individual Cloud Providers, including, but not limited to, services like S3 and RDS on AWS, and SQL in GCE</p>
 </div>
 <div class="section" id="high-level-declarative-primitives-vs-low-level-imperative-instructions">
 <h2>High-Level Declarative Primitives vs Low-Level Imperative Instructions<a class="headerlink" href="#high-level-declarative-primitives-vs-low-level-imperative-instructions" title="Permalink to this headline">¶</a></h2>
@@ -657,10 +656,6 @@
 <div class="section" id="software-architecture">
 <h2>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="../_images/sw_arch.png"><img alt="../_images/sw_arch.png" src="../_images/sw_arch.png" style="width: 513.5px; height: 306.5px;" /></a>
-</div>
-<div class="section" id="deployment-architecture">
-<h2>Deployment Architecture<a class="headerlink" href="#deployment-architecture" title="Permalink to this headline">¶</a></h2>
-<a class="reference internal image-reference" href="../_images/arch.png"><img alt="../_images/arch.png" src="../_images/arch.png" style="width: 556.5px; height: 527.5px;" /></a>
 </div>
 </div>
 

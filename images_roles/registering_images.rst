@@ -8,7 +8,7 @@ Registering Images
 
 Step one of using Scalr to configure and deploy infrastructure is to register one or more images that you wish to use as the basis for the servers you are going to deploy. As mentioned previously, an Image in Scalr is simply a meta data record of an actual Image or Template in a cloud that you use. It is a 1:1 mapping.
 
-Images in Scalr have slight differences to they way they map to cloud imnages depending on the Cloud the actual image or template is in.
+Images in Scalr have slight differences to they way they map to cloud images depending on the Cloud the actual image or template is in.
 
 .. csv-table::
    :widths: 15,15,70

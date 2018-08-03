@@ -92,7 +92,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#scalr-architecture">Scalr Architecture</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#software-architecture">Software Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#deployment-architecture">Deployment Architecture</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Concepts and Terminology</a><ul>
@@ -248,10 +247,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#editing-roles">Editing Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
@@ -262,10 +266,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#editing-roles">Editing Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Infrastructure Management</span></p>
 <ul>
@@ -483,7 +492,7 @@
 <p class="caption"><span class="caption-text">Scalarizr agent</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html">Scalarizr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#about">About</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#monitoring-scalarizr">Monitoring Scalarizr</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#servers-dashboard">Servers Dashboard:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#server-general-details">Server General Details:</a></li>
@@ -838,7 +847,7 @@
 <p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a> <a class="reference internal" href="../_images/scope_farm.png"><img alt="SCOPE_FARM" src="../_images/scope_farm.png" style="width: 26.8px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></p>
 <p>Orchestration is the process of provisioning, configuring and managing servers in the cloud. In it’s simplest form orchestration is just the act of provisioning and starting a server from a given Image and later terminating that server. However Scalr provides a sophisticated Orchestration engine that defines rules for event based script execution, or scheduled execution of scripts on running servers. Through this engine the entire life cycle of a server can be customised by performing actions such as installing software on startup, performing service auto discovery and adjusting configs, scaling, external integrations and much more. There are more than 10 built in events that can trigger orchestration rules and all scopes can also define custom events that can be triggered via scripts, API calls and through the UI.</p>
 <p>Orchestration rules can be defined in Roles so that they apply to all related Farm Roles in any Farm. Additional Orchestration rules can also be defined on Farms and Farm Roles where they they have the added capability to execute scripts in servers for other Farm Roles within the Farm.</p>
-<p>For details on configuring orchestration in Roles see <a class="reference internal" href="../images_roles/orchestration.html#role-orchestration"><span class="std std-ref">Role Orchestration</span></a>.
+<p>For details on configuring orchestration in Roles see <a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration"><span class="std std-ref">Role Orchestration</span></a>.
 For details on configuring orchestration in Farms and Farm Roles see <a class="reference internal" href="../farms/index.html#farms"><span class="std std-ref">Farm Configuration</span></a>.</p>
 </div>
 <div class="section" id="scripts">

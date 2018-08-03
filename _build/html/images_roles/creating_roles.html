@@ -92,7 +92,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html#scalr-architecture">Scalr Architecture</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#software-architecture">Software Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#deployment-architecture">Deployment Architecture</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/terminology.html">Concepts and Terminology</a><ul>
@@ -248,10 +247,15 @@
 <li class="toctree-l3"><a class="reference internal" href="registering_images.html#vmware-images">VMware Images</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Creating Roles</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Creating Roles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#editing-roles">Editing Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#role-orchestration">Role Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chef-in-roles">Chef in Roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="orchestration.html">Role Orchestration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="registering_images.html">Registering Images</a><ul>
@@ -262,10 +266,15 @@
 <li class="toctree-l2"><a class="reference internal" href="registering_images.html#vmware-images">VMware Images</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating Roles</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating Roles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#editing-roles">Editing Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#role-orchestration">Role Orchestration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#chef-in-roles">Chef in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="orchestration.html">Role Orchestration</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Infrastructure Management</span></p>
 <ul>
@@ -483,7 +492,7 @@
 <p class="caption"><span class="caption-text">Scalarizr agent</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html">Scalarizr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#about">About</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#monitoring-scalarizr">Monitoring Scalarizr</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#servers-dashboard">Servers Dashboard:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#server-general-details">Server General Details:</a></li>
@@ -621,6 +630,111 @@
             
   <div class="section" id="creating-roles">
 <span id="roles"></span><h1>Creating Roles<a class="headerlink" href="#creating-roles" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
+<p>Step two of using Scalr to configure and deploy infrastructure is to create Roles. Roles are the building block that define the characteristics of servers that are deployed by Scalr. In their simplest form Roles provide an abstraction layer over the top of the images. A Role is linked to one or more similar Images, located in different clouds and/or locations, thus providing the flexibility for infrastructure designers and end users to chose the cloud and location for the resulting servers at the time they launch an application.</p>
+<p>“Similar” images are images that are configured to provide the same behaviour and deliver the same service. Thus all similar images will have</p>
+<ul class="simple">
+<li>The same base operating system and Version</li>
+<li>The same patch levels</li>
+<li>The same pre-installed and configured software packages</li>
+</ul>
+<p>Roles can also include options to further manage the behaviour and configuration of servers.</p>
+<ul class="simple">
+<li>Orchestration rules that define actions (executed through Scripts) that take place at various lifecycle events throughout the life of a server.</li>
+<li>Global Variables that can be used to pass dynamic values to alter the configuration of servers and execution of Orchestration rules.</li>
+<li>Integration with Chef to enable Chef recipes to perform the bootstrap and configuration of servers.</li>
+</ul>
+<p>Roles can be created at any scope in Scalr and made available to lower scopes. Account scope roles can be given permissions to restrict which Environments they are available to. By default they will be available to all Environments in the Account.</p>
+<p>Role functionality is accessed via Roles in the Main menu or Bookmarks bar at any scope. Note that you can jump straight to New Role from the main menu or click on “Roles” and then “New Role” at the top of the list.</p>
+<p><a class="reference internal" href="../_images/role_menu.png"><img alt="ROLE_MENU" src="../_images/role_menu.png" style="width: 368.0px; height: 472.0px;" /></a> <a class="reference internal" href="../_images/role_list.png"><img alt="ROLE_LIST" src="../_images/role_list.png" style="width: 743.0px; height: 170.5px;" /></a></p>
+<p>You will now be presented with the New Role screen where you configure all the Role options</p>
+<a class="reference internal image-reference" href="../_images/new_role.png"><img alt="../_images/new_role.png" src="../_images/new_role.png" style="width: 743.0px; height: 301.5px;" /></a>
+<table border="1" class="colwidths-given docutils" id="id2">
+<caption><span class="caption-text">Role Configuration Parameters</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="10%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Mandatory?</th>
+<th class="head">Details</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>Yes</td>
+<td>A meaningful name that typically includes the OS and version and main package e.g. “ubuntu-1404-haproxy”</td>
+</tr>
+<tr class="row-odd"><td>OS Family and Version</td>
+<td>Yes</td>
+<td>This must match the OS Family and Version of the Images you wish to link to this role</td>
+</tr>
+<tr class="row-even"><td>Category</td>
+<td>Yes</td>
+<td>Provides grouping of roles when being selected in the Farm Designer. You can add your own Categories from Roles -&gt; Role Categories menu</td>
+</tr>
+<tr class="row-odd"><td>Description</td>
+<td>No</td>
+<td>Describes the purpose of the Role and any special details that may be relevant</td>
+</tr>
+<tr class="row-even"><td>Tags</td>
+<td>No</td>
+<td>You can include previously defined <a class="reference internal" href="../sec_comp/policies.html#policy-tags"><span class="std std-ref">Policy Tags</span></a> to associate the Role with governance policies defined in the <a class="reference internal" href="../sec_comp/policies.html#policy-engine"><span class="std std-ref">Policy Engine</span></a>. You can also add your own tags to help with role grouping related Roles and for use in <a class="reference internal" href="../cost/management.html#cost-management"><span class="std std-ref">Cost Management</span></a> for cost reporting.</td>
+</tr>
+<tr class="row-odd"><td>Quick Start</td>
+<td>No</td>
+<td>Enable this to include this role in the Quick Start menu of the Farm Designer</td>
+</tr>
+<tr class="row-even"><td>Images</td>
+<td>Yes</td>
+<td>You must link the Role to at least one Image (see below). When you click on ADD IMAGES you will only see images with the same OS Family/Version that have Scalarizer or CloudInit installed.</td>
+</tr>
+</tbody>
+</table>
+<p>When adding Images to Roles you need to be aware of the different ways Images are configured in each cloud.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Cloud</th>
+<th class="head">Image Configuration</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>AWS EC2</td>
+<td>Images are unique for every AWS location. You must add every similar image in every location you want the Role to be enabled for.</td>
+</tr>
+<tr class="row-odd"><td>Azure</td>
+<td>Azure Image is common to all regions so only one Image needs be added to the Role</td>
+</tr>
+<tr class="row-even"><td>GCP</td>
+<td>GCP Image is common to all regions so only one Image needs be added to the Role</td>
+</tr>
+<tr class="row-odd"><td>Openstack</td>
+<td>Images are unique for every Openstack. You must add every similar image in every region you want the Role to be enable for.</td>
+</tr>
+<tr class="row-even"><td>VMware</td>
+<td>Images are unique for every VMware location. You must add every similar image in every location you want the Role to be enable for.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="editing-roles">
+<h2>Editing Roles<a class="headerlink" href="#editing-roles" title="Permalink to this headline">¶</a></h2>
+<p>To edit a role navigate to the Roles Library (Main Menu -&gt; Roles), select the Role to be edited and click the Edit <a class="reference internal" href="../_images/edit.png"><img alt="EDIT" src="../_images/edit.png" style="width: 36.6px; height: 29.099999999999998px;" /></a> button.</p>
+</div>
+</div>
+<div class="section" id="role-orchestration">
+<span id="id1"></span><h1>Role Orchestration<a class="headerlink" href="#role-orchestration" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="global-variables-in-roles">
+<h1>Global Variables in Roles<a class="headerlink" href="#global-variables-in-roles" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="chef-in-roles">
+<h1>Chef in Roles<a class="headerlink" href="#chef-in-roles" title="Permalink to this headline">¶</a></h1>
 </div>
 
 

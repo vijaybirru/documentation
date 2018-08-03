@@ -47,7 +47,7 @@ Click on "New Policy" to add a policy rule. Policies available to the chosen Pol
 .. |REC| image:: images/reclamation.png
          :scale: 30%
 
-.. note:: For type type "Reclamation" there are no further options and you will be taken straight to the screen to configure the reclamation policy. |REC|
+.. note:: For type "Reclamation" there are no further options and you will be taken straight to the screen to configure the reclamation policy. |REC|
 
 Click a policy and you will be presented with a screen specific to that policy on which you can set policy conditions and details of the policy itself. This is an example of ``scalr.server.hostname.template`` policy.
 
