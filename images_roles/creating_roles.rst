@@ -48,8 +48,12 @@ You will now be presented with the New Role screen where you configure all the R
    Description,No,Describes the purpose of the Role and any special details that may be relevant
    Tags,No,You can include previously defined :ref:`policy_tags` to associate the Role with governance policies defined in the :ref:`policy_engine`. You can also add your own tags to help with role grouping related Roles and for use in :ref:`cost_management` for cost reporting.
    Quick Start,No,Enable this to include this role in the Quick Start menu of the Farm Designer
-   Use Scalr-Agent,Yes,Enabled by default and required for `Role Orchestration`_ and :ref:`auto_scaling`. If this is disabled the "Configure Built-In Automation wheel" |CONFIGURE| will be disabled but the option to Use Cloud-Init will appear. 
+   Use Scalr-Agent,No,Enabled by default and required for `Role Orchestration`_ and :ref:`auto_scaling`. If this is disabled the "Configure Built-In Automation wheel" |CONFIGURE| will be disabled but the option to Use Cloud-Init will appear.
+   Configure Built-In Automation wheel |CONFIGURE|,No,Click on the wheel and select "Chef" to enable the Chef options for this role. This will make the Chef tab visible on the left side. You can only enable Chef when creating a new Role as it cannot be done after the role has been saved. See Note below.
+   Use Cloud-Init,No,This option only appears if "Use Scalr-Agent" is disabled. Enable this option to have Scalr work with Cloud-Init to configure servers. Once enabled the Cocnfigure button |CONFIGURE| will appear to enable you to set the Cloud-Int Config
    Images,Yes,You must link the Role to at least one Image (see below). When you click on ADD IMAGES you will only see images with the same OS Family/Version that have Scalarizer or CloudInit installed.
+
+.. note:: Built in Automations other than Chef will be deprecated in future release of Scalr. They will continue to work for existing roles but should now be replaced by user configured Orchestration Rules.
 
 When adding Images to Roles you need to be aware of the different ways Images are configured in each cloud.
 
@@ -69,12 +73,19 @@ Editing Roles
 
 To edit a role navigate to the Roles Library (Main Menu -> Roles), select the Role to be edited and click the Edit |EDIT| button.
 
-
 .. _role_orchestration:
 
 Role Orchestration
 ==================
 
+Orchestration rules define actions to be performed at specific events during the lifecycle of servers that are launched as a result the Role being used in a Farm Role and potentially also an Application in the Service Catalog.
+
+To configure Orchestration Rules click on the Orchestration tab on the left side of the Role details screen.
+
+.. image:: images/role_orch.png
+   :scale: 50%
+
+.. include:: /farms/orchestration_include.rst
 
 Global Variables in Roles
 =========================

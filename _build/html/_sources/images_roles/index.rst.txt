@@ -22,4 +22,3 @@ Please work through the sections listed below to understand the full details of 
    creating_roles
    creating_images_nonscalr
    multi_cloud
-   orchestration
