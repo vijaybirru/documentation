@@ -21,6 +21,9 @@ To enable LDAP, you must configure it in the global config file (/etc/scalr-serv
           :bind_type => 'regular',
           :host => 'ldap://Na.Corp.Company.com',
           :port => ‘389’,
+        # Tells Scalr what LDAP service account to use when validating users
+          :user => ‘User’,
+          :pass => ‘Password’,
     # Swap with above for LDAPS
     #:host => 'ldaps://Na.Corp.Company.com',
       #:port => '636',
