@@ -123,14 +123,14 @@ The Profile menu also gives access to some security and UI related features.
                   you will be taken back to you |SCALR| scope session.
 ================= ======
 
-|Environments| Menu
+|ENVIRONMENTS| Menu
 -------------------
 
-The |Environments| Menu is used to select and manage working |Environments| within an |ACCOUNT|. Click on an |ENVIRONMENT| within this menu to switch between your available |Environments|.
+The |ENVIRONMENTS| Menu is used to select and manage working |ENVIRONMENTS| within an |ACCOUNT|. Click on an |ENVIRONMENT| within this menu to switch between your available |ENVIRONMENTS|.
 
 The current working |ENVIRONMENT| will contain a dot as a visual indicator of the current selection, as shown below.
 Click on the green |ACCOUNT| name to be taken to the |ACCOUNT| Dashboard.
-If you have access to multiple |ACCOUNTS| you can use the "Switch |Accounts| " button to change to another |ACCOUNT|.
+If you have access to multiple |ACCOUNTS| you can use the "Switch |ACCOUNTS| " button to change to another |ACCOUNT|.
 
 .. image:: images/env_menu.png
    :scale: 50%

@@ -291,7 +291,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="launch.html">Farm Launching and Managing Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ssh.html">SSH Keys in Scalr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssh.html">SSH Keys in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ssh.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssh.html#accessing-keys">Accessing Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssh.html#usernames">Usernames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssh.html#adding-policy-for-keys">Adding Policy for Keys</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="execution.html">Script Execution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="storage.html">Configuring Storage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="auto_dicscovery.html">Service Auto Discovery</a></li>
@@ -673,7 +679,7 @@
 <td>An EBS Volume has been attached and mounted to the Instance.</td>
 </tr>
 <tr class="row-odd"><td>BeforeHostUp</td>
-<td>Time for user-defined actions before the instance will be added to DNS Loadbalancers etc</td>
+<td>Time for user-defined actions before the instance will be added to DNS, Loadbalancers etc</td>
 </tr>
 <tr class="row-even"><td>HostUp</td>
 <td>The Instance has booted and Environment and Services are running. Instance will now be added to Load Balancer, DNS Zone etc.</td>

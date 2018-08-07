@@ -73,7 +73,7 @@ Add the additional details and set the requited options as described below and t
 Azure Images
 ------------
 
-**Image ID in Azure** : This is the URN of the image in the form ``PublisherName/Offer/SKUs/verisone``. URN's can only be obtained via the Azure API.
+**Image ID in Azure** : This is the URN of the image in the form ``PublisherName/Offer/SKUs/verison``. URN's can only be obtained via the Azure API.
 
 * Using the Azure API list available images and copy the URN you require. The API command is ``az vm image list``
 

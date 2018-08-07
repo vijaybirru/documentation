@@ -20,10 +20,6 @@
 
 .. |ENVIRONMENTS| replace:: Environments
 
-.. |Accounts| replace:: Accounts
-
-.. |Environments| replace:: Environments
-
 .. |NEWWIN| image:: /images/new_win.png
             :scale: 25%
 

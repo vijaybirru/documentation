@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -297,6 +296,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../farms/ssh.html">SSH Keys in Scalr</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#accessing-keys">Accessing Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#usernames">Usernames</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#adding-policy-for-keys">Adding Policy for Keys</a></li>
 </ul>
 </li>
@@ -694,11 +694,6 @@
 <td>Enable this to include this role in the Quick Start menu of the Farm Designer</td>
 </tr>
 <tr class="row-even"><td>Use Scalr-Agent</td>
-<<<<<<< Updated upstream
-<td>Yes</td>
-<td>Enabled by default and required for <a class="reference internal" href="#id1">Role Orchestration</a> and <a class="reference internal" href="../scaling/auto.html#auto-scaling"><span class="std std-ref">Auto Scaling</span></a>. If this is disabled the “Configure Built-In Automation wheel” <a class="reference internal" href="../_images/configure.png"><img alt="CONFIGURE" src="../_images/configure.png" style="width: 39.0px; height: 29.099999999999998px;" /></a> will be disabled but the option to Use Cloud-Init will appear.</td>
-</tr>
-=======
 <td>No</td>
 <td>Enabled by default and required for <a class="reference internal" href="#id1">Role Orchestration</a> and <a class="reference internal" href="../scaling/auto.html#auto-scaling"><span class="std std-ref">Auto Scaling</span></a>. If this is disabled the “Configure Built-In Automation wheel” <a class="reference internal" href="../_images/configure.png"><img alt="CONFIGURE" src="../_images/configure.png" style="width: 39.0px; height: 29.099999999999998px;" /></a> will be disabled but the option to Use Cloud-Init will appear.</td>
 </tr>
@@ -710,7 +705,6 @@
 <td>No</td>
 <td>This option only appears if “Use Scalr-Agent” is disabled. Enable this option to have Scalr work with Cloud-Init to configure servers. Once enabled the Cocnfigure button <a class="reference internal" href="../_images/configure.png"><img alt="CONFIGURE" src="../_images/configure.png" style="width: 39.0px; height: 29.099999999999998px;" /></a> will appear to enable you to set the Cloud-Int Config</td>
 </tr>
->>>>>>> Stashed changes
 <tr class="row-odd"><td>Images</td>
 <td>Yes</td>
 <td>You must link the Role to at least one Image (see below). When you click on ADD IMAGES you will only see images with the same OS Family/Version that have Scalarizer or CloudInit installed.</td>
@@ -809,7 +803,7 @@
 <td>An EBS Volume has been attached and mounted to the Instance.</td>
 </tr>
 <tr class="row-odd"><td>BeforeHostUp</td>
-<td>Time for user-defined actions before the instance will be added to DNS Loadbalancers etc</td>
+<td>Time for user-defined actions before the instance will be added to DNS, Loadbalancers etc</td>
 </tr>
 <tr class="row-even"><td>HostUp</td>
 <td>The Instance has booted and Environment and Services are running. Instance will now be added to Load Balancer, DNS Zone etc.</td>
@@ -951,10 +945,7 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

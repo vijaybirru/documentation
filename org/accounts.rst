@@ -7,5 +7,5 @@
 
 .. _environments:
 
-Configuring |Environments|
+Configuring |ENVIRONMENTS|
 --------------------------
