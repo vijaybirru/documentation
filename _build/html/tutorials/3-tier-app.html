@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3 Tier App &mdash; Scalr 0.01 documentation</title>
+  <title>3 Tier App Tutorial (cloud agnostic, orchestration automation) &mdash; Scalr 0.01 documentation</title>
   
 
   
@@ -544,7 +544,21 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3 Tier App</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3 Tier App Tutorial (cloud agnostic, orchestration automation)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objective">Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#application-overview">Application Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#script-creation">Script Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#roles-required">Roles Required:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#farm-creation">Farm Creation:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#farm-role-configuration">Farm Role Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#select-and-configure-the-webapp-farm-role">Select and configure the WebApp farm role:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-and-configure-the-mysql-farm-role">Select and configure the MySQL farm role:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-and-configure-the-nginx-farm-role">Select and configure the Nginx farm role:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-the-application">Testing the Application</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Release Notes</span></p>
 <ul>
@@ -613,7 +627,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>3 Tier App</li>
+      <li>3 Tier App Tutorial (cloud agnostic, orchestration automation)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -632,8 +646,171 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="tier-app">
-<h1>3 Tier App<a class="headerlink" href="#tier-app" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="tier-app-tutorial-cloud-agnostic-orchestration-automation">
+<h1>3 Tier App Tutorial (cloud agnostic, orchestration automation)<a class="headerlink" href="#tier-app-tutorial-cloud-agnostic-orchestration-automation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial is designed to guide you through the steps required to deploy a cloud agnostic 3-Tier Web Application using Scalr. This web application will leverage Scalr Orchestration to dynamically configure machines with a “cloud native” approach.  Any cloud may be used for this exercise, but we recommend the use of a public cloud (AWS, Azure, or GCE) and Ubuntu 16.04 instances to complete this setup.</p>
+</div>
+<div class="section" id="application-overview">
+<h2>Application Overview<a class="headerlink" href="#application-overview" title="Permalink to this headline">¶</a></h2>
+<p>We will be building a 3-Tier application that uses Nginx as a load balancer to distribute traffic to application servers running a Python application. The Python application uses MySQL as the backend.  Our application lets the user enter messages to store in a MySQL database, and serves back a list of the messages that were entered by the user.  The application is highly available and supports multiple application and database nodes.&nbsp; Application architecture is outlined below:</p>
+<a class="reference internal image-reference" href="../_images/Application-Diagram.jpg"><img alt="../_images/Application-Diagram.jpg" src="../_images/Application-Diagram.jpg" style="width: 321.6px; height: 228.4px;" /></a>
+</div>
+<div class="section" id="script-creation">
+<h2>Script Creation<a class="headerlink" href="#script-creation" title="Permalink to this headline">¶</a></h2>
+<p>Create the following scripts in Scalr:</p>
+<blockquote>
+<div>(Attached in zip)</div></blockquote>
+<p>-Webapp Deploy
+-Webapp Config
+-Nginx Install
+-Nginx Config
+-MySQL Install
+-MySQL Config
+-MySQL Replication</p>
+</div>
+<div class="section" id="roles-required">
+<h2>Roles Required:<a class="headerlink" href="#roles-required" title="Permalink to this headline">¶</a></h2>
+<p>We will only need a Base Ubuntu 16.04 Role.  You may optionally also use two additional Roles with Images that already have MySQL and Nginx installed, but this guide will provide for the use of scripts to install the required software at the time machines are provisioned.</p>
+</div>
+<div class="section" id="farm-creation">
+<h2>Farm Creation:<a class="headerlink" href="#farm-creation" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>From within your desired Environment, create a new farm where we will build our 3 Tier App.</li>
+<li>Populate the Name, Timezone, Team, and Project Fields.</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Screenshot-1.png"><img alt="../_images/Screenshot-1.png" src="../_images/Screenshot-1.png" style="width: 696.8000000000001px; height: 123.2px;" /></a>
+<ul class="simple">
+<li>Add a Global Variable at Farm Scope with the name MYSQL_MASTER</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Screenshot-2.png"><img alt="../_images/Screenshot-2.png" src="../_images/Screenshot-2.png" style="width: 1022.4000000000001px; height: 167.20000000000002px;" /></a>
+<ul class="simple">
+<li>Add three Base Ubuntu 16.04 Farm Roles to the Farm.  One for each tier of our application.  When Adding each Farm Role set the desired “Alias” to match the application tier: WebApp, MySQL, and Nginx.</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Screenshot-3.png"><img alt="../_images/Screenshot-3.png" src="../_images/Screenshot-3.png" style="width: 160.8px; height: 316.8px;" /></a>
+</div>
+<div class="section" id="farm-role-configuration">
+<h2>Farm Role Configuration<a class="headerlink" href="#farm-role-configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="select-and-configure-the-webapp-farm-role">
+<h3>Select and configure the WebApp farm role:<a class="headerlink" href="#select-and-configure-the-webapp-farm-role" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Select SCALING and change the autoscaling setting to Min Instances = 2, Max Instances = 5</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Screenshot-4.png"><img alt="../_images/Screenshot-4.png" src="../_images/Screenshot-4.png" style="width: 436.0px; height: 30.400000000000002px;" /></a>
+<ul class="simple">
+<li>Select Orchestration and add the following Rules:</li>
+</ul>
+<p>Deploy Webapp:
+Trigger Event: Before Host Up
+Target: Triggering Server
+Action: Scalr Script -&gt; Web Deploy
+Note: This will deploy the web app on this server when it provisions.</p>
+<p>Config Webapp:
+Trigger Event: Before Host Up
+Target: Triggering Server
+Action: Scalr Script -&gt; Web Config
+Note: This will configure the web app on this server when it provisions.</p>
+<p>Config Nginx on Host Up:
+Trigger Event: Host Up
+Target: Selected Farm Roles -&gt; Nginx Ubuntu
+Action: Scalr Script -&gt; Nginx Config
+Note: This will reconfigure our load balancer on the Nginx servers when this server provisions.</p>
+<p>Config Nginx on Host Terminate:
+Trigger Event: Before Host Terminate
+Target: Selected Farm Roles -&gt; Nginx Ubuntu
+Action: Scalr Script -&gt; Nginx Config
+Note: This will reconfigure our load balancer on the Nginx servers when this server terminates.</p>
+<a class="reference internal image-reference" href="../_images/Screenshot-5.jpg"><img alt="../_images/Screenshot-5.jpg" src="../_images/Screenshot-5.jpg" style="width: 553.2px; height: 283.2px;" /></a>
+</div>
+<div class="section" id="select-and-configure-the-mysql-farm-role">
+<h3>Select and configure the MySQL farm role:<a class="headerlink" href="#select-and-configure-the-mysql-farm-role" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Select Orchestration and add the following Rules:</li>
+</ul>
+<p>Install MySQL:
+Trigger Event: Before Host Up
+Target: Triggering Server
+Action: Scalr Script -&gt; MySQL Install
+Note: This will install MySQL on this server when it provisions.</p>
+<p>Config MySQL:
+Trigger Event: Before Host Up
+Target: Triggering Server
+Action: Scalr Script -&gt; MySQL Config
+Note: This will configure MySQL on this server when it provisions.</p>
+<p>Config MySQL Replication:
+Trigger Event: Before Host Up
+Target: Triggering Server
+Action: Scalr Script -&gt; MySQL Replication
+Note: This will configure MySQL replication on this server when it provisions.</p>
+<p>Config Webapp on Host Up:
+Trigger Event: Host Up
+Target: Selected Farm Roles -&gt;  Webapp
+Action: Scalr Script -&gt; Web Config
+Note: This will reconfigure the app on WebApp servers so they know when this server provisions.</p>
+<p>Config Webapp on Host Terminate:
+Trigger Event: Before Host Terminate
+Target: Selected Farm Roles -&gt; Webapp
+Action: Scalr Script -&gt; Webapp Config
+Note: This will configure the app on WebApp servers so they know when this server terminates.</p>
+<p>Config MySQL Replication on Host Terminate:
+Trigger Event: Before Host Terminate
+Target: Selected Farm Roles -&gt; MySQL Ubuntu
+Action: Scalr Script -&gt; MySQL Replication
+Note: This will reconfigure MySQL replication on other MySQL servers when this server terminates.</p>
+<a class="reference internal image-reference" href="../_images/Screenshot-6.jpg"><img alt="../_images/Screenshot-6.jpg" src="../_images/Screenshot-6.jpg" style="width: 601.6px; height: 282.8px;" /></a>
+</div>
+<div class="section" id="select-and-configure-the-nginx-farm-role">
+<h3>Select and configure the Nginx farm role:<a class="headerlink" href="#select-and-configure-the-nginx-farm-role" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Select Orchestration and add the following Rules:</li>
+</ul>
+<p>Install Nginx:
+Trigger Event: Before Host Up
+Target: Triggering Server
+Action: Scalr Script -&gt; Nginx Install
+Note: This will install Nginx on this server when it provisions.</p>
+<p>Config Nginx:
+Trigger Event: Before Host Up
+Target: Triggering Server
+Action: Scalr Script -&gt; Nginx Config
+Note: This will configure Nginx on this server when it provisions.</p>
+<a class="reference internal image-reference" href="tutorials/images/Screenshot-7.jpg"><img alt="tutorials/images/Screenshot-7.jpg" src="tutorials/images/Screenshot-7.jpg" /></a>
+<ul class="simple">
+<li>Select the SECURITY tab and make sure either your “Default” Security Group has port 80 open, or add/create a new security rule that opens port 80.</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Screenshot-8.jpg"><img alt="../_images/Screenshot-8.jpg" src="../_images/Screenshot-8.jpg" style="width: 571.2px; height: 182.8px;" /></a>
+<ul class="simple">
+<li>Save Farm</li>
+<li>Launch Farm</li>
+</ul>
+</div>
+</div>
+<div class="section" id="testing-the-application">
+<h2>Testing the Application<a class="headerlink" href="#testing-the-application" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Once your servers have all reached a running state, browse to the IP of the Nginx server to access our application.</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Screenshot-9.jpg"><img alt="../_images/Screenshot-9.jpg" src="../_images/Screenshot-9.jpg" style="width: 604.8000000000001px; height: 96.80000000000001px;" /></a>
+<a class="reference internal image-reference" href="../_images/Application-Screenshot.jpg"><img alt="../_images/Application-Screenshot.jpg" src="../_images/Application-Screenshot.jpg" style="width: 403.20000000000005px; height: 339.6px;" /></a>
+<ul class="simple">
+<li>Test that the application works by writing some values.</li>
+<li>Test increasing the number of Webapp and MySQL servers by increasing the AUTOSCALING Min Instances for each role. Then test scaling back down.</li>
+</ul>
+<p>Parameterize the deployment
+Parameterized deployments are useful for use cases such as deploying a specific build of an application, or deploying runtime configuration.  We will parameterize our Webapp role with a Global Variable that will allow us to set different release version of our application to be installed.</p>
+<ul class="simple">
+<li>Edit your Farm and select the Webapp Role.</li>
+<li>Select the GLOBAL VARIABLES tab and add a new Global Variable with the name APP_BRANCH and a value of feature/reset-database</li>
+<li>Save the farm</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Screenshot-10.jpg"><img alt="../_images/Screenshot-10.jpg" src="../_images/Screenshot-10.jpg" style="width: 602.4px; height: 313.6px;" /></a>
+<ul class="simple">
+<li>Terminate your Webapp nodes manually so that new instances will be provisioned with our new configuration.  Alternatively, manually execute the Webapp Depoly script on your Webapp servers.</li>
+<li>Test to see if the new application version is deployed.</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Application-Screenshot-2.jpg"><img alt="../_images/Application-Screenshot-2.jpg" src="../_images/Application-Screenshot-2.jpg" style="width: 395.6px; height: 336.8px;" /></a>
+</div>
 </div>
 
 
