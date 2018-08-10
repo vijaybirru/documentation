@@ -45,19 +45,19 @@ On the slave database, make sure your scalr-server-local.rb has the following se
    # Allow remote root access is required by the kickstart-replication script
    mysql[:allow_remote_root] = true
 
-Run a reconfigure on server 1.:
+Run a reconfigure on server 1:
 
 .. code-block:: shell
 
    scalr-server-ctl reconfigure
 
-Run a reconfigure on server 1.:
+Run a reconfigure on server 2:
 
 .. code-block:: shell
 
       scalr-server-ctl reconfigure
 
-Start replication by executing:
+Start replication by executing the following on the master server:
 
 .. code-block:: shell
 

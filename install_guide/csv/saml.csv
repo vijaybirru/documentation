@@ -1,0 +1,31 @@
+Parameter,Description,Type,Example value(s),Default value
+scalr.connections.saml.strict,"If true, then Scalr will reject unsigned or unencrypted messages if it expects them to be signed or encrypted. Also it will reject the messages if the SAML standard is not strictly followed: Destination, NameId, Conditions ... are validated too.",Boolean,"true, false",TRUE
+scalr.connections.saml.debug,"If true, errors will be displayed in the Scalr UI.",Boolean,"true, false",FALSE
+scalr.connections.saml.auto_redirect,"If true, users will be automatically redirected on auth and will not be presented with a ""Login"" button.",Boolean,"true, false",FALSE
+scalr.connections.saml.idp.entity_id,Identifier of the IdP entity. Must be a URI.,String, https://idp.domain/saml/metadata ,
+scalr.connections.saml.idp.single_sign_on_service.url,URL Target of the IdP where the Scalr will send the Authentication Request Message.,String, https://your-labs.idp.domain/trust/saml2/http-post/sso ,
+scalr.connections.saml.idp. single_sign_on_service.binding,SAML protocol binding to be used when returning the <Response> message.,String,urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect,
+scalr.connections.saml.idp.single_logout_service.url,URL Location of the IdP where the Scalr will send the SLO Request.,String, https://your-labs.idp.domain/trust/saml2/http-redirect/slo ,
+scalr.connections.saml.idp. single_logout_service.binding,SAML protocol binding to be used when returning the <Response> message.,String,urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect,
+scalr.connections.saml.idp.x509cert,Public x509 certificate of the IdP.,String,daksjhdaksjdhakljl,
+scalr.connections.saml.idp.cert_fingerprint,"Instead of useing the whole x509cert you can use a fingerprint in order to validate a SAMLResponse. Example to generate sha256 fingerprint: openssl x509 -noout -fingerprint -sha256 -in ""idp.crt""",String,AA:BB:CC:DD:EE:FF,
+scalr.connections.saml.idp.cert_fingerprint_algorithm,Tell Scalr which algorithm was used to generate the fingerprint.,String,"sha256, sha384 or sha512",sha256
+scalr.connections.saml.mapping.groups,Used to override standard mapping for SAML assertion attributes.  This is used to set the name of the Groups attribute to use in SAML Assertion.,String,,Groups
+scalr.connections.saml.mapping.separator,Used to override standard mapping for SAML assertion attributes.  This is used to set the Groups separator.,String,,","
+scalr.connections.saml.sp.assertion_consumer_service.binding,"Specifies info about where and how the <AuthnResponse> message MUST be returned to the requester, in this case our Service Provider. SAML protocol binding to be used when returning the <Response> message. It supports HTTP-POST binding only.",String,urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST,urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST
+scalr.connections.saml.sp.single_logout_service.binding,SLO endpoint info of the IdP. SAML protocol binding to be used when returning the <Response> message. It supports the HTTP-Redirect binding only for this endpoint.,String,urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect,urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect
+scalr.connections.saml.sp.name_id_format,Specifies the constraints on the name identifier to be used to represent the requested subject.,String,urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified,urn:oasis:names:tc:SAML:2.0:nameid-format:unspecified
+scalr.connections.saml.sp.entity_id,"Configures override SP entity id endpoint url, typically for ADFS that will not support ""?"" character in our default URL",String, https://your.scalr.host/public/saml/metadata , https://your.scalr.host/public/saml?metadata 
+scalr.connections.saml.sp.x509cert,Certificate to use for the Service Provider.,String,skjdhasdkjashdjkhsad,
+scalr.connections.saml.sp.private_key,Private key to use for the Service Provider,String,abcdefghijklmnopqrstuvwxyz,
+scalr.connections.saml.security.name_id_encrypted,Indicates whether the nameID of the <samlp:logoutRequest> sent by this SP will be encrypted.,Boolean,"true, false",FALSE
+scalr.connections.saml.security.authn_requests_signed,Indicates whether the <samlp:AuthnRequest> messages sent by this SP will be signed.,Boolean,"true, false",FALSE
+scalr.connections.saml.security.logout_request_signed,Indicates whether the <samlp:logoutRequest> messages sent by this SP will be signed.,Boolean,"true, false",FALSE
+scalr.connections.saml.security.logout_response_signed,Indicates whether the <samlp:logoutResponse> messages sent by this SP will be signed.,Boolean,"true, false",FALSE
+scalr.connections.saml.security.sign_metadata,Sign the Metadata. If true it will use SP certs and they must be provided.,Boolean,"true, false",FALSE
+scalr.connections.saml.security.want_messages_signed,"Indicates a requirement for the <samlp:Response>, <samlp:LogoutRequest> and <samlp:LogoutResponse> elements received by this SP to be signed.",Boolean,"true, false",FALSE
+scalr.connections.saml.security.want_assertions_signed,Indicates a requirement for the <saml:Assertion> elements received by this SP to be signed.,Boolean,"true, false",FALSE
+scalr.connections.saml.security.want_name_id_encrypted,Indicates a requirement for the NameID received by this SP to be encrypted.,Boolean,"true, false",FALSE
+scalr.connections.saml.security.requested_authn_context,"Set to false and no AuthContext will be sent in the AuthNRequest, Set true and you will get an AuthContext 'exact' 'urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport' Set an array with the possible auth context values.",Boolean or Array,"true, false or ["" urn:oasis:names:tc:SAML:2.0:ac:classes:Password "", "" urn:oasis:names:tc:SAML:2.0:ac:classes:X509 ""]",TRUE
+scalr.connections.saml.security.want_xml_validation,"Indicates if the SP will validate all received xmls. (In order to validate the xml, 'strict' and 'want_xml_validation' must be true).",Boolean,"true, false",TRUE
+scalr.connections.saml.security.signature_algorithm,Algorithm that Scalr will use on signing process.,String,"sha256, sha384 or sha512",sha256

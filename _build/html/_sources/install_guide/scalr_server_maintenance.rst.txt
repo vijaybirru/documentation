@@ -10,7 +10,7 @@ Backup your database (this is an example, choose any location for the backup):
 
 .. code-block:: shell
 
-   /opt/scalr-server/embedded/bin/mysqldump --all-databases -u{sql_username} -p{sql_password} | gzip > /tmp/pre_upgrade_backup.gz
+   /opt/scalr-server/embedded/bin/mysqldump --all-databases -u{sql_username} -p{sql_password} | gzip > /some_folder/pre_upgrade_backup.gz
 
 Stop all scalr hosts using:
 
@@ -44,6 +44,15 @@ Automated Upgrades
 -------------------
 
 As you can see, the Scalr upgrade process is fairly simple, because of this we encourage customers to automate the process using their favorite configuration management method. We have put together an example using Ansible: https://github.com/scalr-tutorials/scalr-server-upgrade-ansible
+
+Database Backups
+-----------------
+
+It is highly recommended, if not required, to take at least a daily backup of the database. To do this, you can use any automation tool of choice or simply just run a cron job and send the database backup to a remote location:
+
+.. code-block:: shell
+
+   /opt/scalr-server/embedded/bin/mysqldump --all-databases -u{sql_username} -p{sql_password} | gzip > /some_folder/db_backup.gz
 
 Monitoring Best Practices
 --------------------------

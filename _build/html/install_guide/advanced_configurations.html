@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -141,6 +142,7 @@
 <li class="toctree-l2"><a class="reference internal" href="scalr_server_maintenance.html">Scalr Server Maintenance</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="scalr_server_maintenance.html#upgrades">Upgrades</a></li>
 <li class="toctree-l3"><a class="reference internal" href="scalr_server_maintenance.html#automated-upgrades">Automated Upgrades</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scalr_server_maintenance.html#database-backups">Database Backups</a></li>
 <li class="toctree-l3"><a class="reference internal" href="scalr_server_maintenance.html#monitoring-best-practices">Monitoring Best Practices</a></li>
 </ul>
 </li>
@@ -544,7 +546,21 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App Tutorial (cloud agnostic, orchestration automation)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#objective">Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#application-overview">Application Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#script-creation">Script Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#roles-required">Roles Required:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#farm-creation">Farm Creation:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#farm-role-configuration">Farm Role Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/3-tier-app.html#select-and-configure-the-webapp-farm-role">Select and configure the WebApp farm role:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/3-tier-app.html#select-and-configure-the-mysql-farm-role">Select and configure the MySQL farm role:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/3-tier-app.html#select-and-configure-the-nginx-farm-role">Select and configure the Nginx farm role:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#testing-the-application">Testing the Application</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Release Notes</span></p>
 <ul>
@@ -641,11 +657,11 @@
 <h2>Proxy<a class="headerlink" href="#proxy" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="16%" />
-<col width="42%" />
-<col width="4%" />
-<col width="31%" />
-<col width="7%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Parameter</th>
@@ -683,31 +699,29 @@
 <tr class="row-even"><td>scalr.connections.proxy.type</td>
 <td>Proxy type to use.</td>
 <td>Integer</td>
-<td>0 = HTTP4 = SOCKS45 = SOCKS5</td>
+<td>0 = HTTP 4 = SOCKS4 5 = SOCKS5</td>
 <td>0</td>
 </tr>
 <tr class="row-odd"><td>scalr.connections.proxy.authtype</td>
 <td>Type of authentication to use.</td>
 <td>Integer</td>
-<td>1 = Basic Auth2 = Digest Auth4 = GSSNeg8 = NTLM-1 = Any auh type</td>
+<td>1 = Basic Auth 2 = Digest Auth 4 = GSSNeg 8 = NTLM -1 = Any auh type</td>
 <td>1</td>
 </tr>
 <tr class="row-even"><td>scalr.connections.proxy.use_on</td>
 <td>What the proxy should be used for.</td>
 <td>String</td>
-<td>“both” = Server &amp; Agent, “scalr” = Server, “instance” = Agent</td>
+<td>both = Server &amp; Agent “scalr” = Server only “instance” = Agent only</td>
 <td>scalr</td>
 </tr>
-<tr class="row-odd"><td>scalr.%PLATFORM%.use_proxy</td>
-<td>Whether Scalr should use a proxy when communicating with the specified
-cloud platform.Substitute %PLATFORM% with one of the following values:
-azure, ec2, gce, openstack, cloudstack, vmware</td>
+<tr class="row-odd"><td>scalr.%PLATFORM%.use_ proxy</td>
+<td>Whether Scalr should use a proxy when communicating with the specified cloud platform. Substitute %PLATFORM% with one of the following values: hpcloud, mirantis, azure, ec2, openstack, cloudstack, idcf, ocs, rackspacenguk, rackspacengus, cisco, vmware, vio</td>
 <td>Boolean</td>
-<td>true, false</td>
+<td>true, false / Platform Values: “hpcloud”, “mirantis”, “azure”, “ec2”, “openstack”, “cloudstack”, “idcf”, “gce”, ” ocs”, “rackspacenguk”, “rackspacengus”, “cisco” , “vmware”, “vio”</td>
 <td>FALSE</td>
 </tr>
 <tr class="row-even"><td>scalr.system.webhooks.use_proxy</td>
-<td>Whether Scalr should use a proxy when sending requests using Webhooks.</td>
+<td>Whether Scalr should use a proxy when sending requests using Webhooks .</td>
 <td>Boolean</td>
 <td>true, false</td>
 <td>FALSE</td>
@@ -719,11 +733,11 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <span id="id1"></span><h2>LDAP<a class="headerlink" href="#ldap" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="13%" />
-<col width="43%" />
-<col width="2%" />
-<col width="30%" />
-<col width="11%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Parameter</th>
@@ -737,10 +751,10 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <tr class="row-even"><td>scalr.auth_mode</td>
 <td>The authentication mode that Scalr should use.</td>
 <td>String</td>
-<td>scalr = Password auth”ldap” = LDAP auth”saml” = SAML auth</td>
+<td>scalr = Password auth “ldap” = LDAP auth “saml” = SAML auth</td>
 <td>scalr</td>
 </tr>
-<tr class="row-odd"><td>scalr.connections.ldap.host</td>
+<tr class="row-odd"><td>scalr.connections. ldap .host</td>
 <td>The host Scalr should connect to for LDAP authentication. This should be a reachable LDAP server.</td>
 <td>String</td>
 <td>hostname, “1.2.3.4”</td>
@@ -771,7 +785,7 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td>scalr.connections.ldap.pass</td>
-<td>Password for the LDAP administrator. Seescalr.connections.ldap.user</td>
+<td>Password for the LDAP administrator. See scalr.connections.ldap.user</td>
 <td>String</td>
 <td>valid admin LDAP pass</td>
 <td>&#160;</td>
@@ -783,15 +797,15 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-even"><td>scalr.connections.ldap.domain</td>
-<td>The default domain Scalr should append to usernames when users omit their domain as they login to Scalr.This is only used whenscalr.connections.ldap.bind_typeis set tosimple.</td>
+<td>The default domain Scalr should append to usernames when users omit their domain as they login to Scalr. This is only used when scalr.connections.ldap.bind_type is set to simple .</td>
 <td>String</td>
 <td>&#160;</td>
-<td>&#160;</td>
+<td>If not specified, then Scalr will concatenate the domain components used in scalr.connections.ldap.base_dn . For example, if scalr.connections.ldap.base_dn is set to DC=scalr,DC=local , then scalr.connections.ldap.domain will default to scalr.local</td>
 </tr>
 <tr class="row-odd"><td>scalr.connections.ldap.bind_type</td>
-<td>The bind type Scalr should use. This can be set toregularorsimple.</td>
+<td>The bind type Scalr should use. This can be set to regular or simple .</td>
 <td>String</td>
-<td>regular = Login name only”simple” = Full Name, Display Name or SAMAccountName”openldap” = Set to this when using openldap</td>
+<td>regular = Login name only “simple” = Full Name Display Name or SAMAccountName “openldap” = Set to this when using openldap</td>
 <td>regular</td>
 </tr>
 <tr class="row-even"><td>scalr.connections.ldap.mail_attribute</td>
@@ -800,19 +814,19 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td>valid LDAP attribute</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>scalr.connections.ldap.fullname_attribute</td>
+<tr class="row-odd"><td>scalr.connections. ldap .fullname_attribute</td>
 <td>The name of the attribute that contains a user’s fullname on the LDAP server.</td>
 <td>String</td>
 <td>&#160;</td>
 <td>displayName</td>
 </tr>
-<tr class="row-even"><td>scalr.connections.ldap.username_attribute</td>
+<tr class="row-even"><td>scalr.connections.ldap. username_attribute</td>
 <td>The name of the attribute that contains a user’s username on the LDAP server.</td>
 <td>String</td>
 <td>&#160;</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>scalr.connections.ldap.groupname_attribute</td>
+<tr class="row-odd"><td>scalr.connections.ldap. groupname_attribute</td>
 <td>The name of the attribute that contains a user’s groups on the LDAP server.</td>
 <td>String</td>
 <td>&#160;</td>
@@ -839,7 +853,7 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <tr class="row-odd"><td>scalr.connections.ldap.group_member_attribute_type</td>
 <td>Only used if bind_type is set to “openldap”. Specifies how group membership is represented.</td>
 <td>String</td>
-<td>unit_netgroup, “regular”, “user_dn”</td>
+<td>unit_netgroup or “regular” or “user_dn”</td>
 <td>regular</td>
 </tr>
 <tr class="row-even"><td>scalr.connections.ldap.group_displayname_attribute</td>
@@ -855,11 +869,11 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <span id="id2"></span><h2>SAML<a class="headerlink" href="#saml" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="12%" />
-<col width="50%" />
-<col width="4%" />
-<col width="23%" />
-<col width="11%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Parameter</th>
@@ -900,7 +914,7 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td><a class="reference external" href="https://your-labs.idp.domain/trust/saml2/http-post/sso">https://your-labs.idp.domain/trust/saml2/http-post/sso</a></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>scalr.connections.saml.idp.single_sign_on_service.binding</td>
+<tr class="row-odd"><td>scalr.connections.saml.idp. single_sign_on_service.binding</td>
 <td>SAML protocol binding to be used when returning the &lt;Response&gt; message.</td>
 <td>String</td>
 <td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect</a></td>
@@ -912,7 +926,7 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td><a class="reference external" href="https://your-labs.idp.domain/trust/saml2/http-redirect/slo">https://your-labs.idp.domain/trust/saml2/http-redirect/slo</a></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-odd"><td>scalr.connections.saml.idp.single_logout_service.binding</td>
+<tr class="row-odd"><td>scalr.connections.saml.idp. single_logout_service.binding</td>
 <td>SAML protocol binding to be used when returning the &lt;Response&gt; message.</td>
 <td>String</td>
 <td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect</a></td>
@@ -925,7 +939,7 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>scalr.connections.saml.idp.cert_fingerprint</td>
-<td>Instead of useing the whole x509cert you can use a fingerprint in order to validate a SAMLResponse. Example to generate sha256 fingerprint:openssl x509 -noout -fingerprint -sha256 -in “idp.crt”</td>
+<td>Instead of useing the whole x509cert you can use a fingerprint in order to validate a SAMLResponse. Example to generate sha256 fingerprint: openssl x509 -noout -fingerprint -sha256 -in “idp.crt”</td>
 <td>String</td>
 <td>AA:BB:CC:DD:EE:FF</td>
 <td>&#160;</td>
@@ -937,25 +951,25 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td>sha256</td>
 </tr>
 <tr class="row-odd"><td>scalr.connections.saml.mapping.groups</td>
-<td>Used to override standard mapping for SAML assertion attributes.  This is used to set the name of the Groups attribute to use in SAML Assertion.</td>
+<td>Used to override standard mapping for SAML assertion attributes.&nbsp; This is used to set the name of the Groups attribute to use in SAML Assertion.</td>
 <td>String</td>
 <td>&#160;</td>
 <td>Groups</td>
 </tr>
 <tr class="row-even"><td>scalr.connections.saml.mapping.separator</td>
-<td>Used to override standard mapping for SAML assertion attributes.  This is used to set the Groups separator.</td>
+<td>Used to override standard mapping for SAML assertion attributes.&nbsp; This is used to set the Groups separator.</td>
 <td>String</td>
 <td>&#160;</td>
 <td>,</td>
 </tr>
 <tr class="row-odd"><td>scalr.connections.saml.sp.assertion_consumer_service.binding</td>
-<td>Specifies info about where and how the &lt;AuthnResponse&gt; message MUST be returned to the requester, in this case our Service Provider. SAML protocol binding to be used when returning the &lt;Response&gt; message.It supports HTTP-POST binding only.</td>
+<td>Specifies info about where and how the &lt;AuthnResponse&gt; message MUST be returned to the requester, in this case our Service Provider. SAML protocol binding to be used when returning the &lt;Response&gt; message. It supports HTTP-POST binding only.</td>
 <td>String</td>
 <td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST</a></td>
 <td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST</a></td>
 </tr>
 <tr class="row-even"><td>scalr.connections.saml.sp.single_logout_service.binding</td>
-<td>SLO endpoint info of the IdP.SAML protocol binding to be used when returning the &lt;Response&gt; message. It supports the HTTP-Redirect binding only for this endpoint.</td>
+<td>SLO endpoint info of the IdP. SAML protocol binding to be used when returning the &lt;Response&gt; message. It supports the HTTP-Redirect binding only for this endpoint.</td>
 <td>String</td>
 <td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect</a></td>
 <td><a class="reference external" href="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect">urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect</a></td>
@@ -985,7 +999,7 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>scalr.connections.saml.security.name_id_encrypted</td>
-<td>Indicates whether the nameID of the &lt;samlp:logoutRequest&gt; sent by this SP will be encrypted.</td>
+<td>Indicates&nbsp;whether the nameID of the &lt;samlp:logoutRequest&gt; sent by this SP will be encrypted.</td>
 <td>Boolean</td>
 <td>true, false</td>
 <td>FALSE</td>
@@ -1033,9 +1047,9 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td>FALSE</td>
 </tr>
 <tr class="row-odd"><td>scalr.connections.saml.security.requested_authn_context</td>
-<td>Set to false and no AuthContext will be sent in the AuthNRequest,Set true and you will get an AuthContext ‘exact’ ‘<a class="reference external" href="urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport'Set">urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport’Set</a> an array with the possible auth context values.</td>
+<td>Set to false and no AuthContext will be sent in the AuthNRequest, Set true and you will get an AuthContext ‘exact’ ‘<a class="reference external" href="urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport">urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport</a>’ Set an array with the possible auth context values.</td>
 <td>Boolean or Array</td>
-<td>true, false or [“<a class="reference external" href="urn:oasis:names:tc:SAML:2.0:ac:classes:Password">urn:oasis:names:tc:SAML:2.0:ac:classes:Password</a>”, “<a class="reference external" href="urn:oasis:names:tc:SAML:2.0:ac:classes:X509">urn:oasis:names:tc:SAML:2.0:ac:classes:X509</a>”]</td>
+<td>true, false or [” <a class="reference external" href="urn:oasis:names:tc:SAML:2.0:ac:classes:Password">urn:oasis:names:tc:SAML:2.0:ac:classes:Password</a> “, ” <a class="reference external" href="urn:oasis:names:tc:SAML:2.0:ac:classes:X509">urn:oasis:names:tc:SAML:2.0:ac:classes:X509</a> “]</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-even"><td>scalr.connections.saml.security.want_xml_validation</td>
@@ -1058,10 +1072,10 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <table border="1" class="docutils">
 <colgroup>
 <col width="20%" />
-<col width="53%" />
-<col width="3%" />
-<col width="19%" />
-<col width="5%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Parameter</th>
@@ -1073,18 +1087,18 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>scalr.system.scripting.logs_storage</td>
-<td>The location where Scalr should store Orchestration Log.</td>
+<td>The location where Scalr should store Orchestration Log .</td>
 <td>String</td>
-<td>scalr = On Scalr server”instance” = On affected instance</td>
+<td>scalr = On Scalr server “instance” = On affected instance</td>
 <td>instance</td>
 </tr>
 <tr class="row-odd"><td>scalr.system.scripting.default_instance_log_rotation_period</td>
-<td>The default duration (in seconds) logs should be kept when stored on instances.Users can override this setting in the Farm Designer: Advanced Tab - Orchestration.</td>
+<td>The default duration (in seconds) logs should be kept when stored on instances. Users can override this setting in the Farm Designer: Advanced Tab - Orchestration .</td>
 <td>Integer</td>
 <td>1-99999</td>
 <td>3600</td>
 </tr>
-<tr class="row-even"><td>scalr.logger.audit.enabled</td>
+<tr class="row-even"><td>scalr. log ger.audit.enabled</td>
 <td>Whether the audit log should be enabled.</td>
 <td>Boolean</td>
 <td>true, false</td>
@@ -1199,11 +1213,11 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="16%" />
-<col width="51%" />
-<col width="8%" />
-<col width="19%" />
-<col width="7%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Parameter</th>
@@ -1233,9 +1247,9 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td>FALSE</td>
 </tr>
 <tr class="row-odd"><td>scalr.system.api.allowed_origins</td>
-<td>Defines which domain(s) to allow in theAccess-Control-Allow-Origin header.This header is not sent by default.</td>
+<td>Defines which domain(s) to allow in the Access-Control-Allow-Origin header. This header is not sent by default.</td>
 <td>Array or String</td>
-<td>[” domain1.com”, ” domain2.com”] or “*”</td>
+<td>[” domain1.com “, ” domain2.com “] or “*”</td>
 <td>~</td>
 </tr>
 </tbody>
@@ -1245,11 +1259,11 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <h2>Agent Update<a class="headerlink" href="#agent-update" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="29%" />
-<col width="30%" />
-<col width="4%" />
-<col width="31%" />
-<col width="8%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Parameter</th>
@@ -1261,13 +1275,25 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>scalr. scalarizr_update.mode</td>
-<td>&#160;</td>
+<td>The update mode for Scalairzr. client uses update.scalr.net for Scalarizr to discover new updates. solo uses a Scalr cronjob to notify Scalarizr of new updates.</td>
 <td>String</td>
 <td>client, “solo”</td>
 <td>client</td>
 </tr>
+<tr class="row-odd"><td>scalr.scalarizr_update.ssl_verify_peer</td>
+<td>Sets SSL verification to true or false</td>
+<td>Boolean</td>
+<td>true, “false”</td>
+<td>TRUE</td>
+</tr>
+<tr class="row-even"><td>scalr.scalarizr_update.service.update_rate</td>
+<td>Sets the update rate for instances. By default it’s 900 servers / hour.</td>
+<td>Integer</td>
+<td>90</td>
+<td>900</td>
+</tr>
 <tr class="row-odd"><td>scalr. scalarizr_update.default_repo</td>
-<td>&#160;</td>
+<td>The default repository to use for Scalarizr. Repositories must be defined as sub-keys of the key scalr. scalarizr_update.repos . The default repository must exist in the repos list. By default two repositories exist in scalr. scalarizr_update.repos , named stable and latest . They point to repo.scalr.net . They will be overridden if you specify a repo with the same name in your configuration. Users can override this setting at the Farm or Farm Role scope.</td>
 <td>String</td>
 <td>latest, “stable”</td>
 <td>stable</td>
@@ -1290,6 +1316,12 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td><a class="reference external" href="http://repo.scalr.net/win/stable">http://repo.scalr.net/win/stable</a></td>
 <td>&#160;</td>
 </tr>
+<tr class="row-odd"><td>scalr.scalarizr_update.use_proxy</td>
+<td>Boolean</td>
+<td>true, “false”</td>
+<td>flase</td>
+<td>&#160;</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1297,11 +1329,11 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <h2>VMware<a class="headerlink" href="#vmware" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="16%" />
-<col width="72%" />
-<col width="3%" />
-<col width="5%" />
-<col width="5%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Parameter</th>
@@ -1313,25 +1345,25 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>scalr.vmware.datastore_vm_launch_buffer</td>
-<td>Configures the amount of free storage (in GB) that should be available on a datastore to launch the instance. Before launching an instance we will check that datastore has required_space (template+additional disks) + configure buffer.</td>
+<td>Configures the amount of free storage (in GB) that should be available on a datastore to launch the instance. Before launching an instance we will check that datastore has&nbsp;required_space (template+additional disks) + configure buffer.</td>
 <td>Integer</td>
 <td>200, 300</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>scalr.vmware.placement.host_metrics_weight.cpu</td>
-<td>Configures CPU metrics weight for VMware computer resource automatic placement.  Higher values for this setting hold more weight in automatic selection.</td>
+<td>Configures CPU metrics weight for VMware computer resource automatic placement.&nbsp; Higher values for this setting hold more weight in automatic selection.</td>
 <td>Integer</td>
 <td>1, 2</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-even"><td>scalr.vmware.placement.host_metrics_weight.memory</td>
-<td>Configures memory metrics weight for VMware computer resource automatic placement.  Higher values for this setting hold more weight in automatic selection.</td>
+<td>Configures memory metrics weight for VMware computer resource automatic placement.&nbsp; Higher values for this setting hold more weight in automatic selection.</td>
 <td>Integer</td>
 <td>1, 2</td>
 <td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>scalr.vmware.placement.host_metrics_weight.disk</td>
-<td>Configures disk metrics weight for VMware computer resource automatic placement.  Higher values for this setting hold more weight in automatic selection.</td>
+<td>Configures disk metrics weight for VMware computer resource automatic placement.&nbsp; Higher values for this setting hold more weight in automatic selection.</td>
 <td>Integer</td>
 <td>1, 2</td>
 <td>&#160;</td>
@@ -1343,11 +1375,11 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <h2>Uncategorized<a class="headerlink" href="#uncategorized" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="12%" />
-<col width="40%" />
-<col width="2%" />
-<col width="32%" />
-<col width="15%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Parameter</th>
@@ -1358,89 +1390,29 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>scalr.system.instances_connection_timeout</td>
-<td>The duration (in seconds) Scalr should wait before timing out when attempting to establish a connection with Scalarizr on a Scalr host.</td>
-<td>Integer</td>
-<td>4</td>
-<td>4</td>
-</tr>
-<tr class="row-odd"><td>scalr.system.server_terminate_timeout</td>
-<td>The duration Scalr should wait before terminating a server that was not forcefully terminated. This should be a relative date format usable for the PHP strtotime function .</td>
-<td>String</td>
-<td>&#160;</td>
-<td>#ERROR!</td>
-</tr>
-<tr class="row-even"><td>scalr.system.default_disable_firewall_management</td>
-<td>Whether Scalr should, by default, disable the automated management of iptables in Scalarizr. Users can override this setting in the Farm Designer: Advanced Tab - General .</td>
-<td>Boolean</td>
-<td>true, false</td>
-<td>FALSE</td>
-</tr>
-<tr class="row-odd"><td>scalr.system.scripting.default_abort_init_on_script_fail</td>
+<tr class="row-even"><td>scalr.system.scripting.default_abort_init_on_script_fail</td>
 <td>The default for the option to fail Servers when a Blocking BeforeHostUp Script fails. Users can override this setting in the Farm Designer: Advanced Tab - Orchestration .</td>
 <td>Boolean</td>
 <td>true, false</td>
 <td>FALSE</td>
 </tr>
-<tr class="row-even"><td>scalr.aws.security_group_name</td>
-<td>The name Scalr should use for its IP Pool Security Group. This security group is used to allow access from Scalr to the instances it manages. THIS IS USED FOR ALL CLOUDS, NOT ONLY FOR AWS.</td>
-<td>String</td>
-<td>&#160;</td>
-<td>scalr.ip-pool</td>
+<tr class="row-odd"><td>scalr.system.global_variables.format</td>
+<td>Formatting for Scalr System Global Variables . This should be a mapping of Scalr System Global Variables names to the format that should be used for them. The format string should be a printf format string . Note: System GVs MUST be uppercase.</td>
+<td>Mapping</td>
+<td>app[:configuration] = { “scalr” =&gt; {  “system” =&gt; {    “global_variables” =&gt; {      “format” =&gt; {        “SCALR_CLOUD_SERVER_ID” =&gt; “%.15s”,      }    }  }}} or app[:configuration] = {“scalr” =&gt; {“system” =&gt; {    “global_variables” =&gt; {      “format” =&gt; {        “SCALR_INSTANCE_FARM_INDEX” =&gt; “%03d”,        “SCALR_EVENT_INSTANCE_FARM_INDEX” =&gt; “%03d”      }    }  }}}</td>
+<td>{}</td>
 </tr>
-<tr class="row-odd"><td>scalr.aws.ip_pool</td>
-<td>The IPs that Scalr should whitelist as part of its IP Pool Security Group. See: scalr.aws.security_group_name . THIS IS USED FOR ALL CLOUDS, NOT ONLY FOR AWS.</td>
-<td>Array</td>
-<td>&#160;</td>
-<td>[]</td>
-</tr>
-<tr class="row-even"><td>scalr.aws.plugins.enabled</td>
-<td>The list of AWS Scalr plugins that should be enabled. The only supported plugin as of Scalr 4.5 is statistics . THIS IS USED FOR ALL CLOUDS, NOT ONLY FOR AWS.</td>
-<td>Array</td>
-<td>&#160;</td>
-<td>[]</td>
-</tr>
-<tr class="row-odd"><td>scalr.aws.plugins.statistics.storage_max_size</td>
-<td>The maximum storage size (in bytes) that should be allocated for statistics collected by the AWS statistics plugin. THIS IS USED FOR ALL CLOUDS, NOT ONLY FOR AWS.</td>
-<td>Integer</td>
-<td>&#160;</td>
-<td>268435456</td>
-</tr>
-<tr class="row-even"><td>scalr.openstack.user_data_method</td>
-<td>The method Scalr should use to communicate user data (including Scalarizr connection details) to OpenStack instances.</td>
-<td>String</td>
-<td>meta-data = Use Metadata API “personality = Server Personalities “both” = Use both</td>
-<td>both</td>
-</tr>
-<tr class="row-odd"><td>scalr.openstack.use_config_drive</td>
-<td>Enable or Disable Config Drive for Openstack</td>
-<td>Boolean</td>
-<td>true, false</td>
-<td>TRUE</td>
-</tr>
-<tr class="row-even"><td>scalr.connections.mysql.driver</td>
-<td>The driver Scalr should use to connect to MySQL. This driver should be compatible for use in a data source name for ADOdb .</td>
-<td>String</td>
-<td>&#160;</td>
-<td>mysqli</td>
-</tr>
-<tr class="row-odd"><td>scalr.email.address</td>
+<tr class="row-even"><td>scalr.email.address</td>
 <td>The Email Address Scalr should use for outbound email notifications.</td>
 <td>String</td>
 <td><a class="reference external" href="mailto:email&#37;&#52;&#48;example&#46;com">email<span>&#64;</span>example<span>&#46;</span>com</a></td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>scalr.email.name</td>
+<tr class="row-odd"><td>scalr.email.name</td>
 <td>The From Name Scalr should use for outbound email notifications.</td>
 <td>String</td>
 <td>My Name</td>
 <td>&#160;</td>
-</tr>
-<tr class="row-odd"><td>scalr.email.delimiter</td>
-<td>The line delimiter Scalr should use for outound email notifications. Use crlf for Windows-style line-endings, and lf for UNIX- style line-endings.</td>
-<td>String</td>
-<td>&#160;</td>
-<td>crlf</td>
 </tr>
 <tr class="row-even"><td>scalr.gce.instance_username</td>
 <td>Optionally configure a custom username for GCE instances</td>
@@ -1448,41 +1420,30 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td>cloud-user</td>
 <td>scalr</td>
 </tr>
+<tr class="row-odd"><td>scalr.azure.instance_username</td>
+<td>Optionally configure a custom username for Azure instances</td>
+<td>String</td>
+<td>Administrator</td>
+<td>scalr</td>
+</tr>
+<tr class="row-even"><td>scalr.azure.api_client.timeout</td>
+<td>Optionally configure an override for Azure API client timeout.&nbsp; Value in seconds.</td>
+<td>Integer</td>
+<td>60</td>
+<td>30</td>
+</tr>
 <tr class="row-odd"><td>scalr. %PLATFORM% .instances_connection_policy</td>
-<td>Controls the instances connection policy on a per-cloud basis. “auto” tries the public IP and fallbacks to the private IP if the server has no public IP.</td>
+<td>Controls the instances connection policy on a per-cloud basis. “auto” tries the public IP and fallbacks to the private IP if the server has no public IP. Substitute %PLATFORM% with one of the following values: hpcloud, mirantis, azure, ec2, openstack, cloudstack, idcf, gce, ocs, rackspacenguk, rackspacengus, cisco, vmware, vio</td>
 <td>String</td>
 <td>public, “local”, “auto”</td>
 <td>auto</td>
 </tr>
-<tr class="row-even"><td>scalr.script.timeout.sync</td>
-<td>The default timeout (in seconds) Scalr should use for blocking scripts .</td>
-<td>Integer</td>
-<td>&#160;</td>
-<td>180</td>
-</tr>
-<tr class="row-odd"><td>scalr.script.timeout.async</td>
-<td>The default timeout (in seconds) Scalr should use for non-blocking scripts .</td>
-<td>Integer</td>
-<td>&#160;</td>
-<td>1200</td>
-</tr>
-<tr class="row-even"><td>scalr.ui.server_display_convention</td>
-<td>The Server identifier Scalr should use in the UI (e.g. in the Script Execute Menu).</td>
+<tr class="row-even"><td>scalr.ui.login_warning</td>
+<td>Warning text to be displayed to users on the login page.&nbsp; Formatted with HTML tags.</td>
 <td>String</td>
-<td>auto = Use external IP, fallback to internal IP “hostname” = Use hostname “public” = Use external IP “private” = Use internal IP</td>
-<td>auto</td>
-</tr>
-<tr class="row-odd"><td>scalr.ui.login_warning</td>
-<td>Warning text to be displayed to users on the login page.Â  Formatted with HTML tags.</td>
-<td>String</td>
+<td>You are accessing a secure system.&nbsp; &lt;p&gt;Unauthorized use may result in disciplinary action.&lt;/p&gt; By using this information system, you understand and consent to the following: &lt;ul&gt;&lt;li&gt;You have no expectation of privacy on this system. &lt;/li&gt; &lt;li&gt;At any time we may monitor data transiting or stored on this system.&lt;/li&gt;&lt;/ul&gt;
+*	scalr.ui.support_url	The URL the support button should link to in Scalr.	String		<a class="reference external" href="https://groups.google.com/d/forum/scalr-discus">https://groups.google.com/d/forum/scalr-discus</a> s”</td>
 <td>&#160;</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td>scalr.ui.wiki_url</td>
-<td>The URL the documentation button should link to in Scalr.</td>
-<td>String</td>
-<td>&#160;</td>
-<td><a class="reference external" href="http://wiki.scalr.com">http://wiki.scalr.com</a></td>
 </tr>
 <tr class="row-odd"><td>scalr.ui.recaptcha.public_key</td>
 <td>The public key Scalr should use for reCAPTCHA login bruteforce protection.</td>
@@ -1527,13 +1488,13 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td>10</td>
 </tr>
 <tr class="row-even"><td>scalr.%PLATFORM%.action_on_missing_server</td>
-<td>Defines what action should be taken if the cloud API reports a server missing compared to what’s in the Scalr Database.</td>
+<td>Defines what action should be taken if the cloud API reports a server missing compared to what’s in the Scalr Database. Substitute %PLATFORM% with one of the following values: hpcloud, mirantis, azure, ec2, openstack, cloudstack, idcf, gce, ocs, rackspacenguk, rackspacengus, cisco, vmware, vio</td>
 <td>String</td>
 <td>terminate = Terminate instance “flag” = Mark as missing “ignore” = Ignore</td>
 <td>terminate</td>
 </tr>
 <tr class="row-odd"><td>scalr.%PLATFORM%.action_on_failed_server</td>
-<td>Defines what action should be taken if the cloud API reports a server as failed compared to what’s in the Scalr Database.</td>
+<td>Defines what action should be taken if the cloud API reports a server as failed compared to what’s in the Scalr Database. Substitute %PLATFORM% with one of the following values: hpcloud, mirantis, azure, ec2, openstack, cloudstack, idcf, gce, ocs, rackspacenguk, rackspacengus, cisco, vmware, vio</td>
 <td>String</td>
 <td>terminate = Terminate instance “alert” = Same as Ignore, but will later support additional alerts in the UI “ignore” = Ignore</td>
 <td>terminate</td>
@@ -1542,7 +1503,7 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 <td>List of Cloud Platforms that are available in this Scalr installation.</td>
 <td>Array</td>
 <td>[“hpcloud”, “mirantis”, “azure”, “ec2”, “openstack”, “cloudstack”, “idcf”, “gce”, ” ocs”, “rackspacenguk”, “rackspacengus”, “cisco”, “vmware”, “vio”]</td>
-<td>[“hpcloud”,”azure”, “ec2”, “openstack”, “cloudstack”, “gce”,”vmware”]</td>
+<td>[“hpcloud”, “mirantis”, “azure”, “ec2”, “openstack”, “cloudstack”, “idcf”, “gce”, ” ocs”, “rackspacenguk”, “rackspacengus”, “cisco” , “vmware”, “vio” ]</td>
 </tr>
 <tr class="row-odd"><td>scalr.license_manager.use_proxy</td>
 <td>Sets the License manager to use proxy</td>
@@ -1617,7 +1578,10 @@ azure, ec2, gce, openstack, cloudstack, vmware</td>
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {

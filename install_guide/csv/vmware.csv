@@ -1,0 +1,5 @@
+Parameter,Description,Type,Example value(s),Default value
+scalr.vmware.datastore_vm_launch_buffer,Configures the amount of free storage (in GB) that should be available on a datastore to launch the instance. Before launching an instance we will check that datastore has required_space (template+additional disks) + configure buffer.,Integer,"200, 300",
+scalr.vmware.placement.host_metrics_weight.cpu,Configures CPU metrics weight for VMware computer resource automatic placement.  Higher values for this setting hold more weight in automatic selection.,Integer,"1, 2",
+scalr.vmware.placement.host_metrics_weight.memory,Configures memory metrics weight for VMware computer resource automatic placement.  Higher values for this setting hold more weight in automatic selection.,Integer,"1, 2",
+scalr.vmware.placement.host_metrics_weight.disk,Configures disk metrics weight for VMware computer resource automatic placement.  Higher values for this setting hold more weight in automatic selection.,Integer,"1, 2",

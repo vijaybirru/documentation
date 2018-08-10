@@ -1,0 +1,20 @@
+Parameter,Description,Type,Example value(s),Default value
+scalr.auth_mode,The authentication mode that Scalr should use.,String,"scalr = Password auth ""ldap"" = LDAP auth ""saml"" = SAML auth",scalr
+scalr.connections. ldap .host,The host Scalr should connect to for LDAP authentication. This should be a reachable LDAP server.,String,"hostname, ""1.2.3.4""",
+scalr.connections.ldap.port,The port Scalr should connect to for LDAP authentication.,Integer,valid TCP port,389
+scalr.connections.ldap.base_dn,The base DN for users.,String,valid base DN,"DC=scalr,DC=local"
+scalr.connections.ldap.base_dn_groups,The base DN for groups.,String,valid base DN,"OU=All Groups,DC=scalr,DC=local"
+scalr.connections.ldap.user,"A fully qualified username for an administrator of the LDAP server, if you intend to use API with LDAP auth.",String,valid admin LDAP user,
+scalr.connections.ldap.pass,Password for the LDAP administrator. See scalr.connections.ldap.user,String,valid admin LDAP pass,
+scalr.connections.ldap.group_nesting,Whether Scalr should use group nesting in LDAP.,Boolean,"true, false",TRUE
+scalr.connections.ldap.domain,The default domain Scalr should append to usernames when users omit their domain as they login to Scalr. This is only used when scalr.connections.ldap.bind_type is set to simple .,String,,"If not specified, then Scalr will concatenate the domain components used in scalr.connections.ldap.base_dn . For example, if scalr.connections.ldap.base_dn is set to DC=scalr,DC=local , then scalr.connections.ldap.domain will default to scalr.local"
+scalr.connections.ldap.bind_type,The bind type Scalr should use. This can be set to regular or simple .,String,"regular = Login name only ""simple"" = Full Name Display Name or SAMAccountName ""openldap"" = Set to this when using openldap",regular
+scalr.connections.ldap.mail_attribute,The name of the attribute that contains a user's email address on the LDAP server.,String,valid LDAP attribute,
+scalr.connections. ldap .fullname_attribute,The name of the attribute that contains a user's fullname on the LDAP server.,String,,displayName
+scalr.connections.ldap. username_attribute,The name of the attribute that contains a user's username on the LDAP server.,String,,
+scalr.connections.ldap. groupname_attribute,The name of the attribute that contains a user's groups on the LDAP server.,String,,
+scalr.connections.ldap.debug,Whether or not to enable debug mode (logging) for LDAP.,Boolean,"true, false",FALSE
+scalr.connections.ldap.filter.users,The filter that Scalr should use for LDAP user queries.,String,, (&(objectCategory=person)(objectClass=user))
+scalr.connections.ldap.filter.groups,The filter that Scalr should use for LDAP group queries.,String,,(&(objectClass=group))
+scalr.connections.ldap.group_member_attribute_type,"Only used if bind_type is set to ""openldap"". Specifies how group membership is represented.",String,"unit_netgroup or ""regular"" or ""user_dn""",regular
+scalr.connections.ldap.group_displayname_attribute,The name of the attribute that contains the group displayname,String,,
