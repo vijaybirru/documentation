@@ -78,7 +78,7 @@ To edit a role navigate to the Roles Library (Main Menu -> Roles), select the Ro
 Role Orchestration
 ==================
 
-Orchestration rules define actions to be performed at specific events during the lifecycle of servers that are launched as a result the Role being used in a Farm Role and potentially also an Application in the Service Catalog.
+Orchestration rules define actions to be performed at specific events during the lifecycle of servers. Orchestration rules associated with a Role are inherited by :ref:`farm_roles` that are created in the Farm designer or Farms created via :ref:`service_catalog`.
 
 To configure Orchestration Rules click on the Orchestration tab on the left side of the Role details screen.
 
@@ -90,5 +90,15 @@ To configure Orchestration Rules click on the Orchestration tab on the left side
 Global Variables in Roles
 =========================
 
+When defining Roles you can configure aspects of the way :ref:`gvs` are used in the Role.
+
+
+Ansible Tower in Roles
+======================
+
+.. Include file from Ansible Tower page
+
 Chef in Roles
 =============
+
+.. Include file from Chef page

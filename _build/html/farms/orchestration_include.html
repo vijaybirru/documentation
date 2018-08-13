@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; Scalr 0.01 documentation</title>
+  <title>Trigger Event &mdash; Scalr 0.01 documentation</title>
   
 
   
@@ -251,8 +251,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#editing-roles">Editing Roles</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#target">Target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#action">Action</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#advanced-configuration">Advanced Configuration</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
@@ -270,8 +277,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#editing-roles">Editing Roles</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#target">Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#advanced-configuration">Advanced Configuration</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
@@ -280,16 +294,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="index.html">Farm Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#farm-roles">Farm Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#farm-role-orchestration">Farm Role Orchestration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#events-reference">Events Reference</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#custom-events">Custom Events</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#creating-a-custom-event">Creating a Custom Event</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#firing-a-custom-event">Firing a Custom Event</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#farm-role-orchestration">Farm Role Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#target">Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-configuration">Advanced Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#network-and-security-group-configuration">Network and Security Group configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#advanced-options">Advanced Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#ansible-in-farm-roles">Ansible in Farm Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#chef-in-farm-roles">Chef in Farm Roles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="launch.html">Farm Launching and Managing Servers</a></li>
@@ -448,7 +461,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../custom_events/index.html#creating-a-custom-event">Creating a Custom Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom_events/index.html#firing-a-custom-event">Firing a Custom Event</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Demand Management</span></p>
 <ul>
@@ -627,7 +644,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>&lt;no title&gt;</li>
+      <li>Trigger Event</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -646,7 +663,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p>Orchestration Rules are made up of three main elements.</p>
+  <div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Orchestration rules can be defined in many places in Scalr. What follows covers all aspects of rule configuration regardless of where they are configured.</p>
+</div>
+<p>Orchestration Rules are made up of three main elements.</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="20%" />
@@ -660,12 +681,14 @@
 <td>Criteria for identifying the server on which to run the Script which need not be the triggering server and can be multiple servers</td>
 </tr>
 <tr class="row-odd"><td><strong>Action</strong></td>
-<td>The script to be run or the Ansible Tower job to be run if Ansible Tower is configured for the Role.</td>
+<td>The script, Chef Cookbook or Ansible Tower job to be run.</td>
 </tr>
 </tbody>
 </table>
-<a class="reference internal image-reference" href="../_images/orch_rule_new.png"><img alt="../_images/orch_rule_new.png" src="../_images/orch_rule_new.png" style="width: 593.5px; height: 487.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/orch_rule_new.png"><img alt="../_images/orch_rule_new.png" src="../_images/orch_rule_new.png" style="width: 617.5px; height: 487.0px;" /></a>
 <p>You must create the <a class="reference internal" href="../scripts/index.html#scripts"><span class="std std-ref">Script</span></a> and any <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a> that are required before creating the Rule.</p>
+<div class="section" id="trigger-event">
+<h1>Trigger Event<a class="headerlink" href="#trigger-event" title="Permalink to this headline">¶</a></h1>
 <p>First select the Trigger Event for this rule. The following table describes each event and the state of the Server when the event fires.</p>
 <table border="1" class="colwidths-given docutils" id="id1">
 <caption><span class="caption-text">Orchestration Events</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
@@ -729,6 +752,9 @@
 <li>Deployment Routines are executed.</li>
 <li>Server Configuration (including vhosts) Routines are executed. If you wish to work with Virtual Hosts, you can assign a Script to the BeforeHostUp Event.</li>
 </ul>
+</div>
+<div class="section" id="target">
+<h1>Target<a class="headerlink" href="#target" title="Permalink to this headline">¶</a></h1>
 <p>You must define the target for executing the script. The default is to execute only on the instance that triggered the event. The other options are as follows. Note that availability of targets depends on the scope at which the rule is being defined.</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
@@ -748,31 +774,120 @@
 <td>The script will only be executed on the server that triggered the event.</td>
 </tr>
 <tr class="row-odd"><td>Triggering Server with &lt;specified OS&gt;</td>
-<td><a href="#id6"><span class="problematic" id="id7">|SCOPE_SCALR|</span></a> <a href="#id8"><span class="problematic" id="id9">|SCOPE_ACC|</span></a></td>
+<td><a href="#id6"><span class="problematic" id="id7">|SCOPE_SCALR|</span></a> <a href="#id8"><span class="problematic" id="id9">|SCOPE_ACC|</span></a> <a href="#id10"><span class="problematic" id="id11">|SCOPE_ENV|</span></a></td>
 <td>The script will only be executed on the server that triggered the event providing it is the specified Operating System.</td>
 </tr>
 <tr class="row-even"><td>All Servers in the Farm</td>
-<td><a href="#id10"><span class="problematic" id="id11">|SCOPE_ROLE|</span></a> <a href="#id12"><span class="problematic" id="id13">|SCOPE_F_ROLE|</span></a></td>
-<td>The script will be executed on all running servers.</td>
+<td><a href="#id12"><span class="problematic" id="id13">|SCOPE_ROLE|</span></a> <a href="#id14"><span class="problematic" id="id15">|SCOPE_F_ROLE|</span></a></td>
+<td>The script will be executed on all running servers in the Farm.</td>
 </tr>
 <tr class="row-odd"><td>All Servers of the Farm Role</td>
-<td><a href="#id14"><span class="problematic" id="id15">|SCOPE_ROLE|</span></a></td>
-<td>Script will execute for all servers running from the same Farm Role as the triggering server.</td>
+<td><a href="#id16"><span class="problematic" id="id17">|SCOPE_ROLE|</span></a></td>
+<td>Script will execute for all servers running from the same Farm Role as the triggering server in the Farm.</td>
 </tr>
 <tr class="row-even"><td>All Roles with Selected Tags</td>
-<td><a href="#id16"><span class="problematic" id="id17">|SCOPE_SCALR|</span></a> <a href="#id18"><span class="problematic" id="id19">|SCOPE_ACC|</span></a> <a href="#id20"><span class="problematic" id="id21">|SCOPE_F_ROLE|</span></a></td>
-<td>Script will execute for all servers running from Roles with the specified tag at or below the scope at which the rule is defined.</td>
+<td><a href="#id18"><span class="problematic" id="id19">|SCOPE_SCALR|</span></a> <a href="#id20"><span class="problematic" id="id21">|SCOPE_ACC|</span></a> <a href="#id22"><span class="problematic" id="id23">|SCOPE_ENV|</span></a> <a href="#id24"><span class="problematic" id="id25">|SCOPE_F_ROLE|</span></a></td>
+<td>Script will execute for all servers running from Roles with the specified tag in the Farm.</td>
 </tr>
 <tr class="row-odd"><td>All Roles with Selected OS</td>
-<td><a href="#id22"><span class="problematic" id="id23">|SCOPE_F_ROLE|</span></a></td>
+<td><a href="#id26"><span class="problematic" id="id27">|SCOPE_F_ROLE|</span></a></td>
 <td>Script will execute for all servers in the Farm with the specified OS.</td>
 </tr>
 <tr class="row-even"><td>Selected Farm Roles</td>
-<td><a href="#id24"><span class="problematic" id="id25">|SCOPE_F_ROLE|</span></a></td>
-<td>Script will execute for all servers in the given Farm Role(s).</td>
+<td><a href="#id28"><span class="problematic" id="id29">|SCOPE_F_ROLE|</span></a></td>
+<td>Script will execute for all servers in the given Farm Role(s) in the Farm.</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="action">
+<h1>Action<a class="headerlink" href="#action" title="Permalink to this headline">¶</a></h1>
+<p>There are three choices for the Action for a rule.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="7%" />
+<col width="20%" />
+<col width="15%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Scopes</th>
+<th class="head">Option</th>
+<th class="head">Details</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Script</td>
+<td><a href="#id30"><span class="problematic" id="id31">|SCOPE_SCALR|</span></a> <a href="#id32"><span class="problematic" id="id33">|SCOPE_ACC|</span></a> <a href="#id34"><span class="problematic" id="id35">|SCOPE_ENV|</span></a> <a href="#id36"><span class="problematic" id="id37">|SCOPE_ROLE|</span></a> <a href="#id38"><span class="problematic" id="id39">|SCOPE_F_ROLE|</span></a></td>
+<td>Scalr Script</td>
+<td>A Scalr script previously defined at the current scope or higher. Higher Scope scripts must have shared <a class="reference internal" href="../_images/shared.png"><img alt="SHARED" src="../_images/shared.png" style="width: 129.6px; height: 32.800000000000004px;" /></a> enabled.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Local Script</td>
+<td>Script that will already be installed on the server. You must provide the full path to the script.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>URL Script</td>
+<td>Instructs Scalr to download the script from the specified URL and run it.</td>
+</tr>
+<tr class="row-odd"><td>Chef</td>
+<td><a href="#id40"><span class="problematic" id="id41">|SCOPE_ROLE|</span></a> <a href="#id42"><span class="problematic" id="id43">|SCOPE_F_ROLE|</span></a></td>
+<td>Override Runlist (Server)</td>
+<td>If the Role is configured to bootstrap with Chef Server the rule can override the runlist defined at Role level.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>Reconverge (Server)</td>
+<td>If the Role is configured to bootstrap with Chef Server the rule can re-invoke the convergence actions.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>Chef Solo</td>
+<td>Specify a specific cookbook and runlist to use either from a URL or GIT</td>
+</tr>
+<tr class="row-even"><td>AT Job</td>
+<td><a href="#id44"><span class="problematic" id="id45">|SCOPE_ROLE|</span></a> <a href="#id46"><span class="problematic" id="id47">|SCOPE_F_ROLE|</span></a></td>
+<td>(none)</td>
+<td>If AT is configured to bootstrap the role you can chose a bootstrap config and job to execute for the rule.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="advanced-configuration">
+<h1>Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permalink to this headline">¶</a></h1>
+<p>The advanced configuration section allows you to control various aspects of how the Action is executed.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Execution Mode</td>
+<td>Blocking: Scalarizr will wait for your Script to finish executing before firing and processing further events</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Non-Blocking: Scalarizr will not wait for your Script to finish executing before firing and processing further events</td>
+</tr>
+<tr class="row-even"><td>Timeout</td>
+<td>Length in seconds before the script should timeout. This should be increased for complex actions, especially those that downlada from the internet.</td>
+</tr>
+<tr class="row-odd"><td>Order</td>
+<td>Sequence in which rules must be executed. This defaults to the order in which the rules are created.</td>
+</tr>
+<tr class="row-even"><td>Run As</td>
+<td>For Scripts and Chef only defines the user to execute the as on the server.</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 
            </div>
