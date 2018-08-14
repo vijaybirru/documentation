@@ -46,35 +46,28 @@ You have a few options when creating a Global Variable:
    :scale: 70%
 
 .. |LOCK| image:: images/locked.png
-   :scale: 60%
+   :scale: 55%
 
 .. |MAN| image:: images/mandatory.png
-   :scale: 60%
+   :scale: 25%
 
 .. |HID| image:: images/hidden.png
-   :scale: 60%
+   :scale: 25%
 
-=============== ========    =============================================================
- Item           Type        Description
-=============== ========    =============================================================
-Name            Metadata      Name of the Global Variable
+.. csv-table::
+   :header-rows: 1
+   :widths: 20,10,70
 
-Category        Metadata      Category that the Global Variable falls into
-
-Description     Metadata      Description of the Global Variable
-
-|HID| Hidden    Flag          The value cannot be seen at a lower scope
-
-|LOCK| Locked   Flag          The value cannot be changed at a lower scope
-
-|MAN| Mandatory Flag          The value must be set at a specific scope
-
-Custom          Format        A regular expression can be created for pattern validation
-
-JSON            Format        The values must be in a JSON format
-
-List            Format        The values will be presented in a dropdown
-=============== ========    =============================================================
+   Item,Type,Description
+   Name,Metadata,Name of the Global Variable
+   Category,Metadata,Category that the Global Variable falls into
+   Description,Metadata,Description of the Global Variable
+   |HID| Hidden,Flag,The value cannot be seen at a lower scope
+   |LOCK| Locked,Flag,The value cannot be changed at a lower scope. However if a required scope is set the value can be changed at that scope.
+   |MAN| Mandatory,Flag,The value must be set at a specific scope
+   Custom,Format,A regular expression can be created for pattern validation
+   JSON,Format,The values must be in a JSON format
+   List,Format,The values will be presented in a dropdown
 
 Once the Global Variable is created, click save and you will be able to use it in the various use cases below.
 

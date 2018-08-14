@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -263,6 +262,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#global-variables-in-roles">Global Variables in Roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#chef-in-roles">Chef in Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#role-permissions">Role Permissions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
 </ul>
@@ -289,6 +289,7 @@
 <li class="toctree-l1"><a class="reference internal" href="#global-variables-in-roles">Global Variables in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#chef-in-roles">Chef in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#role-permissions">Role Permissions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
 </ul>
@@ -384,8 +385,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/orchestration.html">Scalr/Account/Environment Level Orchestration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#creating-orchestration-rules">Creating Orchestration Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#target">Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#advanced-configuration">Advanced Configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html">Webhooks and Endpoints</a><ul>
@@ -435,7 +439,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#executing-scripts">Executing Scripts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#farm-role-orchestration">Farm Role Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#using-scripts-in-orchestration">Using Scripts In Orchestration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#manually-on-farms-farm-roles-or-servers">Manually On Farms, Farm Roles, or Servers</a></li>
 </ul>
 </li>
@@ -1007,7 +1011,7 @@
 <td>Sequence in which rules must be executed. This defaults to the order in which the rules are created.</td>
 </tr>
 <tr class="row-even"><td>Run As</td>
-<td>For Scripts and Chef only defines the user to execute the as on the server.</td>
+<td>For Scripts and Chef only defines the user to execute the script as on the server.</td>
 </tr>
 </tbody>
 </table>
@@ -1015,13 +1019,45 @@
 </div>
 <div class="section" id="global-variables-in-roles">
 <h1>Global Variables in Roles<a class="headerlink" href="#global-variables-in-roles" title="Permalink to this headline">¶</a></h1>
-<p>When defining Roles you can configure aspects of the way <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a> are used in the Role.</p>
+<p>When defining Roles you can define new <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a> for use in scripts etc as described in the <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a> section.
+You may also need to set the value of Global Variables that have been defined at the same or higher scopes. Global Variables defined at the same or higher scope as the role are automatically associated with the Role and will be visible when clicking on the Global Variables tab of the Role screen.</p>
+<a class="reference internal image-reference" href="../_images/role_gv.png"><img alt="../_images/role_gv.png" src="../_images/role_gv.png" style="width: 743.0px; height: 461.5px;" /></a>
+<p>If the value for a variable is already set then the Role can use that value or overwrite it if the variable is configured to allow it.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Variable Unlocked. Role can set the value to be inherited by lower scopes, but ALL lower scopes can overwrite the value</td>
+<td><a class="reference internal" href="../_images/gv1.png"><img alt="GV1" src="../_images/gv1.png" style="width: 254.7px; height: 250.2px;" /></a></td>
+</tr>
+<tr class="row-even"><td>Value can be set at any scope down to the specified scope. Role can set the value to be be inherited by the lower scopes. Only lower scopes as far as the specified scope will be able to overwrite the value.</td>
+<td><a class="reference internal" href="../_images/gv2.png"><img alt="GV2" src="../_images/gv2.png" style="width: 255.89999999999998px; height: 247.79999999999998px;" /></a></td>
+</tr>
+<tr class="row-odd"><td>Value must be set at this scope. A value must be supplied and an error will occur if you attempt to save the Role, save any Farm using the role, or launch a Farm that uses the Role if the value is not set. Lower scopes will NOT be able to overwrite</td>
+<td><a class="reference internal" href="../_images/gv3.png"><img alt="GV3" src="../_images/gv3.png" style="width: 258.3px; height: 262.8px;" /></a></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="ansible-tower-in-roles">
 <h1>Ansible Tower in Roles<a class="headerlink" href="#ansible-tower-in-roles" title="Permalink to this headline">¶</a></h1>
+<p>Ansible Tower can be configured at Scalr or Account scope to be used as means to bootstrap servers. See <a class="reference internal" href="../ansible/index.html#ansible"><span class="std std-ref">Ansible Integration</span></a> for more details.</p>
+<p>If an Ansilble tower server is configured at the or above the scope for the Role, the Ansible Tower tab will be available on the Role configuration screen. This option allows you to enable Ansible Tower Bootstrap for the Role and define bootstrap configuration to be used.</p>
+<a class="reference internal image-reference" href="../_images/role_ansible.png"><img alt="../_images/role_ansible.png" src="../_images/role_ansible.png" style="width: 711.5px; height: 487.0px;" /></a>
 </div>
 <div class="section" id="chef-in-roles">
 <h1>Chef in Roles<a class="headerlink" href="#chef-in-roles" title="Permalink to this headline">¶</a></h1>
+<p>Chef Servers can be configured at Scalr or Account scope to be used as means to bootstrap servers. See <a class="reference internal" href="../chef/index.html#chef"><span class="std std-ref">Chef Integration</span></a> for more details.</p>
+<p>If a Chef server is configured at the or above the scope for the Role, the tab will be available on the Role configuration screen. This option allows you to enable Chef Bootstrap for the Role and define either a Chef Server or Chef Solo Cookbook to be used.</p>
+<p><a class="reference internal" href="../_images/role_chef1.png"><img alt="CHEF1" src="../_images/role_chef1.png" style="width: 467.5px; height: 487.0px;" /></a> <a class="reference internal" href="../_images/role_chef2.png"><img alt="CHEF2" src="../_images/role_chef2.png" style="width: 467.5px; height: 487.0px;" /></a></p>
+</div>
+<div class="section" id="role-permissions">
+<h1>Role Permissions<a class="headerlink" href="#role-permissions" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></p>
+<p>Account scope roles can optionally have permissions set to define which Environments within the Account can have access to the Role. By default all Environments will have access.</p>
+<a class="reference internal image-reference" href="../_images/role_perm.png"><img alt="../_images/role_perm.png" src="../_images/role_perm.png" style="width: 474.5px; height: 487.0px;" /></a>
 </div>
 
 
@@ -1080,10 +1116,7 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

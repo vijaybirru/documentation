@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -253,8 +252,15 @@
 <li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#editing-roles">Editing Roles</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#target">Target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#action">Action</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#advanced-configuration">Advanced Configuration</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
@@ -272,8 +278,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#editing-roles">Editing Roles</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#target">Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#advanced-configuration">Advanced Configuration</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
@@ -282,16 +295,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../farms/index.html">Farm Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-roles">Farm Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-role-orchestration">Farm Role Orchestration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#events-reference">Events Reference</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#custom-events">Custom Events</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#creating-a-custom-event">Creating a Custom Event</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#firing-a-custom-event">Firing a Custom Event</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-role-orchestration">Farm Role Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#target">Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#advanced-configuration">Advanced Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/index.html#network-and-security-group-configuration">Network and Security Group configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#advanced-options">Advanced Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#ansible-in-farm-roles">Ansible in Farm Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#chef-in-farm-roles">Chef in Farm Roles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/launch.html">Farm Launching and Managing Servers</a></li>
@@ -371,8 +383,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/orchestration.html">Scalr/Account/Environment Level Orchestration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#creating-orchestration-rules">Creating Orchestration Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#target">Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#advanced-configuration">Advanced Configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html">Webhooks and Endpoints</a><ul>
@@ -422,7 +437,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#executing-scripts">Executing Scripts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#farm-role-orchestration">Farm Role Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#using-scripts-in-orchestration">Using Scripts In Orchestration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#manually-on-farms-farm-roles-or-servers">Manually On Farms, Farm Roles, or Servers</a></li>
 </ul>
 </li>
@@ -450,7 +465,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../custom_events/index.html#creating-a-custom-event">Creating a Custom Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom_events/index.html#firing-a-custom-event">Firing a Custom Event</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Demand Management</span></p>
 <ul>
@@ -677,11 +696,11 @@
 <p>Then click on Global Variables: <a class="reference internal" href="../_images/gv.png"><img alt="GV" src="../_images/gv.png" style="width: 130.9px; height: 26.599999999999998px;" /></a></p>
 <p>You have a few options when creating a Global Variable:</p>
 <a class="reference internal image-reference" href="../_images/new_gv.png"><img alt="../_images/new_gv.png" src="../_images/new_gv.png" style="width: 271.59999999999997px; height: 381.5px;" /></a>
-<table border="1" class="docutils">
+<table border="1" class="colwidths-given docutils">
 <colgroup>
-<col width="18%" />
+<col width="20%" />
 <col width="10%" />
-<col width="73%" />
+<col width="70%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Item</th>
@@ -702,15 +721,15 @@
 <td>Metadata</td>
 <td>Description of the Global Variable</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../_images/hidden.png"><img alt="HID" src="../_images/hidden.png" style="width: 29.4px; height: 22.2px;" /></a> Hidden</td>
+<tr class="row-odd"><td><a class="reference internal" href="../_images/hidden.png"><img alt="HID" src="../_images/hidden.png" style="width: 34.0px; height: 27.75px;" /></a> Hidden</td>
 <td>Flag</td>
 <td>The value cannot be seen at a lower scope</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="../_images/locked.png"><img alt="LOCK" src="../_images/locked.png" style="width: 47.4px; height: 39.6px;" /></a> Locked</td>
+<tr class="row-even"><td><a class="reference internal" href="../_images/locked.png"><img alt="LOCK" src="../_images/locked.png" style="width: 43.45px; height: 36.300000000000004px;" /></a> Locked</td>
 <td>Flag</td>
-<td>The value cannot be changed at a lower scope</td>
+<td>The value cannot be changed at a lower scope. However if a required scope is set the value can be changed at that scope.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="../_images/mandatory.png"><img alt="MAN" src="../_images/mandatory.png" style="width: 28.799999999999997px; height: 19.8px;" /></a> Mandatory</td>
+<tr class="row-odd"><td><a class="reference internal" href="../_images/mandatory.png"><img alt="MAN" src="../_images/mandatory.png" style="width: 33.5px; height: 25.75px;" /></a> Mandatory</td>
 <td>Flag</td>
 <td>The value must be set at a specific scope</td>
 </tr>
@@ -1126,10 +1145,7 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

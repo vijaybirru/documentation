@@ -90,15 +90,59 @@ To configure Orchestration Rules click on the Orchestration tab on the left side
 Global Variables in Roles
 =========================
 
-When defining Roles you can configure aspects of the way :ref:`gvs` are used in the Role.
+When defining Roles you can define new :ref:`gvs` for use in scripts etc as described in the :ref:`gvs` section.
+You may also need to set the value of Global Variables that have been defined at the same or higher scopes. Global Variables defined at the same or higher scope as the role are automatically associated with the Role and will be visible when clicking on the Global Variables tab of the Role screen.
 
+.. image:: images/role_gv.png
+   :scale: 50%
+
+If the value for a variable is already set then the Role can use that value or overwrite it if the variable is configured to allow it.
+
+.. |GV1| image:: images/gv1.png
+         :scale: 30%
+
+.. |GV2| image:: images/gv2.png
+         :scale: 30%
+
+.. |GV3| image:: images/gv3.png
+         :scale: 30%
+
+.. csv-table::
+
+   "Variable Unlocked. Role can set the value to be inherited by lower scopes, but ALL lower scopes can overwrite the value",|GV1|
+   "Value can be set at any scope down to the specified scope. Role can set the value to be be inherited by the lower scopes. Only lower scopes as far as the specified scope will be able to overwrite the value.",|GV2|
+   "Value must be set at this scope. A value must be supplied and an error will occur if you attempt to save the Role, save any Farm using the role, or launch a Farm that uses the Role if the value is not set. Lower scopes will NOT be able to overwrite",|GV3|
 
 Ansible Tower in Roles
 ======================
 
-.. Include file from Ansible Tower page
+Ansible Tower can be configured at |SCALR| or |ACCOUNT| scope to be used as means to bootstrap servers. See :ref:`ansible` for more details.
+
+If an Ansilble tower server is configured at the or above the scope for the Role, the Ansible Tower tab will be available on the Role configuration screen. This option allows you to enable Ansible Tower Bootstrap for the Role and define bootstrap configuration to be used.
+
+.. image:: images/role_ansible.png
+   :scale: 50%
 
 Chef in Roles
 =============
 
-.. Include file from Chef page
+Chef Servers can be configured at |SCALR| or |ACCOUNT| scope to be used as means to bootstrap servers. See :ref:`chef` for more details.
+
+If a Chef server is configured at the or above the scope for the Role, the tab will be available on the Role configuration screen. This option allows you to enable Chef Bootstrap for the Role and define either a Chef Server or Chef Solo Cookbook to be used.
+
+.. |CHEF1| image:: images/role_chef1.png
+           :scale: 50%
+
+.. |CHEF2| image:: images/role_chef2.png
+           :scale: 50%
+
+|CHEF1| |CHEF2|
+
+Role Permissions
+================
+|SCOPE_ACC|
+
+|ACCOUNT| scope roles can optionally have permissions set to define which |ENVIRONMENTS| within the |ACCOUNT| can have access to the Role. By default all |ENVIRONMENTS| will have access.
+
+.. image:: images/role_perm.png
+   :scale: 50%
