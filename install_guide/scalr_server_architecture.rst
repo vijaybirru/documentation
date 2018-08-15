@@ -57,4 +57,6 @@ Scalr can be configured to specify the connection option (Public or Local) or a 
 
 In both cases the firewall protecting instances must be opened to permit access to the required ports on the Scalr server and the managed instances as follows.
 
-.. include:: ports_generic.rst
+.. include:: /reference/index.rst
+   :start-after: net-req-start:
+   :end-before: net-req-end

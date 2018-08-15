@@ -239,33 +239,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Images and Roles in Scalr</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Registering Images</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#aws-images">AWS Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#azure-images">Azure Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gce-images">GCE Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#openstack-images">Openstack Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#vmware-images">VMware Images</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="creating_roles.html">Creating Roles</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="creating_roles.html#editing-roles">Editing Roles</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="creating_roles.html#role-orchestration">Role Orchestration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="creating_roles.html#trigger-event">Trigger Event</a></li>
-<li class="toctree-l3"><a class="reference internal" href="creating_roles.html#target">Target</a></li>
-<li class="toctree-l3"><a class="reference internal" href="creating_roles.html#action">Action</a></li>
-<li class="toctree-l3"><a class="reference internal" href="creating_roles.html#advanced-configuration">Advanced Configuration</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_roles.html#chef-in-roles">Chef in Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Images and Roles in Scalr</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Registering Images</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#aws-images">AWS Images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#azure-images">Azure Images</a></li>
@@ -288,7 +262,11 @@
 <li class="toctree-l1"><a class="reference internal" href="creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creating_roles.html#chef-in-roles">Chef in Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="creating_roles.html#role-permissions">Role Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create_non_scalr.html">Creating Images and Roles from Non-Scalr Servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="create_non_scalr.html#prerequisites">Prerequisites</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Infrastructure Management</span></p>
@@ -491,14 +469,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Importing Cloud Infrastructure</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html">Discovery Manager</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html">Introduction to Importing Cloud Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html#discovery-manager">Discovery Manager</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#importing-servers">Importing Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#installing-scalarizer">Installing Scalarizer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#importing-containers">Importing Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#discovering-containers">Discovering Containers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#migrate-servers-from-farm-role-to-farm-role">Migrate Servers from Farm Role to Farm Role</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../discovery/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
 <ul>
@@ -648,8 +626,6 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="index.html">Images and Roles in Scalr</a> &raquo;</li>
-        
       <li>Registering Images</li>
     
     
@@ -670,7 +646,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="registering-images">
-<span id="register-images"></span><h1>Registering Images<a class="headerlink" href="#registering-images" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Registering Images<a class="headerlink" href="#registering-images" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
 <p>Step one of using Scalr to configure and deploy infrastructure is to register one or more images that you wish to use as the basis for the servers you are going to deploy. As mentioned previously, an Image in Scalr is simply a meta data record of an actual Image or Template in a cloud that you use. It is a 1:1 mapping.</p>
 <p>Images in Scalr have slight differences to they way they map to cloud images depending on the Cloud the actual image or template is in.</p>
@@ -711,7 +687,7 @@
 </table>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">It is recommended that images registered in Scalr should have Scalarizer installed. If you Intend to use images with Scalr <a class="reference internal" href="creating_roles.html#role-orchestration"><span class="std std-ref">Role Orchestration</span></a> or <a class="reference internal" href="../farms/index.html#farm-role-orchestration"><span class="std std-ref">Farm Role Orchestration</span></a> the Scalarizer agent MUST be installed. If you do not have Scalarizer installed in any images see <a class="reference internal" href="creating_images_nonscalr.html#images-from-servers"><span class="std std-ref">Creating Images and Roles from Non-Scalr Servers</span></a>.  See <a class="reference internal" href="../discovery/index.html#discovery-manager"><span class="std std-ref">Discovery Manager</span></a> for more details on agentless options.</p>
+<p class="last">It is recommended that images registered in Scalr should have Scalarizer installed. If you Intend to use images with Scalr <a class="reference internal" href="creating_roles.html#role-orchestration"><span class="std std-ref">Role Orchestration</span></a> or <a class="reference internal" href="../farms/index.html#farm-role-orchestration"><span class="std std-ref">Farm Role Orchestration</span></a> the Scalarizer agent MUST be installed. If you do not have Scalarizer installed in any images see <a class="reference internal" href="create_non_scalr.html#images-from-servers"><span class="std std-ref">Creating Images and Roles from Non-Scalr Servers</span></a>.  See <a class="reference internal" href="../discovery/index.html#discovery-manager"><span class="std std-ref">Discovery Manager</span></a> for more details on agentless options.</p>
 </div>
 <p>Images can be registered at any scope in Scalr and made available to the lower scopes.</p>
 <p>Image functionality is accessed via Images in the Main menu or Bookmarks bar at any scope. Note that you can jump straight to New Image from the main menu or click on “Images” and then “New Image” at the top of the list.</p>
@@ -738,8 +714,8 @@
 <p>In Scalr select the Credentials and Location of the image, enter the AMI ID and click on “NEXT”. You will see a screen similar to this.</p>
 <a class="reference internal image-reference" href="../_images/new_aws.png"><img alt="../_images/new_aws.png" src="../_images/new_aws.png" style="width: 594.4px; height: 189.20000000000002px;" /></a>
 <p>Add the additional details and set the requited options as described below and the click on “REGISTER”</p>
-<table border="1" class="colwidths-given docutils" id="id1">
-<caption><span class="caption-text">AWS Image Options</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id2">
+<caption><span class="caption-text">AWS Image Options</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="20%" />
 <col width="80%" />
@@ -767,15 +743,15 @@
 </div>
 <div class="section" id="azure-images">
 <h2>Azure Images<a class="headerlink" href="#azure-images" title="Permalink to this headline">¶</a></h2>
-<p><strong>Image ID in Azure</strong> : This is the URN of the image in the form <code class="docutils literal notranslate"><span class="pre">PublisherName/Offer/SKUs/verison</span></code>. URN’s can only be obtained via the Azure API.</p>
+<p><strong>Image ID in Azure</strong> : This is the URN of the image in the form <code class="docutils literal notranslate"><span class="pre">PublisherName/Offer/SKUs/version</span></code>. URN’s can only be obtained via the Azure API.</p>
 <ul class="simple">
 <li>Using the Azure API list available images and copy the URN you require. The API command is <code class="docutils literal notranslate"><span class="pre">az</span> <span class="pre">vm</span> <span class="pre">image</span> <span class="pre">list</span></code></li>
 </ul>
 <p>In Scalr add the CLOUD LOCATION if this is NOT a Marketplace image, and enter the image URN. Then click on “NEXT”. You will see a screen similar to this.</p>
 <a class="reference internal image-reference" href="../_images/new_azure.png"><img alt="../_images/new_azure.png" src="../_images/new_azure.png" style="width: 594.4px; height: 272.0px;" /></a>
 <p>Add the additional details and set the requited options as described below and the click on “REGISTER”</p>
-<table border="1" class="colwidths-given docutils" id="id2">
-<caption><span class="caption-text">Azure Image Options</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id3">
+<caption><span class="caption-text">Azure Image Options</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="20%" />
 <col width="80%" />
@@ -812,8 +788,8 @@
 <p>In Scalr paste the URI into the CLOUD IMAGE ID field and click on “NEXT”. You will see a screen similar to this.</p>
 <a class="reference internal image-reference" href="../_images/new_gce.png"><img alt="../_images/new_gce.png" src="../_images/new_gce.png" style="width: 594.4px; height: 204.4px;" /></a>
 <p>Add the additional details and set the requited options as described below and the click on “REGISTER”.</p>
-<table border="1" class="colwidths-given docutils" id="id3">
-<caption><span class="caption-text">GCE Image Options</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id4">
+<caption><span class="caption-text">GCE Image Options</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="20%" />
 <col width="80%" />
@@ -854,8 +830,8 @@
 <p>Note: If you do not have regions set up in your Openstack environment then use “RegionOne”.</p>
 <a class="reference internal image-reference" href="../_images/new_openstack.png"><img alt="../_images/new_openstack.png" src="../_images/new_openstack.png" style="width: 594.4px; height: 216.4px;" /></a>
 <p>Add the additional details and set the requited options as described below and the click on “REGISTER”.</p>
-<table border="1" class="colwidths-given docutils" id="id4">
-<caption><span class="caption-text">Openstack Image Options</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id5">
+<caption><span class="caption-text">Openstack Image Options</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="20%" />
 <col width="80%" />
@@ -891,8 +867,8 @@
 <p>Click on “NEXT”. You will see a screen similar to this.</p>
 <a class="reference internal image-reference" href="../_images/new_vmware_2.png"><img alt="../_images/new_vmware_2.png" src="../_images/new_vmware_2.png" style="width: 594.4px; height: 266.0px;" /></a>
 <p>Add the additional details and set the requited options as described below and the click on “REGISTER”.</p>
-<table border="1" class="colwidths-given docutils" id="id5">
-<caption><span class="caption-text">VMware Image Options</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id6">
+<caption><span class="caption-text">VMware Image Options</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="20%" />
 <col width="80%" />

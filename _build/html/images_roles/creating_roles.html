@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating Images and Roles from Non-Scalr Servers" href="creating_images_nonscalr.html" />
+    <link rel="next" title="Creating Images and Roles from Non-Scalr Servers" href="create_non_scalr.html" />
     <link rel="prev" title="Registering Images" href="registering_images.html" /> 
 
   
@@ -239,34 +239,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Images and Roles in Scalr</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="registering_images.html">Registering Images</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="registering_images.html#aws-images">AWS Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="registering_images.html#azure-images">Azure Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="registering_images.html#gce-images">GCE Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="registering_images.html#openstack-images">Openstack Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="registering_images.html#vmware-images">VMware Images</a></li>
-</ul>
-</li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Creating Roles</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#editing-roles">Editing Roles</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#role-orchestration">Role Orchestration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#trigger-event">Trigger Event</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#target">Target</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#action">Action</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#advanced-configuration">Advanced Configuration</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#global-variables-in-roles">Global Variables in Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#chef-in-roles">Chef in Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#role-permissions">Role Permissions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Images and Roles in Scalr</a></li>
 <li class="toctree-l1"><a class="reference internal" href="registering_images.html">Registering Images</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="registering_images.html#aws-images">AWS Images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="registering_images.html#azure-images">Azure Images</a></li>
@@ -290,7 +263,7 @@
 <li class="toctree-l1"><a class="reference internal" href="#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#chef-in-roles">Chef in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#role-permissions">Role Permissions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create_non_scalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Infrastructure Management</span></p>
@@ -493,14 +466,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Importing Cloud Infrastructure</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html">Discovery Manager</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html">Introduction to Importing Cloud Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html#discovery-manager">Discovery Manager</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#importing-servers">Importing Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#installing-scalarizer">Installing Scalarizer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#importing-containers">Importing Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#discovering-containers">Discovering Containers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#migrate-servers-from-farm-role-to-farm-role">Migrate Servers from Farm Role to Farm Role</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../discovery/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
 <ul>
@@ -649,8 +622,6 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="index.html">Images and Roles in Scalr</a> &raquo;</li>
         
       <li>Creating Roles</li>
     
@@ -1068,7 +1039,7 @@ You may also need to set the value of Global Variables that have been defined at
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="creating_images_nonscalr.html" class="btn btn-neutral float-right" title="Creating Images and Roles from Non-Scalr Servers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="create_non_scalr.html" class="btn btn-neutral float-right" title="Creating Images and Roles from Non-Scalr Servers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="registering_images.html" class="btn btn-neutral" title="Registering Images" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

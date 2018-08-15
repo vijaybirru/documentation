@@ -239,34 +239,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Images and Roles in Scalr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="registering_images.html">Registering Images</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="registering_images.html#aws-images">AWS Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="registering_images.html#azure-images">Azure Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="registering_images.html#gce-images">GCE Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="registering_images.html#openstack-images">Openstack Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="registering_images.html#vmware-images">VMware Images</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="creating_roles.html">Creating Roles</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="creating_roles.html#editing-roles">Editing Roles</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="creating_roles.html#role-orchestration">Role Orchestration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="creating_roles.html#trigger-event">Trigger Event</a></li>
-<li class="toctree-l3"><a class="reference internal" href="creating_roles.html#target">Target</a></li>
-<li class="toctree-l3"><a class="reference internal" href="creating_roles.html#action">Action</a></li>
-<li class="toctree-l3"><a class="reference internal" href="creating_roles.html#advanced-configuration">Advanced Configuration</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_roles.html#chef-in-roles">Chef in Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_roles.html#role-permissions">Role Permissions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Images and Roles in Scalr</a></li>
 <li class="toctree-l1"><a class="reference internal" href="registering_images.html">Registering Images</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="registering_images.html#aws-images">AWS Images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="registering_images.html#azure-images">Azure Images</a></li>
@@ -290,7 +263,7 @@
 <li class="toctree-l1"><a class="reference internal" href="creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creating_roles.html#chef-in-roles">Chef in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="creating_roles.html#role-permissions">Role Permissions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create_non_scalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Infrastructure Management</span></p>
@@ -493,14 +466,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Importing Cloud Infrastructure</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html">Discovery Manager</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html">Introduction to Importing Cloud Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html#discovery-manager">Discovery Manager</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#importing-servers">Importing Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#installing-scalarizer">Installing Scalarizer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#importing-containers">Importing Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#discovering-containers">Discovering Containers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#migrate-servers-from-farm-role-to-farm-role">Migrate Servers from Farm Role to Farm Role</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../discovery/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
 <ul>
@@ -690,19 +663,12 @@
 <p>Images and Roles can be configured at all three scopes within Scalr and are inherited by the lower scopes. Roles can link to Images from the same or higher scopes. Images and Roles can only be edited at the scope where they were created, but they can be cloned at lower scopes and the can be promoted from lower scopes to higher scopes.</p>
 <a class="reference internal image-reference" href="../_images/Images_Roles.png"><img alt="../_images/Images_Roles.png" src="../_images/Images_Roles.png" style="width: 569.0px; height: 535.5px;" /></a>
 <p>Please work through the sections listed below to understand the full details of working with Images and Roles.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="registering_images.html">Registering Images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creating_roles.html">Creating Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creating_roles.html#role-orchestration">Role Orchestration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creating_roles.html#chef-in-roles">Chef in Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creating_roles.html#role-permissions">Role Permissions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
+<ul class="simple">
+<li><a class="reference internal" href="registering_images.html#registering-images"><span class="std std-ref">Registering Images</span></a></li>
+<li><a class="reference internal" href="creating_roles.html#roles"><span class="std std-ref">Creating Roles</span></a></li>
+<li><a class="reference internal" href="multi_cloud.html#multicloud-roles"><span class="std std-ref">Multi-cloud Roles</span></a></li>
+<li><a class="reference internal" href="create_non_scalr.html#images-from-servers"><span class="std std-ref">Creating Images and Roles from Non-Scalr Servers</span></a></li>
 </ul>
-</div>
 </div>
 
 

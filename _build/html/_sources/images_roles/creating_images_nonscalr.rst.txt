@@ -4,3 +4,5 @@
 
 Creating Images and Roles from Non-Scalr Servers
 ================================================
+
+|SCOPE_ENV|

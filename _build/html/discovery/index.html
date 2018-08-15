@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Discovery Manager &mdash; Scalr 0.01 documentation</title>
+  <title>Introduction to Importing Cloud Infrastructure &mdash; Scalr 0.01 documentation</title>
   
 
   
@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Creating Images and Roles from Non-Scalr Servers" href="creating_images_nonscalr.html" />
+    <link rel="next" title="Scalr API and CLI" href="../api/index.html" />
     <link rel="prev" title="Custom Metrics and Scaling" href="../scaling/custom_scaling.html" /> 
 
   
@@ -239,33 +239,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#aws-images">AWS Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#azure-images">Azure Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#gce-images">GCE Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#openstack-images">Openstack Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#editing-roles">Editing Roles</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#trigger-event">Trigger Event</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#target">Target</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#action">Action</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#advanced-configuration">Advanced Configuration</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#aws-images">AWS Images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#azure-images">Azure Images</a></li>
@@ -288,7 +262,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-permissions">Role Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/create_non_scalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Infrastructure Management</span></p>
@@ -491,14 +466,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Importing Cloud Infrastructure</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Discovery Manager</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to Importing Cloud Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#discovery-manager">Discovery Manager</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#importing-servers">Importing Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installing-scalarizer">Installing Scalarizer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#importing-containers">Importing Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#discovering-containers">Discovering Containers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#migrate-servers-from-farm-role-to-farm-role">Migrate Servers from Farm Role to Farm Role</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
 <ul>
@@ -648,7 +623,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Discovery Manager</li>
+      <li>Introduction to Importing Cloud Infrastructure</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -667,7 +642,40 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="discovery-manager">
+  <div class="section" id="introduction-to-importing-cloud-infrastructure">
+<h1>Introduction to Importing Cloud Infrastructure<a class="headerlink" href="#introduction-to-importing-cloud-infrastructure" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
+<p>If you have read <a class="reference internal" href="../images_roles/registering_images.html#registering-images"><span class="std std-ref">Registering Images</span></a> and <a class="reference internal" href="../images_roles/creating_roles.html#roles"><span class="std std-ref">Creating Roles</span></a> already you will understand the fundamental building blocks in Scalr that are required to deploy servers to the cloud. However Scalr is often deployed after customers already have some cloud servers deployed that they want to manage or utilise in Scalr. There are number of options available in Scalr for bringing your existing infrastructure under the management control of Scalr as follows.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Option</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Import Existing Servers</td>
+<td>Running servers are added to Scalr and associated with a Farm Role and Farm. Scalarizer is NOT installed by this process.</td>
+</tr>
+<tr class="row-odd"><td>Install Scalrizer</td>
+<td>Installs Scalarizer onto imported servers to enable the full fucntionality of Scalr</td>
+</tr>
+<tr class="row-even"><td>Snapshot and Create Image/Role</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Create Image from Non-Scalr Server</td>
+<td>This option will install the scalarizer agent, take a snapshot to form a new image and register the image in Scalr.</td>
+</tr>
+<tr class="row-even"><td>Create Role from Non-Scalr Server</td>
+<td>This is an extension to “Create Image from Non-Scalr Server” which performs all the same steps and also creates a Role associated with the Image.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="discovery-manager">
 <span id="id1"></span><h1>Discovery Manager<a class="headerlink" href="#discovery-manager" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="importing-servers">
 <h2>Importing Servers<a class="headerlink" href="#importing-servers" title="Permalink to this headline">¶</a></h2>
@@ -675,8 +683,8 @@
 <div class="section" id="installing-scalarizer">
 <h2>Installing Scalarizer<a class="headerlink" href="#installing-scalarizer" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="importing-containers">
-<h2>Importing Containers<a class="headerlink" href="#importing-containers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="discovering-containers">
+<h2>Discovering Containers<a class="headerlink" href="#discovering-containers" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="migrate-servers-from-farm-role-to-farm-role">
 <h2>Migrate Servers from Farm Role to Farm Role<a class="headerlink" href="#migrate-servers-from-farm-role-to-farm-role" title="Permalink to this headline">¶</a></h2>
@@ -691,7 +699,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="creating_images_nonscalr.html" class="btn btn-neutral float-right" title="Creating Images and Roles from Non-Scalr Servers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../api/index.html" class="btn btn-neutral float-right" title="Scalr API and CLI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../scaling/custom_scaling.html" class="btn btn-neutral" title="Custom Metrics and Scaling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

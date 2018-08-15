@@ -1,7 +1,7 @@
 .. include:: ../GLOBAL.rst
 
 3 Tier App Tutorial (cloud agnostic, orchestration automation)
-==========
+==============================================================
 
 Objective
 ^^^^^^^^^
@@ -147,7 +147,7 @@ Target: Triggering Server
 Action: Scalr Script -> Nginx Config
 Note: This will configure Nginx on this server when it provisions.
 
-.. image:: images/Screenshot-7.jpg
+.. image:: images/Screenshot-7.png
    :scale: 40%
 
 * Select the SECURITY tab and make sure either your “Default” Security Group has port 80 open, or add/create a new security rule that opens port 80.

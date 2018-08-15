@@ -1,0 +1,6 @@
+Option,Description
+Import Existing Servers,Running servers are added to Scalr and associated with a Farm Role and Farm. Scalarizer is NOT installed by this process. 
+Install Scalrizer,Installs Scalarizer onto imported servers to enable the full fucntionality of Scalr
+Snapshot and Create Image/Role,
+Create Image from Non-Scalr Server,"This option will install the scalarizer agent, take a snapshot to form a new image and register the image in Scalr."
+Create Role from Non-Scalr Server,"This is an extension to ""Create Image from Non-Scalr Server"" which performs all the same steps and also creates a Role associated with the Image. "

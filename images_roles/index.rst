@@ -15,10 +15,7 @@ Images and Roles are the two fundamental features of Scalr that allow you to bui
 
 Please work through the sections listed below to understand the full details of working with Images and Roles.
 
-.. toctree::
-   :titlesonly:
-
-   registering_images
-   creating_roles
-   creating_images_nonscalr
-   multi_cloud
+* :ref:`registering_images`
+* :ref:`roles`
+* :ref:`multicloud_roles`
+* :ref:`images_from_servers`
