@@ -95,12 +95,11 @@ Scalr Documentation!
 
 .. toctree::
    :maxdepth: 3
-   :caption: Demand Management
+   :caption: Scaling Workloads
 
    scaling/index
    scaling/manual
    scaling/auto
-   scaling/custom_scaling
 
 .. toctree::
    :maxdepth: 3

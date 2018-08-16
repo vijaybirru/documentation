@@ -80,9 +80,6 @@ You can also schedule the time that Scalarizr should check for updates, this fol
 Farm Role:
 ^^^^^^^^^^
 
-.. |WRENCH| image:: images/wrench.png
-         :scale: 80%
-
 To update these setting for a single Farm Role, go to the Farms page, find your farm, click on the |WRENCH| , click on the Farm Role you want to update, and then go to the bottom of the Advanced tab:
 
 .. image:: images/farm_role_advanced_settings.png
@@ -169,9 +166,12 @@ The list retuned by ListRoles may be filtered using the following parameters:
 
 Example Output:
 
-.. code-block:: JSON
+.. code-block:: sh
 
-          root@haproxy-1:~# szradm queryenv --format=json list-roles
+      root@haproxy-1:~# szradm queryenv --format=json list-roles
+
+.. code-block:: json
+
           {
               "roles": [
                   {
@@ -325,9 +325,12 @@ The ListGlobalVariables Queryenv call returns a list of Global Variables that ar
 
   Private Global Variables are flagged to ensure you don't misuse them.
 
-.. code-block:: JSON
+.. code-block:: bash
 
-    user@server:~# szradm queryenv --format=json list-global-variables
+   user@server:~# szradm queryenv --format=json list-global-variables
+
+.. code-block:: json
+
     {
       "variables": {
           "private_values": {},
@@ -388,9 +391,12 @@ The GetServerUserData Queryenv call returns information about the Server (Instan
 
   Most of the useful information returned by this call is also found in szradm queryenv list-global-variables, which you might want to use instead.
 
-.. code-block:: JSON
+.. code-block:: bash
 
-     root@ec2-54-174-97-210:~# szradm queryenv --format=json get-server-user-data
+   root@ec2-54-174-97-210:~# szradm queryenv --format=json get-server-user-data
+
+.. code-block:: json
+
      {
          "user-data": {
              "values": {
@@ -435,10 +441,13 @@ You must pass the following options when calling the SetGlobalVariable Queryenv 
    :file: csv/query_env_set_gv.csv
    :widths: 20,80
 
-.. code-block:: JSON
+.. code-block:: bash
 
      # Set a Global variable on the Server Scop
      root@haproxy-1:~# szradm queryenv set-global-variable scope=server param-name=ServerVar param-value=ServerValue
+
+.. code-block:: xml
+
      <?xml version="1.0" encoding="utf-8"?>
      <response>
          <variables>
@@ -446,8 +455,13 @@ You must pass the following options when calling the SetGlobalVariable Queryenv 
          </variables>
      </response>
 
+.. code-block:: bash
+
      # Set a Global Variable on the Farm-Role Scope
      root@haproxy-1:~# szradm queryenv set-global-variable scope=farmrole param-name=FarmRoleVar param-value=FarmRoleValue
+
+.. code-block:: xml
+
      <?xml version="1.0" encoding="utf-8"?>
      <response>
          <variables>
@@ -455,8 +469,13 @@ You must pass the following options when calling the SetGlobalVariable Queryenv 
          </variables>
      </response>
 
+.. code-block:: bash
+
      # List the variables that were set
      root@haproxy-1:~# szradm queryenv list-global-variables
+
+.. code-block:: xml
+
      <?xml version="1.0" encoding="utf-8"?>
      <response>
          <variables>

@@ -1,0 +1,5 @@
+Calculation Function,Description
+Average,The metric's value will be averaged across all servers.
+Sum,The metric's value will be summed across all servers.
+Maximum ,
+Minimum,

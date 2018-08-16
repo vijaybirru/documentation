@@ -24,12 +24,13 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Custom Metrics and Scaling" href="custom_scaling.html" />
+    <link rel="next" title="Introduction to Importing Cloud Infrastructure" href="../discovery/index.html" />
     <link rel="prev" title="Manual Scaling" href="manual.html" /> 
 
   
@@ -126,6 +127,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#architecture">Architecture</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#supported-operating-systems">Supported Operating Systems:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#network-requirements">Network Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/scalr_server_installation.html">Scalr Server Install</a><ul>
@@ -147,8 +149,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/scalarizr_installation.html">Scalarizr Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#about">About</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#os-requirements">OS Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#network-requirements">Network Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#supported-server-instance-operating-systems">Supported Server/Instance Operating Systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#installing-scalarizr">Installing Scalarizr</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#how-to-install-scalarizr-on-linux-images">How to Install Scalarizr on Linux Images</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#how-to-install-scalarizr-on-windows-images">How to Install Scalarizr on Windows Images</a></li>
@@ -446,7 +448,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Demand Management</span></p>
+<p class="caption"><span class="caption-text">Scaling Workloads</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Scaling Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual.html">Manual Scaling</a><ul>
@@ -456,13 +458,13 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Auto Scaling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#simple-autoscaling">Simple Autoscaling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dynamic-autoscaling">Dynamic Autoscaling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#autoscaling-configuration">Autoscaling Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#autoscaling-algorithms">Autoscaling Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#custom-scaling">Custom Scaling</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="custom_scaling.html">Custom Metrics and Scaling</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Importing Cloud Infrastructure</span></p>
 <ul>
@@ -579,6 +581,11 @@
 </ul>
 </li>
 </ul>
+<p class="caption"><span class="caption-text">Reference Section</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Supported Server/Instance Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
+</ul>
 
             
           
@@ -644,17 +651,156 @@
             
   <div class="section" id="auto-scaling">
 <span id="id1"></span><h1>Auto Scaling<a class="headerlink" href="#auto-scaling" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="definition-and-scope">
+<h2>Definition and Scope<a class="headerlink" href="#definition-and-scope" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></p>
+<p>Scalr has autoscaling built directly into the product, which introduces scaling for those clouds that do not have it as well maintains a consistent experience across all clouds. There are two types of autoscaling:</p>
+<ul class="simple">
+<li>Simple Autoscaling: Ensure that you always have a minimum number of servers up at all times.</li>
+<li>Dynamic Autoscaling: Using defined metrics Scalr will scale up or down your Farm Role(s).</li>
+</ul>
+</div>
 <div class="section" id="simple-autoscaling">
 <h2>Simple Autoscaling<a class="headerlink" href="#simple-autoscaling" title="Permalink to this headline">¶</a></h2>
+<p>Simple Autoscaling will perform the following actions:</p>
+<p>If your Running Server Count is lower than the minimum you requested, additional Servers will be launched. Such a situation could be caused by:</p>
+<ul class="simple">
+<li>Terminating a server</li>
+<li>Suspending a server</li>
+<li>A server crashing</li>
+</ul>
+<p>If your Running Server Count is higher than the Maximum you requested, existing Servers will be terminated. Such a situation could be caused by:</p>
+<ul class="simple">
+<li>Manually launching more servers in a Farm Role without updating your scaling settings.</li>
+</ul>
+<p>To enable simple autoscaling in your Farm Role, find your Farm, click on the Farm Role, go to the Scaling tab and make sure it is set to Automatic:</p>
+<a class="reference internal image-reference" href="../_images/simple_scaling.png"><img alt="../_images/simple_scaling.png" src="../_images/simple_scaling.png" style="width: 850.8px; height: 357.59999999999997px;" /></a>
+<p>In the scenario above, Scalr will always have minimum of one server and a maximum of two for this Farm Role</p>
 </div>
 <div class="section" id="dynamic-autoscaling">
 <h2>Dynamic Autoscaling<a class="headerlink" href="#dynamic-autoscaling" title="Permalink to this headline">¶</a></h2>
+<p>Dynamic Autoscaling does everything Simple Autoscaling does, except it also adds and removes Servers based on utilization or activity (e.g. CPU utilization). Scalr will poll for metrics every at least every minute depending on your configuration and use those metrics to make the scaling decisions.</p>
+<p>To enable dynamic autoscaling in your Farm Role, find your Farm, click on the Farm Role, go to the Scaling tab and make sure it is set to Automatic. Next, click on the Add Scaling Rule Option which will then present the metrics with the Server can scale by:</p>
+<a class="reference internal image-reference" href="../_images/dynamic_scaling.png"><img alt="../_images/dynamic_scaling.png" src="../_images/dynamic_scaling.png" style="width: 827.4px; height: 414.59999999999997px;" /></a>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Metric</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Load Average</td>
+<td>Load Averages can be used to scale up and down based on average system utilization. The higher the Load Average, the busier the system is.</td>
+</tr>
+<tr class="row-odd"><td>Free RAM</td>
+<td>Free RAM can be used to scale up and down based on system memory utilization. The lower the Free RAM, the busier the system is. Make sure you set thresholds that make sense given the Instance Type you chose. By default, Scalr collects only Free RAM, but you can have Scalr account for cached RAM too.</td>
+</tr>
+<tr class="row-even"><td>URL Reponse Time</td>
+<td>URL Response Time lets you scale up and down depending on how long a particular URL takes to load. The URL Response Time is collected from the Scalr Server, not from individual Servers.</td>
+</tr>
+<tr class="row-odd"><td>SQS Queue Size</td>
+<td>SQS Queue Size can be used to scale up and down based on an AWS SQS Queue’s Size. Queue Size is checked from the Scalr Server itself.</td>
+</tr>
+<tr class="row-even"><td>Date and Time</td>
+<td>Using the Date and Time Metric, you simply define a schedule, and Scalr will ensure that an appropriate number of Servers are deployed, according to your schedule. Note: The Date and Time Metric may not be used in combination with other metrics.</td>
+</tr>
+<tr class="row-odd"><td>Bandwidth</td>
+<td>Bandwidth can be used to scale up and down based on network activity. You can decide to use either inbound or outbound network bandwidth.</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="autoscaling-configuration">
 <h2>Autoscaling Configuration<a class="headerlink" href="#autoscaling-configuration" title="Permalink to this headline">¶</a></h2>
+<p>Along with metrics, Scalr also has many configurations that can be set for scaling decisions and termination preferences:</p>
+<p>Scaling Decision Settings:</p>
+<a class="reference internal image-reference" href="../_images/scaling_decisions.png"><img alt="../_images/scaling_decisions.png" src="../_images/scaling_decisions.png" style="width: 513.0px; height: 229.0px;" /></a>
+<p>The options in the screenshot are defined as follows (in order):</p>
+<ul class="simple">
+<li>The duration between scaling decisions can be changed, the default is 1 minute.</li>
+<li>You can override the timing for a scale up decision.</li>
+<li>You can override the timing for a scale down decision.</li>
+<li>You can pause the scaling after launching a new server, and only resume the cycle when the previously launched server reaches a running state.</li>
+<li>Scaling down will only occur if ALL of the scaling metrics that have been defined return true. For example, you may have a URL and a Load Average scaling rules, both of those metrics must hit the lower threshold before scaling down occurs.</li>
+</ul>
+<p>Scaling Termination Settings:</p>
+<a class="reference internal image-reference" href="../_images/scaling_termination.png"><img alt="../_images/scaling_termination.png" src="../_images/scaling_termination.png" style="width: 512.0px; height: 201.0px;" /></a>
+<p>The options in the screenshot are defined as follows (in order):</p>
+<ul class="simple">
+<li>Scaling Behavior:<ul>
+<li>Launch / Terminate: As scaling up occurs, a brand new server will launch. As scaling down occurs, the server will be terminated.</li>
+<li>Resume / Suspend : As scaling up occurs, a server that was suspended will be turned on. As scaling down occurs, the server will be suspended.</li>
+</ul>
+</li>
+<li>Consider Suspended Servers:<ul>
+<li>Running: If a server is suspended, that server is considered running in the min/max scaling count.</li>
+<li>Terminated: If a server is suspended, that server is considered terminated in the min/max scaling count.</li>
+</ul>
+</li>
+<li>The servers which have been launched the most recently will be scaled down first.</li>
+<li>By enabling safe shutdown, Scalr will run an “auth-shutdown” script on every Server before terminating it. Depending on the Script’s return code, Scalr may abort the scale-down procedure. This option is useful to prevent a Server from being terminated while performing a long-running task. Scalr will terminate an instance ONLY IF the script ‘/usr/local/scalarizr/hooks/auth-shutdown’ returns 1. If this script is not found or returns any other value, Scalr WILL NOT terminate that server.</li>
+</ul>
 </div>
-<div class="section" id="autoscaling-algorithms">
-<h2>Autoscaling Algorithms<a class="headerlink" href="#autoscaling-algorithms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="custom-scaling">
+<h2>Custom Scaling<a class="headerlink" href="#custom-scaling" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
+<p>Scalr also provides a Custom Scaling option to leave it up to a user to decide when a scaling decision should happen. In this scenario, Scalr reads a file, executes a file, or does a URL Request and based on that value it will scalr up or down depending on the calculation function.</p>
+<p>To create a Custom Scaling Metric, click on the main Scalr menu on the top left <a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a>, and click on Custom Scaling Metrics. On that page, click on the New Metric button:</p>
+<a class="reference internal image-reference" href="../_images/custom_scaling.png"><img alt="../_images/custom_scaling.png" src="../_images/custom_scaling.png" style="width: 824.0px; height: 465.0px;" /></a>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Retrieve Method</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>File-Read</td>
+<td>Using File-Read, Scalr will try to read a given file on your Server, and expect to find a number there. That number will be used as the Scaling Metric’s value.</td>
+</tr>
+<tr class="row-odd"><td>File-Execute</td>
+<td>Using File-Execute, Scalr will try to execute a given script on your Server, and expect the script to output a number to standard output. That number will be used as the Scaling Metric’s value.</td>
+</tr>
+<tr class="row-even"><td>URL-Request (GET)</td>
+<td>Using URL-Request, Scalr will send a HTTP GET request to the specified URL and expect a number in the returned content body. That number will be used as the Scaling Metric’s value.</td>
+</tr>
+</tbody>
+</table>
+<p>The following only applies to File-Read and File-Get:</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Calculation Function</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Average</td>
+<td>The metric’s value will be averaged across all servers.</td>
+</tr>
+<tr class="row-odd"><td>Sum</td>
+<td>The metric’s value will be summed across all servers.</td>
+</tr>
+<tr class="row-even"><td>Maximum</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Minimum</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>Once you have created the custom metric it will then appear in the metrics list in the scaling section in each farm role. In the Scaling Metric, select your customer metric and give it rules. The scaling decisions are made based on the custom metric value going above or below a certain value:</p>
+<a class="reference internal image-reference" href="../_images/custom_scaling_fr.png"><img alt="../_images/custom_scaling_fr.png" src="../_images/custom_scaling_fr.png" style="width: 991.0px; height: 235.0px;" /></a>
 </div>
 </div>
 
@@ -666,7 +812,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="custom_scaling.html" class="btn btn-neutral float-right" title="Custom Metrics and Scaling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../discovery/index.html" class="btn btn-neutral float-right" title="Introduction to Importing Cloud Infrastructure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="manual.html" class="btn btn-neutral" title="Manual Scaling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -714,7 +860,10 @@
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {

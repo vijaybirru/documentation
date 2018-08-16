@@ -1,0 +1,4 @@
+Retrieve Method,Description
+File-Read,"Using File-Read, Scalr will try to read a given file on your Server, and expect to find a number there. That number will be used as the Scaling Metric's value."
+File-Execute,"Using File-Execute, Scalr will try to execute a given script on your Server, and expect the script to output a number to standard output. That number will be used as the Scaling Metric's value."
+URL-Request (GET),"Using URL-Request, Scalr will send a HTTP GET request to the specified URL and expect a number in the returned content body. That number will be used as the Scaling Metric's value."
