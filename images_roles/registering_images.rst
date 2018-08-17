@@ -23,7 +23,7 @@ Images in Scalr have slight differences to they way they map to cloud images dep
 
 .. warning:: It is recommended that images registered in Scalr should have Scalarizer installed. If you Intend to use images with Scalr :ref:`role_orchestration` or :ref:`farm_role_orchestration` the Scalarizer agent MUST be installed. If you do not have Scalarizer installed in any images see :ref:`images_from_servers`.  See :ref:`discovery_manager` for more details on agentless options.
 
-Images can be registered at any scope in Scalr and made available to the lower scopes.
+Images can be registered at any scope in Scalr and made available to the lower scopes. However you can only register images at or below the scope where the :ref:`Cloud Credentials <cloud_creds>` have been set up. i.e. Images cannot be registered at |SCALR| scope using credentials created at |ACCOUNT| scope.
 
 Image functionality is accessed via Images in the Main menu or Bookmarks bar at any scope. Note that you can jump straight to New Image from the main menu or click on "Images" and then "New Image" at the top of the list.
 

@@ -56,6 +56,9 @@
 .. |CONFIGURE| image:: /images/configure.png
                :scale: 30%
 
+.. |MENU| image:: /images/menu.png
+               :scale: 30%
+
 .. |SCALR_SERVER_RB| replace:: In a multi-node configuration, the scalr-server.rb file should be exactly the same across all Scalr server nodes. Remember to run ``scalr-server-ctl reconfigure`` on all nodes whenever you make an update to the scalr-server.rb configuration file.
 
 .. |scalr_github_link| raw:: html

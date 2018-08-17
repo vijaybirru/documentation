@@ -68,10 +68,7 @@ When adding Images to Roles you need to be aware of the different ways Images ar
    Openstack,Images are unique for every Openstack. You must add every similar image in every region you want the Role to be enable for.
    VMware,Images are unique for every VMware location. You must add every similar image in every location you want the Role to be enable for.
 
-Editing Roles
--------------
-
-To edit a role navigate to the Roles Library (Main Menu -> Roles), select the Role to be edited and click the Edit |EDIT| button.
+.. note:: When you save a Role you will be taken back to the role list. To make further edits to a role select the Role to be edited and click the Edit |EDIT| button.
 
 .. _role_orchestration:
 

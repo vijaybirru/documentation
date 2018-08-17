@@ -7,23 +7,9 @@ Scalarizr Installation
 
 Scalarizr is Scalr's management agent. It is optionally installed on every Scalr-managed Server, and used for orchestration and monitoring.
 
-About
-------
-
-As mentioned, the agent is optional, but without the agent the Scalr experience is limited, please see the following comparison chart:
-
-========================================    ============   ==================
-Capability                                   Agentless      Agent Installed
-========================================    ============   ==================
-Launch, Terminate, Suspend, Resume            Yes             Yes
-Security Group management                     Yes             Yes
-Tagging                                       Yes             Yes
-Autoscaling                                   No              Yes
-Orchestration (script execution)              No              Yes
-Monitoring                                    No              Yes
-Storage Volume addition	                      No              Yes
-Software Firewall/ iptables management		    No              Yes
-========================================    ============   ==================
+.. include:: /reference/index.rst
+   :start-after: scalarizr-func-start:
+   :end-before: scalarizr-func-end
 
 .. Term-Scalarizr-About-End
 
