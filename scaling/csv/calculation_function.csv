@@ -1,5 +1,5 @@
 Calculation Function,Description
-Average,The metric's value will be averaged across all servers.
-Sum,The metric's value will be summed across all servers.
-Maximum ,
-Minimum,
+Average,The metric's value will be averaged from all servers.
+Sum,The metric's value will be the sum of all results from all servers.
+Maximum,The metric's value will be the largest value from any one of the servers.
+Minimum,The metric's value will be the smallest value from any one of the servers.

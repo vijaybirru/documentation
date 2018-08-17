@@ -1,7 +1,7 @@
 Metric,Description
-Load Average,"Load Averages can be used to scale up and down based on average system utilization. The higher the Load Average, the busier the system is."
+Load Average,"Load Averages can be used to scale up and down based on average system utilization. The higher the Load Average, the busier the system is. Note: Available for Linux only."
 Free RAM,"Free RAM can be used to scale up and down based on system memory utilization. The lower the Free RAM, the busier the system is. Make sure you set thresholds that make sense given the Instance Type you chose. By default, Scalr collects only Free RAM, but you can have Scalr account for cached RAM too."
 URL Reponse Time,"URL Response Time lets you scale up and down depending on how long a particular URL takes to load. The URL Response Time is collected from the Scalr Server, not from individual Servers."
 SQS Queue Size,SQS Queue Size can be used to scale up and down based on an AWS SQS Queue's Size. Queue Size is checked from the Scalr Server itself.
-Date and Time,"Using the Date and Time Metric, you simply define a schedule, and Scalr will ensure that an appropriate number of Servers are deployed, according to your schedule. Note: The Date and Time Metric may not be used in combination with other metrics."
+Date and Time,"Using the Date and Time Metric, simply define a schedule and Scalr will ensure that an appropriate number of Servers are deployed according to that schedule. Note: The Date and Time Metric may not be used in combination with other metrics."
 Bandwidth,Bandwidth can be used to scale up and down based on network activity. You can decide to use either inbound or outbound network bandwidth.

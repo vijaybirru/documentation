@@ -41,9 +41,9 @@ In the scenario above, Scalr will always have minimum of one server and a maximu
 Dynamic Autoscaling
 -------------------
 
-Dynamic Autoscaling does everything Simple Autoscaling does, except it also adds and removes Servers based on utilization or activity (e.g. CPU utilization). Scalr will poll for metrics every at least every minute depending on your configuration and use those metrics to make the scaling decisions.
+Dynamic Autoscaling does everything Simple Autoscaling does, except it also adds and removes Servers based on utilization or activity (e.g. CPU utilization). Scalr will poll for metrics at least every minute, depending on your configuration, and uses those metrics to make the scaling decisions.
 
-To enable dynamic autoscaling in your Farm Role, find your Farm, click on the Farm Role, go to the Scaling tab and make sure it is set to Automatic. Next, click on the Add Scaling Rule Option which will then present the metrics with the Server can scale by:
+To enable dynamic autoscaling in your Farm Role, find your Farm, click on the Farm Role, go to the Scaling tab and make sure it is set to Automatic. Next, click on the Add Scaling Rule Option which will then present the metrics with which the Server can scale by:
 
 .. image:: images/dynamic_scaling.png
    :scale: 60%
@@ -108,12 +108,21 @@ To create a Custom Scaling Metric, click on the main Scalr menu on the top left 
    :file: csv/custom_scaling.csv
    :widths: 20,80
 
-The following only applies to File-Read and File-Get:
+The URL-Request method will return a single value from the target URL, but File-Read and File-Execute methods must run against all Farm Role instances. Each instance will return their own value and Scalr will compute a single result value from them according to your Calculation Function.
+
+The following Calculation Functions are available for File-Read and File-Get:
 
 .. csv-table::
    :header-rows: 1
    :file: csv/calculation_function.csv
    :widths: 20,80
+
+For example, say you had 3 running instances of a Farm Role using a custom metric with File-Read method.  Scalr polls for the metric and the instances return 2, 3, and 4 respectively.  The table below shows the resulting metric value for each calculation type.
+
+.. csv-table::
+   :header-rows: 1
+   :file: csv/calculation_function_example.csv
+   :widths: 20,20
 
 Once you have created the custom metric it will then appear in the metrics list in the scaling section in each farm role. In the Scaling Metric, select your customer metric and give it rules. The scaling decisions are made based on the custom metric value going above or below a certain value:
 

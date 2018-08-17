@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -679,8 +678,8 @@
 </div>
 <div class="section" id="dynamic-autoscaling">
 <h2>Dynamic Autoscaling<a class="headerlink" href="#dynamic-autoscaling" title="Permalink to this headline">¶</a></h2>
-<p>Dynamic Autoscaling does everything Simple Autoscaling does, except it also adds and removes Servers based on utilization or activity (e.g. CPU utilization). Scalr will poll for metrics every at least every minute depending on your configuration and use those metrics to make the scaling decisions.</p>
-<p>To enable dynamic autoscaling in your Farm Role, find your Farm, click on the Farm Role, go to the Scaling tab and make sure it is set to Automatic. Next, click on the Add Scaling Rule Option which will then present the metrics with the Server can scale by:</p>
+<p>Dynamic Autoscaling does everything Simple Autoscaling does, except it also adds and removes Servers based on utilization or activity (e.g. CPU utilization). Scalr will poll for metrics at least every minute, depending on your configuration, and uses those metrics to make the scaling decisions.</p>
+<p>To enable dynamic autoscaling in your Farm Role, find your Farm, click on the Farm Role, go to the Scaling tab and make sure it is set to Automatic. Next, click on the Add Scaling Rule Option which will then present the metrics with which the Server can scale by:</p>
 <a class="reference internal image-reference" href="../_images/dynamic_scaling.png"><img alt="../_images/dynamic_scaling.png" src="../_images/dynamic_scaling.png" style="width: 827.4px; height: 414.59999999999997px;" /></a>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
@@ -694,7 +693,7 @@
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>Load Average</td>
-<td>Load Averages can be used to scale up and down based on average system utilization. The higher the Load Average, the busier the system is.</td>
+<td>Load Averages can be used to scale up and down based on average system utilization. The higher the Load Average, the busier the system is. Note: Available for Linux only.</td>
 </tr>
 <tr class="row-odd"><td>Free RAM</td>
 <td>Free RAM can be used to scale up and down based on system memory utilization. The lower the Free RAM, the busier the system is. Make sure you set thresholds that make sense given the Instance Type you chose. By default, Scalr collects only Free RAM, but you can have Scalr account for cached RAM too.</td>
@@ -706,7 +705,7 @@
 <td>SQS Queue Size can be used to scale up and down based on an AWS SQS Queue’s Size. Queue Size is checked from the Scalr Server itself.</td>
 </tr>
 <tr class="row-even"><td>Date and Time</td>
-<td>Using the Date and Time Metric, you simply define a schedule, and Scalr will ensure that an appropriate number of Servers are deployed, according to your schedule. Note: The Date and Time Metric may not be used in combination with other metrics.</td>
+<td>Using the Date and Time Metric, simply define a schedule and Scalr will ensure that an appropriate number of Servers are deployed according to that schedule. Note: The Date and Time Metric may not be used in combination with other metrics.</td>
 </tr>
 <tr class="row-odd"><td>Bandwidth</td>
 <td>Bandwidth can be used to scale up and down based on network activity. You can decide to use either inbound or outbound network bandwidth.</td>
@@ -773,7 +772,8 @@
 </tr>
 </tbody>
 </table>
-<p>The following only applies to File-Read and File-Get:</p>
+<p>The URL-Request method will return a single value from the target URL, but File-Read and File-Execute methods must run against all Farm Role instances. Each instance will return their own value and Scalr will compute a single result value from them according to your Calculation Function.</p>
+<p>The following Calculation Functions are available for File-Read and File-Get:</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="20%" />
@@ -786,16 +786,42 @@
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>Average</td>
-<td>The metric’s value will be averaged across all servers.</td>
+<td>The metric’s value will be averaged from all servers.</td>
 </tr>
 <tr class="row-odd"><td>Sum</td>
-<td>The metric’s value will be summed across all servers.</td>
+<td>The metric’s value will be the sum of all results from all servers.</td>
 </tr>
 <tr class="row-even"><td>Maximum</td>
-<td>&#160;</td>
+<td>The metric’s value will be the largest value from any one of the servers.</td>
 </tr>
 <tr class="row-odd"><td>Minimum</td>
-<td>&#160;</td>
+<td>The metric’s value will be the smallest value from any one of the servers.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, say you had 3 running instances of a Farm Role using a custom metric with File-Read method.  Scalr polls for the metric and the instances return 2, 3, and 4 respectively.  The table below shows the resulting metric value for each calculation type.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Calculation Function</th>
+<th class="head">Final metric value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Average</td>
+<td>3</td>
+</tr>
+<tr class="row-odd"><td>Sum</td>
+<td>9</td>
+</tr>
+<tr class="row-even"><td>Maximum</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>Minimum</td>
+<td>2</td>
 </tr>
 </tbody>
 </table>
@@ -860,10 +886,7 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {
