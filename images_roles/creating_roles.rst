@@ -110,6 +110,8 @@ If the value for a variable is already set then the Role can use that value or o
    "Value can be set at any scope down to the specified scope. Role can set the value to be be inherited by the lower scopes. Only lower scopes as far as the specified scope will be able to overwrite the value.",|GV2|
    "Value must be set at this scope. A value must be supplied and an error will occur if you attempt to save the Role, save any Farm using the role, or launch a Farm that uses the Role if the value is not set. Lower scopes will NOT be able to overwrite",|GV3|
 
+.. _bootstrap:
+
 Ansible Tower in Roles
 ======================
 

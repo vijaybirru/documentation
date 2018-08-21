@@ -124,6 +124,8 @@ Click on the link icon on the right-hand side, link the required Policy Group to
 Policy Reference
 ================
 
+.. _config_policies:
+
 Configuration Policies
 ----------------------
 

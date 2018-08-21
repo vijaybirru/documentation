@@ -105,6 +105,13 @@ Ruby:
   #!/usr/bin/env ruby
   print ENV["MyGlobalVariable"]
 
+.. _gvi:
+
+Global Variable Interpolation
+-----------------------------
+
+Certain fields in the Scalr User Interface support Global Variable interpolation. These fields are identified with the |GVI| symbol. Global Variables can be entered into fields using the following placeholder syntax: ``{GLOBAL_VARIABLE_NAME}``. When the value of field is required, e.g. when a server is being provisioned, or when a :ref:`Policy <policy_engine>` is being applied, the Global Variable placeholders will be replaced with their actual value.
+
 Using Global Variables in Policies
 ----------------------------------
 

@@ -20,7 +20,7 @@ Orchestration Rules are made up of three main elements.
 You must create the :ref:`Script <scripts>` and any :ref:`gvs` that are required before creating the Rule.
 
 Trigger Event
--------------
+*************
 
 First select the Trigger Event for this rule. The following table describes each event and the state of the Server when the event fires.
 
@@ -37,7 +37,7 @@ After an Instance finishes booting the OS, the Scalarizer Agent starts configuri
 * Server Configuration (including vhosts) Routines are executed. If you wish to work with Virtual Hosts, you can assign a Script to the BeforeHostUp Event.
 
 Target
-------
+******
 
 You must define the target for executing the script. The default is to execute only on the instance that triggered the event. The other options are as follows. Note that availability of targets depends on the scope at which the rule is being defined.
 
@@ -55,7 +55,7 @@ You must define the target for executing the script. The default is to execute o
    Selected Farm Roles,|SCOPE_F_ROLE|,Script will execute for all servers in the given Farm Role(s) in the Farm.
 
 Action
-------
+******
 
 There are three choices for the Action for a rule.
 
@@ -68,7 +68,7 @@ There are three choices for the Action for a rule.
    :file: csv/actions.csv
 
 Advanced Configuration
-----------------------
+**********************
 
 The advanced configuration section allows you to control various aspects of how the Action is executed.
 

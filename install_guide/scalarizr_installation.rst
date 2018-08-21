@@ -69,6 +69,8 @@ Scalarizr Logs
    :start-after: Term-Scalr-Logs-Start
    :end-before: Term-Scalr-Logs-Stop
 
+.. _custom_repos:
+
 How to Create Your Own Scalarizr Repo
 --------------------------------------
 
