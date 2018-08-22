@@ -156,7 +156,7 @@ Farms and Farm Roles
 
 A Farm is the collection of Roles, Orchestration rules, network configuration, cloud services and much more that defines the desired deployment state of a cloud based system. A Farm can include any number of Roles that work together to provide a service, such as a basic 3-tier app that includes a load balancer, a web app layer and a database layer. The Farm can include all the required automation to bootstrap servers with the required software and auto discover the related services being provided by other roles, e.g. registering web app servers with the load balancer.
 
-When a Role is added to a Farm this is known as a "Farm Role". It inherits all the attributes of the Role itself but extends the configuration to include selection of clouds, locations, network, security groups, additional orchestration rules etc. In other words it turns a role into something that can actually be deployed as a functioning server in the cloud. The Farm Role can also be parameterised through the use of Global Variables to enable end users to make choices about certain aspects of the deployment at the time it is launched
+When a Role is added to a Farm this is known as a "Farm Role". A Farm Role is analogous to a 'tier' in an application stack, such as the Webapp, Load Balancer or database tier. A Farm Role inherits all the attributes of the Role itself but extends the configuration to include selection of clouds, locations, network, security groups, additional orchestration rules etc. In other words it turns a role into something that can actually be deployed as a functioning server in the cloud. The Farm Role can also be parameterised through the use of Global Variables to enable end users to make choices about certain aspects of the deployment at the time it is launched
 
 Desired State Engine
 ^^^^^^^^^^^^^^^^^^^^
@@ -242,8 +242,6 @@ For details on configuring Users, Teams and ACL's see :ref:`teams_users`.
 Global Variables
 ----------------
 |SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV| |SCOPE_ROLE| |SCOPE_FARM| |SCOPE_F_ROLE|
-
-.. |GVI| image:: images/gvi.png
 
 Global Variables are a key value store built in to Scalr and are stored encrypted in the main Scalr database. They are used to pass configuration data from the Scalr User Interface down to your Servers. Global Variables can be defined at all scopes of Scalr. They can be defined as simple single values, validation lists or JSON objects.
 

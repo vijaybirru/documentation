@@ -12,7 +12,7 @@ Roles can be associated with Images from different clouds in order to provide fl
 .. image:: images/multi-cloud-01.png
    :scale: 50%
 
-All Images associated with a Role should be fundamentally the same. They MUST be the same base operating system and version and should also have the same pre-installed patches and software packages. Variations specific to each cloud are allowed for cloud specific items such as pre-installing VMware Tools of VMware images.
+All Images associated with a Role should be fundamentally the same. They MUST be the same base operating system and version and should also have the same pre-installed patches and software packages. Variations specific to each cloud are allowed for cloud specific items such as pre-installing VMware Tools on VMware images.
 
 Choosing which cloud to use initially occurs when configuring a Farm Role and cannot be changed in the Farm Role once set.
 

@@ -31,7 +31,7 @@ Lets looks at each step in more detail.
 
 * Import servers
 
-  * Ideally servers are imported in groups into Farms that map to the application infrastructure they belong to. This isn't essential as Servers can be moved from Farm Role to Farm Role within the same |ENVIRONMENT|.
+  * Ideally servers are imported in groups into Farms that map to the application infrastructure they belong to. This isn't essential as Servers can be moved from Farm Role to Farm Role within the same |ENVIRONMENT|. See `Migrate Servers from Farm Role to Farm Role`_ for more details.
   * Servers can be imported into system Farms and Farm Roles and terminated once all the other steps of the workflow are completed. In other words once they have been replaced by a fully Scalr managed Server.
 * Deploy Agent
 
@@ -127,7 +127,7 @@ To be able to import via the API you must first install the CLI tool ``scalr-ctl
 
 The command to use for importing is ``scalr-ctl farm-roles import-server --farmRoleId $farmRoleId --stdin < instance.json``
 
-This will import a single server int the specified Farm Role using the parameters provided in the JSON file. The format of the file is as follows.
+This will import a single server into the specified Farm Role using the parameters provided in the JSON file. The format of the file is as follows.
 
 .. code-block:: json
 

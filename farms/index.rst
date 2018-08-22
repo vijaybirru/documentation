@@ -43,14 +43,16 @@ In the **Advanced** section you can set parameters for updating the Scalarizr ag
 .. |SZR| image:: images/scalarizr_sched.png
          :scale: 25%
 
-.. note:: By default Scalarizr is NOT automatically updated |SZR|.
+.. note:: By default Scalarizr checks for updates every hour |SZR|.
 
 .. _farm_roles:
 
 Farm Roles
 ----------
 
-The next step in creating Farms is to add one or more Farm Roles to define the servers and their configuration. Click of the ADD FARM ROLE tab. You can select a variety if pre-configured roles from the Quick Start list (if configured), or select a role from the various categories available from the filter drop down menu.
+The next step in creating Farms is to add one or more Farm Roles to define the servers and their configuration. A Farm Role is analogous to a 'tier' in an application stack, such as the Webapp, Load Balancer or database tier.
+
+Click of the ADD FARM ROLE tab. You can select from a variety of pre-configured roles from the Quick Start list (if configured), or select a role from the various categories available from the filter drop down menu.
 
 .. |FR01| image:: images/farm_role_01.png
           :scale: 30%
@@ -76,7 +78,7 @@ Click |ATF| and then click on the Farm Role name on the left hand panel to conti
 There are several tabs available to continue the configuration. Some tabs are dependent on other aspects of the configuration.
 
 * DATABASE: Only available for Roles from the Database catagory
-* BOOTSTRAP WITH ...: Only available of Chef/Ansible Tower is configured for the |ENVIRONMENT|
+* BOOTSTRAP WITH ...: Only available if Chef/Ansible Tower is configured for the |ENVIRONMENT|
 * Cloud: A Tab for the specified cloud
 
 .. |INFO| image:: images/info.png
@@ -118,7 +120,7 @@ Scaling
 
 Auto Scaling in Farm Roles is a built in feature of Scalr that provides a consistent scaling capability across all Cloud platforms even for those clouds that don't have built-in scaling. If you do wish to use the Cloud Platform's auto scaling features then you should set Scaling to Manual in the Farm Role.
 
-.. note:: It is recommended that you disable any scaling features in the Cloud Platforms you use and only use Scalr built-in scaling. This will avoid any conflicts or duplication of effort that could cause service disruption and impact your costs. It will also ensure that your auto scaling parameters are applied consistently regardless if where your application is deployed.
+.. note:: It is recommended that you disable any scaling features in the Cloud Platforms you use and only use Scalr built-in scaling. This will avoid any conflicts or duplication of effort that could cause service disruption and impact your costs. It will also ensure that your auto scaling parameters are applied consistently, regardless of where your application is deployed.
 
 Auto Scaling is a sophisticated feature of Scalr and is described in detail in :ref:`auto_scaling`.
 

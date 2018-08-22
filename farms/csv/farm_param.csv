@@ -2,5 +2,5 @@ Parameter,Required,Decscription
 Name,Yes,Unique name (with the |ENVIRONMENT|) for the farm
 Timezone,Yes,TZ to be used for all servers launched from this Farm. This is used for Lease Management and Database Backups (for Farm Roles using Database Built-in Automation)
 Team,No,"If set this restricts access to the Farm to the named Teams, otherwise accessible to all Teams with access to the current |ENVIRONMENT|"
-Launch Order,Yes,"Simultaneous : When Launching servers luanch all required at the same time |BR|Sequential: Wait until each server is running before launching the next server"
+Launch Order,Yes,"Simultaneous : When Launching a Farm launch all Farm Roles at the same time |BR|Sequential : Wait until all the servers for a Farm Role are running before launching the next Farm Role. |BR| Note that within each Farm Role Scalr will launch servers at the rate of 1 per minute by default. This interval can be increased in the `Scaling`_ tab."
 Project,Yes,Select the required Project/Cost Center
