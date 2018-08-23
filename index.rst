@@ -98,9 +98,9 @@ Scalr Documentation!
    :caption: Scaling Workloads
 
    scaling/index
-   scaling/manual
    scaling/auto
-
+   scaling/manual
+   
 .. toctree::
    :maxdepth: 3
    :caption: Importing Cloud Infrastructure

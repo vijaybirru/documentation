@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Auto Scaling" href="auto.html" />
-    <link rel="prev" title="Scaling Applications" href="index.html" /> 
+    <link rel="next" title="Discovery Manager" href="../discovery/index.html" />
+    <link rel="prev" title="Auto Scaling" href="auto.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -466,18 +466,19 @@
 <p class="caption"><span class="caption-text">Scaling Workloads</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Scaling Applications</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Manual Scaling</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#using-manual-scaling">Using Manual Scaling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#manually-launching-servers">Manually Launching Servers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#manually-terminating-servers">Manually Terminating Servers</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="auto.html">Auto Scaling</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="auto.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auto.html#simple-autoscaling">Simple Autoscaling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auto.html#dynamic-autoscaling">Dynamic Autoscaling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auto.html#autoscaling-configuration">Autoscaling Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="auto.html#custom-scaling">Custom Scaling</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Manual Scaling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-manual-scaling">Using Manual Scaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manually-launching-servers">Manually Launching Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manually-terminating-servers">Manually Terminating Servers</a></li>
 </ul>
 </li>
 </ul>
@@ -490,6 +491,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#deploy-scalarizr">Deploy Scalarizr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#discovering-containers">Discovering Containers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#migrate-servers-from-farm-role-to-farm-role">Migrate Servers from Farm Role to Farm Role</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/index.html">Kubernetes Clusters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../kubernetes/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kubernetes/index.html#adding-a-cluster">Adding a Cluster</a></li>
 </ul>
 </li>
 </ul>
@@ -668,14 +674,27 @@
             
   <div class="section" id="manual-scaling">
 <span id="id1"></span><h1>Manual Scaling<a class="headerlink" href="#manual-scaling" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="definition-and-scope">
+<h2>Definition and Scope<a class="headerlink" href="#definition-and-scope" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></p>
+<p>For those use cases where you may not have an application that has a fully automated deployment or it just doesn’t need to be autoscaled, Scalr has the option to allow users to initiate the provisioning of servers.</p>
+</div>
 <div class="section" id="using-manual-scaling">
 <h2>Using Manual Scaling<a class="headerlink" href="#using-manual-scaling" title="Permalink to this headline">¶</a></h2>
+<p>To enable manual scaling in your Farm Role, find your Farm, click on the Farm Role, go to the Scaling tab and make sure it is set to Manual:</p>
+<a class="reference internal image-reference" href="../_images/manual_scaling.png"><img alt="../_images/manual_scaling.png" src="../_images/manual_scaling.png" style="width: 448.8px; height: 326.4px;" /></a>
 </div>
 <div class="section" id="manually-launching-servers">
 <h2>Manually Launching Servers<a class="headerlink" href="#manually-launching-servers" title="Permalink to this headline">¶</a></h2>
+<p>Once you have set the the Farm Role to manual scaling and launched your Farm, you will now have to manually launch a server. To do so, go to the Farms page, find your Farm, and click on the number in the Roles <a class="reference internal" href="../_images/roles_column.png"><img alt="ROLE" src="../_images/roles_column.png" style="width: 28.0px; height: 23.0px;" /></a> column (Number 3 in the example below):</p>
+<a class="reference internal image-reference" href="../_images/dashboard_roles_column.png"><img alt="../_images/dashboard_roles_column.png" src="../_images/dashboard_roles_column.png" style="width: 910.1999999999999px; height: 108.0px;" /></a>
+<p>That will bring you to the Farm Roles pages for that specific Farm. Within this page, click on the launch <a class="reference internal" href="../_images/launch_button.png"><img alt="LAUNCH" src="../_images/launch_button.png" style="width: 27.0px; height: 22.0px;" /></a> button for the Farm Role that you want provision a server for on the right-hand side:</p>
+<a class="reference internal image-reference" href="../_images/farmrole_launch.png"><img alt="../_images/farmrole_launch.png" src="../_images/farmrole_launch.png" style="width: 909.0px; height: 106.8px;" /></a>
 </div>
 <div class="section" id="manually-terminating-servers">
 <h2>Manually Terminating Servers<a class="headerlink" href="#manually-terminating-servers" title="Permalink to this headline">¶</a></h2>
+<p>Just like you have to manually launch a server when scaling is set to manual, the same applies to terminating servers. To terminate a server, go to the servers pages, find the server you want to terminate and click on the Terminate Server button:</p>
+<a class="reference internal image-reference" href="../_images/terminate_server.png"><img alt="../_images/terminate_server.png" src="../_images/terminate_server.png" style="width: 906.6px; height: 91.8px;" /></a>
 </div>
 </div>
 
@@ -687,10 +706,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="auto.html" class="btn btn-neutral float-right" title="Auto Scaling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../discovery/index.html" class="btn btn-neutral float-right" title="Discovery Manager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Scaling Applications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="auto.html" class="btn btn-neutral" title="Auto Scaling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
