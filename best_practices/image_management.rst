@@ -19,7 +19,7 @@ Image Lifecycle Best-Practices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 It is generally a good idea to test your images before making them available. To do so, start by adding new Images to a test Environment and launching a few servers with them to run the tests. Once the tests have passed, publish it.
 
-To avoid having to re-register the machine image at the Account scope when it has already been added in an Environment, we have added the capability to moce an Image from the Environment scope to the Account scope. This is called Image Promotion. To promote an Image from an Environment to the containing Account, just click on this button at the bottom right of the Image description:
+To avoid having to re-register the machine image at the Account scope when it has already been added in an Environment, we have added the capability to move an Image from the Environment scope to the Account scope. This is called Image Promotion. To promote an Image from an Environment to the containing Account, just click on this button at the bottom right of the Image description:
 
 .. image:: image_promote.png
    :scale: 40 %
