@@ -42,7 +42,7 @@ If you choose to use the "public" or "local" option then you need to login to yo
    app[:configuration] = {
        "scalr" => {
          "vmware" => {
-           "instance_connection_policy" => "local" or "public"
+           "instances_connection_policy" => "local" or "public"
           }
        }
    }
@@ -52,11 +52,12 @@ After adding this entry you must re-configure scalr by running ``sudo scalr-serv
 Adding VMWare Credentials to Scalr
 ----------------------------------
 
-You will need three pieces of information in order to set up VMWare credentials in Scalr
+You will need the following information in order to set up VMWare credentials in Scalr
 
 1. URL of vCenter
-2. Username
-3. Password
+2. URL's of any linked vCenter's (optional)
+3. Username
+4. Password
 
 .. include:: credentials-generic.rst
 

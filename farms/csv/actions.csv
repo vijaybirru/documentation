@@ -1,0 +1,8 @@
+Type,Scopes,Option,Details
+Script,|SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV| |SCOPE_ROLE| |SCOPE_F_ROLE|,Scalr Script,A Scalr script previously defined at the current scope or higher. Higher Scope scripts must have shared |SHARED| enabled.
+   ,,Local Script,Script that will already be installed on the server. You must provide the full path to the script.
+   ,,URL Script,Instructs Scalr to download the script from the specified URL and run it.
+Chef,|SCOPE_ROLE| |SCOPE_F_ROLE|,Override Runlist (Server),If the Role is configured to bootstrap with Chef Server the rule can override the runlist defined at Role level.
+   ,,Reconverge (Server),If the Role is configured to bootstrap with Chef Server the rule can re-invoke the convergence actions.
+,,Chef Solo,Specify a specific cookbook and runlist to use either from a URL or GIT
+AT Job,|SCOPE_ROLE| |SCOPE_F_ROLE|,(none),If AT is configured to bootstrap the role you can chose a bootstrap config and job to execute for the rule.

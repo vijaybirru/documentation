@@ -1,0 +1,5 @@
+Parameter,Description,Type,Example value(s),Default value
+scalr.system.api.enabled,Whether the APIv2 should be enabled or not.,Boolean,"true, false",TRUE
+scalr.system.api.oauth.enabled,Set to true to enable oauth for the APIv2.,Boolean,"true, false",
+scalr.system.api.disable_v1,Set to true to disable APIv1,Boolean,"true, false",FALSE
+scalr.system.api.allowed_origins,Defines which domain(s) to allow in the Access-Control-Allow-Origin header. This header is not sent by default.,Array or String,"["" domain1.com "", "" domain2.com ""] or ""*""",~

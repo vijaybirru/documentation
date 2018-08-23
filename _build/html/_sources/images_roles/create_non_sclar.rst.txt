@@ -1,0 +1,22 @@
+.. include:: ../GLOBAL.rst
+
+.. _images_from_servers:
+
+Creating Images and Roles from Non-Scalr Servers
+================================================
+
+.. warning:: This option will suspend the cloud server whilst the snapshot for the image is taken.
+
+The workflow for creating an Image and Role from a non-scalr server is the same for all clouds.
+
+* Select the server to be imaged
+* Install Scalarizer
+* Run Scalarizer
+* Confirm installation
+
+This option can be accessed from either the Images or Roles Library by clicking on either Images or Roles in the Bookmark Bar.
+
+.. images:: images/image_cnsf.png
+   :scale: 50%
+
+Your will then be presented with the following screen on which

@@ -92,7 +92,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html#scalr-architecture">Scalr Architecture</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#software-architecture">Software Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#deployment-architecture">Deployment Architecture</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/terminology.html">Concepts and Terminology</a><ul>
@@ -127,6 +126,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#architecture">Architecture</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#supported-operating-systems">Supported Operating Systems:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#network-requirements">Network Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/scalr_server_installation.html">Scalr Server Install</a><ul>
@@ -142,13 +142,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html">Scalr Server Maintenance</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html#upgrades">Upgrades</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html#automated-upgrades">Automated Upgrades</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html#database-backups">Database Backups</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html#monitoring-best-practices">Monitoring Best Practices</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/scalarizr_installation.html">Scalarizr Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#about">About</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#os-requirements">OS Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#network-requirements">Network Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#supported-server-instance-operating-systems">Supported Server/Instance Operating Systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#installing-scalarizr">Installing Scalarizr</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#how-to-install-scalarizr-on-linux-images">How to Install Scalarizr on Linux Images</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#how-to-install-scalarizr-on-windows-images">How to Install Scalarizr on Windows Images</a></li>
@@ -239,21 +240,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#aws-images">AWS Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#azure-images">Azure Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#gce-images">GCE Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#openstack-images">Openstack Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#aws-images">AWS Images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#azure-images">Azure Images</a></li>
@@ -262,29 +249,47 @@
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#editing-roles">Editing Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#target">Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#advanced-configuration">Advanced Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-permissions">Role Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/create_non_scalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Infrastructure Management</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../farms/index.html">Farm Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-roles">Farm Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-role-orchestration">Farm Role Orchestration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#events-reference">Events Reference</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#custom-events">Custom Events</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#creating-a-custom-event">Creating a Custom Event</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#firing-a-custom-event">Firing a Custom Event</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-role-orchestration">Farm Role Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#target">Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#advanced-configuration">Advanced Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/index.html#network-and-security-group-configuration">Network and Security Group configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#advanced-options">Advanced Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#ansible-in-farm-roles">Ansible in Farm Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#chef-in-farm-roles">Chef in Farm Roles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/launch.html">Farm Launching and Managing Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/ssh.html">SSH Keys in Scalr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../farms/ssh.html">SSH Keys in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#accessing-keys">Accessing Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#usernames">Usernames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#adding-policy-for-keys">Adding Policy for Keys</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/execution.html">Script Execution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/auto_dicscovery.html">Service Auto Discovery</a></li>
@@ -354,8 +359,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/orchestration.html">Scalr/Account/Environment Level Orchestration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#creating-orchestration-rules">Creating Orchestration Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#target">Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#advanced-configuration">Advanced Configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html">Webhooks and Endpoints</a><ul>
@@ -405,7 +413,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#executing-scripts">Executing Scripts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#farm-role-orchestration">Farm Role Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-scripts-in-orchestration">Using Scripts In Orchestration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#manually-on-farms-farm-roles-or-servers">Manually On Farms, Farm Roles, or Servers</a></li>
 </ul>
 </li>
@@ -433,9 +441,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../custom_events/index.html#creating-a-custom-event">Creating a Custom Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom_events/index.html#firing-a-custom-event">Firing a Custom Event</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Demand Management</span></p>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scaling Workloads</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scaling/index.html">Scaling Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scaling/manual.html">Manual Scaling</a><ul>
@@ -445,24 +457,24 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../scaling/auto.html">Auto Scaling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#simple-autoscaling">Simple Autoscaling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#dynamic-autoscaling">Dynamic Autoscaling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#autoscaling-configuration">Autoscaling Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#autoscaling-algorithms">Autoscaling Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#custom-scaling">Custom Scaling</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../scaling/custom_scaling.html">Custom Metrics and Scaling</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Importing Cloud Infrastructure</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html">Discovery Manager</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html">Introduction to Importing Cloud Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html#discovery-manager">Discovery Manager</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#importing-servers">Importing Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#installing-scalarizer">Installing Scalarizer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#importing-containers">Importing Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#discovering-containers">Discovering Containers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#migrate-servers-from-farm-role-to-farm-role">Migrate Servers from Farm Role to Farm Role</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../discovery/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
 <ul>
@@ -483,7 +495,7 @@
 <p class="caption"><span class="caption-text">Scalarizr agent</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html">Scalarizr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#about">About</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#monitoring-scalarizr">Monitoring Scalarizr</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#servers-dashboard">Servers Dashboard:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#server-general-details">Server General Details:</a></li>
@@ -529,7 +541,21 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App Tutorial (cloud agnostic, orchestration automation)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#objective">Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#application-overview">Application Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#script-creation">Script Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#roles-required">Roles Required:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#farm-creation">Farm Creation:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#farm-role-configuration">Farm Role Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/3-tier-app.html#select-and-configure-the-webapp-farm-role">Select and configure the WebApp farm role:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/3-tier-app.html#select-and-configure-the-mysql-farm-role">Select and configure the MySQL farm role:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/3-tier-app.html#select-and-configure-the-nginx-farm-role">Select and configure the Nginx farm role:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#testing-the-application">Testing the Application</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Release Notes</span></p>
 <ul>
@@ -553,6 +579,11 @@
 </li>
 </ul>
 </li>
+</ul>
+<p class="caption"><span class="caption-text">Reference Section</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Supported Server/Instance Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 </ul>
 
             
@@ -629,52 +660,53 @@
 <p>Scripts can be created, updated, edited, or deleted at the Scalr, Account, or Environment scopes. To create a script you can click on the Scalr icon on the top left of any of the scopes, in this example it is at the Environment scope: <a class="reference internal" href="../_images/scalr_icon_env1.png"><img alt="SCALR_ICON" src="../_images/scalr_icon_env1.png" style="width: 55.3px; height: 33.599999999999994px;" /></a>
 Once you are in the scripts page, click on New Script:</p>
 <a class="reference internal image-reference" href="../_images/new_script.png"><img alt="../_images/new_script.png" src="../_images/new_script.png" style="width: 544.1999999999999px; height: 517.8px;" /></a>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
-+—————-+———+————————————————————————————————————————-+
-| Item           | Format  | Description                                                                                                             |
-+================+=========+=========================================================================================================================+
-| Name           | String  | Name of the script                                                                                                      |
-+—————-+———+————————————————————————————————————————-+
-| Description    | String  | Description of the script                                                                                               |
-+—————-+———+————————————————————————————————————————-+
-| Deprecated     | Binary  | Scripts can be deprecated to prevent further use                                                                        |
-+—————-+———+————————————————————————————————————————-+
-| Shared         | Binary  | Determines if a script can be used at a lower level. This is only seen at the Account and Scalr scopes              |
-+—————-+———+————————————————————————————————————————-+
-| Execution Mode | Binary  | | Blocking: Scalarizr will wait for your Script to finish executing before firing and processing further events         |
-|                |         | | Non-Blocking: Scalarizr will not wait for your Script to finish executing before firing and processing further events |
-+—————-+———+————————————————————————————————————————-+
-| Timeout        | Integer | Length in seconds before the script should timeout                                                                      |
-+—————-+———+————————————————————————————————————————-+
-| Script Content | String  | Script contents                                                                                                         |
-+—————-+———+————————————————————————————————————————-+
-=======
-+—————-+———+———————————————————————————————————————–+
-| Item           | Format  | Description                                                                                                           |
-+================+=========+=======================================================================================================================+
-| Name           | String  | Name of the script                                                                                                    |
-+—————-+———+———————————————————————————————————————–+
-| Description    | String  | Description of the script                                                                                             |
-+—————-+———+———————————————————————————————————————–+
-| Deprecated     | Binary  | Scripts can be deprecated to prevent further use                                                                      |
-+—————-+———+———————————————————————————————————————–+
-| Shared         | Binary  | Determines if a script can be used at a lower level. This is only seen at the Account and Scalr scopes.           |
-+—————-+———+———————————————————————————————————————–+
-| Execution Mode | Binary  | Blocking: Scalarizr will wait for your Script to finish executing before firing and processing further events         |
-|                |         | Non-Blocking: Scalarizr will not wait for your Script to finish executing before firing and processing further events |
-+—————-+———+———————————————————————————————————————–+
-| Timeout        | Integer | Length in seconds before the script should timeout                                                                    |
-+—————-+———+———————————————————————————————————————–+
-| Script Content | String  | Script contents                                                                                                       |
-+—————-+———+———————————————————————————————————————–+
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="6%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Item</th>
+<th class="head">Format</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>String</td>
+<td>Name of the script</td>
+</tr>
+<tr class="row-odd"><td>Description</td>
+<td>String</td>
+<td>Description of the script</td>
+</tr>
+<tr class="row-even"><td>Deprecated</td>
+<td>Binary</td>
+<td>Scripts can be deprecated to prevent further use</td>
+</tr>
+<tr class="row-odd"><td>Shared</td>
+<td>Binary</td>
+<td>Determines if a script can be used at a lower level. This is only seen at the Account and Scalr scopes.</td>
+</tr>
+<tr class="row-even"><td>Execution Mode</td>
+<td>Binary</td>
+<td>Blocking: Scalarizr will wait for your Script to finish executing before firing and processing further events
+Non-Blocking: Scalarizr will not wait for your Script to finish executing before firing and processing further events</td>
+</tr>
+<tr class="row-odd"><td>Timeout</td>
+<td>Integer</td>
+<td>Length in seconds before the script should timeout</td>
+</tr>
+<tr class="row-even"><td>Script Content</td>
+<td>String</td>
+<td>Script contents</td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="writing-a-script">
 <h3>Writing a Script<a class="headerlink" href="#writing-a-script" title="Permalink to this headline">¶</a></h3>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
-Your Scripts should start with a shebang line: <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)" target="_blank">Shebang Info</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a>. Scalr will use the interpreter specified in the shebang line and execute your script with it. The script runs on:
-=======
-Your Scripts should start with a shebang line: <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)" target="_blank">Shebang Info</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a>. Scalr will use the interpreter specified in the shebang line and execute your Script with it. The script runs on:
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes</p>
+<p>Your Scripts should start with a shebang line: <a href="https://en.wikipedia.org/wiki/Shebang_(Unix)" target="_blank">Shebang Info</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a>. Scalr will use the interpreter specified in the shebang line and execute your script with it. The script runs on:</p>
 <ul class="simple">
 <li>Linux - If the first line starts with #! /*</li>
 <li>Windows - If the first line starts with a #!windows, #!cmd or a #!powershell</li>
@@ -708,75 +740,17 @@ import os
 <h2>Executing Scripts<a class="headerlink" href="#executing-scripts" title="Permalink to this headline">¶</a></h2>
 <p>There are a couple ways to execute scripts in Scalr:</p>
 <ul class="simple">
-<li>As part of a Farm Role: As part of a Farm Role design, a user can add scripts to the orchestration tab and assign a lifecycle event to trigger the script.</li>
-<li>As part of a Role: Users can add a script to a Role and assign a lifecycle event to trigger the script. When this Role gets added to a Farm it becomes a Farm Role and the script will be inherited as part of the orchestration.</li>
-<li>Manually Triggered: Users can select a Farm or Farm Role and manually trigger a script on the running servers within the Farm or Farm Role. A single server within a Farm can also be selected to trigger a script on. This is a good way to test scripts before placing them within Farm Role orchestation.</li>
+<li>In Orchestration Rules: At all three main scopes and in Roles and Farm Roles a user can create orchestration rules and assign a lifecycle event to trigger the script.</li>
+<li>Manually Triggered: Users can select a Farm or Farm Role and manually trigger a script on the running servers within the Farm or Farm Role. A single server within a Farm can also be selected to trigger a script on. This is a good way to test scripts before placing them within Farm Role orchestration.</li>
 </ul>
-<div class="section" id="farm-role-orchestration">
-<h3>Farm Role Orchestration<a class="headerlink" href="#farm-role-orchestration" title="Permalink to this headline">¶</a></h3>
-<p>To assign a script for execution within the context of a Farm Role, go to the orchestration tab within the Farm Role and click new rule:</p>
-<a class="reference internal image-reference" href="../_images/farm_role_scripts.png"><img alt="../_images/farm_role_scripts.png" src="../_images/farm_role_scripts.png" style="width: 453.0px; height: 364.8px;" /></a>
-<p>Script Orchestration Options:</p>
-<blockquote>
-<div><table border="1" class="docutils">
-<colgroup>
-<col width="22%" />
-<col width="78%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Field</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Trigger Event</td>
-<td>The lifecycle event at which the script should be executed.</td>
-</tr>
-<tr class="row-odd"><td>Target - Triggering Server</td>
-<td>The script will get executed on the server that is building.</td>
-</tr>
-<tr class="row-even"><td>Target - All Servers in the Farm</td>
-<td>All servers in the farm, whether already running or being provisioned, will have the script executed on them.</td>
-</tr>
-<tr class="row-odd"><td>Target - All Farm Roles with Selected Tags</td>
-<td>All servers within a farm role(s) that have a specific tag assigned to it, whether already running or being provisioned, will have the script executed on them</td>
-</tr>
-<tr class="row-even"><td>Target - All Farm Roles with Selected OS</td>
-<td>All servers within a farm role(s) that have a specific OS, whether already running or being provisioned, will have the script executed on them.</td>
-</tr>
-<tr class="row-odd"><td>Target - Selected Farm Roles</td>
-<td>All servers within a specific farm role, whether already running or being provisioned, will have the script executed on them.</td>
-</tr>
-<tr class="row-even"><td>Action - Scalr Script</td>
-<td>A script created within Scalr will be executed on the server.</td>
-</tr>
-<tr class="row-odd"><td>Action - Local Script</td>
-<td>A script already on the OS will be executed, a path to the script must be provided.</td>
-</tr>
-<tr class="row-even"><td>Action - URL Script</td>
-<td>A script will be pulled from a URL and executed on the server. The URL must be the link to the raw code.</td>
-</tr>
-<tr class="row-odd"><td>Action - AT Job</td>
-<td>If Ansible Tower is configured a Job Template can be executed on the server.</td>
-</tr>
-<tr class="row-even"><td>Action - Chef</td>
-<td>If Chef Server is configured a Cookbook can be executed on the server.</td>
-</tr>
-<tr class="row-odd"><td>Execution Mode</td>
-<td>The mode is inherited from the script but can be overwritten. See above for more detail.</td>
-</tr>
-<tr class="row-even"><td>Timeout</td>
-<td>The timeout is inherited from the script but can be overwritten. See above for more detail.</td>
-</tr>
-<tr class="row-odd"><td>Order</td>
-<td>The order in which the script should run compared to other scripts.</td>
-</tr>
-<tr class="row-even"><td>Run As</td>
-<td>What OS user the script should run as.</td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
+<div class="section" id="using-scripts-in-orchestration">
+<h3>Using Scripts In Orchestration<a class="headerlink" href="#using-scripts-in-orchestration" title="Permalink to this headline">¶</a></h3>
+<p>For details on using scripts in Orchestration Rules please follow the link to the relevant section.</p>
+<ul class="simple">
+<li><a class="reference internal" href="../sec_comp/orchestration.html#sa-orchestration"><span class="std std-ref">Scalr/Account/Environment Level Orchestration</span></a></li>
+<li><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration"><span class="std std-ref">Role Orchestration</span></a></li>
+<li><a class="reference internal" href="../farms/index.html#farm-role-orchestration"><span class="std std-ref">Farm Role Orchestration</span></a></li>
+</ul>
 </div>
 <div class="section" id="manually-on-farms-farm-roles-or-servers">
 <h3>Manually On Farms, Farm Roles, or Servers<a class="headerlink" href="#manually-on-farms-farm-roles-or-servers" title="Permalink to this headline">¶</a></h3>

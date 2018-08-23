@@ -17,14 +17,14 @@ For more details see :ref:`policy_engine`
 Resource Quotas
 ---------------
 
-Resource Quotas in Scalr provide a simple mechanism to limit consumption of resources in clouds and thereby control cost. Resource quotas can be set for Memory (RAM), number of servers and vCPU's on a cloud by cloud basis and applied selectively to different |Environments|. Thus a development team working in AWS could have different quotas to the Production system also running in AWS or anywhere else.
+Resource Quotas in Scalr provide a simple mechanism to limit consumption of resources in clouds and thereby control cost. Resource quotas can be set for Memory (RAM), number of servers and vCPU's on a cloud by cloud basis and applied selectively to different |ENVIRONMENTS|. Thus a development team working in AWS could have different quotas to the Production system also running in AWS or anywhere else.
 
 For more details see :ref:`quotas`
 
 Orchestration Rules
 -------------------
 
-Orchestration Rules are a mechanism that enables scripts to be on servers under a variety of circumstances. The circumstances include built-in server life cycle events, custom events and scheduled tasks. Orchestration rules can be defined at many levels through out Scalr, including Farms and Farm Roles. But in the context of governance Scalr allows for event based Orchestration Rules to be defined at the |SCALR| scope (Enterprise) and |ACCOUNT| scope (Business Unit) so that the rules are applied to all |Environments| below these scopes.
+Orchestration Rules are a mechanism that enables scripts to be on servers under a variety of circumstances. The circumstances include built-in server life cycle events, custom events and scheduled tasks. Orchestration rules can be defined at many levels through out Scalr, including Farms and Farm Roles. But in the context of governance Scalr allows for event based Orchestration Rules to be defined at the |SCALR| scope (Enterprise) and |ACCOUNT| scope (Business Unit) so that the rules are applied to all |ENVIRONMENTS| below these scopes.
 
 Examples of using Orchestration Rules for governance are as follows.
 

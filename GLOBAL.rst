@@ -20,10 +20,6 @@
 
 .. |ENVIRONMENTS| replace:: Environments
 
-.. |Accounts| replace:: Accounts
-
-.. |Environments| replace:: Environments
-
 .. |NEWWIN| image:: /images/new_win.png
             :scale: 25%
 
@@ -53,6 +49,21 @@
 
 .. |MENU_ENV| image:: /images/menu_env.png
                 :scale: 25%
+
+.. |EDIT| image:: /images/edit.png
+          :scale: 30%
+
+.. |CONFIGURE| image:: /images/configure.png
+               :scale: 30%
+
+.. |MENU| image:: /images/menu.png
+               :scale: 30%
+
+.. |POLICY| image:: /images/policy.png
+               :scale: 30%
+
+.. |GVI| image:: /images/gv_int.png
+               :scale: 30%
 
 .. |SCALR_SERVER_RB| replace:: In a multi-node configuration, the scalr-server.rb file should be exactly the same across all Scalr server nodes. Remember to run ``scalr-server-ctl reconfigure`` on all nodes whenever you make an update to the scalr-server.rb configuration file.
 

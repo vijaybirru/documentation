@@ -31,7 +31,7 @@ It is completely acceptable to group multiple components onto one virtual machin
 
 * 2 VMs for DB (active/passive):
 
-  * 4CPU, 8GB RAM
+  * 4CPU, 8GB RAM (A server is not required, this can be a cloud based database service like AWS RDS)
   * 750GB storage mounted on /opt/scalr-server on each server
 
 Supported Operating Systems:
@@ -57,4 +57,6 @@ Scalr can be configured to specify the connection option (Public or Local) or a 
 
 In both cases the firewall protecting instances must be opened to permit access to the required ports on the Scalr server and the managed instances as follows.
 
-.. include:: ports_generic.rst
+.. include:: /reference/index.rst
+   :start-after: net-req-start:
+   :end-before: net-req-end

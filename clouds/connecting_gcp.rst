@@ -55,7 +55,7 @@ If you choose to use the "public" or "local" option then you need to login to yo
    app[:configuration] = {
     "scalr" => {
       "gce" => {
-        "instance_connection_policy" => "local" or "public"
+        "instances_connection_policy" => "local" or "public"
        }
      }
    }

@@ -90,7 +90,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html#scalr-architecture">Scalr Architecture</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#software-architecture">Software Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#deployment-architecture">Deployment Architecture</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../introduction/terminology.html">Concepts and Terminology</a><ul>
@@ -125,6 +124,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#architecture">Architecture</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#supported-operating-systems">Supported Operating Systems:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#network-requirements">Network Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/scalr_server_installation.html">Scalr Server Install</a><ul>
@@ -140,13 +140,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html">Scalr Server Maintenance</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html#upgrades">Upgrades</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html#automated-upgrades">Automated Upgrades</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html#database-backups">Database Backups</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html#monitoring-best-practices">Monitoring Best Practices</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/scalarizr_installation.html">Scalarizr Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#about">About</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#os-requirements">OS Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#network-requirements">Network Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#supported-server-instance-operating-systems">Supported Server/Instance Operating Systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#installing-scalarizr">Installing Scalarizr</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#how-to-install-scalarizr-on-linux-images">How to Install Scalarizr on Linux Images</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#how-to-install-scalarizr-on-windows-images">How to Install Scalarizr on Windows Images</a></li>
@@ -237,21 +238,7 @@
 </ul>
 <p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#aws-images">AWS Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#azure-images">Azure Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#gce-images">GCE Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#openstack-images">Openstack Images</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#aws-images">AWS Images</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#azure-images">Azure Images</a></li>
@@ -260,29 +247,47 @@
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#editing-roles">Editing Roles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#target">Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#advanced-configuration">Advanced Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-permissions">Role Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/create_non_scalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/orchestration.html">Role Orchestration</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Infrastructure Management</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../farms/index.html">Farm Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-roles">Farm Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-role-orchestration">Farm Role Orchestration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#events-reference">Events Reference</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#custom-events">Custom Events</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#creating-a-custom-event">Creating a Custom Event</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#firing-a-custom-event">Firing a Custom Event</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-role-orchestration">Farm Role Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#target">Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#advanced-configuration">Advanced Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/index.html#network-and-security-group-configuration">Network and Security Group configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#advanced-options">Advanced Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#ansible-in-farm-roles">Ansible in Farm Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#chef-in-farm-roles">Chef in Farm Roles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/launch.html">Farm Launching and Managing Servers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/ssh.html">SSH Keys in Scalr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../farms/ssh.html">SSH Keys in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#accessing-keys">Accessing Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#usernames">Usernames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#adding-policy-for-keys">Adding Policy for Keys</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/execution.html">Script Execution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/auto_dicscovery.html">Service Auto Discovery</a></li>
@@ -352,8 +357,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/orchestration.html">Scalr/Account/Environment Level Orchestration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#creating-orchestration-rules">Creating Orchestration Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#target">Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#advanced-configuration">Advanced Configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html">Webhooks and Endpoints</a><ul>
@@ -403,7 +411,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#executing-scripts">Executing Scripts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#farm-role-orchestration">Farm Role Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#using-scripts-in-orchestration">Using Scripts In Orchestration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#manually-on-farms-farm-roles-or-servers">Manually On Farms, Farm Roles, or Servers</a></li>
 </ul>
 </li>
@@ -431,9 +439,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../custom_events/index.html#creating-a-custom-event">Creating a Custom Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom_events/index.html#firing-a-custom-event">Firing a Custom Event</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Demand Management</span></p>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scaling Workloads</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scaling/index.html">Scaling Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scaling/manual.html">Manual Scaling</a><ul>
@@ -443,24 +455,24 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../scaling/auto.html">Auto Scaling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#simple-autoscaling">Simple Autoscaling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#dynamic-autoscaling">Dynamic Autoscaling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#autoscaling-configuration">Autoscaling Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#autoscaling-algorithms">Autoscaling Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#custom-scaling">Custom Scaling</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../scaling/custom_scaling.html">Custom Metrics and Scaling</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Importing Cloud Infrastructure</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html">Discovery Manager</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html">Introduction to Importing Cloud Infrastructure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html#discovery-manager">Discovery Manager</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#importing-servers">Importing Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#installing-scalarizer">Installing Scalarizer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#importing-containers">Importing Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#discovering-containers">Discovering Containers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#migrate-servers-from-farm-role-to-farm-role">Migrate Servers from Farm Role to Farm Role</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../discovery/creating_images_nonscalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
 <ul>
@@ -481,7 +493,7 @@
 <p class="caption"><span class="caption-text">Scalarizr agent</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html">Scalarizr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#about">About</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#monitoring-scalarizr">Monitoring Scalarizr</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#servers-dashboard">Servers Dashboard:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#server-general-details">Server General Details:</a></li>
@@ -527,7 +539,21 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App Tutorial (cloud agnostic, orchestration automation)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#objective">Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#application-overview">Application Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#script-creation">Script Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#roles-required">Roles Required:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#farm-creation">Farm Creation:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#farm-role-configuration">Farm Role Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/3-tier-app.html#select-and-configure-the-webapp-farm-role">Select and configure the WebApp farm role:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/3-tier-app.html#select-and-configure-the-mysql-farm-role">Select and configure the MySQL farm role:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/3-tier-app.html#select-and-configure-the-nginx-farm-role">Select and configure the Nginx farm role:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#testing-the-application">Testing the Application</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Release Notes</span></p>
 <ul>
@@ -551,6 +577,11 @@
 </li>
 </ul>
 </li>
+</ul>
+<p class="caption"><span class="caption-text">Reference Section</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Supported Server/Instance Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 </ul>
 
             
@@ -655,7 +686,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="p">[:</span><span class="n">configuration</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;scalr&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
       <span class="s2">&quot;aws&quot;</span> <span class="o">=&gt;</span> <span class="p">{</span>
-        <span class="s2">&quot;instance_connection_policy&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;local&quot;</span> <span class="ow">or</span> <span class="s2">&quot;public&quot;</span>
+        <span class="s2">&quot;instances_connection_policy&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;local&quot;</span> <span class="ow">or</span> <span class="s2">&quot;public&quot;</span>
        <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>

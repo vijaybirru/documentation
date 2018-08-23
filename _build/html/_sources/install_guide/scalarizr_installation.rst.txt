@@ -27,22 +27,13 @@ Software Firewall/ iptables management		    No              Yes
 
 .. Term-Scalarizr-About-End
 
-OS Requirements
----------------
+.. include:: /reference/index.rst
+   :start-after: supported-os-start:
+   :end-before: supported-os-end
 
-========================================    ================================
-Operating System                            Supported Versions
-========================================    ================================
-Ubuntu                                      14.04 - 18.04 LTS
-Debian                                      6.x - 7.x
-RHEL / CentOS                               5.x - 7.x
-Windows Server                              2008 R2, 2012(all), and 2016
-========================================    ================================
-
-Network Requirements
----------------------
-
-.. include:: ports_generic.rst
+.. include:: /reference/index.rst
+   :start-after: net-req-start:
+   :end-before: net-req-end
 
 Installing Scalarizr
 ---------------------

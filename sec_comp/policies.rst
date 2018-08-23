@@ -107,10 +107,10 @@ Back at |SCALR| scope under **Policy Engine -> Policy Tags** you will be able to
 .. image:: images/tag_usage.png
            :scale: 70%
 
-Linking Policy Groups to |Environments|
+Linking Policy Groups to |ENVIRONMENTS|
 ---------------------------------------
 
-Policy Groups will only take effect when they are linked to |Environments|. You can only link one Policy Group of each type to an |ENVIRONMENT|.
+Policy Groups will only take effect when they are linked to |ENVIRONMENTS|. You can only link one Policy Group of each type to an |ENVIRONMENT|.
 
 Click on ENVIRONMENTS in the Bookmarks Bar or Main menu and select the environment you wish to link Policy Groups to.
 
@@ -123,6 +123,8 @@ Click on the link icon on the right-hand side, link the required Policy Group to
 
 Policy Reference
 ================
+
+.. _config_policies:
 
 Configuration Policies
 ----------------------

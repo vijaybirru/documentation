@@ -115,25 +115,25 @@ To enable the advanced logging, add the following to the scalr-server.rb file:
         "agent" => {
           "enabled" => true,
           "proto" => "http",
-          "path" => "localhost",
+          "path" => "hostname of the server hosting fluentD",
           "port" => 8888
         },
         "audit" => {
           "enabled" => true,
           "proto" => "http",
-          "path" => "localhost",
+          "path" => "localhost or hostname of the server hosting fluentD",
           "port" => 8888
         },
         "api" => {
           "enabled" => true,
           "proto" => "http",
-          "path" => "localhost",
+          "path" => "localhost or hostname of the server hosting fluentD",
           "port" => 8888
         },
         "user" => {
           "enabled" => true,
           "proto" => "http",
-          "path" => "localhost",
+          "path" => "localhost or hostname of the server hosting fluentD",
           "port" => 8888
         }
       }
@@ -141,6 +141,10 @@ To enable the advanced logging, add the following to the scalr-server.rb file:
   }
 
 In most cases, the settings above should be fine for your setup. If you do need to change the settings, the full list of fields can be found in the :ref:`logging` section of our advanced configurations page.
+
+.. note::
+
+  The agent log settings must have the hostname of the FluentD server as this information is passed to the agent residing on the server provisioned by Scalr. The logs go directly from the agent to FluentD server.
 
 .. note:: |SCALR_SERVER_RB|
 

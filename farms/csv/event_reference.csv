@@ -1,0 +1,15 @@
+Event,Description
+BeforeInstanceLaunch,The new instance will be launched in few minutes.
+HostInit,The Instance finished booting and  Scalr is now configuring the Environment and initializing Services.
+IPAddressChanged,Public IP address of the instance was changed upon by reboot or within Elastic IP assignments.
+EBSVolumeAttached,EBS volume was attached to the instance.
+EBSVolumeMounted,An EBS Volume has been attached and mounted to the Instance.
+BeforeHostUp,"Time for user-defined actions before the instance will be added to DNS, Loadbalancers etc"
+HostUp,"The Instance has booted and Environment and Services are running. Instance will now be added to Load Balancer, DNS Zone etc."
+BeforeHostTerminate,The Instance is flagged for termination and will be terminated after 180 seconds.
+HostDown,The instance will be terminated.
+RebootComplete,The Instance has finished rebooting.
+ResumeComplete,The instance was successfully resumed after a suspension.
+HostInitFailed,Instance booted up but Scalr environment is not configured and the services are not initialized yet.
+Custom Events,Any :ref:`custom_events` defined at this scope or higher.
+All Events,Rule will fire for any event including Custom Events.

@@ -38,9 +38,8 @@ Scalr Documentation!
    images_roles/index
    images_roles/registering_images
    images_roles/creating_roles
-   images_roles/creating_images_nonscalr
+   images_roles/create_non_scalr
    images_roles/multi_cloud
-   images_roles/orchestration
 
 .. toctree::
    :maxdepth: 3
@@ -96,19 +95,17 @@ Scalr Documentation!
 
 .. toctree::
    :maxdepth: 3
-   :caption: Demand Management
+   :caption: Scaling Workloads
 
    scaling/index
    scaling/manual
    scaling/auto
-   scaling/custom_scaling
 
 .. toctree::
    :maxdepth: 3
    :caption: Importing Cloud Infrastructure
 
    discovery/index
-   discovery/creating_images_nonscalr
 
 .. toctree::
    :maxdepth: 3
@@ -141,3 +138,9 @@ Scalr Documentation!
    :caption: Release Notes
 
    release_notes/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Reference Section
+
+   reference/index

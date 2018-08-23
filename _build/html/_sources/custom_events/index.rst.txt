@@ -4,3 +4,9 @@
 
 Custom Events
 ==============
+
+Creating a Custom Event
+-----------------------
+
+Firing a Custom Event
+---------------------

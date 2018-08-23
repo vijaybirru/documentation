@@ -1,0 +1,6 @@
+Cloud,Username
+AWS,root or a predefined username on the image.
+Azure,scalr
+Google,scalr or the username associated with the key if a policy is used.
+VMware,root or a predefined username on the image.
+Openstack,root or a predefined username on the image.

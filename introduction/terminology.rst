@@ -33,11 +33,11 @@ Scope                             Usage                         Description
                                                                 |SS|
 |ACCOUNT| |SCOPE_ACC|             Organisation Units            - Typically |ACCOUNTS| are Business Units that bring together teams working to a common purpose.
                                                                 - Within |ACCOUNTS|, you can specify cloud credentials and define common governance policies and resource quota groups that can be assigned to multiple |ENVIRONMENTS|. You can also establish Roles/Images that can be made available across multiple |ENVIRONMENTS|.
-                                                                - |Accounts| are also responsible for configuring Teams and Access Control Lists (ACLs) to control who can do what and which resources they can use.
+                                                                - |ACCOUNTS| are also responsible for configuring Teams and Access Control Lists (ACLs) to control who can do what and which resources they can use.
                                                                 - Cost Analytics can (with permission) be further configured and analysed through the definition of additional Projects, Budgets and Pricing.
 
                                                                 |AS|
-|ENVIRONMENT| |SCOPE_ENV|         Deployment Environments       - |Environments| bring together the resources required to deploy infrastructure to the cloud.
+|ENVIRONMENT| |SCOPE_ENV|         Deployment Environments       - |ENVIRONMENTS| bring together the resources required to deploy infrastructure to the cloud.
                                                                 - It is at the |ENVIRONMENT| scope that deployment infrastructures, known as "Farms" are defined. Farms bring together roles, cloud services and orchestration rules to enable simple deployment of an entire application infrastructure with a single click. Orchestration rules are used to install packages, deploy custom software and much more.
                                                                 - There will typically be multiple |ENVIRONMENTS| per |ACCOUNT| that can also configure additional roles, images etc over and above those defined at the higher scopes.
                                                                 - Farms can also be published as Service Catalog offerings to allow non-technical end users to select and deploy applications in real time without the need to raise requests to the central IT department.
@@ -66,23 +66,23 @@ Cloud Credentials
 
 To be able to manage your cloud infrastructure Scalr needs to be able to connect to the APIs of the clouds that you use. Each cloud is different in the way it authenticates API access. Some require the generation of Access Keys and configuration of permissions and policies inside the cloud, whilst others simply authenticate with username and password. Whatever the method these authentication details must be stored in Scalr as Cloud Credentials.
 
-Cloud credentials can be configured at both the |SCALR| and |ACCOUNT| scopes and are then available to all lower scopes. Once they are configured Cloud Credentials are then linked to |Environments| so that end users can configure and manage cloud infrastructure.
+Cloud credentials can be configured at both the |SCALR| and |ACCOUNT| scopes and are then available to all lower scopes. Once they are configured Cloud Credentials are then linked to |ENVIRONMENTS| so that end users can configure and manage cloud infrastructure.
 
 See :ref:`cloud_creds` for details on configuring cloud access and Cloud Credentials.
 
-|Accounts|
+|ACCOUNTS|
 ----------
 
 |AS|
 
-|Accounts| are the core of implementing a federated IT organisational structure in Scalr. An |ACCOUNT| brings together the configuration resources, access permissions (ACLs) and governance policies that are applicable to to an organisational unit within an enterprise, thus ensuring consistent and suitably managed use of cloud environments. |Accounts| typically map to Business Units within an enterprise and are further sub-divided into |ENVIRONMENTS| for the different teams and/or functional areas within the BU, such as Dev, QA, Sales etc.
+|ACCOUNTS| are the core of implementing a federated IT organisational structure in Scalr. An |ACCOUNT| brings together the configuration resources, access permissions (ACLs) and governance policies that are applicable to to an organisational unit within an enterprise, thus ensuring consistent and suitably managed use of cloud environments. |ACCOUNTS| typically map to Business Units within an enterprise and are further sub-divided into |ENVIRONMENTS| for the different teams and/or functional areas within the BU, such as Dev, QA, Sales etc.
 
-There can be multiple |Accounts| within Scalr and these will be created by the Scalr administrator.
+There can be multiple |ACCOUNTS| within Scalr and these will be created by the Scalr administrator.
 
 An |ACCOUNT| administrator will be responsible for managing and configuring the following aspects of Scalr.
 
 * Cloud credentials
-* |Environments|
+* |ENVIRONMENTS|
 * Governance Policies and Resource Quotas
 * Users, Teams and Access Control Lists
 * Account level Orchestration rules
@@ -90,14 +90,14 @@ An |ACCOUNT| administrator will be responsible for managing and configuring the 
 
 For details on configuring |ACCOUNTS| see :ref:`accounts`.
 
-|Environments|
+|ENVIRONMENTS|
 --------------
 
 |ES|
 
-|Environments| are the scope at which cloud infrastructure is configured and run. An |ACCOUNT| can have multiple |Environments| that correspond to functional areas, different cloud providers or whatever structure makes sense for your business. Typically |Environments| are set up in line with application life cycles for specific applications and also possibly by geographical region. Each environment is linked to one or more sets of cloud credentials and one or more end user teams will be granted access at various levels to the |ENVIRONMENT|.
+|ENVIRONMENTS| are the scope at which cloud infrastructure is configured and run. An |ACCOUNT| can have multiple |ENVIRONMENTS| that correspond to functional areas, different cloud providers or whatever structure makes sense for your business. Typically |ENVIRONMENTS| are set up in line with application life cycles for specific applications and also possibly by geographical region. Each environment is linked to one or more sets of cloud credentials and one or more end user teams will be granted access at various levels to the |ENVIRONMENT|.
 
-Application developers, architects etc work within |Environments| to configure, develop and test applications. These applications are configured in "Farms" which combine Roles, cloud services and orchestration rules together to create easily transportable application infrastructure that can be shared with other |Environments|, can be deployed across different clouds and set up to scale automatically based on the varying demands of each different deployment. Once a Farm has completed development and testing it can be published as a Service Catalog application for self service consumption by other |Accounts| and |Environments|.
+Application developers, architects etc work within |ENVIRONMENTS| to configure, develop and test applications. These applications are configured in "Farms" which combine Roles, cloud services and orchestration rules together to create easily transportable application infrastructure that can be shared with other |ENVIRONMENTS|, can be deployed across different clouds and set up to scale automatically based on the varying demands of each different deployment. Once a Farm has completed development and testing it can be published as a Service Catalog application for self service consumption by other |ACCOUNTS| and |ENVIRONMENTS|.
 
 Multiple teams can login to each |ENVIRONMENT| and the users functional capability can range from IT sophisticated DevOps users that build applications, through to minimal access Service Catalog users who simply login to launch applications (with one click) that they wish to use.
 
@@ -148,19 +148,23 @@ Images and Roles can be configured at all three scopes within Scalr and are inhe
 
 For details on working with Images and Roles see :ref:`images_roles`.
 
+.. farm_term_start
+
 Farms and Farm Roles
 --------------------
 |SCOPE_ENV|
 
 A Farm is the collection of Roles, Orchestration rules, network configuration, cloud services and much more that defines the desired deployment state of a cloud based system. A Farm can include any number of Roles that work together to provide a service, such as a basic 3-tier app that includes a load balancer, a web app layer and a database layer. The Farm can include all the required automation to bootstrap servers with the required software and auto discover the related services being provided by other roles, e.g. registering web app servers with the load balancer.
 
-When a Role is added to a Farm this is known as a "Farm Role". It inherits all the attributes of the Role itself but extends the configuration to include selection of clouds, locations, network, security groups, additional orchestration   rules etc. In other words it turns a role into something that can actually be deployed as a functioning server in the cloud. The Farm Role can also be parameterised through the use of Global Variables to enable end users to make choices about certain aspects of the deployment at the time it is launched
+When a Role is added to a Farm this is known as a "Farm Role". A Farm Role is analogous to a 'tier' in an application stack, such as the Webapp, Load Balancer or database tier. A Farm Role inherits all the attributes of the Role itself but extends the configuration to include selection of clouds, locations, network, security groups, additional orchestration rules etc. In other words it turns a role into something that can actually be deployed as a functioning server in the cloud. The Farm Role can also be parameterised through the use of Global Variables to enable end users to make choices about certain aspects of the deployment at the time it is launched
 
 Desired State Engine
 ^^^^^^^^^^^^^^^^^^^^
 The underlying principle behind a Farm configuration is that it defines the desired state of a deployment. When a Farm is launched Scalr's Desired State Engine (DSE) begins a continuous cycle of monitoring the cloud infrastructure to determine if the Farm is in the desired state or not. If any variance from the desired state is identified Scalr will take action to address this. At initial launch this will cause all the required servers to be started. During later cycles the DSE may detect the need to both stop and start servers. If a Farm is reconfigured to reduce the maximum number of servers for a role then any extra servers will be terminated. This can also happen with Auto Scaling as demand changes.
 
 .. warning:: Reconfiguring a running farm can result in servers being stopped and started. Take great care when reconfiguring farms that are for business critical services.
+
+.. farm_term_end
 
 For details on configuring Farms and Farm Roles see :ref:`farms`.
 
@@ -238,8 +242,6 @@ For details on configuring Users, Teams and ACL's see :ref:`teams_users`.
 Global Variables
 ----------------
 |SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV| |SCOPE_ROLE| |SCOPE_FARM| |SCOPE_F_ROLE|
-
-.. |GVI| image:: images/gvi.png
 
 Global Variables are a key value store built in to Scalr and are stored encrypted in the main Scalr database. They are used to pass configuration data from the Scalr User Interface down to your Servers. Global Variables can be defined at all scopes of Scalr. They can be defined as simple single values, validation lists or JSON objects.
 

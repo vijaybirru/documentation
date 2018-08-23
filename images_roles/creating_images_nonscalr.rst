@@ -1,6 +1,0 @@
-.. include:: ../GLOBAL.rst
-
-.. _images_from_servers:
-
-Creating Images and Roles from Non-Scalr Servers
-================================================

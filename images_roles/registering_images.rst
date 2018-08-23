@@ -1,6 +1,6 @@
 .. include:: ../GLOBAL.rst
 
-.. _register_images:
+.. _registering_images:
 
 Registering Images
 ==================
@@ -8,7 +8,7 @@ Registering Images
 
 Step one of using Scalr to configure and deploy infrastructure is to register one or more images that you wish to use as the basis for the servers you are going to deploy. As mentioned previously, an Image in Scalr is simply a meta data record of an actual Image or Template in a cloud that you use. It is a 1:1 mapping.
 
-Images in Scalr have slight differences to they way they map to cloud imnages depending on the Cloud the actual image or template is in.
+Images in Scalr map to cloud images differently depending on their Cloud platform.
 
 .. csv-table::
    :widths: 15,15,70
@@ -23,7 +23,7 @@ Images in Scalr have slight differences to they way they map to cloud imnages de
 
 .. warning:: It is recommended that images registered in Scalr should have Scalarizer installed. If you Intend to use images with Scalr :ref:`role_orchestration` or :ref:`farm_role_orchestration` the Scalarizer agent MUST be installed. If you do not have Scalarizer installed in any images see :ref:`images_from_servers`.  See :ref:`discovery_manager` for more details on agentless options.
 
-Images can be registered at any scope in Scalr and made available to the lower scopes.
+Images can be registered at any scope in Scalr and made available to the lower scopes. However you can only register images at or below the scope where the :ref:`Cloud Credentials <cloud_creds>` have been set up. i.e. Images cannot be registered at |SCALR| scope using credentials created at |ACCOUNT| scope.
 
 Image functionality is accessed via Images in the Main menu or Bookmarks bar at any scope. Note that you can jump straight to New Image from the main menu or click on "Images" and then "New Image" at the top of the list.
 
@@ -73,7 +73,7 @@ Add the additional details and set the requited options as described below and t
 Azure Images
 ------------
 
-**Image ID in Azure** : This is the URN of the image in the form ``PublisherName/Offer/SKUs/verisone``. URN's can only be obtained via the Azure API.
+**Image ID in Azure** : This is the URN of the image in the form ``PublisherName/Offer/SKUs/version``. URN's can only be obtained via the Azure API.
 
 * Using the Azure API list available images and copy the URN you require. The API command is ``az vm image list``
 

@@ -1,0 +1,10 @@
+Parameter,Description,Type,Example value(s),Default value
+scalr.connections.proxy.host,The proxy host Scalr should use to communicate with cloud APIs using a proxy.,String,"hostname, ""127.0.0.1""", localhost
+scalr.connections.proxy.port,The proxy port Scalr should use.,Integer,valid TCP port,3128
+scalr.connections.proxy.user,The proxy username Scalr should use.,String,scalr,
+scalr.connections.proxy.pass,The proxy password Scalr should use.,String,s3cur3pa55w0rd,
+scalr.connections.proxy.type,Proxy type to use.,Integer,0 = HTTP 4 = SOCKS4 5 = SOCKS5,0
+scalr.connections.proxy.authtype,Type of authentication to use.,Integer,1 = Basic Auth 2 = Digest Auth 4 = GSSNeg 8 = NTLM -1 = Any auh type,1
+scalr.connections.proxy.use_on,What the proxy should be used for.,String,"both = Server & Agent ""scalr"" = Server only ""instance"" = Agent only",scalr
+scalr.%PLATFORM%.use_ proxy,"Whether Scalr should use a proxy when communicating with the specified cloud platform. Substitute %PLATFORM% with one of the following values: hpcloud, mirantis, azure, ec2, openstack, cloudstack, idcf, ocs, rackspacenguk, rackspacengus, cisco, vmware, vio",Boolean,"true, false / Platform Values: ""hpcloud"", ""mirantis"", ""azure"", ""ec2"", ""openstack"", ""cloudstack"", ""idcf"", ""gce"", "" ocs"", ""rackspacenguk"", ""rackspacengus"", ""cisco"" , ""vmware"", ""vio""",FALSE
+scalr.system.webhooks.use_proxy,Whether Scalr should use a proxy when sending requests using Webhooks .,Boolean,"true, false",FALSE

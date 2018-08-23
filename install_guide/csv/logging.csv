@@ -1,0 +1,21 @@
+Parameter,Description,Type,Example value(s),Default value
+scalr.system.scripting.logs_storage,The location where Scalr should store Orchestration Log .,String,"scalr = On Scalr server ""instance"" = On affected instance",instance
+scalr.system.scripting.default_instance_log_rotation_period,The default duration (in seconds) logs should be kept when stored on instances. Users can override this setting in the Farm Designer: Advanced Tab - Orchestration .,Integer,1-99999,3600
+scalr. log ger.audit.enabled,Whether the audit log should be enabled.,Boolean,"true, false",FALSE
+scalr.logger.audit.path,Unix socket path or IP/Hostname to fluentd for audit log.,String,"/path/to/socket.sock, ""hostname""",localhost
+scalr.logger.audit.port,Port that fluentd is listening on for the audit log.,Integer,any TCP/UDP port,8888
+scalr.logger.audit.proto,Protocol to use when communicating with fluentd for the audit log.,String,"http, ""tcp"" ""udp""",http
+scalr.logger.audit.timeout,The connection to fluentd will timeout after this time has passed (in seconds) for the audit log.,Integer,1-999,1
+scalr.logger.audit.tag,All audit logs will be tagged with this string.,String,,audit
+scalr.logger.api.enabled,Whether the API log should be enabled.,Boolean,"true, false",FALSE
+scalr.logger.api.path,Unix socket path or IP/Hostname to fluentd for API log.,String,"/path/to/socket.sock, ""hostname""",localhost
+scalr.logger.api.port,Port that fluentd is listening on for the API log.,Integer,any TCP/UDP port,8888
+scalr.logger.api.proto,Protocol to use when communicating with fluentd for the API log.,String,"http, ""tcp"", ""udp""",http
+scalr.logger.api.timeout,The connection to fluentd will timeout after this time has passed (in seconds) for the API log.,Integer,1-999,1
+scalr.logger.api.tag,All API logs will be tagged with this string.,String,,api
+scalr.logger.user.enabled,Whether the user log should be enabled.,Boolean,"true, false",FALSE
+scalr.logger.user.path,Unix socket path or IP/Hostname to fluentd for user log.,String,"/path/to/socket.sock, ""hostname""",localhost
+scalr.logger.user.port,Port that fluentd is listening on for the user log.,Integer,any TCP/UDP port,8888
+scalr.logger.user.proto,Protocol to use when communicating with fluentd for the user log.,String,"http, ""tcp"", ""udp""",http
+scalr.logger.user.timeout,The connection to fluentd will timeout after this time has passed (in seconds) for the user log.,Integer,1-999,1
+scalr.logger.user.tag,All user logs will be tagged with this string.,String,,user

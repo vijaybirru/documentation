@@ -15,11 +15,30 @@ Images and Roles are the two fundamental features of Scalr that allow you to bui
 
 Please work through the sections listed below to understand the full details of working with Images and Roles.
 
-.. toctree::
-   :titlesonly:
+* :ref:`registering_images`
+* :ref:`roles`
+* :ref:`multicloud_roles`
+* :ref:`images_from_servers`
 
-   registering_images
-   creating_roles
-   creating_images_nonscalr
-   multi_cloud
-   orchestration
+Cloning, Promoting and Using
+----------------------------
+
+.. |CLONE| image:: images/clone.png
+           :scale: 40%
+
+.. |PROMO| image:: images/promote.png
+           :scale: 40%
+
+.. |USE| image:: images/use.png
+           :scale: 40%
+
+Additional Image and Role options are available from the right hand panel when an Image or Role is selected from the Image or Role list.
+
+.. csv-table::
+   :header-rows: 1
+   :widths: 25,15,60
+
+   Option,For, Description
+   Clone |CLONE|,Role,Create a new role based on an existing Role
+   Promote |PROMO|,"Image, Role",Promote to a higher scope to make more widely available
+   Use |USE|,Role,Add the Role directly to a Farm from the list
