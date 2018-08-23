@@ -14,7 +14,7 @@ Scalr has autoscaling built directly into the product, which introduces scaling 
 
 * Simple Autoscaling: Ensure that you always have a minimum number of servers up at all times.
 
-* Dynamic Autoscaling: Using defined metrics Scalr will scale up or down your Farm Role(s).
+* Dynamic Autoscaling: Using defined metrics, Scalr will scale up or down your Farm Role(s).
 
 Simple Autoscaling
 ------------------
@@ -26,10 +26,12 @@ If your Running Server Count is lower than the minimum you requested, additional
 * Terminating a server
 * Suspending a server
 * A server crashing
+* Increasing the MIN Instances by editing the Farm Role
 
 If your Running Server Count is higher than the Maximum you requested, existing Servers will be terminated. Such a situation could be caused by:
 
 * Manually launching more servers in a Farm Role without updating your scaling settings.
+* Decreasing the MAX Instances by editing the Farm Role
 
 To enable simple autoscaling in your Farm Role, find your Farm, click on the Farm Role, go to the Scaling tab and make sure it is set to Automatic:
 
@@ -52,6 +54,9 @@ To enable dynamic autoscaling in your Farm Role, find your Farm, click on the Fa
    :header-rows: 1
    :file: csv/scaling_metrics.csv
    :widths: 20,80
+
+.. note::
+    Dynamic Autoscaling is only enabled for Farm Roles that are using the Scalarizr agent.
 
 Autoscaling Configuration
 -------------------------
@@ -89,7 +94,7 @@ The options in the screenshot are defined as follows (in order):
   * Terminated: If a server is suspended, that server is considered terminated in the min/max scaling count.
 
 * The servers which have been launched the most recently will be scaled down first.
-* By enabling safe shutdown, Scalr will run an "auth-shutdown" script on every Server before terminating it. Depending on the Script's return code, Scalr may abort the scale-down procedure. This option is useful to prevent a Server from being terminated while performing a long-running task. Scalr will terminate an instance ONLY IF the script '/usr/local/scalarizr/hooks/auth-shutdown' returns 1. If this script is not found or returns any other value, Scalr WILL NOT terminate that server.
+* By enabling safe shutdown, Scalr will run an "auth-shutdown" script on every Server before terminating it. Depending on the Script's return code, Scalr may abort the scale-down procedure. This option is useful to prevent a Server from being terminated while performing a long-running task. Scalr will terminate an instance ONLY IF the script ``/usr/local/scalarizr/hooks/auth-shutdown`` returns 1. If this script is not found or returns any other value, Scalr WILL NOT terminate that server.
 
 Custom Scaling
 --------------

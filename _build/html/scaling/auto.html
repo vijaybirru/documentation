@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Discovery Manager" href="../discovery/index.html" />
-    <link rel="prev" title="Manual Scaling" href="manual.html" /> 
+    <link rel="next" title="Manual Scaling" href="manual.html" />
+    <link rel="prev" title="Scaling Applications" href="index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -466,18 +466,19 @@
 <p class="caption"><span class="caption-text">Scaling Workloads</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Scaling Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual.html">Manual Scaling</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="manual.html#using-manual-scaling">Using Manual Scaling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual.html#manually-launching-servers">Manually Launching Servers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="manual.html#manually-terminating-servers">Manually Terminating Servers</a></li>
-</ul>
-</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Auto Scaling</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#simple-autoscaling">Simple Autoscaling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dynamic-autoscaling">Dynamic Autoscaling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#autoscaling-configuration">Autoscaling Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#custom-scaling">Custom Scaling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manual.html">Manual Scaling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#using-manual-scaling">Using Manual Scaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#manually-launching-servers">Manually Launching Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#manually-terminating-servers">Manually Terminating Servers</a></li>
 </ul>
 </li>
 </ul>
@@ -490,6 +491,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#deploy-scalarizr">Deploy Scalarizr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#discovering-containers">Discovering Containers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#migrate-servers-from-farm-role-to-farm-role">Migrate Servers from Farm Role to Farm Role</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/index.html">Kubernetes Clusters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../kubernetes/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kubernetes/index.html#adding-a-cluster">Adding a Cluster</a></li>
 </ul>
 </li>
 </ul>
@@ -674,7 +680,7 @@
 <p>Scalr has autoscaling built directly into the product, which introduces scaling for those clouds that do not have it as well maintains a consistent experience across all clouds. There are two types of autoscaling:</p>
 <ul class="simple">
 <li>Simple Autoscaling: Ensure that you always have a minimum number of servers up at all times.</li>
-<li>Dynamic Autoscaling: Using defined metrics Scalr will scale up or down your Farm Role(s).</li>
+<li>Dynamic Autoscaling: Using defined metrics, Scalr will scale up or down your Farm Role(s).</li>
 </ul>
 </div>
 <div class="section" id="simple-autoscaling">
@@ -685,10 +691,12 @@
 <li>Terminating a server</li>
 <li>Suspending a server</li>
 <li>A server crashing</li>
+<li>Increasing the MIN Instances by editing the Farm Role</li>
 </ul>
 <p>If your Running Server Count is higher than the Maximum you requested, existing Servers will be terminated. Such a situation could be caused by:</p>
 <ul class="simple">
 <li>Manually launching more servers in a Farm Role without updating your scaling settings.</li>
+<li>Decreasing the MAX Instances by editing the Farm Role</li>
 </ul>
 <p>To enable simple autoscaling in your Farm Role, find your Farm, click on the Farm Role, go to the Scaling tab and make sure it is set to Automatic:</p>
 <a class="reference internal image-reference" href="../_images/simple_scaling.png"><img alt="../_images/simple_scaling.png" src="../_images/simple_scaling.png" style="width: 850.8px; height: 357.59999999999997px;" /></a>
@@ -730,6 +738,10 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Dynamic Autoscaling is only enabled for Farm Roles that are using the Scalarizr agent.</p>
+</div>
 </div>
 <div class="section" id="autoscaling-configuration">
 <h2>Autoscaling Configuration<a class="headerlink" href="#autoscaling-configuration" title="Permalink to this headline">¶</a></h2>
@@ -759,7 +771,7 @@
 </ul>
 </li>
 <li>The servers which have been launched the most recently will be scaled down first.</li>
-<li>By enabling safe shutdown, Scalr will run an “auth-shutdown” script on every Server before terminating it. Depending on the Script’s return code, Scalr may abort the scale-down procedure. This option is useful to prevent a Server from being terminated while performing a long-running task. Scalr will terminate an instance ONLY IF the script ‘/usr/local/scalarizr/hooks/auth-shutdown’ returns 1. If this script is not found or returns any other value, Scalr WILL NOT terminate that server.</li>
+<li>By enabling safe shutdown, Scalr will run an “auth-shutdown” script on every Server before terminating it. Depending on the Script’s return code, Scalr may abort the scale-down procedure. This option is useful to prevent a Server from being terminated while performing a long-running task. Scalr will terminate an instance ONLY IF the script <code class="docutils literal notranslate"><span class="pre">/usr/local/scalarizr/hooks/auth-shutdown</span></code> returns 1. If this script is not found or returns any other value, Scalr WILL NOT terminate that server.</li>
 </ul>
 </div>
 <div class="section" id="custom-scaling">
@@ -856,10 +868,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../discovery/index.html" class="btn btn-neutral float-right" title="Discovery Manager" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="manual.html" class="btn btn-neutral float-right" title="Manual Scaling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="manual.html" class="btn btn-neutral" title="Manual Scaling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="Scaling Applications" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
