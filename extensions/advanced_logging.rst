@@ -8,7 +8,7 @@ Advanced logging can be turned on for administrators to gather more information 
 * Agent Logs - This log will contain all events related to Orchestration. It will contain the same events as found under Orchestration Log in the Scalr UI.
 * API Logs - This log contains failed API requests and responses.
 * Audit Logs - This log contains different events that happened in Scalr and who triggered them.  It is designed to collect all user initiated actions which should be audited.
-* User Logs - This log cotains the system logs that you can see in the UI under System Logs.
+* User Logs - This log contains the system logs that you can see in the UI under System Logs.
 
 Scalr supports real time logging to a fluentd backend which can be configured to act as a funnel before getting stored on any storage backend, such as Plain Text Files, ElasticSearch, MongoDB, or Splunk.
 
