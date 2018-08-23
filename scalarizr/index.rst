@@ -118,7 +118,7 @@ The following are the Scalarizr log locations:
 Scalarizr Administrative Interface
 ==================================
 
-Scalarizr provides a command line interface (szradm) allowing users to perform a variety of tasks inluding:
+Scalarizr provides a command line interface (szradm) allowing users to perform a variety of tasks including:
 
 * Firing events
 * Querying environments information about the server or farm.
