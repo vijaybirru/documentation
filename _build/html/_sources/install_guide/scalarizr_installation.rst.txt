@@ -112,7 +112,7 @@ Add the following to scalr-server.rb on ALL servers.  Be sure to change <ip-of-r
 
    repos[:bind_port] = 6273
 
-Run scalr-server-ctl reonfigure to ensure the changes are applied.
+Run scalr-server-ctl reconfigure to ensure the changes are applied.
 
 Managing Scalr Integrated Repo Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
