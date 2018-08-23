@@ -6,4 +6,4 @@ scalr. scalarizr_update.default_repo,"The default repository to use for Scalariz
 scalr. scalarizr_update.repos.[repo_name]. deb_repo_url,The URL for this repository's Debian Scalarizr packages.,String, http://repo.scalr.net/apt-plain stable/,
 scalr. scalarizr_update.repos.[repo_name]. rpm_repo_url,The URL for this repository's RPM Scalarizr packages.,String, http://repo.scalr.net/rpm/stable/rhel/$releasever/$basearch,
 scalr. scalarizr_update.repos.[repo_name]. win_repo_url,The URL for this repository's Windows Scalarizr packages.,String, http://repo.scalr.net/win/stable ,
-scalr.scalarizr_update.use_proxy,Boolean,"true, ""false""",flase,
+scalr.scalarizr_update.use_proxy,Boolean,"true, ""false""",false,
