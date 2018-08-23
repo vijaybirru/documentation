@@ -50,7 +50,7 @@ You will now be presented with the New Role screen where you configure all the R
    Quick Start,No,Enable this to include this role in the Quick Start menu of the Farm Designer
    Use Scalr-Agent,No,Enabled by default and required for `Role Orchestration`_ and :ref:`auto_scaling`. If this is disabled the "Configure Built-In Automation wheel" |CONFIGURE| will be disabled but the option to Use Cloud-Init will appear.
    Configure Built-In Automation wheel |CONFIGURE|,No,Click on the wheel and select "Chef" to enable the Chef options for this role. This will make the Chef tab visible on the left side. You can only enable Chef when creating a new Role as it cannot be done after the role has been saved. See Note below.
-   Use Cloud-Init,No,This option only appears if "Use Scalr-Agent" is disabled. Enable this option to have Scalr work with Cloud-Init to configure servers. Once enabled the Cocnfigure button |CONFIGURE| will appear to enable you to set the Cloud-Int Config
+   Use Cloud-Init,No,This option only appears if "Use Scalr-Agent" is disabled. Enable this option to have Scalr work with Cloud-Init to configure servers. Once enabled the Configure button |CONFIGURE| will appear to enable you to set the Cloud-Int Config
    Images,Yes,You must link the Role to at least one Image (see below). When you click on ADD IMAGES you will only see images with the same OS Family/Version that have Scalarizer or CloudInit installed.
 
 .. note:: Built in Automations other than Chef will be deprecated in future release of Scalr. They will continue to work for existing roles but should now be replaced by user configured Orchestration Rules.
