@@ -48,7 +48,7 @@ Configure Virtual Private Cloud (VPC)
 
 .. |vpc_link| raw:: html
 
-   <a href="hhttps://wiki.openstack.org/wiki/Blueprint-VPC" target="_blank">Blueprint VPC</a>
+   <a href="https://wiki.openstack.org/wiki/Blueprint-VPC" target="_blank">Blueprint VPC</a>
 
 .. |peer_link| raw:: html
 
