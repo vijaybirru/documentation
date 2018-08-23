@@ -159,7 +159,7 @@ queryenv list-roles
 
 The ListRoles QueryEnv call returns a list of the Farm Roles and associated server(s) that make up the Farm the calling Server belongs to.
 
-The list retuned by ListRoles may be filtered using the following parameters:
+The list returned by ListRoles may be filtered using the following parameters:
 
 .. csv-table::
    :header-rows: 1
