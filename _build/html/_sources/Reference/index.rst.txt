@@ -5,6 +5,8 @@
 Supported Server/Instance Operating Systems
 -------------------------------------------
 
+Scalarizr is supported on the following operatings systems and versions.
+
 ========================================    ================================
 Operating System                            Supported Versions
 ========================================    ================================
@@ -20,6 +22,8 @@ Windows Server                              2008 R2, 2012(all), and 2016
 
 Scalarizr Network Requirements
 ------------------------------
+
+Scalarizr needs to be able to communicate bi-directionally with the Scalr server. This table shows the ports that need to be open to enable this and also shows additional ports required to be open when Scalr is deployed on multiple hosts.
 
 =====   ============   =========================================  =================================
 Port    Protocol       Direction                                  Usage
@@ -37,3 +41,25 @@ Port    Protocol       Direction                                  Usage
 =====   ============   =========================================  =================================
 
 .. net-req-end
+
+.. _scalarizr-func-start:
+
+Scalarizr Functionality
+-----------------------
+
+The Scalarizr agent is optional, but without the agent the Scalr experience is limited, please see the following comparison chart:
+
+========================================    ============   ==================
+Capability                                   Agentless      Agent Installed
+========================================    ============   ==================
+Launch, Terminate, Suspend, Resume            Yes             Yes
+Security Group management                     Yes             Yes
+Tagging                                       Yes             Yes
+Autoscaling                                   No              Yes
+Orchestration (script execution)              No              Yes
+Monitoring                                    No              Yes
+Storage Volume addition	                      No              Yes
+Software Firewall/ iptables management		    No              Yes
+========================================    ============   ==================
+
+.. scalarizr-func-end

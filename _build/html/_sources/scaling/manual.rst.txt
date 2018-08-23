@@ -1,5 +1,7 @@
 .. include:: ../GLOBAL.rst
 
+.. _manual_scaling:
+
 Manual Scaling
 ==============
 

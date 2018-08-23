@@ -68,10 +68,7 @@ When adding Images to Roles you need to be aware of the different ways Images ar
    Openstack,Images are unique for every Openstack. You must add every similar image in every region you want the Role to be enable for.
    VMware,Images are unique for every VMware location. You must add every similar image in every location you want the Role to be enable for.
 
-Editing Roles
--------------
-
-To edit a role navigate to the Roles Library (Main Menu -> Roles), select the Role to be edited and click the Edit |EDIT| button.
+.. note:: When you save a Role you will be taken back to the role list. To make further edits to a role select the Role to be edited and click the Edit |EDIT| button.
 
 .. _role_orchestration:
 
@@ -112,6 +109,8 @@ If the value for a variable is already set then the Role can use that value or o
    "Variable Unlocked. Role can set the value to be inherited by lower scopes, but ALL lower scopes can overwrite the value",|GV1|
    "Value can be set at any scope down to the specified scope. Role can set the value to be be inherited by the lower scopes. Only lower scopes as far as the specified scope will be able to overwrite the value.",|GV2|
    "Value must be set at this scope. A value must be supplied and an error will occur if you attempt to save the Role, save any Farm using the role, or launch a Farm that uses the Role if the value is not set. Lower scopes will NOT be able to overwrite",|GV3|
+
+.. _bootstrap:
 
 Ansible Tower in Roles
 ======================
