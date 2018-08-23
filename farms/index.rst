@@ -77,7 +77,7 @@ Click |ATF| and then click on the Farm Role name on the left hand panel to conti
 
 There are several tabs available to continue the configuration. Some tabs are dependent on other aspects of the configuration.
 
-* DATABASE: Only available for Roles from the Database catagory
+* DATABASE: Only available for Roles from the Database category
 * BOOTSTRAP WITH ...: Only available if Chef/Ansible Tower is configured for the |ENVIRONMENT|
 * Cloud: A Tab for the specified cloud
 
