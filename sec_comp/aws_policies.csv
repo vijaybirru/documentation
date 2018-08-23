@@ -1,6 +1,6 @@
 Type,Description,Notes
 aws.iam.instance_profiles,Restricts IAM instance profiles that can be applied to instances,
-aws.kms.keys,Restricts the KMS keys that can be used for encrypting storage,"This does NOT enfiorce encryption, it only limits the KMS keys that can be used."
+aws.kms.keys,Restricts the KMS keys that can be used for encrypting storage,"This does NOT enforce encryption, it only limits the KMS keys that can be used."
 aws.network.require_vpc,Enforces the use of VPC's,AWS Classic will not be available.
 aws.network.subnet_type,"Restricts subnets available to the specified types, i.e Public or Private",Note this is an Either/Or selection.
 aws.rds.instance_types,Restricts the instance types available for RDS database instances,
