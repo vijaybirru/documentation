@@ -106,6 +106,7 @@ Scalr Documentation!
    :caption: Importing Cloud Infrastructure
 
    discovery/index
+   kubernetes/index
 
 .. toctree::
    :maxdepth: 3
