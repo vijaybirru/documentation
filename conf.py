@@ -81,7 +81,8 @@ html_logo = "_static/scalr_logo.png"
 html_theme_options = {
     'logo_only': True,
     'display_version': True,
-    'collapse_navigation': False
+    'collapse_navigation': False,
+    'sticky_navigation': False,
 }
 
 # Theme options are theme-specific and customize the look and feel of a theme

@@ -466,18 +466,19 @@
 <p class="caption"><span class="caption-text">Scaling Workloads</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scaling/index.html">Scaling Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scaling/manual.html">Manual Scaling</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scaling/manual.html#using-manual-scaling">Using Manual Scaling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scaling/manual.html#manually-launching-servers">Manually Launching Servers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scaling/manual.html#manually-terminating-servers">Manually Terminating Servers</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../scaling/auto.html">Auto Scaling</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#simple-autoscaling">Simple Autoscaling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#dynamic-autoscaling">Dynamic Autoscaling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#autoscaling-configuration">Autoscaling Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#custom-scaling">Custom Scaling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scaling/manual.html">Manual Scaling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/manual.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/manual.html#using-manual-scaling">Using Manual Scaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/manual.html#manually-launching-servers">Manually Launching Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/manual.html#manually-terminating-servers">Manually Terminating Servers</a></li>
 </ul>
 </li>
 </ul>
@@ -490,6 +491,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#deploy-scalarizr">Deploy Scalarizr</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#discovering-containers">Discovering Containers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#migrate-servers-from-farm-role-to-farm-role">Migrate Servers from Farm Role to Farm Role</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/index.html">Kubernetes Clusters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../kubernetes/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kubernetes/index.html#adding-a-cluster">Adding a Cluster</a></li>
 </ul>
 </li>
 </ul>
@@ -854,7 +860,7 @@ license.json  scalr-server-local.rb  scalr-server.rb  scalr-server-secrets.json
 
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
+          SphinxRtdTheme.Navigation.enable(false);
       });
   </script>  
 
@@ -867,6 +873,7 @@ license.json  scalr-server-local.rb  scalr-server.rb  scalr-server-secrets.json
     .wy-nav-side {
       background: #333;
       font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+      position: fixed;
     }
   </style>
 
