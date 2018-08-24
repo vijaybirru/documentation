@@ -5,8 +5,8 @@
 Manual Scaling
 ==============
 
-Definition and Scope
---------------------
+Overview
+---------
 
 |SCOPE_F_ROLE|
 
