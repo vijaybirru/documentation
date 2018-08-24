@@ -9,9 +9,9 @@ Scalr support two types of scaling, Auto and Manual Scaling. Autoscaling is the 
 
 There are two distinct but related ways to use Autoscaling Mode:
 
-* With Simple Autoscaling, Scalr will ensure that the number of servers in a running state remains in a specified interval, between a minimum number of instances and a maximum number of instances.
+* With Simple Autoscaling, Scalr will ensure that you always have at least the minimum and no more than the maximum number of servers up at all times.
 
-* With Dynamic Autoscaling, Scalr will additionally monitor metrics on your servers and dynamically add or remove servers depending on the metric (load, response time, etc).
+* With Dynamic Autoscaling, Scalr will additionally monitor metrics on your servers and dynamically add or remove servers depending on the specified metric threshold (load, response time, etc).
 
 **Manual Scaling Mode**
 

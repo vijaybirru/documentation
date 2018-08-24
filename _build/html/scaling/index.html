@@ -475,7 +475,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="manual.html">Manual Scaling</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="manual.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual.html#overview">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual.html#using-manual-scaling">Using Manual Scaling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual.html#manually-launching-servers">Manually Launching Servers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manual.html#manually-terminating-servers">Manually Terminating Servers</a></li>
@@ -678,8 +678,8 @@
 <p><strong>Autoscaling Mode</strong></p>
 <p>There are two distinct but related ways to use Autoscaling Mode:</p>
 <ul class="simple">
-<li>With Simple Autoscaling, Scalr will ensure that the number of servers in a running state remains in a specified interval, between a minimum number of instances and a maximum number of instances.</li>
-<li>With Dynamic Autoscaling, Scalr will additionally monitor metrics on your servers and dynamically add or remove servers depending on the metric (load, response time, etc).</li>
+<li>With Simple Autoscaling, Scalr will ensure that you always have at least the minimum and no more than the maximum number of servers up at all times.</li>
+<li>With Dynamic Autoscaling, Scalr will additionally monitor metrics on your servers and dynamically add or remove servers depending on the specified metric threshold (load, response time, etc).</li>
 </ul>
 <p><strong>Manual Scaling Mode</strong></p>
 <p>In Manual Scaling Mode, Scalr does not automatically launch or terminate Servers. A user must launch the Farm and then manually launch a server based on a farm role.</p>
