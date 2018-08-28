@@ -606,6 +606,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Supported Server/Instance Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-functionality">Scalarizr Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/events.html">Event Descriptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#beforeinstancelaunch-event">BeforeInstanceLaunch Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostinit-event">HostInit Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostinitfailed-event">HostInitFailed Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#beforehostup-event">BeforeHostUp Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostup-event">HostUp Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#ipaddresschanged-event">IPAddressChanged Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#ebsvolumeattached-event">EBSVolumeAttached Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#ebsvolumemounted-event">EBSVolumeMounted Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#beforehostterminate-event">BeforeHostTerminate Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostdown-event">HostDown Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#rebootcomplete-event">RebootComplete Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#resumecomplete-event">ResumeComplete Event</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -690,6 +705,165 @@
 </div>
 <div class="section" id="configure-vmware-for-scalr">
 <h2>Configure VMWare for Scalr<a class="headerlink" href="#configure-vmware-for-scalr" title="Permalink to this headline">¶</a></h2>
+<p><strong>Permissions Needed:</strong></p>
+<p>The following is a list of permissions that must be granted in order for this VMware service user to function correctly with Scalr.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Permission</th>
+<th class="head">Purpose</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Datastore.AllocateSpace</td>
+<td>Creating virtual machine</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Datastore.Browse</div>
+<div class="line">Datastore.DeleteFile</div>
+<div class="line">Datastore.FileManagement</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">For internal purposes: writing files of virtual machine to datastores and other service operation</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Folder.Create</td>
+<td>Creating new folder</td>
+</tr>
+<tr class="row-odd"><td>Folder.Delete</td>
+<td>Deleting existed folder</td>
+</tr>
+<tr class="row-even"><td>Global.CancelTask</td>
+<td>For internal purposes: cancel running tasks</td>
+</tr>
+<tr class="row-odd"><td>Global.Diagnostics</td>
+<td>Retrieving logs from Log Browser</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Global.ManageCustomFields</div>
+<div class="line">Global.SetCustomField</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">Adding custom fields</div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Network.Assign</td>
+<td>Assigning networks to virtual machine</td>
+</tr>
+<tr class="row-even"><td>Resource.AssignVMToPool</td>
+<td>Assigning virtual machine to resource pool</td>
+</tr>
+<tr class="row-odd"><td>Resource.DeletePool</td>
+<td>Destroying resource pool</td>
+</tr>
+<tr class="row-even"><td>Sessions.ValidateSession</td>
+<td>For internal purposes: in process of sessions handling</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">VirtualMachine.Config.SwapPlacement</div>
+<div class="line">VirtualMachine.Config.Settings</div>
+<div class="line">VirtualMachine.Config.Resource</div>
+<div class="line">VirtualMachine.Config.Rename</div>
+<div class="line">VirtualMachine.Config.RemoveDisk</div>
+<div class="line">VirtualMachine.Config.RawDevice</div>
+<div class="line">VirtualMachine.Config.MksControl</div>
+<div class="line">VirtualMachine.Config.Memory</div>
+<div class="line">VirtualMachine.Config.HostUSBDevice</div>
+<div class="line">VirtualMachine.Config.EditDevice</div>
+<div class="line">VirtualMachine.Config.DiskExtend</div>
+<div class="line">VirtualMachine.Config.CPUCount</div>
+<div class="line">VirtualMachine.Config.ChangeTracking</div>
+<div class="line">VirtualMachine.Config.Annotation</div>
+<div class="line">VirtualMachine.Config.AdvancedConfig</div>
+<div class="line">VirtualMachine.Config.AddRemoveDevice</div>
+<div class="line">VirtualMachine.Config.AddNewDisk</div>
+<div class="line">VirtualMachine.Config.AddExistingDisk </div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">For internal purposes: different operations in time of provisioning virtual machines</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">VirtualMachine.Interact.Suspend</div>
+<div class="line">VirtualMachine.Interact.Reset</div>
+<div class="line">VirtualMachine.Interact.PowerOn</div>
+<div class="line">VirtualMachine.Interact.PowerOff</div>
+<div class="line">VirtualMachine.Interact.DeviceConnection</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">In process of managing virtual machines: powering them on/off, rebooting and so on</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>VirtualMachine.Inventory.Create</td>
+<td>For internal purposes: creating task for virtual machine provisioning and running</td>
+</tr>
+<tr class="row-even"><td>VirtualMachine.Inventory.Delete</td>
+<td>For internal purposes: running task for virtual machine deleting</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">VirtualMachine.Provisioning.DeployTemplate</div>
+<div class="line">VirtualMachine.Provisioning.CloneTemplate</div>
+<div class="line">VirtualMachine.Provisioning.Clone</div>
+<div class="line">VirtualMachine.Provisioning.CreateTemplateFromVM</div>
+<div class="line">VirtualMachine.Provisioning.Customize</div>
+<div class="line">VirtualMachine.Provisioning.ModifyCustSpecs</div>
+<div class="line">VirtualMachine.Provisioning.ReadCustSpecs</div>
+</div>
+</td>
+<td><div class="first last line-block">
+<div class="line">For internal purposes: provisioning of virtual machine, working with their templates etc.</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>VirtualMachine.State.CreateSnapshot</td>
+<td>Creating snapshot of running virtual machine action</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="configure-instance-connection-policy">
+<h2>Configure Instance Connection Policy<a class="headerlink" href="#configure-instance-connection-policy" title="Permalink to this headline">¶</a></h2>
 <p>You will also need to perform some additional configuration work to ensure that Scalr can connect to your VMWare instances. There are three options for this.</p>
 <ol class="arabic simple">
 <li><strong>Public</strong> - Scalr will ONLY connect to the Public IP of instances. Only use this option if ALL instances managed by Scalr will have a Public IP.</li>

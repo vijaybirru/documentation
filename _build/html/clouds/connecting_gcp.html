@@ -606,6 +606,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Supported Server/Instance Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-functionality">Scalarizr Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/events.html">Event Descriptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#beforeinstancelaunch-event">BeforeInstanceLaunch Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostinit-event">HostInit Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostinitfailed-event">HostInitFailed Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#beforehostup-event">BeforeHostUp Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostup-event">HostUp Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#ipaddresschanged-event">IPAddressChanged Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#ebsvolumeattached-event">EBSVolumeAttached Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#ebsvolumemounted-event">EBSVolumeMounted Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#beforehostterminate-event">BeforeHostTerminate Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostdown-event">HostDown Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#rebootcomplete-event">RebootComplete Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#resumecomplete-event">ResumeComplete Event</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -695,8 +710,9 @@
 <h3>Configure Virtual Private Cloud (VPC)<a class="headerlink" href="#configure-virtual-private-cloud-vpc" title="Permalink to this headline">¶</a></h3>
 <p>You will need to create or configure a GCP VPC to work with Scalr. Every GCP user has access to a default network but this is typically NOT an acceptable network for most use cases. If you need to create a VPC for Scalr and the Scalr managed instances please refer to <a href="https://cloud.google.com/vpc/docs/using-vpc" target="_blank">Using VPC Networks</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a>.</p>
 </div>
+</div>
 <div class="section" id="configure-instance-connection-policy">
-<h3>Configure Instance Connection Policy<a class="headerlink" href="#configure-instance-connection-policy" title="Permalink to this headline">¶</a></h3>
+<h2>Configure Instance Connection Policy<a class="headerlink" href="#configure-instance-connection-policy" title="Permalink to this headline">¶</a></h2>
 <p>You will also need to perform some additional configuration work to ensure that Scalr can connect to your GCP instances. There are three options for this.</p>
 <ol class="arabic simple">
 <li><strong>Public</strong> - Scalr will ONLY connect to the Public IP of instances. Only use this option if ALL instances managed by Scalr will have a Public IP.</li>
@@ -719,7 +735,6 @@
 </pre></div>
 </div>
 <p>After adding this entry you must re-configure scalr by running <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">scalr-server-ctl</span> <span class="pre">reconfigure</span></code>.</p>
-</div>
 </div>
 <div class="section" id="adding-gcp-credentials-to-scalr">
 <h2>Adding GCP Credentials to Scalr<a class="headerlink" href="#adding-gcp-credentials-to-scalr" title="Permalink to this headline">¶</a></h2>

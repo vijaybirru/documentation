@@ -57,7 +57,7 @@ Configure Virtual Private Cloud (VPC)
 You have the option to create or configure an OpenStack VPC to work with Scalr. This isnt strictly required but please refer to |vpc_link| |NEWWIN| for more information.
 
 Configure Instance Connection Policy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 
 You will also need to perform some additional configuration work to ensure that Scalr can connect to your OpenStack instances. There are three options for this.
 

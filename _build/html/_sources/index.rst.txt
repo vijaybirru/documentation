@@ -145,3 +145,4 @@ Scalr Documentation!
    :caption: Reference Section
 
    reference/index
+   reference/events
