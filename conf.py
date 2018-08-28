@@ -82,7 +82,11 @@ html_theme_options = {
     'logo_only': True,
     'display_version': True,
     'collapse_navigation': False,
+<<<<<<< Updated upstream
     'sticky_navigation': False,
+=======
+    'sticky_navigation': True
+>>>>>>> Stashed changes
 }
 
 # Theme options are theme-specific and customize the look and feel of a theme

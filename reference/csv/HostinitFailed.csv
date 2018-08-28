@@ -1,0 +1,4 @@
+"| **Firing Sequence**||","* Server fails to perform Scalr Event Actions steps, as described in the documentation for the `HostInit Event`_.* A Blocking Orchestration Rule executing upon the `HostInit Event`_ or `BeforeHostUp Event`_ exits with none zero exit code and the advanced option is enabled on the Farm Role."
+| **Scalr Event Actions**,None
+| **When to Use**,In a :ref:`Webhook <webhooks>` Handler to notify an external system of the error.
+**Global Variables**,SCALR_INITIALIZATION_FAILURE_REASON: This is a string that indicates why instance initialization failed on this Server.

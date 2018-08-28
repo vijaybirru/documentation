@@ -1,0 +1,18 @@
+ Permission,Purpose
+Datastore.AllocateSpace,Creating virtual machine
+"| Datastore.Browse| Datastore.DeleteFile| Datastore.FileManagement","| For internal purposes: writing files of virtual machine to datastores and other service operation||"
+Folder.Create,Creating new folder
+Folder.Delete,Deleting existed folder
+Global.CancelTask,For internal purposes: cancel running tasks
+Global.Diagnostics,Retrieving logs from Log Browser
+"| Global.ManageCustomFields| Global.SetCustomField","| Adding custom fields|"
+Network.Assign,Assigning networks to virtual machine
+Resource.AssignVMToPool,Assigning virtual machine to resource pool
+Resource.DeletePool,Destroying resource pool
+Sessions.ValidateSession,For internal purposes: in process of sessions handling
+"| VirtualMachine.Config.SwapPlacement| VirtualMachine.Config.Settings| VirtualMachine.Config.Resource| VirtualMachine.Config.Rename| VirtualMachine.Config.RemoveDisk| VirtualMachine.Config.RawDevice| VirtualMachine.Config.MksControl| VirtualMachine.Config.Memory| VirtualMachine.Config.HostUSBDevice| VirtualMachine.Config.EditDevice| VirtualMachine.Config.DiskExtend| VirtualMachine.Config.CPUCount| VirtualMachine.Config.ChangeTracking| VirtualMachine.Config.Annotation| VirtualMachine.Config.AdvancedConfig| VirtualMachine.Config.AddRemoveDevice| VirtualMachine.Config.AddNewDisk| VirtualMachine.Config.AddExistingDisk ","| For internal purposes: different operations in time of provisioning virtual machines|||||||||||||||||"
+"| VirtualMachine.Interact.Suspend| VirtualMachine.Interact.Reset| VirtualMachine.Interact.PowerOn| VirtualMachine.Interact.PowerOff| VirtualMachine.Interact.DeviceConnection","| In process of managing virtual machines: powering them on/off, rebooting and so on||||"
+VirtualMachine.Inventory.Create,For internal purposes: creating task for virtual machine provisioning and running
+VirtualMachine.Inventory.Delete,For internal purposes: running task for virtual machine deleting
+"| VirtualMachine.Provisioning.DeployTemplate| VirtualMachine.Provisioning.CloneTemplate| VirtualMachine.Provisioning.Clone| VirtualMachine.Provisioning.CreateTemplateFromVM| VirtualMachine.Provisioning.Customize| VirtualMachine.Provisioning.ModifyCustSpecs| VirtualMachine.Provisioning.ReadCustSpecs","| For internal purposes: provisioning of virtual machine, working with their templates etc.||||||"
+VirtualMachine.State.CreateSnapshot,Creating snapshot of running virtual machine action

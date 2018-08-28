@@ -1,0 +1,4 @@
+| **Firing Sequence**,"* When a Servers IP Address changes after it has finished booting, i.e. if an IP address changes after the `HostInit Event`_."
+| **Scalr Event Actions**,None
+| **When to Use**,* To reconfigure services that would depend on the IP Address of a Server (such as DNS service).
+"| **Global Variables**|||","* SCALR_OLD_PUBLIC_IP: Public IP Address for this Server before the IP Address changed.* SCALR_OLD_PRIVATE_IP: Private IP Address for this Server before the IP Address changed.* SCALR_NEW_PUBLIC_IP: Public IP Address for this Server as a result of the change.* SCALR_NEW_PRIVATE_IP: Private IP Address for this Server as a result of the change."

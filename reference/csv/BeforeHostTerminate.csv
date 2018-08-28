@@ -1,0 +1,4 @@
+| **Firing Sequence**,"* When Scalr schedules a server for termination or suspension but before it is actually terminated or suspended."
+| **Scalr Event Actions**,None
+"| **When to Use**|","* To perform cleanup actions such as de-registering a Server from your load balancer or monitoring solution, or removing it from your DNS Zone."
+"| **Global Variables**||||","* SCALR_TERMINATION_REASON: This is a string that indicates why this instance is being terminated.  * Scalr makes no guarantees as to the stability of this output. For integrations, ensure you use the below code.* SCALR_TERMINATION_REASON_CODE: This is an integer code that corresponds to the termination reason.* SCALR_IS_SUSPEND: This is an integer code that corresponds to the termination reason. This is set to 0 if the host is being terminated, and to 1 if it is being suspended."

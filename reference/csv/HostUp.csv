@@ -1,0 +1,4 @@
+"| **Firing Sequence**||","* When a Server has finished initialization steps. * Scalr expects Servers to be ready to perform their desired function when they fire HostUp. Thus all internal services and applications should be configured and running before this event fires."
+"| **Scalr Event Actions**||","* Scalr's built-in Roles use the HostUp Event to register Servers with built-in load balancing Roles, such as Nginx and HAProxy.* Scalr's built-in DNS also uses the HostUp event to create DNS records and add Servers to them.* Scalr sets it's internal status as shown in the UI and API to RUNNING"
+"| **When to Use**||","* To notify other Servers that a Server is ready to perform it's desired function.* For low-priority initialization actions, which do not affect the functinality of the Server, such as registering it with a monitoring solution."
+**Global Variables**,No Event Scope Global Variables

@@ -37,7 +37,7 @@ Configure Virtual Networks
 You will need to create or configure an Azure Virtual Network to work with Scalr. If you need to create a Virtual Network for Scalr and the Scalr managed instances please refer to |vpc_link| |NEWWIN|.
 
 Configure Instance Connection Policy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 
 You will also need to perform some additional configuration work to ensure that Scalr can connect to your Azure instances. There are three options for this.
 
