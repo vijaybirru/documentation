@@ -13,11 +13,24 @@ BeforeInstanceLaunch Event
 --------------------------
 
 .. csv-table::
+   :header-rows: 1
+
+   Prior Event(s),Event,Following Event(s)
+   *None*,**BeforeInstanceLaunch**,HostInit
+
+.. csv-table::
    :widths: 20,100
    :file: csv/BeforeInstanceLaunch.csv
 
 HostInit Event
 --------------
+
+.. csv-table::
+   :header-rows: 1
+
+   Prior Event(s),Event,Following Event(s)
+   BeforeInstanceLaunch,**HostInit**,BeforeHostUp
+   ,,HostInitFailed
 
 .. warning:: The HostInit Event does not fire on reboots! To fire Orchestration Rules on reboot, use the `RebootComplete Event`_.
 
@@ -29,11 +42,23 @@ HostInitFailed Event
 --------------------
 
 .. csv-table::
+   :header-rows: 1
+
+   Prior Event(s),Event,Following Event(s)
+   HostInit,**HostInitFailed**,*None*
+
+.. csv-table::
    :widths: 30,100
    :file: csv/HostInitFailed.csv
 
 BeforeHostUp Event
 ------------------
+
+.. csv-table::
+   :header-rows: 1
+
+   Prior Event(s),Event,Following Event(s)
+   HostInit,**BeforeHostUp**,HostUp
 
 .. warning:: The BeforeHostUp Event does not fire on reboots! To fire Orchestration Rules on reboot, use the `RebootComplete Event`_.
 
@@ -43,6 +68,12 @@ BeforeHostUp Event
 
 HostUp Event
 ------------
+
+.. csv-table::
+   :header-rows: 1
+
+   Prior Event(s),Event,Following Event(s)
+   BeforeHostUp,**HostUp**,(EBSVolumeAttached)
 
 .. warning:: The HostUp Event does not fire on reboots! To fire Orchestration Rules on reboot, use the `RebootComplete Event`_.
 
@@ -54,11 +85,23 @@ IPAddressChanged Event
 ----------------------
 
 .. csv-table::
+   :header-rows: 1
+
+   Prior Event(s),Event,Following Event(s)
+   HostInit,**IPAddressChanged**,HostUp
+
+.. csv-table::
    :widths: 20,100
    :file: csv/IPAddressChanged.csv
 
 EBSVolumeAttached Event
 -----------------------
+
+.. csv-table::
+   :header-rows: 1
+
+   Prior Event(s),Event,Following Event(s)
+   HostInit,**EBSVolumeAttached**,HostUp
 
 .. warning:: * This event fires for block devices on all clouds, not just EBS block devices.
              * This event **does not** fire on Windows Servers.
@@ -70,6 +113,12 @@ EBSVolumeAttached Event
 EBSVolumeMounted Event
 ----------------------
 
+.. csv-table::
+   :header-rows: 1
+
+   Prior Event(s),Event,Following Event(s)
+   HostInit,**EBSVolumeMounted**,HostUp
+
 .. warning:: * This event fires for block devices on all clouds, not just EBS block devices.
 
 .. csv-table::
@@ -80,6 +129,12 @@ BeforeHostTerminate Event
 -------------------------
 
 .. csv-table::
+   :header-rows: 1
+
+   Prior Event(s),Event,Following Event(s)
+   *[Suspend or Terminate]*,**BeforeHostTerminate**,HostDown
+
+.. csv-table::
    :widths: 20,100
    :file: csv/BeforeHostTerminate.csv
 
@@ -87,6 +142,12 @@ BeforeHostTerminate Event
 
 HostDown Event
 --------------
+
+.. csv-table::
+   :header-rows: 1
+
+   Prior Event(s),Event,Following Event(s)
+   BeforeHostTerminate,**HostDown**,*None*
 
 .. csv-table::
    :widths: 20,100
@@ -99,11 +160,23 @@ RebootComplete Event
 --------------------
 
 .. csv-table::
+   :header-rows: 1
+
+   Prior Event(s),Event,Following Event(s)
+   RebootBegin,**RebootComplete**,*None*
+
+.. csv-table::
    :widths: 20,100
    :file: csv/RebootComplete.csv
 
 ResumeComplete Event
 --------------------
+
+.. csv-table::
+   :header-rows: 1
+
+   Prior Event(s),Event,Following Event(s)
+   BeforeInstanceLaunch,**ResumeComplete**,*None*
 
 .. csv-table::
    :widths: 20,100
