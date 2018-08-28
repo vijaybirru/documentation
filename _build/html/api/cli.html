@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Scalr/Account/Environment Level Orchestration &mdash; Scalr 0.01 documentation</title>
+  <title>Command Line Interface (CLI) &mdash; Scalr 0.01 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Webhooks and Endpoints" href="integrations.html" />
-    <link rel="prev" title="Resource Quotas" href="quotas.html" /> 
+    <link rel="next" title="Cloud Service Gateway" href="csg.html" />
+    <link rel="prev" title="Scalr API and CLI" href="index.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -333,67 +333,67 @@
 <li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="index.html">Security and Compliance Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="index.html#policy-engine">Policy Engine</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#resource-quotas">Resource Quotas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#orchestration-rules">Orchestration Rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#role-based-access-control">Role Based Access Control</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#governance-through-external-integrations">Governance Through External Integrations</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/index.html">Security and Compliance Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#policy-engine">Policy Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#resource-quotas">Resource Quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#orchestration-rules">Orchestration Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#role-based-access-control">Role Based Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#governance-through-external-integrations">Governance Through External Integrations</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="policies.html">Policy Engine</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#creating-policy-groups">Creating Policy Groups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#creating-policies">Creating Policies</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="policies.html#using-global-variable-in-policies">Using Global Variable in Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html">Policy Engine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#creating-policy-groups">Creating Policy Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#creating-policies">Creating Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/policies.html#using-global-variable-in-policies">Using Global Variable in Policies</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#policy-tags">Policy Tags</a></li>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#linking-policy-groups-to-environments">Linking Policy Groups to Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#policy-tags">Policy Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#linking-policy-groups-to-environments">Linking Policy Groups to Environments</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="policies.html#policy-reference">Policy Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#configuration-policies">Configuration Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#container-policies">Container Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#reclamation-policies">Reclamation Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#cloud-service-gateway-policies">Cloud Service Gateway Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#cloud-generic-policies">Cloud Generic Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#aws-policies">AWS Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#azure-policies">Azure Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#google-compute-engine-policies">Google Compute Engine Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#openstack-policies">Openstack Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="policies.html#vmware-policies">VMware Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html#policy-reference">Policy Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#configuration-policies">Configuration Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#container-policies">Container Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#reclamation-policies">Reclamation Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#cloud-service-gateway-policies">Cloud Service Gateway Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#cloud-generic-policies">Cloud Generic Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#aws-policies">AWS Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#azure-policies">Azure Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#google-compute-engine-policies">Google Compute Engine Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#openstack-policies">Openstack Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#vmware-policies">VMware Policies</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="quotas.html">Resource Quotas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="quotas.html#definition-and-scope">Definition and Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quotas.html#creating-quotas">Creating Quotas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quotas.html#applying-quotas">Applying Quotas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/quotas.html">Resource Quotas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/quotas.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/quotas.html#creating-quotas">Creating Quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/quotas.html#applying-quotas">Applying Quotas</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Scalr/Account/Environment Level Orchestration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#creating-orchestration-rules">Creating Orchestration Rules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#trigger-event">Trigger Event</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#target">Target</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#action">Action</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#advanced-configuration">Advanced Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/orchestration.html">Scalr/Account/Environment Level Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#creating-orchestration-rules">Creating Orchestration Rules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/orchestration.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/orchestration.html#target">Target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/orchestration.html#action">Action</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/orchestration.html#advanced-configuration">Advanced Configuration</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="integrations.html">Webhooks and Endpoints</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="integrations.html#definition-and-scope">Definition and Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrations.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrations.html#configuring-endpoints">Configuring Endpoints</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrations.html#configuring-webhooks">Configuring Webhooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrations.html#webhook-payloads">Webhook Payloads</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrations.html#webhook-security-and-authentication">Webhook Security and Authentication</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrations.html#webhook-history">Webhook History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrations.html#highly-available-webhooks">Highly Available Webhooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="integrations.html#example-webhooks">Example Webhooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html">Webhooks and Endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configuring-endpoints">Configuring Endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configuring-webhooks">Configuring Webhooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-payloads">Webhook Payloads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-security-and-authentication">Webhook Security and Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-history">Webhook History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#highly-available-webhooks">Highly Available Webhooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#example-webhooks">Example Webhooks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="acls.html">Access Control Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Cost Control &amp; Visibility</span></p>
 <ul>
@@ -500,23 +500,24 @@
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Scalr API and CLI</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api/index.html#api-explorer">API Explorer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/index.html#installing-cli">Installing CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/index.html#using-scalr-ctl">Using scalr-ctl</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Scalr API and CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#api-explorer">API Explorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#installing-cli">Installing CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#using-scalr-ctl">Using scalr-ctl</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../api/cli.html">Command Line Interface (CLI)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#installing-and-configuring-the-cli">Installing and Configuring the CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#using-the-cli">Using the CLI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command Line Interface (CLI)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-and-configuring-the-cli">Installing and Configuring the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-cli">Using the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cli-examples">CLI Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../api/csg.html">Cloud Service Gateway</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api/csg.html#configuring-cloud-service-gateway">Configuring Cloud Service Gateway</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/csg.html#using-the-cloud-service-gateway">Using the Cloud Service Gateway</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/csg.html#managing-approvals-for-cloud-service-gateway">Managing approvals for Cloud Service Gateway</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/csg.html#managing-access-and-permissions-for-cloud-service-gateway">Managing Access and Permissions for Cloud Service Gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csg.html">Cloud Service Gateway</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="csg.html#configuring-cloud-service-gateway">Configuring Cloud Service Gateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csg.html#using-the-cloud-service-gateway">Using the Cloud Service Gateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csg.html#managing-approvals-for-cloud-service-gateway">Managing approvals for Cloud Service Gateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csg.html#managing-access-and-permissions-for-cloud-service-gateway">Managing Access and Permissions for Cloud Service Gateway</a></li>
 </ul>
 </li>
 </ul>
@@ -673,13 +674,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Scalr/Account/Environment Level Orchestration</li>
+      <li>Command Line Interface (CLI)</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/sec_comp/orchestration.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/cli.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -692,249 +693,220 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="scalr-account-environment-level-orchestration">
-<span id="sa-orchestration"></span><h1>Scalr/Account/Environment Level Orchestration<a class="headerlink" href="#scalr-account-environment-level-orchestration" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
-<p>Orchestration Rules can be defined to run <a class="reference internal" href="../scripts/index.html#scripts"><span class="std std-ref">scripts</span></a> across all applicable servers within the scope at which the rule is defined.</p>
-<ul class="simple">
-<li>At the Scalr scope, scripts will run on all applicable servers in all Environments managed by this Scalr installation.</li>
-<li>At the Account scope, scripts will run on all applicable servers in all Environments with the Account.</li>
-<li>At the Environment scope, scripts will run on all applicable servers within the Environment.</li>
-</ul>
-<p>This type of Orchestration is typically used to enforce policies, for example:</p>
-<ul class="simple">
-<li>Security toolsets that must be applied to all servers.</li>
-<li>Lifecycle events that must be applied to all servers, i.e. join a domain.</li>
-</ul>
-<p>If an Orchestration rule is created at one of these scopes, it cannot be removed at the lower scope and ALL servers at the lower scope will have the rule applied to it.</p>
-<div class="section" id="creating-orchestration-rules">
-<h2>Creating Orchestration Rules<a class="headerlink" href="#creating-orchestration-rules" title="Permalink to this headline">¶</a></h2>
-<p>To create an orchestration rule at the Scalr, Account, or Environment scopes, click on the Scalr icon on the top left <a class="reference internal" href="../_images/scalr_icon_env2.png"><img alt="SCALR_ICON" src="../_images/scalr_icon_env2.png" style="width: 55.3px; height: 33.599999999999994px;" /></a> and then click on Orchestration.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Orchestration rules can be defined in many places in Scalr. What follows covers all aspects of rule configuration regardless of where they are configured.</p>
+  <div class="section" id="command-line-interface-cli">
+<span id="cli"></span><h1>Command Line Interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Permalink to this headline">¶</a></h1>
+<p>Scalr-ctl is a command-line tool intended to help you deploy, update, and manage components of your Scalr deployment as well as the workloads you it is managing. Follow the Scalr CLI release notes page for any updates: <a href="https://scalr-labs.atlassian.net/wiki/spaces/PUBLIC/pages/109805613/Scalr+CLI+Tools+scalr-ctl" target="_blank">Scalr CLI Release Notes</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a>.</p>
+<div class="section" id="installing-and-configuring-the-cli">
+<h2>Installing and Configuring the CLI<a class="headerlink" href="#installing-and-configuring-the-cli" title="Permalink to this headline">¶</a></h2>
+<p>To install on your workstation use the PIP Python utility (requires python &gt;=2.7.9 or &gt;=3.4). To find out more about pip, click <a href="https://pip.pypa.io/en/stable/installing/" target="_blank">here</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a> for Linux and <a href="https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows" target="_blank">here</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a> for Windows.</p>
+<p>Once pip is configure, install the CLI with the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ sudo pip install scalr-ctl
+Collecting scalr-ctl
+Downloading https://files.pythonhosted.org/packages/36/8b/9e0396b51a99b9501300584141af26d6f1301ae7d946b14d5a85d8877f5d/scalr-ctl-2.1.4.tar.gz <span class="o">(</span>95kB<span class="o">)</span>
+  <span class="m">100</span>% <span class="p">|</span>████████████████████████████████<span class="p">|</span> 102kB <span class="m">3</span>.2MB/s
+  Collecting prettytable&gt;<span class="o">=</span><span class="m">0</span>.7.2 <span class="o">(</span>from scalr-ctl<span class="o">)</span>
+  Downloading https://files.pythonhosted.org/packages/ef/30/4b0746848746ed5941f052479e7c23d2b56d174b82f4fd34a25e389831f5/prettytable-0.7.2.tar.bz2
+  Collecting pyyaml&gt;<span class="o">=</span><span class="m">3</span>.11 <span class="o">(</span>from scalr-ctl<span class="o">)</span>
+  Downloading https://files.pythonhosted.org/packages/9e/a3/1d13970c3f36777c583f136c136f804d70f500168edc1edea6daa7200769/PyYAML-3.13.tar.gz <span class="o">(</span>270kB<span class="o">)</span>
+  <span class="m">100</span>% <span class="p">|</span>████████████████████████████████<span class="p">|</span> 276kB <span class="m">5</span>.4MB/s
+  Collecting requests&gt;<span class="o">=</span><span class="m">2</span>.10.0 <span class="o">(</span>from scalr-ctl<span class="o">)</span>
+  Downloading https://files.pythonhosted.org/packages/65/47/7e02164a2a3db50ed6d8a6ab1d6d60b69c4c3fdf57a284257925dfc12bda/requests-2.19.1-py2.py3-none-any.whl <span class="o">(</span>91kB<span class="o">)</span>
+  <span class="m">100</span>% <span class="p">|</span>████████████████████████████████<span class="p">|</span> 92kB <span class="m">6</span>.5MB/s
+  Requirement already satisfied: six&gt;<span class="o">=</span><span class="m">1</span>.10.0 in /usr/lib/python2.7/dist-packages <span class="o">(</span>from scalr-ctl<span class="o">)</span> <span class="o">(</span><span class="m">1</span>.10.0<span class="o">)</span>
+  Collecting colorama&gt;<span class="o">=</span><span class="m">0</span>.3.7 <span class="o">(</span>from scalr-ctl<span class="o">)</span>
+  Downloading https://files.pythonhosted.org/packages/db/c8/7dcf9dbcb22429512708fe3a547f8b6101c0d02137acbd892505aee57adf/colorama-0.3.9-py2.py3-none-any.whl
+  Collecting dicttoxml&gt;<span class="o">=</span><span class="m">1</span>.7.4 <span class="o">(</span>from scalr-ctl<span class="o">)</span>
+  Downloading https://files.pythonhosted.org/packages/74/36/534db111db9e7610a41641a1f6669a964aacaf51858f466de264cc8dcdd9/dicttoxml-1.7.4.tar.gz
+  Collecting certifi&gt;<span class="o">=</span><span class="m">2017</span>.4.17 <span class="o">(</span>from requests&gt;<span class="o">=</span><span class="m">2</span>.10.0-&gt;scalr-ctl<span class="o">)</span>
+  Downloading https://files.pythonhosted.org/packages/df/f7/04fee6ac349e915b82171f8e23cee63644d83663b34c539f7a09aed18f9e/certifi-2018.8.24-py2.py3-none-any.whl <span class="o">(</span>147kB<span class="o">)</span>
+  <span class="m">100</span>% <span class="p">|</span>████████████████████████████████<span class="p">|</span> 153kB <span class="m">7</span>.0MB/s
+  Collecting chardet&lt;<span class="m">3</span>.1.0,&gt;<span class="o">=</span><span class="m">3</span>.0.2 <span class="o">(</span>from requests&gt;<span class="o">=</span><span class="m">2</span>.10.0-&gt;scalr-ctl<span class="o">)</span>
+  Downloading https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl <span class="o">(</span>133kB<span class="o">)</span>
+  <span class="m">100</span>% <span class="p">|</span>████████████████████████████████<span class="p">|</span> 143kB <span class="m">7</span>.0MB/s
+  Collecting urllib3&lt;<span class="m">1</span>.24,&gt;<span class="o">=</span><span class="m">1</span>.21.1 <span class="o">(</span>from requests&gt;<span class="o">=</span><span class="m">2</span>.10.0-&gt;scalr-ctl<span class="o">)</span>
+  Downloading https://files.pythonhosted.org/packages/bd/c9/6fdd990019071a4a32a5e7cb78a1d92c53851ef4f56f62a3486e6a7d8ffb/urllib3-1.23-py2.py3-none-any.whl <span class="o">(</span>133kB<span class="o">)</span>
+  <span class="m">100</span>% <span class="p">|</span>████████████████████████████████<span class="p">|</span> 143kB <span class="m">7</span>.5MB/s
+  Collecting idna&lt;<span class="m">2</span>.8,&gt;<span class="o">=</span><span class="m">2</span>.5 <span class="o">(</span>from requests&gt;<span class="o">=</span><span class="m">2</span>.10.0-&gt;scalr-ctl<span class="o">)</span>
+  Downloading https://files.pythonhosted.org/packages/4b/2a/0276479a4b3caeb8a8c1af2f8e4355746a97fab05a372e4a2c6a6b876165/idna-2.7-py2.py3-none-any.whl <span class="o">(</span>58kB<span class="o">)</span>
+  <span class="m">100</span>% <span class="p">|</span>████████████████████████████████<span class="p">|</span> 61kB <span class="m">9</span>.6MB/s
+  Building wheels <span class="k">for</span> collected packages: scalr-ctl, prettytable, pyyaml, dicttoxml
+  Running setup.py bdist_wheel <span class="k">for</span> scalr-ctl ... <span class="k">done</span>
+  Stored in directory: /root/.cache/pip/wheels/17/b9/fa/7d9807ac938514a5992a2f8c52f18fb6faff80962a83064f22
+  Running setup.py bdist_wheel <span class="k">for</span> prettytable ... <span class="k">done</span>
+  Stored in directory: /root/.cache/pip/wheels/80/34/1c/3967380d9676d162cb59513bd9dc862d0584e045a162095606
+  Running setup.py bdist_wheel <span class="k">for</span> pyyaml ... <span class="k">done</span>
+  Stored in directory: /root/.cache/pip/wheels/ad/da/0c/74eb680767247273e2cf2723482cb9c924fe70af57c334513f
+  Running setup.py bdist_wheel <span class="k">for</span> dicttoxml ... <span class="k">done</span>
+  Stored in directory: /root/.cache/pip/wheels/62/4f/a3/afd4a68f5add45a668c14efa53b64d5cffb2be6bacf993c151
+  Successfully built scalr-ctl prettytable pyyaml dicttoxml
+  Installing collected packages: prettytable, pyyaml, certifi, chardet, urllib3, idna, requests, colorama, dicttoxml, scalr-ctl
+  Found existing installation: chardet <span class="m">2</span>.3.0
+  Uninstalling chardet-2.3.0:
+    Successfully uninstalled chardet-2.3.0
+    Found existing installation: urllib3 <span class="m">1</span>.13.1
+    Uninstalling urllib3-1.13.1:
+    Successfully uninstalled urllib3-1.13.1
+    Found existing installation: requests <span class="m">2</span>.9.1
+    Uninstalling requests-2.9.1:
+    Successfully uninstalled requests-2.9.1
+    Successfully installed certifi-2018.8.24 chardet-3.0.4 colorama-0.3.9 dicttoxml-1.7.4 idna-2.7 prettytable-0.7.2 pyyaml-3.13 requests-2.19.1 scalr-ctl-2.1.4 urllib3-1.23
+</pre></div>
 </div>
-<p>Orchestration Rules are made up of three main elements.</p>
-<table border="1" class="colwidths-given docutils">
-<colgroup>
-<col width="20%" />
-<col width="80%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><strong>Trigger Event</strong></td>
-<td>The lifecycle event of the a server that will cause the Orchestration Rule Script to execute such as OnHostUp or BeforeHostTerminate</td>
-</tr>
-<tr class="row-even"><td><strong>Target</strong></td>
-<td>Criteria for identifying the server on which to run the Script which need not be the triggering server and can be multiple servers</td>
-</tr>
-<tr class="row-odd"><td><strong>Action</strong></td>
-<td>The script, Chef Cookbook or Ansible Tower job to be run.</td>
-</tr>
-</tbody>
-</table>
-<a class="reference internal image-reference" href="../_images/orch_rule_new.png"><img alt="../_images/orch_rule_new.png" src="../_images/orch_rule_new.png" style="width: 617.5px; height: 487.0px;" /></a>
-<p>You must create the <a class="reference internal" href="../scripts/index.html#scripts"><span class="std std-ref">Script</span></a> and any <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a> that are required before creating the Rule.</p>
-<div class="section" id="trigger-event">
-<h3>Trigger Event<a class="headerlink" href="#trigger-event" title="Permalink to this headline">¶</a></h3>
-<p>First select the Trigger Event for this rule. The following table describes each event and the state of the Server when the event fires.</p>
-<table border="1" class="colwidths-given docutils" id="id1">
-<caption><span class="caption-text">Orchestration Events</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col width="25%" />
-<col width="75%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Event</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>BeforeInstanceLaunch</td>
-<td>The new instance will be launched in few minutes.</td>
-</tr>
-<tr class="row-odd"><td>HostInit</td>
-<td>The Instance finished booting and  Scalr is now configuring the Environment and initializing Services.</td>
-</tr>
-<tr class="row-even"><td>IPAddressChanged</td>
-<td>Public IP address of the instance was changed upon by reboot or within Elastic IP assignments.</td>
-</tr>
-<tr class="row-odd"><td>EBSVolumeAttached</td>
-<td>EBS volume was attached to the instance.</td>
-</tr>
-<tr class="row-even"><td>EBSVolumeMounted</td>
-<td>An EBS Volume has been attached and mounted to the Instance.</td>
-</tr>
-<tr class="row-odd"><td>BeforeHostUp</td>
-<td>Time for user-defined actions before the instance will be added to DNS, Loadbalancers etc</td>
-</tr>
-<tr class="row-even"><td>HostUp</td>
-<td>The Instance has booted and Environment and Services are running. Instance will now be added to Load Balancer, DNS Zone etc.</td>
-</tr>
-<tr class="row-odd"><td>BeforeHostTerminate</td>
-<td>The Instance is flagged for termination and will be terminated after 180 seconds.</td>
-</tr>
-<tr class="row-even"><td>HostDown</td>
-<td>The instance will be terminated.</td>
-</tr>
-<tr class="row-odd"><td>RebootComplete</td>
-<td>The Instance has finished rebooting.</td>
-</tr>
-<tr class="row-even"><td>ResumeComplete</td>
-<td>The instance was successfully resumed after a suspension.</td>
-</tr>
-<tr class="row-odd"><td>HostInitFailed</td>
-<td>Instance booted up but Scalr environment is not configured and the services are not initialized yet.</td>
-</tr>
-<tr class="row-even"><td>Custom Events</td>
-<td>Any <a class="reference internal" href="../custom_events/index.html#custom-events"><span class="std std-ref">Custom Events</span></a> defined at this scope or higher.</td>
-</tr>
-<tr class="row-odd"><td>All Events</td>
-<td>Rule will fire for any event including Custom Events.</td>
-</tr>
-</tbody>
-</table>
-<p>After an Instance finishes booting the OS, the Scalarizer Agent starts configuring your Environment in a certain order as follows.</p>
-<ul class="simple">
-<li>All EBS / Disk Routines are executed.</li>
-<li>Deployment Routines are executed.</li>
-<li>Server Configuration (including vhosts) Routines are executed. If you wish to work with Virtual Hosts, you can assign a Script to the BeforeHostUp Event.</li>
-</ul>
+<p>To configure, enter your Scalr API Keys and environmental details with the configure command.  Enter your details when prompted and hit return to move on to the next setting:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ scalr-ctl configure
+<span class="o">[</span><span class="m">1</span>/3<span class="o">]</span> Updating specifications <span class="k">for</span> user API ...  Done
+<span class="o">[</span><span class="m">2</span>/3<span class="o">]</span> Updating specifications <span class="k">for</span> account API ...  Done
+<span class="o">[</span><span class="m">3</span>/3<span class="o">]</span> Updating specifications <span class="k">for</span> global API ...  Done
+Configuring profile <span class="s2">&quot;default&quot;</span>:
+
+Scalr API host <span class="o">[</span>my.scalr.com<span class="o">]</span>: my.scalr.com
+Scalr API scheme. Choose from http, https <span class="o">[</span>https<span class="o">]</span>: https
+SSL verification <span class="o">[</span>Y/n<span class="o">]</span>: Y
+Scalr API key ID: APIKICOR7P123MDF654SM
+Scalr API secret key ID: h6QJ/gk6dP2Ix2U/kuByIDhHhUMh0MBF64WN62LR
+Scalr environment ID: <span class="m">6</span>
+Scalr account ID: <span class="m">1</span>
+View mode. Choose from tree, table, json <span class="o">[</span>tree<span class="o">]</span>: json
+Colored output <span class="o">[</span>Y/n<span class="o">]</span>: Y
+
+New config saved to /root/.scalr/default.yaml
+
+<span class="o">[</span><span class="m">1</span>/3<span class="o">]</span> Updating specifications <span class="k">for</span> user API ...  Done
+<span class="o">[</span><span class="m">2</span>/3<span class="o">]</span> Updating specifications <span class="k">for</span> account API ...  Done
+<span class="o">[</span><span class="m">3</span>/3<span class="o">]</span> Updating specifications <span class="k">for</span> global API ...  Done
+Enter path to an rc file to update, or leave blank to use <span class="o">[</span>/root/.bashrc<span class="o">]</span>:
+Modify profile to update your <span class="nv">$PATH</span> and <span class="nb">enable</span> bash completion? <span class="o">[</span>Y/n<span class="o">]</span>:
+Backing up <span class="o">[</span>/root/.bashrc<span class="o">]</span> to <span class="o">[</span>/root/.bashrc.backup<span class="o">]</span>.
+Start a new shell <span class="k">for</span> the changes to take effect.
+</pre></div>
 </div>
-<div class="section" id="target">
-<h3>Target<a class="headerlink" href="#target" title="Permalink to this headline">¶</a></h3>
-<p>You must define the target for executing the script. The default is to execute only on the instance that triggered the event. The other options are as follows. Note that availability of targets depends on the scope at which the rule is being defined.</p>
-<table border="1" class="colwidths-given docutils">
-<colgroup>
-<col width="28%" />
-<col width="17%" />
-<col width="56%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Target</th>
-<th class="head">Scopes</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Triggering Server</td>
-<td><a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></td>
-<td>The script will only be executed on the server that triggered the event.</td>
-</tr>
-<tr class="row-odd"><td>Triggering Server with &lt;specified OS&gt;</td>
-<td><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></td>
-<td>The script will only be executed on the server that triggered the event providing it is the specified Operating System.</td>
-</tr>
-<tr class="row-even"><td>All Servers in the Farm</td>
-<td><a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></td>
-<td>The script will be executed on all running servers in the Farm.</td>
-</tr>
-<tr class="row-odd"><td>All Servers of the Farm Role</td>
-<td><a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a></td>
-<td>Script will execute for all servers running from the same Farm Role as the triggering server in the Farm.</td>
-</tr>
-<tr class="row-even"><td>All Roles with Selected Tags</td>
-<td><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></td>
-<td>Script will execute for all servers running from Roles with the specified tag in the Farm.</td>
-</tr>
-<tr class="row-odd"><td>All Roles with Selected OS</td>
-<td><a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></td>
-<td>Script will execute for all servers in the Farm with the specified OS.</td>
-</tr>
-<tr class="row-even"><td>Selected Farm Roles</td>
-<td><a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></td>
-<td>Script will execute for all servers in the given Farm Role(s) in the Farm.</td>
-</tr>
-</tbody>
-</table>
+<p>You can override the config settings by passing in a file:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scalr-ctl --config /path/to/config/file
+</pre></div>
 </div>
-<div class="section" id="action">
-<h3>Action<a class="headerlink" href="#action" title="Permalink to this headline">¶</a></h3>
-<p>There are three choices for the Action for a rule.</p>
-<table border="1" class="colwidths-given docutils">
-<colgroup>
-<col width="7%" />
-<col width="20%" />
-<col width="15%" />
-<col width="58%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Type</th>
-<th class="head">Scopes</th>
-<th class="head">Option</th>
-<th class="head">Details</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Script</td>
-<td><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></td>
-<td>Scalr Script</td>
-<td>A Scalr script previously defined at the current scope or higher. Higher Scope scripts must have shared <a class="reference internal" href="../_images/shared.png"><img alt="SHARED" src="../_images/shared.png" style="width: 129.6px; height: 32.800000000000004px;" /></a> enabled.</td>
-</tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>&#160;</td>
-<td>Local Script</td>
-<td>Script that will already be installed on the server. You must provide the full path to the script.</td>
-</tr>
-<tr class="row-even"><td>&#160;</td>
-<td>&#160;</td>
-<td>URL Script</td>
-<td>Instructs Scalr to download the script from the specified URL and run it.</td>
-</tr>
-<tr class="row-odd"><td>Chef</td>
-<td><a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></td>
-<td>Override Runlist (Server)</td>
-<td>If the Role is configured to bootstrap with Chef Server the rule can override the runlist defined at Role level.</td>
-</tr>
-<tr class="row-even"><td>&#160;</td>
-<td>&#160;</td>
-<td>Reconverge (Server)</td>
-<td>If the Role is configured to bootstrap with Chef Server the rule can re-invoke the convergence actions.</td>
-</tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>&#160;</td>
-<td>Chef Solo</td>
-<td>Specify a specific cookbook and runlist to use either from a URL or GIT</td>
-</tr>
-<tr class="row-even"><td>AT Job</td>
-<td><a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></td>
-<td>(none)</td>
-<td>If AT is configured to bootstrap the role you can chose a bootstrap config and job to execute for the rule.</td>
-</tr>
-</tbody>
-</table>
+<p>And even override it further by passing in parameters like environment ID:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scalr-ctl --config /path/to/config/file farms create-from-template --stdin &lt; my_farm_template.json --envId <span class="m">1</span>
+</pre></div>
 </div>
-<div class="section" id="advanced-configuration">
-<h3>Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permalink to this headline">¶</a></h3>
-<p>The advanced configuration section allows you to control various aspects of how the Action is executed.</p>
-<table border="1" class="colwidths-given docutils">
-<colgroup>
-<col width="20%" />
-<col width="80%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Parameter</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Execution Mode</td>
-<td>Blocking: Scalarizr will wait for your Script to finish executing before firing and processing further events</td>
-</tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>Non-Blocking: Scalarizr will not wait for your Script to finish executing before firing and processing further events</td>
-</tr>
-<tr class="row-even"><td>Timeout</td>
-<td>Length in seconds before the script should timeout. This should be increased for complex actions, especially those that downlada from the internet.</td>
-</tr>
-<tr class="row-odd"><td>Order</td>
-<td>Sequence in which rules must be executed. This defaults to the order in which the rules are created.</td>
-</tr>
-<tr class="row-even"><td>Run As</td>
-<td>For Scripts and Chef only defines the user to execute the script as on the server.</td>
-</tr>
-</tbody>
-</table>
 </div>
+<div class="section" id="using-the-cli">
+<h2>Using the CLI<a class="headerlink" href="#using-the-cli" title="Permalink to this headline">¶</a></h2>
+<p>After install scalr-ctl, you can launch it as shown below. When scalr-ctl is invoked without any parameters, it will show help content:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ scalr-ctl
+Usage: scalr-ctl <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND1 <span class="o">[</span>ARGS<span class="o">]</span>... <span class="o">[</span>COMMAND2 <span class="o">[</span>ARGS<span class="o">]</span>...<span class="o">]</span>...
+
+  Scalr-ctl is a command-line interface to your Scalr account
+
+  Options:
+  --version          Show the version and exit.
+  --key_id TEXT      API key ID
+  --secret_key TEXT  API secret key
+  --config TEXT      Path to a custom scalr-ctl configuration file
+  --help             Show this message and exit.
+
+  User Scope operations:
+  cloud-locations                Manage Cloud Locations
+  cost-centers                   Manage Cost Centres
+  events                         Manage custom event definitions
+  <span class="nb">export</span>                         Export Scalr Objects
+  farm-cloud-services            Manage Cloud Services
+  farm-global-variables          Manage Global Variables <span class="k">for</span> Farms
+  farm-role-global-variables     Manage Global Variables <span class="k">for</span> FarmRoles
+  farm-role-orchestration-rules  Manage Orchestration Rules
+  farm-role-scaling              Manage FarmRole Scaling
+  farm-roles                     Manage FarmRoles
+  farms                          Manage Farms
+  global-variables               Manage Global Variables
+  images                         Manage Images
+  import                         Import Scalr Objects.
+  orchestration-rules            Manage Orchestration Rules
+  os                             Manage supported Operating Systems
+  projects                       Manage Projects
+  role-categories                Manage current Role Categories
+  role-global-variables          Manage Global Variables <span class="k">for</span> Roles
+  role-images                    Manage Images in Roles
+  role-orchestration-rules       Manage Orchestration Rules
+  roles                          Manage Roles
+  scaling-metrics                Manage Scaling Metrics
+  script-versions                Manage Script Versions
+  scripts                        Manage Scripts
+  server-global-variables        Manage Global Variables <span class="k">for</span> Servers
+  servers                        Manage Servers
+  storages                       Manage Storages
+  webhooks                       Manage Webhooks
+
+  Available scopes:
+  account  All Scalr Account scope commands
+  global   All Scalr Global scope commands
+
+  Service commands:
+  configure  Set user configuration options in interactive mode
+  update     Fetch new API specification <span class="k">if</span> available.
+</pre></div>
+</div>
+<p>You can also run the following for Account scope commands, ensure you user has access to the Account scope before running these:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ scalr-ctl account
+Usage: scalr-ctl account <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND1 <span class="o">[</span>ARGS<span class="o">]</span>... <span class="o">[</span>COMMAND2 <span class="o">[</span>ARGS<span class="o">]</span>...<span class="o">]</span>...
+
+Options:
+  --help  Show this message and exit.
+
+  Account Scope operations:
+  acl-roles                 Manage ACL Roles
+  cloud-credentials         Manage Cloud Credentials <span class="k">for</span> Account scope
+  clouds                    Manage Cloud Providers
+  environments              Manage Environments
+  events                    Manage Events available in the Scalr Account
+  global-variables          Manage Global Variables
+  images                    Manage Images
+  orchestration-rules       Manage Orchestration Rules
+  os                        Manage supported Operating Systems
+  role-categories           Manage current Role Categories
+  role-global-variables     Manage Global Variables <span class="k">for</span> Roles
+  role-images               Manage Images in Roles
+  role-orchestration-rules  Manage Orchestration Rules
+  roles                     Manage Roles
+  scaling-metrics           Manage Scaling Metrics
+  teams                     Manage Teams
+  webhooks                  Manage Webhooks
+</pre></div>
+</div>
+<p>You can also run the following for Scalr scope commands, ensure you user has access to the Account scope before running these:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ scalr-ctl global
+Usage: scalr-ctl global <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND1 <span class="o">[</span>ARGS<span class="o">]</span>... <span class="o">[</span>COMMAND2 <span class="o">[</span>ARGS<span class="o">]</span>...<span class="o">]</span>...
+
+Options:
+  --help  Show this message and exit.
+
+  Global Scope operations:
+  global-variables          Manage Global Variables
+  images                    Manage Images
+  os                        Manage supported Operating Systems
+  role-categories           Manage current Role Categories
+  role-images               Manage Images in Roles
+  role-orchestration-rules  Manage Orchestration Rules
+  roles                     Manage Roles
+</pre></div>
+</div>
+</div>
+<div class="section" id="cli-examples">
+<h2>CLI Examples<a class="headerlink" href="#cli-examples" title="Permalink to this headline">¶</a></h2>
+<p>In the example below, we will use a Farm Template to create and launch a farm:</p>
+<p>First generate a template from an existing farm (you can create a farm template from scratch as well):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scalr-ctl farms generate-template --farmId <span class="m">645</span> &gt; my_farm_template.json
+</pre></div>
+</div>
+<p>Next, you can update the JSON with a different name, role, script, etc and create the farm:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$ scalr-ctl farms create-from-template --stdin &lt; my_farm_template.json
+<span class="o">{</span><span class="s2">&quot;meta&quot;</span>:<span class="o">{</span><span class="s2">&quot;requestId&quot;</span>:<span class="s2">&quot;95b9abb2-41e7-4a74-adf4-1d9c83b1a461&quot;</span><span class="o">}</span>,<span class="s2">&quot;data&quot;</span>:<span class="o">{</span><span class="s2">&quot;id&quot;</span>:653,<span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;Test 1&quot;</span>,<span class="s2">&quot;description&quot;</span>:<span class="s2">&quot;&quot;</span>,<span class="s2">&quot;status&quot;</span>:<span class="s2">&quot;terminated&quot;</span>,<span class="s2">&quot;owner&quot;</span>:<span class="o">{</span><span class="s2">&quot;id&quot;</span>:23,<span class="s2">&quot;email&quot;</span>:<span class="s2">&quot;someone@scalr.com&quot;</span><span class="o">}</span>,<span class="s2">&quot;project&quot;</span>:<span class="o">{</span><span class="s2">&quot;id&quot;</span>:<span class="s2">&quot;1682b63d-6d28-4b5f-8438-3cf058f89a6c&quot;</span><span class="o">}</span>,<span class="s2">&quot;timezone&quot;</span>:<span class="s2">&quot;America\/New_York&quot;</span>,<span class="s2">&quot;launchOrder&quot;</span>:<span class="s2">&quot;simultaneous&quot;</span><span class="o">}</span>,<span class="s2">&quot;warnings&quot;</span>:<span class="o">[]}</span>
+</pre></div>
+</div>
+<p>From there we can see the Farm ID is 653, we can now launch that farm using that ID:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$  scalr-ctl farms launch --farmId <span class="m">653</span>
+<span class="o">{</span><span class="s2">&quot;meta&quot;</span>:<span class="o">{</span><span class="s2">&quot;requestId&quot;</span>:<span class="s2">&quot;03998d40-e42b-462d-b51f-38d99040e9b3&quot;</span><span class="o">}</span>,<span class="s2">&quot;data&quot;</span>:<span class="o">{</span><span class="s2">&quot;id&quot;</span>:653,<span class="s2">&quot;name&quot;</span>:<span class="s2">&quot;Test1&quot;</span>,<span class="s2">&quot;description&quot;</span>:<span class="s2">&quot;&quot;</span>,<span class="s2">&quot;status&quot;</span>:<span class="s2">&quot;running&quot;</span>,<span class="s2">&quot;owner&quot;</span>:<span class="o">{</span><span class="s2">&quot;id&quot;</span>:23,<span class="s2">&quot;email&quot;</span>:<span class="s2">&quot;someone@scalr.com&quot;</span><span class="o">}</span>,<span class="s2">&quot;project&quot;</span>:<span class="o">{</span><span class="s2">&quot;id&quot;</span>:<span class="s2">&quot;1682b63d-6d28-4b5f-8438-3cf058f89a6c&quot;</span><span class="o">}</span>,<span class="s2">&quot;timezone&quot;</span>:<span class="s2">&quot;America\/New_York&quot;</span>,<span class="s2">&quot;launchOrder&quot;</span>:<span class="s2">&quot;simultaneous&quot;</span><span class="o">}</span>,<span class="s2">&quot;warnings&quot;</span>:<span class="o">[]}</span>
+</pre></div>
+</div>
+<p>You can see more examples of how to use the CLI on its own as well in conjunction with other tools on our GitHub site: <a href="https://github.com/scalr-tutorials" target="_blank">Scalr Github Tutorials Site</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></p>
 </div>
 </div>
 
@@ -946,10 +918,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="integrations.html" class="btn btn-neutral float-right" title="Webhooks and Endpoints" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="csg.html" class="btn btn-neutral float-right" title="Cloud Service Gateway" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="quotas.html" class="btn btn-neutral" title="Resource Quotas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="Scalr API and CLI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
