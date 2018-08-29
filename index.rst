@@ -48,9 +48,8 @@ Scalr Documentation!
    farms/index
    farms/launch
    farms/ssh
-   farms/execution
    farms/storage
-   farms/auto_dicscovery
+   farms/auto_discovery
    farms/link_cloud_services
    farms/service_catalog
 
