@@ -502,10 +502,12 @@
 <p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Scalr API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#generate-api-keys">Generate API Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#api-explorer">API Explorer</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Command Line Interface (CLI)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generating-api-keys">Generating API Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installing-and-configuring-the-cli">Installing and Configuring the CLI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-the-cli">Using the CLI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cli-examples">CLI Examples</a></li>
@@ -694,6 +696,14 @@
   <div class="section" id="command-line-interface-cli">
 <span id="cli"></span><h1>Command Line Interface (CLI)<a class="headerlink" href="#command-line-interface-cli" title="Permalink to this headline">¶</a></h1>
 <p>Scalr-ctl is a command-line tool intended to help you deploy, update, and manage components of your Scalr deployment as well as the workloads you it is managing. Follow the Scalr CLI release notes page for any updates: <a href="https://scalr-labs.atlassian.net/wiki/spaces/PUBLIC/pages/109805613/Scalr+CLI+Tools+scalr-ctl" target="_blank">Scalr CLI Release Notes</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a>.</p>
+<div class="section" id="generating-api-keys">
+<h2>Generating API Keys<a class="headerlink" href="#generating-api-keys" title="Permalink to this headline">¶</a></h2>
+<p>To use the CLI, you first need API keys.</p>
+<p id="generate-keys">To generate API keys in Scalr, go to the top right and click on the silhouette of your user and down to API Access:</p>
+<a class="reference internal image-reference" href="../_images/user_silhouette.png"><img alt="../_images/user_silhouette.png" src="../_images/user_silhouette.png" style="width: 213.5px; height: 226.79999999999998px;" /></a>
+<p>Once you are in the API Keys page, click on Generate New API Key and your key will be created. Within this page, you can also manage existing keys by activating, deactivating, or deleting them:</p>
+<a class="reference internal image-reference" href="../_images/api_keys_page.png"><img alt="../_images/api_keys_page.png" src="../_images/api_keys_page.png" style="width: 1055.6px; height: 158.89999999999998px;" /></a>
+</div>
 <div class="section" id="installing-and-configuring-the-cli">
 <h2>Installing and Configuring the CLI<a class="headerlink" href="#installing-and-configuring-the-cli" title="Permalink to this headline">¶</a></h2>
 <p>To install on your workstation use the PIP Python utility (requires python &gt;=2.7.9 or &gt;=3.4). To find out more about pip, click <a href="https://pip.pypa.io/en/stable/installing/" target="_blank">here</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a> for Linux and <a href="https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows" target="_blank">here</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a> for Windows.</p>

@@ -11,6 +11,13 @@ Command Line Interface (CLI)
 
 Scalr-ctl is a command-line tool intended to help you deploy, update, and manage components of your Scalr deployment as well as the workloads you it is managing. Follow the Scalr CLI release notes page for any updates: |cli_notes| |NEWWIN|.
 
+Generating API Keys
+--------------------
+
+To use the CLI, you first need API keys.
+
+.. include:: generate_keys_generic.rst
+
 Installing and Configuring the CLI
 ------------------------------------------------
 
