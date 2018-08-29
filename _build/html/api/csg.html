@@ -295,7 +295,13 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/launch.html">Farm Launching and Managing Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../farms/launch.html">Farm Launching and Managing Servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#launching-a-farm">Launching a Farm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#managing-servers">Managing Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#terminating-servers">Terminating Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#server-dashboard">Server Dashboard</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/ssh.html">SSH Keys in Scalr</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#accessing-keys">Accessing Keys</a></li>
@@ -502,10 +508,12 @@
 <p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Scalr API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#generate-api-keys">Generate API Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#api-explorer">API Explorer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Interface (CLI)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#generating-api-keys">Generating API Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html#installing-and-configuring-the-cli">Installing and Configuring the CLI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html#using-the-cli">Using the CLI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html#cli-examples">CLI Examples</a></li>
@@ -513,9 +521,11 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Cloud Service Gateway</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#configuring-cloud-service-gateway">Configuring Cloud Service Gateway</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-the-cloud-service-gateway">Using the Cloud Service Gateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-cloud-service-gateway">Using the Cloud Service Gateway</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#client-configuration-details">Client Configuration Details</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#managing-approvals-for-cloud-service-gateway">Managing approvals for Cloud Service Gateway</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#managing-access-and-permissions-for-cloud-service-gateway">Managing Access and Permissions for Cloud Service Gateway</a></li>
 </ul>
 </li>
 </ul>
@@ -693,17 +703,99 @@
             
   <div class="section" id="cloud-service-gateway">
 <h1>Cloud Service Gateway<a class="headerlink" href="#cloud-service-gateway" title="Permalink to this headline">¶</a></h1>
+<p>In order to ensure a consistent multi-cloud experience for cross-cloud automation, policy enforcement, cost visibility, and access control, typically Cloud Management Platforms will enforce limitations on what services are available for consumption by developers.  This can create issues when developers need access to services that are not otherwise available to them, and may result in undesired actions being taken by those users that are contrary to your goals and policies.  Scalr’s solution to this conundrum is the Scalr Cloud Service Gateway, or CSG.  By utilizing the CSG, you’ll gain the benefits of cloud management for these services without the previous limitations.</p>
+<p>The Scalr CSG acts as a transparent proxy between your applications and cloud provider services   By maintaining this gateway within Scalr, you receive the benefits of complete compatibility with tools, documentation, etc. Developers just point to the CSG endpoint configured and hosted in your Scalr infrastructure and everything works the same as it does for other natively supported cloud service, but you’ll now receive visibility into and control over service consumption.</p>
 <div class="section" id="configuring-cloud-service-gateway">
 <h2>Configuring Cloud Service Gateway<a class="headerlink" href="#configuring-cloud-service-gateway" title="Permalink to this headline">¶</a></h2>
+<p>To enable the CSG on your deployment, add the following to your scalr-server.rb:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable the CSG service</span>
+csg<span class="o">[</span>:enable<span class="o">]</span> <span class="o">=</span> <span class="nb">true</span>
+
+<span class="c1"># Root CA. Users must configure their clients to trust csg[:cert] SSL certificate. This must be a SELF SIGNED cert.</span>
+csg<span class="o">[</span>:cert<span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;/etc/scalr-server/csg.crt&#39;</span>
+csg<span class="o">[</span>:key<span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;/etc/scalr-server/csg.key&#39;</span>
+
+<span class="c1"># Set port CSG will listen on. Default is 3128, like in most HTTP(S) proxies.</span>
+csg<span class="o">[</span>:bind_port<span class="o">]</span> <span class="o">=</span> <span class="m">3128</span>
+<span class="c1"># csg[:bind_host] should be this host&#39;s public domain name.</span>
+<span class="c1"># If you have a single node deployment, this will be simply routing[:endpoint_host]</span>
+<span class="c1"># For a multi node deployment, this will be the host that CSG resides on.  Be sure to update your scalr-server-local.rb</span>
+csg<span class="o">[</span>:bind_host<span class="o">]</span> <span class="o">=</span> routing<span class="o">[</span>:endpoint_host<span class="o">]</span>
+
+<span class="c1"># Logger (optional)</span>
+<span class="c1">#app[:configuration] = {</span>
+<span class="c1">#  :scalr =&gt; {</span>
+<span class="c1">#    &quot;logger&quot; =&gt; {</span>
+<span class="c1">#      &quot;csg&quot; =&gt; {</span>
+<span class="c1">#        &quot;backend&quot; =&gt; &quot;logstash&quot;,</span>
+<span class="c1">#        &quot;proto&quot; =&gt; &quot;tcp&quot;,</span>
+<span class="c1">#        &quot;path&quot; =&gt; &quot;logstash.local&quot;,</span>
+<span class="c1">#        &quot;port&quot; =&gt; 8888,</span>
+<span class="c1">#        &quot;enabled&quot; =&gt; true</span>
+<span class="c1">#      }</span>
+<span class="c1">#    }</span>
+<span class="c1">#  }</span>
+<span class="c1">#}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you have a multi server Scalr deployment, the <code class="docutils literal notranslate"><span class="pre">csg[:enable]</span> <span class="pre">=</span> <span class="pre">true</span></code> section should be added to the scalr-server-local.rb of the server that it will run on, not the scalr-server.rb</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In a multi-node configuration, the scalr-server.rb file should be exactly the same across all Scalr server nodes. Remember to run <code class="docutils literal notranslate"><span class="pre">scalr-server-ctl</span> <span class="pre">reconfigure</span></code> on all nodes whenever you make an update to the scalr-server.rb configuration file.</p>
+</div>
 </div>
 <div class="section" id="using-the-cloud-service-gateway">
 <h2>Using the Cloud Service Gateway<a class="headerlink" href="#using-the-cloud-service-gateway" title="Permalink to this headline">¶</a></h2>
+<p>The overall flow of the CSG is as follows:</p>
+<ol class="arabic simple">
+<li>Developers request access to AWS services that aren’t accessible through Farms: Lambda, Elastic Container Services (ECS), Route53, Glacier, API Gateway, Simple Notification Service (SNS), Simple Email Service (SES), Redshift, and DynamoDB</li>
+<li>Users with permission Account Management &gt; Cloud Service Access Requests can view who has requested which services, and approve or deny access</li>
+<li>Developers whose request is approved get access to the endpoint, key, and secret they need to access the services. These keys and secrets work on the Scalr hosted endpoint which acts as an HTTP proxy, and Scalr handles the authentication to the cloud service.</li>
+<li>Applications use the service, and Scalr provides access via the CSG.</li>
+</ol>
+<p>An end user interested in using the Cloud Service Gateway will need to begin by accessing their environment of choice and selecting the user drop down in the upper right corner of your display.  Next, select Cloud Services.</p>
+<a class="reference internal image-reference" href="../_images/cloud_services.png"><img alt="../_images/cloud_services.png" src="../_images/cloud_services.png" style="width: 220.5px; height: 135.1px;" /></a>
+<p>Once you are on the Cloud Services page, click Request Access and select the cloud and service(s) that you want access to:</p>
+<a class="reference internal image-reference" href="../_images/cloud_services_request.png"><img alt="../_images/cloud_services_request.png" src="../_images/cloud_services_request.png" style="width: 780.5px; height: 480.9px;" /></a>
+<p>After you request the services, they must be approved or denied by the account administrator. Within the Cloud Services page you can manage the services you have requested.</p>
+<p>Once a request has been approved, select the Details icon to view additional details. Access details will be presented in a new pop-up.  Use the information presented here to configure and leverage access to your approved Cloud Services:</p>
+<a class="reference internal image-reference" href="../_images/secret_key.jpg"><img alt="../_images/secret_key.jpg" src="../_images/secret_key.jpg" style="width: 595.2px; height: 231.20000000000002px;" /></a>
+<a class="reference internal image-reference" href="../_images/access_details1.jpg"><img alt="../_images/access_details1.jpg" src="../_images/access_details1.jpg" style="width: 594.4px; height: 428.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/access_details2.jpg"><img alt="../_images/access_details2.jpg" src="../_images/access_details2.jpg" style="width: 589.6px; height: 368.8px;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Upon initial Approval and access of the Details menu, a one time Secret Key will be provided to the end user.  This key MUST be saved as it will never be presented again.</p>
+</div>
+<div class="section" id="client-configuration-details">
+<h3>Client Configuration Details<a class="headerlink" href="#client-configuration-details" title="Permalink to this headline">¶</a></h3>
+<p>API client / CLI must support SNI in order to establish a proper TLS connection with Cloud Service Gateway. If you don’t have SNI support you’ll get the following error client side:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>SSL: CERTIFICATE_VERIFY_FAILED<span class="o">]</span> certificate verify failed <span class="o">(</span>_ssl.c:600<span class="o">)</span>
+</pre></div>
+</div>
+<p>The server side error in the cloud-service-gateway.log would look like the following:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>&lt;&lt; Cannot establish TLS with queue.amazonaws.com:443 (sni: None): TlsException(&#39;Cannot validate certificate hostname without SNI&#39;,)
+</pre></div>
+</div>
+<p>AWS-CLI / AWS-SDK / Boto - Python 2.7.9+ and Python3 works without any need for additional configuration.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Regardless of AWS CLI version, you would still need Python 2.7.9+ due to the requirement for SNI support in Python.</p>
+</div>
+</div>
 </div>
 <div class="section" id="managing-approvals-for-cloud-service-gateway">
 <h2>Managing approvals for Cloud Service Gateway<a class="headerlink" href="#managing-approvals-for-cloud-service-gateway" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="managing-access-and-permissions-for-cloud-service-gateway">
-<h2>Managing Access and Permissions for Cloud Service Gateway<a class="headerlink" href="#managing-access-and-permissions-for-cloud-service-gateway" title="Permalink to this headline">¶</a></h2>
+<p>Account Admins, or users with the appropriate ACLs, will have the ability to manage Cloud Service Access Requests from the Account Scope.</p>
+<p>Begin by selecting the Cloud Service Access Request item from the Main Menu:</p>
+<a class="reference internal image-reference" href="../_images/csg_approval.png"><img alt="../_images/csg_approval.png" src="../_images/csg_approval.png" style="width: 198.79999999999998px; height: 168.7px;" /></a>
+<p>And approve or deny the request:</p>
+<a class="reference internal image-reference" href="../_images/csg_approval_page.png"><img alt="../_images/csg_approval_page.png" src="../_images/csg_approval_page.png" style="width: 1064.7px; height: 104.3px;" /></a>
+<p>You must select the cloud credentials that should be used when making a call via the CSG:</p>
+<a class="reference internal image-reference" href="../_images/csg_approval_cloud_creds.png"><img alt="../_images/csg_approval_cloud_creds.png" src="../_images/csg_approval_cloud_creds.png" style="width: 345.09999999999997px; height: 256.9px;" /></a>
+<p>From this page you can also revoke, archive, and manage existing requests.</p>
 </div>
 </div>
 

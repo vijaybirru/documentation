@@ -294,7 +294,13 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/launch.html">Farm Launching and Managing Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../farms/launch.html">Farm Launching and Managing Servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#launching-a-farm">Launching a Farm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#managing-servers">Managing Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#terminating-servers">Terminating Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#server-dashboard">Server Dashboard</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/ssh.html">SSH Keys in Scalr</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#accessing-keys">Accessing Keys</a></li>
@@ -500,10 +506,16 @@
 </ul>
 <p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Scalr API and CLI</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Scalr API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html#generate-api-keys">Generate API Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/index.html#api-explorer">API Explorer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/index.html#installing-cli">Installing CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/index.html#using-scalr-ctl">Using scalr-ctl</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/cli.html">Command Line Interface (CLI)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#generating-api-keys">Generating API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#installing-and-configuring-the-cli">Installing and Configuring the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#using-the-cli">Using the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#cli-examples">CLI Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api/csg.html">Cloud Service Gateway</a><ul>
@@ -690,27 +702,17 @@
 <span id="events"></span><h1>Event Descriptions<a class="headerlink" href="#event-descriptions" title="Permalink to this headline">¶</a></h1>
 <p>Events are automatically fired by Scalr over the lifecycle of your Servers (Instances) and can be used to trigger <a class="reference internal" href="../sec_comp/orchestration.html#sa-orchestration"><span class="std std-ref">Scope level</span></a>, <a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration"><span class="std std-ref">Role</span></a> and <a class="reference internal" href="../farms/index.html#farm-role-orchestration"><span class="std std-ref">Farm Role</span></a> orchestration rules.</p>
 <p>You will find the list of events built in to Scalr below along with details of how each event occurs and their uses. Scalr also supports <a class="reference internal" href="../custom_events/index.html#custom-events"><span class="std std-ref">Custom Events</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The ONLY guaranteed sequence for events occurs when a server is booting up and the events are being processed on the triggering server. <br> This sequence is HostInit -&gt; BeforeHostUp -&gt; HostUp.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The sequence/order that events are received when the target is NOT the triggering server or the target is a Webhook ARE NOT guaranteed and may vary from case to case due to the multithreaded processing of events in Scalr.</p>
+</div>
+<hr class="docutils" />
 <div class="section" id="beforeinstancelaunch-event">
 <h2>BeforeInstanceLaunch Event<a class="headerlink" href="#beforeinstancelaunch-event" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Prior Event(s)</th>
-<th class="head">Event</th>
-<th class="head">Following Event(s)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><em>None</em></td>
-<td><strong>BeforeInstanceLaunch</strong></td>
-<td>HostInit</td>
-</tr>
-</tbody>
-</table>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="17%" />
@@ -775,31 +777,9 @@
 </tbody>
 </table>
 </div>
+<hr class="docutils" />
 <div class="section" id="hostinit-event">
 <h2>HostInit Event<a class="headerlink" href="#hostinit-event" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Prior Event(s)</th>
-<th class="head">Event</th>
-<th class="head">Following Event(s)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>BeforeInstanceLaunch</td>
-<td><strong>HostInit</strong></td>
-<td>BeforeHostUp</td>
-</tr>
-<tr class="row-odd"><td>&#160;</td>
-<td>&#160;</td>
-<td>HostInitFailed</td>
-</tr>
-</tbody>
-</table>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">The HostInit Event does not fire on reboots! To fire Orchestration Rules on reboot, use the <a class="reference internal" href="#rebootcomplete-event">RebootComplete Event</a>.</p>
@@ -871,27 +851,9 @@
 </tbody>
 </table>
 </div>
+<hr class="docutils" />
 <div class="section" id="hostinitfailed-event">
 <h2>HostInitFailed Event<a class="headerlink" href="#hostinitfailed-event" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Prior Event(s)</th>
-<th class="head">Event</th>
-<th class="head">Following Event(s)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>HostInit</td>
-<td><strong>HostInitFailed</strong></td>
-<td><em>None</em></td>
-</tr>
-</tbody>
-</table>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="23%" />
@@ -928,27 +890,9 @@
 </tbody>
 </table>
 </div>
+<hr class="docutils" />
 <div class="section" id="beforehostup-event">
 <h2>BeforeHostUp Event<a class="headerlink" href="#beforehostup-event" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Prior Event(s)</th>
-<th class="head">Event</th>
-<th class="head">Following Event(s)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>HostInit</td>
-<td><strong>BeforeHostUp</strong></td>
-<td>HostUp</td>
-</tr>
-</tbody>
-</table>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">The BeforeHostUp Event does not fire on reboots! To fire Orchestration Rules on reboot, use the <a class="reference internal" href="#rebootcomplete-event">RebootComplete Event</a>.</p>
@@ -1011,27 +955,9 @@
 </tbody>
 </table>
 </div>
+<hr class="docutils" />
 <div class="section" id="hostup-event">
 <h2>HostUp Event<a class="headerlink" href="#hostup-event" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Prior Event(s)</th>
-<th class="head">Event</th>
-<th class="head">Following Event(s)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>BeforeHostUp</td>
-<td><strong>HostUp</strong></td>
-<td>(EBSVolumeAttached)</td>
-</tr>
-</tbody>
-</table>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">The HostUp Event does not fire on reboots! To fire Orchestration Rules on reboot, use the <a class="reference internal" href="#rebootcomplete-event">RebootComplete Event</a>.</p>
@@ -1085,27 +1011,9 @@
 </tbody>
 </table>
 </div>
+<hr class="docutils" />
 <div class="section" id="ipaddresschanged-event">
 <h2>IPAddressChanged Event<a class="headerlink" href="#ipaddresschanged-event" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Prior Event(s)</th>
-<th class="head">Event</th>
-<th class="head">Following Event(s)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>HostInit</td>
-<td><strong>IPAddressChanged</strong></td>
-<td>HostUp</td>
-</tr>
-</tbody>
-</table>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="17%" />
@@ -1153,28 +1061,14 @@
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">IPAddressChanged event fires when a Server is Resumed. The *OLD* variables will show the old IP Address as “N/A”</p>
 </div>
+</div>
+<hr class="docutils" />
 <div class="section" id="ebsvolumeattached-event">
 <h2>EBSVolumeAttached Event<a class="headerlink" href="#ebsvolumeattached-event" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Prior Event(s)</th>
-<th class="head">Event</th>
-<th class="head">Following Event(s)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>HostInit</td>
-<td><strong>EBSVolumeAttached</strong></td>
-<td>HostUp</td>
-</tr>
-</tbody>
-</table>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <ul class="last simple">
@@ -1229,27 +1123,9 @@
 </tbody>
 </table>
 </div>
+<hr class="docutils" />
 <div class="section" id="ebsvolumemounted-event">
 <h2>EBSVolumeMounted Event<a class="headerlink" href="#ebsvolumemounted-event" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Prior Event(s)</th>
-<th class="head">Event</th>
-<th class="head">Following Event(s)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>HostInit</td>
-<td><strong>EBSVolumeMounted</strong></td>
-<td>HostUp</td>
-</tr>
-</tbody>
-</table>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <ul class="last simple">
@@ -1304,27 +1180,9 @@
 </tbody>
 </table>
 </div>
+<hr class="docutils" />
 <div class="section" id="beforehostterminate-event">
 <h2>BeforeHostTerminate Event<a class="headerlink" href="#beforehostterminate-event" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Prior Event(s)</th>
-<th class="head">Event</th>
-<th class="head">Following Event(s)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><em>[Suspend or Terminate]</em></td>
-<td><strong>BeforeHostTerminate</strong></td>
-<td>HostDown</td>
-</tr>
-</tbody>
-</table>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="17%" />
@@ -1379,27 +1237,9 @@
 <p class="last">By default Scalr will make the API call to the Cloud service to terminate the server 3 minutes after the termination request is made in Scalr. However Scalr can be configured to wait until all orchestration scripts run by the BeforeHostTerminate Event have completed before terminating the server. The config parameter <code class="docutils literal notranslate"><span class="pre">scalr.system.server_terminate_timeout</span></code> can be set to <code class="docutils literal notranslate"><span class="pre">auto</span></code> to enable this. When set to <code class="docutils literal notranslate"><span class="pre">auto</span></code> if there are no orchestration scripts on BeforeHostTerminate, Scalr will terminate the server immediately. However, if there are scripts on BeforeHostTerminate, Scalr will terminate the server only when Scalr receives confirmation that the scripts have completed.</p>
 </div>
 </div>
+<hr class="docutils" />
 <div class="section" id="hostdown-event">
 <h2>HostDown Event<a class="headerlink" href="#hostdown-event" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Prior Event(s)</th>
-<th class="head">Event</th>
-<th class="head">Following Event(s)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>BeforeHostTerminate</td>
-<td><strong>HostDown</strong></td>
-<td><em>None</em></td>
-</tr>
-</tbody>
-</table>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="17%" />
@@ -1492,27 +1332,9 @@
 </ul>
 </div>
 </div>
+<hr class="docutils" />
 <div class="section" id="rebootcomplete-event">
 <h2>RebootComplete Event<a class="headerlink" href="#rebootcomplete-event" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Prior Event(s)</th>
-<th class="head">Event</th>
-<th class="head">Following Event(s)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>RebootBegin</td>
-<td><strong>RebootComplete</strong></td>
-<td><em>None</em></td>
-</tr>
-</tbody>
-</table>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="17%" />
@@ -1554,27 +1376,9 @@
 </tbody>
 </table>
 </div>
+<hr class="docutils" />
 <div class="section" id="resumecomplete-event">
 <h2>ResumeComplete Event<a class="headerlink" href="#resumecomplete-event" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Prior Event(s)</th>
-<th class="head">Event</th>
-<th class="head">Following Event(s)</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>BeforeInstanceLaunch</td>
-<td><strong>ResumeComplete</strong></td>
-<td><em>None</em></td>
-</tr>
-</tbody>
-</table>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="17%" />
