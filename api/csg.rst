@@ -43,7 +43,7 @@ To enable the CSG on your deployment, add the following to your scalr-server.rb:
   #  }
   #}
 
-.. note:: If you have a multi server Scalr deployment, the ``csg[:enable] = true`` section should be added to the scalr-server-local.rb of the server that it will run on, not the scalr-server.rb
+.. note:: If you have a multi server Scalr deployment, the ``csg[:enable] = true`` section must be added to the scalr-server-local.rb of the server that it will run on, not the scalr-server.rb
 
 .. note:: |SCALR_SERVER_RB|
 
@@ -118,7 +118,7 @@ And approve or deny the request:
 .. image:: images/csg_approval_page.png
     :scale: 70%
 
-You must select the cloud credentials that should be used when making a call via the CSG:
+You must select the cloud credentials that will be used when making a call via the CSG:
 
 .. image:: images/csg_approval_cloud_creds.png
     :scale: 70%

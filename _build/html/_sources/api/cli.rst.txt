@@ -9,7 +9,7 @@ Command Line Interface (CLI)
 
    <a href="https://scalr-labs.atlassian.net/wiki/spaces/PUBLIC/pages/109805613/Scalr+CLI+Tools+scalr-ctl" target="_blank">Scalr CLI Release Notes</a>
 
-Scalr-ctl is a command-line tool intended to help you deploy, update, and manage components of your Scalr deployment as well as the workloads you it is managing. Follow the Scalr CLI release notes page for any updates: |cli_notes| |NEWWIN|.
+``scalr-ctl`` is a command-line tool gives a simplified interface to the API. It helps you deploy, update, and manage components of your Scalr deployment as well as the workloads it is managing. Follow the Scalr CLI release notes page for any updates: |cli_notes| |NEWWIN|.
 
 Generating API Keys
 --------------------
