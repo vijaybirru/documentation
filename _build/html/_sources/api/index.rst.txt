@@ -2,14 +2,8 @@
 
 .. _api:
 
-Scalr API and CLI
-=================
+Scalr API
+==========
 
 API Explorer
 ------------
-
-Installing CLI
---------------
-
-Using scalr-ctl
----------------

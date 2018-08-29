@@ -35,7 +35,7 @@ Configure Virtual Private Cloud (VPC)
 You will need to create or configure a GCP VPC to work with Scalr. Every GCP user has access to a default network but this is typically NOT an acceptable network for most use cases. If you need to create a VPC for Scalr and the Scalr managed instances please refer to |vpc_link| |NEWWIN|.
 
 Configure Instance Connection Policy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 
 You will also need to perform some additional configuration work to ensure that Scalr can connect to your GCP instances. There are three options for this.
 

@@ -507,6 +507,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../api/index.html#using-scalr-ctl">Using scalr-ctl</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../api/cli.html">Command Line Interface (CLI)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#installing-and-configuring-the-cli">Installing and Configuring the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#using-the-cli">Using the CLI</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../api/csg.html">Cloud Service Gateway</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../api/csg.html#configuring-cloud-service-gateway">Configuring Cloud Service Gateway</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../api/csg.html#using-the-cloud-service-gateway">Using the Cloud Service Gateway</a></li>
@@ -608,6 +613,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Supported Server/Instance Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-functionality">Scalarizr Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/events.html">Event Descriptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#beforeinstancelaunch-event">BeforeInstanceLaunch Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostinit-event">HostInit Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostinitfailed-event">HostInitFailed Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#beforehostup-event">BeforeHostUp Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostup-event">HostUp Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#ipaddresschanged-event">IPAddressChanged Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#ebsvolumeattached-event">EBSVolumeAttached Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#ebsvolumemounted-event">EBSVolumeMounted Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#beforehostterminate-event">BeforeHostTerminate Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostdown-event">HostDown Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#rebootcomplete-event">RebootComplete Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#resumecomplete-event">ResumeComplete Event</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -675,11 +695,11 @@
   <div class="section" id="scalr-account-environment-level-orchestration">
 <span id="sa-orchestration"></span><h1>Scalr/Account/Environment Level Orchestration<a class="headerlink" href="#scalr-account-environment-level-orchestration" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
-<p>Orchestration Rules can be defined to run :ref:’scripts’ across all appicable servers within the scope at which the rule is defined.</p>
+<p>Orchestration Rules can be defined to run <a class="reference internal" href="../scripts/index.html#scripts"><span class="std std-ref">scripts</span></a> across all applicable servers within the scope at which the rule is defined.</p>
 <ul class="simple">
-<li>At Scalr scope script will be run on all applicable servers in all Environments managed by this Scalr installation</li>
-<li>At Account scope script will be run on all applicable servers in all Environments with the Account</li>
-<li>At Environment scope script will be run on all applicable servers within the Environment</li>
+<li>At the Scalr scope, scripts will run on all applicable servers in all Environments managed by this Scalr installation.</li>
+<li>At the Account scope, scripts will run on all applicable servers in all Environments with the Account.</li>
+<li>At the Environment scope, scripts will run on all applicable servers within the Environment.</li>
 </ul>
 <p>This type of Orchestration is typically used to enforce policies, for example:</p>
 <ul class="simple">

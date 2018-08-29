@@ -24,6 +24,18 @@ If you need assistance creating a VMWare user please refer to |user_link| |NEWWI
 Configure VMWare for Scalr
 --------------------------
 
+**Permissions Needed:**
+
+The following is a list of permissions that must be granted in order for this VMware service user to function correctly with Scalr.
+
+.. csv-table::
+   :header-rows: 1
+   :widths: 30,70
+   :file: csv/vmware_perms.csv
+
+Configure Instance Connection Policy
+------------------------------------
+
 You will also need to perform some additional configuration work to ensure that Scalr can connect to your VMWare instances. There are three options for this.
 
 #. **Public** - Scalr will ONLY connect to the Public IP of instances. Only use this option if ALL instances managed by Scalr will have a Public IP.

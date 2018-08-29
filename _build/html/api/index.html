@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Scalr API and CLI &mdash; Scalr 0.01 documentation</title>
+  <title>Scalr API &mdash; Scalr 0.01 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Cloud Service Gateway" href="csg.html" />
+    <link rel="next" title="Command Line Interface (CLI)" href="cli.html" />
     <link rel="prev" title="Kubernetes Clusters" href="../kubernetes/index.html" /> 
 
   
@@ -501,10 +501,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Scalr API and CLI</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Scalr API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#api-explorer">API Explorer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installing-cli">Installing CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-scalr-ctl">Using scalr-ctl</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Interface (CLI)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#installing-and-configuring-the-cli">Installing and Configuring the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#using-the-cli">Using the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html#cli-examples">CLI Examples</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="csg.html">Cloud Service Gateway</a><ul>
@@ -608,6 +612,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Supported Server/Instance Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-functionality">Scalarizr Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/events.html">Event Descriptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#beforeinstancelaunch-event">BeforeInstanceLaunch Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostinit-event">HostInit Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostinitfailed-event">HostInitFailed Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#beforehostup-event">BeforeHostUp Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostup-event">HostUp Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#ipaddresschanged-event">IPAddressChanged Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#ebsvolumeattached-event">EBSVolumeAttached Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#ebsvolumemounted-event">EBSVolumeMounted Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#beforehostterminate-event">BeforeHostTerminate Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#hostdown-event">HostDown Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#rebootcomplete-event">RebootComplete Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/events.html#resumecomplete-event">ResumeComplete Event</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -653,7 +672,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Scalr API and CLI</li>
+      <li>Scalr API</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -672,16 +691,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="scalr-api-and-cli">
-<span id="api"></span><h1>Scalr API and CLI<a class="headerlink" href="#scalr-api-and-cli" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="scalr-api">
+<span id="api"></span><h1>Scalr API<a class="headerlink" href="#scalr-api" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="api-explorer">
 <h2>API Explorer<a class="headerlink" href="#api-explorer" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="installing-cli">
-<h2>Installing CLI<a class="headerlink" href="#installing-cli" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="using-scalr-ctl">
-<h2>Using scalr-ctl<a class="headerlink" href="#using-scalr-ctl" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -693,7 +706,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="csg.html" class="btn btn-neutral float-right" title="Cloud Service Gateway" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="cli.html" class="btn btn-neutral float-right" title="Command Line Interface (CLI)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../kubernetes/index.html" class="btn btn-neutral" title="Kubernetes Clusters" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

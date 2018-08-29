@@ -100,7 +100,7 @@ Scalr Documentation!
    scaling/index
    scaling/auto
    scaling/manual
-   
+
 .. toctree::
    :maxdepth: 3
    :caption: Importing Cloud Infrastructure
@@ -113,6 +113,7 @@ Scalr Documentation!
    :caption: Alternative Interfaces
 
    api/index
+   api/cli
    api/csg
 
 .. toctree::
@@ -145,3 +146,4 @@ Scalr Documentation!
    :caption: Reference Section
 
    reference/index
+   reference/events

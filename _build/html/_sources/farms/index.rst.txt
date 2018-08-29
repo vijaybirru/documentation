@@ -118,7 +118,7 @@ Scaling
 .. image:: images/scaling_t.png
    :scale: 40%
 
-Auto Scaling in Farm Roles is a built in feature of Scalr that provides a consistent scaling capability across all Cloud platforms even for those clouds that don't have built-in scaling. If you do wish to use the Cloud Platform's auto scaling features then you should set Scaling to Manual in the Farm Role.
+Auto Scaling in Farm Roles is a built in feature of Scalr that provides a consistent scaling capability across all Cloud platforms even for those clouds that don't have built-in scaling. If you are using the Cloud Platform's auto scaling features then you should set Scaling to Manual in the Farm Role.
 
 .. note:: It is recommended that you disable any scaling features in the Cloud Platforms you use and only use Scalr built-in scaling. This will avoid any conflicts or duplication of effort that could cause service disruption and impact your costs. It will also ensure that your auto scaling parameters are applied consistently, regardless of where your application is deployed.
 
@@ -175,6 +175,8 @@ For all clouds except VMware and Google you can edit the Security Group settings
 
 .. warning:: Some changes that are saved through this tab are applied to the Cloud Platform immediately and will impact running servers. |BR| * New Rules/groups are applied to all running servers. |BR| * Deleted rules/groups are applied only if the Rule was created since the server was launched. |BR| * Rules applied when the server was launched WILL NOT be affected by changes made in Scalr
 
+.. _fr_storage:
+
 Storage
 ^^^^^^^
 
@@ -191,6 +193,7 @@ Global Variables
 
 :ref:`gvs` can be defined at the Farm Role and, if permitted, values can be set for Global Variables defined at higher scopes.
 
+.. _fr_advanced:
 
 Advanced Options
 ^^^^^^^^^^^^^^^^
@@ -212,4 +215,4 @@ Ansible and Chef in Farm Roles
 
 The "Bootstrap by .." tabs allow you to enable bootstrap by Chef and Ansible for the Farm Role and set the bootstrap parameters. The settings are identical to those used in a Role. See :ref:`Bootstrap <bootstrap>` in the Roles section for more details.
 
-.. note:: Bootstrapping can only be fully configured in a Farm Role if it has NOT been enabled at the Role level. If the Role has bootstrap enable then it will be enabled at the Farm Role level and cannot be changed. Some limited options do remain configurable at the Farm Role level, such as choosing the Chef environment.
+.. note:: Bootstrapping can only be fully configured in a Farm Role if it has NOT been enabled at the Role level. If the Role has bootstrap enabled then it will be enabled at the Farm Role level and cannot be changed. Some limited options do remain configurable at the Farm Role level, such as choosing the Chef environment.
