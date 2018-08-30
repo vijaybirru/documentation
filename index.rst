@@ -19,6 +19,13 @@ Scalr Documentation!
 
 .. toctree::
    :maxdepth: 3
+   :caption: Cloud Configuration and Services
+
+   clouds/index
+   clouds/cloud_services
+
+.. toctree::
+   :maxdepth: 3
    :caption: Getting Started
 
    gs_admins/index
