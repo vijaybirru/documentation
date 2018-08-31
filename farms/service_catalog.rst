@@ -5,8 +5,4 @@
 Service Catalog Offerings
 =========================
 
-Creating Service Catalog Offerings
-----------------------------------
-
-Customizing Farm Templates
---------------------------
+.. will now link to /service_catalog/offerings

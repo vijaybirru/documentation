@@ -415,7 +415,7 @@ Server Groups
    Description,Scalr Support,External Docs
    "Server groups provide a mechanism to group servers on to hosts according to defined policies.","Creation and management of Server Groups and assignment to Farm Roles",|LINK_22| |NEWWIN|
 
-VMware VSPhere Features
+VMware VSphere Features
 -----------------------
 
 |MENU_ENV|

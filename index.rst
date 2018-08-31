@@ -62,6 +62,13 @@ Scalr Documentation!
 
 .. toctree::
    :maxdepth: 3
+   :caption: Self Service
+
+   service_catalog/offerings
+   service_catalog/using_service_catalog
+
+.. toctree::
+   :maxdepth: 3
    :caption: Organizational Management
 
    org/index
