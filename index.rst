@@ -153,3 +153,4 @@ Scalr Documentation!
 
    reference/index
    reference/events
+   reference/cloud_services
