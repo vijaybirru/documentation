@@ -54,6 +54,70 @@ This screen shot shows an overview of the entire UI.
 .. image:: images/ui-overview.png
    :scale: 50%
 
+Dashboards
+----------
+|SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV|
+
+Each scope has a Dashboard which is the default landing page and provides quick access to some functionality and various status information via a series of Widgets. The Widgets can be customised so that the user can choose which ones to display, their position on the Dashboard, and, in some cases, their content. There is one dashboard at |SCALR| scope and then one dashboard for each |ACCOUNT| and each |ENVIRONMENT|.
+
+Dashboard Configuration
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The following Dashboard configuration can be performed at all scopes.
+
+**Number of Columns**
+
+The number of columns displayed can be altered to suit.
+
+.. |SET| image:: images/settings_1.png
+         :scale: 30%
+
+.. |COL| image:: images/columns.png
+         :scale: 40%
+
+|SET| --> |COL|
+
+**Adding and Moving Widgets**
+
+The Add Widget button appears when the mouse is hovered below any column on the Dashboard. A check list of available widgets is displayed and widgets are then added to that column. Widgets can be re-positioned by dragging and dropping using the widget header.
+
+.. |ADD_1| image:: images/add_widget_1.png
+         :scale: 30%
+
+.. |ADD_2| image:: images/add_widget_2.png
+         :scale: 30%
+
+|ADD_1| |ADD_2|
+
+**Widget Settings and Removal**
+
+The widget header bars provide buttons to collapse, remove, and in some cases configure the settings of the widget. e.g. for "Resource Quotas" the clouds to be displayed can be configured.
+
+.. image:: images/widget_head.png
+         :scale: 40%
+
+Available Widgets
+^^^^^^^^^^^^^^^^^
+=============  =======================================================
+|SCOPE_SCALR|  | Scalr Health
+               | Services
+               | First Steps
+               | License
+|SCOPE_ACC|    | New User Checklist
+               | Get Your Organization On Scalr
+               | Announcements
+               | |ENVIRONMENTS| in this |ACCOUNT|
+|SCOPE_ENV|    | Create New Farm
+               | New User Checklist
+               | Announcements
+               | Active Policies
+               | Resource Quotas
+               | AWS Health Status
+               | Last Errors
+               | Server Alerts
+               | Cost analytics
+=============  =======================================================
+
 Main Menu
 ---------
 |SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV|
