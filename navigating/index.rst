@@ -60,6 +60,9 @@ Dashboards
 
 Each scope has a Dashboard which is the default landing page and provides quick access to some functionality and various status information via a series of Widgets. The Widgets can be customised so that the user can choose which ones to display, their position on the Dashboard, and, in some cases, their content. There is one dashboard at |SCALR| scope and then one dashboard for each |ACCOUNT| and each |ENVIRONMENT|.
 
+.. image:: images/dashboard.png
+         :scale: 40%
+
 Dashboard Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^
 
