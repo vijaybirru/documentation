@@ -129,13 +129,16 @@ After selecting Add Credentials, you will be prompted to configure your Cloud Cr
    :scale: 40%
 
 .. image:: images/AWS-Keys.png
+   :scale: 40%
 
 .. image:: images/AWS-Keys-Scalr.png
+   :scale: 40%
 
 5. Check "Enable Detailed Billing" if you require Scalr to collect detailed billing information for Cost Manager/Analytics.
 6. Click Save and your screen should look similar like this after Scalr has validate the Credentials.
 
 .. image:: images/AWS-Keys-Scalr-Saved.png
+   :scale: 40%
 
 Validating the Connection to AWS
 --------------------------------

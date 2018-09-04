@@ -71,24 +71,25 @@ First you need to create and obtain the required access keys from GCP.
 1. Login to the Google Cloud Console and select the project you want to use with Scalr, then note down the Project ID.
 
 .. image:: images/GCE-sa-1.png
-   :scale: 50%
+   :scale: 40%
 
 2. Select "API's and Services --> Credentials" from the menu bar.
 
 .. image:: images/GCE-sa-2.png
-   :scale: 50%
+   :scale: 40%
 
 3. On the Create Credentials drop down select "Service account key".
 
 .. image:: images/GCE-sa-3.png
-   :scale: 50%
+   :scale: 40%
 
 .. |Create| image:: images/GCE-sa-4a.png
+            :scale: 40%
 
 4. Set the drop down to "Compute Engine default service account", and select "JSON", then click |Create|.
 
 .. image:: images/GCE-sa-4.png
-   :scale: 50%
+   :scale: 40%
 
 5. Save the JSON file to your computer and then go back to the Scalr UI.
 
@@ -97,16 +98,16 @@ First you need to create and obtain the required access keys from GCP.
 6. After selecting Add Credentials, you will be prompted to configure your Cloud Credentials and properties:
 
 .. image:: images/GCE-creds.png
-   :scale: 70%
+   :scale: 40%
 
 7. Click on "UPLOAD JSON KEY", enter the Project ID from step 1 and select the JSON file you downloaded in step 5.
 
 .. image:: images/GCE-sa-6.png
-   :scale: 70%
+   :scale: 40%
 
 8. Click Save and the credentials will be validated and saved.
 
 .. image:: images/GCE-sa-7.png
-  :scale: 70%
+  :scale: 40%
 
 You can now proceed to adding these credentials to your |ENVIRONMENTS|.

@@ -18,13 +18,13 @@ Using Manual Scaling
 To enable manual scaling in your Farm Role, find your Farm, click on the Farm Role, go to the Scaling tab and make sure it is set to Manual:
 
 .. image:: images/manual_scaling.png
-   :scale: 60%
+   :scale: 40%
 
 Manually Launching Servers
 --------------------------
 
 .. |ROLE| image:: images/roles_column.png
-   :scale: 100%
+   :scale: 50%
 
 Once you have set the the Farm Role to manual scaling and launched your Farm, you will now have to manually launch a server. To do so, go to the Farms page, find your Farm, and click on the number in the Roles |ROLE| column (Number 3 in the example below):
 
@@ -32,7 +32,7 @@ Once you have set the the Farm Role to manual scaling and launched your Farm, yo
    :scale: 60%
 
 .. |LAUNCH| image:: images/launch_button.png
-      :scale: 100%
+      :scale: 50%
 
 That will bring you to the Farm Roles pages for that specific Farm. Within this page, click on the launch |LAUNCH| button for the Farm Role that you want provision a server for on the right-hand side:
 

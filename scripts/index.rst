@@ -18,7 +18,7 @@ Creating Scripts
 .. |SCALR_ICON| image:: images/scalr_icon_env.png
    :scale: 70%
 
-Scripts can be created, updated, edited, or deleted at the |Scalr|, |Account|, or |Environment| scopes. To create a script you can click on the Scalr icon on the top left of any of the scopes, in this example it is at the |Environment| scope: |SCALR_ICON|
+Scripts can be created, updated, edited, or deleted at the |SCALR|, |ACCOUNT|, or |ENVIRONMENT| scopes. To create a script you can click on the Scalr icon on the top left of any of the scopes, in this example it is at the |ENVIRONMENT| scope: |MENU_ENV|
 Once you are in the scripts page, click on New Script:
 
 .. image:: images/new_script.png
@@ -116,7 +116,7 @@ Manually On Farms, Farm Roles, or Servers
 As mentioned above, scripts created within Scalr can also be manually executed on running servers. There are two ways to do this:
 
 .. |EXECUTE_SCRIPT| image:: images/execute_script.png
-   :scale: 70%
+   :scale: 40%
 
 * Click on scripts on the main toolbar, find your script, and click execute |EXECUTE_SCRIPT|. Choose whether the script should be executed on the entire Farm, a specific Farm Role, or a specific Server.
 * Click on the Farm, Farm Role, or Server dropdown and click Execute Script.

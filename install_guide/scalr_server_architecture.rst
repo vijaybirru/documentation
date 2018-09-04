@@ -8,7 +8,7 @@ Architecture
 Scalr’s architecture consist of 8 modules (Proxy, App, Session, RabbitMQ, Worker, InfluxDB, Main DB, and Cost Analytics DB).  The recommended Scalr HA deployment consists of 6 VMs (Instances) and is outlined in the following diagram:
 
 .. image:: images/Scalr_Arch.png
-   :scale: 40 %
+   :scale: 60 %
 
 It is completely acceptable to group multiple components onto one virtual machine as the load for these services are minimal. The following are the recommended specs for the initial configuration:
 

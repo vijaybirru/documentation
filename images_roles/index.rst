@@ -20,6 +20,7 @@ Please work through the sections listed below to understand the full details of 
 * :ref:`multicloud_roles`
 * :ref:`images_from_servers`
 
+
 Cloning, Promoting and Using
 ----------------------------
 

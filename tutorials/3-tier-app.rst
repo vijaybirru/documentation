@@ -12,7 +12,7 @@ Application Overview
 We will be building a 3-Tier application that uses Nginx as a load balancer to distribute traffic to application servers running a Python application. The Python application uses MySQL as the backend.  Our application lets the user enter messages to store in a MySQL database, and serves back a list of the messages that were entered by the user.  The application is highly available and supports multiple application and database nodes.  Application architecture is outlined below:
 
 .. image:: images/Application-Diagram.jpg
-   :scale: 40%
+   :scale: 60%
 
 Script Creation
 ^^^^^^^^^^^^^^^
@@ -38,17 +38,17 @@ Farm Creation:
 * Populate the Name, Timezone, Team, and Project Fields.
 
 .. image:: images/Screenshot-1.png
-   :scale: 40%
+   :scale: 60%
 
 * Add a Global Variable at Farm Scope with the name MYSQL_MASTER
 
 .. image:: images/Screenshot-2.png
-   :scale: 40%
+   :scale: 60%
 
 * Add three Base Ubuntu 16.04 Farm Roles to the Farm.  One for each tier of our application.  When Adding each Farm Role set the desired “Alias” to match the application tier: WebApp, MySQL, and Nginx.
 
 .. image:: images/Screenshot-3.png
-   :scale: 40%
+   :scale: 50%
 
 Farm Role Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -57,7 +57,7 @@ Select and configure the WebApp farm role:
 * Select SCALING and change the autoscaling setting to Min Instances = 2, Max Instances = 5
 
 .. image:: images/Screenshot-4.png
-   :scale: 40%
+   :scale: 50%
 
 * Select Orchestration and add the following Rules:
 
@@ -86,7 +86,7 @@ Action: Scalr Script -> Nginx Config
 Note: This will reconfigure our load balancer on the Nginx servers when this server terminates.
 
 .. image:: images/Screenshot-5.jpg
-   :scale: 40%
+   :scale: 60%
 
 Select and configure the MySQL farm role:
 ------------------------------------------
@@ -129,7 +129,7 @@ Action: Scalr Script -> MySQL Replication
 Note: This will reconfigure MySQL replication on other MySQL servers when this server terminates.
 
 .. image:: images/Screenshot-6.jpg
-   :scale: 40%
+   :scale: 60%
 
 Select and configure the Nginx farm role:
 ------------------------------------------
@@ -148,12 +148,12 @@ Action: Scalr Script -> Nginx Config
 Note: This will configure Nginx on this server when it provisions.
 
 .. image:: images/Screenshot-7.png
-   :scale: 40%
+   :scale: 60%
 
 * Select the SECURITY tab and make sure either your “Default” Security Group has port 80 open, or add/create a new security rule that opens port 80.
 
 .. image:: images/Screenshot-8.jpg
-   :scale: 40%
+   :scale: 70%
 
 * Save Farm
 * Launch Farm
@@ -163,10 +163,10 @@ Testing the Application
 * Once your servers have all reached a running state, browse to the IP of the Nginx server to access our application.
 
 .. image:: images/Screenshot-9.jpg
-   :scale: 40%
+   :scale: 90%
 
 .. image:: images/Application-Screenshot.jpg
-  :scale: 40%
+  :scale: 80%
 
 * Test that the application works by writing some values.
 * Test increasing the number of Webapp and MySQL servers by increasing the AUTOSCALING Min Instances for each role. Then test scaling back down.
@@ -179,10 +179,10 @@ Parameterized deployments are useful for use cases such as deploying a specific 
 * Save the farm
 
 .. image:: images/Screenshot-10.jpg
-   :scale: 40%
+   :scale: 90%
 
 * Terminate your Webapp nodes manually so that new instances will be provisioned with our new configuration.  Alternatively, manually execute the Webapp Depoly script on your Webapp servers.
 * Test to see if the new application version is deployed.
 
 .. image:: images/Application-Screenshot-2.jpg
-  :scale: 40%
+  :scale: 90%

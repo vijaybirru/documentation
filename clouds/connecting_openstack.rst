@@ -92,12 +92,12 @@ Adding OpenStack Credentials to Scalr
 1. After selecting Add Credentials, you will be prompted to configure your Cloud Credentials and properties:
 
 .. image:: images/OpenStack-creds.png
-   :scale: 70%
+   :scale: 40%
 
 2. Enter the credentials and other details for OpenStack and Click Save. You will see a screen similar to this.
 
 .. image:: images/OpenStack-creds_2.png
-  :scale: 70%
+  :scale: 40%
 
 .. |CACHE| image:: images/cache-clear.png
            :scale: 40%

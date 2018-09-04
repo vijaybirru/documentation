@@ -73,17 +73,17 @@ First you need enable access to Azure and obtain the required access keys.
 3. Make sure you are in your Default directory (or add a new one).
 
 .. image:: images/Azure-sa-1.png
-   :scale: 50%
+   :scale: 40%
 
 4. Click on **App registrations** in the left menu.
 
 .. image:: images/Azure-sa-2.png
-   :scale: 50%
+   :scale: 40%
 
 5. Click on **New application registration**.
 
 .. image:: images/Azure-sa-3.png
-   :scale: 50%
+   :scale: 40%
 
 6. Enter the name "Scalr".
 7. Enter the following details:
@@ -95,29 +95,29 @@ First you need enable access to Azure and obtain the required access keys.
 8. Click "Create"
 
 .. image:: images/Azure-sa-4.png
-   :scale: 50%
+   :scale: 40%
 
 9. Click on the new application
 
 .. image:: images/Azure-sa-5.png
-   :scale: 50%
+   :scale: 40%
 
 10. Ensure the APP ID URI is configured correctly.
 
   a. APP ID URI: http://domain.onmicrosoft.com/scalr (make sure that you replace domain.onmicrosoft.com with your actual Active Directory domain which can be found under "Domains" in the relevant directory - the same one from step 3).
 
 .. image:: images/Azure-sa-6.png
-   :scale: 50%
+   :scale: 40%
 
 11. Under keys, create a new key and select how many years you want this key to last. Be sure to save your Secret Key.
 
 .. Warning:: Warning! This key MUST NOT contain "+" or "/" characters as these will cause API errors.  If your key has these special characters present you MUST re-generate a new key without these symbols for use with Scalr.
 
 .. image:: images/Azure-sa-7.png
-   :scale: 50%
+   :scale: 40%
 
 .. image:: images/Azure-sa-8.png
-   :scale: 50%
+   :scale: 40%
 
 12. Under the Required Permissions section, locate Windows Azure Active Directory.
 13. Under Delegated Permissions select Sign in and read user profile as well as Access the Directory as the signed in user permission.  Under Application Permissions select Read Directory Data and Read and Write Directory Data.
@@ -161,13 +161,13 @@ First you need enable access to Azure and obtain the required access keys.
 19. After selecting Add Credentials, you will be prompted to add your Cloud Credentials and properties:
 
 .. image:: images/Azure-creds.png
-   :scale: 70%
+   :scale: 50%
 
 Add the tenant name to your credentials if you have it available, and then click **continue** at the bottom of the dialogue box.  You will be redirected to authenticate in the Azure Portal.  Complete authentication by following the on-screen instructions.
 
 20. After authentication you will be once again redirected back to Scalr.  Then choose your Subscription, and hit Save.  An example fully configured Cloud Credential object for Azure will look similar to the following:
 
 .. image:: images/Azure-sa-16.png
-   :scale: 70%
+   :scale: 50%
 
 You can now proceed to adding these credentials to your |ENVIRONMENTS|.

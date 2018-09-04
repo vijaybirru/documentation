@@ -51,6 +51,6 @@ Some organizations like to enforce policies around how users log into their serv
 To create a policy for SSH keys, go to the |ACCOUNT| scope, click on the main Scalr menu |MENU_ACC|, click on Policy Engine > Policy Groups. In here you can either add to an existing cloud Policy or create a new one, search for cloud.ssh.key_pair and enter the name of the key as it appears in the cloud provider:
 
 .. image:: images/key_policy.png
-  :scale: 70%
+  :scale: 50%
 
 To learn more about the Policy Engine, please go here: :ref:`policy_engine`

@@ -27,6 +27,6 @@ Applying Quotas
 After creating a Resource Quota, it must be linked to an Environment for the quota to take effect.  Navigate to the Environments tab within the Account Scope and selecting your desired Environment:
 
 .. image:: images/apply_quota.png
-   :scale: 70%
+   :scale: 50%
 
 Click on the link icon on the right-hand side, link the quota to the environment, and save.

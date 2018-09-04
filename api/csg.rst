@@ -62,25 +62,25 @@ The overall flow of the CSG is as follows:
 An end user interested in using the Cloud Service Gateway will need to begin by accessing their environment of choice and selecting the user drop down in the upper right corner of your display.  Next, select Cloud Services.
 
 .. image:: images/cloud_services.png
-   :scale: 70%
+   :scale: 50%
 
 Once you are on the Cloud Services page, click Request Access and select the cloud and service(s) that you want access to:
 
 .. image:: images/cloud_services_request.png
-   :scale: 70%
+   :scale: 50%
 
 After you request the services, they must be approved or denied by the account administrator. Within the Cloud Services page you can manage the services you have requested.
 
 Once a request has been approved, select the Details icon to view additional details. Access details will be presented in a new pop-up.  Use the information presented here to configure and leverage access to your approved Cloud Services:
 
 .. image:: images/secret_key.jpg
-   :scale: 40%
+   :scale: 60%
 
 .. image:: images/access_details1.jpg
-    :scale: 40%
+    :scale: 60%
 
 .. image:: images/access_details2.jpg
-    :scale: 40%
+    :scale: 60%
 
 .. note:: Upon initial Approval and access of the Details menu, a one time Secret Key will be provided to the end user.  This key MUST be saved as it will never be presented again.
 
@@ -111,16 +111,16 @@ Managing approvals for Cloud Service Gateway
 Begin by selecting the Cloud Service Access Request item from the Main Menu:
 
 .. image:: images/csg_approval.png
-    :scale: 70%
+    :scale: 50%
 
 And approve or deny the request:
 
 .. image:: images/csg_approval_page.png
-    :scale: 70%
+    :scale: 90%
 
 You must select the cloud credentials that will be used when making a call via the CSG:
 
 .. image:: images/csg_approval_cloud_creds.png
-    :scale: 70%
+    :scale: 50%
 
 From this page you can also revoke, archive, and manage existing requests.
