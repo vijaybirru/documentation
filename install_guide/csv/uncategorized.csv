@@ -11,10 +11,10 @@ scalr.ui.login_warning,Warning text to be displayed to users on the login page.Â
 *	scalr.ui.support_url	The URL the support button should link to in Scalr.	String		https://groups.google.com/d/forum/scalr-discus s""",
 scalr.ui.recaptcha.public_key,The public key Scalr should use for reCAPTCHA login bruteforce protection.,String,,
 scalr.ui.recaptcha.private_key,The private key Scalr should use for reCAPTCHA login bruteforce protection.,String,,
-scalr.security.user.session.timeout,Scalr UI will be locked if a user has been inactive for the defined period of time.,String,,#ERROR!
-scalr.security.user.session.lifetime,"Session will expire after this time, regardless of activity.",String,,#ERROR!
-scalr.security.user.session.cookie_lifetime,"If user chooses to ""remember me"" upon login, the session cookie will be kept this long.",String,,#ERROR!
-scalr.security.user.suspension. inactivity_days,Suspend user accounts that have not been used for this number of days. (0=disable),Integer,,0
+scalr.security.user.session.timeout,Scalr UI will be locked if a user has been inactive for the defined period of time.,String,,"+30 minutes"
+scalr.security.user.session.lifetime,"Session will expire after this time, regardless of activity.",String,"+8 hours"
+scalr.security.user.session.cookie_lifetime,"If user chooses to ""remember me"" upon login, the session cookie will be kept this long.",String,,"+8 hours"
+scalr.security.user.suspension. inactivity_days,Suspend user accounts that have not been used for this number of days. (0=disable),Integer,,"+30 days"
 scalr.security.user.suspension. failed_login_attempts,User account will be suspended after this number of failed login attempts. (0=disable),Integer,,10
 scalr.%PLATFORM%.action_on_missing_server,"Defines what action should be taken if the cloud API reports a server missing compared to what's in the Scalr Database. Substitute %PLATFORM% with one of the following values: hpcloud, mirantis, azure, ec2, openstack, cloudstack, idcf, gce, ocs, rackspacenguk, rackspacengus, cisco, vmware, vio",String,"terminate = Terminate instance ""flag"" = Mark as missing ""ignore"" = Ignore",terminate
 scalr.%PLATFORM%.action_on_failed_server,"Defines what action should be taken if the cloud API reports a server as failed compared to what's in the Scalr Database. Substitute %PLATFORM% with one of the following values: hpcloud, mirantis, azure, ec2, openstack, cloudstack, idcf, gce, ocs, rackspacenguk, rackspacengus, cisco, vmware, vio",String,"terminate = Terminate instance ""alert"" = Same as Ignore, but will later support additional alerts in the UI ""ignore"" = Ignore",terminate
