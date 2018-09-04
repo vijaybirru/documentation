@@ -885,37 +885,8 @@
 </ul>
 <table border="1" class="docutils">
 <colgroup>
-<col width="39%" />
-<col width="61%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Deploy Webapp:</th>
-<th class="head">&#160;</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Trigger Event:</td>
-<td>Before Host Up</td>
-</tr>
-<tr class="row-odd"><td>Target:</td>
-<td>Triggering Server</td>
-</tr>
-<tr class="row-even"><td>Action:</td>
-<td>Scalr Script -&gt; Web Deploy</td>
-</tr>
-<tr class="row-odd"><td>Note:</td>
-<td><div class="first last line-block">
-<div class="line">This will deploy the web app on this server when it provisions.</div>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p><br></p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="39%" />
-<col width="61%" />
+<col width="19%" />
+<col width="81%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Deploy Webapp:</th>
@@ -942,11 +913,11 @@
 </table>
 <table border="1" class="docutils">
 <colgroup>
-<col width="39%" />
-<col width="61%" />
+<col width="18%" />
+<col width="82%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Deploy Webapp:</th>
+<tr class="row-odd"><th class="head">Config Webapp:</th>
 <th class="head">&#160;</th>
 </tr>
 </thead>
@@ -958,36 +929,72 @@
 <td>Triggering Server</td>
 </tr>
 <tr class="row-even"><td>Action:</td>
-<td>Scalr Script -&gt; Web Deploy</td>
+<td>Scalr Script -&gt; Web Config</td>
 </tr>
 <tr class="row-odd"><td>Note:</td>
 <td><div class="first last line-block">
-<div class="line">This will deploy the web app on this server when it provisions.</div>
+<div class="line">This will configure the web app on this server when it provisions.</div>
 </div>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Deploy Webapp:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -&gt; Web Deploy
-Note: This will deploy the web app on this server when it provisions.</p>
-<p>Config Webapp:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -&gt; Web Config
-Note: This will configure the web app on this server when it provisions.</p>
-<p>Config Nginx on Host Up:
-Trigger Event: Host Up
-Target: Selected Farm Roles -&gt; Nginx Ubuntu
-Action: Scalr Script -&gt; Nginx Config
-Note: This will reconfigure our load balancer on the Nginx servers when this server provisions.</p>
-<p>Config Nginx on Host Terminate:
-Trigger Event: Before Host Terminate
-Target: Selected Farm Roles -&gt; Nginx Ubuntu
-Action: Scalr Script -&gt; Nginx Config
-Note: This will reconfigure our load balancer on the Nginx servers when this server terminates.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="79%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Config Nginx on Host Up:</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Trigger Event:</td>
+<td>Host Up</td>
+</tr>
+<tr class="row-odd"><td>Target:</td>
+<td>Selected Farm Roles -&gt; Nginx Ubuntu</td>
+</tr>
+<tr class="row-even"><td>Action:</td>
+<td>Scalr Script -&gt; Nginx Config</td>
+</tr>
+<tr class="row-odd"><td>Note:</td>
+<td><div class="first last line-block">
+<div class="line">This will reconfigure our load balancer on the Nginx servers when this server provisions.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Config Nginx on Host Terminate:</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Trigger Event:</td>
+<td>Before Host Terminate</td>
+</tr>
+<tr class="row-odd"><td>Target:</td>
+<td>Selected Farm Roles -&gt; Nginx Ubuntu</td>
+</tr>
+<tr class="row-even"><td>Action:</td>
+<td>Scalr Script -&gt; Nginx Config</td>
+</tr>
+<tr class="row-odd"><td>Note:</td>
+<td><div class="first last line-block">
+<div class="line">This will reconfigure our load balancer on the Nginx servers when this server terminates.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 <a class="reference internal image-reference" href="../_images/Screenshot-5.jpg"><img alt="../_images/Screenshot-5.jpg" src="../_images/Screenshot-5.jpg" style="width: 428.4px; height: 224.4px;" /></a>
 </div>
 <div class="section" id="select-and-configure-the-mysql-farm-role">
@@ -995,36 +1002,174 @@ Note: This will reconfigure our load balancer on the Nginx servers when this ser
 <ul class="simple">
 <li>Select Orchestration and add the following Rules:</li>
 </ul>
-<p>Install MySQL:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -&gt; MySQL Install
-Note: This will install MySQL on this server when it provisions.</p>
-<p>Config MySQL:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -&gt; MySQL Config
-Note: This will configure MySQL on this server when it provisions.</p>
-<p>Config MySQL Replication:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -&gt; MySQL Replication
-Note: This will configure MySQL replication on this server when it provisions.</p>
-<p>Config Webapp on Host Up:
-Trigger Event: Host Up
-Target: Selected Farm Roles -&gt;  Webapp
-Action: Scalr Script -&gt; Web Config
-Note: This will reconfigure the app on WebApp servers so they know when this server provisions.</p>
-<p>Config Webapp on Host Terminate:
-Trigger Event: Before Host Terminate
-Target: Selected Farm Roles -&gt; Webapp
-Action: Scalr Script -&gt; Webapp Config
-Note: This will configure the app on WebApp servers so they know when this server terminates.</p>
-<p>Config MySQL Replication on Host Terminate:
-Trigger Event: Before Host Terminate
-Target: Selected Farm Roles -&gt; MySQL Ubuntu
-Action: Scalr Script -&gt; MySQL Replication
-Note: This will reconfigure MySQL replication on other MySQL servers when this server terminates.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Install MySQL:</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Trigger Event:</td>
+<td>Before Host Up</td>
+</tr>
+<tr class="row-odd"><td>Target:</td>
+<td>Triggering Server</td>
+</tr>
+<tr class="row-even"><td>Action:</td>
+<td>Scalr Script -&gt; MySQL Install</td>
+</tr>
+<tr class="row-odd"><td>Note:</td>
+<td><div class="first last line-block">
+<div class="line">This will install MySQL on this server when it provisions.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Config MySQL:</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Trigger Event:</td>
+<td>Before Host Up</td>
+</tr>
+<tr class="row-odd"><td>Target:</td>
+<td>Triggering Server</td>
+</tr>
+<tr class="row-even"><td>Action:</td>
+<td>Scalr Script -&gt; MySQL Config</td>
+</tr>
+<tr class="row-odd"><td>Note:</td>
+<td><div class="first last line-block">
+<div class="line">This will configure MySQL on this server when it provisions.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Config MySQL Replication:</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Trigger Event:</td>
+<td>Before Host Up</td>
+</tr>
+<tr class="row-odd"><td>Target:</td>
+<td>Triggering Server</td>
+</tr>
+<tr class="row-even"><td>Action:</td>
+<td>Scalr Script -&gt; MySQL Replication</td>
+</tr>
+<tr class="row-odd"><td>Note:</td>
+<td><div class="first last line-block">
+<div class="line">This will configure MySQL replication on this server when it provisions.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Config Webapp on Host Up:</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Trigger Event:</td>
+<td>Host Up</td>
+</tr>
+<tr class="row-odd"><td>Target:</td>
+<td>Selected Farm Roles -&gt;  Webapp</td>
+</tr>
+<tr class="row-even"><td>Action:</td>
+<td>Scalr Script -&gt; Web Config</td>
+</tr>
+<tr class="row-odd"><td>Note:</td>
+<td><div class="first last line-block">
+<div class="line">This will reconfigure the app on WebApp servers so they know when this server provisions.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Config Webapp on Host Terminate:</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Trigger Event:</td>
+<td>Before Host Terminate</td>
+</tr>
+<tr class="row-odd"><td>Target:</td>
+<td>Selected Farm Roles -&gt; Webapp</td>
+</tr>
+<tr class="row-even"><td>Action:</td>
+<td>Scalr Script -&gt; Webapp Config</td>
+</tr>
+<tr class="row-odd"><td>Note:</td>
+<td><div class="first last line-block">
+<div class="line">This will configure the app on WebApp servers so they know when this server terminates.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Config MySQL Replication on Host Terminate:</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Trigger Event:</td>
+<td>Before Host Terminate</td>
+</tr>
+<tr class="row-odd"><td>Target:</td>
+<td>Selected Farm Roles -&gt; MySQL Ubuntu</td>
+</tr>
+<tr class="row-even"><td>Action:</td>
+<td>Scalr Script -&gt; MySQL Replication</td>
+</tr>
+<tr class="row-odd"><td>Note:</td>
+<td><div class="first last line-block">
+<div class="line">This will reconfigure MySQL replication on other MySQL servers when this server terminates.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 <a class="reference internal image-reference" href="../_images/Screenshot-6.jpg"><img alt="../_images/Screenshot-6.jpg" src="../_images/Screenshot-6.jpg" style="width: 428.4px; height: 207.0px;" /></a>
 </div>
 <div class="section" id="select-and-configure-the-nginx-farm-role">
@@ -1032,16 +1177,62 @@ Note: This will reconfigure MySQL replication on other MySQL servers when this s
 <ul class="simple">
 <li>Select Orchestration and add the following Rules:</li>
 </ul>
-<p>Install Nginx:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -&gt; Nginx Install
-Note: This will install Nginx on this server when it provisions.</p>
-<p>Config Nginx:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -&gt; Nginx Config
-Note: This will configure Nginx on this server when it provisions.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Install Nginx:</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Trigger Event:</td>
+<td>Before Host Up</td>
+</tr>
+<tr class="row-odd"><td>Target:</td>
+<td>Triggering Server</td>
+</tr>
+<tr class="row-even"><td>Action:</td>
+<td>Scalr Script -&gt; Nginx Install</td>
+</tr>
+<tr class="row-odd"><td>Note:</td>
+<td><div class="first last line-block">
+<div class="line">This will install Nginx on this server when it provisions.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Config Nginx:</th>
+<th class="head">&#160;</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Trigger Event:</td>
+<td>Before Host Up</td>
+</tr>
+<tr class="row-odd"><td>Target:</td>
+<td>Triggering Server</td>
+</tr>
+<tr class="row-even"><td>Action:</td>
+<td>Scalr Script -&gt; Nginx Config</td>
+</tr>
+<tr class="row-odd"><td>Note:</td>
+<td><div class="first last line-block">
+<div class="line">This will configure Nginx on this server when it provisions.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 <a class="reference internal image-reference" href="../_images/Screenshot-7.png"><img alt="../_images/Screenshot-7.png" src="../_images/Screenshot-7.png" style="width: 891.6px; height: 393.0px;" /></a>
 <ul class="simple">
 <li>Select the SECURITY tab and make sure either your “Default” Security Group has port 80 open, or add/create a new security rule that opens port 80.</li>
@@ -1059,6 +1250,7 @@ Note: This will configure Nginx on this server when it provisions.</p>
 <li>Once your servers have all reached a running state, browse to the IP of the Nginx server to access our application.</li>
 </ul>
 <a class="reference internal image-reference" href="../_images/Screenshot-9.jpg"><img alt="../_images/Screenshot-9.jpg" src="../_images/Screenshot-9.jpg" style="width: 642.6px; height: 116.10000000000001px;" /></a>
+<p><br></p>
 <a class="reference internal image-reference" href="../_images/Application-Screenshot.jpg"><img alt="../_images/Application-Screenshot.jpg" src="../_images/Application-Screenshot.jpg" style="width: 441.6px; height: 374.40000000000003px;" /></a>
 <ul class="simple">
 <li>Test that the application works by writing some values.</li>

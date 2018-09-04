@@ -61,59 +61,41 @@ Select and configure the WebApp farm role:
 
 * Select Orchestration and add the following Rules:
 
-=========================================  ================
+===============  ================
 Deploy Webapp:
-=========================================  ================
-Trigger Event:                             Before Host Up
-Target:                                    Triggering Server
-Action:                                    Scalr Script -> Web Deploy
-Note:                                      | This will deploy the web app on this server when it provisions.
-=========================================  ================
+===============  ================
+Trigger Event:   Before Host Up
+Target:          Triggering Server
+Action:          Scalr Script -> Web Deploy
+Note:            | This will deploy the web app on this server when it provisions.
+===============  ================
 
-|BR|
-
-=========================================  ================
-Deploy Webapp:
-=========================================  ================
-Trigger Event:                             Before Host Up
-Target:                                    Triggering Server
-Action:                                    Scalr Script -> Web Deploy
-Note:                                      | This will deploy the web app on this server when it provisions.
-=========================================  ================
-
-=========================================  ================
-Deploy Webapp:
-=========================================  ================
-Trigger Event:                             Before Host Up
-Target:                                    Triggering Server
-Action:                                    Scalr Script -> Web Deploy
-Note:                                      | This will deploy the web app on this server when it provisions.
-=========================================  ================
-
-
-Deploy Webapp:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -> Web Deploy
-Note: This will deploy the web app on this server when it provisions.
-
+===============  ================
 Config Webapp:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -> Web Config
-Note: This will configure the web app on this server when it provisions.
+===============  ================
+Trigger Event:   Before Host Up
+Target:          Triggering Server
+Action:          Scalr Script -> Web Config
+Note:            | This will configure the web app on this server when it provisions.
+===============  ================
 
+========================  ================
 Config Nginx on Host Up:
-Trigger Event: Host Up
-Target: Selected Farm Roles -> Nginx Ubuntu
-Action: Scalr Script -> Nginx Config
-Note: This will reconfigure our load balancer on the Nginx servers when this server provisions.
+========================  ================
+Trigger Event:            Host Up
+Target:                   Selected Farm Roles -> Nginx Ubuntu
+Action:                   Scalr Script -> Nginx Config
+Note:                     | This will reconfigure our load balancer on the Nginx servers when this server provisions.
+========================  ================
 
+===============================  ================
 Config Nginx on Host Terminate:
-Trigger Event: Before Host Terminate
-Target: Selected Farm Roles -> Nginx Ubuntu
-Action: Scalr Script -> Nginx Config
-Note: This will reconfigure our load balancer on the Nginx servers when this server terminates.
+===============================  ================
+Trigger Event:                   Before Host Terminate
+Target:                          Selected Farm Roles -> Nginx Ubuntu
+Action:                          Scalr Script -> Nginx Config
+Note:                            | This will reconfigure our load balancer on the Nginx servers when this server terminates.
+===============================  ================
 
 .. image:: images/Screenshot-5.jpg
    :scale: 60%
@@ -122,41 +104,59 @@ Select and configure the MySQL farm role:
 ------------------------------------------
 * Select Orchestration and add the following Rules:
 
+===============  ================
 Install MySQL:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -> MySQL Install
-Note: This will install MySQL on this server when it provisions.
+===============  ================
+Trigger Event:   Before Host Up
+Target:          Triggering Server
+Action:          Scalr Script -> MySQL Install
+Note:            | This will install MySQL on this server when it provisions.
+===============  ================
 
+===============  ================
 Config MySQL:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -> MySQL Config
-Note: This will configure MySQL on this server when it provisions.
+===============  ================
+Trigger Event:   Before Host Up
+Target:          Triggering Server
+Action:          Scalr Script -> MySQL Config
+Note:            | This will configure MySQL on this server when it provisions.
+===============  ================
 
+=========================  ================
 Config MySQL Replication:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -> MySQL Replication
-Note: This will configure MySQL replication on this server when it provisions.
+=========================  ================
+Trigger Event:             Before Host Up
+Target:                    Triggering Server
+Action:                    Scalr Script -> MySQL Replication
+Note:                      | This will configure MySQL replication on this server when it provisions.
+=========================  ================
 
+=========================  ================
 Config Webapp on Host Up:
-Trigger Event: Host Up
-Target: Selected Farm Roles ->  Webapp
-Action: Scalr Script -> Web Config
-Note: This will reconfigure the app on WebApp servers so they know when this server provisions.
+=========================  ================
+Trigger Event:             Host Up
+Target:                    Selected Farm Roles ->  Webapp
+Action:                    Scalr Script -> Web Config
+Note:                      | This will reconfigure the app on WebApp servers so they know when this server provisions.
+=========================  ================
 
+================================  ================
 Config Webapp on Host Terminate:
-Trigger Event: Before Host Terminate
-Target: Selected Farm Roles -> Webapp
-Action: Scalr Script -> Webapp Config
-Note: This will configure the app on WebApp servers so they know when this server terminates.
+================================  ================
+Trigger Event:                    Before Host Terminate
+Target:                           Selected Farm Roles -> Webapp
+Action:                           Scalr Script -> Webapp Config
+Note:                             | This will configure the app on WebApp servers so they know when this server terminates.
+================================  ================
 
+===========================================  ================
 Config MySQL Replication on Host Terminate:
-Trigger Event: Before Host Terminate
-Target: Selected Farm Roles -> MySQL Ubuntu
-Action: Scalr Script -> MySQL Replication
-Note: This will reconfigure MySQL replication on other MySQL servers when this server terminates.
+===========================================  ================
+Trigger Event:                               Before Host Terminate
+Target:                                      Selected Farm Roles -> MySQL Ubuntu
+Action:                                      Scalr Script -> MySQL Replication
+Note:                                        | This will reconfigure MySQL replication on other MySQL servers when this server terminates.
+===========================================  ================
 
 .. image:: images/Screenshot-6.jpg
    :scale: 60%
@@ -165,17 +165,23 @@ Select and configure the Nginx farm role:
 ------------------------------------------
 * Select Orchestration and add the following Rules:
 
+===============  ================
 Install Nginx:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -> Nginx Install
-Note: This will install Nginx on this server when it provisions.
+===============  ================
+Trigger Event:   Before Host Up
+Target:          Triggering Server
+Action:          Scalr Script -> Nginx Install
+Note:            | This will install Nginx on this server when it provisions.
+===============  ================
 
+===============  ================
 Config Nginx:
-Trigger Event: Before Host Up
-Target: Triggering Server
-Action: Scalr Script -> Nginx Config
-Note: This will configure Nginx on this server when it provisions.
+===============  ================
+Trigger Event:   Before Host Up
+Target:          Triggering Server
+Action:          Scalr Script -> Nginx Config
+Note:            | This will configure Nginx on this server when it provisions.
+===============  ================
 
 .. image:: images/Screenshot-7.png
    :scale: 60%
@@ -194,7 +200,7 @@ Testing the Application
 
 .. image:: images/Screenshot-9.jpg
    :scale: 90%
-
+|BR|
 
 .. image:: images/Application-Screenshot.jpg
   :scale: 80%
