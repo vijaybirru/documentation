@@ -76,12 +76,12 @@ You will need the following information in order to set up VMWare credentials in
 After selecting Add Credentials, you will be prompted to configure your Cloud Credentials and properties:
 
 .. image:: images/VMWare-creds.png
-   :scale: 60%
+   :scale: 40%
 
 Click Save and your screen should look similar like this after Scalr has validate the Credentials.
 
 .. image:: images/VMWare-creds-2.png
-   :scale: 60%
+   :scale: 40%
 
 
 Validating the Connection to VMWare

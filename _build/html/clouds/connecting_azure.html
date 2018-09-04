@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -888,15 +887,15 @@
 <li>Click on <strong>Azure Active Directory</strong> in the left menu.</li>
 <li>Make sure you are in your Default directory (or add a new one).</li>
 </ol>
-<a class="reference internal image-reference" href="../_images/Azure-sa-1.png"><img alt="../_images/Azure-sa-1.png" src="../_images/Azure-sa-1.png" style="width: 206.5px; height: 338.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-1.png"><img alt="../_images/Azure-sa-1.png" src="../_images/Azure-sa-1.png" style="width: 243.20000000000002px; height: 389.6px;" /></a>
 <ol class="arabic simple" start="4">
 <li>Click on <strong>App registrations</strong> in the left menu.</li>
 </ol>
-<a class="reference internal image-reference" href="../_images/Azure-sa-2.png"><img alt="../_images/Azure-sa-2.png" src="../_images/Azure-sa-2.png" style="width: 254.5px; height: 264.5px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-2.png"><img alt="../_images/Azure-sa-2.png" src="../_images/Azure-sa-2.png" style="width: 375.20000000000005px; height: 389.6px;" /></a>
 <ol class="arabic simple" start="5">
 <li>Click on <strong>New application registration</strong>.</li>
 </ol>
-<a class="reference internal image-reference" href="../_images/Azure-sa-3.png"><img alt="../_images/Azure-sa-3.png" src="../_images/Azure-sa-3.png" style="width: 466.0px; height: 194.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-3.png"><img alt="../_images/Azure-sa-3.png" src="../_images/Azure-sa-3.png" style="width: 594.4px; height: 255.20000000000002px;" /></a>
 <ol class="arabic simple" start="6">
 <li>Enter the name “Scalr”.</li>
 <li>Enter the following details:</li>
@@ -910,11 +909,11 @@
 <ol class="arabic simple" start="8">
 <li>Click “Create”</li>
 </ol>
-<a class="reference internal image-reference" href="../_images/Azure-sa-4.png"><img alt="../_images/Azure-sa-4.png" src="../_images/Azure-sa-4.png" style="width: 545.0px; height: 455.5px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-4.png"><img alt="../_images/Azure-sa-4.png" src="../_images/Azure-sa-4.png" style="width: 463.20000000000005px; height: 389.6px;" /></a>
 <ol class="arabic simple" start="9">
 <li>Click on the new application</li>
 </ol>
-<a class="reference internal image-reference" href="../_images/Azure-sa-5.png"><img alt="../_images/Azure-sa-5.png" src="../_images/Azure-sa-5.png" style="width: 633.0px; height: 204.5px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-5.png"><img alt="../_images/Azure-sa-5.png" src="../_images/Azure-sa-5.png" style="width: 594.4px; height: 201.20000000000002px;" /></a>
 <ol class="arabic simple" start="10">
 <li>Ensure the APP ID URI is configured correctly.</li>
 </ol>
@@ -923,7 +922,7 @@
 <li>APP ID URI: <a class="reference external" href="http://domain.onmicrosoft.com/scalr">http://domain.onmicrosoft.com/scalr</a> (make sure that you replace domain.onmicrosoft.com with your actual Active Directory domain which can be found under “Domains” in the relevant directory - the same one from step 3).</li>
 </ol>
 </div></blockquote>
-<a class="reference internal image-reference" href="../_images/Azure-sa-6.png"><img alt="../_images/Azure-sa-6.png" src="../_images/Azure-sa-6.png" style="width: 777.5px; height: 390.5px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-6.png"><img alt="../_images/Azure-sa-6.png" src="../_images/Azure-sa-6.png" style="width: 594.4px; height: 305.2px;" /></a>
 <ol class="arabic simple" start="11">
 <li>Under keys, create a new key and select how many years you want this key to last. Be sure to save your Secret Key.</li>
 </ol>
@@ -931,8 +930,8 @@
 <p class="first admonition-title">Warning</p>
 <p class="last">Warning! This key MUST NOT contain “+” or “/” characters as these will cause API errors.  If your key has these special characters present you MUST re-generate a new key without these symbols for use with Scalr.</p>
 </div>
-<a class="reference internal image-reference" href="../_images/Azure-sa-7.png"><img alt="../_images/Azure-sa-7.png" src="../_images/Azure-sa-7.png" style="width: 808.0px; height: 332.5px;" /></a>
-<a class="reference internal image-reference" href="../_images/Azure-sa-8.png"><img alt="../_images/Azure-sa-8.png" src="../_images/Azure-sa-8.png" style="width: 423.0px; height: 121.5px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-7.png"><img alt="../_images/Azure-sa-7.png" src="../_images/Azure-sa-7.png" style="width: 594.4px; height: 252.8px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-8.png"><img alt="../_images/Azure-sa-8.png" src="../_images/Azure-sa-8.png" style="width: 594.4px; height: 180.4px;" /></a>
 <ol class="arabic simple" start="12">
 <li>Under the Required Permissions section, locate Windows Azure Active Directory.</li>
 <li>Under Delegated Permissions select Sign in and read user profile as well as Access the Directory as the signed in user permission.  Under Application Permissions select Read Directory Data and Read and Write Directory Data.</li>
@@ -941,30 +940,30 @@
 <p class="first admonition-title">Warning</p>
 <p class="last">Make sure that all of the correct permissions as outlined above have been applied.  Missing permissions will lead to unexpected behavior.</p>
 </div>
-<a class="reference internal image-reference" href="../_images/Azure-sa-9.png"><img alt="../_images/Azure-sa-9.png" src="../_images/Azure-sa-9.png" style="width: 811.0px; height: 449.5px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-9.png"><img alt="../_images/Azure-sa-9.png" src="../_images/Azure-sa-9.png" style="width: 743.0px; height: 419.5px;" /></a>
 <ol class="arabic simple" start="14">
 <li>Click on Add permission.</li>
 <li>Click on Windows Azure Service Management API and Select.</li>
 </ol>
-<a class="reference internal image-reference" href="../_images/Azure-sa-10.png"><img alt="../_images/Azure-sa-10.png" src="../_images/Azure-sa-10.png" style="width: 805.0px; height: 454.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-10.png"><img alt="../_images/Azure-sa-10.png" src="../_images/Azure-sa-10.png" style="width: 743.0px; height: 426.5px;" /></a>
 <ol class="arabic simple" start="16">
 <li>Make sure that Access Azure Service Management permission is set on Delegated Permissions for Windows Azure Service Management API.</li>
 </ol>
-<a class="reference internal image-reference" href="../_images/Azure-sa-11.png"><img alt="../_images/Azure-sa-11.png" src="../_images/Azure-sa-11.png" style="width: 737.5px; height: 435.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-11.png"><img alt="../_images/Azure-sa-11.png" src="../_images/Azure-sa-11.png" style="width: 743.0px; height: 445.0px;" /></a>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Please note!  You MUST select “Grant Permissions” to make your permission changes active.  It may take up to 15 minutes for this to take effect and for Subscriptions to be selectable when creating Cloud Credentials in Scalr. This dialogue will look like the following screenshots</p>
 </div>
-<a class="reference internal image-reference" href="../_images/Azure-sa-12.png"><img alt="../_images/Azure-sa-12.png" src="../_images/Azure-sa-12.png" style="width: 411.5px; height: 138.0px;" /></a>
-<a class="reference internal image-reference" href="../_images/Azure-sa-13.png"><img alt="../_images/Azure-sa-13.png" src="../_images/Azure-sa-13.png" style="width: 488.0px; height: 209.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-12.png"><img alt="../_images/Azure-sa-12.png" src="../_images/Azure-sa-12.png" style="width: 743.0px; height: 260.5px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-13.png"><img alt="../_images/Azure-sa-13.png" src="../_images/Azure-sa-13.png" style="width: 743.0px; height: 328.0px;" /></a>
 <ol class="arabic simple" start="17">
 <li>After clicking on Save, you will be able to locate the CLIENT-ID (Application ID) under the registered app, and will have your SECRET-KEY from step 11.</li>
 </ol>
-<a class="reference internal image-reference" href="../_images/Azure-sa-14.png"><img alt="../_images/Azure-sa-14.png" src="../_images/Azure-sa-14.png" style="width: 289.5px; height: 127.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-14.png"><img alt="../_images/Azure-sa-14.png" src="../_images/Azure-sa-14.png" style="width: 620.0px; height: 281.5px;" /></a>
 <ol class="arabic simple" start="18">
 <li>As a final step, we must ensure that our application has Contributor permissions on your desired subscription IAM configuration.  Navigate to the Subscription&gt; IAM tab and ensure this is present. If not, manually add your app as a CONTRIBUTOR role.</li>
 </ol>
-<a class="reference internal image-reference" href="../_images/Azure-sa-15.png"><img alt="../_images/Azure-sa-15.png" src="../_images/Azure-sa-15.png" style="width: 888.5px; height: 405.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-15.png"><img alt="../_images/Azure-sa-15.png" src="../_images/Azure-sa-15.png" style="width: 743.0px; height: 348.0px;" /></a>
 <p>You can now add Cloud Credentials at either the Scalr or Account Scope.
 You can add new credentials directly from the Main Menu or via the Environment configuration screen at the Account Scope.</p>
 <div class="admonition note">
@@ -982,8 +981,8 @@ You can add new credentials directly from the Main Menu or via the Environment c
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><a class="reference internal" href="../_images/Admin_cloud_creds.png"><img alt="SCE" src="../_images/Admin_cloud_creds.png" style="width: 181.29999999999998px; height: 195.29999999999998px;" /></a></td>
-<td><a class="reference internal" href="../_images/Account_cloud_creds.png"><img alt="ACE" src="../_images/Account_cloud_creds.png" style="width: 212.0px; height: 171.20000000000002px;" /></a></td>
+<tr class="row-even"><td><a class="reference internal" href="../_images/Admin_cloud_creds.png"><img alt="SCE" src="../_images/Admin_cloud_creds.png" style="width: 229.60000000000002px; height: 246.0px;" /></a></td>
+<td><a class="reference internal" href="../_images/Account_cloud_creds.png"><img alt="ACE" src="../_images/Account_cloud_creds.png" style="width: 234.4px; height: 192.0px;" /></a></td>
 </tr>
 </tbody>
 </table>
@@ -1000,20 +999,20 @@ You can add new credentials directly from the Main Menu or via the Environment c
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="../_images/Environments_cloud_creds_1.png"><img alt="ECC1" src="../_images/Environments_cloud_creds_1.png" style="width: 663.5px; height: 180.5px;" /></a></td>
-<td><a class="reference internal" href="../_images/Environments_cloud_creds_2.png"><img alt="ECC2" src="../_images/Environments_cloud_creds_2.png" style="width: 544.8000000000001px; height: 178.4px;" /></a></td>
+<tr class="row-odd"><td><a class="reference internal" href="../_images/Environments_cloud_creds_1.png"><img alt="ECC1" src="../_images/Environments_cloud_creds_1.png" style="width: 743.0px; height: 214.5px;" /></a></td>
+<td><a class="reference internal" href="../_images/Environments_cloud_creds_2.png"><img alt="ECC2" src="../_images/Environments_cloud_creds_2.png" style="width: 581.2px; height: 199.60000000000002px;" /></a></td>
 </tr>
 </tbody>
 </table>
 <ol class="arabic simple" start="19">
 <li>After selecting Add Credentials, you will be prompted to add your Cloud Credentials and properties:</li>
 </ol>
-<a class="reference internal image-reference" href="../_images/Azure-creds.png"><img alt="../_images/Azure-creds.png" src="../_images/Azure-creds.png" style="width: 435.4px; height: 223.29999999999998px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-creds.png"><img alt="../_images/Azure-creds.png" src="../_images/Azure-creds.png" style="width: 665.0px; height: 349.5px;" /></a>
 <p>Add the tenant name to your credentials if you have it available, and then click <strong>continue</strong> at the bottom of the dialogue box.  You will be redirected to authenticate in the Azure Portal.  Complete authentication by following the on-screen instructions.</p>
 <ol class="arabic simple" start="20">
 <li>After authentication you will be once again redirected back to Scalr.  Then choose your Subscription, and hit Save.  An example fully configured Cloud Credential object for Azure will look similar to the following:</li>
 </ol>
-<a class="reference internal image-reference" href="../_images/Azure-sa-16.png"><img alt="../_images/Azure-sa-16.png" src="../_images/Azure-sa-16.png" style="width: 431.9px; height: 339.5px;" /></a>
+<a class="reference internal image-reference" href="../_images/Azure-sa-16.png"><img alt="../_images/Azure-sa-16.png" src="../_images/Azure-sa-16.png" style="width: 614.5px; height: 487.0px;" /></a>
 <p>You can now proceed to adding these credentials to your Environments.</p>
 </div>
 </div>
@@ -1074,10 +1073,7 @@ You can add new credentials directly from the Main Menu or via the Environment c
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

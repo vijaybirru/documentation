@@ -5,7 +5,7 @@
 
 Objective
 ^^^^^^^^^
-This tutorial is designed to guide you through the steps required to deploy a cloud agnostic 3-Tier Web Application using Scalr. This web application will leverage Scalr Orchestration to dynamically configure machines with a “cloud native” approach.  Any cloud may be used for this exercise, but we recommend the use of a public cloud (AWS, Azure, or GCE) and Ubuntu 16.04 instances to complete this setup.
+This tutorial is designed to guide you through the steps required to deploy a cloud agnostic 3-Tier Web Application using Scalr. This web application will leverage Scalr Orchestration to dynamically configure machines with a cloud native approach.  Any cloud may be used for this exercise, but we recommend the use of a public cloud (AWS, Azure, or GCE) and Ubuntu 16.04 instances to complete this setup.
 
 Application Overview
 ^^^^^^^^^^^^^^^^^^^^
@@ -20,13 +20,13 @@ Create the following scripts in Scalr:
 
  (Attached in zip)
 
--Webapp Deploy
--Webapp Config
--Nginx Install
--Nginx Config
--MySQL Install
--MySQL Config
--MySQL Replication
+- Webapp Deploy
+- Webapp Config
+- Nginx Install
+- Nginx Config
+- MySQL Install
+- MySQL Config
+- MySQL Replication
 
 Roles Required:
 ^^^^^^^^^^^^^^^
@@ -60,6 +60,36 @@ Select and configure the WebApp farm role:
    :scale: 50%
 
 * Select Orchestration and add the following Rules:
+
+=========================================  ================
+Deploy Webapp:
+=========================================  ================
+Trigger Event:                             Before Host Up
+Target:                                    Triggering Server
+Action:                                    Scalr Script -> Web Deploy
+Note:                                      | This will deploy the web app on this server when it provisions.
+=========================================  ================
+
+|BR|
+
+=========================================  ================
+Deploy Webapp:
+=========================================  ================
+Trigger Event:                             Before Host Up
+Target:                                    Triggering Server
+Action:                                    Scalr Script -> Web Deploy
+Note:                                      | This will deploy the web app on this server when it provisions.
+=========================================  ================
+
+=========================================  ================
+Deploy Webapp:
+=========================================  ================
+Trigger Event:                             Before Host Up
+Target:                                    Triggering Server
+Action:                                    Scalr Script -> Web Deploy
+Note:                                      | This will deploy the web app on this server when it provisions.
+=========================================  ================
+
 
 Deploy Webapp:
 Trigger Event: Before Host Up
@@ -164,6 +194,7 @@ Testing the Application
 
 .. image:: images/Screenshot-9.jpg
    :scale: 90%
+
 
 .. image:: images/Application-Screenshot.jpg
   :scale: 80%

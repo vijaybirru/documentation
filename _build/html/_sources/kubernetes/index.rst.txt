@@ -31,9 +31,9 @@ To add a cluster into Scalr, go to the |Account| scope and click on the Scalr me
 To discover a new cluster, click on New Cluster, select your cluster type and enter the details:
 
 .. image:: images/new_cluster.png
-   :scale: 60%
+   :scale: 50%
 
 Once it is successfully added the cluster operation dashboard will appear:
 
 .. image:: images/ops_dashboard.png
-   :scale: 60%
+   :scale: 50%

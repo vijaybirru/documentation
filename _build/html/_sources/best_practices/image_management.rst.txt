@@ -21,12 +21,12 @@ It is generally a good idea to test your images before making them available. To
 
 To avoid having to re-register the machine image at the Account scope when it has already been added in an Environment, we have added the capability to moce an Image from the Environment scope to the Account scope. This is called Image Promotion. To promote an Image from an Environment to the containing Account, just click on this button at the bottom right of the Image description:
 
-.. image:: image_promote.png
+.. image:: images/image_promote.png
    :scale: 40 %
 
 Image are only the first step of provisioning a server, you will also need a role. Note that as you can promote an Image, you can also promote a Role.  Promoting a Role will automatically promote all the Images associated with the Role. This can be convenient when there are several Images associated to a Role, and you want to promote all of them at once. To promote a Role, use the same button as for promoting Images:
 
-.. image:: role_promote.png
+.. image:: images/role_promote.png
    :scale: 40 %
 
 Last but not least, you should be careful when naming your Images and Roles. A good name should allow users to find an Image quickly when they need it, but shouldn’t include information that is already stored in the Image or Role, such as the installed OS. A good naming convention is to put the name and the version of the most important software that’s installed on the image, for instance nginx-1-9, or ubuntu-16-04-1. Additional details or configuration information should go in the description field.
@@ -57,7 +57,7 @@ In this approach, we will replace the old image with the new one in the existing
 
 To do this, in the Images section, click on this button in the bottom right:
 
-.. image:: replace_image.png
+.. image:: images/replace_image.png
    :scale: 40 %
 
 You will be asked to select a new Image, and the old Image will be replaced by the new one in all the Roles that use it. You can also choose to mark the old Image as deprecated.
