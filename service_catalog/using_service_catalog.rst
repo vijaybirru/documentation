@@ -1,9 +1,11 @@
 .. include:: ../GLOBAL.rst
 
-.. sc_using:
+.. _sc_using:
 
 Self Service via the Service Catalog
 ====================================
+|SCOPE_ENV|
+
 
 Requesting Applications
 -----------------------

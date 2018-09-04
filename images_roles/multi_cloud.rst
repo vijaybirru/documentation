@@ -5,7 +5,7 @@
 Multi-cloud Roles
 =================
 
-This pages is an overview of multi-cloud roles. More details on using multi-cloud roles can be found in :ref:`farms` and :ref:`service_catalog`.
+This pages is an overview of multi-cloud roles. More details on using multi-cloud roles can be found in :ref:`farms` and :ref:`sc_offerings`.
 
 Roles can be associated with Images from different clouds in order to provide flexibility in choosing where to provision servers from :ref:`farm_roles`. This example shows a Role associated with Images from multiple clouds.
 

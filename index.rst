@@ -66,6 +66,7 @@ Scalr Documentation!
 
    service_catalog/offerings
    service_catalog/using_service_catalog
+   service_catalog/advanced_farm_templates
 
 .. toctree::
    :maxdepth: 3
