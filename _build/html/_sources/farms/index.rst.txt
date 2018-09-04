@@ -183,7 +183,7 @@ Storage
 .. image:: images/storage_t.png
    :scale: 40%
 
-Where the Cloud Platform and Operating System permits you can configure root and additional storage for the servers, subject to any Policy limitations.
+Where the Cloud Platform and Operating System permits you can configure root and additional storage for the servers, subject to any Policy limitations. See :ref:`storage` for detail of the Storage configuration options for each Cloud provider.
 
 Global Variables
 ^^^^^^^^^^^^^^^^

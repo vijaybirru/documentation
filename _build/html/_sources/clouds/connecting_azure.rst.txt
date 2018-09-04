@@ -3,8 +3,6 @@
 Connecting Scalr to Microsoft Azure
 ===================================
 
-**IN PROGRESS**
-
 Scalr needs access to your Cloud Platform(s) in order to provision and manage infrastructure on your behalf. You will therefore need to configure Scalr with your Azure credentials. There are 4 steps to this task.
 
 1. Configure Azure Virtual Network's

@@ -91,6 +91,7 @@ Cross Platform:
   #!/usr/bin/env python
   #!windows extension=py
 
+.. _executing:
 
 Executing Scripts
 ------------------

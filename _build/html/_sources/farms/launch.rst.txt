@@ -83,7 +83,7 @@ Server Dashboard
 .. |DASH| image:: images/dashboard.png
           :scale: 40%
 
-A detailed server dashboard is available for each server via the |DASH| button in the server list. This provides access to detailed information about the server and some additional management actions.
+A detailed server dashboard is available for each server via the |DASH| button in the server list. This provides access to detailed information about the server and some additional management actions. 
 
 **General**
 
