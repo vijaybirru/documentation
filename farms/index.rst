@@ -164,6 +164,67 @@ To configure Orchestration Rules click on the Orchestration tab on the left side
 
 .. include:: /farms/orchestration_include.rst
 
+Cloud Provider Tabs
+^^^^^^^^^^^^^^^^^^^
+
+Scalr supports a variety of configuration options for each cloud provider. The appropriate tab will be available for setting these options.
+
+EC2
+***
+
+.. image:: images/ec2_tab.png
+   :scale: 50%
+
+.. csv-table::
+   :widths: 30,70
+   :header-rows: 1
+   :file: csv/ec2_tab.csv
+
+Azure
+*****
+
+.. image:: images/azure_tab.png
+   :scale: 50%
+
+.. csv-table::
+   :widths: 30,70
+   :header-rows: 1
+   :file: csv/azure_tab.csv
+
+GCE Settings
+************
+
+.. image:: images/gce_tab.png
+   :scale: 50%
+
+.. csv-table::
+   :widths: 30,100
+   :header-rows: 1
+   :file: csv/gce_tab.csv
+
+OpenStack
+*********
+
+.. image:: images/openstack_tab.png
+   :scale: 50%
+
+
+.. csv-table::
+   :widths: 20,80
+   :header-rows: 1
+   :file: csv/openstack_tab.csv
+
+
+VMware
+******
+
+.. image:: images/vmware_tab.png
+   :scale: 50%
+
+.. csv-table::
+   :widths: 20,200
+   :header-rows: 1
+   :file: csv/vmware_tab.csv
 
 Security
 ^^^^^^^^
