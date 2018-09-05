@@ -7,7 +7,7 @@ Supported Cloud Services and Features
 
 |SCOPE_ENV|
 
-This reference page provides details of the Cloud specific services and features that are configurable through Scalr. It provides details of how Scalr works with each service and feature and including how Scalr enhances the use of services to automatically integrate them with with Servers. This page DOES NOT provide details of functionality the service of feature itself but instead provides links to the relevant page in the cloud providers own documentation.
+This reference page provides details of the Cloud specific services and features that are configurable through Scalr. The page provides details of how Scalr works with each service and feature, including how Scalr enhances the use of services to automatically integrate them with with Servers. This page DOES NOT provide details of functionality the service or feature itself but instead provides links to the relevant page in the Cloud providers own documentation.
 
 AWS Features and Services
 -------------------------

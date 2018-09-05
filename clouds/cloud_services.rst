@@ -7,7 +7,7 @@ Cloud Services and Features in Scalr
 
 |SCOPE_ENV|
 
-Scalr provides support for configuring and utilising a wide variety of Cloud specific services. Each cloud provider offers extended features and services to enhance their basic compute, storage and network capabilities, such as AWS Elastic Load Balancer, Google Compute Platform Cloud SQL and many more. Within Scalr these cloud features and services can be configured/deployed and linked or utilised in Farms. When a service is linked to a Farm Scalr will, where appropriate, automatically perform the required additional configuration to integrate the cloud service with the deployed instances, e.g. configuring an AWS ELB.
+Scalr provides support for configuring and utilising a wide variety of Cloud specific services. Each cloud provider offers extended features and services to enhance their basic compute, storage and network capabilities, such as AWS Elastic Load Balancer, Google Compute Platform Cloud SQL and many more. Within Scalr these cloud features and services can be configured/deployed and linked or utilised in Farms. When a service is linked to a Farm Scalr will automatically perform the required additional configuration to integrate the cloud service with the deployed instances, e.g. configuring an AWS ELB.
 
 This page provides a quick overview of how to configure these cloud services in Scalr.
 
@@ -23,7 +23,7 @@ The |MENU_ENV| menu provides direct access to screens for configuring cloud serv
 .. image:: images/clouds_menu.png
    :scale: 50%
 
-Each of the screens allows you to view, manage and delete existing features and services and also create new ones. These screens interact directly with the cloud provider and will amend or create the feature/service as soon as press the SAVE button.
+Each of the screens allows you to view, manage and delete existing features and services and also create new ones. These screens interact directly with the cloud provider and will amend or create the feature/service as soon the SAVE button is clicked.
 
 .. warning:: Some cloud services are separately chargeable by the cloud provider. Costs may be incurred as soon as the configuration is saved in Scalr. Please refer to the Cloud providers own documentation for details of any charges that may arise as a result of configuring cloud services.
 

@@ -13,7 +13,7 @@ Scalr's Service Catalog provides users with simple self service capability to la
 
 Applications launched from the Service Catalog are subject to the :ref:`Governance Policies <policy_engine>` of the |ACCOUNT| they run under, in the same way as Farms are.
 
-The Farm Template is a Service Catalog offerings is typically customised to give users some choices over the deployment of their applications (subject to any Policy constraints). This can include choosing instance types, networks, storage options and even choosing which Cloud to deploy in.
+The Farm Template in a Service Catalog offering is typically customised to give users some choices over the deployment of their applications (subject to any Policy constraints). This can include choosing instance types, networks, storage options and even choosing which Cloud to deploy in.
 
 This page covers all aspects of creating, customising and managing Service Catalog offerings. End users who simply want to use the Service Catalog to deploy applications should refer to :ref:`sc_using`.
 
@@ -64,7 +64,7 @@ The other sections of the template define the components of the Application, the
 Simple Template Example
 -----------------------
 
-This is an example of as Farm Template that contains a single Farm Role, a Global Variable, Orchestration Rules and Storage configuration.
+This is an example of a Farm Template that contains a single Farm Role, a Global Variable, Orchestration Rules and Storage configuration.
 This template is constrained to AWS via the Role parameter ``"cloudPlatform": "ec2"`` but it does allow selection of the Cloud Location as there are no restrictions in ``_meta`` and ``"cloudLocation": "us-east-1"`` only sets the default value.
 
 Templates will cause the end user to be prompted for certain mandatory inputs under a variety of circumstances.
@@ -144,7 +144,7 @@ To remove the specific cloud configuration in a Role the following must be chang
    "instanceType": {
                 "id": ""
 
-In addition it us necessary to remove all the details from ``networking: []`` and ``storage: []``.
+In addition it is necessary to remove all the details from ``networking: []`` and ``storage: []``.
 
 .. code-block:: json
    :emphasize-lines: 19-23,56,64
@@ -236,9 +236,9 @@ Publishing and Promoting Service Catalog Offerings
 .. |PUB| image:: images/publish.png
          :scale: 30%
 
-Once the necessary details have been entered, and any customisations have been completed the Offering can be published by clicking YES |PUB| and saving the offering. Service Catalog offerings can optionally be grouped into Categories to help users with selection. Categories can be created by following the main menu "Service Catalog" --> "Categories". You can custom pricing for the service catalog offering.
+Once the necessary details have been entered, and any customisations have been completed the Offering can be published by clicking YES |PUB| and saving the offering. Service Catalog offerings can optionally be grouped into Categories to help users with selection. Categories can be created by following the main menu "Service Catalog" --> "Categories". You can also set custom pricing for the service catalog offering.
 
 .. |PROMOTE| image:: images/promote.png
          :scale: 40%
 
-Service Catalog offerings can also be promoted to higher scopes to make them more widely available by clicking on the Promote |PROMOTE| button. When an offering is promoted to |ACCOUNT| scope it will become available to all |ENVIRONMENTS| in that |ACCOUNT|, and when prompted to |SCALR| scope it becomes available to ALL |ENVIRONMENTS|. It is therefore essential that the Farm Template is configured to work in all |ENVIRONMENTS| and that the |ENVIRONMENTS| themselves have the necessary Roles, Scripts, Cloud Crednetials etc in place to support the Service Catalog offering. If any discrepancies exist between the Farm Template and the |ENVIRONMENT| at the time a user requests an Application they will see errors and thew application will fail to create.
+Service Catalog offerings can also be promoted to higher scopes to make them more widely available by clicking on the Promote |PROMOTE| button. When an offering is promoted to |ACCOUNT| scope it will become available to all |ENVIRONMENTS| in that |ACCOUNT|, and when prompted to |SCALR| scope it becomes available to ALL |ENVIRONMENTS|. It is therefore essential that the Farm Template is configured to work in all |ENVIRONMENTS| and that the |ENVIRONMENTS| themselves have the necessary Roles, Scripts, Cloud Credentials etc in place to support the Service Catalog offering. If any discrepancies exist between the Farm Template and the |ENVIRONMENT| at the time a user requests an Application they will see errors and the application will fail to create.
