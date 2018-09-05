@@ -544,6 +544,14 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ansible/index.html">Ansible Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-server">Adding an Ansible Tower Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-group">Adding an Ansible Tower Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-bootstrap-configuration">Adding an Ansible Tower Bootstrap Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#attaching-bootstrap-configurations-to-a-server">Attaching Bootstrap Configurations to a Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ansible/index.html#role-scope">Role Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ansible/index.html#farm-role-scope">Farm Role Scope</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a><ul>
@@ -1197,13 +1205,15 @@ You may also need to set the value of Global Variables that have been defined at
 </table>
 </div>
 <div class="section" id="ansible-tower-in-roles">
-<span id="bootstrap"></span><h1>Ansible Tower in Roles<a class="headerlink" href="#ansible-tower-in-roles" title="Permalink to this headline">¶</a></h1>
+<span id="bootstrap-ansible"></span><h1>Ansible Tower in Roles<a class="headerlink" href="#ansible-tower-in-roles" title="Permalink to this headline">¶</a></h1>
 <p>Ansible Tower can be configured at Scalr or Account scope to be used as means to bootstrap servers. See <a class="reference internal" href="../ansible/index.html#ansible"><span class="std std-ref">Ansible Integration</span></a> for more details.</p>
-<p>If an Ansilble tower server is configured at the or above the scope for the Role, the Ansible Tower tab will be available on the Role configuration screen. This option allows you to enable Ansible Tower Bootstrap for the Role and define bootstrap configuration to be used.</p>
+<p>If an Ansible tower server is configured at the or above the scope for the Role, the Ansible Tower tab will be available on the Role configuration screen. This option allows you to enable Ansible Tower Bootstrap for the Role and define bootstrap configuration to be used.</p>
 <a class="reference internal image-reference" href="../_images/role_ansible.png"><img alt="../_images/role_ansible.png" src="../_images/role_ansible.png" style="width: 711.5px; height: 487.0px;" /></a>
+<p>At a minimum, this will ensure the server is added to the correct Organization, Inventory and Group. If you want to run a Job Template during the provisioning of the server, click on the Orchestration tab, then New Rule, select the Event, and then click on AT Job:</p>
+<a class="reference internal image-reference" href="../_images/role_ansible_job.png"><img alt="../_images/role_ansible_job.png" src="../_images/role_ansible_job.png" style="width: 1034.6px; height: 406.0px;" /></a>
 </div>
 <div class="section" id="chef-in-roles">
-<h1>Chef in Roles<a class="headerlink" href="#chef-in-roles" title="Permalink to this headline">¶</a></h1>
+<span id="bootstrap-chef"></span><h1>Chef in Roles<a class="headerlink" href="#chef-in-roles" title="Permalink to this headline">¶</a></h1>
 <p>Chef Servers can be configured at Scalr or Account scope to be used as means to bootstrap servers. See <a class="reference internal" href="../chef/index.html#chef"><span class="std std-ref">Chef Integration</span></a> for more details.</p>
 <p>If a Chef server is configured at the or above the scope for the Role, the tab will be available on the Role configuration screen. This option allows you to enable Chef Bootstrap for the Role and define either a Chef Server or Chef Solo Cookbook to be used.</p>
 <p><a class="reference internal" href="../_images/role_chef1.png"><img alt="CHEF1" src="../_images/role_chef1.png" style="width: 467.5px; height: 487.0px;" /></a> <a class="reference internal" href="../_images/role_chef2.png"><img alt="CHEF2" src="../_images/role_chef2.png" style="width: 467.5px; height: 487.0px;" /></a></p>

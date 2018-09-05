@@ -110,17 +110,28 @@ If the value for a variable is already set then the Role can use that value or o
    "Value can be set at any scope down to the specified scope. Role can set the value to be be inherited by the lower scopes. Only lower scopes as far as the specified scope will be able to overwrite the value.",|GV2|
    "Value must be set at this scope. A value must be supplied and an error will occur if you attempt to save the Role, save any Farm using the role, or launch a Farm that uses the Role if the value is not set. Lower scopes will NOT be able to overwrite",|GV3|
 
-.. _bootstrap:
+.. _bootstrap_ansible:
 
 Ansible Tower in Roles
 ======================
 
 Ansible Tower can be configured at |SCALR| or |ACCOUNT| scope to be used as means to bootstrap servers. See :ref:`ansible` for more details.
 
-If an Ansilble tower server is configured at the or above the scope for the Role, the Ansible Tower tab will be available on the Role configuration screen. This option allows you to enable Ansible Tower Bootstrap for the Role and define bootstrap configuration to be used.
+.. ansible_roles_start
 
-.. Image:: Images/role_ansible.png
+If an Ansible tower server is configured at the or above the scope for the Role, the Ansible Tower tab will be available on the Role configuration screen. This option allows you to enable Ansible Tower Bootstrap for the Role and define bootstrap configuration to be used.
+
+.. image:: /images_roles/images/role_ansible.png
    :scale: 50%
+
+At a minimum, this will ensure the server is added to the correct Organization, Inventory and Group. If you want to run a Job Template during the provisioning of the server, click on the Orchestration tab, then New Rule, select the Event, and then click on AT Job:
+
+.. image:: /images_roles/images/role_ansible_job.png
+   :scale: 70%
+
+.. ansible_roles_end
+
+.. _bootstrap_chef:
 
 Chef in Roles
 =============
