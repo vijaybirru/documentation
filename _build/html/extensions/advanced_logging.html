@@ -517,7 +517,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/management.html">Cost Management</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Configuration Management in Scalr</span></p>
+<p class="caption"><span class="caption-text">Configuration Management</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Scripts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#definition-and-scope">Definition and Scope</a></li>
@@ -550,6 +550,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../chef/index.html">Chef Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chef/index.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chef/index.html#adding-a-chef-server">Adding a Chef Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#using-chef-with-scalr">Using Chef with Scalr</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chef/index.html#role-scope">Role Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chef/index.html#farm-role-scope">Farm Role Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ansible/index.html">Ansible Integration</a><ul>
@@ -847,7 +853,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="enable-advanced-logging">
-<h1>Enable Advanced Logging<a class="headerlink" href="#enable-advanced-logging" title="Permalink to this headline">¶</a></h1>
+<span id="advanced-logging"></span><h1>Enable Advanced Logging<a class="headerlink" href="#enable-advanced-logging" title="Permalink to this headline">¶</a></h1>
 <p>Advanced logging can be turned on for administrators to gather more information for the following type of logs:</p>
 <ul class="simple">
 <li>Agent Logs - This log will contain all events related to Orchestration. It will contain the same events as found under Orchestration Log in the Scalr UI.</li>

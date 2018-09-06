@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Extensions &mdash; Scalr 0.01 documentation</title>
+  <title>Logs &mdash; Scalr 0.01 documentation</title>
   
 
   
@@ -30,8 +30,8 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Enable LDAP Authentication" href="ldap.html" />
-    <link rel="prev" title="Advanced Configurations" href="../install_guide/advanced_configurations.html" /> 
+    <link rel="next" title="The Service Catalog" href="../service_catalog/offerings.html" />
+    <link rel="prev" title="Service Catalog Offerings" href="service_catalog.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -121,7 +121,7 @@
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Scalr Server Admin Guide</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../install_guide/index.html">Installation &amp; Upgrades</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/scalr_server_architecture.html">Scalr Server Architecture and Requirements</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#architecture">Architecture</a></li>
@@ -178,28 +178,28 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Extensions</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ldap.html">Enable LDAP Authentication</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ldap.html#configuration">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extensions/index.html">Extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../extensions/ldap.html">Enable LDAP Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/ldap.html#configuration">Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="saml.html">Enable SAML Authentication</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="saml.html#integration-with-scalr">Integration with Scalr</a></li>
-<li class="toctree-l3"><a class="reference internal" href="saml.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extensions/saml.html">Enable SAML Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/saml.html#integration-with-scalr">Integration with Scalr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/saml.html#configuration">Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="email.html">Enable Email Integration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="email.html#configuring-email">Configuring Email</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extensions/email.html">Enable Email Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/email.html#configuring-email">Configuring Email</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_logging.html">Enable Advanced Logging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="advanced_logging.html#fluentd-configuration">Fluentd Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_logging.html#scalr-configuration">Scalr Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="advanced_logging.html#log-examples">Log Examples</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="advanced_logging.html#agent">Agent</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_logging.html#api">API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_logging.html#audit">Audit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="advanced_logging.html#user">User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../extensions/advanced_logging.html">Enable Advanced Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#fluentd-configuration">Fluentd Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#scalr-configuration">Scalr Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#log-examples">Log Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#agent">Agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#api">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#audit">Audit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#user">User</a></li>
 </ul>
 </li>
 </ul>
@@ -333,65 +333,74 @@
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Infrastructure Management</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../farms/index.html">Farm Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#creating-a-farm">Creating a Farm</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#farm-parameters">Farm Parameters</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Farm Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#creating-a-farm">Creating a Farm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#farm-parameters">Farm Parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-roles">Farm Roles</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#database">Database</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#scaling">Scaling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#network">Network</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#farm-role-orchestration">Farm Role Orchestration</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#trigger-event">Trigger Event</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#target">Target</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#action">Action</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#advanced-configuration">Advanced Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#farm-roles">Farm Roles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#scaling">Scaling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#network">Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#farm-role-orchestration">Farm Role Orchestration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="index.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#target">Target</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#action">Action</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#advanced-configuration">Advanced Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#cloud-provider-tabs">Cloud Provider Tabs</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#ec2">EC2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#azure">Azure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#gce-settings">GCE Settings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#openstack">OpenStack</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#vmware">VMware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#cloud-provider-tabs">Cloud Provider Tabs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="index.html#ec2">EC2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#azure">Azure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#gce-settings">GCE Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#openstack">OpenStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="index.html#vmware">VMware</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#security">Security</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#storage">Storage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#global-variables">Global Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#advanced-options">Advanced Options</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#ansible-and-chef-in-farm-roles">Ansible and Chef in Farm Roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#security">Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#storage">Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#global-variables">Global Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#advanced-options">Advanced Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#ansible-and-chef-in-farm-roles">Ansible and Chef in Farm Roles</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/launch.html">Farm Launching and Managing Servers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#launching-a-farm">Launching a Farm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#managing-servers">Managing Servers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#terminating-servers">Terminating Servers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#server-dashboard">Server Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="launch.html">Farm Launching and Managing Servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="launch.html#launching-a-farm">Launching a Farm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launch.html#managing-servers">Managing Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launch.html#terminating-servers">Terminating Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="launch.html#server-dashboard">Server Dashboard</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/ssh.html">SSH Keys in Scalr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#definition-and-scope">Definition and Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#accessing-keys">Accessing Keys</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#usernames">Usernames</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#adding-policy-for-keys">Adding Policy for Keys</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ssh.html">SSH Keys in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ssh.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssh.html#accessing-keys">Accessing Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssh.html#usernames">Usernames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssh.html#adding-policy-for-keys">Adding Policy for Keys</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#aws-storage-configuration">AWS Storage Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#google-cloud-platform-storage-configuration">Google Cloud Platform Storage Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#azure-storage-configuration">Azure Storage Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#openstack-storage-configuration">OpenStack Storage Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#vmware-storage-configuration">VMWare Storage Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="storage.html">Configuring Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="storage.html#aws-storage-configuration">AWS Storage Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage.html#google-cloud-platform-storage-configuration">Google Cloud Platform Storage Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage.html#azure-storage-configuration">Azure Storage Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage.html#openstack-storage-configuration">OpenStack Storage Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage.html#vmware-storage-configuration">VMWare Storage Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/auto_discovery.html">Service Auto Discovery</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/link_cloud_services.html">Using Cloud Services in Farms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/service_catalog.html">Service Catalog Offerings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_discovery.html">Service Auto Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="link_cloud_services.html">Using Cloud Services in Farms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="service_catalog.html">Service Catalog Offerings</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Logs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#orchestration-logs">Orchestration Logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#event-logs">Event Logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-logs">System Logs</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Self Service</span></p>
 <ul>
@@ -831,13 +840,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Extensions</li>
+      <li>Logs</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/extensions/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/farms/logs.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -850,32 +859,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="extensions">
-<h1>Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline">¶</a></h1>
-<p>Scalr supports multiple methods of authentication including: LDAP, AD, SAML, as well as the local. It is recommended that you authenticate using LDAP, AD, or SAML to make user management seamless as employees join and leave your organization.</p>
-<div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Extensions</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="ldap.html">Enable LDAP Authentication</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ldap.html#configuration">Configuration</a></li>
+  <div class="section" id="logs">
+<span id="id1"></span><h1>Logs<a class="headerlink" href="#logs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="definition-and-scope">
+<h2>Definition and Scope<a class="headerlink" href="#definition-and-scope" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
+<p>Scalr has three types of logs to help users troubleshoot various issues from cloud provisioning to configuring the OS:</p>
+<ul class="simple">
+<li>Orchestration Logs</li>
+<li>Event Logs</li>
+<li>System Logs</li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="saml.html">Enable SAML Authentication</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="saml.html#integration-with-scalr">Integration with Scalr</a></li>
-<li class="toctree-l2"><a class="reference internal" href="saml.html#configuration">Configuration</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="email.html">Enable Email Integration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="email.html#configuring-email">Configuring Email</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="advanced_logging.html">Enable Advanced Logging</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="advanced_logging.html#fluentd-configuration">Fluentd Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_logging.html#scalr-configuration">Scalr Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced_logging.html#log-examples">Log Examples</a></li>
-</ul>
-</li>
-</ul>
+<p>All logs can be accessed by going to the Environment scope, clicking on the main Scalr menu <a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a> and down to Logs. There are also audit logs that are managed separately, find more information here: <a class="reference internal" href="../extensions/advanced_logging.html#advanced-logging"><span class="std std-ref">Enable Advanced Logging</span></a></p>
+<div class="section" id="orchestration-logs">
+<h3>Orchestration Logs<a class="headerlink" href="#orchestration-logs" title="Permalink to this headline">¶</a></h3>
+<p>Orchestration logs show the history of script execution on the servers managed by Scalr, including output and exit codes.</p>
+</div>
+<div class="section" id="event-logs">
+<h3>Event Logs<a class="headerlink" href="#event-logs" title="Permalink to this headline">¶</a></h3>
+<p>Event logs show the history of the events that fired on your servers and of the actions that they triggered.</p>
+</div>
+<div class="section" id="system-logs">
+<h3>System Logs<a class="headerlink" href="#system-logs" title="Permalink to this headline">¶</a></h3>
+<p>System logs show the history of system notifications regarding your servers managed by Scalr.</p>
+</div>
 </div>
 </div>
 
@@ -887,10 +894,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ldap.html" class="btn btn-neutral float-right" title="Enable LDAP Authentication" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../service_catalog/offerings.html" class="btn btn-neutral float-right" title="The Service Catalog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../install_guide/advanced_configurations.html" class="btn btn-neutral" title="Advanced Configurations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="service_catalog.html" class="btn btn-neutral" title="Service Catalog Offerings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

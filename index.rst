@@ -59,6 +59,7 @@ Scalr Documentation!
    farms/auto_discovery
    farms/link_cloud_services
    farms/service_catalog
+   farms/logs
 
 .. toctree::
    :maxdepth: 3
@@ -99,7 +100,7 @@ Scalr Documentation!
 
 .. toctree::
    :maxdepth: 3
-   :caption: Configuration Management in Scalr
+   :caption: Configuration Management
 
    scripts/index
    gvs/index
