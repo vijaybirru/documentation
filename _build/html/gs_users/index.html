@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -392,6 +391,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../farms/auto_discovery.html">Service Auto Discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/link_cloud_services.html">Using Cloud Services in Farms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/service_catalog.html">Service Catalog Offerings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../farms/logs.html">Logs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/logs.html#definition-and-scope">Definition and Scope</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../farms/logs.html#orchestration-logs">Orchestration Logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/logs.html#event-logs">Event Logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/logs.html#system-logs">System Logs</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Self Service</span></p>
 <ul>
@@ -517,7 +525,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/management.html">Cost Management</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Configuration Management in Scalr</span></p>
+<p class="caption"><span class="caption-text">Configuration Management</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Scripts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#definition-and-scope">Definition and Scope</a></li>
@@ -550,6 +558,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../chef/index.html">Chef Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chef/index.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chef/index.html#adding-a-chef-server">Adding a Chef Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#using-chef-with-scalr">Using Chef with Scalr</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chef/index.html#role-scope">Role Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chef/index.html#farm-role-scope">Farm Role Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ansible/index.html">Ansible Integration</a><ul>
@@ -846,8 +860,38 @@
             
   <div class="section" id="getting-started-for-end-users">
 <h1>Getting Started for End Users<a class="headerlink" href="#getting-started-for-end-users" title="Permalink to this headline">¶</a></h1>
+<p>This page provides the basic information needed by Scalr users to begin working with Scalr.</p>
+<p><strong>Prerequisite:</strong> Scalr Server has been installed (See <a class="reference internal" href="../install_guide/scalr_server_installation.html#install"><span class="std std-ref">Scalr Server Install</span></a>) and you are able to login a user with access to at least one Environment within any Account.</p>
 <div class="section" id="types-roles-of-end-users">
 <h2>Types/Roles of End users<a class="headerlink" href="#types-roles-of-end-users" title="Permalink to this headline">¶</a></h2>
+<p>An end user’s role can vary from organization to organization and their tasks can be performed within Environments. The ability to complete specific tasks or access specific resources is determined by their ACL group.  There are two general types of end users, summarized as follows.</p>
+<ul class="simple">
+<li><strong>Standard End User</strong></li>
+</ul>
+<blockquote>
+<div><ul>
+<li><p class="first">Create and manage Farms and Service Catalog Offerings</p>
+</li>
+<li><p class="first">Manage infrastructure</p>
+</li>
+<li><p class="first">Configuration of items to be used across a given Environment</p>
+<blockquote>
+<div><ul class="simple">
+<li>Scripts, Global Variables, Webhooks, Schedules.</li>
+<li>Images and Roles.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Service Catalog User</strong><ul>
+<li>Consume Service Catalog Offerings</li>
+<li>Manage their own Applications at a basic level, as well as their Team’s Applications if granted permissions.</li>
+</ul>
+</li>
+</ul>
+<p>All tasks can be performed by clicking on the appropriate main menu button <a class="reference internal" href="../_images/menu_scalr.png"><img alt="MENU_SCALR" src="../_images/menu_scalr.png" style="width: 46.0px; height: 31.0px;" /></a> <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a>.</p>
 </div>
 <div class="section" id="navigating-the-user-interface">
 <h2>Navigating the User Interface<a class="headerlink" href="#navigating-the-user-interface" title="Permalink to this headline">¶</a></h2>
@@ -916,10 +960,7 @@
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {

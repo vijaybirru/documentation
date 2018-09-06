@@ -31,7 +31,7 @@ An Administrator's role can vary from organisation to organisation and admin tas
      * Scripts, Global Variables and Orchestration rules.
      * Images and roles
 
-All tasks can be performed by clicking on the appropriate on the main menu button |MENU_SCALR| |MENU_ACC|.
+All tasks can be performed by clicking on the appropriate main menu button |MENU_SCALR| |MENU_ACC|.
 
 The table below describes the core tasks that Admins must perform in order for End Users to be able to login, configure farms and deploy cloud infrastructure.
 This is NOT a comprehensive list of all features and functionality available in Scalr
