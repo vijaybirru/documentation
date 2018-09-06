@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -349,6 +350,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../farms/index.html#advanced-configuration">Advanced Configuration</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#cloud-provider-tabs">Cloud Provider Tabs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#ec2">EC2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#azure">Azure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#gce-settings">GCE Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#openstack">OpenStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#vmware">VMware</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#security">Security</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#storage">Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#global-variables">Global Variables</a></li>
@@ -540,10 +549,25 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Chef Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-a-chef-server">Adding a Chef Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-chef-with-scalr">Using Chef with Scalr</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#role-scope">Role Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#farm-role-scope">Farm Role Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ansible/index.html">Ansible Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-server">Adding an Ansible Tower Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-group">Adding an Ansible Tower Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-bootstrap-configuration">Adding an Ansible Tower Bootstrap Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#attaching-bootstrap-configurations-to-a-server">Attaching Bootstrap Configurations to a Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ansible/index.html#role-scope">Role Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ansible/index.html#farm-role-scope">Farm Role Scope</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a><ul>
@@ -830,6 +854,71 @@
 <span id="chef"></span><h1>Chef Integration<a class="headerlink" href="#chef-integration" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="definition-and-scope">
 <h2>Definition and Scope<a class="headerlink" href="#definition-and-scope" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></p>
+<p>Scalr provides a built-in integration with Chef allowing you to add servers built by Scalr to Chef for configuration management.</p>
+<p>Find out more about Chef here: <a href="https://docs.chef.io/" target="_blank">Chef Documentation</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></p>
+</div>
+<div class="section" id="adding-a-chef-server">
+<h2>Adding a Chef Server<a class="headerlink" href="#adding-a-chef-server" title="Permalink to this headline">¶</a></h2>
+<p>Chef servers can be added at the Scalr, Account, or Environment scope. To add a Chef server click on the Scalr icon on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a> and click on Chef Servers. In the Chef Servers page, click on New Chef Server and you will be prompted for the following:</p>
+<a class="reference internal image-reference" href="../_images/new_chef_servers.png"><img alt="../_images/new_chef_servers.png" src="../_images/new_chef_servers.png" style="width: 389.2px; height: 342.29999999999995px;" /></a>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>URL</td>
+<td>The URL should look like: <a class="reference external" href="https://chef.server.host.name/organizations">https://chef.server.host.name/organizations</a>/${OrganizationName}/</td>
+</tr>
+<tr class="row-odd"><td>Client Authorization Username</td>
+<td>Username in Chef</td>
+</tr>
+<tr class="row-even"><td>Client Authorization Key</td>
+<td>They key for the user above</td>
+</tr>
+<tr class="row-odd"><td>Client Validator Authorization Username</td>
+<td>${OrganizationName}-validator</td>
+</tr>
+<tr class="row-even"><td>Client Validator Authorization Key</td>
+<td>Organization Validation Key</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="using-chef-with-scalr">
+<h2>Using Chef with Scalr<a class="headerlink" href="#using-chef-with-scalr" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></p>
+<p>To use Chef with Scalr, the images that you are building from must have the Chef Client installed on them.</p>
+<p>Chef Bootstrapping can be added in two places:</p>
+<ul class="simple">
+<li>The Role scope which would force the configuration on all servers built using that Role.</li>
+<li>The Farm Role scope which would force the configuration on all servers built using that Farm Role.</li>
+</ul>
+<div class="section" id="role-scope">
+<h3>Role Scope<a class="headerlink" href="#role-scope" title="Permalink to this headline">¶</a></h3>
+<p>If a Chef server is configured at the or above the scope for the Role, the tab will be available on the Role configuration screen. This option allows you to enable Chef Bootstrap for the Role and define either a Chef Server or Chef Solo Cookbook to be used. Within here you can add Chef Roles, Runlists, Cookbooks, and more. All Farm Roles that use this role will inherit the configuration. To add Chef to a role, you must click on the gear icon under Bootstrap Settings in the Roles page and enable Chef:</p>
+<a class="reference internal image-reference" href="../_images/role_chef3.png"><img alt="../_images/role_chef3.png" src="../_images/role_chef3.png" style="width: 271.8px; height: 65.7px;" /></a>
+<p>Once that is enabled you will then be able to click on the Chef tab on the bottom left of the page which will bring up the pages below.</p>
+<p>Chef Server:</p>
+<p><a class="reference internal" href="../_images/role_chef11.png"><img alt="CHEF1" src="../_images/role_chef11.png" style="width: 638.5px; height: 382.0px;" /></a></p>
+<p>Chef Solo:</p>
+<p><a class="reference internal" href="../_images/role_chef21.png"><img alt="CHEF2" src="../_images/role_chef21.png" style="width: 644.5px; height: 374.5px;" /></a></p>
+</div>
+<div class="section" id="farm-role-scope">
+<h3>Farm Role Scope<a class="headerlink" href="#farm-role-scope" title="Permalink to this headline">¶</a></h3>
+<p>The Bootstrap config can also be added directly into a Farm Role if the Role allows for it. To do this, go into the Farm Role and click on Bootstrap with Chef. Within here you can add Chef Roles, Runlists, Cookbooks, and more.</p>
+<a class="reference internal image-reference" href="../_images/farm_role_chef.png"><img alt="../_images/farm_role_chef.png" src="../_images/farm_role_chef.png" style="width: 1121.3999999999999px; height: 610.4px;" /></a>
+</div>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>If you need to troubleshoot any issues related to your Chef Cookbooks, all logs from the Chef Client are displayed in the Orchestration Logs tab in the Environment scope.</p>
 </div>
 </div>
 
@@ -889,7 +978,10 @@
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {

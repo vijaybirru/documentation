@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -349,6 +350,14 @@
 <li class="toctree-l4"><a class="reference internal" href="#advanced-configuration">Advanced Configuration</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#cloud-provider-tabs">Cloud Provider Tabs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ec2">EC2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#azure">Azure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gce-settings">GCE Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#openstack">OpenStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vmware">VMware</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#security">Security</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#storage">Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#global-variables">Global Variables</a></li>
@@ -540,10 +549,19 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chef/index.html">Chef Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chef/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#adding-a-chef-server">Adding a Chef Server</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ansible/index.html">Ansible Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-server">Adding an Ansible Tower Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-group">Adding an Ansible Tower Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-bootstrap-configuration">Adding an Ansible Tower Bootstrap Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#attaching-bootstrap-configurations-to-a-server">Attaching Bootstrap Configurations to a Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ansible/index.html#role-scope">Role Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ansible/index.html#farm-role-scope">Farm Role Scope</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a><ul>
@@ -1193,6 +1211,283 @@ Sequential : Wait until all the servers for a Farm Role are running before launc
 </table>
 </div>
 </div>
+<div class="section" id="cloud-provider-tabs">
+<h3>Cloud Provider Tabs<a class="headerlink" href="#cloud-provider-tabs" title="Permalink to this headline">¶</a></h3>
+<p>Scalr supports a variety of configuration options for each cloud provider. The appropriate tab will be available for setting these options.</p>
+<div class="section" id="ec2">
+<h4>EC2<a class="headerlink" href="#ec2" title="Permalink to this headline">¶</a></h4>
+<a class="reference internal image-reference" href="../_images/ec2_tab.png"><img alt="../_images/ec2_tab.png" src="../_images/ec2_tab.png" style="width: 552.0px; height: 487.0px;" /></a>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Instance Name</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>Specify the template that Scalr should use to name Servers in EC2.</li>
+<li>This field supports <a class="reference internal" href="../gvs/index.html#gv-interpolation"><span class="std std-ref">Global Variable Interpolation</span></a>.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">IAM Instance Profile</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td>To have instances of this Farm Role assume a specific <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/instance-profiles.html">Amazon IAM Instance Profile</a>, select that IAM Instance Profile here.</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Use Spot Instances</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>Scalr will use <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">Spot Instances</a> where available to launch Servers.</li>
+<li>One Time Spot Instance (not Fleet) request types are used to launch each Server required by a Farm Role.</li>
+<li>The price table shows the current spot price for the specified Instance Type.</li>
+<li>A Maximum price per Spot Instance can be set.</li>
+<li>If no Spot capacity is available or Max price is exceeded the Server will fail in a Pending Launch state</li>
+<li>NOTE: Scalr does not even attempt to launch an instance if the Max Price would be exceeded. However Scalr will continue to monitor the Spot price and will eventually launch the instance if the price drops below the Max.</li>
+<li>Spot Instance based Servers cannot be suspended, they can only be rebooted and terminated.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Tags</td>
+<td>Custom Tags can be added</td>
+</tr>
+<tr class="row-even"><td>AKI ID</td>
+<td>To use a custom Linux Kernel with instances of this Farm Role, specify an <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">Amazon Kernel ID (AKI)</a></td>
+</tr>
+<tr class="row-odd"><td>ARI ID</td>
+<td>To use an Amazon Ram Disk with instances of this Farm Role, specify an Amazon Ramdisk ID (ARI)</td>
+</tr>
+<tr class="row-even"><td>Cluster Placement Group</td>
+<td>To launch all instances of this Farm Role as part of an <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Amazon Placement Group</a>, specify the Placement Group name here</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Backup Instance Types</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td>Optionally specify additional instance types to try if provisioning of your Farm Role configured instance type is not available.  This is typically to fallback to a smaller size when no more space for your larger instance type is available.</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Instance Tenancy</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="first line-block">
+<div class="line">See <a class="reference external" href="https://aws.amazon.com/dedicated-instances/">Dedicated Instances</a> for details.</div>
+</div>
+<ul class="last simple">
+<li>Default - Shared Tenancy</li>
+<li>Dedicated - Launched as a dedicated instance. Must be in a VPC</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Instance Initiated Shutdown Behaviour</td>
+<td>Determines whether an instance should be Suspended or Terminated when a Shutdown is initiated from inside the instance.</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Launch instances as EBS-Optimized</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>See <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-Optimized Instances documentation</a>.</li>
+<li>Not available for all Instance Types.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Enable Detailed CloudWatch monitoring</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>See <a class="reference external" href="http://aws.amazon.com/cloudwatch/">Amazon CloudWatch product introduction</a> for information on detailed CloudWatch Monitoring.</li>
+<li>Basic CloudWatch monitoring is enabled by default.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Enable T2 Unlimited</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td>Enabling T2 Unlimited allows applications to burst beyond the baseline for as long as needed at any time. If the average CPU utilization of the instance is at or below the baseline, the hourly instance price automatically covers all usage. Otherwise, all usage above baseline is billed.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="azure">
+<h4>Azure<a class="headerlink" href="#azure" title="Permalink to this headline">¶</a></h4>
+<a class="reference internal image-reference" href="../_images/azure_tab.png"><img alt="../_images/azure_tab.png" src="../_images/azure_tab.png" style="width: 743.0px; height: 230.5px;" /></a>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Storage Type</div>
+</div>
+</td>
+<td>Enable <a class="reference external" href="https://docs.microsoft.com/en-gb/azure/virtual-machines/windows/managed-disks-overview">Managed Disks</a></td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Availability Set</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td>To provide redundancy to your application, it is recommended to group two or more virtual machines in an availability set. This configuration ensures that during a planned or unplanned maintenance event, at least one virtual machine will be available and meet the 99.95% Azure SLA. The availability set of a virtual machine can’t be changed after it is created.</td>
+</tr>
+<tr class="row-even"><td>Tags</td>
+<td>Custom Tags can be added</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="gce-settings">
+<h4>GCE Settings<a class="headerlink" href="#gce-settings" title="Permalink to this headline">¶</a></h4>
+<a class="reference internal image-reference" href="../_images/gce_tab.png"><img alt="../_images/gce_tab.png" src="../_images/gce_tab.png" style="width: 743.0px; height: 201.0px;" /></a>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="23%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Service Account</td>
+<td>Service account to be set at instance creation</td>
+</tr>
+<tr class="row-odd"><td><div class="first last line-block">
+<div class="line">Number of GPU’s</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>Number and type of GPU’s to be provided on the Instance. See <a class="reference external" href="https://cloud.google.com/compute/docs/gpus/">GPU’s on Comoute Engine</a>.</li>
+<li>The number of GPU dies is linked to the number of CPU cores and memory selected for this instance.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Maintenance Behavior</div>
+</div>
+</td>
+<td>Default behavior is to Live Migrate. See <a class="reference external" href="https://cloud.google.com/compute/docs/instances/setting-instance-scheduling-options">Setting Instance Availability Policies</a>.</td>
+</tr>
+<tr class="row-odd"><td>Tags</td>
+<td>Custom Tags can be added</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="openstack">
+<h4>OpenStack<a class="headerlink" href="#openstack" title="Permalink to this headline">¶</a></h4>
+<a class="reference internal image-reference" href="../_images/openstack_tab.png"><img alt="../_images/openstack_tab.png" src="../_images/openstack_tab.png" style="width: 743.0px; height: 272.5px;" /></a>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Instance Name</div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>Specify the template that Scalr should use to name Servers in OpenStack</li>
+<li>This field supports Global Variable Interpolation.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Server Group</td>
+<td>Specify a Server group for Affinity or anti-affinity settings.</td>
+</tr>
+<tr class="row-even"><td>Metadata</td>
+<td>Custom metadata Name-value pairs can be added</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vmware">
+<h4>VMware<a class="headerlink" href="#vmware" title="Permalink to this headline">¶</a></h4>
+<a class="reference internal image-reference" href="../_images/vmware_tab.png"><img alt="../_images/vmware_tab.png" src="../_images/vmware_tab.png" style="width: 743.0px; height: 286.5px;" /></a>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="9%" />
+<col width="91%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><div class="first last line-block">
+<div class="line">Instance Name</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</td>
+<td><ul class="first last simple">
+<li>Specify the template that Scalr should use to name Servers in VMware</li>
+<li>This field supports Global Variable Interpolation.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>Res. Pool</td>
+<td>Change the Resource Pool that was selcted when the Farm Role was added.</td>
+</tr>
+<tr class="row-even"><td>Datastore</td>
+<td>Change the Datastore that was selcted when the Farm Role was added.</td>
+</tr>
+<tr class="row-odd"><td>Custom Spec.</td>
+<td>Add a Custom Specification.</td>
+</tr>
+<tr class="row-even"><td>Tags</td>
+<td>Add Tags as required.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="section" id="security">
 <h3>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h3>
 <a class="reference internal image-reference" href="../_images/security_t.png"><img alt="../_images/security_t.png" src="../_images/security_t.png" style="width: 594.4px; height: 160.4px;" /></a>
@@ -1256,7 +1551,7 @@ Sequential : Wait until all the servers for a Farm Role are running before launc
 </div>
 <div class="section" id="ansible-and-chef-in-farm-roles">
 <h3>Ansible and Chef in Farm Roles<a class="headerlink" href="#ansible-and-chef-in-farm-roles" title="Permalink to this headline">¶</a></h3>
-<p>The “Bootstrap by ..” tabs allow you to enable bootstrap by Chef and Ansible for the Farm Role and set the bootstrap parameters. The settings are identical to those used in a Role. See <a class="reference internal" href="../images_roles/creating_roles.html#bootstrap"><span class="std std-ref">Bootstrap</span></a> in the Roles section for more details.</p>
+<p>The “Bootstrap by ..” tabs allow you to enable bootstrap by Chef and Ansible for the Farm Role and set the bootstrap parameters. The settings are identical to those used in a Role. See <span class="xref std std-ref">Bootstrap</span> in the Roles section for more details.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Bootstrapping can only be fully configured in a Farm Role if it has NOT been enabled at the Role level. If the Role has bootstrap enabled then it will be enabled at the Farm Role level and cannot be changed. Some limited options do remain configurable at the Farm Role level, such as choosing the Chef environment.</p>
@@ -1321,7 +1616,10 @@ Sequential : Wait until all the servers for a Farm Role are running before launc
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {

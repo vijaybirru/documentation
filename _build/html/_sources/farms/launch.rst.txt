@@ -3,7 +3,7 @@
 Farm Launching and Managing Servers
 ===================================
 
-Once a Farm is configured as required it must be Launched in order for Scalr to start managing the state of the Farm in the clouds. Launching a Farm causes Scalr to start the continuous processing of analysing and maintaining the desired the state of the Farm in the cloud. At initial Launch this means it will immediately start launching servers, configuring storage and enabling cloud services as specified in the Farm configuration. After the initial launch Scalr will continue to monitor the cloud status and make adjustments to the deployment as required. Adjustments to the cloud deployment are made for three broad reasons.
+Once a Farm is configured as desired it must be Launched in order for Scalr to start managing the state of the Farm in the clouds. Launching a Farm causes Scalr to start the continuous processing of analysing and maintaining the desired the state of the Farm in the cloud. At initial Launch this means it will immediately start launching servers, configuring storage and enabling cloud services as specified in the Farm configuration. After the initial launch Scalr will continue to monitor the cloud status and make adjustments to the deployment as required. Adjustments to the cloud deployment are made for three broad reasons.
 
 * The state of cloud deployment has been changed due to events outside of Scalr. Scalr will redeploy servers etc to bring the cloud deployment back in line with the desired state specified in the Farm.
 * The Scaling rules in the Farm have detected the need to scale the deployment up or down.
@@ -83,7 +83,7 @@ Server Dashboard
 .. |DASH| image:: images/dashboard.png
           :scale: 40%
 
-A detailed server dashboard is available for each server via the |DASH| button in the server list. This provides access to detailed information about the server and some additional management actions. 
+A detailed server dashboard is available for each server via the |DASH| button in the server list. This provides access to detailed information about the server and some additional management actions.
 
 **General**
 

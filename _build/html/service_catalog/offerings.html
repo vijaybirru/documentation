@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -349,6 +350,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../farms/index.html#advanced-configuration">Advanced Configuration</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#cloud-provider-tabs">Cloud Provider Tabs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#ec2">EC2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#azure">Azure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#gce-settings">GCE Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#openstack">OpenStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#vmware">VMware</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#security">Security</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#storage">Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#global-variables">Global Variables</a></li>
@@ -540,10 +549,19 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chef/index.html">Chef Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chef/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#adding-a-chef-server">Adding a Chef Server</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ansible/index.html">Ansible Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-server">Adding an Ansible Tower Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-group">Adding an Ansible Tower Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-bootstrap-configuration">Adding an Ansible Tower Bootstrap Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#attaching-bootstrap-configurations-to-a-server">Attaching Bootstrap Configurations to a Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ansible/index.html#role-scope">Role Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ansible/index.html#farm-role-scope">Farm Role Scope</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a><ul>
@@ -831,7 +849,7 @@
 <p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
 <p>Scalr’s Service Catalog provides users with simple self service capability to launch entire application infrastructures at the click of a button. Entries in the Service Catalog are called “Offerings” and are created by exporting the configuration of a Farm (the “Farm Template”), including all of it’s Farm Roles and linked Cloud Services. Users can request to create an Application from the Service Catalogue Offering and then manage (launch, terminate, delete) that application to suit their requirements.</p>
 <p>Applications launched from the Service Catalog are subject to the <a class="reference internal" href="../sec_comp/policies.html#policy-engine"><span class="std std-ref">Governance Policies</span></a> of the Account they run under, in the same way as Farms are.</p>
-<p>The Farm Template is a Service Catalog offerings is typically customised to give users some choices over the deployment of their applications (subject to any Policy constraints). This can include choosing instance types, networks, storage options and even choosing which Cloud to deploy in.</p>
+<p>The Farm Template in a Service Catalog offering is typically customised to give users some choices over the deployment of their applications (subject to any Policy constraints). This can include choosing instance types, networks, storage options and even choosing which Cloud to deploy in.</p>
 <p>This page covers all aspects of creating, customising and managing Service Catalog offerings. End users who simply want to use the Service Catalog to deploy applications should refer to <a class="reference internal" href="using_service_catalog.html#sc-using"><span class="std std-ref">Self Service via the Service Catalog</span></a>.</p>
 <p>The Service Catalog itself is accessed from the Main Menu.</p>
 <a class="reference internal image-reference" href="../_images/sc_menu.png"><img alt="../_images/sc_menu.png" src="../_images/sc_menu.png" style="width: 389.6px; height: 231.20000000000002px;" /></a>
@@ -860,7 +878,7 @@ The Farm Template is also presented for editing which is covered in <a class="re
 The other sections of the template define the components of the Application, their static values such as the role to be used, and the configurable values such as cloud location, networks etc. Where values are provided they are generally the default values or the only value allowed. This varies from field to field (See “Farm Template Parameter Reference”). The values available to chose from when requesting an application are only constrained if there are policies in place and/or if <code class="docutils literal notranslate"><span class="pre">_meta</span></code> has a corresponding entry.</p>
 <div class="section" id="simple-template-example">
 <h2>Simple Template Example<a class="headerlink" href="#simple-template-example" title="Permalink to this headline">¶</a></h2>
-<p>This is an example of as Farm Template that contains a single Farm Role, a Global Variable, Orchestration Rules and Storage configuration.
+<p>This is an example of a Farm Template that contains a single Farm Role, a Global Variable, Orchestration Rules and Storage configuration.
 This template is constrained to AWS via the Role parameter <code class="docutils literal notranslate"><span class="pre">&quot;cloudPlatform&quot;:</span> <span class="pre">&quot;ec2&quot;</span></code> but it does allow selection of the Cloud Location as there are no restrictions in <code class="docutils literal notranslate"><span class="pre">_meta</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;cloudLocation&quot;:</span> <span class="pre">&quot;us-east-1&quot;</span></code> only sets the default value.</p>
 <p>Templates will cause the end user to be prompted for certain mandatory inputs under a variety of circumstances.</p>
 <ul class="simple">
@@ -1138,7 +1156,7 @@ This template is constrained to AWS via the Role parameter <code class="docutils
              &quot;id&quot;: &quot;&quot;
 </pre></div>
 </div>
-<p>In addition it us necessary to remove all the details from <code class="docutils literal notranslate"><span class="pre">networking:</span> <span class="pre">[]</span></code> and <code class="docutils literal notranslate"><span class="pre">storage:</span> <span class="pre">[]</span></code>.</p>
+<p>In addition it is necessary to remove all the details from <code class="docutils literal notranslate"><span class="pre">networking:</span> <span class="pre">[]</span></code> and <code class="docutils literal notranslate"><span class="pre">storage:</span> <span class="pre">[]</span></code>.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
  <span class="nt">&quot;_meta&quot;</span><span class="p">:</span> <span class="p">{</span>
      <span class="nt">&quot;schema_version&quot;</span><span class="p">:</span> <span class="s2">&quot;v1beta0-7.11.0&quot;</span>
@@ -1214,8 +1232,8 @@ This template is constrained to AWS via the Role parameter <code class="docutils
 </div>
 <div class="section" id="publishing-and-promoting-service-catalog-offerings">
 <h1>Publishing and Promoting Service Catalog Offerings<a class="headerlink" href="#publishing-and-promoting-service-catalog-offerings" title="Permalink to this headline">¶</a></h1>
-<p>Once the necessary details have been entered, and any customisations have been completed the Offering can be published by clicking YES <a class="reference internal" href="../_images/publish.png"><img alt="PUB" src="../_images/publish.png" style="width: 174.0px; height: 38.4px;" /></a> and saving the offering. Service Catalog offerings can optionally be grouped into Categories to help users with selection. Categories can be created by following the main menu “Service Catalog” –&gt; “Categories”. You can custom pricing for the service catalog offering.</p>
-<p>Service Catalog offerings can also be promoted to higher scopes to make them more widely available by clicking on the Promote <a class="reference internal" href="../_images/promote1.png"><img alt="PROMOTE" src="../_images/promote1.png" style="width: 50.400000000000006px; height: 36.800000000000004px;" /></a> button. When an offering is promoted to Account scope it will become available to all Environments in that Account, and when prompted to Scalr scope it becomes available to ALL Environments. It is therefore essential that the Farm Template is configured to work in all Environments and that the Environments themselves have the necessary Roles, Scripts, Cloud Crednetials etc in place to support the Service Catalog offering. If any discrepancies exist between the Farm Template and the Environment at the time a user requests an Application they will see errors and thew application will fail to create.</p>
+<p>Once the necessary details have been entered, and any customisations have been completed the Offering can be published by clicking YES <a class="reference internal" href="../_images/publish.png"><img alt="PUB" src="../_images/publish.png" style="width: 174.0px; height: 38.4px;" /></a> and saving the offering. Service Catalog offerings can optionally be grouped into Categories to help users with selection. Categories can be created by following the main menu “Service Catalog” –&gt; “Categories”. You can also set custom pricing for the service catalog offering.</p>
+<p>Service Catalog offerings can also be promoted to higher scopes to make them more widely available by clicking on the Promote <a class="reference internal" href="../_images/promote1.png"><img alt="PROMOTE" src="../_images/promote1.png" style="width: 50.400000000000006px; height: 36.800000000000004px;" /></a> button. When an offering is promoted to Account scope it will become available to all Environments in that Account, and when prompted to Scalr scope it becomes available to ALL Environments. It is therefore essential that the Farm Template is configured to work in all Environments and that the Environments themselves have the necessary Roles, Scripts, Cloud Credentials etc in place to support the Service Catalog offering. If any discrepancies exist between the Farm Template and the Environment at the time a user requests an Application they will see errors and the application will fail to create.</p>
 </div>
 
 
@@ -1274,7 +1292,10 @@ This template is constrained to AWS via the Role parameter <code class="docutils
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {

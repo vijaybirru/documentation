@@ -104,6 +104,8 @@ Ruby:
 
 .. _gvi:
 
+.. _gv_interpolation:
+
 Global Variable Interpolation
 -----------------------------
 

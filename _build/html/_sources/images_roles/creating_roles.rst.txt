@@ -138,15 +138,30 @@ Chef in Roles
 
 Chef Servers can be configured at |SCALR| or |ACCOUNT| scope to be used as means to bootstrap servers. See :ref:`chef` for more details.
 
-If a Chef server is configured at the or above the scope for the Role, the tab will be available on the Role configuration screen. This option allows you to enable Chef Bootstrap for the Role and define either a Chef Server or Chef Solo Cookbook to be used.
+.. chef_roles_start
 
-.. |CHEF1| Image:: Images/role_chef1.png
+If a Chef server is configured at the or above the scope for the Role, the tab will be available on the Role configuration screen. This option allows you to enable Chef Bootstrap for the Role and define either a Chef Server or Chef Solo Cookbook to be used. Within here you can add Chef Roles, Runlists, Cookbooks, and more. All Farm Roles that use this role will inherit the configuration. To add Chef to a role, you must click on the gear icon under Bootstrap Settings in the Roles page and enable Chef:
+
+.. image:: /images_roles/images/role_chef3.png
+           :scale: 90%
+
+Once that is enabled you will then be able to click on the Chef tab on the bottom left of the page which will bring up the pages below.
+
+.. |CHEF1| Image:: /images_roles/images/role_chef1.png
            :scale: 50%
 
-.. |CHEF2| Image:: Images/role_chef2.png
+.. |CHEF2| Image:: /images_roles/images/role_chef2.png
            :scale: 50%
 
-|CHEF1| |CHEF2|
+Chef Server:
+
+|CHEF1|
+
+Chef Solo:
+
+|CHEF2|
+
+.. chef_roles_end
 
 Role Permissions
 ================

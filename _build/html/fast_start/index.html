@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -349,6 +350,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../farms/index.html#advanced-configuration">Advanced Configuration</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#cloud-provider-tabs">Cloud Provider Tabs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#ec2">EC2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#azure">Azure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#gce-settings">GCE Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#openstack">OpenStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#vmware">VMware</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#security">Security</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#storage">Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#global-variables">Global Variables</a></li>
@@ -392,7 +401,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#simple-template-example">Simple Template Example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#enabling-options-for-end-users">Enabling Options for End Users</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#customising-for-multi-cloud">Customising for Multi-Cloud</a></li>
-<<<<<<< Updated upstream
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#publishing-and-promoting-service-catalog-offerings">Publishing and Promoting Service Catalog Offerings</a></li>
@@ -401,16 +409,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#managing-applications">Managing Applications</a></li>
 </ul>
 </li>
-=======
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#publishing-and-promoting-service-catalog-offerings">Publishing and Promoting Service Catalog Offerings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/using_service_catalog.html">Self Service via the Service Catalog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#requesting-applications">Requesting Applications</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#managing-applications">Managing Applications</a></li>
-</ul>
-</li>
->>>>>>> Stashed changes
 <li class="toctree-l1"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html">Advanced Farm Templates</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Organizational Management</span></p>
@@ -551,10 +549,19 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chef/index.html">Chef Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chef/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#adding-a-chef-server">Adding a Chef Server</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ansible/index.html">Ansible Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-server">Adding an Ansible Tower Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-group">Adding an Ansible Tower Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-bootstrap-configuration">Adding an Ansible Tower Bootstrap Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#attaching-bootstrap-configurations-to-a-server">Attaching Bootstrap Configurations to a Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ansible/index.html#role-scope">Role Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ansible/index.html#farm-role-scope">Farm Role Scope</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a><ul>
@@ -873,11 +880,7 @@
 <li>Click on “ADD FARM ROLE”, the click on “Base”. Select a small Instance Type and adjust the network settings as required. Your Admin can advise you on which network to use. When ready click on “ADD TO FARM”.</li>
 </ol>
 <a class="reference internal image-reference" href="../_images/farm_3.png"><img alt="../_images/farm_3.png" src="../_images/farm_3.png" style="width: 1040.2px; height: 495.59999999999997px;" /></a>
-<<<<<<< Updated upstream
 <p>Now Click on the arrow next <a class="reference internal" href="../_images/save_launch1.png"><img alt="SAVL" src="../_images/save_launch1.png" style="width: 108.89999999999999px; height: 28.2px;" /></a> and then click “SAVE FARM”. The farm will be saved and you will be shown a list of Farms. We will comeback to the Farm in a moment.</p>
-=======
-<p>Now Click on the arrow next <a class="reference internal" href="../_images/save_launch.png"><img alt="SAVL" src="../_images/save_launch.png" style="width: 108.89999999999999px; height: 28.2px;" /></a> and then click “SAVE FARM”. The farm will be saved and you will be shown a list of Farms. We will comeback to the Farm in a moment.</p>
->>>>>>> Stashed changes
 <p>We now need to create scripts to configure the servers in the Farm.</p>
 <p>Script 1 - Install Apache</p>
 <ol class="arabic simple" start="4">
@@ -915,22 +918,14 @@ apt-get install -y apache2<span class="p">;</span> service apache2 start
 <ol class="arabic simple" start="10">
 <li>Now click on “GLOBAL VARIABLES” and create a new variable called CUSTOM_MESSAGE with the value “Hello World”.</li>
 </ol>
-<<<<<<< Updated upstream
 <a class="reference internal image-reference" href="../_images/gv.png"><img alt="../_images/gv.png" src="../_images/gv.png" style="width: 743.0px; height: 299.0px;" /></a>
-=======
-<a class="reference internal image-reference" href="../_images/gv4.png"><img alt="../_images/gv4.png" src="../_images/gv4.png" style="width: 743.0px; height: 299.0px;" /></a>
->>>>>>> Stashed changes
 <ol class="arabic simple" start="11">
 <li>Finally we need to make sure you can access the web site via port 80. Click on Security -&gt; ADD SECURITY GROUPS -&gt; NEW SECURITY GROUPS and create a new group with a rule that allows TCP Port 80. Be sure to Add the group. <strong>Now SAVE the farm</strong>.</li>
 </ol>
 <a class="reference internal image-reference" href="../_images/port80.png"><img alt="../_images/port80.png" src="../_images/port80.png" style="width: 743.0px; height: 128.5px;" /></a>
 <p>Ok, lets launch…!</p>
 <ol class="arabic simple" start="12">
-<<<<<<< Updated upstream
 <li>In the farm list click the launch <a class="reference internal" href="../_images/launch.png"><img alt="LAUNCH" src="../_images/launch.png" style="width: 27.0px; height: 24.599999999999998px;" /></a> and confirm by clicking “LAUNCH”. Then click on the Server link <a class="reference internal" href="../_images/servers_link1.png"><img alt="SVRL" src="../_images/servers_link1.png" style="width: 45.3px; height: 27.599999999999998px;" /></a> in the farm list to watch your server launch.</li>
-=======
-<li>In the farm list click the launch <a class="reference internal" href="../_images/launch.png"><img alt="LAUNCH" src="../_images/launch.png" style="width: 27.0px; height: 24.599999999999998px;" /></a> and confirm by clicking “LAUNCH”. Then click on the Server link <a class="reference internal" href="../_images/servers_link.png"><img alt="SVRL" src="../_images/servers_link.png" style="width: 45.3px; height: 27.599999999999998px;" /></a> in the farm list to watch your server launch.</li>
->>>>>>> Stashed changes
 </ol>
 <p>After a while the Server will transition through “Initializing” to “Running”. When it is running grab the Public IP and browse to it in your browser of choice. You should see this.</p>
 <a class="reference internal image-reference" href="../_images/web.png"><img alt="../_images/web.png" src="../_images/web.png" style="width: 283.5px; height: 121.0px;" /></a>
@@ -998,7 +993,10 @@ apt-get install -y apache2<span class="p">;</span> service apache2 start
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {

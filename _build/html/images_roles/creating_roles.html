@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -349,6 +350,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../farms/index.html#advanced-configuration">Advanced Configuration</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#cloud-provider-tabs">Cloud Provider Tabs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#ec2">EC2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#azure">Azure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#gce-settings">GCE Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#openstack">OpenStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#vmware">VMware</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#security">Security</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#storage">Storage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../farms/index.html#global-variables">Global Variables</a></li>
@@ -540,6 +549,13 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../chef/index.html">Chef Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../chef/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#adding-a-chef-server">Adding a Chef Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#using-chef-with-scalr">Using Chef with Scalr</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chef/index.html#role-scope">Role Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chef/index.html#farm-role-scope">Farm Role Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ansible/index.html">Ansible Integration</a><ul>
@@ -1215,8 +1231,13 @@ You may also need to set the value of Global Variables that have been defined at
 <div class="section" id="chef-in-roles">
 <span id="bootstrap-chef"></span><h1>Chef in Roles<a class="headerlink" href="#chef-in-roles" title="Permalink to this headline">¶</a></h1>
 <p>Chef Servers can be configured at Scalr or Account scope to be used as means to bootstrap servers. See <a class="reference internal" href="../chef/index.html#chef"><span class="std std-ref">Chef Integration</span></a> for more details.</p>
-<p>If a Chef server is configured at the or above the scope for the Role, the tab will be available on the Role configuration screen. This option allows you to enable Chef Bootstrap for the Role and define either a Chef Server or Chef Solo Cookbook to be used.</p>
-<p><a class="reference internal" href="../_images/role_chef1.png"><img alt="CHEF1" src="../_images/role_chef1.png" style="width: 467.5px; height: 487.0px;" /></a> <a class="reference internal" href="../_images/role_chef2.png"><img alt="CHEF2" src="../_images/role_chef2.png" style="width: 467.5px; height: 487.0px;" /></a></p>
+<p>If a Chef server is configured at the or above the scope for the Role, the tab will be available on the Role configuration screen. This option allows you to enable Chef Bootstrap for the Role and define either a Chef Server or Chef Solo Cookbook to be used. Within here you can add Chef Roles, Runlists, Cookbooks, and more. All Farm Roles that use this role will inherit the configuration. To add Chef to a role, you must click on the gear icon under Bootstrap Settings in the Roles page and enable Chef:</p>
+<a class="reference internal image-reference" href="../_images/role_chef3.png"><img alt="../_images/role_chef3.png" src="../_images/role_chef3.png" style="width: 271.8px; height: 65.7px;" /></a>
+<p>Once that is enabled you will then be able to click on the Chef tab on the bottom left of the page which will bring up the pages below.</p>
+<p>Chef Server:</p>
+<p><a class="reference internal" href="../_images/role_chef11.png"><img alt="CHEF1" src="../_images/role_chef11.png" style="width: 638.5px; height: 382.0px;" /></a></p>
+<p>Chef Solo:</p>
+<p><a class="reference internal" href="../_images/role_chef21.png"><img alt="CHEF2" src="../_images/role_chef21.png" style="width: 644.5px; height: 374.5px;" /></a></p>
 </div>
 <div class="section" id="role-permissions">
 <h1>Role Permissions<a class="headerlink" href="#role-permissions" title="Permalink to this headline">¶</a></h1>
@@ -1281,7 +1302,10 @@ You may also need to set the value of Global Variables that have been defined at
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {
