@@ -272,6 +272,6 @@ Webhooks, Endpoints and External Integrations
 ---------------------------------------------
 |SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV|
 
-Scalr supports integration with external systems through the definition of Webhooks and Endpoints. Endpoints indentify external systems that support inbound Webhook payloads. Typically these are systems such as IPAM systems to allocate and mange IP addresses, Config Management systems to register infrastructure and allocate hostnames, or Service Management systems to provide approval mechanisms.
+Scalr supports integration with external systems through the definition of Webhooks and Endpoints. Endpoints identify external systems that support inbound Webhook payloads. Typically these are systems such as IPAM systems to allocate and mange IP addresses, Config Management systems to register infrastructure and allocate hostnames, or Service Management systems to provide approval mechanisms.
 
 Endpoints and associated with Webhooks in Scalr. The Webhook defines the the Farms and Events for which the Webhook will be triggered and the user data that is passed to the external system. Webhooks defined at the |SCALR| or |ACCOUNT| scopes will apply to all Farms in the lower scopes.

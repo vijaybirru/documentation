@@ -53,6 +53,7 @@ You will now be presented with the New Role screen where you configure all the R
    Use Cloud-Init,No,This option only appears if "Use Scalr-Agent" is disabled. Enable this option to have Scalr work with Cloud-Init to configure servers. Once enabled the Configure button |CONFIGURE| will appear to enable you to set the Cloud-Int Config
    Images,Yes,You must link the Role to at least one Image (see below). When you click on ADD IMAGES you will only see Images with the same OS Family/Version that have Scalarizr or CloudInit installed.
 
+
 .. note:: Built in Automations other than Chef will be deprecated in future release of Scalr. They will continue to work for existing roles but should now be replaced by user configured Orchestration Rules.
 
 When adding Images to Roles you need to be aware of the different ways Images are configured in each cloud.

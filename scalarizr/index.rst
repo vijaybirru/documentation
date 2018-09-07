@@ -118,7 +118,7 @@ The following are the Scalarizr log locations:
 Scalarizr Administrative Interface
 ==================================
 
-Scalarizr provides a command line interface (szradm) allowing users to perform a variety of tasks inluding:
+Scalarizr provides a command line interface (szradm) allowing users to perform a variety of tasks including:
 
 * Firing events
 * Querying environments information about the server or farm.
@@ -159,7 +159,7 @@ queryenv list-roles
 
 The ListRoles QueryEnv call returns a list of the Farm Roles and associated server(s) that make up the Farm the calling Server belongs to.
 
-The list retuned by ListRoles may be filtered using the following parameters:
+The list returned by ListRoles may be filtered using the following parameters:
 
 .. csv-table::
    :header-rows: 1

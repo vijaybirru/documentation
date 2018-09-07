@@ -77,7 +77,7 @@ Click |ATF| and then click on the Farm Role name on the left hand panel to conti
 
 There are several tabs available to continue the configuration. Some tabs are dependent on other aspects of the configuration.
 
-* DATABASE: Only available for Roles from the Database catagory
+* DATABASE: Only available for Roles from the Database category
 * BOOTSTRAP WITH ...: Only available if Chef/Ansible Tower is configured for the |ENVIRONMENT|
 * Cloud: A Tab for the specified cloud
 
@@ -144,7 +144,7 @@ There are two possible hostname sources: a hostname template or an external sour
    :widths: 15,85
 
    Template,"Enter the hostname in the text field, and Scalr will assign that hostname to your Servers. You may use :ref:`gvi` in the Hostname template. If the template is left blank, Scalr will use the cloud platform's default hostname, or the Scalr server ID if the cloud platform does not provide a default."
-   External,"The :ref:`Webhook and Integartion Endpoint <webhooks>` must be created first. Before launching a Server, Scalr will make a call to the selected webhook to retrieve a hostname. This webhook call is made before all the other events related to the Server (BeforeInstanceLaunch, HostInit, etc.) are triggered."
+   External,"The :ref:`Webhook and Integration Endpoint <webhooks>` must be created first. Before launching a Server, Scalr will make a call to the selected webhook to retrieve a hostname. This webhook call is made before all the other events related to the Server (BeforeInstanceLaunch, HostInit, etc.) are triggered."
 
 **Load Balancer**. You must link a Load Balancer Service to the Farm and associate the LB with the Farm Role via that interface. The Network tab will show the linked LB once this is done. See :ref:`cloud_services` for more details.
 

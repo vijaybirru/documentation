@@ -200,7 +200,7 @@ Migrate Servers from Farm Role to Farm Role
 
 After importing or building servers directly in Scalr, you may have a need to move the server to a new farm role. This can be done via command line tools if you have access to the Scalr server.
 
-There are a few prereqreuisites before migrating servers:
+There are a few prerequisites before migrating servers:
 
 * Servers must be agentless to migrate.
 * The Environment Id, Cloud Platform, CloudLocation, and OS should be the same for the farm role source and destination.

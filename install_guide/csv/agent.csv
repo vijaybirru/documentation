@@ -1,9 +1,9 @@
 Parameter,Description,Type,Example value(s),Default value
-scalr. scalarizr_update.mode,The update mode for Scalairzr. client uses update.scalr.net for Scalarizr to discover new updates. solo uses a Scalr cronjob to notify Scalarizr of new updates.,String,"client, ""solo""",client
+scalr. scalarizr_update.mode,The update mode for Scalarizr. client uses update.scalr.net for Scalarizr to discover new updates. solo uses a Scalr cronjob to notify Scalarizr of new updates.,String,"client, ""solo""",client
 scalr.scalarizr_update.ssl_verify_peer,Sets SSL verification to true or false,Boolean,"true, ""false""",TRUE
 scalr.scalarizr_update.service.update_rate,Sets the update rate for instances. By default it's 900 servers / hour.,Integer,90,900
 scalr. scalarizr_update.default_repo,"The default repository to use for Scalarizr. Repositories must be defined as sub-keys of the key scalr. scalarizr_update.repos . The default repository must exist in the repos list. By default two repositories exist in scalr. scalarizr_update.repos , named stable and latest . They point to repo.scalr.net . They will be overridden if you specify a repo with the same name in your configuration. Users can override this setting at the Farm or Farm Role scope.",String,"latest, ""stable""",stable
 scalr. scalarizr_update.repos.[repo_name]. deb_repo_url,The URL for this repository's Debian Scalarizr packages.,String, http://repo.scalr.net/apt-plain stable/,
 scalr. scalarizr_update.repos.[repo_name]. rpm_repo_url,The URL for this repository's RPM Scalarizr packages.,String, http://repo.scalr.net/rpm/stable/rhel/$releasever/$basearch,
 scalr. scalarizr_update.repos.[repo_name]. win_repo_url,The URL for this repository's Windows Scalarizr packages.,String, http://repo.scalr.net/win/stable ,
-scalr.scalarizr_update.use_proxy,Boolean,"true, ""false""",flase,
+scalr.scalarizr_update.use_proxy,Boolean,"true, ""false""",false,

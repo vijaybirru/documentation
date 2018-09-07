@@ -48,13 +48,13 @@ Configure Virtual Private Cloud (VPC)
 
 .. |vpc_link| raw:: html
 
-   <a href="hhttps://wiki.openstack.org/wiki/Blueprint-VPC" target="_blank">Blueprint VPC</a>
+   <a href="https://wiki.openstack.org/wiki/Blueprint-VPC" target="_blank">Blueprint VPC</a>
 
 .. |peer_link| raw:: html
 
    <a href="https://docs.openstack.org/networking-bgpvpn/latest/" target="_blank">Neutron BGP VPN Interconnection Documentation</a>
 
-You have the option to create or configure an OpenStack VPC to work with Scalr. This isnt strictly required but please refer to |vpc_link| |NEWWIN| for more information.
+You have the option to create or configure an OpenStack VPC to work with Scalr. This isn't strictly required but please refer to |vpc_link| |NEWWIN| for more information.
 
 Configure Instance Connection Policy
 ------------------------------------

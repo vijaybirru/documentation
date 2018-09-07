@@ -218,7 +218,7 @@ Parameterized deployments are useful for use cases such as deploying a specific 
 .. image:: images/Screenshot-10.jpg
    :scale: 90%
 
-* Terminate your Webapp nodes manually so that new instances will be provisioned with our new configuration.  Alternatively, manually execute the Webapp Depoly script on your Webapp servers.
+* Terminate your Webapp nodes manually so that new instances will be provisioned with our new configuration.  Alternatively, manually execute the Webapp Deploy script on your Webapp servers.
 * Test to see if the new application version is deployed.
 
 .. image:: images/Application-Screenshot-2.jpg
