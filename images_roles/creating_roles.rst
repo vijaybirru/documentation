@@ -146,6 +146,11 @@ If a Chef server is configured at the or above the scope for the Role, the tab w
 .. image:: /images_roles/images/role_chef3.png
            :scale: 90%
 
+Then select Chef when the Configure Scalr Automation pop up appears:
+
+.. image:: /images_roles/images/role_chef4.png
+           :scale: 30%
+
 Once that is enabled you will then be able to click on the Chef tab on the bottom left of the page which will bring up the pages below.
 
 .. |CHEF1| Image:: /images_roles/images/role_chef1.png
