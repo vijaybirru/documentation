@@ -9,6 +9,7 @@
 
 .wy-nav-content {
     max-width: none;
+    overflow-y:scroll;
 }
 
 /* override table no-wrap */

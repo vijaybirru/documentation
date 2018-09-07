@@ -19,6 +19,13 @@ Scalr Documentation!
 
 .. toctree::
    :maxdepth: 3
+   :caption: Cloud Configuration and Services
+
+   clouds/index
+   clouds/cloud_services
+
+.. toctree::
+   :maxdepth: 3
    :caption: Getting Started
 
    gs_admins/index
@@ -48,11 +55,19 @@ Scalr Documentation!
    farms/index
    farms/launch
    farms/ssh
-   farms/execution
    farms/storage
-   farms/auto_dicscovery
+   farms/auto_discovery
    farms/link_cloud_services
    farms/service_catalog
+   farms/logs
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Self Service
+
+   service_catalog/offerings
+   service_catalog/using_service_catalog
+   service_catalog/advanced_farm_templates
 
 .. toctree::
    :maxdepth: 3
@@ -85,7 +100,7 @@ Scalr Documentation!
 
 .. toctree::
    :maxdepth: 3
-   :caption: Configuration Management in Scalr
+   :caption: Configuration Management
 
    scripts/index
    gvs/index
@@ -98,20 +113,22 @@ Scalr Documentation!
    :caption: Scaling Workloads
 
    scaling/index
-   scaling/manual
    scaling/auto
+   scaling/manual
 
 .. toctree::
    :maxdepth: 3
    :caption: Importing Cloud Infrastructure
 
    discovery/index
+   kubernetes/index
 
 .. toctree::
    :maxdepth: 3
    :caption: Alternative Interfaces
 
    api/index
+   api/cli
    api/csg
 
 .. toctree::
@@ -144,3 +161,5 @@ Scalr Documentation!
    :caption: Reference Section
 
    reference/index
+   reference/events
+   reference/cloud_services

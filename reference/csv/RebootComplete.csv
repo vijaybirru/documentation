@@ -1,0 +1,4 @@
+"| **Firing Sequence**|","* When a server finishes rebooting* Does **not** fire on first boot! To fire Orchestration Rules on first boot, view the `HostInit Event`_, `BeforeHostUp Event`_, and `HostUp Event`_."
+| **Scalr Event Actions**,None
+| **When to Use**,"* To perform post-boot actions without having to hardcode them into your cloud image's init.d, such as remounting some network storage to the filesystem."
+| **Global Variables**,None

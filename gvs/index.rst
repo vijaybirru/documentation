@@ -30,20 +30,17 @@ When accessing a Global Variable, Scalr follows the following algorithm:
 Creating Global Variables
 -------------------------
 
-.. |SCALR_ICON| image:: images/scalr_icon_env.png
-   :scale: 70%
-
-Global Variables can be created, updated, edited, or deleted at the |Scalr|, |Account|, |Environment|, Farm, or Farm Role scopes. To create a Global Variable at the |Scalr|, |Account|, or |Environment| scopes you can click on the Scalr icon on the top left: |SCALR_ICON|
+Global Variables can be created, updated, edited, or deleted at the |SCALR|, |ACCOUNT|, |ENVIRONMENT|, Farm, or Farm Role scopes. To create a Global Variable at the |Scalr|, |Account|, or |Environment| scopes you can click on the Scalr icon on the top left: |MENU_ENV|
 
 .. |GV| image:: images/gv.png
-   :scale: 70%
+   :scale: 40%
 
 Then click on Global Variables: |GV|
 
 You have a few options when creating a Global Variable:
 
 .. image:: images/new_gv.png
-   :scale: 70%
+   :scale: 50%
 
 .. |LOCK| image:: images/locked.png
    :scale: 55%
@@ -107,6 +104,8 @@ Ruby:
 
 .. _gvi:
 
+.. _gv_interpolation:
+
 Global Variable Interpolation
 -----------------------------
 
@@ -118,12 +117,12 @@ Using Global Variables in Policies
 Another powerful use of Global Variables is to use them in policy. A common use case is to use them in conjunction with tagging or naming policies. To do this, go to Policy at the |Account| scope:
 
 .. image:: images/policy_account.png
-   :scale: 70%
+   :scale: 50%
 
 In the example below, a tagging policy is created in the cloud provider which will have a tag name of "scalr_tag" and the tag value will be the value of a Global Variable named "MyGlobalVariable". Based on the brackets {} being around the value, Scalr knows to pull that as a Global Variable and insert that value into the cloud provider.
 
 .. image:: images/gv_tag_policy.png
-   :scale: 70%
+   :scale: 50%
 
 This same concept can be used for other policies that allow for free form input, like hostname and instance name policies.
 

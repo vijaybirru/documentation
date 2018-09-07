@@ -1,5 +1,7 @@
 .. include:: ../GLOBAL.rst
 
+.. _advanced_logging:
+
 Enable Advanced Logging
 ========================
 

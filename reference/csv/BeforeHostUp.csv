@@ -1,0 +1,5 @@
+"| **Firing Sequence**|","* When a Server is booting up but just before firing the `HostUp Event`_.* Scalr guarantees that Blocking Scripts configured to execute on BeforeHostUp will terminate before HostUp fires (See: Execution Mode in :ref:`scripts`). "
+| **Scalr Event Actions**,None
+"| **When to Use**||","* For bootstrapping and setup actions, such as installing software, or configuring applications.* In most cases, use Blocking Orchestration Rules with BeforeHostUp. * As a general rule, non-blocking Scripts should probably use the HostUp Event instead."
+**Global Variables**,No Event Scope Global Variables
+"| **Flagging Servers as Failed**||||","| Scalr gives you the option to place Servers in Failed State when an Blocking Orchestration Rule triggered by the BeforeHostUp Event fails (i.e. the Script exits with a non-zero exit code). | This allows you to ensure that Servers that failed to initialize properly are placed in Failed State and not in Running State.| When a blocking script failes a HostInitFailed Event is raised and the HostUp Event is not raised.| This option is controlled in the :ref:`fr_advanced` tab of Farm Roles."

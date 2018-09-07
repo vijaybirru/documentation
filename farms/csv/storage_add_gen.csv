@@ -1,0 +1,7 @@
+Option,Description
+Storage Engine,Storage type to attach. View Cloud specific pages for more detail.
+Filesystem,Filesystem to use with the storage (Scalr will automatically format the storage).
+Reuse,If you enable this option storage from Terminated Servers will be reused when new Servers are provisioned.
+Recreate missing volumes,"If you enable this option, then missing Storage will be re-created by Scalr when Servers are launched. If you do not enable this option, your instances will enter Failed State if Storage is missing. Missing storage is defined as persistent storage (i.e. devices) that were provisioned by Scalr and subsequently deleted through your Cloud Console's or API. When launching Servers for the first time, no storage will be available, and Scalr will automatically provision what's needed, regardless of this setting."
+Automatically mount device,"If you enable this option, then Scalr will automatically mount the storage to your instance's filesystem, to the path that you indicated."
+Volume Settings,Cloud Specific Volume configuration. View subpages for more detail

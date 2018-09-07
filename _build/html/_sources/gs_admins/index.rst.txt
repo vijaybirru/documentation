@@ -31,7 +31,7 @@ An Administrator's role can vary from organisation to organisation and admin tas
      * Scripts, Global Variables and Orchestration rules.
      * Images and roles
 
-All tasks can be performed by clicking on the appropriate on the main menu button |MENU_SCALR| |MENU_ACC|.
+All tasks can be performed by clicking on the appropriate main menu button |MENU_SCALR| |MENU_ACC|.
 
 The table below describes the core tasks that Admins must perform in order for End Users to be able to login, configure farms and deploy cloud infrastructure.
 This is NOT a comprehensive list of all features and functionality available in Scalr
@@ -57,7 +57,7 @@ Create |ACCOUNTS|                          |LS|             Accounts            
 Set Up Users                               |LS| |LA|        Users                 | If users are NOT being external authenticated via LDAP or SAML they must be created in Scalr.
 
                                                                                   .. note:: Users are unique throughout Scalr and can have access to multiple accounts. They can be created at |SCALR| or |ACCOUNT| scope but it is recommended that all User and Team management is done at |ACCOUNT| scope. The exception being that only the Scalr admin can assign Global and Cost Manager Admin privileges to a user.
-                                                                                  
+
                                                                                   | See :ref:`teams_users`.
 Configure ACLs                             |LA|             ACL                   | Scalr comes with 3 pre-configured ACL's. You can use these or create your own to match your requirements.
                                                                                   | See :ref:`access_control`.
@@ -71,7 +71,7 @@ Create Environments                        |LA|             Environments        
                                                                                   | Environments can also be linked to Policy Groups and Resource Quotas if they are being used.
                                                                                   | See :ref:`environments`.
 Register Images                            |LS| |LA| |LE|   Images                | Images must be registered in Scalr before they can be used in Roles. This can be simple manual registration or Images can be created from existing cloud servers.
-                                                                                  | See :ref:`register_images` and :ref:`images_from_servers`.
+                                                                                  | See :ref:`registering_images` and :ref:`images_from_servers`.
 Configure Roles                            |LS| |LA| |LE|   Roles                 | Roles associated with Images must be created and configured with any required Orchestration capabilities. This can be done from scratch or it can be done by importing existing cloud servers as new Images and Roles.
                                                                                   | See :ref:`roles` and :ref:`images_from_servers`.
 =========================================  ================ ===================== ===========

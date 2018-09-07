@@ -1,0 +1,121 @@
+{
+    "_meta": {
+        "schema_version": "v1beta0-7.11.0"
+    },
+    "farm": {
+        "name": "Single Application Server",
+        "description": "",
+        "project": {
+            "id": "30c59dba-fc9b-4d0f-83ec-4b5043b12f72"
+        },
+        "timezone": "America\/Denver",
+        "launchOrder": "simultaneous",
+        "variables": []
+    },
+    "roles": [
+        {
+            "alias": "base-ubuntu1404",
+            "role": {
+                "name": "base-ubuntu1404"
+            },
+            "cloudPlatform": "ec2",
+            "cloudLocation": "us-east-1",
+            "availabilityZones": [],
+            "instanceType": {
+                "id": "m3.medium"
+            },
+            "launchIndex": 0,
+            "advancedConfiguration": {
+                "disableAgentIptablesManagement": false,
+                "disableAgentNtpManagement": false,
+                "rebootAfterHostInit": false
+            },
+            "scaling": {
+                "considerSuspendedServers": "running",
+                "enabled": true,
+                "minInstances": null,
+                "maxInstances": 1,
+                "rules": [],
+                "scalingBehavior": "launch-terminate"
+            },
+            "cloudFeatures": {
+                "type": "AwsCloudFeatures",
+                "ebsOptimized": false
+            },
+            "security": {
+                "securityGroups": [
+                    {
+                        "id": "sg-2cb57444"
+                    },
+                    {
+                        "id": "sg-6a769f7c"
+                    },
+                    {
+                        "id": "sg-1a1cea0c"
+                    }
+                ]
+            },
+            "networking": [],
+            "variables": [
+                {
+                    "name": "RequiredVariable",
+                    "value": "ABC"
+                }
+            ],
+            "orchestration": {
+                "rules": [
+                    {
+                        "trigger": {
+                            "event": {
+                                "id": "BeforeHostUp"
+                            },
+                            "triggerType": "SpecificEventTrigger"
+                        },
+                        "target": {
+                            "targetType": "TriggeringServerTarget"
+                        },
+                        "action": {
+                            "actionType": "ScalrScriptAction",
+                            "scriptVersion": {
+                                "script": {
+                                    "name": "Install Application Script"
+                                },
+                                "version": -1
+                            }
+                        },
+                        "timeout": 180,
+                        "runAs": "",
+                        "order": 10,
+                        "blocking": false,
+                        "enabled": true
+                    }
+                ]
+            },
+            "storage": [
+                {
+                    "type": "EphemeralStorageConfiguration",
+                    "mounting": {
+                        "enabled": true,
+                        "fileSystem": "ext3",
+                        "mountPoint": "\/mnt"
+                    },
+                    "template": {
+                        "size": 4,
+                        "name": "ephemeral0"
+                    }
+                },
+                {
+                    "type": "RootStorageConfiguration",
+                    "template": {
+                        "size": 8,
+                        "type": "standard",
+                        "cloudFeatures": {
+                            "type": "AwsStorageTemplateCloudFeatures",
+                            "isEncrypted": false
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

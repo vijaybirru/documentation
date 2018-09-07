@@ -1,0 +1,1585 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Supported Cloud Services and Features &mdash; Scalr 0.01 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Event Descriptions" href="events.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/scalr_logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Scalr Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">Overview of Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#multi-cloud-support">Multi-Cloud Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#high-level-declarative-primitives-vs-low-level-imperative-instructions">High-Level Declarative Primitives vs Low-Level Imperative Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#usable-by-both-developers-and-it">Usable by Both Developers and IT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html#scalr-architecture">Scalr Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/index.html#software-architecture">Software Architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/terminology.html">Concepts and Terminology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scalr-scopes">Scalr Scopes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#login-scopes">Login Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#configuration-scopes">Configuration Scopes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#cloud-credentials">Cloud Credentials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#accounts">Accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#environments">Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#images-and-roles">Images and Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#farms-and-farm-roles">Farms and Farm Roles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../introduction/terminology.html#desired-state-engine">Desired State Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#service-catalog-and-applications">Service Catalog and Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#cost-analytics-manager">Cost Analytics/Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#policy-engine">Policy Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#users-teams-and-access-control">Users, Teams and Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#global-variables">Global Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#orchestration">Orchestration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#scripts">Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/terminology.html#webhooks-endpoints-and-external-integrations">Webhooks, Endpoints and External Integrations</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scalr Server Admin Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../install_guide/index.html">Installation &amp; Upgrades</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install_guide/scalr_server_architecture.html">Scalr Server Architecture and Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#architecture">Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#supported-operating-systems">Supported Operating Systems:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#network-requirements">Network Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_architecture.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../install_guide/scalr_server_installation.html">Scalr Server Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_installation.html#for-deb-based-linux-operating-systems">For DEB-based Linux operating systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_installation.html#for-rpm-based-linux-operating-systems">For RPM-based Linux operating systems</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../install_guide/scalr_server_ha_setup.html">Scalr Server HA Replication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_ha_setup.html#setting-up-replication-for-the-scalr-database">Setting up Replication for the Scalr Database</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html">Scalr Server Maintenance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html#upgrades">Upgrades</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html#automated-upgrades">Automated Upgrades</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html#database-backups">Database Backups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalr_server_maintenance.html#monitoring-best-practices">Monitoring Best Practices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../install_guide/scalarizr_installation.html">Scalarizr Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#scalarizr-functionality">Scalarizr Functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#supported-server-instance-operating-systems">Supported Server/Instance Operating Systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#installing-scalarizr">Installing Scalarizr</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#how-to-install-scalarizr-on-linux-images">How to Install Scalarizr on Linux Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#how-to-install-scalarizr-on-windows-images">How to Install Scalarizr on Windows Images</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#scalarizr-logs">Scalarizr Logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/scalarizr_installation.html#how-to-create-your-own-scalarizr-repo">How to Create Your Own Scalarizr Repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#managing-scalr-integrated-repo-service">Managing Scalr Integrated Repo Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#download-and-set-up-a-custom-repo">Download and Set Up a Custom Repo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../install_guide/scalarizr_installation.html#removing-custom-repo-branches-and-packages">Removing Custom Repo Branches and Packages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../install_guide/advanced_configurations.html">Advanced Configurations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#proxy">Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#ldap">LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#saml">SAML</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#logging">Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#api">API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#agent-update">Agent Update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#vmware">VMware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#uncategorized">Uncategorized</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../extensions/index.html">Extensions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../extensions/ldap.html">Enable LDAP Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/ldap.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../extensions/saml.html">Enable SAML Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/saml.html#integration-with-scalr">Integration with Scalr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/saml.html#configuration">Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../extensions/email.html">Enable Email Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/email.html#configuring-email">Configuring Email</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../extensions/advanced_logging.html">Enable Advanced Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#fluentd-configuration">Fluentd Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#scalr-configuration">Scalr Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../extensions/advanced_logging.html#log-examples">Log Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#agent">Agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#api">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#audit">Audit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../extensions/advanced_logging.html#user">User</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Cloud Configuration and Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clouds/index.html">Cloud Configuration and Credentials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../clouds/connecting_aws.html">Connecting Scalr to AWS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_aws.html#configure-aws-for-scalr">Configure AWS for Scalr</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_aws.html#configure-virtual-private-cloud-vpc">Configure Virtual Private Cloud (VPC)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_aws.html#configure-instance-connection-policy">Configure Instance Connection Policy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_aws.html#configure-detailed-billing">Configure Detailed Billing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_aws.html#configuring-your-aws-iam-user">Configuring your AWS IAM User</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_aws.html#adding-aws-credentials-to-scalr">Adding AWS Credentials to Scalr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_aws.html#validating-the-connection-to-aws">Validating the Connection to AWS</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../clouds/connecting_gcp.html">Connecting Scalr to Google Cloud Platform (GCP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_gcp.html#configure-gcp-for-scalr">Configure GCP for Scalr</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_gcp.html#configure-virtual-private-cloud-vpc">Configure Virtual Private Cloud (VPC)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_gcp.html#configure-instance-connection-policy">Configure Instance Connection Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_gcp.html#adding-gcp-credentials-to-scalr">Adding GCP Credentials to Scalr</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../clouds/connecting_azure.html">Connecting Scalr to Microsoft Azure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_azure.html#configure-azure-for-scalr">Configure Azure for Scalr</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_azure.html#configure-virtual-networks">Configure Virtual Networks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_azure.html#configure-instance-connection-policy">Configure Instance Connection Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_azure.html#adding-azure-credentials-to-scalr">Adding Azure Credentials to Scalr</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_openstack.html#configuring-openstack-for-scalr">Configuring OpenStack for Scalr</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_openstack.html#configure-openstack-api-access">Configure OpenStack API Access</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../clouds/connecting_openstack.html#configure-virtual-private-cloud-vpc">Configure Virtual Private Cloud (VPC)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_openstack.html#configure-instance-connection-policy">Configure Instance Connection Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_openstack.html#adding-openstack-credentials-to-scalr">Adding OpenStack Credentials to Scalr</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../clouds/connecting_vmware.html">Connecting Scalr to VMWare vSphere</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_vmware.html#configure-vmware-for-scalr">Configure VMWare for Scalr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_vmware.html#configure-instance-connection-policy">Configure Instance Connection Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_vmware.html#adding-vmware-credentials-to-scalr">Adding VMWare Credentials to Scalr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_vmware.html#validating-the-connection-to-vmware">Validating the Connection to VMWare</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../clouds/cloud_services.html">Cloud Services and Features in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../clouds/cloud_services.html#cloud-specific-configuring">Cloud Specific Configuring</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gs_admins/index.html">Getting Started for Admins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#role-of-an-administrator">Role of an Administrator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gs_users/index.html">Getting Started for End Users</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#types-roles-of-end-users">Types/Roles of End users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#navigating-the-user-interface">Navigating the User Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#farms-and-service-catalog">Farms and Service Catalog</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#working-with-applications">Working with Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../navigating/index.html">Navigating the User Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#scope-differences">Scope Differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#ui-overview">UI Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#dashboards">Dashboards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../navigating/index.html#dashboard-configuration">Dashboard Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../navigating/index.html#available-widgets">Available Widgets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#main-menu">Main Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#bookmarks-bar">Bookmarks Bar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#profile-menu">Profile Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#environments-menu">Environments Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#list-views">List Views</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Farm Fast Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fast_start/index.html">Building a Simple Farm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../fast_start/index.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fast_start/index.html#fast-farm-build">Fast Farm Build</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Cloud Images and Templates</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/index.html">Images and Roles in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/index.html#cloning-promoting-and-using">Cloning, Promoting and Using</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/registering_images.html">Registering Images</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#aws-images">AWS Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#azure-images">Azure Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#gce-images">GCE Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#openstack-images">Openstack Images</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#target">Target</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#action">Action</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#advanced-configuration">Advanced Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-permissions">Role Permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/create_non_scalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Infrastructure Management</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../farms/index.html">Farm Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#creating-a-farm">Creating a Farm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#farm-parameters">Farm Parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/index.html#farm-roles">Farm Roles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#scaling">Scaling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#network">Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#farm-role-orchestration">Farm Role Orchestration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#target">Target</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#action">Action</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#advanced-configuration">Advanced Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#cloud-provider-tabs">Cloud Provider Tabs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#ec2">EC2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#azure">Azure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#gce-settings">GCE Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#openstack">OpenStack</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../farms/index.html#vmware">VMware</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#security">Security</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#storage">Storage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#global-variables">Global Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#advanced-options">Advanced Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/index.html#ansible-and-chef-in-farm-roles">Ansible and Chef in Farm Roles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../farms/launch.html">Farm Launching and Managing Servers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#launching-a-farm">Launching a Farm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#managing-servers">Managing Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#terminating-servers">Terminating Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/launch.html#server-dashboard">Server Dashboard</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../farms/ssh.html">SSH Keys in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#accessing-keys">Accessing Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#usernames">Usernames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/ssh.html#adding-policy-for-keys">Adding Policy for Keys</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#aws-storage-configuration">AWS Storage Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#google-cloud-platform-storage-configuration">Google Cloud Platform Storage Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#azure-storage-configuration">Azure Storage Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#openstack-storage-configuration">OpenStack Storage Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#vmware-storage-configuration">VMWare Storage Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../farms/auto_discovery.html">Service Auto Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../farms/link_cloud_services.html">Using Cloud Services in Farms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../farms/service_catalog.html">Service Catalog Offerings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../farms/logs.html">Logs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/logs.html#definition-and-scope">Definition and Scope</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../farms/logs.html#orchestration-logs">Orchestration Logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/logs.html#event-logs">Event Logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../farms/logs.html#system-logs">System Logs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Self Service</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html">The Service Catalog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#creating-service-catalog-offerings">Creating Service Catalog Offerings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#customising-farm-templates">Customising Farm Templates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#simple-template-example">Simple Template Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#enabling-options-for-end-users">Enabling Options for End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#customising-for-multi-cloud">Customising for Multi-Cloud</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#publishing-and-promoting-service-catalog-offerings">Publishing and Promoting Service Catalog Offerings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../service_catalog/using_service_catalog.html">Self Service via the Service Catalog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#requesting-applications">Requesting Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#managing-applications">Managing Applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html">Advanced Farm Templates</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Organizational Management</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../org/index.html">Implementing your Organisation in Scalr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#configuring-environments">Configuring Environments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Teams and Users</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-authenticated-users">Scalr Authenticated Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#externally-authenticated-users">Externally Authenticated Users</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-teams">Configuring Teams</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/index.html">Security and Compliance Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#policy-engine">Policy Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#resource-quotas">Resource Quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#orchestration-rules">Orchestration Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#role-based-access-control">Role Based Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/index.html#governance-through-external-integrations">Governance Through External Integrations</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html">Policy Engine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#creating-policy-groups">Creating Policy Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#creating-policies">Creating Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/policies.html#using-global-variable-in-policies">Using Global Variable in Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#policy-tags">Policy Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#linking-policy-groups-to-environments">Linking Policy Groups to Environments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html#policy-reference">Policy Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#configuration-policies">Configuration Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#container-policies">Container Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#reclamation-policies">Reclamation Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#cloud-service-gateway-policies">Cloud Service Gateway Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#cloud-generic-policies">Cloud Generic Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#aws-policies">AWS Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#azure-policies">Azure Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#google-compute-engine-policies">Google Compute Engine Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#openstack-policies">Openstack Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#vmware-policies">VMware Policies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/quotas.html">Resource Quotas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/quotas.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/quotas.html#creating-quotas">Creating Quotas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/quotas.html#applying-quotas">Applying Quotas</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/orchestration.html">Scalr/Account/Environment Level Orchestration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/orchestration.html#creating-orchestration-rules">Creating Orchestration Rules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/orchestration.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/orchestration.html#target">Target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/orchestration.html#action">Action</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/orchestration.html#advanced-configuration">Advanced Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/integrations.html">Webhooks and Endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configuring-endpoints">Configuring Endpoints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#configuring-webhooks">Configuring Webhooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-payloads">Webhook Payloads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-security-and-authentication">Webhook Security and Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#webhook-history">Webhook History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#highly-available-webhooks">Highly Available Webhooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#example-webhooks">Example Webhooks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Cost Control &amp; Visibility</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cost/index.html">Cost Control Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cost/analytics.html">Cost Analytics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#detailed-billing-set-up">Detailed Billing Set Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#cost-analytics-scopes">Cost Analytics Scopes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#scalr-scope-cost-analytics">Scalr Scope Cost Analytics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#account-scope-cost-analytics">Account Scope Cost Analytics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#environment-scope-cost-analytics">Environment Scope Cost Analytics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#cost-categorisation">Cost Categorisation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#projects">Projects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#cost-centers">Cost Centers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#budgets">Budgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#price-lists">Price Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#markups">Markups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#reports">Reports</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cost/management.html">Cost Management</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration Management</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Scripts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#creating-scripts">Creating Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#writing-a-script">Writing a Script</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#executing-scripts">Executing Scripts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#using-scripts-in-orchestration">Using Scripts In Orchestration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/index.html#manually-on-farms-farm-roles-or-servers">Manually On Farms, Farm Roles, or Servers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../gvs/index.html">Global Variables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#creating-global-variables">Creating Global Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#using-global-variables-in-scripts">Using Global Variables in Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#global-variable-interpolation">Global Variable Interpolation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#using-global-variables-in-policies">Using Global Variables in Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#examining-global-variables-in-servers">Examining Global Variables in Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#built-in-scalr-variables">Built-in Scalr Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gvs/index.html#server-scope-built-in-variables">Server Scope Built-In Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gvs/index.html#server-scope-built-in-cost-variables">Server Scope Built-In Cost Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../gvs/index.html#scalr-ui-default-global-variables">Scalr UI Default Global Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../chef/index.html">Chef Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#adding-a-chef-server">Adding a Chef Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#using-chef-with-scalr">Using Chef with Scalr</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../chef/index.html#role-scope">Role Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../chef/index.html#farm-role-scope">Farm Role Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../chef/index.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ansible/index.html">Ansible Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-server">Adding an Ansible Tower Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-group">Adding an Ansible Tower Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#adding-an-ansible-tower-bootstrap-configuration">Adding an Ansible Tower Bootstrap Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ansible/index.html#attaching-bootstrap-configurations-to-a-server">Attaching Bootstrap Configurations to a Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ansible/index.html#role-scope">Role Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../ansible/index.html#farm-role-scope">Farm Role Scope</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../custom_events/index.html#creating-a-custom-event">Creating a Custom Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../custom_events/index.html#firing-a-custom-event">Firing a Custom Event</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scaling Workloads</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../scaling/index.html">Scaling Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scaling/auto.html">Auto Scaling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#simple-autoscaling">Simple Autoscaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#dynamic-autoscaling">Dynamic Autoscaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#autoscaling-configuration">Autoscaling Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/auto.html#custom-scaling">Custom Scaling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scaling/manual.html">Manual Scaling</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/manual.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/manual.html#using-manual-scaling">Using Manual Scaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/manual.html#manually-launching-servers">Manually Launching Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scaling/manual.html#manually-terminating-servers">Manually Terminating Servers</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Importing Cloud Infrastructure</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../discovery/index.html">Discovery Manager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#importing-overview">Importing Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#import-servers-with-the-ui">Import Servers with the UI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#import-servers-with-the-api">Import Servers with the API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#deploy-scalarizr">Deploy Scalarizr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#discovering-containers">Discovering Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../discovery/index.html#migrate-servers-from-farm-role-to-farm-role">Migrate Servers from Farm Role to Farm Role</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kubernetes/index.html">Kubernetes Clusters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../kubernetes/index.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kubernetes/index.html#adding-a-cluster">Adding a Cluster</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Scalr API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html#generate-api-keys">Generate API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html#api-explorer">API Explorer</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/cli.html">Command Line Interface (CLI)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#generating-api-keys">Generating API Keys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#installing-and-configuring-the-cli">Installing and Configuring the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#using-the-cli">Using the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#cli-examples">CLI Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../api/csg.html">Cloud Service Gateway</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/csg.html#configuring-cloud-service-gateway">Configuring Cloud Service Gateway</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/csg.html#using-the-cloud-service-gateway">Using the Cloud Service Gateway</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/csg.html#client-configuration-details">Client Configuration Details</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api/csg.html#managing-approvals-for-cloud-service-gateway">Managing approvals for Cloud Service Gateway</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Scalarizr agent</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html">Scalarizr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#scalarizr-functionality">Scalarizr Functionality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#monitoring-scalarizr">Monitoring Scalarizr</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#servers-dashboard">Servers Dashboard:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#server-general-details">Server General Details:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#farm-dashboard">Farm Dashboard:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#updating-the-scalarizr-agent">Updating the Scalarizr Agent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#farm">Farm:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#farm-role">Farm Role:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#forcing-an-update">Forcing an Update:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#scalarizr-logs">Scalarizr Logs</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scalarizr/index.html#scalarizr-administrative-interface">Scalarizr Administrative Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#firing-custom-events">Firing Custom Events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scalarizr/index.html#querying-environments">Querying Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#queryenv-list-roles">queryenv list-roles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#queryenv-list-global-variables">queryenv list-global-variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#szradm-queryenv-get-server-user-data">szradm queryenv get-server-user-data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scalarizr/index.html#szradm-queryenv-set-global-variable">szradm queryenv set-global-variable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Best Practices</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/index.html">Best Practices</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html">Managing Images in Scalr</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#about-images-and-scopes">About Images and Scopes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#image-lifecycle-best-practices">Image Lifecycle Best-Practices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#updating-a-widely-used-image">Updating a Widely Used Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#approach-1-offering-a-new-version-of-an-image">Approach 1: Offering a new version of an image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#approach-2-replacing-an-existing-image-with-a-new-version">Approach 2: Replacing an existing image with a new version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#automating-image-management">Automating Image Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#example-image-publishing-pipeline">Example Image publishing pipeline</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Tutorials</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App Tutorial (cloud agnostic, orchestration automation)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#objective">Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#application-overview">Application Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#script-creation">Script Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#roles-required">Roles Required:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#farm-creation">Farm Creation:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#farm-role-configuration">Farm Role Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/3-tier-app.html#select-and-configure-the-webapp-farm-role">Select and configure the WebApp farm role:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/3-tier-app.html#select-and-configure-the-mysql-farm-role">Select and configure the MySQL farm role:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorials/3-tier-app.html#select-and-configure-the-nginx-farm-role">Select and configure the Nginx farm role:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#testing-the-application">Testing the Application</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Release Notes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/index.html">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes/scalr/scalr_server_index.html">Scalr Release Notes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../release_notes/scalr/7.9.5.html">7.9.5</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../release_notes/scalr/7.9.5.html#bug-fixes">Bug Fixes:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../release_notes/scalr/7.10.0.html">7.10.0</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../release_notes/scalr/7.10.0.html#announcements">Announcements:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../release_notes/scalr/7.10.0.html#new-features">New Features:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../release_notes/scalr/7.10.0.html#improvements">Improvements:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../release_notes/scalr/7.10.0.html#bug-fixes">Bug Fixes:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes/scalarizr/scalarizr_index.html">Scalarizr Release Notes</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Reference Section</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Supported Server/Instance Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#scalarizr-functionality">Scalarizr Functionality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="events.html">Event Descriptions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="events.html#beforeinstancelaunch-event">BeforeInstanceLaunch Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#hostinit-event">HostInit Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#hostinitfailed-event">HostInitFailed Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#beforehostup-event">BeforeHostUp Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#hostup-event">HostUp Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#ipaddresschanged-event">IPAddressChanged Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#ebsvolumeattached-event">EBSVolumeAttached Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#ebsvolumemounted-event">EBSVolumeMounted Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#beforehostterminate-event">BeforeHostTerminate Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#hostdown-event">HostDown Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#rebootcomplete-event">RebootComplete Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="events.html#resumecomplete-event">ResumeComplete Event</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Supported Cloud Services and Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aws-features-and-services">AWS Features and Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#s3-buckets">S3 Buckets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloudfront">CloudFront</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relational-database-service-rds">Relational Database Service (RDS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ec2-load-balancers">EC2 - Load Balancers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ec2-elastic-ip-s">EC2 - Elastic IP’s</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ec2-security-groups">EC2 - Security Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ec2-ebs-volumes">EC2 - EBS Volumes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ec2-ebs-snapshots">EC2 - EBS Snapshots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elastic-map-reduce-emr">Elastic Map Reduce (EMR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#elastic-file-system-efs">Elastic File System (EFS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#route53">Route53</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iam-ssl-certificates">IAM - SSL Certificates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vpc-s-and-subnets">VPC’s and Subnets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#azure-features-and-services">Azure Features and Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#public-ip-s">Public IP’s</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resource-groups">Resource Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#virtual-networks">Virtual Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#security-groups">Security Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managed-disks">Managed Disks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#google-cloud-platform-features-and-services">Google Cloud Platform Features and Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#persistent-disks">Persistent Disks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#snapshots">Snapshots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#external-ip-s">External IP’s</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cloud-sql">Cloud SQL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#openstack-features-and-services">Openstack Features and Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#volumes">Volumes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Snapshots</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Security Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#server-groups">Server Groups</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vmware-vsphere-features">VMware VSphere Features</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Scalr</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Supported Cloud Services and Features</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/reference/cloud_services.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="supported-cloud-services-and-features">
+<span id="cloud-services-ref"></span><h1>Supported Cloud Services and Features<a class="headerlink" href="#supported-cloud-services-and-features" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
+<p>This reference page provides details of the Cloud specific services and features that are configurable through Scalr. The page provides details of how Scalr works with each service and feature, including how Scalr enhances the use of services to automatically integrate them with with Servers. This page DOES NOT provide details of functionality the service or feature itself but instead provides links to the relevant page in the Cloud providers own documentation.</p>
+<div class="section" id="aws-features-and-services">
+<h2>AWS Features and Services<a class="headerlink" href="#aws-features-and-services" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a></p>
+<a class="reference internal image-reference" href="../_images/aws_menu.png"><img alt="../_images/aws_menu.png" src="../_images/aws_menu.png" style="width: 415.20000000000005px; height: 339.6px;" /></a>
+<div class="section" id="s3-buckets">
+<h3>S3 Buckets<a class="headerlink" href="#s3-buckets" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon S3 is an object storage service</td>
+<td>Full management of S3 buckets including enabling Transfer Acceleration and linking to CloudFront</td>
+<td><a href="https://aws.amazon.com/documentation/s3/" target="_blank">Amazon S3</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cloudfront">
+<h3>CloudFront<a class="headerlink" href="#cloudfront" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon CloudFront is a global content delivery network (CDN) service that securely delivers data, videos, applications, and APIs with low latency and high transfer speeds.</td>
+<td>Full configuration of CloudFront distributions and and linking to S3 Buckets or Load Balancers</td>
+<td><a href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon Cloud Front</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="relational-database-service-rds">
+<h3>Relational Database Service (RDS)<a class="headerlink" href="#relational-database-service-rds" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon RDS provides a low administration database service that supports multiple database engines including, PostgreSQL, MySQL, MariaDB, Oracle, and Microsoft SQL Server</td>
+<td>Configuration of RDS Instances, Clusters, Security &amp; Parameter Groups and Snapshots. Also provides access to the RDS Events Log</td>
+<td><a href="https://aws.amazon.com/documentation/rds/" target="_blank">Amazon RDS</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ec2-load-balancers">
+<h3>EC2 - Load Balancers<a class="headerlink" href="#ec2-load-balancers" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, and IP addresses.</td>
+<td>Configuration of Application, Network and Classic Load Balancers. <br> Configuration of Target Groups for Listeners and ALB’s. <br> Scalr also provides the capability to link ELB’s to Farm Roles so that instances are automatically registered and deregistered</td>
+<td><a href="https://aws.amazon.com/documentation/elastic-load-balancing/" target="_blank">Amazon Load Balancers</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ec2-elastic-ip-s">
+<h3>EC2 - Elastic IP’s<a class="headerlink" href="#ec2-elastic-ip-s" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Elastic IP’s are fixed IP addresses that can be allocated to an instance.</td>
+<td>Elastic IP’s are assigned to Farm Roles. Scalr will ensure that the IP is reassigned to a replacement server in the Farm Role if a server is terminated or fails. Thus Scalr ensures that a given Elastic IP will always point to a Server of the same Farm Role.</td>
+<td><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html" target="_blank">Elastic IP's</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ec2-security-groups">
+<h3>EC2 - Security Groups<a class="headerlink" href="#ec2-security-groups" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Security Groups act as a virtual firewalls that control the traffic for one or more instances.</td>
+<td>Full configuration of security groups and rules either through Farm Roles or through the main menu.</td>
+<td><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html" target="_blank">Security Groups</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Security Group changes are applied immediately to the Servers they are linked to when the changes are saved in Scalr. This could have an immediate impact on the flow of network traffic and could disrupt production services if mistakes are made.</p>
+</div>
+</div>
+<div class="section" id="ec2-ebs-volumes">
+<h3>EC2 - EBS Volumes<a class="headerlink" href="#ec2-ebs-volumes" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon’s Elastic Block Store (EBS) can be used as block level storage volumes for your Amazon EC2 instances. An EBS Volume functions as a network-attached form of block level storage that persists independently from a Server’s life.</td>
+<td>Management of EBS Volumes independently of Servers. <br> Attach and detach volumes on running servers. <br> Access to CloudWatch stats.</td>
+<td><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html" target="_blank">EBS Volumes</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ec2-ebs-snapshots">
+<h3>EC2 - EBS Snapshots<a class="headerlink" href="#ec2-ebs-snapshots" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>EBS Snapshots are incremental backups of EBS Volumes stored on S3. Each snapshot contains only the changes since the volume was created or the last snapshot.</td>
+<td>Manual creation of Snapshots. <br> Create new Volumes from Snapshots. <br> Configure Auto-Snapshot. <br> Copy Snapshots to other regions.</td>
+<td><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html" target="_blank">EBS Snapshots</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="elastic-map-reduce-emr">
+<h3>Elastic Map Reduce (EMR)<a class="headerlink" href="#elastic-map-reduce-emr" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Elastic MapReduce (EMR) is an AWS tool for big data processing and analysis. EMR offers the expandable low-configuration service as an easier alternative to running in-house cluster computing.</td>
+<td>Creation and management of EMR clusters. <br> Linking to Farms.</td>
+<td><a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-overview.html" target="_blank">Amazon EMR</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="elastic-file-system-efs">
+<h3>Elastic File System (EFS)<a class="headerlink" href="#elastic-file-system-efs" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2. With Amazon EFS, storage capacity is elastic, growing and shrinking automatically as you add and remove files, so your applications have the storage they need, when they need it.</td>
+<td>Creation and management of EFS. <br> Linking to Farms and mounting on instances.</td>
+<td><a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html" target="_blank">Amazon EFS</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="route53">
+<h3>Route53<a class="headerlink" href="#route53" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Route 53 is a scalable and highly available Domain Name System providing domain name registration, DNS routing and automated DNS health checks</td>
+<td>Creation and management of Route 53 zones. <br> Creation and management of Health Checks. <br> Automation of hostname registration with Route 53 through Webhooks.</td>
+<td><a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html" target="_blank">Amazon Route 53</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="iam-ssl-certificates">
+<h3>IAM - SSL Certificates<a class="headerlink" href="#iam-ssl-certificates" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon ACM handles the complexity of creating and managing public SSL/TLS certificates for your AWS based websites and applications.</td>
+<td>Upload of SSL Certificates to ACM</td>
+<td><a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html" target="_blank">IAM SSL Certificates</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vpc-s-and-subnets">
+<h3>VPC’s and Subnets<a class="headerlink" href="#vpc-s-and-subnets" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Virtual Private Clouds (VPC) provides isolated private networking functionality for applications.</td>
+<td>Full Management of VPC’s and Subnets</td>
+<td><a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html" target="_blank">Amazon VPC's</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="azure-features-and-services">
+<h2>Azure Features and Services<a class="headerlink" href="#azure-features-and-services" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a></p>
+<a class="reference internal image-reference" href="../_images/azure_menu.png"><img alt="../_images/azure_menu.png" src="../_images/azure_menu.png" style="width: 446.0px; height: 200.4px;" /></a>
+<div class="section" id="public-ip-s">
+<h3>Public IP’s<a class="headerlink" href="#public-ip-s" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Public Ip’s for Instances</td>
+<td>Interface to view and delete Public IP’s that are assigned to Scalr managed Instances.</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-instance-level-public-ip" target="_blank">Azure Public IP's</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="resource-groups">
+<h3>Resource Groups<a class="headerlink" href="#resource-groups" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>A container that holds related resources for an Azure solution. The resource group can include all the resources for the solution, or only those resources that are to be managed as a group.</td>
+<td>Interface for directly managing Resource Groups. <br> Linking resource Groups to Farm Roles and therefore the Servers launched from a Farm Role.</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview" target="_blank">Azure Resource Groups</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="virtual-networks">
+<h3>Virtual Networks<a class="headerlink" href="#virtual-networks" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Azure Virtual Network enables many types of Azure resources, such as Azure Virtual Machines (VM), to securely communicate with each other, the internet, and on-premises networks.</td>
+<td>Interface for directly managing Virtual Networks and Subnets. <br> Linking Virtual Networks and Subnets to Farm Roles and therefore the Servers launched from a Farm Role.</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview" target="_blank">Azure Virtual Networks</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="security-groups">
+<h3>Security Groups<a class="headerlink" href="#security-groups" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Security Groups act as a virtual firewalls that control the traffic for one or more instances.</td>
+<td>Full configuration of security groups and rules either through Farm Roles or through the main menu.</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/virtual-network/security-overview" target="_blank">Azure Security Groups</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="managed-disks">
+<h3>Managed Disks<a class="headerlink" href="#managed-disks" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Azure Managed Disks simplifies disk management for Azure IaaS VMs by managing the storage accounts associated with the VM disks. You only have to specify the type (Standard HDD, Standard SSD, or Premium SSD) and the size of disk you need, and Azure creates and manages the disk for you.</td>
+<td>Full configuration of Managed Disks. <br> Allocation of managed disks to Farm Roles as additional Storage.</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/managed-disks-overview" target="_blank">Azure Managed Disks</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="google-cloud-platform-features-and-services">
+<h2>Google Cloud Platform Features and Services<a class="headerlink" href="#google-cloud-platform-features-and-services" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a></p>
+<a class="reference internal image-reference" href="../_images/gce_menu.png"><img alt="../_images/gce_menu.png" src="../_images/gce_menu.png" style="width: 462.0px; height: 126.0px;" /></a>
+<div class="section" id="persistent-disks">
+<h3>Persistent Disks<a class="headerlink" href="#persistent-disks" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Persistent Storage for instances.</td>
+<td>From main menu view and resize. Can be created and flagged for mounting in Farm Roles</td>
+<td><a href="https://cloud.google.com/compute/docs/disks/" target="_blank">GCE Persistent Disks</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="snapshots">
+<h3>Snapshots<a class="headerlink" href="#snapshots" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Snapshots are incremental compressed backups of Persistent Disks. Each snapshot contains only the changes since the disk was created or the last snapshot</td>
+<td>View only.</td>
+<td><a href="https://cloud.google.com/compute/docs/disks/create-snapshots" target="_blank">GCE Snapshots</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="external-ip-s">
+<h3>External IP’s<a class="headerlink" href="#external-ip-s" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>A static external IP address is an external IP address that is reserved for your project until you decide to release it.</td>
+<td>View and delete only.</td>
+<td><a href="https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address" target="_blank">GCE External IP's</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cloud-sql">
+<h3>Cloud SQL<a class="headerlink" href="#cloud-sql" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Cloud SQL is a fully-managed database service that makes it easy to set up, maintain, manage, and administer your relational databases on Google Cloud Platform.</td>
+<td>Full management of Cloud SQL Instances including linking to Farms for automatic deployment when a Farm is launched.</td>
+<td><a href="https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address" target="_blank">GCE External IP's</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="openstack-features-and-services">
+<h2>Openstack Features and Services<a class="headerlink" href="#openstack-features-and-services" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a></p>
+<a class="reference internal image-reference" href="../_images/openstack_menu.png"><img alt="../_images/openstack_menu.png" src="../_images/openstack_menu.png" style="width: 444.40000000000003px; height: 161.20000000000002px;" /></a>
+<div class="section" id="volumes">
+<h3>Volumes<a class="headerlink" href="#volumes" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>OpenStack Volumes are block storage devices that may be attached to instances in order to enable persistent storage.</td>
+<td>Management of Volumes independently of Servers. <br> Attach and detach volumes on running servers.</td>
+<td><a href="https://docs.openstack.org/cinder/rocky/admin/blockstorage-manage-volumes.html" target="_blank">Openstack Volumes</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id1">
+<h3>Snapshots<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Snapshots are full backups of Volumes.</td>
+<td>Manual creation of Snapshots. <br> Create new Volumes from Snapshots. <br> Configure Auto-Snapshot.</td>
+<td><a href="https://docs.openstack.org/cinder/rocky/admin/blockstorage-backup-disks.html" target="_blank">Openstack Snapshots</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id2">
+<h3>Security Groups<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Security groups are sets of IP filter rules that are applied to all project instances, which define networking access to the instance.</td>
+<td>Creation and management of Security Groups and assignment to Farm Roles</td>
+<td><a href="https://docs.openstack.org/nova/queens/admin/security-groups.html" target="_blank">Openstack Security Groups</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="server-groups">
+<h3>Server Groups<a class="headerlink" href="#server-groups" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Server groups provide a mechanism to group servers on to hosts according to defined policies.</td>
+<td>Creation and management of Server Groups and assignment to Farm Roles</td>
+<td><a href="https://docs.openstack.org/python-openstackclient/latest/cli/man/openstack.html" target="_blank">Openstack Server Groups</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="vmware-vsphere-features">
+<h2>VMware VSphere Features<a class="headerlink" href="#vmware-vsphere-features" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a></p>
+<a class="reference internal image-reference" href="../_images/vmware_menu.png"><img alt="../_images/vmware_menu.png" src="../_images/vmware_menu.png" style="width: 466.0px; height: 348.8px;" /></a>
+<p>For VMWare Scalr provides access to view resources and some management capabilities as shown in the table below. Full documentation on VMware features can be found at <a href="https://docs.vmware.com/" target="_blank">VMWare Documentation</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a>.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Networks</td>
+<td>View only</td>
+</tr>
+<tr class="row-odd"><td>Resource Pools</td>
+<td>View only</td>
+</tr>
+<tr class="row-even"><td>Data Stores</td>
+<td>View only</td>
+</tr>
+<tr class="row-odd"><td>Compute Resources</td>
+<td>View only (Consumption)</td>
+</tr>
+<tr class="row-even"><td>Folders</td>
+<td>View, Create, Delete</td>
+</tr>
+<tr class="row-odd"><td>Storage Pods</td>
+<td>View only</td>
+</tr>
+<tr class="row-even"><td>Virtual Disks</td>
+<td>View and Create</td>
+</tr>
+<tr class="row-odd"><td>Snapshots</td>
+<td>View only</td>
+</tr>
+<tr class="row-even"><td>Alarms</td>
+<td>View only</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="events.html" class="btn btn-neutral" title="Event Descriptions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, scalr_team.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.01',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>  
+
+  <style>
+    /* Sidebar header (and topbar for mobile) */
+    .wy-side-nav-search, .wy-nav-top {
+      background: #e8ebed;
+    }
+    /* Sidebar */
+    .wy-nav-side {
+      background: #333;
+      font-family: "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+      position: fixed;
+    }
+  </style>
+
+
+</body>
+</html>

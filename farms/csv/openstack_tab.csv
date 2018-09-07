@@ -1,0 +1,4 @@
+Parameter,Description
+"| Instance Name|","* Specify the template that Scalr should use to name Servers in OpenStack* This field supports Global Variable Interpolation."
+Server Group,Specify a Server group for Affinity or anti-affinity settings.
+Metadata,Custom metadata Name-value pairs can be added

@@ -1,0 +1,4 @@
+"| **Firing Sequence**||","* When a block device is mounted on a Server.* Note that this Event only fires when a volume was Mounted by Scalr. If you mounted a volume using mount or a similar command (either manually or using an Orchestration Action), Scalr will not know about it, and the EBSVolumeMounted Event will not fire."
+| **Scalr Event Actions**,None
+"| **When to Use**|","* To take action once a block device you required is mounted to your Server's filesystem, such as creating a standard directory structure."
+"| **Global Variables**|","* SCALR_DEVICE: this is the device name for the block device (e.g. /dev/sda)* SCALR_MOUNTPOINT: this is the filesystem location where the block device was mounted (e.g. /mnt)"

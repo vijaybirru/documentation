@@ -1,0 +1,5 @@
+Parameter,Description
+Service Account,Service account to be set at instance creation
+"| Number of GPU's|","* Number and type of GPU's to be provided on the Instance. See `GPU's on Comoute Engine <https://cloud.google.com/compute/docs/gpus/>`_.* The number of GPU dies is linked to the number of CPU cores and memory selected for this instance."
+| Maintenance Behavior,Default behavior is to Live Migrate. See `Setting Instance Availability Policies <https://cloud.google.com/compute/docs/instances/setting-instance-scheduling-options>`_.
+Tags,Custom Tags can be added

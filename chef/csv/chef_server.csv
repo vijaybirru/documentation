@@ -1,0 +1,6 @@
+Field ,Description
+URL ,The URL should look like: https://chef.server.host.name/organizations/${OrganizationName}/
+Client Authorization Username,Username in Chef
+Client Authorization Key,They key for the user above
+Client Validator Authorization Username, ${OrganizationName}-validator
+Client Validator Authorization Key,Organization Validation Key

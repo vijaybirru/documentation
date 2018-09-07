@@ -93,4 +93,4 @@ It will take Scalr a few minutes to run through all the steps required.
 
 Whilst the build is running you will be able to continue using Scalr for other tasks. To return to the build screen to review progress you should navigate to the Servers list and click on |IMPORTING| for the relevant server.
 
-Once the build is complete you can start assign the Image to a Role and start using the Role in Farms.
+Once the build is complete you can assign the Image to a Role and start using the Role in Farms.

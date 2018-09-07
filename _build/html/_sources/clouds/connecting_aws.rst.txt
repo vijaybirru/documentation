@@ -40,6 +40,9 @@ Configure Virtual Private Cloud (VPC)
 
 You will need to create or configure an AWS VPC to work with Scalr. Every AWS user has access to the EC2-Classic network but this network is shared with all other customers in the region and is typically NOT an acceptable network for most use cases. If you need to create a VPC for Scalr and the Scalr managed instances please refer to |vpc_link| |NEWWIN|.
 
+Configure Instance Connection Policy
+------------------------------------
+
 You will also need to perform some additional configuration work to ensure that Scalr can connect to your AWS instances. There are three options for this.
 
 #. **Public** - Scalr will ONLY connect to the Public IP of instances. Only use this option if ALL instances managed by Scalr will have a Public IP.
@@ -126,13 +129,16 @@ After selecting Add Credentials, you will be prompted to configure your Cloud Cr
    :scale: 40%
 
 .. image:: images/AWS-Keys.png
+   :scale: 40%
 
 .. image:: images/AWS-Keys-Scalr.png
+   :scale: 40%
 
 5. Check "Enable Detailed Billing" if you require Scalr to collect detailed billing information for Cost Manager/Analytics.
 6. Click Save and your screen should look similar like this after Scalr has validate the Credentials.
 
 .. image:: images/AWS-Keys-Scalr-Saved.png
+   :scale: 40%
 
 Validating the Connection to AWS
 --------------------------------

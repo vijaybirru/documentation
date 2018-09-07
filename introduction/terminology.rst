@@ -14,13 +14,13 @@ Login Scopes
 The Scalr application is organised into 3 levels of login access that are known as "Scopes". These scopes provide a hierarchy of access, functionality and object inheritance that enables a customer to match Scalr to their organisational structure, and to manage, control and monitor their deployments of cloud based infrastructure. The 3 scopes are as follows.
 
 .. |SS| image:: images/scalr.png
-   :scale: 70%
+   :scale: 40%
 
 .. |AS| image:: images/account.png
-   :scale: 70%
+   :scale: 30%
 
 .. |ES| image:: images/environment.png
-   :scale: 70%
+   :scale: 40%
 
 ================================= ============================= ======================================================================================
 Scope                             Usage                         Description
@@ -104,12 +104,12 @@ Multiple teams can login to each |ENVIRONMENT| and the users functional capabili
 Menu for a full access |ENVIRONMENT| user:
 
 .. image:: images/environment-full.png
-   :scale: 70%
+   :scale: 50%
 
 Menu for a Service Catalog |ENVIRONMENT| user:
 
 .. image:: images/environment-sc.png
-   :scale: 70%
+   :scale: 30%
 
 For details on configuring |ENVIRONMENTS| see :ref:`environments`.
 

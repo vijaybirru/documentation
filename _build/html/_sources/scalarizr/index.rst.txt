@@ -55,6 +55,8 @@ If the agent is not running correctly you will also see an alert in the Farm das
 .. image:: images/farm_alert_flag.png
    :scale: 70%
 
+.. _updating_scalarizr:
+
 Updating the Scalarizr Agent
 ----------------------------
 

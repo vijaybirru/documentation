@@ -7,11 +7,11 @@
 
 |SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV|
 
-Orchestration Rules can be defined to run :ref:'scripts' across all applicable servers within the scope at which the rule is defined.
+Orchestration Rules can be defined to run :ref:`scripts <scripts>` across all applicable servers within the scope at which the rule is defined.
 
-* At |SCALR| scope script will be run on all applicable servers in all |ENVIRONMENTS| managed by this Scalr installation
-* At |ACCOUNT| scope script will be run on all applicable servers in all |ENVIRONMENTS| with the |ACCOUNT|
-* At |ENVIRONMENT| scope script will be run on all applicable servers within the |ENVIRONMENT|
+* At the |SCALR| scope, scripts will run on all applicable servers in all |ENVIRONMENTS| managed by this Scalr installation.
+* At the |ACCOUNT| scope, scripts will run on all applicable servers in all |ENVIRONMENTS| with the |ACCOUNT|.
+* At the |ENVIRONMENT| scope, scripts will run on all applicable servers within the |ENVIRONMENT|.
 
 This type of Orchestration is typically used to enforce policies, for example:
 

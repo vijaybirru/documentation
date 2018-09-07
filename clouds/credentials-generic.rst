@@ -4,7 +4,7 @@ You can add new credentials directly from the Main Menu or via the |ENVIRONMENT|
 .. note:: Credentials added at the |SCALR| Scope will be available to all |ACCOUNTS|. Only use |SCALR| Scope credentials if all |ACCOUNTS| are trusted to use the connected cloud account.
 
 .. |SCE| image:: images/Admin_cloud_creds.png
-   :scale: 70%
+   :scale: 40%
 
 .. |ACE| image:: images/Account_cloud_creds.png
    :scale: 40%
@@ -18,11 +18,11 @@ You can add new credentials directly from the Main Menu or via the |ENVIRONMENT|
 
 
 .. |ECC1| image:: images/Environments_cloud_creds_1.png
-   :scale: 25%
+   :scale: 50%
 
 
 .. |ECC2| image:: images/Environments_cloud_creds_2.png
-   :scale: 80%
+   :scale: 40%
 
 ================================= ======================
                              |ENVIRONMENT| screen

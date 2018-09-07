@@ -1,0 +1,4 @@
+Parameter,Description
+| Storage Type,Enable `Managed Disks <https://docs.microsoft.com/en-gb/azure/virtual-machines/windows/managed-disks-overview>`_ 
+"| Availability Set||","To provide redundancy to your application, it is recommended to group two or more virtual machines in an availability set. This configuration ensures that during a planned or unplanned maintenance event, at least one virtual machine will be available and meet the 99.95% Azure SLA. The availability set of a virtual machine can't be changed after it is created."
+Tags,Custom Tags can be added

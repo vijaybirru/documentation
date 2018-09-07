@@ -57,7 +57,7 @@ Configure Virtual Private Cloud (VPC)
 You have the option to create or configure an OpenStack VPC to work with Scalr. This isn't strictly required but please refer to |vpc_link| |NEWWIN| for more information.
 
 Configure Instance Connection Policy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------
 
 You will also need to perform some additional configuration work to ensure that Scalr can connect to your OpenStack instances. There are three options for this.
 
@@ -92,12 +92,12 @@ Adding OpenStack Credentials to Scalr
 1. After selecting Add Credentials, you will be prompted to configure your Cloud Credentials and properties:
 
 .. image:: images/OpenStack-creds.png
-   :scale: 70%
+   :scale: 40%
 
 2. Enter the credentials and other details for OpenStack and Click Save. You will see a screen similar to this.
 
 .. image:: images/OpenStack-creds_2.png
-  :scale: 70%
+  :scale: 40%
 
 .. |CACHE| image:: images/cache-clear.png
            :scale: 40%

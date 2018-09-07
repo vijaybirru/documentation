@@ -1,0 +1,4 @@
+| **Firing Sequence**,* When a block device is attached to a Server.
+| **Scalr Event Actions**,None
+"| **When to Use**||","* To format or perform any other actions on the newly attached volume.* If you requested that Scalr automatically mount block devices when they are attached (see :ref:`fr_storage` Tab), you should not use this Event, and should use the `EBSVolumeMounted Event`_ instead."
+"| **Global Variables**|","* SCALR_DEVICE_NAME: this is the device name for the block device (e.g. /dev/sda)* SCALR_VOLUME_ID: this is the cloud ID for the block device (e.g. vol-c7541db1)"

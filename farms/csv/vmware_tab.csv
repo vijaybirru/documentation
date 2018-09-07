@@ -1,0 +1,6 @@
+Parameter,Description
+"| Instance Name||","* Specify the template that Scalr should use to name Servers in VMware* This field supports Global Variable Interpolation."
+Res. Pool,Change the Resource Pool that was selcted when the Farm Role was added.
+Datastore,Change the Datastore that was selcted when the Farm Role was added.
+Custom Spec.,Add a Custom Specification.
+Tags,Add Tags as required.
