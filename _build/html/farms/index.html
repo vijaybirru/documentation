@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -427,7 +428,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Teams and Users</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/acls.html#understanding-access-control">Understanding Access Control</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Users and Teams</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-authenticated-users">Scalr Authenticated Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#externally-authenticated-users">Externally Authenticated Users</a></li>
@@ -436,7 +441,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-teams">Configuring Teams</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
 <ul>
@@ -499,7 +503,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#example-webhooks">Example Webhooks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#understanding-access-control">Understanding Access Control</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Cost Control &amp; Visibility</span></p>
 <ul>
@@ -885,7 +892,7 @@
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Parameter</th>
 <th class="head">Required</th>
-<th class="head">Decscription</th>
+<th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -931,7 +938,7 @@ Sequential : Wait until all the servers for a Farm Role are running before launc
 <a class="reference internal image-reference" href="../_images/farm_role_04.png"><img alt="../_images/farm_role_04.png" src="../_images/farm_role_04.png" style="width: 524.0px; height: 389.6px;" /></a>
 <p>There are several tabs available to continue the configuration. Some tabs are dependent on other aspects of the configuration.</p>
 <ul class="simple">
-<li>DATABASE: Only available for Roles from the Database catagory</li>
+<li>DATABASE: Only available for Roles from the Database category</li>
 <li>BOOTSTRAP WITH …: Only available if Chef/Ansible Tower is configured for the Environment</li>
 <li>Cloud: A Tab for the specified cloud</li>
 </ul>
@@ -987,7 +994,7 @@ Sequential : Wait until all the servers for a Farm Role are running before launc
 <td>Enter the hostname in the text field, and Scalr will assign that hostname to your Servers. You may use <a class="reference internal" href="../gvs/index.html#gvi"><span class="std std-ref">Global Variable Interpolation</span></a> in the Hostname template. If the template is left blank, Scalr will use the cloud platform’s default hostname, or the Scalr server ID if the cloud platform does not provide a default.</td>
 </tr>
 <tr class="row-even"><td>External</td>
-<td>The <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhook and Integartion Endpoint</span></a> must be created first. Before launching a Server, Scalr will make a call to the selected webhook to retrieve a hostname. This webhook call is made before all the other events related to the Server (BeforeInstanceLaunch, HostInit, etc.) are triggered.</td>
+<td>The <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhook and Integration Endpoint</span></a> must be created first. Before launching a Server, Scalr will make a call to the selected webhook to retrieve a hostname. This webhook call is made before all the other events related to the Server (BeforeInstanceLaunch, HostInit, etc.) are triggered.</td>
 </tr>
 </tbody>
 </table>
@@ -1630,7 +1637,10 @@ Sequential : Wait until all the servers for a Farm Role are running before launc
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {

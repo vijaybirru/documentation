@@ -2,7 +2,7 @@
 
 .. _teams_users:
 
-Teams and Users
+Users and Teams
 ===============
 
 Configuring Users

@@ -24,13 +24,14 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Security and Compliance Overview" href="../sec_comp/index.html" />
-    <link rel="prev" title="Teams and Users" href="team_users.html" /> 
+    <link rel="next" title="Users and Teams" href="team_users.html" />
+    <link rel="prev" title="Cost Centers and Projects" href="cost_centers_projects.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -427,7 +428,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cost_centers_projects.html">Cost Centers and Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="team_users.html">Teams and Users</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Access Control Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-an-acl">Creating an ACL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="team_users.html">Users and Teams</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="team_users.html#configuring-users">Configuring Users</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="team_users.html#scalr-authenticated-users">Scalr Authenticated Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="team_users.html#externally-authenticated-users">Externally Authenticated Users</a></li>
@@ -436,7 +442,6 @@
 <li class="toctree-l2"><a class="reference internal" href="team_users.html#configuring-teams">Configuring Teams</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Access Control Lists</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
 <ul>
@@ -499,7 +504,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#example-webhooks">Example Webhooks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#creating-an-acl">Creating an ACL</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Cost Control &amp; Visibility</span></p>
 <ul>
@@ -860,6 +869,54 @@
             
   <div class="section" id="access-control-lists">
 <span id="access-control"></span><h1>Access Control Lists<a class="headerlink" href="#access-control-lists" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></p>
+<p>Access Control Lists allows you restrict the permissions for users and/or teams, so that they only have access to Scalr features their work requires.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Scalr Access Control Lists apply to both the Scalr UI and the Scalr API</p>
+</div>
+<div class="section" id="understanding-access-control">
+<h2>Understanding Access Control<a class="headerlink" href="#understanding-access-control" title="Permalink to this headline">¶</a></h2>
+<p>There are two types of Access Control in Scalr:</p>
+<ul class="simple">
+<li>Access to Environments (e.g. ability to view the Production Environment).</li>
+<li>Permission to use a given feature within a specific Environment (e.g. ability to create Farms in the Production Environment).</li>
+</ul>
+<p>Note that access to an Environment alone doesn’t let a user do anything unless they also have permissions within that Environment. To learn more about giving users and teams access to an environment, please go to the <a class="reference internal" href="team_users.html#teams-users"><span class="std std-ref">Users and Teams</span></a> page.</p>
+<p>Permissions are granted through Teams and Access Control Lists (ACLs). ACLs are sets of permissions. Permissions are scoped, which means a user may have different permissions across different Environments within Scalr.</p>
+<p>To determine whether a user has a given permission within a given Environment, Scalr checks whether any team that grants that user access to that Environment is associated with an ACL that grants that permission. Note that this means ACLs are cumulative (multiple ACLs that give access to the same Environment result in the permissions from all these ACLs being granted).</p>
+<p>For permissions that are relevant in the Account Scope, all teams the user is a member of (and all associated ACLs) are taken into account.</p>
+<p>Here’s an example:</p>
+<ul class="simple">
+<li>User John Doe is a member of the teams Developers and Testers</li>
+<li>Team Developers is associated with the ACL Development</li>
+<li>Team Testers is associated with the ACL Test</li>
+<li>Team Developers grants access to the Development Environment.</li>
+<li>Team Testers grants access to the Development and Staging Environments.</li>
+<li>The Development ACL grants the permission to Manage Roles</li>
+<li>The Test ACL grants the permission to Manage Environment-Scope Scripts and the permission to Manage Account-Scope Webhooks.</li>
+</ul>
+<p>Then,</p>
+<ul class="simple">
+<li>John Doe has access to the Development and Staging Environments, but he does not have access to a hypothetical Production Environment.</li>
+<li>John Doe has permission to Manage Roles and Environment-Scope Scripts in the Development Environment.</li>
+<li>John Doe has permission to Manage Environment-Scope Scripts in the Staging Environment.</li>
+<li>John Doe has permission to Manage Account-Scope Webhooks.</li>
+</ul>
+</div>
+<div class="section" id="creating-an-acl">
+<h2>Creating an ACL<a class="headerlink" href="#creating-an-acl" title="Permalink to this headline">¶</a></h2>
+<p>To create an ACL in Scalr, log into the Account scope, click on the main Scalr menu on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a>, and go down to ACL.</p>
+<p>Click on New ACL, set the ACL Name and then select the Default Permissions to start out with. The default gives a starting point, you can start configuring the ACL from there:</p>
+<a class="reference internal image-reference" href="../_images/new_acl.png"><img alt="../_images/new_acl.png" src="../_images/new_acl.png" style="width: 675.5px; height: 516.6px;" /></a>
+<p>A few of the ACLs, like Farms, have an extra level of granularity to account for users and teams:</p>
+<ul class="simple">
+<li>Farms you Own - You will only see your farms, and these permissions will only apply to your farm.</li>
+<li>Farms Your Teams Own - You will only see your teams farms, and these permissions will only apply to your teams farms.</li>
+<li>All Farms - You will see all farms within an environment, and these permissions will apply to all farms.</li>
+</ul>
+<p>Now that the ACL is created, go to the <a class="reference internal" href="team_users.html#teams-users"><span class="std std-ref">Users and Teams</span></a> to learn how to assign the ACL to a team.</p>
+</div>
 </div>
 
 
@@ -870,10 +927,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../sec_comp/index.html" class="btn btn-neutral float-right" title="Security and Compliance Overview" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="team_users.html" class="btn btn-neutral float-right" title="Users and Teams" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="team_users.html" class="btn btn-neutral" title="Teams and Users" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cost_centers_projects.html" class="btn btn-neutral" title="Cost Centers and Projects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -918,7 +975,10 @@
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {
