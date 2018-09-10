@@ -430,15 +430,23 @@
 <li class="toctree-l1"><a class="reference internal" href="cost_centers_projects.html">Cost Centers and Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="acls.html">Access Control Lists</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acls.html#creating-an-acl">Creating an ACL</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Users and Teams</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#configuring-users">Configuring Users</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#scalr-authenticated-users">Scalr Authenticated Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scalr-local-users">Scalr Local Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#externally-authenticated-users">Externally Authenticated Users</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#configuring-teams">Configuring Teams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#global-admins">Global Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#financial-admins">Financial Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-teams">Configuring Teams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#scalr-local-teams">Scalr Local Teams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#externally-authenticated-teams">Externally Authenticated Teams</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-teams-to-environments">Adding Teams to Environments</a></li>
 </ul>
 </li>
 </ul>
@@ -505,6 +513,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#creating-an-acl">Creating an ACL</a></li>
 </ul>
 </li>
 </ul>
@@ -761,6 +770,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/cloud_services.html">Supported Cloud Services and Features</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reference/cloud_services.html#aws-features-and-services">AWS Features and Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#spot-instances">Spot Instances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#s3-buckets">S3 Buckets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#cloudfront">CloudFront</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#relational-database-service-rds">Relational Database Service (RDS)</a></li>
@@ -867,17 +877,59 @@
             
   <div class="section" id="users-and-teams">
 <span id="teams-users"></span><h1>Users and Teams<a class="headerlink" href="#users-and-teams" title="Permalink to this headline">¶</a></h1>
+<p>To gain access to Scalr, a user must first be added and then linked to a team. Teams are given access to Scalr Environments, not individual users (except for admins). There are two types of users and teams:</p>
+<ul class="simple">
+<li>Local - All users and teams are stored, updated, and managed in Scalr.</li>
+<li>External - All users and team are stored and managed in an external system like AD or LDAP. To find out more about AD or LDAP integration, please go to the <a class="reference internal" href="../extensions/ldap.html#ldap-auth"><span class="std std-ref">Enable LDAP Authentication</span></a> page.</li>
+</ul>
 <div class="section" id="configuring-users">
 <h2>Configuring Users<a class="headerlink" href="#configuring-users" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="scalr-authenticated-users">
-<h3>Scalr Authenticated Users<a class="headerlink" href="#scalr-authenticated-users" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="scalr-local-users">
+<h3>Scalr Local Users<a class="headerlink" href="#scalr-local-users" title="Permalink to this headline">¶</a></h3>
+<p>To add an end user to a Scalr account, first ensure you are logged into the Account scope as either an Administrator or as the Account Owner. Next, click on the main Scalr menu on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a>, and go down to Users.</p>
+<a class="reference internal image-reference" href="../_images/new_user.png"><img alt="../_images/new_user.png" src="../_images/new_user.png" style="width: 1042.4px; height: 372.0px;" /></a>
+<p>Click on New User to begin creating a new end user in Scalr.</p>
+<p>On the right hand side of the Users Panel, you will see an entry section for New User. Admin Access is automatically turned Off, but can be allowed for the user by selecting ON. Enter the user’s Email Address.  Click Add To Team to add the new user to a selected Team if desired. After clicking save, the user will receive an email letting them know they have access and they can set their password at the first login (see more about email here: <a class="reference internal" href="../extensions/email.html#email"><span class="std std-ref">Enable Email Integration</span></a>). Their Status will automatically default to Active; however, you can click on Suspended if you do not want the user to be immediately Active upon adding them to Scalr. Comments may be added for the new user as well. Click on Add User when finished.</p>
+<a class="reference internal image-reference" href="../_images/new_user1.png"><img alt="../_images/new_user1.png" src="../_images/new_user1.png" style="width: 343.0px; height: 296.09999999999997px;" /></a>
 </div>
 <div class="section" id="externally-authenticated-users">
 <h3>Externally Authenticated Users<a class="headerlink" href="#externally-authenticated-users" title="Permalink to this headline">¶</a></h3>
+<p>If you are using an external system to manage your teams, you do not have to manually add users. The users will gain access to Scalr when their AD/LDAP team is added into Scalr. The user will appear in Scalr after that user logs in for the first time.</p>
 </div>
+</div>
+<div class="section" id="global-admins">
+<h2>Global Admins<a class="headerlink" href="#global-admins" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="financial-admins">
+<h2>Financial Admins<a class="headerlink" href="#financial-admins" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="configuring-teams">
 <h2>Configuring Teams<a class="headerlink" href="#configuring-teams" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scalr-local-teams">
+<h3>Scalr Local Teams<a class="headerlink" href="#scalr-local-teams" title="Permalink to this headline">¶</a></h3>
+<p>To add a team to a Scalr account, first ensure you are logged into the Account scope as either an Administrator or as the Account Owner. Next, click on the main Scalr menu on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a>, and go down to Teams.</p>
+<a class="reference internal image-reference" href="../_images/new_team.png"><img alt="../_images/new_team.png" src="../_images/new_team.png" style="width: 1042.4px; height: 371.20000000000005px;" /></a>
+<p>Enter a Name for your Team and select a Default ACL from the drop-down menu (Find out more about ACLs here: <a class="reference internal" href="../sec_comp/acls.html#access-control"><span class="std std-ref">Access Control Lists</span></a>).   If existing users are present in Scalr, you will be able to click on the sign next to a member in the table to attach them to the Team. Otherwise, you will need to Add a User before members can be attached to your new Team.</p>
+<p>Once a Member has been added to the Team, they will automatically have the same Access Rights as granted through the Default ACL selection. The Members section of the Teams Tab will also show who is currently in or not in the Team. To change the Access Rights for a specific Team Member, click on the ACL dropdown to select different access setting.</p>
+<a class="reference internal image-reference" href="../_images/user_rights.png"><img alt="../_images/user_rights.png" src="../_images/user_rights.png" style="width: 599.1999999999999px; height: 242.89999999999998px;" /></a>
+</div>
+<div class="section" id="externally-authenticated-teams">
+<h3>Externally Authenticated Teams<a class="headerlink" href="#externally-authenticated-teams" title="Permalink to this headline">¶</a></h3>
+<p>To add an externally managed team, first ensure you are logged into the Account scope as either an Administrator or as the Account Owner. Next, click on the main Scalr menu on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a>, and go down to Teams. For externally managed teams, all you have to do is add the team name into the New Team field and apply the ACL that should be assigned to it. On save, Scalr will verify the team with LDAP/AD and if no errors are received it will be added to Scalr. As explained above, users will automatically be added to Scalr after the log in for the first time.</p>
+</div>
+</div>
+<div class="section" id="adding-teams-to-environments">
+<h2>Adding Teams to Environments<a class="headerlink" href="#adding-teams-to-environments" title="Permalink to this headline">¶</a></h2>
+<p>Now that you have created Teams, they must be added to an Environment for their users to be able to do anything. If you add a team, but do not add that team to an environment then the users will receive an error when they try to log in.</p>
+<p>To add a team to an Environment, first ensure you are logged into the Account scope as either an Administrator or as the Account Owner. Next, click on the main Scalr menu on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a>, and go down to Environments. Click on the Environments tab and then the Environment you would like to add the Team to. The currently selected Environment will appear in light gray, as shown below by the “Test Environment” selection below.</p>
+<a class="reference internal image-reference" href="../_images/team_environment.png"><img alt="../_images/team_environment.png" src="../_images/team_environment.png" style="width: 1042.4px; height: 561.6px;" /></a>
+<p>In the Grant Access Panel, tick the checkbox next to the desired Team and then Grant Access.  You may also Add Teams here.</p>
+<a class="reference internal image-reference" href="../_images/team_environment1.png"><img alt="../_images/team_environment1.png" src="../_images/team_environment1.png" style="width: 575.2px; height: 262.40000000000003px;" /></a>
+<p>Click save and the team will now have access to the environment that it was added to.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note the ACL setting for each team within the Environment. ACLs may be left as the Team default, or changed on a per-environment basis.  This allows for Teams to be reused between different Environments with different levels of access for each Environment.  This method of access permission management saves on team administration effort and allows for a more logical and granular configuration of team permissions within their various Environments.</p>
+</div>
 </div>
 </div>
 

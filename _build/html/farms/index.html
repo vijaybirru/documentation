@@ -430,15 +430,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/acls.html#creating-an-acl">Creating an ACL</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Users and Teams</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-authenticated-users">Scalr Authenticated Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-local-users">Scalr Local Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#externally-authenticated-users">Externally Authenticated Users</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-teams">Configuring Teams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#global-admins">Global Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#financial-admins">Financial Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-teams">Configuring Teams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-local-teams">Scalr Local Teams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#externally-authenticated-teams">Externally Authenticated Teams</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#adding-teams-to-environments">Adding Teams to Environments</a></li>
 </ul>
 </li>
 </ul>
@@ -505,6 +513,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#creating-an-acl">Creating an ACL</a></li>
 </ul>
 </li>
 </ul>
@@ -761,6 +770,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/cloud_services.html">Supported Cloud Services and Features</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reference/cloud_services.html#aws-features-and-services">AWS Features and Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#spot-instances">Spot Instances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#s3-buckets">S3 Buckets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#cloudfront">CloudFront</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#relational-database-service-rds">Relational Database Service (RDS)</a></li>
@@ -1236,7 +1246,7 @@ Sequential : Wait until all the servers for a Farm Role are running before launc
 <h3>Cloud Provider Tabs<a class="headerlink" href="#cloud-provider-tabs" title="Permalink to this headline">¶</a></h3>
 <p>Scalr supports a variety of configuration options for each cloud provider. The appropriate tab will be available for setting these options.</p>
 <div class="section" id="ec2">
-<h4>EC2<a class="headerlink" href="#ec2" title="Permalink to this headline">¶</a></h4>
+<span id="ec2-spot"></span><h4>EC2<a class="headerlink" href="#ec2" title="Permalink to this headline">¶</a></h4>
 <a class="reference internal image-reference" href="../_images/ec2_tab.png"><img alt="../_images/ec2_tab.png" src="../_images/ec2_tab.png" style="width: 552.0px; height: 487.0px;" /></a>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
@@ -1275,16 +1285,14 @@ Sequential : Wait until all the servers for a Farm Role are running before launc
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 <div class="line"><br /></div>
-<div class="line"><br /></div>
 </div>
 </td>
 <td><ul class="first last simple">
-<li>Scalr will use <a class="reference external" href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html">Spot Instances</a> where available to launch Servers.</li>
-<li>One Time Spot Instance (not Fleet) request types are used to launch each Server required by a Farm Role.</li>
+<li>Scalr will use <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html" target="_blank">Spot Instances</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a> where available to launch Servers.</li>
+<li>Scalr uses RunInstances API request to launch each set of Servers required by a Farm Role.</li>
 <li>The price table shows the current spot price for the specified Instance Type.</li>
 <li>A Maximum price per Spot Instance can be set.</li>
-<li>If no Spot capacity is available or Max price is exceeded the Server will fail in a Pending Launch state</li>
-<li>NOTE: Scalr does not even attempt to launch an instance if the Max Price would be exceeded. However Scalr will continue to monitor the Spot price and will eventually launch the instance if the price drops below the Max.</li>
+<li>If no Spot capacity is available or Max price is exceeded the Server will fail in a Pending Launch state. Scalr will retry the Server launch until it succeeds or the Farm is terminated.</li>
 <li>Spot Instance based Servers cannot be suspended, they can only be rebooted and terminated.</li>
 </ul>
 </td>
@@ -1544,7 +1552,7 @@ Sequential : Wait until all the servers for a Farm Role are running before launc
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>Disable scalr agent management of iptables</td>
-<td>By default, Scalarizr will automatically configure iptables so that traffic to its API control ports is allowed in. In some situations, you might want to disable this behavior (e.g. because you’re managing iptables yourself, and don’t want Scalarizr to update them, or because you’d like finer-grained iptables rules than the ones that are configured by Scalr).</td>
+<td>By default, Scalarizr will automatically configure iptables so that traffic to its API control ports is allowed in. In some situations, you might want to disable this behavior (e.g. because you’re managing iptables yourself, and don’t want Scalarizr to update them, or because you’d like finer-grained iptables rules than the ones that are configured by Scalr). This setting also controls the Windows Firewall on Windows deployments.</td>
 </tr>
 <tr class="row-odd"><td>Disable scalr agent time synchronization</td>
 <td>Disable/Enable NTP management so that the agent does not re-set and sync to our default timeservers on startup.  The most common use case for this is to disable NTP management and then configure your own NTP server via an Orchestration script.</td>
@@ -1572,7 +1580,7 @@ Sequential : Wait until all the servers for a Farm Role are running before launc
 </div>
 <div class="section" id="ansible-and-chef-in-farm-roles">
 <h3>Ansible and Chef in Farm Roles<a class="headerlink" href="#ansible-and-chef-in-farm-roles" title="Permalink to this headline">¶</a></h3>
-<p>The “Bootstrap by ..” tabs allow you to enable bootstrap by Chef and Ansible for the Farm Role and set the bootstrap parameters. The settings are identical to those used in a Role. See <span class="xref std std-ref">Bootstrap</span> in the Roles section for more details.</p>
+<p>The “Bootstrap by ..” tabs allow you to enable bootstrap by Chef and Ansible for the Farm Role and set the bootstrap parameters. The settings are identical to those used in a Role. See <a class="reference internal" href="../images_roles/creating_roles.html#bootstrap-ansible"><span class="std std-ref">Bootstrap</span></a> in the Roles section for more details.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Bootstrapping can only be fully configured in a Farm Role if it has NOT been enabled at the Role level. If the Role has bootstrap enabled then it will be enabled at the Farm Role level and cannot be changed. Some limited options do remain configurable at the Farm Role level, such as choosing the Chef environment.</p>
