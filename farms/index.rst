@@ -177,6 +177,10 @@ EC2
 .. image:: images/ec2_tab.png
    :scale: 50%
 
+.. |SPOT| raw:: html
+
+   <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html" target="_blank">Spot Instances</a>
+
 .. csv-table::
    :widths: 30,70
    :header-rows: 1
