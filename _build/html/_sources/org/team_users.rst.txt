@@ -85,7 +85,7 @@ Once a member has been added to the Team, they will automatically have the same 
 Externally Authenticated Teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To add an externally managed team, first ensure you are logged into the |Account| scope as either an Administrator or as the |Account| Owner. Next, click on the main Scalr menu on the top left |MENU_ACC|, and go down to Teams. For externally managed teams, all you have to do is add the team name into the New Team field and apply the ACL that should be assigned to it. On save, Scalr will verify the team with LDAP/AD and if no errors are received it will be added to Scalr. As explained above, users will automatically be added to Scalr after the log in for the first time.
+To add an externally managed team, first ensure you are logged into the |Account| scope as either an Administrator or as the |Account| Owner. Next, click on the main Scalr menu on the top left |MENU_ACC|, and go down to Teams. For externally managed teams, all you have to do is add the team name into the New Team field seen above and apply the ACL that should be assigned to it. On save, Scalr will verify the team with LDAP/AD and if no errors are received it will be added to Scalr. As explained above, users will automatically be added to Scalr after they log in for the first time.
 
 Adding Teams to Environments
 ----------------------------

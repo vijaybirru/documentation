@@ -430,15 +430,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/acls.html#creating-an-acl">Creating an ACL</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Users and Teams</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-authenticated-users">Scalr Authenticated Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-local-users">Scalr Local Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#externally-authenticated-users">Externally Authenticated Users</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-teams">Configuring Teams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#global-admins">Global Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#financial-admins">Financial Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-teams">Configuring Teams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-local-teams">Scalr Local Teams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#externally-authenticated-teams">Externally Authenticated Teams</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#adding-teams-to-environments">Adding Teams to Environments</a></li>
 </ul>
 </li>
 </ul>
@@ -505,6 +513,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#creating-an-acl">Creating an ACL</a></li>
 </ul>
 </li>
 </ul>
@@ -761,6 +770,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/cloud_services.html">Supported Cloud Services and Features</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reference/cloud_services.html#aws-features-and-services">AWS Features and Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#spot-instances">Spot Instances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#s3-buckets">S3 Buckets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#cloudfront">CloudFront</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#relational-database-service-rds">Relational Database Service (RDS)</a></li>
@@ -872,6 +882,10 @@
 <div class="section" id="configuring-cloud-service-gateway">
 <h2>Configuring Cloud Service Gateway<a class="headerlink" href="#configuring-cloud-service-gateway" title="Permalink to this headline">¶</a></h2>
 <p>To enable the CSG on your deployment, add the following to your scalr-server.rb:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A SELF SIGNED cert is required for the setup below.</p>
+</div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable the CSG service</span>
 csg<span class="o">[</span>:enable<span class="o">]</span> <span class="o">=</span> <span class="nb">true</span>
 
