@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Account Configuration &mdash; Scalr 0.01 documentation</title>
+  <title>Account &amp; Environment Configuration &mdash; Scalr 0.01 documentation</title>
   
 
   
@@ -423,22 +423,33 @@
 <p class="caption"><span class="caption-text">Organizational Management</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Implementing your Organisation in Scalr</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Account Configuration</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Account &amp; Environment Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-accounts">Creating Accounts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#configuring-environments">Configuring Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-environments">Creating Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#managing-environments">Managing Environments</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cost_centers_projects.html">Cost Centers and Projects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="acls.html">Access Control Lists</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acls.html#creating-an-acl">Creating an ACL</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="team_users.html">Users and Teams</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="team_users.html#configuring-users">Configuring Users</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="team_users.html#scalr-authenticated-users">Scalr Authenticated Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="team_users.html#scalr-local-users">Scalr Local Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="team_users.html#externally-authenticated-users">Externally Authenticated Users</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="team_users.html#configuring-teams">Configuring Teams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="team_users.html#global-admins">Global Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="team_users.html#financial-admins">Financial Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="team_users.html#configuring-teams">Configuring Teams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="team_users.html#scalr-local-teams">Scalr Local Teams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="team_users.html#externally-authenticated-teams">Externally Authenticated Teams</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="team_users.html#adding-teams-to-environments">Adding Teams to Environments</a></li>
 </ul>
 </li>
 </ul>
@@ -505,6 +516,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#creating-an-acl">Creating an ACL</a></li>
 </ul>
 </li>
 </ul>
@@ -761,6 +773,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/cloud_services.html">Supported Cloud Services and Features</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reference/cloud_services.html#aws-features-and-services">AWS Features and Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#spot-instances">Spot Instances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#s3-buckets">S3 Buckets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#cloudfront">CloudFront</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#relational-database-service-rds">Relational Database Service (RDS)</a></li>
@@ -846,7 +859,7 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Account Configuration</li>
+      <li>Account &amp; Environment Configuration</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -865,10 +878,49 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="account-configuration">
-<span id="accounts"></span><h1>Account Configuration<a class="headerlink" href="#account-configuration" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="account-environment-configuration">
+<span id="accounts"></span><h1>Account &amp; Environment Configuration<a class="headerlink" href="#account-environment-configuration" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></p>
+<p>Accounts are fully isolated resource pools, which is one of the core concepts behind Scalr that makes it a truly multi-tenant tool.  Each account has an owner.  A Scalr instance may contain as many Accounts as you wish. Accounts contain one or more Environments. Generally, Accounts correspond to Organizations, Business Units, Customers, or just a logical way to segment resources and users.</p>
+<div class="section" id="creating-accounts">
+<h2>Creating Accounts<a class="headerlink" href="#creating-accounts" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></p>
+<p>Accounts can only be created by <a class="reference internal" href="team_users.html#global-admin"><span class="std std-ref">Global Admins</span></a>. To create an Account, first ensure you are logged into the Scalr scope as a Global Administrator. Next, click on the main Scalr menu on the top left <a class="reference internal" href="../_images/menu_scalr.png"><img alt="MENU_SCALR" src="../_images/menu_scalr.png" style="width: 46.0px; height: 31.0px;" /></a>, and go down to Accounts.</p>
+<a class="reference internal image-reference" href="../_images/new_account.png"><img alt="../_images/new_account.png" src="../_images/new_account.png" style="width: 1044.8px; height: 454.40000000000003px;" /></a>
+<p>Click the New Account button, which will prompt you for a Name, Owner, and Cost Center, all mandatory fields:</p>
+<a class="reference internal image-reference" href="../_images/new_account1.png"><img alt="../_images/new_account1.png" src="../_images/new_account1.png" style="width: 497.7px; height: 263.2px;" /></a>
+<p>After creating an account, you can move on to creating the environments within the account.</p>
+</div>
 <div class="section" id="configuring-environments">
 <span id="environments"></span><h2>Configuring Environments<a class="headerlink" href="#configuring-environments" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></p>
+<p>Environments are further isolated resource pools. Each Environment is connected to one or more cloud platforms. One or more teams can be granted access to each Environment. Environments can correspond to</p>
+<ul class="simple">
+<li>An SDLC environment: Dev, QA, or Prod</li>
+<li>An application</li>
+<li>A logical group of physical resources: Non-Prod and Prod</li>
+<li>Or More</li>
+</ul>
+<p>There isn’t a “rule” for what an Environment can be, it is just a way to add more multi-tenancy and logical groupings to Scalr.</p>
+</div>
+<div class="section" id="creating-environments">
+<h2>Creating Environments<a class="headerlink" href="#creating-environments" title="Permalink to this headline">¶</a></h2>
+<p>Environments can only be created by Account administrators. To create an Environment, first ensure you are logged into the Account scope. Next, click on the main Scalr menu on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a>, and go down to Environments.</p>
+<a class="reference internal image-reference" href="../_images/new_env.png"><img alt="../_images/new_env.png" src="../_images/new_env.png" style="width: 1042.4px; height: 562.4px;" /></a>
+<p>Click on New Environment, enter the Name and Cost Center, either of which can be changed at a later time, and Save.</p>
+</div>
+<div class="section" id="managing-environments">
+<h2>Managing Environments<a class="headerlink" href="#managing-environments" title="Permalink to this headline">¶</a></h2>
+<p>At this point you can do the following with Environments:</p>
+<ul class="simple">
+<li><a class="reference internal" href="../clouds/index.html#cloud-creds"><span class="std std-ref">Cloud Configuration and Credentials</span></a></li>
+<li><a class="reference internal" href="../sec_comp/policies.html#policy-link"><span class="std std-ref">Linking Policy Groups to Environments</span></a></li>
+<li><a class="reference internal" href="../sec_comp/quotas.html#apply-quotas"><span class="std std-ref">Applying Quotas</span></a></li>
+<li><a class="reference internal" href="team_users.html#teams-env"><span class="std std-ref">Adding Teams to Environments</span></a></li>
+</ul>
+<p>If for any reason you need to suspend the Scalr management of an Environment, click on Suspended at the top right of the Environment page:</p>
+<a class="reference internal image-reference" href="../_images/env_suspend.png"><img alt="../_images/env_suspend.png" src="../_images/env_suspend.png" style="width: 306.59999999999997px; height: 38.5px;" /></a>
+<p>This will suspend API calls to the Cloud Providers, it will not terminate or cause any damage to the running resources.</p>
 </div>
 </div>
 

@@ -35,6 +35,8 @@ Externally Authenticated Users
 
 If you are using an external system to manage your teams, you do not have to manually add users. The users will gain access to Scalr when their AD/LDAP team is added into Scalr. The user will appear in Scalr after that user logs in for the first time. See more about adding Teams below.
 
+.. _global_admin:
+
 Global Admins
 --------------
 
@@ -86,6 +88,8 @@ Externally Authenticated Teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To add an externally managed team, first ensure you are logged into the |Account| scope as either an Administrator or as the |Account| Owner. Next, click on the main Scalr menu on the top left |MENU_ACC|, and go down to Teams. For externally managed teams, all you have to do is add the team name into the New Team field seen above and apply the ACL that should be assigned to it. On save, Scalr will verify the team with LDAP/AD and if no errors are received it will be added to Scalr. As explained above, users will automatically be added to Scalr after they log in for the first time.
+
+.. _teams_env:
 
 Adding Teams to Environments
 ----------------------------
