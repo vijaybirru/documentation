@@ -59,7 +59,7 @@ A Financial Admin is someone who mainly cares about the Cost components of Scalr
 .. image:: /org/images/finance_admin.png
    :scale: 70%
 
-To add a Global Admin, go to the |Scalr| scope and click on Users. Once you are on the Users page, click on New User, enter the information that is prompted for, and then make sure you tick the Financial Admin radio button:
+To add a Financial Admin, go to the |Scalr| scope and click on Users. Once you are on the Users page, click on New User, enter the information that is prompted for, and then make sure you tick the Financial Admin radio button:
 
 .. image:: /org/images/finance_admin2.png
    :scale: 70%
