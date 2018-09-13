@@ -24,17 +24,17 @@ Roles can be created at any scope in Scalr and made available to lower scopes. |
 
 Role functionality is accessed via Roles in the Main menu or Bookmarks bar at any scope. Note that you can jump straight to New Role from the main menu or click on "Roles" and then "New Role" at the top of the list.
 
-.. |ROLE_MENU| Image:: Images/role_menu.png
+.. |ROLE_MENU| image:: images/role_menu.png
               :scale: 50%
 
-.. |ROLE_LIST| Image:: Images/role_list.png
+.. |ROLE_LIST| image:: images/role_list.png
               :scale: 50%
 
 |ROLE_MENU| |ROLE_LIST|
 
 You will now be presented with the New Role screen where you configure all the Role options
 
-.. Image:: Images/new_role.png
+.. image:: images/new_role.png
    :scale: 50%
 
 .. csv-table:: Role Configuration Parameters
@@ -80,7 +80,7 @@ Orchestration rules define actions to be performed at specific events during the
 
 To configure Orchestration Rules click on the Orchestration tab on the left side of the Role details screen.
 
-.. Image:: Images/role_orch.png
+.. image:: images/role_orch.png
    :scale: 50%
 
 .. include:: /farms/orchestration_include.rst
@@ -91,18 +91,18 @@ Global Variables in Roles
 When defining Roles you can define new :ref:`gvs` for use in scripts etc as described in the :ref:`gvs` section.
 You may also need to set the value of Global Variables that have been defined at the same or higher scopes. Global Variables defined at the same or higher scope as the role are automatically associated with the Role and will be visible when clicking on the Global Variables tab of the Role screen.
 
-.. Image:: Images/role_gv.png
+.. image:: images/role_gv.png
    :scale: 50%
 
 If the value for a variable is already set then the Role can use that value or overwrite it if the variable is configured to allow it.
 
-.. |GV1| Image:: Images/gv1.png
+.. |GV1| image:: images/gv1.png
          :scale: 30%
 
-.. |GV2| Image:: Images/gv2.png
+.. |GV2| image:: images/gv2.png
          :scale: 30%
 
-.. |GV3| Image:: Images/gv3.png
+.. |GV3| image:: images/gv3.png
          :scale: 30%
 
 .. csv-table::
@@ -153,10 +153,10 @@ Then select Chef when the Configure Scalr Automation pop up appears:
 
 Once that is enabled you will then be able to click on the Chef tab on the bottom left of the page which will bring up the pages below.
 
-.. |CHEF1| Image:: /images_roles/images/role_chef1.png
+.. |CHEF1| image:: /images_roles/images/role_chef1.png
            :scale: 50%
 
-.. |CHEF2| Image:: /images_roles/images/role_chef2.png
+.. |CHEF2| image:: /images_roles/images/role_chef2.png
            :scale: 50%
 
 Chef Server:
@@ -175,5 +175,5 @@ Role Permissions
 
 |ACCOUNT| scope roles can optionally have permissions set to define which |ENVIRONMENTS| within the |ACCOUNT| can have access to the Role. By default all |ENVIRONMENTS| will have access.
 
-.. Image:: Images/role_perm.png
+.. image:: images/role_perm.png
    :scale: 50%
