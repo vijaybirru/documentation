@@ -144,7 +144,7 @@ Chef Servers can be configured at |SCALR| or |ACCOUNT| scope to be used as means
 If a Chef server is configured at the or above the scope for the Role, the tab will be available on the Role configuration screen. This option allows you to enable Chef Bootstrap for the Role and define either a Chef Server or Chef Solo Cookbook to be used. Within here you can add Chef Roles, Runlists, Cookbooks, and more. All Farm Roles that use this role will inherit the configuration. To add Chef to a role, you must click on the gear icon under Bootstrap Settings in the Roles page and enable Chef:
 
 .. image:: /images_roles/images/role_chef3.png
-           :scale: 90%
+           :scale: 50%
 
 Then select Chef when the Configure Scalr Automation pop up appears:
 
