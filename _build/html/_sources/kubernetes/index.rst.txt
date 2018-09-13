@@ -113,13 +113,13 @@ Here is some more information that can be referenced on AWS EKS:
 * |aws_starting| |NEWWIN|
 
 
-Native Kubernetes Clusters
----------------------------
+Self - Managed Kubernetes Clusters
+----------------------------------
 
 Scalr supports two types of authorization for native Kubernetes clusters:
 
 * **Basic**: ``username`` + ``password`` + ``cluster_ca_cert`` - basic authorization should be enabled in order for this method to work.
-* **x509 client certs**: ``client_key`` + ``client_cert`` + ``cluster_cert`` - ``Enable obsolete authorization`` should be enabled in Google GKE cluster settings in order for this method to work.
+* **x509 client certs**: ``client_key`` + ``client_cert`` + ``cluster_cert`` - ``Enable obsolete authorization``.
 
 Depending on the type of authorization kube-config will contain either username + pass or client x509 certs.
 

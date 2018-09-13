@@ -617,7 +617,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#id1">Resources:</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#native-kubernetes-clusters">Native Kubernetes Clusters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#self-managed-kubernetes-clusters">Self - Managed Kubernetes Clusters</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id2">Resources:</a></li>
 </ul>
 </li>
@@ -919,12 +919,12 @@ Then to connect to the cluster you can either export the config path as environm
 </ul>
 </div>
 </div>
-<div class="section" id="native-kubernetes-clusters">
-<h2>Native Kubernetes Clusters<a class="headerlink" href="#native-kubernetes-clusters" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="self-managed-kubernetes-clusters">
+<h2>Self - Managed Kubernetes Clusters<a class="headerlink" href="#self-managed-kubernetes-clusters" title="Permalink to this headline">¶</a></h2>
 <p>Scalr supports two types of authorization for native Kubernetes clusters:</p>
 <ul class="simple">
 <li><strong>Basic</strong>: <code class="docutils literal notranslate"><span class="pre">username</span></code> + <code class="docutils literal notranslate"><span class="pre">password</span></code> + <code class="docutils literal notranslate"><span class="pre">cluster_ca_cert</span></code> - basic authorization should be enabled in order for this method to work.</li>
-<li><strong>x509 client certs</strong>: <code class="docutils literal notranslate"><span class="pre">client_key</span></code> + <code class="docutils literal notranslate"><span class="pre">client_cert</span></code> + <code class="docutils literal notranslate"><span class="pre">cluster_cert</span></code> - <code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">obsolete</span> <span class="pre">authorization</span></code> should be enabled in Google GKE cluster settings in order for this method to work.</li>
+<li><strong>x509 client certs</strong>: <code class="docutils literal notranslate"><span class="pre">client_key</span></code> + <code class="docutils literal notranslate"><span class="pre">client_cert</span></code> + <code class="docutils literal notranslate"><span class="pre">cluster_cert</span></code> - <code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">obsolete</span> <span class="pre">authorization</span></code>.</li>
 </ul>
 <p>Depending on the type of authorization kube-config will contain either username + pass or client x509 certs.</p>
 <div class="section" id="id2">
