@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Custom Events &mdash; Scalr 0.01 documentation</title>
+  <title>Getting Started for End Users &mdash; Scalr 0.01 documentation</title>
   
 
   
@@ -29,9 +29,7 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Scaling Applications" href="../scaling/index.html" />
-    <link rel="prev" title="Ansible Integration" href="../ansible/index.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -272,7 +270,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#role-of-an-administrator">Role of an Administrator</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../gs_users/index.html">Getting Started for End Users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Getting Started for End Users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../navigating/index.html">Navigating the User Interface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#scope-differences">Scope Differences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#ui-overview">UI Overview</a></li>
@@ -521,7 +519,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../cost/management.html">Cost Management</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/index.html">Scripts</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#definition-and-scope">Definition and Scope</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scripts/index.html#creating-scripts">Creating Scripts</a><ul>
@@ -573,7 +571,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Custom Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Scaling Workloads</span></p>
 <ul>
@@ -830,13 +828,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>Custom Events</li>
+      <li>Getting Started for End Users</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/custom_events/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/gs_users/index_backup.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -849,10 +847,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="custom-events">
-<span id="id1"></span><h1>Custom Events<a class="headerlink" href="#custom-events" title="Permalink to this headline">¶</a></h1>
-<p><strong>UNDER DEVELOPMENT</strong></p>
-<p>Please see our earlier documentation <a href="https://scalr-wiki.atlassian.net/wiki/spaces/docs/pages/1775525/Custom+Events" target="_blank">Custom Events</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a> for more details.</p>
+  <div class="section" id="getting-started-for-end-users">
+<h1>Getting Started for End Users<a class="headerlink" href="#getting-started-for-end-users" title="Permalink to this headline">¶</a></h1>
+<p>This page provides the basic information needed by Scalr users to begin working with Scalr.</p>
+<p><strong>Prerequisite:</strong> Scalr Server has been installed (See <a class="reference internal" href="../install_guide/scalr_server_installation.html#install"><span class="std std-ref">Scalr Server Install</span></a>) and you are able to login a user with access to at least one Environment within any Account.</p>
+<div class="section" id="types-roles-of-end-users">
+<h2>Types/Roles of End users<a class="headerlink" href="#types-roles-of-end-users" title="Permalink to this headline">¶</a></h2>
+<p>An end user’s role can vary from organization to organization and their tasks can be performed within Environments. The ability to complete specific tasks or access specific resources is determined by their ACL group.  There are two general types of end users, summarized as follows.</p>
+<ul class="simple">
+<li><strong>Standard End User</strong></li>
+</ul>
+<blockquote>
+<div><ul>
+<li><p class="first">Create and manage Farms and Service Catalog Offerings</p>
+</li>
+<li><p class="first">Manage infrastructure</p>
+</li>
+<li><p class="first">Configuration of items to be used across a given Environment</p>
+<blockquote>
+<div><ul class="simple">
+<li>Scripts, Global Variables, Webhooks, Schedules.</li>
+<li>Images and Roles.</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><strong>Service Catalog User</strong><ul>
+<li>Consume Service Catalog Offerings</li>
+<li>Manage their own Applications at a basic level, as well as their Team’s Applications if granted permissions.</li>
+</ul>
+</li>
+</ul>
+<p>All tasks can be performed by clicking on the appropriate main menu button <a class="reference internal" href="../_images/menu_scalr.png"><img alt="MENU_SCALR" src="../_images/menu_scalr.png" style="width: 46.0px; height: 31.0px;" /></a> <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a>.</p>
+</div>
+<div class="section" id="navigating-the-user-interface">
+<h2>Navigating the User Interface<a class="headerlink" href="#navigating-the-user-interface" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="farms-and-service-catalog">
+<h2>Farms and Service Catalog<a class="headerlink" href="#farms-and-service-catalog" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="working-with-applications">
+<h2>Working with Applications<a class="headerlink" href="#working-with-applications" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 
@@ -860,15 +898,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../scaling/index.html" class="btn btn-neutral float-right" title="Scaling Applications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../ansible/index.html" class="btn btn-neutral" title="Ansible Integration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
