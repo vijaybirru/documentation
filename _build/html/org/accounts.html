@@ -881,12 +881,12 @@
   <div class="section" id="account-environment-configuration">
 <span id="accounts"></span><h1>Account &amp; Environment Configuration<a class="headerlink" href="#account-environment-configuration" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></p>
-<p>Accounts are fully isolated resource pools, which is one of the core concepts behind Scalr that makes it a truly multi-tenant tool.  Each account has an owner.  A Scalr instance may contain as many Accounts as you wish. Accounts contain one or more Environments. Generally, Accounts correspond to Organizations, Business Units, Customers, or just a logical way to segment resources and users.</p>
+<p>An Account is a child of the Scalr scope as it will inherit anything that is placed or assigned to it at the Scalr scope and it is a parent to Environments, which is one of the core concepts behind Scalr that makes it a truly multi-tenant tool.  Each account has an owner.  A Scalr instance may contain as many Accounts as you wish. Accounts contain one or more Environments. Generally, Accounts correspond to Organizations, Business Units, Customers, or just a logical way to segment resources and users.</p>
 <div class="section" id="creating-accounts">
 <h2>Creating Accounts<a class="headerlink" href="#creating-accounts" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></p>
 <p>Accounts can only be created by <a class="reference internal" href="team_users.html#global-admin"><span class="std std-ref">Global Admins</span></a>. To create an Account, first ensure you are logged into the Scalr scope as a Global Administrator. Next, click on the main Scalr menu on the top left <a class="reference internal" href="../_images/menu_scalr.png"><img alt="MENU_SCALR" src="../_images/menu_scalr.png" style="width: 46.0px; height: 31.0px;" /></a>, and go down to Accounts.</p>
-<a class="reference internal image-reference" href="../_images/new_account.png"><img alt="../_images/new_account.png" src="../_images/new_account.png" style="width: 1044.8px; height: 454.40000000000003px;" /></a>
+<a class="reference internal image-reference" href="../_images/new_account.png"><img alt="../_images/new_account.png" src="../_images/new_account.png" style="width: 957.5999999999999px; height: 189.0px;" /></a>
 <p>Click the New Account button, which will prompt you for a Name, Owner, and Cost Center, all mandatory fields:</p>
 <a class="reference internal image-reference" href="../_images/new_account1.png"><img alt="../_images/new_account1.png" src="../_images/new_account1.png" style="width: 497.7px; height: 263.2px;" /></a>
 <p>After creating an account, you can move on to creating the environments within the account.</p>
@@ -894,7 +894,7 @@
 <div class="section" id="configuring-environments">
 <span id="environments"></span><h2>Configuring Environments<a class="headerlink" href="#configuring-environments" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></p>
-<p>Environments are further isolated resource pools. Each Environment is connected to one or more cloud platforms. One or more teams can be granted access to each Environment. Environments can correspond to</p>
+<p>An Environment is a child of an Account and will inherit anything that is placed or assigned to it at the Account level. Each Environment is connected to one or more cloud platforms. One or more teams can be granted access to each Environment. Environments can correspond to</p>
 <ul class="simple">
 <li>An SDLC environment: Dev, QA, or Prod</li>
 <li>An application</li>
@@ -906,7 +906,7 @@
 <div class="section" id="creating-environments">
 <h2>Creating Environments<a class="headerlink" href="#creating-environments" title="Permalink to this headline">¶</a></h2>
 <p>Environments can only be created by Account administrators. To create an Environment, first ensure you are logged into the Account scope. Next, click on the main Scalr menu on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a>, and go down to Environments.</p>
-<a class="reference internal image-reference" href="../_images/new_env.png"><img alt="../_images/new_env.png" src="../_images/new_env.png" style="width: 1042.4px; height: 562.4px;" /></a>
+<a class="reference internal image-reference" href="../_images/new_env.png"><img alt="../_images/new_env.png" src="../_images/new_env.png" style="width: 957.5999999999999px; height: 642.5999999999999px;" /></a>
 <p>Click on New Environment, enter the Name and Cost Center, either of which can be changed at a later time, and Save.</p>
 </div>
 <div class="section" id="managing-environments">
