@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -271,13 +272,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../gs_admins/index.html#role-of-an-administrator">Role of an Administrator</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../gs_users/index.html">Getting Started for End Users</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#types-roles-of-end-users">Types/Roles of End users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#navigating-the-user-interface">Navigating the User Interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#farms-and-service-catalog">Farms and Service Catalog</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gs_users/index.html#working-with-applications">Working with Applications</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../gs_users/index.html">Getting Started for End Users</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../navigating/index.html">Navigating the User Interface</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#scope-differences">Scope Differences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../navigating/index.html#ui-overview">UI Overview</a></li>
@@ -422,21 +417,35 @@
 <p class="caption"><span class="caption-text">Organizational Management</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../org/index.html">Implementing your Organisation in Scalr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account Configuration</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account &amp; Environment Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#creating-accounts">Creating Accounts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#configuring-environments">Configuring Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#creating-environments">Creating Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#managing-environments">Managing Environments</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Teams and Users</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/acls.html#creating-an-acl">Creating an ACL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Users and Teams</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-authenticated-users">Scalr Authenticated Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-local-users">Scalr Local Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#externally-authenticated-users">Externally Authenticated Users</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-teams">Configuring Teams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#global-admins">Global Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#financial-admins">Financial Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-teams">Configuring Teams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-local-teams">Scalr Local Teams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#externally-authenticated-teams">Externally Authenticated Teams</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#adding-teams-to-environments">Adding Teams to Environments</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
 <ul>
@@ -499,30 +508,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#example-webhooks">Example Webhooks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#creating-an-acl">Creating an ACL</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Cost Control &amp; Visibility</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../cost/index.html">Cost Control Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cost/analytics.html">Cost Analytics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#detailed-billing-set-up">Detailed Billing Set Up</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#cost-analytics-scopes">Cost Analytics Scopes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#scalr-scope-cost-analytics">Scalr Scope Cost Analytics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#account-scope-cost-analytics">Account Scope Cost Analytics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#environment-scope-cost-analytics">Environment Scope Cost Analytics</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#cost-categorisation">Cost Categorisation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#projects">Projects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../cost/analytics.html#cost-centers">Cost Centers</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#budgets">Budgets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#price-lists">Price Lists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#markups">Markups</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cost/analytics.html#reports">Reports</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../cost/analytics.html">Cost Analytics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/management.html">Cost Management</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management</span></p>
@@ -578,11 +573,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../custom_events/index.html#creating-a-custom-event">Creating a Custom Event</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../custom_events/index.html#firing-a-custom-event">Firing a Custom Event</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Scaling Workloads</span></p>
 <ul>
@@ -616,7 +607,21 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Kubernetes Clusters</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#definition-and-scope">Definition and Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#adding-a-cluster">Adding a Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#google-gke">Google GKE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gke-kube-config">GKE Kube-Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resources">Resources:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#amazon-eks">Amazon EKS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aws-kube-config">AWS Kube-Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Resources:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#native-kubernetes-clusters">Native Kubernetes Clusters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Resources:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-a-cluster-to-scalr">Adding a Cluster to Scalr</a></li>
 </ul>
 </li>
 </ul>
@@ -712,23 +717,8 @@
 <p class="caption"><span class="caption-text">Release Notes</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../release_notes/index.html">Release Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../release_notes/scalr/scalr_server_index.html">Scalr Release Notes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../release_notes/scalr/7.9.5.html">7.9.5</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../release_notes/scalr/7.9.5.html#bug-fixes">Bug Fixes:</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../release_notes/scalr/7.10.0.html">7.10.0</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../release_notes/scalr/7.10.0.html#announcements">Announcements:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../release_notes/scalr/7.10.0.html#new-features">New Features:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../release_notes/scalr/7.10.0.html#improvements">Improvements:</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../release_notes/scalr/7.10.0.html#bug-fixes">Bug Fixes:</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../release_notes/scalarizr/scalarizr_index.html">Scalarizr Release Notes</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes/index.html#scalr-release-notes">Scalr Release Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes/index.html#scalarizr-release-notes">Scalarizr Release Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -754,6 +744,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/cloud_services.html">Supported Cloud Services and Features</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reference/cloud_services.html#aws-features-and-services">AWS Features and Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#spot-instances">Spot Instances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#s3-buckets">S3 Buckets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#cloudfront">CloudFront</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#relational-database-service-rds">Relational Database Service (RDS)</a></li>
@@ -865,19 +856,89 @@
 <p><a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></p>
 <p>Scalr provides a built-in integration with Kubernetes to manage existing clusters and give a view into the overall health, capacity and workloads on the cluster. Currently, Scalr supports:</p>
 <ul class="simple">
-<li>Native Kuberenetes</li>
 <li>GKE Kubernetes</li>
-</ul>
-<p>The following Kuberneters offerings will be supported soon:</p>
-<ul class="simple">
 <li>Amazon EKS</li>
+<li>Native Kubernetes</li>
+</ul>
+<p>The following Kubernetes offerings will be supported soon:</p>
+<ul class="simple">
 <li>Azure AKS</li>
 </ul>
 </div>
-<div class="section" id="adding-a-cluster">
-<h2>Adding a Cluster<a class="headerlink" href="#adding-a-cluster" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="google-gke">
+<h2>Google GKE<a class="headerlink" href="#google-gke" title="Permalink to this headline">¶</a></h2>
+<p>The integration of <a href="https://console.cloud.google.com/kubernetes/list" target="_blank">GKE Permissions</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a> clusters requires a few permissions to be granted for the service account that is used to add Kubernetes clusters in Scalr:</p>
+<ul class="simple">
+<li><strong>roles/container.viewer</strong> role permission (could also be visible as Kubernetes Engine Clusters Viewer)</li>
+<li><strong>roles/compute.viewer</strong> role permissions to view list of instances where the Kubernetes cluster is running</li>
+<li><strong>container.clusters.getCredentials</strong> (to obtain cluster credentials)</li>
+</ul>
+<p>Here is more info on permissions to call <a href="https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones/getServerconfig" target="_blank">Google GKE</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></p>
+<p>These are the permissions needed for upgrading the master node:</p>
+<ul class="simple">
+<li><strong>container.clusters.update</strong> on the requested cluster</li>
+<li><strong>container.operations.get</strong> on the requested operations (included by roles/container.viewer)</li>
+<li><strong>container.operations.list</strong> on the requested Cloud project (included by roles/container.viewer)</li>
+</ul>
+<div class="section" id="gke-kube-config">
+<h3>GKE Kube-Config<a class="headerlink" href="#gke-kube-config" title="Permalink to this headline">¶</a></h3>
+<p>In order to use the kube-config file downloaded from Kubernetes page you need <a href="https://cloud.google.com/sdk/install" target="_blank">gcloud</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a> to be installed in your system.
+Configure <code class="docutils literal notranslate"><span class="pre">gcloud</span></code> to use your service account. If you have access to the service-account file you can use <code class="docutils literal notranslate"><span class="pre">gcloud</span> <span class="pre">auth</span> <span class="pre">activate-service-account</span> <span class="pre">--key-file=&lt;path_to_file&gt;</span></code>.
+Then to connect to the cluster you can either export the config path as environment variable(<code class="docutils literal notranslate"><span class="pre">export</span> <span class="pre">KUBECONFIG=&lt;path_to_config&gt;</span></code>) or specify it directly in kubectl command: <code class="docutils literal notranslate"><span class="pre">kubectl</span> <span class="pre">--kubeconfig=&lt;path_to_config&gt;&gt;</span></code>.</p>
+</div>
+<div class="section" id="resources">
+<h3>Resources:<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h3>
+<p>Here is some more information that can be referenced on GKE:</p>
+<ul class="simple">
+<li><a href="https://cloud.google.com/kubernetes-engine/docs/how-to/iam" target="_blank">GKE How-To for IAM</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></li>
+<li><a href="https://cloud.google.com/kubernetes-engine/docs/reference/api-permissions" target="_blank">API Permissions Reference</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="amazon-eks">
+<h2>Amazon EKS<a class="headerlink" href="#amazon-eks" title="Permalink to this headline">¶</a></h2>
+<p>There are few things need to be done before you can add a EKS Cluster to your Scalr account:</p>
+<ul class="simple">
+<li>Your AWS cloud credential has to have EKS view permissions.</li>
+<li>The IAM entity of your AWS cloud credentials has to be added to cluster RBAC <a href="https://docs.aws.amazon.com/eks/latest/userguide/add-user-role.html" target="_blank">(EKS IAM Userguide)</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a>.</li>
+</ul>
+<p>When an Amazon EKS cluster is created, the IAM entity (user or role) that creates the cluster is added to the Kubernetes RBAC authorization table as the administrator. Initially, only that IAM user can make calls to the Kubernetes API server using <code class="docutils literal notranslate"><span class="pre">kubectl</span></code>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In order to collect nodes CPU/MEM metrics <code class="docutils literal notranslate"><span class="pre">heapster</span></code> or <code class="docutils literal notranslate"><span class="pre">merics-server</span></code> need to be deployed on the cluster.</p>
+</div>
+<div class="section" id="aws-kube-config">
+<h3>AWS Kube-Config<a class="headerlink" href="#aws-kube-config" title="Permalink to this headline">¶</a></h3>
+<p>In order to use the kube-config file downloaded from the Kubernetes page you need <a href="https://github.com/kubernetes-sigs/aws-iam-authenticator" target="_blank">aws-iam-authenticator</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a> to be installed and added to <code class="docutils literal notranslate"><span class="pre">$PATH</span></code> on your system. Make sure you are using correct credentials while calling <code class="docutils literal notranslate"><span class="pre">aws-iam-credentials</span></code>.</p>
+</div>
+<div class="section" id="id1">
+<h3>Resources:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Here is some more information that can be referenced on AWS EKS:</p>
+<ul class="simple">
+<li><a href="https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html" target="_blank">(Amazon EKS Getting Started)</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="native-kubernetes-clusters">
+<h2>Native Kubernetes Clusters<a class="headerlink" href="#native-kubernetes-clusters" title="Permalink to this headline">¶</a></h2>
+<p>Scalr supports two types of authorization for native Kubernetes clusters:</p>
+<ul class="simple">
+<li><strong>Basic</strong>: <code class="docutils literal notranslate"><span class="pre">username</span></code> + <code class="docutils literal notranslate"><span class="pre">password</span></code> + <code class="docutils literal notranslate"><span class="pre">cluster_ca_cert</span></code> - basic authorization should be enabled in order for this method to work.</li>
+<li><strong>x509 client certs</strong>: <code class="docutils literal notranslate"><span class="pre">client_key</span></code> + <code class="docutils literal notranslate"><span class="pre">client_cert</span></code> + <code class="docutils literal notranslate"><span class="pre">cluster_cert</span></code> - <code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">obsolete</span> <span class="pre">authorization</span></code> should be enabled in Google GKE cluster settings in order for this method to work.</li>
+</ul>
+<p>Depending on the type of authorization kube-config will contain either username + pass or client x509 certs.</p>
+<div class="section" id="id2">
+<h3>Resources:<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Here is some more information that can be referenced on native Kubernetes:</p>
+<ul class="simple">
+<li><a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/" target="_blank">(Using RBAC Authorization)</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="adding-a-cluster-to-scalr">
+<h2>Adding a Cluster to Scalr<a class="headerlink" href="#adding-a-cluster-to-scalr" title="Permalink to this headline">¶</a></h2>
 <p>To add a cluster into Scalr, go to the Account scope and click on the Scalr menu on the top left of the screen <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a> and then down to Kubernetes (Preview):</p>
-<a class="reference internal image-reference" href="../_images/menu_kubernetes.png"><img alt="../_images/menu_kubernetes.png" src="../_images/menu_kubernetes.png" style="width: 217.79999999999998px; height: 584.4px;" /></a>
+<a class="reference internal image-reference" href="../_images/menu_kubernetes.png"><img alt="../_images/menu_kubernetes.png" src="../_images/menu_kubernetes.png" style="width: 145.20000000000002px; height: 389.6px;" /></a>
 <p>To discover a new cluster, click on New Cluster, select your cluster type and enter the details:</p>
 <a class="reference internal image-reference" href="../_images/new_cluster.png"><img alt="../_images/new_cluster.png" src="../_images/new_cluster.png" style="width: 628.5px; height: 423.5px;" /></a>
 <p>Once it is successfully added the cluster operation dashboard will appear:</p>
@@ -941,7 +1002,10 @@
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {

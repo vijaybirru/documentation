@@ -169,11 +169,17 @@ Cloud Provider Tabs
 
 Scalr supports a variety of configuration options for each cloud provider. The appropriate tab will be available for setting these options.
 
+.. _ec2_spot:
+
 EC2
 ***
 
 .. image:: images/ec2_tab.png
    :scale: 50%
+
+.. |SPOT| raw:: html
+
+   <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html" target="_blank">Spot Instances</a>
 
 .. csv-table::
    :widths: 30,70
@@ -274,6 +280,6 @@ You can also override the Scalarizer Update settings from the Farm if a differen
 Ansible and Chef in Farm Roles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The "Bootstrap by .." tabs allow you to enable bootstrap by Chef and Ansible for the Farm Role and set the bootstrap parameters. The settings are identical to those used in a Role. See :ref:`Bootstrap <bootstrap>` in the Roles section for more details.
+The "Bootstrap by .." tabs allow you to enable bootstrap by Chef and Ansible for the Farm Role and set the bootstrap parameters. The settings are identical to those used in a Role. See :ref:`Bootstrap <bootstrap_ansible>` in the Roles section for more details.
 
 .. note:: Bootstrapping can only be fully configured in a Farm Role if it has NOT been enabled at the Role level. If the Role has bootstrap enabled then it will be enabled at the Farm Role level and cannot be changed. Some limited options do remain configurable at the Farm Role level, such as choosing the Chef environment.

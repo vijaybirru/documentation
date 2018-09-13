@@ -20,6 +20,7 @@ Creating Quotas
 .. image:: images/new_resource_quota.png
    :scale: 70%
 
+.. _apply_quotas:
 
 Applying Quotas
 ---------------

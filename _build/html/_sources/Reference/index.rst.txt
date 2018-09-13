@@ -5,7 +5,7 @@
 Supported Server/Instance Operating Systems
 -------------------------------------------
 
-Scalarizr is supported on the following operatings systems and versions.
+Scalarizr is supported on the following operating systems and versions.
 
 ========================================    ================================
 Operating System                            Supported Versions

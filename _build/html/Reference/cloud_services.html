@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -426,16 +427,20 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Teams and Users</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/acls.html#creating-an-acl">Creating an ACL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Users and Teams</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-authenticated-users">Scalr Authenticated Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-local-users">Scalr Local Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#externally-authenticated-users">Externally Authenticated Users</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-teams">Configuring Teams</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
 <ul>
@@ -498,7 +503,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#example-webhooks">Example Webhooks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#creating-an-acl">Creating an ACL</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Cost Control &amp; Visibility</span></p>
 <ul>
@@ -753,6 +762,7 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Supported Cloud Services and Features</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#aws-features-and-services">AWS Features and Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#spot-instances">Spot Instances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#s3-buckets">S3 Buckets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cloudfront">CloudFront</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#relational-database-service-rds">Relational Database Service (RDS)</a></li>
@@ -865,6 +875,10 @@
 <h2>AWS Features and Services<a class="headerlink" href="#aws-features-and-services" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a></p>
 <a class="reference internal image-reference" href="../_images/aws_menu.png"><img alt="../_images/aws_menu.png" src="../_images/aws_menu.png" style="width: 415.20000000000005px; height: 339.6px;" /></a>
+<div class="section" id="spot-instances">
+<h3>Spot Instances<a class="headerlink" href="#spot-instances" title="Permalink to this headline">¶</a></h3>
+<p>Scalr supports the use of Spot Instances. This is configured at the Farm Role scope, not via the AWS main menu. See <a class="reference internal" href="../farms/index.html#ec2-spot"><span class="std std-ref">Farm Role - EC2 Tab</span></a> for full details.</p>
+</div>
 <div class="section" id="s3-buckets">
 <h3>S3 Buckets<a class="headerlink" href="#s3-buckets" title="Permalink to this headline">¶</a></h3>
 <table border="1" class="colwidths-given docutils">
@@ -1559,7 +1573,10 @@
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {

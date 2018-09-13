@@ -3,38 +3,11 @@
 Cost Analytics
 ==============
 
-Detailed Billing Set Up
------------------------
+**UNDER DEVELOPMENT**
 
-Cost Analytics Scopes
----------------------
+.. |COST| raw:: html
 
-|SCALR| Scope Cost Analytics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   <a href="https://scalr-wiki.atlassian.net/wiki/spaces/docs/pages/13959199/Cost+Analytics" target="_blank">Cost Analytics</a>
 
-|ACCOUNT| Scope Cost Analytics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|ENVIRONMENT| Scope Cost Analytics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Cost Categorisation
--------------------
-
-Projects
-^^^^^^^^
-
-Cost Centers
-^^^^^^^^^^^^
-
-Budgets
--------
-
-Price Lists
------------
-
-Markups
--------
-
-Reports
--------
+Please see our earlier documentation |COST| |NEWWIN| for more details.

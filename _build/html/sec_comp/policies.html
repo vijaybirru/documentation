@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -422,21 +423,35 @@
 <p class="caption"><span class="caption-text">Organizational Management</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../org/index.html">Implementing your Organisation in Scalr</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account Configuration</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../org/accounts.html">Account &amp; Environment Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#creating-accounts">Creating Accounts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#configuring-environments">Configuring Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#creating-environments">Creating Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/accounts.html#managing-environments">Managing Environments</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Teams and Users</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/acls.html#creating-an-acl">Creating an ACL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Users and Teams</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-authenticated-users">Scalr Authenticated Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-local-users">Scalr Local Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#externally-authenticated-users">Externally Authenticated Users</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-teams">Configuring Teams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#global-admins">Global Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#financial-admins">Financial Admins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-teams">Configuring Teams</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-local-teams">Scalr Local Teams</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#externally-authenticated-teams">Externally Authenticated Teams</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#adding-teams-to-environments">Adding Teams to Environments</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
 <ul class="current">
@@ -499,7 +514,11 @@
 <li class="toctree-l2"><a class="reference internal" href="integrations.html#example-webhooks">Example Webhooks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="acls.html">Access Control Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acls.html">Access Control Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="acls.html#understanding-access-control">Understanding Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="acls.html#creating-an-acl">Creating an ACL</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Cost Control &amp; Visibility</span></p>
 <ul>
@@ -754,6 +773,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/cloud_services.html">Supported Cloud Services and Features</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reference/cloud_services.html#aws-features-and-services">AWS Features and Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#spot-instances">Spot Instances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#s3-buckets">S3 Buckets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#cloudfront">CloudFront</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#relational-database-service-rds">Relational Database Service (RDS)</a></li>
@@ -916,7 +936,7 @@ Scalr also provide the ability to implement policies based on <a class="referenc
 <a class="reference internal image-reference" href="../_images/tag_usage.png"><img alt="../_images/tag_usage.png" src="../_images/tag_usage.png" style="width: 681.8px; height: 119.69999999999999px;" /></a>
 </div>
 <div class="section" id="linking-policy-groups-to-environments">
-<h2>Linking Policy Groups to Environments<a class="headerlink" href="#linking-policy-groups-to-environments" title="Permalink to this headline">¶</a></h2>
+<span id="policy-link"></span><h2>Linking Policy Groups to Environments<a class="headerlink" href="#linking-policy-groups-to-environments" title="Permalink to this headline">¶</a></h2>
 <p>Policy Groups will only take effect when they are linked to Environments. You can only link one Policy Group of each type to an Environment.</p>
 <p>Click on ENVIRONMENTS in the Bookmarks Bar or Main menu and select the environment you wish to link Policy Groups to.</p>
 <img alt="../_images/link_11.png" src="../_images/link_11.png" />
@@ -1446,7 +1466,10 @@ Scalr also provide the ability to implement policies based on <a class="referenc
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {

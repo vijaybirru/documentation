@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -427,7 +428,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../org/cost_centers_projects.html">Cost Centers and Projects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Teams and Users</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../org/acls.html#understanding-access-control">Understanding Access Control</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../org/team_users.html">Users and Teams</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-users">Configuring Users</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#scalr-authenticated-users">Scalr Authenticated Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../org/team_users.html#externally-authenticated-users">Externally Authenticated Users</a></li>
@@ -436,7 +441,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../org/team_users.html#configuring-teams">Configuring Teams</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../org/acls.html">Access Control Lists</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Governance, Security and Compliance</span></p>
 <ul>
@@ -499,7 +503,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/integrations.html#example-webhooks">Example Webhooks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sec_comp/acls.html">Access Control Lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/acls.html#understanding-access-control">Understanding Access Control</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Cost Control &amp; Visibility</span></p>
 <ul>
@@ -879,7 +886,7 @@
 <div class="section" id="image-lifecycle-best-practices">
 <h2>Image Lifecycle Best-Practices<a class="headerlink" href="#image-lifecycle-best-practices" title="Permalink to this headline">¶</a></h2>
 <p>It is generally a good idea to test your images before making them available. To do so, start by adding new Images to a test Environment and launching a few servers with them to run the tests. Once the tests have passed, publish it.</p>
-<p>To avoid having to re-register the machine image at the Account scope when it has already been added in an Environment, we have added the capability to moce an Image from the Environment scope to the Account scope. This is called Image Promotion. To promote an Image from an Environment to the containing Account, just click on this button at the bottom right of the Image description:</p>
+<p>To avoid having to re-register the machine image at the Account scope when it has already been added in an Environment, we have added the capability to move an Image from the Environment scope to the Account scope. This is called Image Promotion. To promote an Image from an Environment to the containing Account, just click on this button at the bottom right of the Image description:</p>
 <a class="reference internal image-reference" href="../_images/image_promote.png"><img alt="../_images/image_promote.png" src="../_images/image_promote.png" style="width: 594.4px; height: 318.40000000000003px;" /></a>
 <p>Image are only the first step of provisioning a server, you will also need a role. Note that as you can promote an Image, you can also promote a Role.  Promoting a Role will automatically promote all the Images associated with the Role. This can be convenient when there are several Images associated to a Role, and you want to promote all of them at once. To promote a Role, use the same button as for promoting Images:</p>
 <a class="reference internal image-reference" href="../_images/role_promote.png"><img alt="../_images/role_promote.png" src="../_images/role_promote.png" style="width: 594.4px; height: 258.0px;" /></a>
@@ -1052,7 +1059,10 @@
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {

@@ -107,6 +107,8 @@ Back at |SCALR| scope under **Policy Engine -> Policy Tags** you will be able to
 .. image:: images/tag_usage.png
            :scale: 70%
 
+.. _policy_link:
+
 Linking Policy Groups to |ENVIRONMENTS|
 ---------------------------------------
 

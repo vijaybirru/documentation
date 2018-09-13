@@ -9,7 +9,9 @@ Creating Images and Roles from Non-Scalr Servers
 
 The workflow for creating an Image and Role from a non-scalr server is the same for all clouds.
 
-* Select and prepare the server to be imaged
+* Select the server to be imaged
+* Take a Snapshot in case recovery is needed during initial Preparation
+* Prepare the server to be imaged
 * Install Scalarizer
 * Run Scalarizer
 * Confirm installation
@@ -25,7 +27,9 @@ Before starting you must ensure your environment and the server meets the follow
 
 **Step 2 : Prepare Server for Imaging**
 
-Prior to imaging the Server, ensure that you complete common Image preparation steps required by your organization. (You will need to take a snapshot of the server prior to this preparation if you wish to continue using the server afterwards)
+Prior to imaging the Server, ensure that you complete common Image preparation steps required by your organization.
+
+.. note:: You will need to take a snapshot of the server prior to this preparation if you wish to continue using the server afterwards
 
 Examples of such steps include:
 

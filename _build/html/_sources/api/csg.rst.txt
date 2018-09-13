@@ -12,6 +12,8 @@ Configuring Cloud Service Gateway
 
 To enable the CSG on your deployment, add the following to your scalr-server.rb:
 
+.. note:: A SELF SIGNED cert is required for the setup below.
+
 .. code-block:: shell
 
   # Enable the CSG service

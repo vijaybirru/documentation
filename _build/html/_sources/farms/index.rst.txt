@@ -77,7 +77,7 @@ Click |ATF| and then click on the Farm Role name on the left hand panel to conti
 
 There are several tabs available to continue the configuration. Some tabs are dependent on other aspects of the configuration.
 
-* DATABASE: Only available for Roles from the Database catagory
+* DATABASE: Only available for Roles from the Database category
 * BOOTSTRAP WITH ...: Only available if Chef/Ansible Tower is configured for the |ENVIRONMENT|
 * Cloud: A Tab for the specified cloud
 
@@ -144,7 +144,7 @@ There are two possible hostname sources: a hostname template or an external sour
    :widths: 15,85
 
    Template,"Enter the hostname in the text field, and Scalr will assign that hostname to your Servers. You may use :ref:`gvi` in the Hostname template. If the template is left blank, Scalr will use the cloud platform's default hostname, or the Scalr server ID if the cloud platform does not provide a default."
-   External,"The :ref:`Webhook and Integartion Endpoint <webhooks>` must be created first. Before launching a Server, Scalr will make a call to the selected webhook to retrieve a hostname. This webhook call is made before all the other events related to the Server (BeforeInstanceLaunch, HostInit, etc.) are triggered."
+   External,"The :ref:`Webhook and Integration Endpoint <webhooks>` must be created first. Before launching a Server, Scalr will make a call to the selected webhook to retrieve a hostname. This webhook call is made before all the other events related to the Server (BeforeInstanceLaunch, HostInit, etc.) are triggered."
 
 **Load Balancer**. You must link a Load Balancer Service to the Farm and associate the LB with the Farm Role via that interface. The Network tab will show the linked LB once this is done. See :ref:`cloud_services` for more details.
 
@@ -169,11 +169,17 @@ Cloud Provider Tabs
 
 Scalr supports a variety of configuration options for each cloud provider. The appropriate tab will be available for setting these options.
 
+.. _ec2_spot:
+
 EC2
 ***
 
 .. image:: images/ec2_tab.png
    :scale: 50%
+
+.. |SPOT| raw:: html
+
+   <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html" target="_blank">Spot Instances</a>
 
 .. csv-table::
    :widths: 30,70
@@ -274,6 +280,6 @@ You can also override the Scalarizer Update settings from the Farm if a differen
 Ansible and Chef in Farm Roles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The "Bootstrap by .." tabs allow you to enable bootstrap by Chef and Ansible for the Farm Role and set the bootstrap parameters. The settings are identical to those used in a Role. See :ref:`Bootstrap <bootstrap>` in the Roles section for more details.
+The "Bootstrap by .." tabs allow you to enable bootstrap by Chef and Ansible for the Farm Role and set the bootstrap parameters. The settings are identical to those used in a Role. See :ref:`Bootstrap <bootstrap_ansible>` in the Roles section for more details.
 
 .. note:: Bootstrapping can only be fully configured in a Farm Role if it has NOT been enabled at the Role level. If the Role has bootstrap enabled then it will be enabled at the Farm Role level and cannot be changed. Some limited options do remain configurable at the Farm Role level, such as choosing the Chef environment.

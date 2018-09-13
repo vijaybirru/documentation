@@ -1,5 +1,7 @@
 .. include:: ../GLOBAL.rst
 
+.. _ldap_auth:
+
 Enable LDAP Authentication
 ===========================
 

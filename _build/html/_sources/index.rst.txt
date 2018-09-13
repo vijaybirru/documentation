@@ -1,7 +1,7 @@
 .. include:: GLOBAL.rst
 
-Scalr Documentation!
-====================
+Scalr Documentation Version 2 Preview!
+========================================
 
 .. toctree::
    :maxdepth: 3
@@ -76,8 +76,8 @@ Scalr Documentation!
    org/index
    org/accounts
    org/cost_centers_projects
-   org/team_users
    org/acls
+   org/team_users
 
 .. toctree::
    :maxdepth: 3

@@ -17,6 +17,11 @@ AWS Features and Services
 .. image:: images/aws_menu.png
    :scale: 40%
 
+Spot Instances
+^^^^^^^^^^^^^^
+
+Scalr supports the use of Spot Instances. This is configured at the Farm Role scope, not via the AWS main menu. See :ref:`Farm Role - EC2 Tab <ec2_spot>` for full details.
+
 S3 Buckets
 ^^^^^^^^^^
 
