@@ -1,7 +1,7 @@
 .. include:: ../GLOBAL.rst
 
 Release Notes
-===========================
+=============
 
 Scalr Release Notes
 --------------------
