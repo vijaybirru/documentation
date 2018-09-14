@@ -140,12 +140,12 @@ Adding a Cluster to Scalr
 To add a cluster into Scalr, go to the |Account| scope and click on the Scalr menu on the top left of the screen |MENU_ACC| and then down to Kubernetes (Preview):
 
 .. image:: images/menu_kubernetes.png
-   :scale: 40%
+   :scale: 60%
 
 To discover a new cluster, click on New Cluster, select your cluster type and enter the details:
 
 .. image:: images/new_cluster.png
-   :scale: 50%
+   :scale: 40%
 
 Once it is successfully added the cluster operation dashboard will appear:
 

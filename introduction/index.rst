@@ -1,3 +1,5 @@
+.. include:: ../GLOBAL.rst
+
 Overview of Scalr
 =================
 
