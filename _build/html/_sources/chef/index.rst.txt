@@ -23,7 +23,7 @@ Adding a Chef Server
 Chef servers can be added at the |Scalr|, |Account|, or |Environment| scope. To add a Chef server click on the Scalr icon on the top left |MENU_ACC| and click on Chef Servers. In the Chef Servers page, click on New Chef Server and you will be prompted for the following:
 
 .. image:: images/new_chef_servers.png
-   :scale: 70%
+   :scale: 40%
 
 .. csv-table::
     :header-rows: 1

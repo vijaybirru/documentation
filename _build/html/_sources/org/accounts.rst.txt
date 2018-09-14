@@ -22,7 +22,7 @@ Creating |Accounts|
 Click the New Account button, which will prompt you for a Name, Owner, and Cost Center, all mandatory fields:
 
 .. image:: /org/images/new_account1.png
-   :scale: 70%
+   :scale: 40%
 
 After creating an account, you can move on to creating the environments within the account.
 
@@ -65,6 +65,6 @@ At this point you can do the following with |Environments|:
 If for any reason you need to suspend the Scalr management of an Environment, click on Suspended at the top right of the Environment page:
 
 .. image:: /org/images/env_suspend.png
-   :scale: 70%
+   :scale: 40%
 
 This will suspend API calls to the Cloud Providers, it will not terminate or cause any damage to the running resources.
