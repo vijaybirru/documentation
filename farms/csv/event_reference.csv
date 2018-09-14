@@ -1,5 +1,5 @@
 Event,Description
-BeforeInstanceLaunch,The new instance will be launched in few minutes.
+BeforeInstanceLaunch,Scalr fires the BeforeInstanceLaunch Event after making an API Call to your Cloud Platform.
 HostInit,The Instance finished booting and  Scalr is now configuring the Environment and initializing Services.
 IPAddressChanged,Public IP address of the instance was changed upon by reboot or within Elastic IP assignments.
 EBSVolumeAttached,EBS volume was attached to the instance.
