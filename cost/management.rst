@@ -33,9 +33,9 @@ Cost Manager currently supports the following Cloud Service Providers:
 
 Cost Manager Dashboard
 ^^^^^^^^^^^^^^^^^^^^^^
-The new Cost Manager Dashboard is currently accessible through the | SCALR | scope only.
+The new Cost Manager Dashboard is currently accessible through the |SCALR| scope only.
 
-The data populated within the dashboard is summarized from all cloud account numbers entered as Cloud Credentials in either | ACCOUNT | Scope or | SCALR | Scope.
+The data populated within the dashboard is summarized from all cloud account numbers entered as Cloud Credentials in either |ACCOUNT| Scope or |SCALR| Scope.
 
 **Enabling Tags**
 In order to view cost data by desired Tags, the Tags need to be enabled. You can enable Tags for each cloud account, in Cloud Credentials.
