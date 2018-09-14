@@ -46,3 +46,12 @@ In order to view cost data by desired Tags, the Tags need to be enabled. You can
 
 .. image:: images/EnablingTags.png
    :scale: 40 %
+
+
+Price Books
+^^^^^^^^^^^
+Scalr Cost Manager Price Books are a new component of Scalr Cost Manager that provide an intuitive way to set prices for cloud resources. Price Books allow administrators to create Products, which can be based on one or more attributes such as cpu, memory, disk, etc. Pricing and price metrics can be established for Products with optional pricing conditions like location and/or operating system.
+
+**Note**: Cost Manager Price Books are currently separate from Price Lists established within Scalr Cost Analytics. Cost Data reflected within Cost Analytics, as well as at the Farm level are based on Cost Analytics Price Lists, not Cost Manager Price Books. Price Lists will be merged with Price Books in later release.
+
+Cost Manager Price Books currently supports VMWare private clouds only. 
