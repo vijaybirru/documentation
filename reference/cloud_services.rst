@@ -151,7 +151,7 @@ Elastic Map Reduce (EMR)
    :widths: 40,40,20
 
    Description,Scalr Support,External Docs
-   "Amazon Elastic MapReduce (EMR) is an AWS tool for big data processing and analysis. EMR offers the expandable low-configuration service as an easier alternative to running in-house cluster computing.","Creation and management of EMR clusters. |BR| Linking to Farms.",|LINK_09| |NEWWIN|
+   "Amazon Elastic MapReduce (EMR) is an AWS tool for big data processing and analysis. EMR offers the expandable low-configuration service as an easier alternative to running in-house cluster computing.","Creation and management of EMR clusters.",|LINK_09| |NEWWIN|
 
 Elastic File System (EFS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -165,7 +165,7 @@ Elastic File System (EFS)
    :widths: 40,40,20
 
    Description,Scalr Support,External Docs
-   "Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2. With Amazon EFS, storage capacity is elastic, growing and shrinking automatically as you add and remove files, so your applications have the storage they need, when they need it.","Creation and management of EFS. |BR| Linking to Farms and mounting on instances.",|LINK_10| |NEWWIN|
+   "Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2. With Amazon EFS, storage capacity is elastic, growing and shrinking automatically as you add and remove files, so your applications have the storage they need, when they need it.","Creation and management of EFS.",|LINK_10| |NEWWIN|
 
 Route53
 ^^^^^^^
@@ -208,6 +208,21 @@ VPC's and Subnets
 
    Description,Scalr Support,External Docs
    "Amazon Virtual Private Clouds (VPC) provides isolated private networking functionality for applications.","Full Management of VPC's and Subnets",|LINK_13| |NEWWIN|
+
+Lambda
+^^^^^^
+
+.. |LINK_28| raw:: html
+
+         <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html" target="_blank">Amazon Lambda</a>
+
+.. csv-table::
+   :header-rows: 1
+   :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "AWS Lambda is a compute service that lets you run code without provisioning or managing servers.","Creation and Management of Lambda Functions",|LINK_28| |NEWWIN|
+
 
 Azure Features and Services
 ---------------------------

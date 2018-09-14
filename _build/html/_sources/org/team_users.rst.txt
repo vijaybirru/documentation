@@ -28,7 +28,7 @@ To add an end user to a Scalr account, first ensure you are logged into the |Acc
 On the right hand side of the Users Panel, you will see an entry section for New User. Admin Access is automatically turned off, but can be switched to on by toggling the on/off button. Enter the user's Email Address.  Click Add To Team to add the new user to a selected Team if desired. After clicking save, the user will receive an email letting them know they have access and they can set their password at the first login (see more about email here: :ref:`email`). Their status will automatically default to Active; however, you can click on Suspended if you do not want the user to be immediately Active upon adding them to Scalr. Comments may be added for the new user as well. Click on Add User when finished.
 
 .. image:: /org/images/new_user1.png
-   :scale: 70%
+   :scale: 40%
 
 Externally Authenticated Users
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -45,7 +45,7 @@ Global Admins
 A Global Admin is generally someone who will add accounts, creates cost centers, and manage Scalr in general. Out of the box, Scalr has one Global Admin named "admin", this user can add more admins if needed. To add a Global Admin, go to the |Scalr| scope and click on Users. Once you are on the Users page, click on New User, enter the information that is prompted for, and then make sure you tick the Global Admin radio button:
 
 .. image:: /org/images/global_admin.png
-   :scale: 70%
+   :scale: 40%
 
 By default a Global Admin will inherit the rights of a Financial Admin as there is no higher permission than Global Admin.
 
@@ -62,7 +62,7 @@ A Financial Admin is someone who mainly cares about the Cost components of Scalr
 To add a Financial Admin, go to the |Scalr| scope and click on Users. Once you are on the Users page, click on New User, enter the information that is prompted for, and then make sure you tick the Financial Admin radio button:
 
 .. image:: /org/images/finance_admin2.png
-   :scale: 70%
+   :scale: 40%
 
 Configuring Teams
 -----------------
@@ -82,7 +82,7 @@ Enter a Name for your Team and select a Default ACL from the drop-down menu (Fin
 Once a member has been added to the Team, they will automatically have the same Access Rights as granted through the Default ACL selection. The members section of the Teams tab will show who is currently added to the Team. To change the access rights for a specific Team member, click on the ACL dropdown and select a different setting.
 
 .. image:: /org/images/user_rights.png
-   :scale: 70%
+   :scale: 50%
 
 Externally Authenticated Teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
