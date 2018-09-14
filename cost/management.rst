@@ -37,5 +37,9 @@ The new Cost Manager Dashboard is currently accessible through the |SCALR| scope
 
 The data populated within the dashboard is summarized from all cloud account numbers entered as Cloud Credentials in either |ACCOUNT| Scope or |SCALR| Scope.
 
-**Enabling Tags**
+Enabling Tags
+^^^^^^^^^^^^^
 In order to view cost data by desired Tags, the Tags need to be enabled. You can enable Tags for each cloud account, in Cloud Credentials.
+
+.. image:: images/EnablingTags.png
+   :scale: 40 %
