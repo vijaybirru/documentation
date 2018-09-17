@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -515,15 +516,16 @@
 </ul>
 <p class="caption"><span class="caption-text">Cost Control &amp; Visibility</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../cost/index.html">Cost Control Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cost/analytics.html">Cost Analytics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/management.html">Cost Management</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cost/management.html#overview">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cost/management.html#feature-preview">Feature Preview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cost/management.html#currently-supported-cloud-service-providers">Currently Supported Cloud Service Providers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cost/management.html#cost-manager-dashboard">Cost Manager Dashboard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cost/management.html#enabling-tags">Enabling Tags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cost/management.html#price-books">Price Books</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../cost/analytics.html">Cost Analytics</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management</span></p>
 <ul>
@@ -857,7 +859,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <a class="reference internal image-reference" href="../_images/preview.png"><img alt="../_images/preview.png" class="align-right" src="../_images/preview.png" style="width: 297.2px; height: 34.2px;" /></a>
+  <a class="reference internal image-reference" href="../_images/preview.png"><img alt="../_images/preview.png" class="align-right" src="../_images/preview.png" style="width: 203.20000000000002px; height: 22.400000000000002px;" /></a>
 <div class="section" id="enable-email-integration">
 <span id="email"></span><h1>Enable Email Integration<a class="headerlink" href="#enable-email-integration" title="Permalink to this headline">¶</a></h1>
 <p>In Scalr you can integrate with a SMTP server to send emails when the following events occur:</p>
@@ -877,6 +879,12 @@
 <span class="n">app</span><span class="o">[</span><span class="ss">:email_from_name</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;Scalr Service&#39;</span>                 <span class="c1"># Source name for the messages sent by Scalr</span>
 <span class="n">app</span><span class="o">[</span><span class="ss">:email_mailserver</span><span class="o">]</span> <span class="o">=</span> <span class="kp">nil</span>     <span class="c1"># Set this to &#39;host:port&#39; of your SMTP server for email to be delivered. If you don&#39;t set it, no mail will be sent. Example &#39;127.0.0.1:25&#39;</span>
 <span class="n">app</span><span class="o">[</span><span class="ss">:email_configuration</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;FromLineOverride=YES&#39;</span>   <span class="c1"># Additional configuration to inject into /opt/scalr-server/etc/ssmtp/ssmtp.conf.  FromLineOverride=YES allows for &quot;From&quot; override.</span>
+<span class="c1">#Optional settings below:</span>
+<span class="n">app</span><span class="o">[</span><span class="ss">:email_configuration</span><span class="o">]</span> <span class="o">=</span> <span class="s1">&#39;root=no_r...@scalr.com</span>
+<span class="s1">AuthUser=User</span>
+<span class="s1">AuthPass=Password</span>
+<span class="s1">UseSTARTTLS=YES</span>
+<span class="s1">&#39;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -942,7 +950,10 @@
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {

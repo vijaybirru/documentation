@@ -4,6 +4,7 @@
 
 Cost Management
 ===============
+|SCOPE_SCALR|
 
 Overview
 ^^^^^^^^
@@ -38,14 +39,14 @@ The new Cost Manager Dashboard is currently accessible through the |SCALR| scope
 The data populated within the dashboard is summarized from all cloud account numbers entered as Cloud Credentials in either |ACCOUNT| Scope or |SCALR| Scope.
 
 .. image:: images/cost_manager_dashboard.png
-   :scale: 40 %
+   :scale: 60 %
 
 Enabling Tags
 ^^^^^^^^^^^^^
 In order to view cost data by desired Tags, the Tags need to be enabled. You can enable Tags for each cloud account, in Cloud Credentials.
 
 .. image:: images/EnablingTags.png
-   :scale: 40 %
+   :scale: 60 %
 
 
 Price Books
@@ -54,4 +55,7 @@ Scalr Cost Manager Price Books are a new component of Scalr Cost Manager that pr
 
 **Note**: Cost Manager Price Books are currently separate from Price Lists established within Scalr Cost Analytics. Cost Data reflected within Cost Analytics, as well as at the Farm level are based on Cost Analytics Price Lists, not Cost Manager Price Books. Price Lists will be merged with Price Books in later release.
 
-Cost Manager Price Books currently supports VMWare private clouds only. 
+Cost Manager Price Books currently supports VMWare private clouds only.
+
+.. image:: images/price_books.png
+   :scale: 60 %

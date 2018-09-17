@@ -94,9 +94,8 @@ Scalr Documentation Version 2 Preview!
    :maxdepth: 3
    :caption: Cost Control & Visibility
 
-   cost/index
-   cost/analytics
    cost/management
+   cost/analytics
 
 .. toctree::
    :maxdepth: 3
