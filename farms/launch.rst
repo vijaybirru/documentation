@@ -92,6 +92,11 @@ Provides access links to various related components such as the Farm, Role, Imag
 .. image:: images/dash_gen.png
            :scale: 50%
 
+.. |change_instance| image:: images/change_instance.png
+          :scale: 80%
+
+Within this screen, you can also change the instance size by clicking |change_instance| next to the instance type.
+
 **Health**
 
 Health data is only available for Servers with the agent installed and can show resource usage statistics going back up to one year.
