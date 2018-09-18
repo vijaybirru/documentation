@@ -1,5 +1,51 @@
 .. include:: ../GLOBAL.rst
 
+Support Cloud Platforms
+-----------------------
+
+Scalr can be configured to work with the following cloud platforms and regions.
+
+.. |AWS| image:: images/aws.png
+   :scale: 70%
+
+.. |GCP| image:: images/gcp.png
+   :scale: 70%
+
+.. |AZURE| image:: images/azure.png
+   :scale: 70%
+
+.. |RACKSPACE| image:: images/rackspace.png
+   :scale: 70%
+
+.. |IDC| image:: images/idc.png
+   :scale: 70%
+
+.. |CLOUDSTACK| image:: images/cloudstack.png
+   :scale: 70%
+
+.. |OPENSTACK| image:: images/openstack.png
+   :scale: 70%
+
+.. |VMWARE| image:: images/vmware.png
+   :scale: 70%
+
+.. |SOFTLAYER| image:: images/softlayer.png
+   :scale: 70%
+
+.. csv-table::
+   :widths: 20,10,40,10
+
+   |AWS|,Public,"All regions, incl. China and GovCloud",GA
+   |GCP|,Public,All regions,GA
+   |AZURE|,Public,"All regions, Azure Gov, Germany Cloud, Azure Stack",GA
+   |RACKSPACE|,Public,All regions,GA
+   |IDC|,Public,All regions,GA
+   |CLOUDSTACK|,Private,"2.x, 3.x, 4.x",GA
+   |OPENSTACK|,Private,"Mitaka, Newton, Ocata, Pike, Queens",GA
+   |VMWARE|,Private,"Native VMWare vSphere (5.5, 6.0, and 6.5), and VMWare Integrated OpenStack",GA
+   |SOFTLAYER|,Private,,GA
+
+
 .. _supported-os-start:
 
 Supported Server/Instance Operating Systems
