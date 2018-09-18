@@ -95,6 +95,7 @@ Scalr Documentation Version 2 Preview!
    :caption: Cost Control & Visibility
 
    cost/management
+   cost/rightsizing
    cost/analytics
 
 .. toctree::
