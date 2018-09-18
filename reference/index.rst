@@ -34,7 +34,9 @@ Scalr can be configured to work with the following cloud platforms and regions.
 
 .. csv-table::
    :widths: 20,10,40,10
+   :header-rows: 1
 
+   Cloud Provider,Type,Support,Availability
    |AWS|,Public,"All regions, incl. China and GovCloud",GA
    |GCP|,Public,All regions,GA
    |AZURE|,Public,"All regions, Azure Gov, Germany Cloud, Azure Stack",GA
