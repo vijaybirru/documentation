@@ -240,6 +240,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_azure.html#configure-instance-connection-policy">Configure Instance Connection Policy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_azure.html#adding-azure-credentials-to-scalr">Adding Azure Credentials to Scalr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_azure.html#enable-billing">Enable Billing</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a><ul>
@@ -1540,21 +1541,24 @@ Sequential : Wait until all the servers for a Farm Role are running before launc
 <tr class="row-odd"><td>Disable scalr agent time synchronization</td>
 <td>Disable/Enable NTP management so that the agent does not re-set and sync to our default timeservers on startup.  The most common use case for this is to disable NTP management and then configure your own NTP server via an Orchestration script.</td>
 </tr>
-<tr class="row-even"><td>Rotate Instances Orchestration Logs</td>
+<tr class="row-even"><td>Disable scalr agent management of server hostname</td>
+<td>By default, Scalr will create and manage the hostname of the servers it creates. The most common use case for this is to disable hostname management and then configure your own hostname via an Orchestration script.</td>
+</tr>
+<tr class="row-odd"><td>Rotate Instances Orchestration Logs</td>
 <td>Once rotated, Orchestration Logs are no longer available.</td>
 </tr>
-<tr class="row-odd"><td>Abort Server initialization when a Blocking HostInit or BeforeHostUp Script fails (non-zero exit code)</td>
+<tr class="row-even"><td>Abort Server initialization when a Blocking HostInit or BeforeHostUp Script fails (non-zero exit code)</td>
 <td><p class="first">Scalr gives you the option to abort Server Initialization (i.e. place the Server in Failed State) when one of your initialization scripts fails (i.e. exits with a non-zero exit code). <br></p>
 <p>When you check this option, Scalr will mark Servers as failed if any Blocking Script triggered upon the BeforeHostUp Event exits with a non-zero exit code. <br></p>
 <p class="last">View the documentation for the BeforeHostUp Event for more detail and important compatibility information.</p>
 </td>
 </tr>
-<tr class="row-even"><td>Reboot after HostInit Scripts have executed</td>
+<tr class="row-odd"><td>Reboot after HostInit Scripts have executed</td>
 <td><p class="first">This option allows you to restart your Server after HostInit Scripts have executed and before other initialization actions are executed. <br></p>
 <p class="last">This is typically useful on Windows to e.g. change the server’s hostname or joining AD (both of these require a reboot) prior to initializing the Server.</p>
 </td>
 </tr>
-<tr class="row-odd"><td>Fire HostInitFailed event if agent didn’t send ‘hostUp’ or ‘hostInit’ event after launch</td>
+<tr class="row-even"><td>Fire HostInitFailed event if agent didn’t send ‘hostUp’ or ‘hostInit’ event after launch</td>
 <td>Specify how long Scalr will wait for a Server that was launched to signal it is ready.</td>
 </tr>
 </tbody>

@@ -31,12 +31,13 @@ Cost Manager currently supports the following Cloud Service Providers:
 	* Google Cloud Platform - Google Cloud Billing
 	* VMWare - Custom Price Lists
 
+Please see the :ref:`cloud_creds` page to learn how to enable billing for Public Clouds.
 
 Cost Manager Dashboard
 ^^^^^^^^^^^^^^^^^^^^^^
 The new Cost Manager Dashboard is currently accessible through the |SCALR| scope only.
 
-The data populated within the dashboard is summarized from all cloud account numbers entered as Cloud Credentials in either |ACCOUNT| Scope or |SCALR| Scope.
+The data populated within the dashboard is summarized from all cloud account numbers entered as Cloud Credentials in either |ACCOUNT| Scope or |SCALR| Scope. This data includes ALL servers in the cloud accounts added, not just servers managed through Scalr.
 
 .. image:: images/cost_manager_dashboard.png
    :scale: 60 %
