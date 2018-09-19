@@ -240,6 +240,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_azure.html#configure-instance-connection-policy">Configure Instance Connection Policy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_azure.html#adding-azure-credentials-to-scalr">Adding Azure Credentials to Scalr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_azure.html#enable-billing">Enable Billing</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a><ul>
@@ -470,7 +471,11 @@
 <li class="toctree-l1"><a class="reference internal" href="#policy-reference">Policy Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#configuration-policies">Configuration Policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#container-policies">Container Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#reclamation-policies">Reclamation Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reclamation-policies">Reclamation Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lifetime">Lifetime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#allowed-hours">Allowed Hours</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#cloud-service-gateway-policies">Cloud Service Gateway Policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cloud-generic-policies">Cloud Generic Policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#aws-policies">AWS Policies</a></li>
@@ -525,6 +530,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../cost/management.html#price-books">Price Books</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../cost/rightsizing.html">Rightsizing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/analytics.html">Cost Analytics</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management</span></p>
@@ -731,7 +737,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Reference Section</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Supported Server/Instance Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Support Cloud Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html#supported-server-instance-operating-systems">Supported Server/Instance Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-functionality">Scalarizr Functionality</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/events.html">Event Descriptions</a><ul>
@@ -885,7 +892,7 @@ Scalr also provide the ability to implement policies based on <a class="referenc
 <a class="reference internal image-reference" href="../_images/cfg_policies.png"><img alt="../_images/cfg_policies.png" src="../_images/cfg_policies.png" style="width: 389.6px; height: 394.8px;" /></a>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">For type “Reclamation” there are no further options and you will be taken straight to the screen to configure the reclamation policy. <a class="reference internal" href="../_images/reclamation.png"><img alt="REC" src="../_images/reclamation.png" style="width: 292.2px; height: 216.9px;" /></a></p>
+<p class="last">For type “Reclamation” there are no further options and you will be taken straight to the screen to configure the reclamation policy. <a class="reference internal" href="../_images/reclamation.png"><img alt="REC" src="../_images/reclamation.png" style="width: 279.3px; height: 138.29999999999998px;" /></a></p>
 </div>
 <p>Click a policy and you will be presented with a screen specific to that policy on which you can set policy conditions and details of the policy itself. This is an example of <code class="docutils literal notranslate"><span class="pre">scalr.server.hostname.template</span></code> policy.</p>
 <a class="reference internal image-reference" href="../_images/policy_example.png"><img alt="../_images/policy_example.png" src="../_images/policy_example.png" style="width: 389.6px; height: 345.20000000000005px;" /></a>
@@ -1016,7 +1023,14 @@ Scalr also provide the ability to implement policies based on <a class="referenc
 </div>
 <div class="section" id="reclamation-policies">
 <h2>Reclamation Policies<a class="headerlink" href="#reclamation-policies" title="Permalink to this headline">¶</a></h2>
-<p>Reclamation policies enforce automatic termination of Farms after specified periods. This helps to ensure unwanted servers are not running up costs after they are no longer required. Admins can set Reclamation policies on typically fixed duration Environments such as QA testing, short term projects etc. Reclamation polices define 3 things.</p>
+<p>There are two types of Reclamation policies:</p>
+<ul class="simple">
+<li>Limit Running Farm Lifetime</li>
+<li>Limit Allowed Hours</li>
+</ul>
+<div class="section" id="lifetime">
+<h3>Lifetime<a class="headerlink" href="#lifetime" title="Permalink to this headline">¶</a></h3>
+<p>The lifetime policy enforces automatic termination of Farms after specified periods. This helps to ensure unwanted servers are not running up costs after they are no longer required. Admins can set lifetime policies on typically fixed duration Environments such as QA testing, short term projects etc. Lifetime polices define 3 things:</p>
 <ol class="arabic simple">
 <li>The duration of a Farms running lifetime.</li>
 <li>Notifications to be sent prior to automatic termination.</li>
@@ -1026,7 +1040,19 @@ Scalr also provide the ability to implement policies based on <a class="referenc
 <p class="first admonition-title">Note</p>
 <p class="last">Farm owners can make Non-Standard Lease Extension requests. Standard requests are considered pre-approved and will come into effect immediately. Non-standard requests must be approved by the Account Admin before they will come into effect.</p>
 </div>
-<a class="reference internal image-reference" href="../_images/reclamation.png"><img alt="../_images/reclamation.png" src="../_images/reclamation.png" style="width: 487.0px; height: 361.5px;" /></a>
+<a class="reference internal image-reference" href="../_images/reclamation.png"><img alt="../_images/reclamation.png" src="../_images/reclamation.png" style="width: 465.5px; height: 230.5px;" /></a>
+</div>
+<div class="section" id="allowed-hours">
+<h3>Allowed Hours<a class="headerlink" href="#allowed-hours" title="Permalink to this headline">¶</a></h3>
+<p>The allowed hours policy enforces automatic suspension or termination of a Farm between specified periods. This helps ensure that servers are only running during hours that an admin sees fit. For example, you may not want a Dev Environment running 24 hours a day 7 days a week. To avoid this, you can create an allowed hours policy that only allows Farms to be in a running state Monday - Friday from 8:00AM - 5:00PM. Allowed hours policies need the following defined:</p>
+<ol class="arabic simple">
+<li>Shutdown Method: Suspend or Terminate</li>
+<li>Day(s) of the week that Farms are allowed to be in a Running state.</li>
+<li>Hours during the day in which the Farms are allowed to be in a Running state. Note: To determine the hours that apply, the policy will follow the timezone set in the Farm settings.</li>
+<li>Notifications to be sent prior to automatic suspension or termination.</li>
+</ol>
+<a class="reference internal image-reference" href="../_images/allowed_hours.png"><img alt="../_images/allowed_hours.png" src="../_images/allowed_hours.png" style="width: 555.0px; height: 227.4px;" /></a>
+</div>
 </div>
 <div class="section" id="cloud-service-gateway-policies">
 <h2>Cloud Service Gateway Policies<a class="headerlink" href="#cloud-service-gateway-policies" title="Permalink to this headline">¶</a></h2>
