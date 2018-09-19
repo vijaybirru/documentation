@@ -145,7 +145,15 @@ Container Policies
 Reclamation Policies
 --------------------
 
-Reclamation policies enforce automatic termination of Farms after specified periods. This helps to ensure unwanted servers are not running up costs after they are no longer required. Admins can set Reclamation policies on typically fixed duration |ENVIRONMENTS| such as QA testing, short term projects etc. Reclamation polices define 3 things.
+There are two types of Reclamation policies:
+
+* Limit Running Farm Lifetime
+* Limit Allowed Hours
+
+Lifetime
+^^^^^^^^^
+
+The lifetime policy enforces automatic termination of Farms after specified periods. This helps to ensure unwanted servers are not running up costs after they are no longer required. Admins can set lifetime policies on typically fixed duration |ENVIRONMENTS| such as QA testing, short term projects etc. Lifetime polices define 3 things:
 
 1. The duration of a Farms running lifetime.
 2. Notifications to be sent prior to automatic termination.
@@ -155,6 +163,21 @@ Reclamation policies enforce automatic termination of Farms after specified peri
 
 .. image:: images/reclamation.png
    :scale: 50%
+
+Allowed Hours
+^^^^^^^^^^^^^
+
+The allowed hours policy enforces automatic suspension or termination of Farm between specified periods. This helps ensure that servers are only running during hours that an admin sees fit. For example, you may not want a Dev |Environment| running 24 hours a day 7 days a week. To avoid this, you can create an allowed hours policy that only allows Farms to be in a running state Monday - Friday from 8:00AM - 5:00PM. Allowed hours policies need the following defined:
+
+1. Shutdown Method: Suspend or Terminate
+2. Day(s) of the week that Farms are allowed to be in a Running state.
+3. Hours during the day in which the Farms are allowed to be in a Running state. Note: To determine the hours that apply, the policy will follow the timezone set in the Farm settings.
+4. Notifications to be sent prior to automatic suspension or termination.
+
+.. image:: images/allowed_hours.png
+   :scale: 60%
+
+
 
 Cloud Service Gateway Policies
 ------------------------------
