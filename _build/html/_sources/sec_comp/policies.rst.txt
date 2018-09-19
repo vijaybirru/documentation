@@ -177,7 +177,7 @@ The allowed hours policy enforces automatic suspension or termination of a Farm 
 .. image:: images/allowed_hours.png
    :scale: 60%
 
-
+.. note:: The default Shutdown Method is Suspend. If you choose Terminate, this will destroy the server and potentially cause data loss.
 
 Cloud Service Gateway Policies
 ------------------------------
