@@ -964,6 +964,14 @@ Scalr also provide the ability to implement policies based on <a class="referenc
 <td>This policy creates a validation pattern for hostnames. If the hostname generated for a Server does not match the validation pattern, Scalr will abort the provisioning of the Server.</td>
 <td>Validation patterns are defined as Regular Expressions (REGEX).</td>
 </tr>
+<tr class="row-even"><td>scalr.farm.name.validation_pattern</td>
+<td>This policy creates a validation pattern for Farm names. If the Farm name does not match the validation pattern, Scalr will prevent the farm from being created.</td>
+<td>Validation patterns are defined as Regular Expressions (REGEX).</td>
+</tr>
+<tr class="row-odd"><td>scalr.scaling.maximum_servers_count</td>
+<td>This limits the amount of servers that can be launched from a Farm Role. If the limit is reached it will prevent servers from being launched.</td>
+<td>&#160;</td>
+</tr>
 <tr class="row-even"><td>chef.servers</td>
 <td>Enforces the use of a specific Chef Server to configure cloud severs.</td>
 <td>&#160;</td>
