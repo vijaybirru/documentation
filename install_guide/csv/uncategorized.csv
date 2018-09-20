@@ -22,3 +22,4 @@ scalr.allowed_clouds,List of Cloud Platforms that are available in this Scalr in
 scalr.license_manager.use_proxy,Sets the License manager to use proxy,Boolean,"true, false",FALSE
 scalr.license_manager.ssl_verify,Sets the License manager to verify ssl,Boolean,"true, false",TRUE
 scalr.system.server_terminate_timeout,Length of time for a server to go into a terminated state,String,"auto, +3 minutes. Auto will terminate the servers as soon as the BeforeHostTerminate scripts have completed", +3 minutes
+scalr.system.ownership_model,Determine whether a user or user and team is required when creating resources,string,"user or user_and_teams / the default is 'user'"
