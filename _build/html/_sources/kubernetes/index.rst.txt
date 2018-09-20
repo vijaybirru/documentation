@@ -116,7 +116,7 @@ Here is some more information that can be referenced on AWS EKS:
 Self - Managed Kubernetes Clusters
 ----------------------------------
 
-Scalr supports two types of authorization for native Kubernetes clusters:
+Scalr supports the following authorization for native Kubernetes clusters:
 
 * Basic: ``username`` + ``password`` + ``cluster_ca_cert`` - basic authorization should be enabled in order for this method to work.
 
