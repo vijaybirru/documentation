@@ -1,7 +1,7 @@
 .. _one_server_install:
 
-Scalr Server Install
-====================
+Scalr Server Install - One Server
+=================================
 
 .. note:: This guide should only be used for POCs or Development environments. To see a production install guide, please visit the following page: :ref:`install`
 
