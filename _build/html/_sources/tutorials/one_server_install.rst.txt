@@ -43,7 +43,6 @@ Please add the license file to the /etc/scalr-server directory
 
 .. code-block:: shell
 
-    mkdir /etc/scalr-server
     ##Paste the license.json file in the following location on each server:##
     vi /etc/scalr-server/license.json
 
