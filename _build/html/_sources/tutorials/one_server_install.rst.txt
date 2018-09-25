@@ -27,8 +27,8 @@ Install the package:
 
    # For Debian:
    apt-get install scalr-server
-    # For RPM:
-    yum install scalr-server
+   # For RPM:
+   yum install scalr-server
 
 
 Run the following when prompted:
@@ -59,4 +59,7 @@ You can now log into Scalr by putting the hostname or IP address that is listed 
   "app": {
     "admin_password": "password123",
 
-The default username is admin.
+The default username is admin:
+
+.. image:: images/admin_login.png
+   :scale: 70%
