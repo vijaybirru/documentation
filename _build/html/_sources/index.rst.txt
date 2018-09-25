@@ -118,6 +118,15 @@ Scalr Documentation Version 2 Preview!
 
 .. toctree::
    :maxdepth: 3
+   :caption: Integrations
+
+   integrations/ansible
+   integrations/chef  
+   integrations/infoblox
+   integrations/servicenow
+
+.. toctree::
+   :maxdepth: 3
    :caption: Importing Cloud Infrastructure
 
    discovery/index

@@ -33,9 +33,11 @@ To setup an integration with an external system the following will be needed:
 Configuring Endpoints
 ---------------------
 
-Before creating a Webhook, an endpoint is needed for the webhook to contact. The endpoint is the URL of the application that is running the webhook. To create an endpoint at the |ACCOUNT| or |SCALR| scopes, click on the Scalr icon on the top left |MENU_ACC| and then click on Integration Hub > Endpoints.
+.. _endpoint_start:
 
-.. image:: images/new_endpoint.png
+Before creating a Webhook, an Endpoint is needed for the Webhook to contact. The Endpoint is the URL of the application that is running the Webhook. To create an Endpoint at the |ACCOUNT| or |SCALR| scopes, click on the Scalr icon on the top left |MENU_ACC| and then click on Integration Hub > Endpoints.
+
+.. image:: /sec_comp/images/new_endpoint.png
    :scale: 70%
 
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -50,6 +52,7 @@ Before creating a Webhook, an endpoint is needed for the webhook to contact. The
 | Shared                                     | Determines if the endpoint can be used at a lower level. This is only seen at the |Account| and |Scalr| scopes.                                               |
 +--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. endpoint_end:
 
 Configuring Webhooks
 --------------------

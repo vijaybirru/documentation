@@ -22,7 +22,7 @@ Adding a Chef Server
 
 Chef servers can be added at the |Scalr|, |Account|, or |Environment| scope. To add a Chef server click on the Scalr icon on the top left |MENU_ACC| and click on Chef Servers. In the Chef Servers page, click on New Chef Server and you will be prompted for the following:
 
-.. image:: images/new_chef_servers.png
+.. image:: /chef/images/new_chef_servers.png
    :scale: 40%
 
 .. csv-table::
@@ -53,7 +53,7 @@ Farm Role Scope
 
 The Bootstrap config can also be added directly into a Farm Role if the Role allows for it. To do this, go into the Farm Role and click on Bootstrap with Chef. Within here you can add Chef Roles, Runlists, Cookbooks, and more.
 
-.. image:: images/farm_role_chef.png
+.. image:: /chef/images/farm_role_chef.png
    :scale: 70%
 
 Troubleshooting
