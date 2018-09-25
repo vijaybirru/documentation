@@ -167,4 +167,11 @@ Reconfigure Scalr on the remaining nodes:
 
    /opt/scalr-server/bin/scalr-server-ctl reconfigure
 
-You can now log into Scalr by putting the hostname or IP address that is listed as your endpoint in the scalr-server.rb into a browser. To log in the first time, please find the admin password in the scalr-server-secrets.json file.
+You can now log into Scalr by putting the hostname or IP address that is listed as your endpoint in the scalr-server.rb into a browser. To log in the first time, please find the admin password in the /etc/scalr-server/scalr-server-secrets.json file.
+
+.. code-block:: shell
+
+     "app": {
+       "admin_password": "password123",
+
+The default username is admin.

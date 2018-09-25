@@ -147,8 +147,8 @@ Scalr Documentation Version 2 Preview!
    :maxdepth: 2
    :caption: Tutorials
 
+   tutorials/one_server_install.rst
    tutorials/3-tier-app
-
 
 .. toctree::
    :maxdepth: 2
