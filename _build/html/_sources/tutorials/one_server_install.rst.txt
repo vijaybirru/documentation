@@ -10,8 +10,8 @@ Prerequisites
 * Scalr download token
 * Scalr license file
 
-For DEB-based Linux operating systems
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Installation
+^^^^^^^^^^^^^
 Get the scalr-server package:
 
 .. code-block:: shell

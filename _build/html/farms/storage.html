@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Configuring Storage &mdash; Scalr 0.01 documentation</title>
+  <title>Configuring Storage &mdash; Scalr 1.0 documentation</title>
   
 
   
@@ -240,6 +240,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_azure.html#configure-instance-connection-policy">Configure Instance Connection Policy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_azure.html#adding-azure-credentials-to-scalr">Adding Azure Credentials to Scalr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../clouds/connecting_azure.html#enable-billing">Enable Billing</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../clouds/connecting_openstack.html">Connecting Scalr to OpenStack</a><ul>
@@ -470,7 +471,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html#policy-reference">Policy Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#configuration-policies">Configuration Policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#container-policies">Container Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#reclamation-policies">Reclamation Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#reclamation-policies">Reclamation Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/policies.html#lifetime">Lifetime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/policies.html#allowed-hours">Allowed Hours</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#cloud-service-gateway-policies">Cloud Service Gateway Policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#cloud-generic-policies">Cloud Generic Policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#aws-policies">AWS Policies</a></li>
@@ -525,6 +530,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../cost/management.html#price-books">Price Books</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../cost/rightsizing.html">Rightsizing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/analytics.html">Cost Analytics</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management</span></p>
@@ -705,6 +711,11 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/one_server_install.html">Scalr Server Install - One Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#installation">Installation</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App Tutorial (cloud agnostic, orchestration automation)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#objective">Objective</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#application-overview">Application Overview</a></li>
@@ -731,7 +742,8 @@
 </ul>
 <p class="caption"><span class="caption-text">Reference Section</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Supported Server/Instance Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Support Cloud Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/index.html#supported-server-instance-operating-systems">Supported Server/Instance Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-network-requirements">Scalarizr Network Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/index.html#scalarizr-functionality">Scalarizr Functionality</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../reference/events.html">Event Descriptions</a><ul>
@@ -1014,7 +1026,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.01',
+            VERSION:'1.0',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Rightsizing &mdash; Scalr 0.01 documentation</title>
+  <title>Rightsizing &mdash; Scalr 1.0 documentation</title>
   
 
   
@@ -29,7 +29,9 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Cost Analytics" href="analytics.html" />
+    <link rel="prev" title="Cost Management" href="management.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -469,7 +471,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../sec_comp/policies.html#policy-reference">Policy Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#configuration-policies">Configuration Policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#container-policies">Container Policies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#reclamation-policies">Reclamation Policies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#reclamation-policies">Reclamation Policies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/policies.html#lifetime">Lifetime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sec_comp/policies.html#allowed-hours">Allowed Hours</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#cloud-service-gateway-policies">Cloud Service Gateway Policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#cloud-generic-policies">Cloud Generic Policies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sec_comp/policies.html#aws-policies">AWS Policies</a></li>
@@ -514,7 +520,7 @@
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Cost Control &amp; Visibility</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="management.html">Cost Management</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="management.html#overview">Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="management.html#feature-preview">Feature Preview</a></li>
@@ -524,6 +530,7 @@
 <li class="toctree-l2"><a class="reference internal" href="management.html#price-books">Price Books</a></li>
 </ul>
 </li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Rightsizing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analytics.html">Cost Analytics</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management</span></p>
@@ -704,6 +711,11 @@
 </ul>
 <p class="caption"><span class="caption-text">Tutorials</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/one_server_install.html">Scalr Server Install - One Server</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#installation">Installation</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App Tutorial (cloud agnostic, orchestration automation)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#objective">Objective</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/3-tier-app.html#application-overview">Application Overview</a></li>
@@ -881,6 +893,15 @@
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="analytics.html" class="btn btn-neutral float-right" title="Cost Analytics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="management.html" class="btn btn-neutral" title="Cost Management" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -908,7 +929,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.01',
+            VERSION:'1.0',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
