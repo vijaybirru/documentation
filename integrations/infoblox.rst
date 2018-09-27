@@ -9,20 +9,16 @@ Definition and Scope
 --------------------
 |SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV| |SCOPE_ROLE| |SCOPE_F_ROLE|
 
-Scalr provides a Webhook integration with Infoblox allowing you manage your IP addresses and hostnames directly in Infoblox for private clouds.
-
 .. |infoblox_doc| raw:: html
 
    <a href="https://www.infoblox.com/" target="_blank">Infoblox Website</a>
 
-Find out more about Infoblox here: |infoblox_doc| |NEWWIN|
+Scalr provides a Webhook integration with Infoblox allowing you manage your IP addresses and hostnames directly in Infoblox for private clouds. Find out more about Infoblox here: |infoblox_doc| |NEWWIN|
 
 Installation & Setup
 --------------------
 
-.. note:: This document is written for Debian distributions. Adapt as necessary for other distributions.
-
-First, you will need to create a server to host your Webhook, find out more about Webhhoks here: :ref:`webhooks` . Once you have the server, please follow these directions:
+.. note:: This document is written for Debian distributions. Adapt as necessary for other distributions. **Prerequisite**: You will need to create a server to host your Webhook, find out more about Webhhoks here: :ref:`webhooks`.
 
 On the server that will be hosting the Webhook, create the directory and pull down the Webhook code from Git:
 

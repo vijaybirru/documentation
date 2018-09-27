@@ -24,7 +24,8 @@
 
   
 
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -639,6 +640,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="servicenow.html">ServiceNow Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="servicenow.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="servicenow.html#cmdb-integration">CMDB Integration</a></li>
 </ul>
 </li>
 </ul>
@@ -910,16 +912,14 @@
 <div class="section" id="definition-and-scope">
 <h2>Definition and Scope<a class="headerlink" href="#definition-and-scope" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_role.png"><img alt="SCOPE_ROLE" src="../_images/scope_role.png" style="width: 26.0px; height: 24.0px;" /></a> <a class="reference internal" href="../_images/scope_f_role.png"><img alt="SCOPE_F_ROLE" src="../_images/scope_f_role.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a></p>
-<p>Scalr provides a Webhook integration with Infoblox allowing you manage your IP addresses and hostnames directly in Infoblox for private clouds.</p>
-<p>Find out more about Infoblox here: <a href="https://www.infoblox.com/" target="_blank">Infoblox Website</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></p>
+<p>Scalr provides a Webhook integration with Infoblox allowing you manage your IP addresses and hostnames directly in Infoblox for private clouds. Find out more about Infoblox here: <a href="https://www.infoblox.com/" target="_blank">Infoblox Website</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></p>
 </div>
 <div class="section" id="installation-setup">
 <h2>Installation &amp; Setup<a class="headerlink" href="#installation-setup" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This document is written for Debian distributions. Adapt as necessary for other distributions.</p>
+<p class="last">This document is written for Debian distributions. Adapt as necessary for other distributions. <strong>Prerequisite</strong>: You will need to create a server to host your Webhook, find out more about Webhhoks here: <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhooks and Endpoints</span></a>.</p>
 </div>
-<p>First, you will need to create a server to host your Webhook, find out more about Webhhoks here: <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhooks and Endpoints</span></a> . Once you have the server, please follow these directions:</p>
 <p>On the server that will be hosting the Webhook, create the directory and pull down the Webhook code from Git:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>apt update
 apt install python-pip -y
@@ -1055,7 +1055,10 @@ vi uwsgi.ini
 
   
 
-  <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
 
   <script type="text/javascript">
       jQuery(function () {
