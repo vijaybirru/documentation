@@ -20,13 +20,22 @@ Find out more about Infoblox here: |infoblox_doc| |NEWWIN|
 Installation & Setup
 --------------------
 
+.. note:: This document is written for Debian distributions. Adapt as necessary for other distributions.
+
 First, you will need to create a server to host your Webhook, find out more about Webhhoks here: :ref:`webhooks` . Once you have the server, please follow these directions:
 
 On the server that will be hosting the Webhook, create the directory and pull down the Webhook code from Git:
 
 .. code-block:: shell
 
-   mkdir -p /opt/infoblox-webhook git clone https://github.com/scalr-tutorials/scalr-infoblox-webhook.git
+  apt update
+  apt install python-pip -y
+  pip install docker-compose
+
+  curl -fsSL https://get.docker.com/ | sh
+  service docker start || systemctl start docker
+
+  git clone https://github.com/scalr-tutorials/scalr-infoblox-webhook.git /opt/infoblox-webhook
 
 .. include:: /sec_comp/integrations.rst
     :start-after: endpoint_start:
@@ -51,7 +60,9 @@ Next, log into the server that is hosting the Webhook and go to the ``/opt/infob
 
 .. code-block:: shell
 
+  cd /opt/infoblox-webhook
   cp uwsgi.ini.example uwsgi.ini
+  vi uwsgi.ini
 
 Edit uwsgi.ini to set the configuration variables:
 
@@ -59,12 +70,6 @@ Edit uwsgi.ini to set the configuration variables:
 * ``BACKEND_USER``: The user accessing Infoblox
 * ``BACKEND_PASS``: The password for accessing Infoblox
 * ``BACKEND_VERIFY``: Set to true/false if you want the Infoblox certificate to be checked (if invalid, the webhook will refuse to communicate with Infoblox)
-
-Next, install Docker on the Webhook server:
-
-.. code-block:: shell
-
-  curl -fsSL https://get.docker.com/ | sh service docker start || systemctl start docker
 
 Next, run the webhook with Docker:
 

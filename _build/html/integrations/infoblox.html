@@ -915,9 +915,20 @@
 </div>
 <div class="section" id="installation-setup">
 <h2>Installation &amp; Setup<a class="headerlink" href="#installation-setup" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This document is written for Debian distributions. Adapt as necessary for other distributions.</p>
+</div>
 <p>First, you will need to create a server to host your Webhook, find out more about Webhhoks here: <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhooks and Endpoints</span></a> . Once you have the server, please follow these directions:</p>
 <p>On the server that will be hosting the Webhook, create the directory and pull down the Webhook code from Git:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mkdir -p /opt/infoblox-webhook git clone https://github.com/scalr-tutorials/scalr-infoblox-webhook.git
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>apt update
+apt install python-pip -y
+pip install docker-compose
+
+curl -fsSL https://get.docker.com/ <span class="p">|</span> sh
+service docker start <span class="o">||</span> systemctl start docker
+
+git clone https://github.com/scalr-tutorials/scalr-infoblox-webhook.git /opt/infoblox-webhook
 </pre></div>
 </div>
 <p>Before creating a Webhook, an Endpoint is needed for the Webhook to contact. The Endpoint is the URL of the application that is running the Webhook. To create an Endpoint at the Account or Scalr scopes, click on the Scalr icon on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a> and then click on Integration Hub &gt; Endpoints.</p>
@@ -959,7 +970,9 @@
 <li>In the Allocate IP User Data field, enter the subnet range that should be used.</li>
 </ul>
 <p>Next, log into the server that is hosting the Webhook and go to the <code class="docutils literal notranslate"><span class="pre">/opt/infoblox-webhook</span></code> directory. Copy the uwsgi.ini file:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cp uwsgi.ini.example uwsgi.ini
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /opt/infoblox-webhook
+cp uwsgi.ini.example uwsgi.ini
+vi uwsgi.ini
 </pre></div>
 </div>
 <p>Edit uwsgi.ini to set the configuration variables:</p>
@@ -969,10 +982,6 @@
 <li><code class="docutils literal notranslate"><span class="pre">BACKEND_PASS</span></code>: The password for accessing Infoblox</li>
 <li><code class="docutils literal notranslate"><span class="pre">BACKEND_VERIFY</span></code>: Set to true/false if you want the Infoblox certificate to be checked (if invalid, the webhook will refuse to communicate with Infoblox)</li>
 </ul>
-<p>Next, install Docker on the Webhook server:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>curl -fsSL https://get.docker.com/ <span class="p">|</span> sh service docker start <span class="o">||</span> systemctl start docker
-</pre></div>
-</div>
 <p>Next, run the webhook with Docker:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./relaunch.sh
 </pre></div>
