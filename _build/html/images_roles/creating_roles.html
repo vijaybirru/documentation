@@ -607,6 +607,43 @@
 </ul>
 </li>
 </ul>
+<p class="caption"><span class="caption-text">Integrations</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/ansible.html">Ansible Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#adding-an-ansible-tower-server">Adding an Ansible Tower Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#adding-an-ansible-tower-group">Adding an Ansible Tower Group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#adding-an-ansible-tower-bootstrap-configuration">Adding an Ansible Tower Bootstrap Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#attaching-bootstrap-configurations-to-a-server">Attaching Bootstrap Configurations to a Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../integrations/ansible.html#role-scope">Role Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../integrations/ansible.html#farm-role-scope">Farm Role Scope</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/chef.html">Chef Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/chef.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/chef.html#adding-a-chef-server">Adding a Chef Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/chef.html#using-chef-with-scalr">Using Chef with Scalr</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../integrations/chef.html#role-scope">Role Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../integrations/chef.html#farm-role-scope">Farm Role Scope</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/chef.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/infoblox.html">Infoblox Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/infoblox.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/infoblox.html#installation-setup">Installation &amp; Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/infoblox.html#configure-farm-roles-to-use-infoblox">Configure Farm Roles to Use Infoblox</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../integrations/servicenow.html">ServiceNow Integration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a></li>
+</ul>
+</li>
+</ul>
 <p class="caption"><span class="caption-text">Importing Cloud Infrastructure</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../discovery/index.html">Discovery Manager</a><ul>
@@ -1246,7 +1283,7 @@ You may also need to set the value of Global Variables that have been defined at
 </div>
 <div class="section" id="ansible-tower-in-roles">
 <span id="bootstrap-ansible"></span><h1>Ansible Tower in Roles<a class="headerlink" href="#ansible-tower-in-roles" title="Permalink to this headline">¶</a></h1>
-<p>Ansible Tower can be configured at Scalr or Account scope to be used as means to bootstrap servers. See <a class="reference internal" href="../ansible/index.html#ansible"><span class="std std-ref">Ansible Integration</span></a> for more details.</p>
+<p>Ansible Tower can be configured at Scalr or Account scope to be used as means to bootstrap servers. See <a class="reference internal" href="../integrations/ansible.html#ansible"><span class="std std-ref">Ansible Integration</span></a> for more details.</p>
 <p>If an Ansible tower server is configured at the or above the scope for the Role, the Ansible Tower tab will be available on the Role configuration screen. This option allows you to enable Ansible Tower Bootstrap for the Role and define bootstrap configuration to be used.</p>
 <a class="reference internal image-reference" href="../_images/role_ansible.png"><img alt="../_images/role_ansible.png" src="../_images/role_ansible.png" style="width: 711.5px; height: 487.0px;" /></a>
 <p>At a minimum, this will ensure the server is added to the correct Organization, Inventory and Group. If you want to run a Job Template during the provisioning of the server, click on the Orchestration tab, then New Rule, select the Event, and then click on AT Job:</p>
@@ -1254,7 +1291,7 @@ You may also need to set the value of Global Variables that have been defined at
 </div>
 <div class="section" id="chef-in-roles">
 <span id="bootstrap-chef"></span><h1>Chef in Roles<a class="headerlink" href="#chef-in-roles" title="Permalink to this headline">¶</a></h1>
-<p>Chef Servers can be configured at Scalr or Account scope to be used as means to bootstrap servers. See <a class="reference internal" href="../chef/index.html#chef"><span class="std std-ref">Chef Integration</span></a> for more details.</p>
+<p>Chef Servers can be configured at Scalr or Account scope to be used as means to bootstrap servers. See <a class="reference internal" href="../integrations/chef.html#chef"><span class="std std-ref">Chef Integration</span></a> for more details.</p>
 <p>If a Chef server is configured at the or above the scope for the Role, the tab will be available on the Role configuration screen. This option allows you to enable Chef Bootstrap for the Role and define either a Chef Server or Chef Solo Cookbook to be used. Within here you can add Chef Roles, Runlists, Cookbooks, and more. All Farm Roles that use this role will inherit the configuration. To add Chef to a role, you must click on the gear icon under Bootstrap Settings in the Roles page and enable Chef:</p>
 <a class="reference internal image-reference" href="../_images/role_chef3.png"><img alt="../_images/role_chef3.png" src="../_images/role_chef3.png" style="width: 331.5px; height: 93.0px;" /></a>
 <p>Then select Chef when the Configure Scalr Automation pop up appears:</p>

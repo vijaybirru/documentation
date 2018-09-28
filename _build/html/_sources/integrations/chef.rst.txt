@@ -1,0 +1,1 @@
+.. include:: ../chef/index.rst

@@ -22,7 +22,7 @@ Adding an Ansible Tower Server
 
 Ansible Tower servers can be added at the |Account| or |Scalr| scope. To add an Ansible server click on the Scalr icon on the top left |MENU_ACC|, go down to Ansible Tower and then click on Servers. In the Servers page, click on New Server and you will be prompted for the following:
 
-.. image:: images/new_at_servers.png
+.. image:: /ansible/images/new_at_servers.png
    :scale: 40%
 
 Adding an Ansible Tower Group
@@ -30,7 +30,7 @@ Adding an Ansible Tower Group
 
 Ansible Tower Groups can also be added at the |Account| or |Scalr| scope. To add an Ansible server click on the Scalr icon on the top left |MENU_ACC|, go down to Ansible Tower and then click on Groups. In the Groups page, click on New Group and you will be prompted for the following:
 
-.. image:: images/new_at_group.png
+.. image:: /ansible/images/new_at_group.png
    :scale: 40%
 
 The fields above with the {x} support :ref:`gvi`, by putting a Global Variable in the field you can pull in that value rather than specifying it in the text box.
@@ -47,12 +47,12 @@ Adding an Ansible Tower Bootstrap Configuration
 
 An Ansible Tower Bootstrap Configuration is a template that will tell servers being provisioned by Scalr what Ansible Tower server to connect to and how to join an Organization, Inventory, and Group. All of this information will be pulled into Scalr from the Ansible Tower Server once you select the AT Server field below:
 
-.. image:: images/new_at_bootstrap.png
+.. image:: /ansible/images/new_at_bootstrap.png
    :scale: 50%
 
 Machine credentials can either be prepopulated in the Ansible Tower Server or generated when selecting the Link Machine Credentials option:
 
-.. image:: images/new_at_creds.png
+.. image:: /ansible/images/new_at_creds.png
    :scale: 40%
 
 Attaching Bootstrap Configurations to a Server
@@ -76,10 +76,10 @@ Farm Role Scope
 
 The Bootstrap config can also be added directly into a Farm Role. To do this, go into the Farm Role and click on Bootstrap with AT:
 
-.. image:: images/at_bootstrap_farmrole.png
+.. image:: /ansible/images/at_bootstrap_farmrole.png
    :scale: 70%
 
 At a minimum, this will ensure the server is added to the correct Organization, Inventory and Group. If you want to run a Job Template during the provisioning of the server, click on Orchestration within the Farm Role, New Rule, select the Event, and then click on AT Job:
 
-.. image:: images/at_job_farmrole.png
+.. image:: /ansible/images/at_job_farmrole.png
    :scale: 70%

@@ -15,7 +15,7 @@ In order to ensure control over how much access to resources is granted to users
 Creating Quotas
 ---------------
 
-   To create a Resource Quota at the |ACCOUNT| scope, click on the Scalr icon on the top left |MENU_ACC| and then click on Resource Quotas. After you click on New Resource Quota the following page will show up:
+To create a Resource Quota at the |ACCOUNT| scope, click on the Scalr icon on the top left |MENU_ACC| and then click on Resource Quotas. After you click on New Resource Quota the following page will show up:
 
 .. image:: images/new_resource_quota.png
    :scale: 70%
