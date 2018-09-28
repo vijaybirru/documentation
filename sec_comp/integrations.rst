@@ -57,15 +57,18 @@ Before creating a Webhook, an Endpoint is needed for the Webhook to contact. The
 Configuring Webhooks
 --------------------
 
+.. _webhook_start:
+
 The next step is to configure the Webhook, to do this at the |ACCOUNT| or |SCALR| scope, click on the Scalr icon on the top left |MENU_ACC| and then click on Integration Hub > Webhooks.
 
-.. image:: images/new_webhook.png
+.. image:: /sec_comp/images/new_webhook.png
    :scale: 70%
 
 .. csv-table::
    :header-rows: 1
    :file: csv/new_webhook.csv
 
+.. webhook_end:
 
 Webhook Payloads
 ----------------

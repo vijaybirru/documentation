@@ -640,7 +640,10 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ServiceNow Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cmdb-integration">CMDB Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cmdb-integration">CMDB Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cmdb-integration-setup">CMDB Integration Setup</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -911,11 +914,119 @@
 <span id="servicenow"></span><h1>ServiceNow Integration<a class="headerlink" href="#servicenow-integration" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
 <p>Scalr provides out-of-the-box integration with ServiceNow to enable mutual customers to leverage ServiceNow for ITSM workflows including problem management, incident management, change management, asset management, and others. The Scalr ServiceNow integration allows users to maintain a single source of truth for all on premise and cloud-based infrastructure resources and services,  and leverage existing workflows, while taking advantage of Scalr for cloud infrastructure management.</p>
 </div>
 <div class="section" id="cmdb-integration">
 <h2>CMDB Integration<a class="headerlink" href="#cmdb-integration" title="Permalink to this headline">¶</a></h2>
 <p>Scalr integrates with the ServiceNow CMDB to record cloud-based assets, resources and configurations in ServiceNow, and maintain a single source of truth across the customer’s entire IT ecosystem.</p>
+<div class="section" id="cmdb-integration-setup">
+<h3>CMDB Integration Setup<a class="headerlink" href="#cmdb-integration-setup" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You will need to create a server to host your Webhook, find out more about Webhhoks here: <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhooks and Endpoints</span></a>.</p>
+</div>
+<p>On the server that will be hosting the Webhook, create the directory and pull down the Webhook code from Git:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>apt update apt install python-pip -y
+
+pip install docker-compose
+
+curl -fsSL https://get.docker.com/ <span class="p">|</span> sh
+service docker start <span class="o">||</span> systemctl start docker
+
+git clone https://github.com/scalr-tutorials/scalr-servicenow-webhook.git /opt/snow-webhook
+</pre></div>
+</div>
+<p>Before creating a Webhook, an Endpoint is needed for the Webhook to contact. The Endpoint is the URL of the application that is running the Webhook. To create an Endpoint at the Account or Scalr scopes, click on the Scalr icon on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a> and then click on Integration Hub &gt; Endpoints.</p>
+<a class="reference internal image-reference" href="../_images/new_endpoint.png"><img alt="../_images/new_endpoint.png" src="../_images/new_endpoint.png" style="width: 460.59999999999997px; height: 152.6px;" /></a>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>The name of the endpoint.</td>
+</tr>
+<tr class="row-odd"><td>URL</td>
+<td>The URL the endpoint can be reached at.</td>
+</tr>
+<tr class="row-even"><td>Status</td>
+<td>A radio button to turn make the endpoint active/ inactive within Scalr.</td>
+</tr>
+<tr class="row-odd"><td>Shared</td>
+<td>Determines if the endpoint can be used at a lower level. This is only seen at the Account and Scalr scopes.</td>
+</tr>
+</tbody>
+</table>
+<p>The URL above will point to the server you are hosting the ServiceNow Webhook on (<a class="reference external" href="http:/">http:/</a>/&lt;webhook server IP or hostname&gt;:5018/servicenow/). Make sure to copy down the Signing Key that is generated as it will be used later on.</p>
+<p>The next step is to configure the Webhook, to do this at the Account or Scalr scope, click on the Scalr icon on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a> and then click on Integration Hub &gt; Webhooks.</p>
+<a class="reference internal image-reference" href="../_images/new_webhook.png"><img alt="../_images/new_webhook.png" src="../_images/new_webhook.png" style="width: 458.49999999999994px; height: 424.9px;" /></a>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Name</td>
+<td>Name of the webhook</td>
+</tr>
+<tr class="row-odd"><td>Endpoints</td>
+<td>The endpoint URL which should be used for this webhook.</td>
+</tr>
+<tr class="row-even"><td>Events</td>
+<td>The event at which the webhook call should be triggered.</td>
+</tr>
+<tr class="row-odd"><td>Farms</td>
+<td>Which farm(s) the webhook should trigger on. If left blank it will be trigger on all farms within the scope that the webhook is set.</td>
+</tr>
+<tr class="row-even"><td>Advanced Settings - Timeout</td>
+<td>The length of time in which Scalr should get a response back from the webhook before timing out.</td>
+</tr>
+<tr class="row-odd"><td>Advance Settings - Max. Delivery Attempts</td>
+<td>How many times Scalr should attempt to send a payload if it initially fails to send.</td>
+</tr>
+<tr class="row-even"><td>Do not expose private GlobalVariables in webhook payload</td>
+<td>If a Global Variable is marked as hidden and this is checked then the Global Variable will not be passed in the payload</td>
+</tr>
+<tr class="row-odd"><td>User Data</td>
+<td>Webhook user data can be used to add extra information to Webhook Notifications. Webhook User Data is passed as-is in the userData field of the Webhook Notification’s payload so if you configure it in a specific format (i.e. JSON) you will need to manually decode it in your webhook handler.</td>
+</tr>
+</tbody>
+</table>
+<p>The Endpoint in the screenshot above will be the Endpoint that you created in the previous step. In terms of the Events, you can select as many Events as you wish, every time this event is triggered a payload will be sent to ServiceNow.</p>
+<p>Next, log into the server that is hosting the Webhook and go to the /opt/snow-webhook directory. Copy the uwsgi.ini file:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /opt/snow-webhook
+cp uwsgi.ini.example uwsgi.ini
+vi uwsgi.in
+</pre></div>
+</div>
+<p>Edit uwsgi.ini to set the configuration variables:</p>
+<ul class="simple">
+<li>env = SCALR_SIGNING_KEY=Signing key that was generated after creating the Webhook Endpoint.</li>
+<li>env = SNOW_URL=The ServiceNow URL</li>
+<li>env = SNOW_USER=The user accessing ServiceNow</li>
+<li>env = SNOW_PASS=The password for accessing ServiceNow</li>
+</ul>
+<p>Next, run the webhook with Docker:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./relaunch.sh
+</pre></div>
+</div>
+<p>You’re ServiceNow Webhook should now be running, you can check the logs by using the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>docker logs -f infoblox-webhook
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
