@@ -80,12 +80,7 @@ Next, edit the uwsgi.ini file to set the configuration variables:
 * env = SNOW_URL=The ServiceNow URL
 * env = SNOW_USER=The user accessing ServiceNow
 * env = SNOW_PASS=The password for accessing ServiceNow
-
-You may also have to update the table name in the webhook.py, in the following example you will see that we used the name ``u_scalr_servers``, but this is configurable based on the table name you created in ServiceNow:
-
-* https://github.com/scalr-tutorials/scalr-servicenow-webhook/blob/master/webhook_server_table_only.py#L107
-* https://github.com/scalr-tutorials/scalr-servicenow-webhook/blob/master/webhook_server_table_only.py#L120
-* https://github.com/scalr-tutorials/scalr-servicenow-webhook/blob/master/webhook_server_table_only.py#L133
+* env = SCALR_TABLE=The table name that should receive data from the Webhook
 
 Next, run the Webhook with Docker:
 
