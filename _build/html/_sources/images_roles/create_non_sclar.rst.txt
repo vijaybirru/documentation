@@ -10,8 +10,8 @@ Creating Images and Roles from Non-Scalr Servers
 The workflow for creating an Image and Role from a non-scalr server is the same for all clouds.
 
 * Select the server to be imaged
-* Install Scalarizer
-* Run Scalarizer
+* Install Scalarizr
+* Run Scalarizr
 * Confirm installation
 
 This option can be accessed from either the Images or Roles Library by clicking on either Images or Roles in the Bookmark Bar.

@@ -44,7 +44,7 @@ Scalr Architecture
 Scalr is comprised of two main software components.
 
 1. **Scalr Server**. This is installed on one or more hosts and provides the user interface, API's, meta data storage and all necessary processes to interface with the API's of clouds and manage the instances/servers running in the cloud. Scalr Server is sometimes referred to as Scalr Core.
-2. **Scalarizer Agent**. The agent is installed in all instances/servers running in clouds that are managed by Scalr. It's purpose is to execute actions in the instances upon receipt of those actions from the Scalr Server, and to provide monitoring and status information back to the Scalr Server.
+2. **Scalr Agent (Scalarizr)**. The agent is installed in all instances/servers running in clouds that are managed by Scalr. It's purpose is to execute actions in the instances upon receipt of those actions from the Scalr Server, and to provide monitoring and status information back to the Scalr Server.
 
 Scalr Server can be installed on a single host but this would typically only be done for non-critical installations, such as staging or pre-prod environment. For production use Scalr should be installed on multiple hosts and configured with HA and redundancy to ensure continuity of service.
 
