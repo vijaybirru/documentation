@@ -21,7 +21,7 @@ Images in Scalr map to cloud images differently depending on their Cloud platfor
    Openstack,Image,One Scalr Image per Openstack Region Image
    VMware,Template,One Scalr Image per VMware Location Image
 
-.. warning:: It is recommended that images registered in Scalr should have Scalarizer installed. If you Intend to use images with Scalr :ref:`role_orchestration` or :ref:`farm_role_orchestration` the Scalr Agent MUST be installed. If you do not have Scalarizer installed in any images see :ref:`images_from_servers`.  See :ref:`discovery_manager` for more details on agentless options.
+.. warning:: It is recommended that images registered in Scalr should have Scalarizr installed. If you Intend to use images with Scalr :ref:`role_orchestration` or :ref:`farm_role_orchestration` the Scalr Agent MUST be installed. If you do not have Scalarizr installed in any images see :ref:`images_from_servers`.  See :ref:`discovery_manager` for more details on agentless options.
 
 Images can be registered at any scope in Scalr and made available to the lower scopes. However you can only register images at or below the scope where the :ref:`Cloud Credentials <cloud_creds>` have been set up. i.e. Images cannot be registered at |SCALR| scope using credentials created at |ACCOUNT| scope.
 
@@ -37,7 +37,7 @@ Image functionality is accessed via Images in the Main menu or Bookmarks bar at 
 
 You will now be presented with the New Image screen where you must select the Cloud for the Image you are registering. The details required vary from cloud to cloud.
 
-.. note:: For all images you must manually set details of the installed operating system, and indicate if Scalarizer is installed. Scalr cannot verify this information so make sure it is correct.
+.. note:: For all images you must manually set details of the installed operating system, and indicate if Scalarizr is installed. Scalr cannot verify this information so make sure it is correct.
 
 * `AWS Images`_
 * `Azure Images`_
@@ -67,7 +67,7 @@ Add the additional details and set the requited options as described below and t
    Item,Details
    OS Family and Version,**Mandatory** Select the appropriate operating system family and Version
    Size,Enter the size in GB if known or leave blank
-   Scalr Agent Installed,Unset this if importing a non-scalarizer image
+   Scalr Agent Installed,Unset this if importing a non-scalarizr image
    Shared,Unset this if you DO NOT want to share this image with lower scopes
 
 Azure Images
@@ -91,7 +91,7 @@ Add the additional details and set the requited options as described below and t
    Item,Details
    OS Family and Version,**Mandatory** Select the appropriate operating system family and Version
    Size,Enter the size in GB if known or leave blank
-   Scalr Agent Installed,Unset this if importing a non-scalarizer image
+   Scalr Agent Installed,Unset this if importing a non-scalarizr image
    Shared,Unset this if you DO NOT want to share this image with lower scopes
 
 GCE Images
@@ -120,7 +120,7 @@ Add the additional details and set the requited options as described below and t
    Name,**Mandatory** This name is only used in Scalr and does not change the name used in GCE
    OS Family and Version,**Mandatory** Select the appropriate operating system family and Version
    Size,Enter the size in GB if known or leave blank
-   Scalr Agent Installed,Unset this if importing a non-scalarizer image
+   Scalr Agent Installed,Unset this if importing a non-scalarizr image
    Shared,Unset this if you DO NOT want to share this image with lower scopes
 
 Openstack Images
@@ -152,7 +152,7 @@ Add the additional details and set the requited options as described below and t
    Name,**Mandatory** This name is only used in Scalr and does not change the name used in GCE
    OS Family and Version,**Mandatory** Select the appropriate operating system family and Version
    Size,Enter the size in GB if known or leave blank
-   Scalr Agent Installed,Unset this if importing a non-scalarizer image
+   Scalr Agent Installed,Unset this if importing a non-scalarizr image
    Shared,Unset this if you DO NOT want to share this image with lower scopes
 
 VMware Images
@@ -178,5 +178,5 @@ Add the additional details and set the requited options as described below and t
    Name,**Mandatory** Use the pre-filled name or amend as required. This name is only used in Scalr and does not change the name used in GCE
    OS Family and Version,**Mandatory** Select the appropriate operating system family and Version
    Size,Enter the size in GB if known or leave blank
-   Scalr Agent Installed,Unset this if importing a non-scalarizer image
+   Scalr Agent Installed,Unset this if importing a non-scalarizr image
    Shared,Unset this if you DO NOT want to share this image with lower scopes

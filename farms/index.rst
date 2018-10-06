@@ -275,7 +275,7 @@ The following advanced configuration options are available for all Farm Roles.
    :widths: 30,70
    :file: csv/advanced.csv
 
-You can also override the Scalarizer Update settings from the Farm if a different cadence or version is required for this Farm Role.
+You can also override the Scalarizr Update settings from the Farm if a different cadence or version is required for this Farm Role.
 
 Ansible and Chef in Farm Roles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
