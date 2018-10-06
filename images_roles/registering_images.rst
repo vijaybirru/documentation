@@ -21,7 +21,7 @@ Images in Scalr map to cloud images differently depending on their Cloud platfor
    Openstack,Image,One Scalr Image per Openstack Region Image
    VMware,Template,One Scalr Image per VMware Location Image
 
-.. warning:: It is recommended that images registered in Scalr should have Scalarizer installed. If you Intend to use images with Scalr :ref:`role_orchestration` or :ref:`farm_role_orchestration` the Scalarizer agent MUST be installed. If you do not have Scalarizer installed in any images see :ref:`images_from_servers`.  See :ref:`discovery_manager` for more details on agentless options.
+.. warning:: It is recommended that images registered in Scalr should have Scalarizer installed. If you Intend to use images with Scalr :ref:`role_orchestration` or :ref:`farm_role_orchestration` the Scalr Agent MUST be installed. If you do not have Scalarizer installed in any images see :ref:`images_from_servers`.  See :ref:`discovery_manager` for more details on agentless options.
 
 Images can be registered at any scope in Scalr and made available to the lower scopes. However you can only register images at or below the scope where the :ref:`Cloud Credentials <cloud_creds>` have been set up. i.e. Images cannot be registered at |SCALR| scope using credentials created at |ACCOUNT| scope.
 
