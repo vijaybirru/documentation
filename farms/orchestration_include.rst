@@ -30,7 +30,7 @@ First select the Trigger Event for this rule. The following table describes each
    :file: csv/event_reference.csv
 
 
-After an Instance finishes booting the OS, the Scalarizer Agent starts configuring your Environment in a certain order as follows.
+After an Instance finishes booting the OS, the Scalr Agent starts configuring your Environment in a certain order as follows.
 
 * All EBS / Disk Routines are executed.
 * Deployment Routines are executed.

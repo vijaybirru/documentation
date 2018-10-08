@@ -12,8 +12,8 @@ The workflow for creating an Image and Role from a non-scalr server is the same 
 * Select the server to be imaged
 * Take a Snapshot in case recovery is needed during initial Preparation
 * Prepare the server to be imaged
-* Install Scalarizer
-* Run Scalarizer
+* Install Scalarizr
+* Run Scalarizr
 * Confirm installation
 
 **Step 1 : Prerequisites**
@@ -77,10 +77,10 @@ You will be presented with a screen similar to this.
 
 Proceed as follows:
 
-1. Click on the command window under "INSTALL SCALARIZER" and copy the contents to your paste buffer.
+1. Click on the command window under "INSTALL SCALARIZR" and copy the contents to your paste buffer.
 2. Switch to the command shell for the server. Note for Windows ensure the Power Shell is running as Administrator.
 3. Paste the commands in and run. When complete go back to the Scalr UI.
-4. Click on the command window under "LAUNCH SCALARIZER" and copy the contents to your paste buffer.
+4. Click on the command window under "LAUNCH SCALARIZR" and copy the contents to your paste buffer.
 5. Switch to the command shell for the server. Note for Windows ensure the Power Shell is running as Administrator.
 6. Paste the commands in and run. On Linux ensure the commands are prefixed by ``sudo``.
 7. When the Launch command shows ``2018-08-14 15:11:07+01:00 - INFO  - Service main loop (Linux)`` or similar go back to the UI and click on "CONFIRM SCALARIZR LAUNCH".
