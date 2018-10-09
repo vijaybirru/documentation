@@ -81,6 +81,12 @@ To enable detailed billing, you need to activate it in AWS and enter required de
     * Please note that the billing details will be processed with a 8-12 hours delay.  This isn't a Scalr delay, but rather AWS posts updated billing information every 8 hours. As soon as it is posted, it becomes possible for us to process it and include in our reports.
     * If you enable detailed billing, custom Pricing List entries for AWS will be ignored as AWS will be providing the final cost (usage) that we report against.  To add sub-charges with detailed billing enabled you must use Markups.
 
+.. |BILL_LINK| raw:: html
+
+   <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-getting-started.html#step-2" target="_blank">AWS Billing and Cost Management - Getting Started - Step 2: Turn on Reports</a>
+
+You will need to create an S3 bucket to store the billing files. Please refer to |BILL_LINK| |NEWWIN| for details on creating the S3 bucket and setting permissions.
+
 1. Login to the AWS Console.
 2. Open the profile menu in the top right and click on **My Billing Dashboard**.
 
