@@ -54,9 +54,36 @@ Price Books
 ^^^^^^^^^^^
 Scalr Cost Manager Price Books are a new component of Scalr Cost Manager that provide an intuitive way to set prices for cloud resources. Price Books allow administrators to create Products, which can be based on one or more attributes such as cpu, memory, disk, etc. Pricing and price metrics can be established for Products with optional pricing conditions like location and/or operating system.
 
-**Note**: Cost Manager Price Books are currently separate from Price Lists established within Scalr Cost Analytics. Cost Data reflected within Cost Analytics, as well as at the Farm level are based on Cost Analytics Price Lists, not Cost Manager Price Books. Price Lists will be merged with Price Books in later release.
+.. note:: Cost Manager Price Books are currently separate from Price Lists established within Scalr Cost Analytics. Cost Data reflected within Cost Analytics, as well as at the Farm level are based on Cost Analytics Price Lists, not Cost Manager Price Books. Price Lists will be merged with Price Books in later release.
+
+Scalr uses the Price Book entries to calculate the cost of all servers that are accessible via the Cloud Credentials, not just those that are managed by Scalr. After launching a Farm and/or creating Price Book entries it can take up to 1 hour for the costs to show up in Cost Manager.
 
 Cost Manager Price Books currently supports VMWare private clouds only.
 
 .. image:: images/price_books.png
-   :scale: 60 %
+   :scale: 60%
+
+Price book entries consist of a "Product" and set of Price List Entries. The Product is either "Instance" or a resource (CPU, RAM, Storage). Price List entries are configured as follows.
+
+* Instance: Price List entries can be defined by Cloud Location and Operating System
+* Resources: Price List entries can be defined by Cloud Location only
+
+.. image:: images/instance_pl.png
+   :scale: 50 %
+
+.. image:: images/resource_pl.png
+   :scale: 50 %
+
+**Calculation of Costs**
+
+It is important to be aware of how Scalr uses Price Books and their Price Lists to calculate costs.
+
+* **Price Lists**: Only one Price List in a Price Book is applied to a Server. See below.
+* **Price Books**: Price Books are applied cumulatively, so every Price Book that has a Price List that matches a server will contribute to the Cost of the server. This you can have a total price made up of an Instance Price Book and one or more Resource Price Books
+
+In the case of Instance price list it is possible to have multiple entries that could apply to a server, e.g. a price for all Locations and Operating Systems, and a price for a specific operating system. When 2 or more price list entries match a server the cost is calculated based on the most specific Price List entry. For example if Price Lists as configired as follows....
+
+.. image:: images/pl_example_1.png
+   :scale: 50 %
+
+If there is one Windows VM and one Ubuntu VM, then the cost for the Windows VM will be $1 per hour and the cost for the Ubuntu VM will be $0.75 per hour. This approach allows you to easily define base prices for all VM's and override the base price with specific prices for special cases, e.g. to cover the cost of Windows licensing for example.
