@@ -18,7 +18,13 @@ Scalr provides a Webhook integration with Infoblox allowing you manage your IP a
 Installation & Setup
 --------------------
 
+<<<<<<< Updated upstream
 .. note:: This document is written for Debian distributions. Adapt as necessary for other distributions. **Prerequisite**: You will need to create a server to host your Webhook, find out more about Webhooks here: :ref:`webhooks`.
+=======
+.. note:: This document is written for Debian distributions. Adapt as necessary for other distributions.
+
+First, you will need to create a server to host your Webhook, find out more about Webhhoks here: :ref:`webhooks` . Once you have the server, please follow these directions:
+>>>>>>> Stashed changes
 
 On the server that will be hosting the Webhook, create the directory and pull down the Webhook code from Git:
 
