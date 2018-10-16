@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Scripts" href="../scripts/index.html" />
+    <link rel="next" title="Garbage Collector" href="garbage_collector.html" />
     <link rel="prev" title="Rightsizing" href="rightsizing.html" /> 
 
   
@@ -377,6 +377,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#volume-mounting">Volume Mounting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#aws-storage-configuration">AWS Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#google-cloud-platform-storage-configuration">Google Cloud Platform Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#azure-storage-configuration">Azure Storage Configuration</a></li>
@@ -532,6 +533,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="rightsizing.html">Rightsizing</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Cost Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="garbage_collector.html">Garbage Collector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="garbage_collector.html#using-the-garbage-collector">Using the Garbage Collector</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management</span></p>
 <ul>
@@ -640,7 +645,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../integrations/servicenow.html">ServiceNow Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration-setup">CMDB Integration Setup</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -908,7 +916,7 @@
             
   <a class="reference internal image-reference" href="../_images/preview.png"><img alt="../_images/preview.png" class="align-right" src="../_images/preview.png" style="width: 203.20000000000002px; height: 22.400000000000002px;" /></a>
 <div class="section" id="cost-analytics">
-<h1>Cost Analytics<a class="headerlink" href="#cost-analytics" title="Permalink to this headline">¶</a></h1>
+<span id="cost-control"></span><h1>Cost Analytics<a class="headerlink" href="#cost-analytics" title="Permalink to this headline">¶</a></h1>
 <p><strong>UNDER DEVELOPMENT</strong></p>
 <p>Please see our earlier documentation <a href="https://scalr-wiki.atlassian.net/wiki/spaces/docs/pages/13959199/Cost+Analytics" target="_blank">Cost Analytics</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a> for more details.</p>
 </div>
@@ -921,7 +929,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../scripts/index.html" class="btn btn-neutral float-right" title="Scripts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="garbage_collector.html" class="btn btn-neutral float-right" title="Garbage Collector" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="rightsizing.html" class="btn btn-neutral" title="Rightsizing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -377,6 +377,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#volume-mounting">Volume Mounting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#aws-storage-configuration">AWS Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#google-cloud-platform-storage-configuration">Google Cloud Platform Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#azure-storage-configuration">Azure Storage Configuration</a></li>
@@ -640,7 +641,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../integrations/servicenow.html">ServiceNow Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration-setup">CMDB Integration Setup</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -952,14 +956,14 @@ apt upgrade scalr-server
 <div class="section" id="monitoring-best-practices">
 <h2>Monitoring Best Practices<a class="headerlink" href="#monitoring-best-practices" title="Permalink to this headline">¶</a></h2>
 <p><strong>Automated Testing</strong></p>
-<p>While Scalr is a very reliable, it is a good idea to perform some automated testing on the basic functionality of Scalr, like launching Farms/Servers. This will not only test Scalr, but will make sure that the following is function correctly:</p>
+<p>While Scalr is very reliable, it is a good idea to perform some automated testing on the basic functionality of Scalr, like launching Farms and Servers. This will not only test Scalr, but will make sure that the following is function correctly:</p>
 <ul class="simple">
 <li>Cloud provider functionality</li>
 <li>Cloud credentials</li>
 <li>Network connections to private and public clouds</li>
 <li>Connections to any configuration management tools</li>
 </ul>
-<p>Here is an example that we created using Ansible: <a class="reference external" href="https://github.com/scalr-tutorials/scalr-automated-testing-via-ansible">https://github.com/scalr-tutorials/scalr-automated-testing-via-ansible</a></p>
+<p>Here is an example using Ansible: <a class="reference external" href="https://github.com/scalr-tutorials/scalr-automated-testing-via-ansible">https://github.com/scalr-tutorials/scalr-automated-testing-via-ansible</a></p>
 <p><strong>Infrastructure</strong></p>
 <p>Disk:</p>
 <p>If you used the standard Scalr installation guide, you should have mounted the main disk that Scalr uses to /opt/scalr-server/ on all Scalr nodes. Reference <a class="reference external" href="https://scalr-labs.atlassian.net/wiki/spaces/DOCS/pages/301039670/Scalr+Server+Maintenance">this FAQ page</a> for installations in different directories.  The database node will grow faster than others, but none of the nodes should ever be over 80% in disk use.</p>

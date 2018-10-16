@@ -377,6 +377,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#volume-mounting">Volume Mounting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#aws-storage-configuration">AWS Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#google-cloud-platform-storage-configuration">Google Cloud Platform Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#azure-storage-configuration">Azure Storage Configuration</a></li>
@@ -640,7 +641,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../integrations/servicenow.html">ServiceNow Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration-setup">CMDB Integration Setup</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -962,7 +966,43 @@
 <p>After adding this entry you must re-configure scalr by running <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">scalr-server-ctl</span> <span class="pre">reconfigure</span></code>.</p>
 <div class="section" id="configure-detailed-billing">
 <h3>Configure Detailed Billing<a class="headerlink" href="#configure-detailed-billing" title="Permalink to this headline">¶</a></h3>
-<p>DETAILS TO FOLLOW</p>
+<p>Scalr supports detailed billing when using AWS. Detailed billing will give you more details than just showing the total price for compute.</p>
+<p>To enable detailed billing, you need to activate it in AWS and enter required details into Scalr.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Even if you might have detailed billing enabled in AWS already, you must follow the instructions bellow to make sure the reports from AWS get generated in the correct format that Scalr needs.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Please note that the billing details will be processed with a 8-12 hours delay.  This isn’t a Scalr delay, but rather AWS posts updated billing information every 8 hours. As soon as it is posted, it becomes possible for us to process it and include in our reports.</li>
+<li>If you enable detailed billing, custom Pricing List entries for AWS will be ignored as AWS will be providing the final cost (usage) that we report against.  To add sub-charges with detailed billing enabled you must use Markups.</li>
+</ul>
+</div>
+<p>You will need to create an S3 bucket to store the billing files. Please refer to <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-getting-started.html#step-2" target="_blank">AWS Billing and Cost Management - Getting Started - Step 2: Turn on Reports</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a> for details on creating the S3 bucket and setting permissions.</p>
+<ol class="arabic simple">
+<li>Login to the AWS Console.</li>
+<li>Open the profile menu in the top right and click on <strong>My Billing Dashboard</strong>.</li>
+</ol>
+<a class="reference internal image-reference" href="../_images/aws_bill_1.png"><img alt="../_images/aws_bill_1.png" src="../_images/aws_bill_1.png" style="width: 743.0px; height: 255.5px;" /></a>
+<ol class="arabic simple" start="3">
+<li>Click on Preferences in the left menu.</li>
+<li>Make sure Receive Billing Reports is checked.</li>
+<li>Enter a S3 bucket name to store your reports in.</li>
+<li>Click on Verify to make sure the bucket exists and has correct permissions.</li>
+<li>Make sure that Detailed billing report with resources and tags is checked.</li>
+<li>Click on Save preferences.</li>
+</ol>
+<a class="reference internal image-reference" href="../_images/aws_bill_2.png"><img alt="../_images/aws_bill_2.png" src="../_images/aws_bill_2.png" style="width: 583.5px; height: 487.0px;" /></a>
+<ol class="arabic simple" start="9">
+<li>Click on Manage report tags.</li>
+<li>Make sure that scalr-meta is Active and click Save.</li>
+</ol>
+<a class="reference internal image-reference" href="../_images/aws_bill_3.png"><img alt="../_images/aws_bill_3.png" src="../_images/aws_bill_3.png" style="width: 743.0px; height: 382.0px;" /></a>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If scalr-meta is not present, ensure that you have launched at least one Farm Role in order for Scalr to create the correct tags for AWS resources.  There will be an 8-10 hour delay on initial billing details processing.</p>
+</div>
 </div>
 </div>
 <div class="section" id="configuring-your-aws-iam-user">
@@ -1051,14 +1091,17 @@ You can add new credentials directly from the Main Menu or via the Environment c
 </tbody>
 </table>
 <p>After selecting Add Credentials, you will be prompted to configure your Cloud Credentials and properties:</p>
-<a class="reference internal image-reference" href="../_images/AWS-creds.png"><img alt="../_images/AWS-creds.png" src="../_images/AWS-creds.png" style="width: 436.40000000000003px; height: 389.6px;" /></a>
+<a class="reference internal image-reference" href="../_images/AWS-creds.png"><img alt="../_images/AWS-creds.png" src="../_images/AWS-creds.png" style="width: 589.6px; height: 298.8px;" /></a>
 <a class="reference internal image-reference" href="../_images/AWS-Keys.png"><img alt="../_images/AWS-Keys.png" src="../_images/AWS-Keys.png" style="width: 594.4px; height: 308.8px;" /></a>
-<a class="reference internal image-reference" href="../_images/AWS-Keys-Scalr.png"><img alt="../_images/AWS-Keys-Scalr.png" src="../_images/AWS-Keys-Scalr.png" style="width: 591.2px; height: 242.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/AWS-Keys-Scalr.png"><img alt="../_images/AWS-Keys-Scalr.png" src="../_images/AWS-Keys-Scalr.png" style="width: 582.0px; height: 293.6px;" /></a>
 <ol class="arabic simple" start="5">
-<li>Check “Enable Detailed Billing” if you require Scalr to collect detailed billing information for Cost Manager/Analytics.</li>
+<li>Check “Enable Detailed Billing” if you require Scalr to collect detailed billing information for Cost Manager/Analytics. Enter the region and S3 Bucket name previously configured in AWS.</li>
+</ol>
+<a class="reference internal image-reference" href="../_images/aws-detailed-bill.png"><img alt="../_images/aws-detailed-bill.png" src="../_images/aws-detailed-bill.png" style="width: 587.6px; height: 154.4px;" /></a>
+<ol class="arabic simple" start="6">
 <li>Click Save and your screen should look similar like this after Scalr has validate the Credentials.</li>
 </ol>
-<a class="reference internal image-reference" href="../_images/AWS-Keys-Scalr-Saved.png"><img alt="../_images/AWS-Keys-Scalr-Saved.png" src="../_images/AWS-Keys-Scalr-Saved.png" style="width: 592.0px; height: 306.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/AWS-Keys-Scalr-Saved.png"><img alt="../_images/AWS-Keys-Scalr-Saved.png" src="../_images/AWS-Keys-Scalr-Saved.png" style="width: 479.20000000000005px; height: 389.6px;" /></a>
 </div>
 <div class="section" id="validating-the-connection-to-aws">
 <h2>Validating the Connection to AWS<a class="headerlink" href="#validating-the-connection-to-aws" title="Permalink to this headline">¶</a></h2>

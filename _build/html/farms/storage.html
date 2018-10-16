@@ -377,6 +377,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Configuring Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#volume-mounting">Volume Mounting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#aws-storage-configuration">AWS Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#google-cloud-platform-storage-configuration">Google Cloud Platform Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#azure-storage-configuration">Azure Storage Configuration</a></li>
@@ -640,7 +641,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../integrations/servicenow.html">ServiceNow Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration-setup">CMDB Integration Setup</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -951,6 +955,21 @@
 </tr>
 </tbody>
 </table>
+<div class="section" id="volume-mounting">
+<h2>Volume Mounting<a class="headerlink" href="#volume-mounting" title="Permalink to this headline">¶</a></h2>
+<p>The way volumes are mounted varies depending on the Operating System.</p>
+<p>It is important to be aware that the <a class="reference internal" href="../reference/events.html#ebsvolumemounted"><span class="std std-ref">EBSVolumeMounted Event</span></a> can fire when volumes are remounted during a reboot. Thus any Orchestration Rules that are trigged by the <a class="reference internal" href="../reference/events.html#ebsvolumemounted"><span class="std std-ref">EBSVolumeMounted Event</span></a> must be coded to be aware of this possibility and not take any inappropriate actions after reboots that could cause data loss.</p>
+<p>For ALL Operating Systems additional volumes (not root / C:) are mounted by the scalr agent (scalarizr) on the first boot of a Server and will trigger the <a class="reference internal" href="../reference/events.html#ebsvolumemounted"><span class="std std-ref">EBSVolumeMounted Event</span></a>. For subsequent reboots the additional volumes are mounted as follows.</p>
+<p><strong>Linux</strong></p>
+<p>On first boot scalarizr adds the additional volumes to the operating systems fstab file, e.g. /etc/fstab so that the Operating System itself will remount the volumes on subsequent reboots. Thus the <a class="reference internal" href="../reference/events.html#ebsvolumemounted"><span class="std std-ref">EBSVolumeMounted Event</span></a> event will NOT fire for additional volumes after a reboot.</p>
+<p>However if scalarizr detects that a volume configured in Scalr has not been re-mounted after a reboot, e.g. because the entry was removed from fstab, then it will re-mount the volume and add it back into fstab. In these circumstances the <a class="reference internal" href="../reference/events.html#ebsvolumemounted"><span class="std std-ref">EBSVolumeMounted Event</span></a> WILL fire.</p>
+<p><strong>Windows</strong></p>
+<p>Scalarizr performs all required volume mounting on first boot and all subsequent re-boots. Thus the <a class="reference internal" href="../reference/events.html#ebsvolumemounted"><span class="std std-ref">EBSVolumeMounted Event</span></a> WILL fire on every re-boot.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Scalarizr checks volumes every time it restarts, so if any manual adjustments have been made since the server booted, scalarizr will unmount and remount volumes to ensure the Scalr configuration is re-applied. The <a class="reference internal" href="../reference/events.html#ebsvolumemounted"><span class="std std-ref">EBSVolumeMounted Event</span></a> will fire for these adjustments. If you wish to change the configuration of Volumes you must do this through Scalr.</p>
+</div>
+</div>
 <div class="section" id="aws-storage-configuration">
 <h2>AWS Storage Configuration<a class="headerlink" href="#aws-storage-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Additional AWS EBS Volumes can be configured on a Farm Role to be added to every server. The additional EBS options are as follows.</p>

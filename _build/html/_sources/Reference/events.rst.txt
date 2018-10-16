@@ -89,6 +89,8 @@ EBSVolumeAttached Event
 
 ----
 
+.. _EBSVolumeMounted:
+
 EBSVolumeMounted Event
 ----------------------
 

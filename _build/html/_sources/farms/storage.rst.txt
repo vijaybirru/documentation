@@ -28,6 +28,27 @@ The common parameters for additional storage are as follows.
    :widths: 25,100
    :file: csv/storage_add_gen.csv
 
+Volume Mounting
+---------------
+
+The way volumes are mounted varies depending on the Operating System.
+
+It is important to be aware that the :ref:`EBSVolumeMounted` can fire when volumes are remounted during a reboot. Thus any Orchestration Rules that are trigged by the :ref:`EBSVolumeMounted` must be coded to be aware of this possibility and not take any inappropriate actions after reboots that could cause data loss.
+
+For ALL Operating Systems additional volumes (not root / C:) are mounted by the scalr agent (scalarizr) on the first boot of a Server and will trigger the :ref:`EBSVolumeMounted`. For subsequent reboots the additional volumes are mounted as follows.
+
+**Linux**
+
+On first boot scalarizr adds the additional volumes to the operating systems fstab file, e.g. /etc/fstab so that the Operating System itself will remount the volumes on subsequent reboots. Thus the :ref:`EBSVolumeMounted` event will NOT fire for additional volumes after a reboot.
+
+However if scalarizr detects that a volume configured in Scalr has not been re-mounted after a reboot, e.g. because the entry was removed from fstab, then it will re-mount the volume and add it back into fstab. In these circumstances the :ref:`EBSVolumeMounted` WILL fire.
+
+**Windows**
+
+Scalarizr performs all required volume mounting on first boot and all subsequent re-boots. Thus the :ref:`EBSVolumeMounted` WILL fire on every re-boot.
+
+.. note:: Scalarizr checks volumes every time it restarts, so if any manual adjustments have been made since the server booted, scalarizr will unmount and remount volumes to ensure the Scalr configuration is re-applied. The :ref:`EBSVolumeMounted` will fire for these adjustments. If you wish to change the configuration of Volumes you must do this through Scalr.
+
 AWS Storage Configuration
 -------------------------
 
