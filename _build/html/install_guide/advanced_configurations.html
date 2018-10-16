@@ -377,6 +377,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#volume-mounting">Volume Mounting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#aws-storage-configuration">AWS Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#google-cloud-platform-storage-configuration">Google Cloud Platform Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#azure-storage-configuration">Azure Storage Configuration</a></li>
@@ -532,6 +533,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/rightsizing.html">Rightsizing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/analytics.html">Cost Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cost/garbage_collector.html">Garbage Collector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cost/garbage_collector.html#using-the-garbage-collector">Using the Garbage Collector</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management</span></p>
 <ul>
@@ -640,7 +645,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../integrations/servicenow.html">ServiceNow Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration-setup">CMDB Integration Setup</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -983,6 +991,30 @@
 <td>Boolean</td>
 <td>true, false</td>
 <td>FALSE</td>
+</tr>
+<tr class="row-odd"><td>proxy[:ssl_enable]</td>
+<td>Whether to enable SSL on the proxy</td>
+<td>Boolean</td>
+<td>true, false - See link above for full example</td>
+<td>false</td>
+</tr>
+<tr class="row-even"><td>proxy[:ssl_redirect]</td>
+<td>Whether the proxy should redirect HTTP requests to HTTPS (make sure you have a valid cert if you leave this to true!)</td>
+<td>Boolean</td>
+<td>true, false - See link above for full example</td>
+<td>false</td>
+</tr>
+<tr class="row-odd"><td>proxy[:ssl_cert_path]</td>
+<td>Path to a SSL cert the proxy should use (this needs to be readable by the scalr-app user)</td>
+<td>String</td>
+<td>‘/path/to/the/cert’ - See link above for full example</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>proxy[:ssl_key_path]</td>
+<td>Path to a corresponding SSL key the proxy should use (same as above)</td>
+<td>String</td>
+<td>‘/path/to/the/key’ - See link above for full example</td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
