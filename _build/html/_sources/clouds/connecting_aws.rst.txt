@@ -71,7 +71,45 @@ After adding this entry you must re-configure scalr by running ``sudo scalr-serv
 Configure Detailed Billing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-DETAILS TO FOLLOW
+Scalr supports detailed billing when using AWS. Detailed billing will give you more details than just showing the total price for compute.
+
+To enable detailed billing, you need to activate it in AWS and enter required details into Scalr.
+
+.. warning:: Even if you might have detailed billing enabled in AWS already, you must follow the instructions bellow to make sure the reports from AWS get generated in the correct format that Scalr needs.
+
+.. note::
+    * Please note that the billing details will be processed with a 8-12 hours delay.  This isn't a Scalr delay, but rather AWS posts updated billing information every 8 hours. As soon as it is posted, it becomes possible for us to process it and include in our reports.
+    * If you enable detailed billing, custom Pricing List entries for AWS will be ignored as AWS will be providing the final cost (usage) that we report against.  To add sub-charges with detailed billing enabled you must use Markups.
+
+.. |BILL_LINK| raw:: html
+
+   <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-getting-started.html#step-2" target="_blank">AWS Billing and Cost Management - Getting Started - Step 2: Turn on Reports</a>
+
+You will need to create an S3 bucket to store the billing files. Please refer to |BILL_LINK| |NEWWIN| for details on creating the S3 bucket and setting permissions.
+
+1. Login to the AWS Console.
+2. Open the profile menu in the top right and click on **My Billing Dashboard**.
+
+.. image:: images/aws_bill_1.png
+   :scale: 50%
+
+3. Click on Preferences in the left menu.
+4. Make sure Receive Billing Reports is checked.
+5. Enter a S3 bucket name to store your reports in.
+6. Click on Verify to make sure the bucket exists and has correct permissions.
+7. Make sure that Detailed billing report with resources and tags is checked.
+8. Click on Save preferences.
+
+.. image:: images/aws_bill_2.png
+   :scale: 50%
+
+9. Click on Manage report tags.
+10. Make sure that scalr-meta is Active and click Save.
+
+.. image:: images/aws_bill_3.png
+   :scale: 50%
+
+.. note:: If scalr-meta is not present, ensure that you have launched at least one Farm Role in order for Scalr to create the correct tags for AWS resources.  There will be an 8-10 hour delay on initial billing details processing.
 
 Configuring your AWS IAM User
 -----------------------------
@@ -134,7 +172,11 @@ After selecting Add Credentials, you will be prompted to configure your Cloud Cr
 .. image:: images/AWS-Keys-Scalr.png
    :scale: 40%
 
-5. Check "Enable Detailed Billing" if you require Scalr to collect detailed billing information for Cost Manager/Analytics.
+5. Check "Enable Detailed Billing" if you require Scalr to collect detailed billing information for Cost Manager/Analytics. Enter the region and S3 Bucket name previously configured in AWS.
+
+.. image:: images/aws-detailed-bill.png
+   :scale: 40%
+
 6. Click Save and your screen should look similar like this after Scalr has validate the Credentials.
 
 .. image:: images/AWS-Keys-Scalr-Saved.png

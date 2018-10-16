@@ -97,6 +97,7 @@ Scalr Documentation Version 2 Preview!
    cost/management
    cost/rightsizing
    cost/analytics
+   cost/garbage_collector
 
 .. toctree::
    :maxdepth: 3
@@ -121,7 +122,7 @@ Scalr Documentation Version 2 Preview!
    :caption: Integrations
 
    integrations/ansible
-   integrations/chef  
+   integrations/chef
    integrations/infoblox
    integrations/servicenow
 
@@ -164,6 +165,7 @@ Scalr Documentation Version 2 Preview!
    :caption: Release Notes
 
    release_notes/index
+   release_notes/labs
 
 .. toctree::
    :maxdepth: 2

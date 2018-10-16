@@ -377,6 +377,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#volume-mounting">Volume Mounting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#aws-storage-configuration">AWS Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#google-cloud-platform-storage-configuration">Google Cloud Platform Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#azure-storage-configuration">Azure Storage Configuration</a></li>
@@ -640,7 +641,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../integrations/servicenow.html">ServiceNow Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration-setup">CMDB Integration Setup</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -948,9 +952,29 @@
 <div class="section" id="price-books">
 <h2>Price Books<a class="headerlink" href="#price-books" title="Permalink to this headline">¶</a></h2>
 <p>Scalr Cost Manager Price Books are a new component of Scalr Cost Manager that provide an intuitive way to set prices for cloud resources. Price Books allow administrators to create Products, which can be based on one or more attributes such as cpu, memory, disk, etc. Pricing and price metrics can be established for Products with optional pricing conditions like location and/or operating system.</p>
-<p><strong>Note</strong>: Cost Manager Price Books are currently separate from Price Lists established within Scalr Cost Analytics. Cost Data reflected within Cost Analytics, as well as at the Farm level are based on Cost Analytics Price Lists, not Cost Manager Price Books. Price Lists will be merged with Price Books in later release.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Cost Manager Price Books are currently separate from Price Lists established within Scalr Cost Analytics. Cost Data reflected within Cost Analytics, as well as at the Farm level are based on Cost Analytics Price Lists, not Cost Manager Price Books. Price Lists will be merged with Price Books in later release.</p>
+</div>
+<p>Scalr uses the Price Book entries to calculate the cost of all servers that are accessible via the Cloud Credentials, not just those that are managed by Scalr. After launching a Farm and/or creating Price Book entries it can take up to 1 hour for the costs to show up in Cost Manager.</p>
 <p>Cost Manager Price Books currently supports VMWare private clouds only.</p>
 <a class="reference internal image-reference" href="../_images/price_books.png"><img alt="../_images/price_books.png" src="../_images/price_books.png" style="width: 891.6px; height: 337.8px;" /></a>
+<p>Price book entries consist of a “Product” and set of Price List Entries. The Product is either “Instance” or a resource (CPU, RAM, Storage). Price List entries are configured as follows.</p>
+<ul class="simple">
+<li>Instance: Price List entries can be defined by Cloud Location and Operating System</li>
+<li>Resources: Price List entries can be defined by Cloud Location only</li>
+</ul>
+<a class="reference internal image-reference" href="../_images/instance_pl.png"><img alt="../_images/instance_pl.png" src="../_images/instance_pl.png" style="width: 547.0px; height: 487.0px;" /></a>
+<a class="reference internal image-reference" href="../_images/resource_pl.png"><img alt="../_images/resource_pl.png" src="../_images/resource_pl.png" style="width: 580.5px; height: 468.0px;" /></a>
+<p><strong>Calculation of Costs</strong></p>
+<p>It is important to be aware of how Scalr uses Price Books and their Price Lists to calculate costs.</p>
+<ul class="simple">
+<li><strong>Price Lists</strong>: Only one Price List in a Price Book is applied to a Server. See below.</li>
+<li><strong>Price Books</strong>: Price Books are applied cumulatively, so every Price Book that has a Price List that matches a server will contribute to the Cost of the server. Thus you can have a total price made up of an Instance Price Book and one or more Resource Price Books</li>
+</ul>
+<p>In the case of Instance price list it is possible to have multiple entries that could apply to a server, e.g. a price for all Locations and Operating Systems, and a price for a specific operating system. When 2 or more price list entries match a server the cost is calculated based on the most specific Price List entry. For example if Price Lists as configired as follows….</p>
+<a class="reference internal image-reference" href="../_images/pl_example_1.png"><img alt="../_images/pl_example_1.png" src="../_images/pl_example_1.png" style="width: 565.0px; height: 181.5px;" /></a>
+<p>If there is one Windows VM and one Ubuntu VM, then the cost for the Windows VM will be $1 per hour and the cost for the Ubuntu VM will be $0.75 per hour. This approach allows you to easily define base prices for all VM’s and override the base price with specific prices for special cases, e.g. to cover the cost of Windows licensing for example.</p>
 </div>
 </div>
 

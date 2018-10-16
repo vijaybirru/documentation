@@ -59,14 +59,14 @@ Monitoring Best Practices
 
 **Automated Testing**
 
-While Scalr is a very reliable, it is a good idea to perform some automated testing on the basic functionality of Scalr, like launching Farms/Servers. This will not only test Scalr, but will make sure that the following is function correctly:
+While Scalr is very reliable, it is a good idea to perform some automated testing on the basic functionality of Scalr, like launching Farms and Servers. This will not only test Scalr, but will make sure that the following is function correctly:
 
 * Cloud provider functionality
 * Cloud credentials
 * Network connections to private and public clouds
 * Connections to any configuration management tools
 
-Here is an example that we created using Ansible: https://github.com/scalr-tutorials/scalr-automated-testing-via-ansible
+Here is an example using Ansible: https://github.com/scalr-tutorials/scalr-automated-testing-via-ansible
 
 **Infrastructure**
 

@@ -377,6 +377,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#volume-mounting">Volume Mounting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#aws-storage-configuration">AWS Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#google-cloud-platform-storage-configuration">Google Cloud Platform Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#azure-storage-configuration">Azure Storage Configuration</a></li>
@@ -919,10 +920,12 @@
 </div>
 <div class="section" id="installation-setup">
 <h2>Installation &amp; Setup<a class="headerlink" href="#installation-setup" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This document is written for Debian distributions. Adapt as necessary for other distributions. <strong>Prerequisite</strong>: You will need to create a server to host your Webhook, find out more about Webhooks here: <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhooks and Endpoints</span></a>.</p>
-</div>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
+.. note:: This document is written for Debian distributions. Adapt as necessary for other distributions. <strong>Prerequisite</strong>: You will need to create a server to host your Webhook, find out more about Webhooks here: <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhooks and Endpoints</span></a>.
+=======
+.. note:: This document is written for Debian distributions. Adapt as necessary for other distributions.</p>
+<p>First, you will need to create a server to host your Webhook, find out more about Webhhoks here: <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhooks and Endpoints</span></a> . Once you have the server, please follow these directions:
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; Stashed changes</p>
 <p>On the server that will be hosting the Webhook, create the directory and pull down the Webhook code from Git:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>apt update
 apt install python-pip -y
