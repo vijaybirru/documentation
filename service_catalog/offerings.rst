@@ -51,6 +51,8 @@ The Farm Template is also presented for editing which is covered in `Customising
 .. image:: images/edit_offering.png
    :scale: 50%
 
+.. _basic_templates:
+
 Customising Farm Templates
 ==========================
 

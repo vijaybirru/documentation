@@ -377,6 +377,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#volume-mounting">Volume Mounting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#aws-storage-configuration">AWS Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#google-cloud-platform-storage-configuration">Google Cloud Platform Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#azure-storage-configuration">Azure Storage Configuration</a></li>
@@ -413,7 +414,21 @@
 <li class="toctree-l2"><a class="reference internal" href="using_service_catalog.html#managing-applications">Managing Applications</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="advanced_farm_templates.html">Advanced Farm Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced_farm_templates.html">Advanced Farm Templates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced_farm_templates.html#aws-example">AWS Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_farm_templates.html#azure-example">Azure Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_farm_templates.html#vmware-example">VMware Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_farm_templates.html#gce-example">GCE Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_farm_templates.html#openstack-example">Openstack Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced_farm_templates.html#service-catalog-advanced-configuration">Service Catalog Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="advanced_farm_templates.html#cloud-agnostic-template">Cloud Agnostic Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_farm_templates.html#conditions-and-allowed-values">Conditions and Allowed Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_farm_templates.html#storage-configuration">Storage Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="advanced_farm_templates.html#min-and-max-server-counts">Min and Max Server Counts</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Organizational Management</span></p>
 <ul>
@@ -532,6 +547,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/rightsizing.html">Rightsizing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/analytics.html">Cost Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cost/garbage_collector.html">Garbage Collector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cost/garbage_collector.html#using-the-garbage-collector">Using the Garbage Collector</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management</span></p>
 <ul>
@@ -640,7 +659,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../integrations/servicenow.html">ServiceNow Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration-setup">CMDB Integration Setup</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -776,6 +798,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../release_notes/index.html#scalarizr-release-notes">Scalarizr Release Notes</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/labs.html">Scalr Labs</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference Section</span></p>
 <ul>
@@ -934,7 +957,7 @@ The Farm Template is also presented for editing which is covered in <a class="re
 <a class="reference internal image-reference" href="../_images/edit_offering.png"><img alt="../_images/edit_offering.png" src="../_images/edit_offering.png" style="width: 261.5px; height: 487.0px;" /></a>
 </div>
 <div class="section" id="customising-farm-templates">
-<h1>Customising Farm Templates<a class="headerlink" href="#customising-farm-templates" title="Permalink to this headline">¶</a></h1>
+<span id="basic-templates"></span><h1>Customising Farm Templates<a class="headerlink" href="#customising-farm-templates" title="Permalink to this headline">¶</a></h1>
 <p>A Farm Template is a JSON representation of a Farm. This includes all Farm Roles and other configuration items from the originating Farm.  Farm Templates are very flexible and provide a form of  “Infrastructure as code” to be used via the Scalr API/Scalr-CTL tool, as well as providing the configuration of Service Catalog offerings for Self Service application deployment.</p>
 <p>Farm Templates used in the Service Catalog offerings are usually customised to provide end users with some choices over various aspects of the deployment. This section will provide some more common examples of customisation. For more advanced customisation, including use of the <code class="docutils literal notranslate"><span class="pre">_meta</span></code> configuration block to control options, allowed values and visibility see <a class="reference internal" href="advanced_farm_templates.html#adv-farm-templates"><span class="std std-ref">Advanced Farm Templates</span></a>.</p>
 <p>In simple terms the <code class="docutils literal notranslate"><span class="pre">_meta</span></code> section defines the rules for the parameters and their values that can be used in the rest of the template.

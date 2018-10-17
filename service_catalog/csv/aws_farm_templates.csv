@@ -1,0 +1,22 @@
+Category,Parameter,Possible Values,Description
+Storage,template.type,gp2,General Pupose SDD
+,,sc1,Cold HDD
+,,st1,Throuput Optimized HDD
+,,io1,"Example w/ iops entry:
+
+""template"": {
+                        ""size"": 4,
+                        ""type"": ""io1"",
+                        ""cloudFeatures"": {
+                            ""type"": ""AwsStorageTemplateCloudFeatures"",
+                            ""iops"": 100,
+                            ""isEncrypted"": false
+                        }"
+,,standard,Standard EBS Magnetic
+,template.cloudFeatures.isEncrypted,true/false,
+,template.cloudFeatures.kmsKey,Scalr ID of KMS key,
+Location,roles.cloudLocation,"us-east-1, us-west-1, etc",All regions in AWS
+Instance Type,roles.instanceType.id,"t2.nano, t2.small, etc",All instance types in AWS
+Networking,roles.networking.networks.id,VPC ID,The VPC ID that the server will provision to
+,roles.networking.subnets.id,Subnet ID(s),The subnet ID that the server will provision to
+Security,roles.security.secuerityGroups.id,Security Group ID(s),The security groups that will be on th server

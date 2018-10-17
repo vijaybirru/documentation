@@ -1,0 +1,17 @@
+Category,Parameter,Possible Values,Description
+Storage,template.type,provisioning-thin,
+,,provisioning-thick-eager,
+,,provisioning-thick-lazy,
+,template.cloudFeatures.isSharedDisk,true/false,Will the disk be shared across servers
+,template.cloudFeatures.diskObjectId,Value of root disk in VMware,Example: 6-2000
+Location,roles.cloudLocation,Datacenter ID,Example: datacenter-21
+Instance Type,roles.instanceType.id,Instance type ID,Example: 282c8b16746f
+Networking,roles.networking.networks.id,Network ID,Example: network-30
+Cloud Features,roles.CloudFeatures.folder,Folder ID,Example: group-v22
+,roles.CloudFeatures.placementStrategy,scalr-auto,Scalr automatic selects where to place the server
+,,manual,User selects placement of server
+,roles.CloudFeatures.computeResource,Compute Resource ID,Only can be used if placement strategy is manual
+,roles.CloudFeatures.hosts,Host ID,Only can be used if placement strategy is manual
+,roles.CloudFeatures.customizationSpec,Name of the custom spec,Name of the custom spec
+,roles.CloudFeatures.dataStore,Datastore ID,Only can be used if placement strategy is manual
+,roles.CloudFeatures.resourcePool,Resource Pool ID,Only can be used if placement strategy is manual
