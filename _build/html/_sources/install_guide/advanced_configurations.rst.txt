@@ -10,6 +10,13 @@ Proxy
    :header-rows: 1
    :file: csv/proxy.csv
 
+SSL
+----
+
+.. csv-table::
+   :header-rows: 1
+   :file: csv/ssl.csv
+
 .. _ldap:
 
 LDAP
