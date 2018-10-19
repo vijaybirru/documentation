@@ -167,6 +167,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/advanced_configurations.html">Advanced Configurations</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#proxy">Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#ssl">SSL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#ldap">LDAP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#saml">SAML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#logging">Logging</a></li>
@@ -377,6 +378,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/storage.html">Configuring Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#volume-mounting">Volume Mounting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#aws-storage-configuration">AWS Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#google-cloud-platform-storage-configuration">Google Cloud Platform Storage Configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../farms/storage.html#azure-storage-configuration">Azure Storage Configuration</a></li>
@@ -413,7 +415,21 @@
 <li class="toctree-l2"><a class="reference internal" href="using_service_catalog.html#managing-applications">Managing Applications</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Farm Templates</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Advanced Farm Templates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aws-example">AWS Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#azure-example">Azure Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vmware-example">VMware Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gce-example">GCE Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#openstack-example">Openstack Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#service-catalog-advanced-configuration">Service Catalog Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cloud-agnostic-template">Cloud Agnostic Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conditions-and-allowed-values">Conditions and Allowed Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#storage-configuration">Storage Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#min-and-max-server-counts">Min and Max Server Counts</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Organizational Management</span></p>
 <ul>
@@ -532,6 +548,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/rightsizing.html">Rightsizing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/analytics.html">Cost Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cost/garbage_collector.html">Garbage Collector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cost/garbage_collector.html#using-the-garbage-collector">Using the Garbage Collector</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management</span></p>
 <ul>
@@ -640,7 +660,10 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../integrations/servicenow.html">ServiceNow Integration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration-setup">CMDB Integration Setup</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -776,6 +799,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../release_notes/index.html#scalarizr-release-notes">Scalarizr Release Notes</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/labs.html">Scalr Labs</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference Section</span></p>
 <ul>
@@ -909,8 +933,892 @@
   <a class="reference internal image-reference" href="../_images/preview.png"><img alt="../_images/preview.png" class="align-right" src="../_images/preview.png" style="width: 203.20000000000002px; height: 22.400000000000002px;" /></a>
 <div class="section" id="advanced-farm-templates">
 <span id="adv-farm-templates"></span><h1>Advanced Farm Templates<a class="headerlink" href="#advanced-farm-templates" title="Permalink to this headline">¶</a></h1>
-<p><strong>UNDER DEVELOPMENT</strong></p>
-<p>Please see our earlier documentation <a href="https://scalr-wiki.atlassian.net/wiki/spaces/docs/pages/388595713/Configuring+Farm+Templates" target="_blank">Configuring Farm Templates</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a> for more details.</p>
+<p><a class="reference internal" href="../_images/scope_scalr.png"><img alt="SCOPE_SCALR" src="../_images/scope_scalr.png" style="width: 26.400000000000002px; height: 23.200000000000003px;" /></a> <a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a> <a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
+<p>The following cloud specific examples have all possible parameters and values for their respective clouds. To learn the basics of Farm Templates and how they are used, please see <a class="reference internal" href="offerings.html#basic-templates"><span class="std std-ref">Customising Farm Templates</span></a>.</p>
+<div class="section" id="aws-example">
+<h2>AWS Example<a class="headerlink" href="#aws-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span> <span class="p">{</span>
+    <span class="nt">&quot;_meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;schema_version&quot;</span><span class="p">:</span> <span class="s2">&quot;v1beta0-7.11.2&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;farm&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Docs AWS&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;project&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1682b63d-6d28-4b5f-8438-3cf058f89a6c&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;timezone&quot;</span><span class="p">:</span> <span class="s2">&quot;America\/New_York&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;launchOrder&quot;</span><span class="p">:</span> <span class="s2">&quot;simultaneous&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+       <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;cloudPlatform&quot;</span><span class="p">:</span> <span class="s2">&quot;ec2&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;cloudLocation&quot;</span><span class="p">:</span> <span class="s2">&quot;us-east-1&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;instanceType&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;t2.micro&quot;</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;launchIndex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+       <span class="nt">&quot;advancedConfiguration&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="nt">&quot;disableAgentIptablesManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+           <span class="nt">&quot;disableAgentNtpManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+           <span class="nt">&quot;disableAgentHostnameManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+           <span class="nt">&quot;rebootAfterHostInit&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+           <span class="nt">&quot;instanceName&quot;</span><span class="p">:</span> <span class="s2">&quot;{SCALR_FARM_OWNER_EMAIL}-{Purpose}&quot;</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;scaling&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="nt">&quot;considerSuspendedServers&quot;</span><span class="p">:</span> <span class="s2">&quot;running&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+           <span class="nt">&quot;maxInstances&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+           <span class="nt">&quot;minInstances&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+           <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[],</span>
+           <span class="nt">&quot;scalingBehavior&quot;</span><span class="p">:</span> <span class="s2">&quot;launch-terminate&quot;</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;networking&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="nt">&quot;networks&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;vpc-5818a621&quot;</span>
+               <span class="p">}</span>
+           <span class="p">],</span>
+           <span class="nt">&quot;subnets&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;subnet-6b709a55&quot;</span>
+               <span class="p">},</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;subnet-3333856f&quot;</span>
+               <span class="p">}</span>
+           <span class="p">]</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;AwsCloudFeatures&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;ebsOptimized&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+           <span class="nt">&quot;iamInstanceProfile&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::515485494432:instance-profile\/EC2-Service-Role&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;backupInstanceTypes&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;t2.large&quot;</span>
+               <span class="p">}</span>
+           <span class="p">]</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;security&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="nt">&quot;securityGroups&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;sg-ca60c9bb&quot;</span>
+               <span class="p">},</span>
+               <span class="p">{</span>
+                   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;sg-ba2bb3f3&quot;</span>
+               <span class="p">}</span>
+           <span class="p">]</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Purpose&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;docs&quot;</span>
+           <span class="p">}</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;orchestration&quot;</span><span class="p">:</span> <span class="p">{</span>
+           <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[]</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;storage&quot;</span><span class="p">:</span> <span class="p">[</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PersistentStorageConfiguration&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;reUse&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;fromTemplateIfMissing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;mounting&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                   <span class="nt">&quot;fileSystem&quot;</span><span class="p">:</span> <span class="s2">&quot;ext3&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;mountPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;\/a&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;standard&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;AwsStorageTemplateCloudFeatures&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;isEncrypted&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                       <span class="nt">&quot;kmsKey&quot;</span><span class="p">:</span> <span class="s2">&quot;5fd6e560-29e6-4a1c-9abe-a2b54ce2e8d1&quot;</span>
+                   <span class="p">}</span>
+               <span class="p">}</span>
+           <span class="p">},</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PersistentStorageConfiguration&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;reUse&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;fromTemplateIfMissing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;mounting&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                   <span class="nt">&quot;fileSystem&quot;</span><span class="p">:</span> <span class="s2">&quot;xfs&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;mountPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;\/c&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;standard&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;AwsStorageTemplateCloudFeatures&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;isEncrypted&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                   <span class="p">}</span>
+               <span class="p">}</span>
+           <span class="p">},</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PersistentStorageConfiguration&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;reUse&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;fromTemplateIfMissing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;st1&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;AwsStorageTemplateCloudFeatures&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;isEncrypted&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                   <span class="p">}</span>
+               <span class="p">}</span>
+           <span class="p">},</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PersistentStorageConfiguration&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;reUse&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;fromTemplateIfMissing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sc1&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;AwsStorageTemplateCloudFeatures&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;isEncrypted&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                   <span class="p">}</span>
+               <span class="p">}</span>
+           <span class="p">},</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PersistentStorageConfiguration&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;reUse&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+               <span class="nt">&quot;fromTemplateIfMissing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;mounting&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                   <span class="nt">&quot;fileSystem&quot;</span><span class="p">:</span> <span class="s2">&quot;ext4&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;mountPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;\/b&quot;</span>
+               <span class="p">},</span>
+               <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;gp2&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;AwsStorageTemplateCloudFeatures&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;isEncrypted&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                   <span class="p">}</span>
+               <span class="p">}</span>
+           <span class="p">},</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;RootStorageConfiguration&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                   <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+                   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;gp2&quot;</span><span class="p">,</span>
+                   <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                       <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;AwsStorageTemplateCloudFeatures&quot;</span><span class="p">,</span>
+                       <span class="nt">&quot;isEncrypted&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                   <span class="p">}</span>
+               <span class="p">}</span>
+           <span class="p">}</span>
+       <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="azure-example">
+<h2>Azure Example<a class="headerlink" href="#azure-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;_meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;schema_version&quot;</span><span class="p">:</span> <span class="s2">&quot;v1beta0-7.11.2&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;farm&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;azure farm template for docs&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;project&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;30c59dba-fc9b-4d0f-83ec-4b5043b12f72&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;timezone&quot;</span><span class="p">:</span> <span class="s2">&quot;America\/New_York&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;launchOrder&quot;</span><span class="p">:</span> <span class="s2">&quot;simultaneous&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;cloudPlatform&quot;</span><span class="p">:</span> <span class="s2">&quot;azure&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;cloudLocation&quot;</span><span class="p">:</span> <span class="s2">&quot;eastus&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;availabilityZones&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;instanceType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Standard_B1ms&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;launchIndex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;advancedConfiguration&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;disableAgentIptablesManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;disableAgentNtpManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;disableAgentHostnameManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;rebootAfterHostInit&quot;</span><span class="p">:</span> <span class="kc">false</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;networking&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;networks&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;\/subscriptions\/e6b1e566-9703-4f7d-9f79-743555284ea6\/resourceGroups\/Scalr\/providers\/Microsoft.Network\/virtualNetworks\/Scalr-vnet&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;associatePublicIpAddress&quot;</span><span class="p">:</span> <span class="kc">true</span>
+                    <span class="p">}</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;subnets&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;\/subscriptions\/e6b1e566-9703-4f7d-9f79-743555284ea6\/resourceGroups\/Scalr\/providers\/Microsoft.Network\/virtualNetworks\/Scalr-vnet\/subnets\/default&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;AzureCloudFeatures&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;resourceGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;\/subscriptions\/e6b1e566-9703-4f7d-9f79-743555284ea6\/resourceGroups\/Scalr&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;security&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;securityGroups&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Scalr-base&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;orchestration&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[]</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;storage&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PersistentStorageConfiguration&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;reUse&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="nt">&quot;fromTemplateIfMissing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="nt">&quot;mounting&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                        <span class="nt">&quot;fileSystem&quot;</span><span class="p">:</span> <span class="s2">&quot;ext3&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;mountPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;\/a&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Standard_LRS&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;AzureStorageTemplateCloudFeatures&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;resourceGroup&quot;</span><span class="p">:</span> <span class="s2">&quot;\/subscriptions\/e6b1e566-9703-4f7d-9f79-743555284ea6\/resourceGroups\/Scalr&quot;</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="vmware-example">
+<h2>VMware Example<a class="headerlink" href="#vmware-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;_meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;schema_version&quot;</span><span class="p">:</span> <span class="s2">&quot;v1beta0-7.11.2&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;farm&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Docs vmware&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;project&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1682b63d-6d28-4b5f-8438-3cf058f89a6c&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;timezone&quot;</span><span class="p">:</span> <span class="s2">&quot;America\/New_York&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;launchOrder&quot;</span><span class="p">:</span> <span class="s2">&quot;simultaneous&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;cloudPlatform&quot;</span><span class="p">:</span> <span class="s2">&quot;vmware&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;cloudLocation&quot;</span><span class="p">:</span> <span class="s2">&quot;datacenter-21&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;instanceType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;282c8b16746f&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;launchIndex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;advancedConfiguration&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;disableAgentIptablesManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;disableAgentNtpManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;disableAgentHostnameManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;rebootAfterHostInit&quot;</span><span class="p">:</span> <span class="kc">false</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;scaling&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;considerSuspendedServers&quot;</span><span class="p">:</span> <span class="s2">&quot;running&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nt">&quot;maxInstances&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="nt">&quot;minInstances&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="nt">&quot;scalingBehavior&quot;</span><span class="p">:</span> <span class="s2">&quot;launch-terminate&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;networking&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;networks&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;network-30&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;VmwareCloudFeatures&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;folder&quot;</span><span class="p">:</span> <span class="s2">&quot;group-v22&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;placementStrategy&quot;</span><span class="p">:</span> <span class="s2">&quot;manual&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;computeResource&quot;</span><span class="p">:</span> <span class="s2">&quot;domain-s26&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;hosts&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;host-28&quot;</span>
+                <span class="p">],</span>
+                <span class="nt">&quot;customizationSpec&quot;</span><span class="p">:</span> <span class="s2">&quot;Test_Customer_Spec&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;dataStore&quot;</span><span class="p">:</span> <span class="s2">&quot;datastore-29&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;resourcePool&quot;</span><span class="p">:</span> <span class="s2">&quot;resgroup-27&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Purpose&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;docs&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;orchestration&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[]</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;storage&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PersistentStorageConfiguration&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;reUse&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="nt">&quot;fromTemplateIfMissing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="nt">&quot;mounting&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                        <span class="nt">&quot;fileSystem&quot;</span><span class="p">:</span> <span class="s2">&quot;ext3&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;mountPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;\/a&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;provisioning-thick-lazy&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;VmwareStorageTemplateCloudFeatures&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;isSharedDisk&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;RootStorageConfiguration&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;provisioning-thin&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;VmwareStorageTemplateCloudFeatures&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;diskObjectId&quot;</span><span class="p">:</span> <span class="s2">&quot;6-2000&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;isSharedDisk&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PersistentStorageConfiguration&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;reUse&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="nt">&quot;fromTemplateIfMissing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="nt">&quot;mounting&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                        <span class="nt">&quot;fileSystem&quot;</span><span class="p">:</span> <span class="s2">&quot;ext4&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;mountPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;\/b&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;provisioning-thick-eager&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;VmwareStorageTemplateCloudFeatures&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;isSharedDisk&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PersistentStorageConfiguration&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;reUse&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="nt">&quot;fromTemplateIfMissing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                    <span class="nt">&quot;mounting&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                        <span class="nt">&quot;fileSystem&quot;</span><span class="p">:</span> <span class="s2">&quot;xfs&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;mountPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;\/c&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;provisioning-thin&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;VmwareStorageTemplateCloudFeatures&quot;</span><span class="p">,</span>
+                            <span class="nt">&quot;isSharedDisk&quot;</span><span class="p">:</span> <span class="kc">false</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gce-example">
+<h2>GCE Example<a class="headerlink" href="#gce-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;_meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;schema_version&quot;</span><span class="p">:</span> <span class="s2">&quot;v1beta0-7.11.2&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;farm&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;GCE Docs&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;project&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1682b63d-6d28-4b5f-8438-3cf058f89a6c&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;timezone&quot;</span><span class="p">:</span> <span class="s2">&quot;America\/New_York&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;launchOrder&quot;</span><span class="p">:</span> <span class="s2">&quot;simultaneous&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;cloudPlatform&quot;</span><span class="p">:</span> <span class="s2">&quot;gce&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;cloudLocation&quot;</span><span class="p">:</span> <span class="s2">&quot;us-central1&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;availabilityZones&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&quot;us-central1-a&quot;</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;instanceType&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;n1-standard-1&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;launchIndex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;advancedConfiguration&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;disableAgentIptablesManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;disableAgentNtpManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;disableAgentHostnameManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;rebootAfterHostInit&quot;</span><span class="p">:</span> <span class="kc">false</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;scaling&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;considerSuspendedServers&quot;</span><span class="p">:</span> <span class="s2">&quot;running&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;maxInstances&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;minInstances&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;scalingBehavior&quot;</span><span class="p">:</span> <span class="s2">&quot;launch-terminate&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;networking&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;networks&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;scalr-demo\/global\/networks\/all-open&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;associatePublicIpAddress&quot;</span><span class="p">:</span> <span class="kc">true</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;subnets&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;all-open-9095425ae886b02e&quot;</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;GceCloudFeatures&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;networkTags&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;scalr&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;serviceAccount&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Purpose&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;orchestration&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;storage&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;EphemeralStorageConfiguration&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;mounting&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="nt">&quot;fileSystem&quot;</span><span class="p">:</span> <span class="s2">&quot;xfs&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;mountPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;\/c&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">375</span><span class="p">,</span>
+                    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;google-local-ssd-0&quot;</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PersistentStorageConfiguration&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;reUse&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nt">&quot;fromTemplateIfMissing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;mounting&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="nt">&quot;fileSystem&quot;</span><span class="p">:</span> <span class="s2">&quot;ext3&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;mountPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;\/a&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;pd-standard&quot;</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;RootStorageConfiguration&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;pd-standard&quot;</span>
+                <span class="p">}</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PersistentStorageConfiguration&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;reUse&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nt">&quot;fromTemplateIfMissing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;mounting&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                    <span class="nt">&quot;fileSystem&quot;</span><span class="p">:</span> <span class="s2">&quot;ext4&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;mountPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;\/b&quot;</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;pd-ssd&quot;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="openstack-example">
+<h2>Openstack Example<a class="headerlink" href="#openstack-example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+ <span class="nt">&quot;_meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;schema_version&quot;</span><span class="p">:</span> <span class="s2">&quot;v1beta0-7.11.2&quot;</span>
+ <span class="p">},</span>
+ <span class="nt">&quot;farm&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Docs openstack&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;project&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1682b63d-6d28-4b5f-8438-3cf058f89a6c&quot;</span>
+     <span class="p">},</span>
+     <span class="nt">&quot;timezone&quot;</span><span class="p">:</span> <span class="s2">&quot;America\/New_York&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;launchOrder&quot;</span><span class="p">:</span> <span class="s2">&quot;simultaneous&quot;</span><span class="p">,</span>
+     <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[]</span>
+ <span class="p">},</span>
+ <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+     <span class="p">{</span>
+         <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;base-ubuntu1604&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;cloudPlatform&quot;</span><span class="p">:</span> <span class="s2">&quot;openstack&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;cloudLocation&quot;</span><span class="p">:</span> <span class="s2">&quot;RegionOne&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;availabilityZones&quot;</span><span class="p">:</span> <span class="p">[],</span>
+         <span class="nt">&quot;instanceType&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;launchIndex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="nt">&quot;advancedConfiguration&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="nt">&quot;disableAgentIptablesManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+             <span class="nt">&quot;disableAgentNtpManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+             <span class="nt">&quot;disableAgentHostnameManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+             <span class="nt">&quot;rebootAfterHostInit&quot;</span><span class="p">:</span> <span class="kc">false</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;scaling&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="nt">&quot;considerSuspendedServers&quot;</span><span class="p">:</span> <span class="s2">&quot;running&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+             <span class="nt">&quot;maxInstances&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+             <span class="nt">&quot;minInstances&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[],</span>
+             <span class="nt">&quot;scalingBehavior&quot;</span><span class="p">:</span> <span class="s2">&quot;launch-terminate&quot;</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;networking&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="nt">&quot;networks&quot;</span><span class="p">:</span> <span class="p">[</span>
+                 <span class="p">{</span>
+                     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;9d001c2f-3960-46cb-aef4-8bbc96500958&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+                         <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenstackNetworkCloudFeatures&quot;</span><span class="p">,</span>
+                         <span class="nt">&quot;floatingIpPool&quot;</span><span class="p">:</span> <span class="p">{</span>
+                             <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;e2e49b41-e486-409e-b00e-97ec18dc7471&quot;</span>
+                         <span class="p">}</span>
+                     <span class="p">}</span>
+                 <span class="p">}</span>
+             <span class="p">]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;cloudFeatures&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;OpenstackCloudFeatures&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;disableKeyPairManagement&quot;</span><span class="p">:</span> <span class="kc">false</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;security&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="nt">&quot;securityGroups&quot;</span><span class="p">:</span> <span class="p">[</span>
+                 <span class="p">{</span>
+                     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;071e9add-509b-47c7-ba8a-973b645ce8bb&quot;</span>
+                 <span class="p">},</span>
+                 <span class="p">{</span>
+                     <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;3629e09d-ed2d-4347-8ec2-7001fd1ef4b8&quot;</span>
+                 <span class="p">}</span>
+             <span class="p">]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[</span>
+             <span class="p">{</span>
+                 <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Purpose&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span>
+             <span class="p">}</span>
+         <span class="p">],</span>
+         <span class="nt">&quot;orchestration&quot;</span><span class="p">:</span> <span class="p">{</span>
+             <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[]</span>
+         <span class="p">},</span>
+         <span class="nt">&quot;storage&quot;</span><span class="p">:</span> <span class="p">[</span>
+             <span class="p">{</span>
+                 <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;PersistentStorageConfiguration&quot;</span><span class="p">,</span>
+                 <span class="nt">&quot;reUse&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                 <span class="nt">&quot;fromTemplateIfMissing&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                 <span class="nt">&quot;mounting&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                     <span class="nt">&quot;fileSystem&quot;</span><span class="p">:</span> <span class="s2">&quot;ext3&quot;</span><span class="p">,</span>
+                     <span class="nt">&quot;mountPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;\/a&quot;</span>
+                 <span class="p">},</span>
+                 <span class="nt">&quot;template&quot;</span><span class="p">:</span> <span class="p">{</span>
+                     <span class="nt">&quot;size&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                     <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;708cf4f3-7204-4fd1-8f13-bd4af6928c4d&quot;</span>
+                 <span class="p">}</span>
+             <span class="p">}</span>
+         <span class="p">]</span>
+     <span class="p">}</span>
+ <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="service-catalog-advanced-configuration">
+<h2>Service Catalog Advanced Configuration<a class="headerlink" href="#service-catalog-advanced-configuration" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the standard Farm templates seen above, options can be added to make the template more dynamic when they are used in the Service Catalog. All of this should be entered within the “meta” context.</p>
+<ul class="simple">
+<li>pattern - Set a validation pattern for a setting value to be checked against.  This follows the same printf format as Global Variable Validation Patterns.</li>
+<li>maxLength -  Sets a maximum character length for a string value.</li>
+<li>minLength  -  Sets a minimum character length for a string value.</li>
+<li>final - Locks a value to the Farm Template configured value, even if the user would otherwise have other options to select from.</li>
+<li>visible – Sets a field to always be visible, even if a value is already supplied by policy or the template and would otherwise be hidden.</li>
+<li>allowedValues - Sets the allowed user-provided values for a setting, even if the user would otherwise have other options available to choose from.</li>
+<li>conditions - Check for a condition and apply the nested _meta.configuration when the condition is true.  Conditions are only available for variables and Farm Role setting.  Condition statements must be based on Role properties such as platform or location.  Conditions based on Global Variable values are not yet supported.</li>
+</ul>
+<p>Here is an example of a Farm Template with advanced configuration added. In the meta section, a naming standard was added for the farm name which must start with “MyApp-” , be a minimum of 6 characters, and a maximum of 9 characters:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;_meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;schema_version&quot;</span><span class="p">:</span> <span class="s2">&quot;v1beta0-7.9.4&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;configuration&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;farm&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;pattern&quot;</span><span class="p">:</span> <span class="s2">&quot;^MyApp-[0-9]+$&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;maxLength&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+                    <span class="nt">&quot;minLength&quot;</span><span class="p">:</span> <span class="mi">6</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;farm&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;project&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;timezone&quot;</span><span class="p">:</span> <span class="s2">&quot;America\/New_York&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;launchOrder&quot;</span><span class="p">:</span> <span class="s2">&quot;simultaneous&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;SC-mysql-ubuntu1604&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SC-mysql-ubuntu1604&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;launchIndex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;advancedConfiguration&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;disableAgentIptablesManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;disableAgentNtpManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;rebootAfterHostInit&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;instanceName&quot;</span><span class="p">:</span> <span class="s2">&quot;{SCALR_FARM_OWNER_EMAIL}-{Purpose}&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;scaling&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;considerSuspendedServers&quot;</span><span class="p">:</span> <span class="s2">&quot;running&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nt">&quot;maxInstances&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="nt">&quot;minInstances&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="nt">&quot;scalingBehavior&quot;</span><span class="p">:</span> <span class="s2">&quot;launch-terminate&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;orchestration&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[]</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;storage&quot;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="cloud-agnostic-template">
+<h3>Cloud Agnostic Template<a class="headerlink" href="#cloud-agnostic-template" title="Permalink to this headline">¶</a></h3>
+<p>To make a template completely cloud agnostic, remove all references to the cloud within it. By removing the references, the user will be prompted for the Cloud information at the time of ordering the catalog item:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;_meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;schema_version&quot;</span><span class="p">:</span> <span class="s2">&quot;v1beta0-7.9.4&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;farm&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;project&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;timezone&quot;</span><span class="p">:</span> <span class="s2">&quot;America\/New_York&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;launchOrder&quot;</span><span class="p">:</span> <span class="s2">&quot;simultaneous&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;alias&quot;</span><span class="p">:</span> <span class="s2">&quot;SC-mysql-ubuntu1604&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;role&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;SC-mysql-ubuntu1604&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;launchIndex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;advancedConfiguration&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;disableAgentIptablesManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;disableAgentNtpManagement&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;rebootAfterHostInit&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                <span class="nt">&quot;instanceName&quot;</span><span class="p">:</span> <span class="s2">&quot;{SCALR_FARM_OWNER_EMAIL}-{Purpose}&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;scaling&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;considerSuspendedServers&quot;</span><span class="p">:</span> <span class="s2">&quot;running&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;enabled&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nt">&quot;maxInstances&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="nt">&quot;minInstances&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[],</span>
+                <span class="nt">&quot;scalingBehavior&quot;</span><span class="p">:</span> <span class="s2">&quot;launch-terminate&quot;</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;variables&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="nt">&quot;orchestration&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[]</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;storage&quot;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="conditions-and-allowed-values">
+<h3>Conditions and Allowed Values<a class="headerlink" href="#conditions-and-allowed-values" title="Permalink to this headline">¶</a></h3>
+<p>In the following example, the instance type will be determined based on the cloud they select:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;_meta&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;schema_version&quot;</span><span class="p">:</span><span class="s2">&quot;v1beta0-7.7.9&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;configuration&quot;</span><span class="p">:{</span>
+           <span class="nt">&quot;roles&quot;</span><span class="p">:{</span>
+              <span class="nt">&quot;instanceType&quot;</span><span class="p">:[</span>
+                 <span class="p">{</span>
+                    <span class="nt">&quot;conditions&quot;</span><span class="p">:{</span>
+                       <span class="nt">&quot;cloudPlatform&quot;</span><span class="p">:</span> <span class="s2">&quot;ec2&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;allowedValues&quot;</span><span class="p">:[</span>
+                       <span class="s2">&quot;m3.medium&quot;</span>
+                    <span class="p">]</span>
+                 <span class="p">},</span>
+                 <span class="p">{</span>
+                    <span class="nt">&quot;conditions&quot;</span><span class="p">:{</span>
+                       <span class="nt">&quot;cloudPlatform&quot;</span><span class="p">:</span> <span class="s2">&quot;azure&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;allowedValues&quot;</span><span class="p">:[</span>
+                       <span class="s2">&quot;Basic_A2&quot;</span>
+                    <span class="p">]</span>
+                 <span class="p">},</span>
+                 <span class="p">{</span>
+                    <span class="nt">&quot;conditions&quot;</span><span class="p">:{</span>
+                       <span class="nt">&quot;cloudPlatform&quot;</span><span class="p">:</span><span class="s2">&quot;vmware&quot;</span>
+                    <span class="p">},</span>
+                    <span class="nt">&quot;allowedValues&quot;</span><span class="p">:[</span>
+                       <span class="s2">&quot;Medium&quot;</span>
+                    <span class="p">]</span>
+                 <span class="p">}</span>
+              <span class="p">]</span>
+           <span class="p">}</span>
+        <span class="p">}</span>
+   <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="storage-configuration">
+<h3>Storage Configuration<a class="headerlink" href="#storage-configuration" title="Permalink to this headline">¶</a></h3>
+<p>In the following example, the instance type will be determined based on the cloud they select:</p>
+<ul class="simple">
+<li>The root device cannot be removed, but can be configured to be between 10-100GB.</li>
+<li>The second device is completely optional, but if you do choose to have it then it must be between 10-100GB.</li>
+<li>The index value will correlate with the the order in which the storage shows up in the farm template.</li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;_meta&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;schema_version&quot;</span><span class="p">:</span><span class="s2">&quot;v1beta0-7.7.9&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;configuration&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="nt">&quot;storage&quot;</span><span class="p">:</span> <span class="p">[</span>
+                      <span class="p">{</span>
+                          <span class="nt">&quot;conditions&quot;</span><span class="p">:</span> <span class="p">{</span>
+                              <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;final&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;configuration&quot;</span><span class="p">:</span> <span class="p">{</span>
+                              <span class="nt">&quot;template.size&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                  <span class="nt">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                                  <span class="nt">&quot;final&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                  <span class="nt">&quot;maxValue&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                                  <span class="nt">&quot;minValue&quot;</span><span class="p">:</span> <span class="mi">10</span>
+                              <span class="p">}</span>
+                          <span class="p">}</span>
+                      <span class="p">},</span>
+                      <span class="p">{</span>
+                          <span class="nt">&quot;conditions&quot;</span><span class="p">:</span> <span class="p">{</span>
+                              <span class="nt">&quot;index&quot;</span><span class="p">:</span> <span class="mi">1</span>
+                          <span class="p">},</span>
+                          <span class="nt">&quot;final&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                          <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                          <span class="nt">&quot;defaultValue&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                          <span class="nt">&quot;configuration&quot;</span><span class="p">:</span> <span class="p">{</span>
+                              <span class="nt">&quot;template.size&quot;</span><span class="p">:</span> <span class="p">{</span>
+                                  <span class="nt">&quot;final&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+                                  <span class="nt">&quot;maxValue&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+                                  <span class="nt">&quot;minValue&quot;</span><span class="p">:</span> <span class="mi">10</span>
+                              <span class="p">}</span>
+                          <span class="p">}</span>
+                      <span class="p">}</span>
+                  <span class="p">]</span>
+              <span class="p">}</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/storage.png"><img alt="../_images/storage.png" src="../_images/storage.png" style="width: 539.2px; height: 340.0px;" /></a>
+</div>
+<div class="section" id="min-and-max-server-counts">
+<h3>Min and Max Server Counts<a class="headerlink" href="#min-and-max-server-counts" title="Permalink to this headline">¶</a></h3>
+<p>In the following example, all roles within the farm must have a minimum of 2 and maximum of 3 servers:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;_meta&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;schema_version&quot;</span><span class="p">:</span> <span class="s2">&quot;v1beta0-7.10.0&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;configuration&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="nt">&quot;roles&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">&quot;scaling.minInstances&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                      <span class="nt">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                      <span class="nt">&quot;maxValue&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                      <span class="nt">&quot;minValue&quot;</span><span class="p">:</span> <span class="mi">2</span>
+                  <span class="p">}</span>
+              <span class="p">]</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 

@@ -167,6 +167,7 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Advanced Configurations</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#proxy">Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssl">SSL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ldap">LDAP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#saml">SAML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#logging">Logging</a></li>
@@ -414,7 +415,21 @@
 <li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#managing-applications">Managing Applications</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html">Advanced Farm Templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html">Advanced Farm Templates</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-example">AWS Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#azure-example">Azure Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#vmware-example">VMware Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#gce-example">GCE Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#openstack-example">Openstack Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#service-catalog-advanced-configuration">Service Catalog Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-agnostic-template">Cloud Agnostic Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#conditions-and-allowed-values">Conditions and Allowed Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#storage-configuration">Storage Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#min-and-max-server-counts">Min and Max Server Counts</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Organizational Management</span></p>
 <ul>
@@ -784,6 +799,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../release_notes/index.html#scalarizr-release-notes">Scalarizr Release Notes</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes/labs.html">Scalr Labs</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Reference Section</span></p>
 <ul>
@@ -992,25 +1008,47 @@
 <td>true, false</td>
 <td>FALSE</td>
 </tr>
-<tr class="row-odd"><td>proxy[:ssl_enable]</td>
+</tbody>
+</table>
+</div>
+<div class="section" id="ssl">
+<h2>SSL<a class="headerlink" href="#ssl" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+<th class="head">Type</th>
+<th class="head">Example value(s)</th>
+<th class="head">Default value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>proxy[:ssl_enable]</td>
 <td>Whether to enable SSL on the proxy</td>
 <td>Boolean</td>
 <td>true, false - See link above for full example</td>
 <td>false</td>
 </tr>
-<tr class="row-even"><td>proxy[:ssl_redirect]</td>
+<tr class="row-odd"><td>proxy[:ssl_redirect]</td>
 <td>Whether the proxy should redirect HTTP requests to HTTPS (make sure you have a valid cert if you leave this to true!)</td>
 <td>Boolean</td>
 <td>true, false - See link above for full example</td>
 <td>false</td>
 </tr>
-<tr class="row-odd"><td>proxy[:ssl_cert_path]</td>
+<tr class="row-even"><td>proxy[:ssl_cert_path]</td>
 <td>Path to a SSL cert the proxy should use (this needs to be readable by the scalr-app user)</td>
 <td>String</td>
 <td>‘/path/to/the/cert’ - See link above for full example</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>proxy[:ssl_key_path]</td>
+<tr class="row-odd"><td>proxy[:ssl_key_path]</td>
 <td>Path to a corresponding SSL key the proxy should use (same as above)</td>
 <td>String</td>
 <td>‘/path/to/the/key’ - See link above for full example</td>

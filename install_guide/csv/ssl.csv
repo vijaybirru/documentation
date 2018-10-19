@@ -1,0 +1,5 @@
+Parameter,Description,Type,Example value(s),Default value
+proxy[:ssl_enable],Whether to enable SSL on the proxy,Boolean,"true, false - See link above for full example",false
+proxy[:ssl_redirect],Whether the proxy should redirect HTTP requests to HTTPS (make sure you have a valid cert if you leave this to true!),Boolean,"true, false - See link above for full example",false
+proxy[:ssl_cert_path],Path to a SSL cert the proxy should use (this needs to be readable by the scalr-app user),String,'/path/to/the/cert' - See link above for full example,
+proxy[:ssl_key_path],Path to a corresponding SSL key the proxy should use (same as above), String,'/path/to/the/key' - See link above for full example,
