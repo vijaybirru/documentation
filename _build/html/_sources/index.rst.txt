@@ -58,7 +58,6 @@ Scalr Documentation Version 2 Preview!
    farms/storage
    farms/auto_discovery
    farms/link_cloud_services
-   farms/service_catalog
    farms/logs
 
 .. toctree::
