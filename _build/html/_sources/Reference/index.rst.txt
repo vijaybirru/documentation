@@ -44,7 +44,7 @@ Scalr can be configured to work with the following cloud platforms and regions.
    |IDC|,Public,All regions,GA
    |CLOUDSTACK|,Private,"2.x, 3.x, 4.x",GA
    |OPENSTACK|,Private,"Mitaka, Newton, Ocata, Pike, Queens",GA
-   |VMWARE|,Private,"Native VMWare vSphere (5.5, 6.0, and 6.5), and VMWare Integrated OpenStack",GA
+   |VMWARE|,Private,"Native VMWare vSphere (5.5, 6.0, 6.5, and 6.7), and VMWare Integrated OpenStack",GA
    |SOFTLAYER|,Private,,GA
 
 
