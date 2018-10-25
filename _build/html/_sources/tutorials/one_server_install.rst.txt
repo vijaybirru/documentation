@@ -63,3 +63,14 @@ The default username is admin:
 
 .. image:: images/admin_login.png
    :scale: 70%
+
+Shared Roles
+^^^^^^^^^^^^^
+
+.. note:: We recommend using Shared Roles for POC or Development environments, not Production. The best practice for Production is to maintain in-house images to ensure it follows your security standards.
+
+Syncing shared roles lets you use pre-built Images that are provided by Scalr for use on Public Clouds including AWS, Azure, and GCE. To access them, you must execute the following command:
+
+.. code-block:: shell
+
+  scalr-server-manage sync-shared-roles

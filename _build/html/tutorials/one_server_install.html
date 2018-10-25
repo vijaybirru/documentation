@@ -167,6 +167,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/advanced_configurations.html">Advanced Configurations</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#proxy">Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#ssl">SSL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#ldap">LDAP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#saml">SAML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#logging">Logging</a></li>
@@ -387,7 +388,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/auto_discovery.html">Service Auto Discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/link_cloud_services.html">Using Cloud Services in Farms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/service_catalog.html">Service Catalog Offerings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/logs.html">Logs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/logs.html#definition-and-scope">Definition and Scope</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../farms/logs.html#orchestration-logs">Orchestration Logs</a></li>
@@ -415,22 +415,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html">Advanced Farm Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-specific-examples">Cloud Specific Examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-example">AWS Example:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-specific-parameters">AWS Specific Parameters</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#azure-example">Azure Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#vmware-example">VMware Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#gce-example">GCE Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#openstack-example">Openstack Example:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#advanced-configuration">Advanced Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-agnostic-template">Cloud Agnostic Template:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#storage-configuration">Storage Configuration:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#conditions-and-allowed-values">Conditions and Allowed Values:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#min-and-max-server-counts">Min and Max Server Counts:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-example">AWS Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#azure-example">Azure Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#vmware-example">VMware Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#gce-example">GCE Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#openstack-example">Openstack Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#service-catalog-advanced-configuration">Service Catalog Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-agnostic-template">Cloud Agnostic Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#conditions-and-allowed-values">Conditions and Allowed Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#storage-configuration">Storage Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#min-and-max-server-counts">Min and Max Server Counts</a></li>
 </ul>
 </li>
 </ul>
@@ -779,6 +773,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Scalr Server Install - One Server</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shared-roles">Shared Roles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="3-tier-app.html">3 Tier App Tutorial (cloud agnostic, orchestration automation)</a><ul>
@@ -985,6 +980,17 @@ vi /etc/scalr-server/license.json
 </div>
 <p>The default username is admin:</p>
 <a class="reference internal image-reference" href="../_images/admin_login.png"><img alt="../_images/admin_login.png" src="../_images/admin_login.png" style="width: 415.09999999999997px; height: 237.99999999999997px;" /></a>
+</div>
+<div class="section" id="shared-roles">
+<h2>Shared Roles<a class="headerlink" href="#shared-roles" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We recommend using Shared Roles for POC or Development environments, not Production. The best practice for Production is to maintain in-house images to ensure it follows your security standards.</p>
+</div>
+<p>Syncing shared roles lets you use pre-built Images that are provided by Scalr for use on Public Clouds including AWS, Azure, and GCE. To access them, you must execute the following command:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>scalr-server-manage sync-shared-roles
+</pre></div>
+</div>
 </div>
 </div>
 
