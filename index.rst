@@ -62,7 +62,7 @@ Scalr Documentation Version 2 Preview!
 
 .. toctree::
    :maxdepth: 3
-   :caption: Self Service
+   :caption: Self Service & Farm Templates
 
    service_catalog/offerings
    service_catalog/using_service_catalog
