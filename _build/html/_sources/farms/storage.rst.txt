@@ -70,6 +70,11 @@ Additional AWS EBS Volumes can be configured on a Farm Role to be added to every
 .. image:: images/storage_aws.png
    :scale: 50%
 
+All storage volumes for AWS can be managed in the EBS Volumes page. Go to the main Scalr menu dropdown on the top left |MENU_ENV| and click on AWS, then EC2, and EBS volumes:
+
+.. image:: images/storage_aws2.png
+   :scale: 50%
+
 Google Cloud Platform Storage Configuration
 -------------------------------------------
 
@@ -86,6 +91,11 @@ GCP based Farm Roles can have additional storage added using either "Persistent 
 
 |GCP1| |GCP2|
 
+All storage volumes for GCP can be managed in the GCP Persistent Disk page. Go to the main Scalr menu dropdown on the top left |MENU_ENV|, click on Google Cloud Platform, then Compute Engine, and Persistent Disks:
+
+.. image:: images/storage_gcp_3.png
+   :scale: 50%
+
 Azure Storage Configuration
 ---------------------------
 
@@ -94,6 +104,10 @@ Azure based Farm Roles can have additional managed data disks added. The only op
 .. image:: images/storage_azure.png
    :scale: 50%
 
+All storage volumes for Azure can be managed in the Azure Managed Disk page. Go to the main Scalr menu dropdown on the top left |MENU_ENV|, click on Azure and Managed Disks:
+
+.. image:: images/storage_azure2.png
+   :scale: 50%
 
 OpenStack Storage Configuration
 -------------------------------
@@ -102,6 +116,12 @@ OpenStack based Farm Roles can have additional persistent disks added. The only 
 
 .. image:: images/storage_openstack.png
    :scale: 50%
+
+All storage volumes for Openstack can be managed in the Openstack Volumes page. Go to the main Scalr menu dropdown on the top left |MENU_ENV|, click on Openstack and then Volumes:
+
+.. image:: images/storage_openstack2.png
+   :scale: 50%
+
 
 VMWare Storage Configuration
 ----------------------------
@@ -117,4 +137,9 @@ VMware based Farm Roles can have additional virtual disks added. The Volume Sett
    Shared Disk,Allows the disk to be shared across all servers in the Farm Role. Only available for "Eager Zeroed" provisioning
 
 .. image:: images/storage_vmware.png
+   :scale: 50%
+
+All storage volumes for VMware can be managed in the VMware Vitrual Disks page. Go to the main Scalr menu dropdown on the top left |MENU_ENV|, click on VMware and then Virtual Disks:
+
+.. image:: images/storage_vmware2.png
    :scale: 50%

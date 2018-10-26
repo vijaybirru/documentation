@@ -167,6 +167,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/advanced_configurations.html">Advanced Configurations</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#proxy">Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#ssl">SSL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#ldap">LDAP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#saml">SAML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#logging">Logging</a></li>
@@ -387,7 +388,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="auto_discovery.html">Service Auto Discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="link_cloud_services.html">Using Cloud Services in Farms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="service_catalog.html">Service Catalog Offerings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="logs.html">Logs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="logs.html#definition-and-scope">Definition and Scope</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="logs.html#orchestration-logs">Orchestration Logs</a></li>
@@ -398,39 +398,35 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Self Service</span></p>
+<p class="caption"><span class="caption-text">Self Service &amp; Farm Templates</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html">The Service Catalog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#creating-service-catalog-offerings">Creating Service Catalog Offerings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#customising-farm-templates">Customising Farm Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#simple-template-example">Simple Template Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#enabling-options-for-end-users">Enabling Options for End Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#customising-for-multi-cloud">Customising for Multi-Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html">The Service Catalog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#creating-service-catalog-offerings">Creating Service Catalog Offerings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#customising-farm-templates">Customising Farm Templates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/offerings.html#simple-template-example">Simple Template Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/offerings.html#enabling-options-for-end-users">Enabling Options for End Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/offerings.html#customising-for-multi-cloud">Customising for Multi-Cloud</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#publishing-and-promoting-service-catalog-offerings">Publishing and Promoting Service Catalog Offerings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#publishing-and-promoting-service-catalog-offerings">Publishing and Promoting Service Catalog Offerings</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../service_catalog/using_service_catalog.html">Self Service via the Service Catalog</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#requesting-applications">Requesting Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#managing-applications">Managing Applications</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html">Advanced Farm Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-specific-examples">Cloud Specific Examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-example">AWS Example:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-specific-parameters">AWS Specific Parameters</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#azure-example">Azure Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#vmware-example">VMware Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#gce-example">GCE Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#openstack-example">Openstack Example:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#advanced-configuration">Advanced Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-agnostic-template">Cloud Agnostic Template:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#storage-configuration">Storage Configuration:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#conditions-and-allowed-values">Conditions and Allowed Values:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#min-and-max-server-counts">Min and Max Server Counts:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-example">AWS Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#azure-example">Azure Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#vmware-example">VMware Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#gce-example">GCE Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#openstack-example">Openstack Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#service-catalog-advanced-configuration">Service Catalog Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-agnostic-template">Cloud Agnostic Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#conditions-and-allowed-values">Conditions and Allowed Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#storage-configuration">Storage Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#min-and-max-server-counts">Min and Max Server Counts</a></li>
 </ul>
 </li>
 </ul>
@@ -779,6 +775,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/one_server_install.html">Scalr Server Install - One Server</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#shared-roles">Shared Roles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App Tutorial (cloud agnostic, orchestration automation)</a><ul>
@@ -1021,6 +1018,8 @@
 </tbody>
 </table>
 <a class="reference internal image-reference" href="../_images/storage_aws.png"><img alt="../_images/storage_aws.png" src="../_images/storage_aws.png" style="width: 372.0px; height: 487.0px;" /></a>
+<p>All storage volumes for AWS can be managed in the EBS Volumes page. Go to the main Scalr menu dropdown on the top left <a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a> and click on AWS, then EC2, and EBS volumes:</p>
+<a class="reference internal image-reference" href="../_images/storage_aws2.png"><img alt="../_images/storage_aws2.png" src="../_images/storage_aws2.png" style="width: 925.0px; height: 439.0px;" /></a>
 </div>
 <div class="section" id="google-cloud-platform-storage-configuration">
 <h2>Google Cloud Platform Storage Configuration<a class="headerlink" href="#google-cloud-platform-storage-configuration" title="Permalink to this headline">¶</a></h2>
@@ -1028,16 +1027,22 @@
 <p><strong>Persistent Disk</strong> : Options are Standard or SSD disk <br>
 <strong>Local SSD</strong> : Only option is the name.</p>
 <p><a class="reference internal" href="../_images/storage_gcp_1.png"><img alt="GCP1" src="../_images/storage_gcp_1.png" style="width: 457.0px; height: 487.0px;" /></a> <a class="reference internal" href="../_images/storage_gcp_2.png"><img alt="GCP2" src="../_images/storage_gcp_2.png" style="width: 480.5px; height: 433.5px;" /></a></p>
+<p>All storage volumes for GCP can be managed in the GCP Persistent Disk page. Go to the main Scalr menu dropdown on the top left <a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a>, click on Google Cloud Platform, then Compute Engine, and Persistent Disks:</p>
+<a class="reference internal image-reference" href="../_images/storage_gcp_3.png"><img alt="../_images/storage_gcp_3.png" src="../_images/storage_gcp_3.png" style="width: 814.0px; height: 447.5px;" /></a>
 </div>
 <div class="section" id="azure-storage-configuration">
 <h2>Azure Storage Configuration<a class="headerlink" href="#azure-storage-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Azure based Farm Roles can have additional managed data disks added. The only option is the size.</p>
 <a class="reference internal image-reference" href="../_images/storage_azure.png"><img alt="../_images/storage_azure.png" src="../_images/storage_azure.png" style="width: 461.0px; height: 487.0px;" /></a>
+<p>All storage volumes for Azure can be managed in the Azure Managed Disk page. Go to the main Scalr menu dropdown on the top left <a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a>, click on Azure and Managed Disks:</p>
+<a class="reference internal image-reference" href="../_images/storage_azure2.png"><img alt="../_images/storage_azure2.png" src="../_images/storage_azure2.png" style="width: 928.5px; height: 196.5px;" /></a>
 </div>
 <div class="section" id="openstack-storage-configuration">
 <h2>OpenStack Storage Configuration<a class="headerlink" href="#openstack-storage-configuration" title="Permalink to this headline">¶</a></h2>
 <p>OpenStack based Farm Roles can have additional persistent disks added. The only option is the size.</p>
 <a class="reference internal image-reference" href="../_images/storage_openstack.png"><img alt="../_images/storage_openstack.png" src="../_images/storage_openstack.png" style="width: 459.5px; height: 487.0px;" /></a>
+<p>All storage volumes for Openstack can be managed in the Openstack Volumes page. Go to the main Scalr menu dropdown on the top left <a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a>, click on Openstack and then Volumes:</p>
+<a class="reference internal image-reference" href="../_images/storage_openstack2.png"><img alt="../_images/storage_openstack2.png" src="../_images/storage_openstack2.png" style="width: 882.0px; height: 438.5px;" /></a>
 </div>
 <div class="section" id="vmware-storage-configuration">
 <h2>VMWare Storage Configuration<a class="headerlink" href="#vmware-storage-configuration" title="Permalink to this headline">¶</a></h2>
@@ -1062,6 +1067,8 @@
 </tbody>
 </table>
 <a class="reference internal image-reference" href="../_images/storage_vmware.png"><img alt="../_images/storage_vmware.png" src="../_images/storage_vmware.png" style="width: 489.0px; height: 470.0px;" /></a>
+<p>All storage volumes for VMware can be managed in the VMware Vitrual Disks page. Go to the main Scalr menu dropdown on the top left <a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a>, click on VMware and then Virtual Disks:</p>
+<a class="reference internal image-reference" href="../_images/storage_vmware2.png"><img alt="../_images/storage_vmware2.png" src="../_images/storage_vmware2.png" style="width: 924.0px; height: 439.0px;" /></a>
 </div>
 </div>
 
