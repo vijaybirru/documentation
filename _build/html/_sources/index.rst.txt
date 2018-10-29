@@ -137,7 +137,6 @@ Scalr Documentation Version 2 Preview!
    :caption: Alternative Interfaces
 
    api/index
-   api/cli
    api/csg
 
 .. toctree::
