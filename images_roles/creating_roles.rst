@@ -74,9 +74,9 @@ When adding Images to Roles you need to be aware of the different ways Images ar
 .. _role_orchestration:
 
 Role Orchestration
-==================
+------------------
 
-Orchestration rules define actions to be performed at specific events during the lifecycle of servers. Orchestration rules associated with a Role are inherited by :ref:`farm_roles` that are created in the Farm designer or Farms created via :ref:`service_catalog`.
+Orchestration rules define actions to be performed at specific events during the lifecycle of servers. Orchestration rules associated with a Role are inherited by :ref:`farm_roles` that are created in the Farm designer or Service Catalog.
 
 To configure Orchestration Rules click on the Orchestration tab on the left side of the Role details screen.
 
@@ -86,7 +86,7 @@ To configure Orchestration Rules click on the Orchestration tab on the left side
 .. include:: /farms/orchestration_include.rst
 
 Global Variables in Roles
-=========================
+-------------------------
 
 When defining Roles you can define new :ref:`gvs` for use in scripts etc as described in the :ref:`gvs` section.
 You may also need to set the value of Global Variables that have been defined at the same or higher scopes. Global Variables defined at the same or higher scope as the role are automatically associated with the Role and will be visible when clicking on the Global Variables tab of the Role screen.
@@ -114,7 +114,7 @@ If the value for a variable is already set then the Role can use that value or o
 .. _bootstrap_ansible:
 
 Ansible Tower in Roles
-======================
+----------------------
 
 Ansible Tower can be configured at |SCALR| or |ACCOUNT| scope to be used as means to bootstrap servers. See :ref:`ansible` for more details.
 
@@ -135,7 +135,7 @@ At a minimum, this will ensure the server is added to the correct Organization, 
 .. _bootstrap_chef:
 
 Chef in Roles
-=============
+-------------
 
 Chef Servers can be configured at |SCALR| or |ACCOUNT| scope to be used as means to bootstrap servers. See :ref:`chef` for more details.
 
@@ -170,7 +170,7 @@ Chef Solo:
 .. chef_roles_end
 
 Role Permissions
-================
+----------------
 |SCOPE_ACC|
 
 |ACCOUNT| scope roles can optionally have permissions set to define which |ENVIRONMENTS| within the |ACCOUNT| can have access to the Role. By default all |ENVIRONMENTS| will have access.
