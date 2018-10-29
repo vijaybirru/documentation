@@ -30,7 +30,7 @@ The Service Catalog itself is accessed from the Main Menu.
 Clicking on |SC1| itself opens the list of available offerings to allow users to request applications. "My Applications" opens the screen of already created applications. "Management" gives access to the interface for editing and customising offerings and Farm Templates, and "Categories" provides the capability to manage categories for groups Service Catalog entries.
 
 Creating Service Catalog Offerings
-==================================
+----------------------------------
 
 |SCOPE_ENV|
 
@@ -54,7 +54,7 @@ The Farm Template is also presented for editing which is covered in `Customising
 .. _basic_templates:
 
 Customising Farm Templates
-==========================
+---------------------------
 
 A Farm Template is a JSON representation of a Farm. This includes all Farm Roles and other configuration items from the originating Farm.  Farm Templates are very flexible and provide a form of  "Infrastructure as code" to be used via the Scalr API/Scalr-CTL tool, as well as providing the configuration of Service Catalog offerings for Self Service application deployment.
 
@@ -64,7 +64,7 @@ In simple terms the ``_meta`` section defines the rules for the parameters and t
 The other sections of the template define the components of the Application, their static values such as the role to be used, and the configurable values such as cloud location, networks etc. Where values are provided they are generally the default values or the only value allowed. This varies from field to field (See "Farm Template Parameter Reference"). The values available to chose from when requesting an application are only constrained if there are policies in place and/or if ``_meta`` has a corresponding entry.
 
 Simple Template Example
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 This is an example of a Farm Template that contains a single Farm Role, a Global Variable, Orchestration Rules and Storage configuration.
 This template is constrained to AWS via the Role parameter ``"cloudPlatform": "ec2"`` but it does allow selection of the Cloud Location as there are no restrictions in ``_meta`` and ``"cloudLocation": "us-east-1"`` only sets the default value.
@@ -92,7 +92,7 @@ This template will result in the user being prompted for values as shown below.
    :scale: 50%
 
 Enabling Options for End Users
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The previous example showed some common cases for configuring a Farm to present the end user with options. This may need to taken a step further if a Service Catalog offering is to be published at |ACCOUNT| or |SCALR| scope or being offered to a wider global audience. The Project ID in the template may not be valid in other accounts and user may wish to use their own timezone. We can also remove the pre-set value for the global variable so the user is prompted to enter that as well. In this revised example the following changes were made.
 
@@ -113,7 +113,7 @@ This template will result in the user being prompted for values as shown below.
 
 
 Customising for Multi-Cloud
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Farm Templates provide the capability to use a single Service Catalog offering across multiple clouds. When a template if created from a Farm it includes the specific configuration items for the Cloud that the Farm Roles are linked to. In this form the Service Catalog Offering can also only use the Cloud that is baked into the template.
 
@@ -233,7 +233,7 @@ This Farm Template will now cause different prompts to appear for the user depen
 |M1| |MAWS| |MGCE|
 
 Publishing and Promoting Service Catalog Offerings
-==================================================
+--------------------------------------------------
 
 .. |PUB| image:: images/publish.png
          :scale: 30%

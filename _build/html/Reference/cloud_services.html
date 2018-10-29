@@ -166,6 +166,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/advanced_configurations.html">Advanced Configurations</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#proxy">Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#ssl">SSL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#ldap">LDAP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#saml">SAML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#logging">Logging</a></li>
@@ -386,7 +387,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/auto_discovery.html">Service Auto Discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/link_cloud_services.html">Using Cloud Services in Farms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/service_catalog.html">Service Catalog Offerings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/logs.html">Logs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/logs.html#definition-and-scope">Definition and Scope</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../farms/logs.html#orchestration-logs">Orchestration Logs</a></li>
@@ -397,39 +397,35 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Self Service</span></p>
+<p class="caption"><span class="caption-text">Self Service &amp; Farm Templates</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html">The Service Catalog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#creating-service-catalog-offerings">Creating Service Catalog Offerings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#customising-farm-templates">Customising Farm Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#simple-template-example">Simple Template Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#enabling-options-for-end-users">Enabling Options for End Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#customising-for-multi-cloud">Customising for Multi-Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html">The Service Catalog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#creating-service-catalog-offerings">Creating Service Catalog Offerings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#customising-farm-templates">Customising Farm Templates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/offerings.html#simple-template-example">Simple Template Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/offerings.html#enabling-options-for-end-users">Enabling Options for End Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/offerings.html#customising-for-multi-cloud">Customising for Multi-Cloud</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#publishing-and-promoting-service-catalog-offerings">Publishing and Promoting Service Catalog Offerings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#publishing-and-promoting-service-catalog-offerings">Publishing and Promoting Service Catalog Offerings</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../service_catalog/using_service_catalog.html">Self Service via the Service Catalog</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#requesting-applications">Requesting Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#managing-applications">Managing Applications</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html">Advanced Farm Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-specific-examples">Cloud Specific Examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-example">AWS Example:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-specific-parameters">AWS Specific Parameters</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#azure-example">Azure Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#vmware-example">VMware Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#gce-example">GCE Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#openstack-example">Openstack Example:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#advanced-configuration">Advanced Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-agnostic-template">Cloud Agnostic Template:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#storage-configuration">Storage Configuration:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#conditions-and-allowed-values">Conditions and Allowed Values:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#min-and-max-server-counts">Min and Max Server Counts:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-example">AWS Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#azure-example">Azure Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#vmware-example">VMware Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#gce-example">GCE Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#openstack-example">Openstack Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#service-catalog-advanced-configuration">Service Catalog Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-agnostic-template">Cloud Agnostic Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#conditions-and-allowed-values">Conditions and Allowed Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#storage-configuration">Storage Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#min-and-max-server-counts">Min and Max Server Counts</a></li>
 </ul>
 </li>
 </ul>
@@ -759,17 +755,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Best Practices</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../best_practices/index.html">Best Practices</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html">Managing Images in Scalr</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#about-images-and-scopes">About Images and Scopes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#image-lifecycle-best-practices">Image Lifecycle Best-Practices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#updating-a-widely-used-image">Updating a Widely Used Image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#approach-1-offering-a-new-version-of-an-image">Approach 1: Offering a new version of an image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#approach-2-replacing-an-existing-image-with-a-new-version">Approach 2: Replacing an existing image with a new version</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#automating-image-management">Automating Image Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#example-image-publishing-pipeline">Example Image publishing pipeline</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/image_management.html">Managing Images in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#about-images-and-scopes">About Images and Scopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#image-lifecycle-best-practices">Image Lifecycle Best-Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#updating-a-widely-used-image">Updating a Widely Used Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#approach-1-offering-a-new-version-of-an-image">Approach 1: Offering a new version of an image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#approach-2-replacing-an-existing-image-with-a-new-version">Approach 2: Replacing an existing image with a new version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#automating-image-management">Automating Image Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#example-image-publishing-pipeline">Example Image publishing pipeline</a></li>
 </ul>
 </li>
 </ul>
@@ -778,6 +771,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/one_server_install.html">Scalr Server Install - One Server</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#shared-roles">Shared Roles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App Tutorial (cloud agnostic, orchestration automation)</a><ul>
@@ -843,6 +837,18 @@
 <li class="toctree-l3"><a class="reference internal" href="#iam-ssl-certificates">IAM - SSL Certificates</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#vpc-s-and-subnets">VPC’s and Subnets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#lambda">Lambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ecs">ECS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#glacier">Glacier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api-gateway">API Gateway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sqs">SQS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sns">SNS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ses">SES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#redshift">Redshift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cognito-identity">Cognito Identity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cognito-user-pools">Cognito User Pools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#device-farm">Device Farm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mobile">Mobile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pinpoint">Pinpoint</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#azure-features-and-services">Azure Features and Services</a><ul>
@@ -851,6 +857,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#virtual-networks">Virtual Networks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#security-groups">Security Groups</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#managed-disks">Managed Disks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#web">Web</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#container-registry">Container Registry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#container-services">Container Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#insights">Insights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#event-hubs">Event Hubs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stream-analytics">Stream Analytics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#machine-learning">Machine Learning</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#google-cloud-platform-features-and-services">Google Cloud Platform Features and Services</a><ul>
@@ -1259,6 +1273,270 @@
 </tbody>
 </table>
 </div>
+<div class="section" id="ecs">
+<h3>ECS<a class="headerlink" href="#ecs" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Elastic Container Service (Amazon ECS) is a highly scalable, high-performance container orchestration service that supports Docker containers and allows you to easily run and scale containerized applications on AWS.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://aws.amazon.com/ecs/" target="_blank">Amazon ECS</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="glacier">
+<h3>Glacier<a class="headerlink" href="#glacier" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Glacier is a secure, durable, and extremely low-cost cloud storage service for data archiving and long-term backup.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://aws.amazon.com/glacier/" target="_blank">Amazon Glacier</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="api-gateway">
+<h3>API Gateway<a class="headerlink" href="#api-gateway" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://aws.amazon.com/api-gateway/" target="_blank">Amazon API Gateway</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sqs">
+<h3>SQS<a class="headerlink" href="#sqs" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://aws.amazon.com/sqs/" target="_blank">Amazon SQS</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sns">
+<h3>SNS<a class="headerlink" href="#sns" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Simple Notification Service (SNS) is a highly available, durable, secure, fully managed pub/sub messaging service that enables you to decouple microservices, distributed systems, and serverless applications.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://aws.amazon.com/sns/" target="_blank">Amazon SNS</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ses">
+<h3>SES<a class="headerlink" href="#ses" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Simple Email Service (Amazon SES) is a cloud-based email sending service designed to help digital marketers and application developers send marketing, notification, and transactional emails.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://aws.amazon.com/ses/" target="_blank">Amazon SES</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="redshift">
+<h3>Redshift<a class="headerlink" href="#redshift" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Redshift is a fast, scalable data warehouse that makes it simple and cost-effective to analyze all your data across your data warehouse and data lake.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://aws.amazon.com/redshift/" target="_blank">Amazon Redshift</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cognito-identity">
+<h3>Cognito Identity<a class="headerlink" href="#cognito-identity" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://aws.amazon.com/cognito/" target="_blank">Amazon Cognito</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cognito-user-pools">
+<h3>Cognito User Pools<a class="headerlink" href="#cognito-user-pools" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://aws.amazon.com/cognito/" target="_blank">Amazon Cognito</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="device-farm">
+<h3>Device Farm<a class="headerlink" href="#device-farm" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>AWS Device Farm is an app testing service that lets you test and interact with your Android, iOS, and web apps on many devices at once, or reproduce issues on a device in real time.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://aws.amazon.com/device-farm/" target="_blank">Amazon Device Farm</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="mobile">
+<h3>Mobile<a class="headerlink" href="#mobile" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Automate your DevOps pipeline with build, test, and deploy services for your iOS, Android, and web applications.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://aws.amazon.com/mobile/" target="_blank">Amazon Mobile</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="pinpoint">
+<h3>Pinpoint<a class="headerlink" href="#pinpoint" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Amazon Pinpoint helps you engage with your customers by sending email, SMS messages, and push notifications.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://aws.amazon.com/pinpoint/" target="_blank">Amazon Pinpoint</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="section" id="azure-features-and-services">
 <h2>Azure Features and Services<a class="headerlink" href="#azure-features-and-services" title="Permalink to this headline">¶</a></h2>
@@ -1370,6 +1648,182 @@
 <tr class="row-even"><td>Azure Managed Disks simplifies disk management for Azure IaaS VMs by managing the storage accounts associated with the VM disks. You only have to specify the type (Standard HDD, Standard SSD, or Premium SSD) and the size of disk you need, and Azure creates and manages the disk for you.</td>
 <td>Full configuration of Managed Disks. <br> Allocation of managed disks to Farm Roles as additional Storage.</td>
 <td><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/managed-disks-overview" target="_blank">Azure Managed Disks</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="web">
+<h3>Web<a class="headerlink" href="#web" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Quickly build and deploy your web applications using a fully-managed platform, without the burden of managing infrastructure.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://azure.microsoft.com/en-us/product-categories/web/" target="_blank">Azure Web</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="container-registry">
+<h3>Container Registry<a class="headerlink" href="#container-registry" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Simplify container development by easily storing and managing container images for Azure deployments in a central registry.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://azure.microsoft.com/en-us/services/container-registry/" target="_blank">Azure Container Registry</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="container-services">
+<h3>Container Services<a class="headerlink" href="#container-services" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Azure Container Service allows you to quickly deploy a production ready Kubernetes, DC/OS, or Docker Swarm cluster.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/container-service/" target="_blank">Azure Container Services</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="insights">
+<h3>Insights<a class="headerlink" href="#insights" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Application Insights is an extensible Application Performance Management (APM) service for web developers on multiple platforms.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview" target="_blank">Azure Insights</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="database">
+<h3>Database<a class="headerlink" href="#database" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Azure database services are fully managed, freeing up valuable time you’d otherwise spend managing your database so you can focus on new ways to delight your users and unlock opportunities.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://azure.microsoft.com/en-us/product-categories/databases/" target="_blank">Azure Database</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="event-hubs">
+<h3>Event Hubs<a class="headerlink" href="#event-hubs" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Focus on drawing insights from your data instead of managing infrastructure. Build real-time big data pipelines and respond to business challenges right away.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://azure.microsoft.com/en-us/services/event-hubs/" target="_blank">Azure Event Hubs</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="stream-analytics">
+<h3>Stream Analytics<a class="headerlink" href="#stream-analytics" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Easily develop and run massively parallel real-time analytics on multiple IoT or non-IoT streams of data using simple SQL like language.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://azure.microsoft.com/en-us/services/stream-analytics/" target="_blank">Azure Stream Analytics</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="machine-learning">
+<h3>Machine Learning<a class="headerlink" href="#machine-learning" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="40%" />
+<col width="40%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Scalr Support</th>
+<th class="head">External Docs</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Machine learning enables computers to learn from data and experiences and to act without being explicitly programmed.</td>
+<td>Cloud Service Gateway</td>
+<td><a href="https://azure.microsoft.com/en-us/overview/machine-learning/" target="_blank">Azure Machine Learning</a> <a class="reference internal" href="../_images/new_win.png"><img alt="NEWWIN" src="../_images/new_win.png" style="width: 13.25px; height: 12.0px;" /></a></td>
 </tr>
 </tbody>
 </table>

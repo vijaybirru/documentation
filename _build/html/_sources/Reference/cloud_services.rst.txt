@@ -223,6 +223,174 @@ Lambda
     Description,Scalr Support,External Docs
     "AWS Lambda is a compute service that lets you run code without provisioning or managing servers.","Creation and Management of Lambda Functions",|LINK_28| |NEWWIN|
 
+ECS
+^^^^
+
+.. |LINK_29| raw:: html
+
+          <a href="https://aws.amazon.com/ecs/" target="_blank">Amazon ECS</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Amazon Elastic Container Service (Amazon ECS) is a highly scalable, high-performance container orchestration service that supports Docker containers and allows you to easily run and scale containerized applications on AWS.","Cloud Service Gateway",|LINK_29| |NEWWIN|
+
+Glacier
+^^^^^^^^
+
+.. |LINK_30| raw:: html
+
+            <a href="https://aws.amazon.com/glacier/" target="_blank">Amazon Glacier</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Amazon Glacier is a secure, durable, and extremely low-cost cloud storage service for data archiving and long-term backup.","Cloud Service Gateway",|LINK_30| |NEWWIN|
+
+API Gateway
+^^^^^^^^^^^
+
+.. |LINK_31| raw:: html
+
+          <a href="https://aws.amazon.com/api-gateway/" target="_blank">Amazon API Gateway</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.","Cloud Service Gateway",|LINK_31| |NEWWIN|
+
+SQS
+^^^
+
+.. |LINK_32| raw:: html
+
+          <a href="https://aws.amazon.com/sqs/" target="_blank">Amazon SQS</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications","Cloud Service Gateway",|LINK_32| |NEWWIN|
+
+SNS
+^^^
+
+.. |LINK_33| raw:: html
+
+          <a href="https://aws.amazon.com/sns/" target="_blank">Amazon SNS</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Amazon Simple Notification Service (SNS) is a highly available, durable, secure, fully managed pub/sub messaging service that enables you to decouple microservices, distributed systems, and serverless applications.","Cloud Service Gateway",|LINK_33| |NEWWIN|
+
+SES
+^^^
+
+.. |LINK_34| raw:: html
+
+          <a href="https://aws.amazon.com/ses/" target="_blank">Amazon SES</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Amazon Simple Email Service (Amazon SES) is a cloud-based email sending service designed to help digital marketers and application developers send marketing, notification, and transactional emails.","Cloud Service Gateway",|LINK_34| |NEWWIN|
+
+Redshift
+^^^^^^^^
+
+.. |LINK_35| raw:: html
+
+          <a href="https://aws.amazon.com/redshift/" target="_blank">Amazon Redshift</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Amazon Redshift is a fast, scalable data warehouse that makes it simple and cost-effective to analyze all your data across your data warehouse and data lake.","Cloud Service Gateway",|LINK_35| |NEWWIN|
+
+Cognito Identity
+^^^^^^^^^^^^^^^^
+
+.. |LINK_36| raw:: html
+
+          <a href="https://aws.amazon.com/cognito/" target="_blank">Amazon Cognito</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily.","Cloud Service Gateway",|LINK_36| |NEWWIN|
+
+Cognito User Pools
+^^^^^^^^^^^^^^^^^^
+
+.. |LINK_37| raw:: html
+
+          <a href="https://aws.amazon.com/cognito/" target="_blank">Amazon Cognito</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Amazon Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily.","Cloud Service Gateway",|LINK_37| |NEWWIN|
+
+Device Farm
+^^^^^^^^^^^^
+
+.. |LINK_38| raw:: html
+
+        <a href="https://aws.amazon.com/device-farm/" target="_blank">Amazon Device Farm</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "AWS Device Farm is an app testing service that lets you test and interact with your Android, iOS, and web apps on many devices at once, or reproduce issues on a device in real time.","Cloud Service Gateway",|LINK_38| |NEWWIN|
+
+Mobile
+^^^^^^
+
+.. |LINK_39| raw:: html
+
+        <a href="https://aws.amazon.com/mobile/" target="_blank">Amazon Mobile</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Automate your DevOps pipeline with build, test, and deploy services for your iOS, Android, and web applications.","Cloud Service Gateway",|LINK_39| |NEWWIN|
+
+Pinpoint
+^^^^^^^^
+
+.. |LINK_40| raw:: html
+
+        <a href="https://aws.amazon.com/pinpoint/" target="_blank">Amazon Pinpoint</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Amazon Pinpoint helps you engage with your customers by sending email, SMS messages, and push notifications.","Cloud Service Gateway",|LINK_40| |NEWWIN|
+
 
 Azure Features and Services
 ---------------------------
@@ -303,6 +471,119 @@ Managed Disks
 
    Description,Scalr Support,External Docs
    "Azure Managed Disks simplifies disk management for Azure IaaS VMs by managing the storage accounts associated with the VM disks. You only have to specify the type (Standard HDD, Standard SSD, or Premium SSD) and the size of disk you need, and Azure creates and manages the disk for you.","Full configuration of Managed Disks. |BR| Allocation of managed disks to Farm Roles as additional Storage.",|LINK_18| |NEWWIN|
+
+Web
+^^^^
+
+.. |LINK_41| raw:: html
+
+            <a href="https://azure.microsoft.com/en-us/product-categories/web/" target="_blank">Azure Web</a>
+
+.. csv-table::
+   :header-rows: 1
+   :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Quickly build and deploy your web applications using a fully-managed platform, without the burden of managing infrastructure.","Cloud Service Gateway",|LINK_41| |NEWWIN|
+
+Container Registry
+^^^^^^^^^^^^^^^^^^^
+
+.. |LINK_42| raw:: html
+
+            <a href="https://azure.microsoft.com/en-us/services/container-registry/" target="_blank">Azure Container Registry</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Simplify container development by easily storing and managing container images for Azure deployments in a central registry.","Cloud Service Gateway",|LINK_42| |NEWWIN|
+
+Container Services
+^^^^^^^^^^^^^^^^^^^
+
+.. |LINK_43| raw:: html
+
+            <a href="https://docs.microsoft.com/en-us/azure/container-service/" target="_blank">Azure Container Services</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Azure Container Service allows you to quickly deploy a production ready Kubernetes, DC/OS, or Docker Swarm cluster.","Cloud Service Gateway",|LINK_43| |NEWWIN|
+
+Insights
+^^^^^^^^
+
+.. |LINK_44| raw:: html
+
+            <a href="https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview" target="_blank">Azure Insights</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Application Insights is an extensible Application Performance Management (APM) service for web developers on multiple platforms.","Cloud Service Gateway",|LINK_44| |NEWWIN|
+
+Database
+^^^^^^^^
+
+.. |LINK_45| raw:: html
+
+            <a href="https://azure.microsoft.com/en-us/product-categories/databases/" target="_blank">Azure Database</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Azure database services are fully managed, freeing up valuable time you’d otherwise spend managing your database so you can focus on new ways to delight your users and unlock opportunities.","Cloud Service Gateway",|LINK_45| |NEWWIN|
+
+Event Hubs
+^^^^^^^^^^
+
+.. |LINK_46| raw:: html
+
+            <a href="https://azure.microsoft.com/en-us/services/event-hubs/" target="_blank">Azure Event Hubs</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Focus on drawing insights from your data instead of managing infrastructure. Build real-time big data pipelines and respond to business challenges right away.","Cloud Service Gateway",|LINK_46| |NEWWIN|
+
+Stream Analytics
+^^^^^^^^^^^^^^^^
+
+.. |LINK_47| raw:: html
+
+            <a href="https://azure.microsoft.com/en-us/services/stream-analytics/" target="_blank">Azure Stream Analytics</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Easily develop and run massively parallel real-time analytics on multiple IoT or non-IoT streams of data using simple SQL like language.","Cloud Service Gateway",|LINK_47| |NEWWIN|
+
+Machine Learning
+^^^^^^^^^^^^^^^^
+
+.. |LINK_48| raw:: html
+
+            <a href="https://azure.microsoft.com/en-us/overview/machine-learning/" target="_blank">Azure Machine Learning</a>
+
+.. csv-table::
+    :header-rows: 1
+    :widths: 40,40,20
+
+    Description,Scalr Support,External Docs
+    "Machine learning enables computers to learn from data and experiences and to act without being explicitly programmed.","Cloud Service Gateway",|LINK_48| |NEWWIN|
+
 
 Google Cloud Platform Features and Services
 -------------------------------------------

@@ -388,7 +388,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/auto_discovery.html">Service Auto Discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/link_cloud_services.html">Using Cloud Services in Farms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/service_catalog.html">Service Catalog Offerings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/logs.html">Logs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/logs.html#definition-and-scope">Definition and Scope</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../farms/logs.html#orchestration-logs">Orchestration Logs</a></li>
@@ -401,15 +400,17 @@
 </ul>
 <p class="caption"><span class="caption-text">Self Service</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">The Service Catalog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#creating-service-catalog-offerings">Creating Service Catalog Offerings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#customising-farm-templates">Customising Farm Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#simple-template-example">Simple Template Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#enabling-options-for-end-users">Enabling Options for End Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#customising-for-multi-cloud">Customising for Multi-Cloud</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The Service Catalog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creating-service-catalog-offerings">Creating Service Catalog Offerings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customising-farm-templates">Customising Farm Templates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#simple-template-example">Simple Template Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-options-for-end-users">Enabling Options for End Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#customising-for-multi-cloud">Customising for Multi-Cloud</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#publishing-and-promoting-service-catalog-offerings">Publishing and Promoting Service Catalog Offerings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#publishing-and-promoting-service-catalog-offerings">Publishing and Promoting Service Catalog Offerings</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="using_service_catalog.html">Self Service via the Service Catalog</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="using_service_catalog.html#requesting-applications">Requesting Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using_service_catalog.html#managing-applications">Managing Applications</a></li>
@@ -774,6 +775,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/one_server_install.html">Scalr Server Install - One Server</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#shared-roles">Shared Roles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App Tutorial (cloud agnostic, orchestration automation)</a><ul>
@@ -941,9 +943,8 @@
 <p>The Service Catalog itself is accessed from the Main Menu.</p>
 <a class="reference internal image-reference" href="../_images/sc_menu.png"><img alt="../_images/sc_menu.png" src="../_images/sc_menu.png" style="width: 389.6px; height: 231.20000000000002px;" /></a>
 <p>Clicking on <a class="reference internal" href="../_images/sc_menu_1.png"><img alt="SC1" src="../_images/sc_menu_1.png" style="width: 177.0px; height: 37.8px;" /></a> itself opens the list of available offerings to allow users to request applications. “My Applications” opens the screen of already created applications. “Management” gives access to the interface for editing and customising offerings and Farm Templates, and “Categories” provides the capability to manage categories for groups Service Catalog entries.</p>
-</div>
 <div class="section" id="creating-service-catalog-offerings">
-<h1>Creating Service Catalog Offerings<a class="headerlink" href="#creating-service-catalog-offerings" title="Permalink to this headline">¶</a></h1>
+<h2>Creating Service Catalog Offerings<a class="headerlink" href="#creating-service-catalog-offerings" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_env.png"><img alt="SCOPE_ENV" src="../_images/scope_env.png" style="width: 26.0px; height: 23.6px;" /></a></p>
 <p>Typically Service Catalog Offerings are created directly from fully configured and tested Farms.</p>
 <div class="admonition note">
@@ -958,13 +959,13 @@ The Farm Template is also presented for editing which is covered in <a class="re
 <a class="reference internal image-reference" href="../_images/edit_offering.png"><img alt="../_images/edit_offering.png" src="../_images/edit_offering.png" style="width: 261.5px; height: 487.0px;" /></a>
 </div>
 <div class="section" id="customising-farm-templates">
-<span id="basic-templates"></span><h1>Customising Farm Templates<a class="headerlink" href="#customising-farm-templates" title="Permalink to this headline">¶</a></h1>
+<span id="basic-templates"></span><h2>Customising Farm Templates<a class="headerlink" href="#customising-farm-templates" title="Permalink to this headline">¶</a></h2>
 <p>A Farm Template is a JSON representation of a Farm. This includes all Farm Roles and other configuration items from the originating Farm.  Farm Templates are very flexible and provide a form of  “Infrastructure as code” to be used via the Scalr API/Scalr-CTL tool, as well as providing the configuration of Service Catalog offerings for Self Service application deployment.</p>
 <p>Farm Templates used in the Service Catalog offerings are usually customised to provide end users with some choices over various aspects of the deployment. This section will provide some more common examples of customisation. For more advanced customisation, including use of the <code class="docutils literal notranslate"><span class="pre">_meta</span></code> configuration block to control options, allowed values and visibility see <a class="reference internal" href="advanced_farm_templates.html#adv-farm-templates"><span class="std std-ref">Advanced Farm Templates</span></a>.</p>
 <p>In simple terms the <code class="docutils literal notranslate"><span class="pre">_meta</span></code> section defines the rules for the parameters and their values that can be used in the rest of the template.
 The other sections of the template define the components of the Application, their static values such as the role to be used, and the configurable values such as cloud location, networks etc. Where values are provided they are generally the default values or the only value allowed. This varies from field to field (See “Farm Template Parameter Reference”). The values available to chose from when requesting an application are only constrained if there are policies in place and/or if <code class="docutils literal notranslate"><span class="pre">_meta</span></code> has a corresponding entry.</p>
 <div class="section" id="simple-template-example">
-<h2>Simple Template Example<a class="headerlink" href="#simple-template-example" title="Permalink to this headline">¶</a></h2>
+<h3>Simple Template Example<a class="headerlink" href="#simple-template-example" title="Permalink to this headline">¶</a></h3>
 <p>This is an example of a Farm Template that contains a single Farm Role, a Global Variable, Orchestration Rules and Storage configuration.
 This template is constrained to AWS via the Role parameter <code class="docutils literal notranslate"><span class="pre">&quot;cloudPlatform&quot;:</span> <span class="pre">&quot;ec2&quot;</span></code> but it does allow selection of the Cloud Location as there are no restrictions in <code class="docutils literal notranslate"><span class="pre">_meta</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;cloudLocation&quot;:</span> <span class="pre">&quot;us-east-1&quot;</span></code> only sets the default value.</p>
 <p>Templates will cause the end user to be prompted for certain mandatory inputs under a variety of circumstances.</p>
@@ -1110,7 +1111,7 @@ This template is constrained to AWS via the Role parameter <code class="docutils
 <a class="reference internal image-reference" href="../_images/simple_deploy.png"><img alt="../_images/simple_deploy.png" src="../_images/simple_deploy.png" style="width: 743.0px; height: 208.0px;" /></a>
 </div>
 <div class="section" id="enabling-options-for-end-users">
-<h2>Enabling Options for End Users<a class="headerlink" href="#enabling-options-for-end-users" title="Permalink to this headline">¶</a></h2>
+<h3>Enabling Options for End Users<a class="headerlink" href="#enabling-options-for-end-users" title="Permalink to this headline">¶</a></h3>
 <p>The previous example showed some common cases for configuring a Farm to present the end user with options. This may need to taken a step further if a Service Catalog offering is to be published at Account or Scalr scope or being offered to a wider global audience. The Project ID in the template may not be valid in other accounts and user may wish to use their own timezone. We can also remove the pre-set value for the global variable so the user is prompted to enter that as well. In this revised example the following changes were made.</p>
 <ul class="simple">
 <li>Project ID - <code class="docutils literal notranslate"><span class="pre">&quot;project&quot;:</span> <span class="pre">[]</span></code></li>
@@ -1215,7 +1216,7 @@ This template is constrained to AWS via the Role parameter <code class="docutils
 <a class="reference internal image-reference" href="../_images/simple_2_deploy.png"><img alt="../_images/simple_2_deploy.png" src="../_images/simple_2_deploy.png" style="width: 743.0px; height: 278.5px;" /></a>
 </div>
 <div class="section" id="customising-for-multi-cloud">
-<h2>Customising for Multi-Cloud<a class="headerlink" href="#customising-for-multi-cloud" title="Permalink to this headline">¶</a></h2>
+<h3>Customising for Multi-Cloud<a class="headerlink" href="#customising-for-multi-cloud" title="Permalink to this headline">¶</a></h3>
 <p>Farm Templates provide the capability to use a single Service Catalog offering across multiple clouds. When a template if created from a Farm it includes the specific configuration items for the Cloud that the Farm Roles are linked to. In this form the Service Catalog Offering can also only use the Cloud that is baked into the template.</p>
 <p>To enable a Service Catalogue Offering to be used in multiple clouds the Farm Template can be edited in two ways.</p>
 <ol class="arabic simple">
@@ -1318,9 +1319,10 @@ This template is constrained to AWS via the Role parameter <code class="docutils
 </div>
 </div>
 <div class="section" id="publishing-and-promoting-service-catalog-offerings">
-<h1>Publishing and Promoting Service Catalog Offerings<a class="headerlink" href="#publishing-and-promoting-service-catalog-offerings" title="Permalink to this headline">¶</a></h1>
+<h2>Publishing and Promoting Service Catalog Offerings<a class="headerlink" href="#publishing-and-promoting-service-catalog-offerings" title="Permalink to this headline">¶</a></h2>
 <p>Once the necessary details have been entered, and any customisations have been completed the Offering can be published by clicking YES <a class="reference internal" href="../_images/publish.png"><img alt="PUB" src="../_images/publish.png" style="width: 174.0px; height: 38.4px;" /></a> and saving the offering. Service Catalog offerings can optionally be grouped into Categories to help users with selection. Categories can be created by following the main menu “Service Catalog” –&gt; “Categories”. You can also set custom pricing for the service catalog offering.</p>
 <p>Service Catalog offerings can also be promoted to higher scopes to make them more widely available by clicking on the Promote <a class="reference internal" href="../_images/promote1.png"><img alt="PROMOTE" src="../_images/promote1.png" style="width: 50.400000000000006px; height: 36.800000000000004px;" /></a> button. When an offering is promoted to Account scope it will become available to all Environments in that Account, and when prompted to Scalr scope it becomes available to ALL Environments. It is therefore essential that the Farm Template is configured to work in all Environments and that the Environments themselves have the necessary Roles, Scripts, Cloud Credentials etc in place to support the Service Catalog offering. If any discrepancies exist between the Farm Template and the Environment at the time a user requests an Application they will see errors and the application will fail to create.</p>
+</div>
 </div>
 
 
