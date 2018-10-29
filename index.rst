@@ -150,7 +150,7 @@ Scalr Documentation Version 2 Preview!
    :maxdepth: 2
    :caption: Best Practices
 
-   best_practices/index
+   best_practices/image_management
 
 .. toctree::
    :maxdepth: 2
