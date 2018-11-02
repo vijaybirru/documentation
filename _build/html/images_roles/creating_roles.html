@@ -167,6 +167,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/advanced_configurations.html">Advanced Configurations</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#proxy">Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#ssl">SSL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#ldap">LDAP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#saml">SAML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#logging">Logging</a></li>
@@ -312,18 +313,20 @@
 <li class="toctree-l2"><a class="reference internal" href="registering_images.html#vmware-images">VMware Images</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#role-orchestration">Role Orchestration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#trigger-event">Trigger Event</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#target">Target</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#action">Action</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#advanced-configuration">Advanced Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating Roles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#role-orchestration">Role Orchestration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#trigger-event">Trigger Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#target">Target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#action">Action</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#advanced-configuration">Advanced Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#global-variables-in-roles">Global Variables in Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#chef-in-roles">Chef in Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#role-permissions">Role Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chef-in-roles">Chef in Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#role-permissions">Role Permissions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="create_non_scalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multi_cloud.html">Multi-cloud Roles</a></li>
 </ul>
@@ -387,7 +390,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/auto_discovery.html">Service Auto Discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/link_cloud_services.html">Using Cloud Services in Farms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/service_catalog.html">Service Catalog Offerings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/logs.html">Logs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/logs.html#definition-and-scope">Definition and Scope</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../farms/logs.html#orchestration-logs">Orchestration Logs</a></li>
@@ -398,39 +400,35 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Self Service</span></p>
+<p class="caption"><span class="caption-text">Self Service &amp; Farm Templates</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html">The Service Catalog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#creating-service-catalog-offerings">Creating Service Catalog Offerings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#customising-farm-templates">Customising Farm Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#simple-template-example">Simple Template Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#enabling-options-for-end-users">Enabling Options for End Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#customising-for-multi-cloud">Customising for Multi-Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html">The Service Catalog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#creating-service-catalog-offerings">Creating Service Catalog Offerings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#customising-farm-templates">Customising Farm Templates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/offerings.html#simple-template-example">Simple Template Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/offerings.html#enabling-options-for-end-users">Enabling Options for End Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/offerings.html#customising-for-multi-cloud">Customising for Multi-Cloud</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#publishing-and-promoting-service-catalog-offerings">Publishing and Promoting Service Catalog Offerings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#publishing-and-promoting-service-catalog-offerings">Publishing and Promoting Service Catalog Offerings</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../service_catalog/using_service_catalog.html">Self Service via the Service Catalog</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#requesting-applications">Requesting Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#managing-applications">Managing Applications</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html">Advanced Farm Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-specific-examples">Cloud Specific Examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-example">AWS Example:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-specific-parameters">AWS Specific Parameters</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#azure-example">Azure Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#vmware-example">VMware Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#gce-example">GCE Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#openstack-example">Openstack Example:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#advanced-configuration">Advanced Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-agnostic-template">Cloud Agnostic Template:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#storage-configuration">Storage Configuration:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#conditions-and-allowed-values">Conditions and Allowed Values:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#min-and-max-server-counts">Min and Max Server Counts:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-example">AWS Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#azure-example">Azure Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#vmware-example">VMware Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#gce-example">GCE Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#openstack-example">Openstack Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#service-catalog-advanced-configuration">Service Catalog Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-agnostic-template">Cloud Agnostic Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#conditions-and-allowed-values">Conditions and Allowed Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#storage-configuration">Storage Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#min-and-max-server-counts">Min and Max Server Counts</a></li>
 </ul>
 </li>
 </ul>
@@ -705,16 +703,18 @@
 </ul>
 <p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Scalr API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api/index.html#generate-api-keys">Generate API Keys</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/index.html#api-explorer">API Explorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Scalr API &amp; CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html#id1">API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/index.html#generate-api-keys">Generate API Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/index.html#api-explorer">API Explorer</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../api/cli.html">Command Line Interface (CLI)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#generating-api-keys">Generating API Keys</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#installing-and-configuring-the-cli">Installing and Configuring the CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#using-the-cli">Using the CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#cli-examples">CLI Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html#cli">CLI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/index.html#installing-and-configuring-the-cli">Installing and Configuring the CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/index.html#using-the-cli">Using the CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/index.html#cli-examples">CLI Examples</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api/csg.html">Cloud Service Gateway</a><ul>
@@ -760,17 +760,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Best Practices</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../best_practices/index.html">Best Practices</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html">Managing Images in Scalr</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#about-images-and-scopes">About Images and Scopes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#image-lifecycle-best-practices">Image Lifecycle Best-Practices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#updating-a-widely-used-image">Updating a Widely Used Image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#approach-1-offering-a-new-version-of-an-image">Approach 1: Offering a new version of an image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#approach-2-replacing-an-existing-image-with-a-new-version">Approach 2: Replacing an existing image with a new version</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#automating-image-management">Automating Image Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#example-image-publishing-pipeline">Example Image publishing pipeline</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/image_management.html">Managing Images in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#about-images-and-scopes">About Images and Scopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#image-lifecycle-best-practices">Image Lifecycle Best-Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#updating-a-widely-used-image">Updating a Widely Used Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#approach-1-offering-a-new-version-of-an-image">Approach 1: Offering a new version of an image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#approach-2-replacing-an-existing-image-with-a-new-version">Approach 2: Replacing an existing image with a new version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#automating-image-management">Automating Image Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#example-image-publishing-pipeline">Example Image publishing pipeline</a></li>
 </ul>
 </li>
 </ul>
@@ -779,6 +776,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/one_server_install.html">Scalr Server Install - One Server</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#shared-roles">Shared Roles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App Tutorial (cloud agnostic, orchestration automation)</a><ul>
@@ -844,6 +842,18 @@
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#iam-ssl-certificates">IAM - SSL Certificates</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#vpc-s-and-subnets">VPC’s and Subnets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#lambda">Lambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#ecs">ECS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#glacier">Glacier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#api-gateway">API Gateway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#sqs">SQS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#sns">SNS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#ses">SES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#redshift">Redshift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#cognito-identity">Cognito Identity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#cognito-user-pools">Cognito User Pools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#device-farm">Device Farm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#mobile">Mobile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#pinpoint">Pinpoint</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/cloud_services.html#azure-features-and-services">Azure Features and Services</a><ul>
@@ -852,6 +862,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#virtual-networks">Virtual Networks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#security-groups">Security Groups</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#managed-disks">Managed Disks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#web">Web</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#container-registry">Container Registry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#container-services">Container Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#insights">Insights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#event-hubs">Event Hubs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#stream-analytics">Stream Analytics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#machine-learning">Machine Learning</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/cloud_services.html#google-cloud-platform-features-and-services">Google Cloud Platform Features and Services</a><ul>
@@ -1054,10 +1072,9 @@
 <p class="first admonition-title">Note</p>
 <p class="last">When you save a Role you will be taken back to the role list. To make further edits to a role select the Role to be edited and click the Edit <a class="reference internal" href="../_images/edit.png"><img alt="EDIT" src="../_images/edit.png" style="width: 36.6px; height: 29.099999999999998px;" /></a> button.</p>
 </div>
-</div>
 <div class="section" id="role-orchestration">
-<span id="id1"></span><h1>Role Orchestration<a class="headerlink" href="#role-orchestration" title="Permalink to this headline">¶</a></h1>
-<p>Orchestration rules define actions to be performed at specific events during the lifecycle of servers. Orchestration rules associated with a Role are inherited by <a class="reference internal" href="../farms/index.html#farm-roles"><span class="std std-ref">Farm Roles</span></a> that are created in the Farm designer or Farms created via <a class="reference internal" href="../farms/service_catalog.html#service-catalog"><span class="std std-ref">Service Catalog Offerings</span></a>.</p>
+<span id="id1"></span><h2>Role Orchestration<a class="headerlink" href="#role-orchestration" title="Permalink to this headline">¶</a></h2>
+<p>Orchestration rules define actions to be performed at specific events during the lifecycle of servers. Orchestration rules associated with a Role are inherited by <a class="reference internal" href="../farms/index.html#farm-roles"><span class="std std-ref">Farm Roles</span></a> that are created in the Farm designer or Service Catalog.</p>
 <p>To configure Orchestration Rules click on the Orchestration tab on the left side of the Role details screen.</p>
 <a class="reference internal image-reference" href="../_images/role_orch.png"><img alt="../_images/role_orch.png" src="../_images/role_orch.png" style="width: 403.5px; height: 470.0px;" /></a>
 <div class="admonition note">
@@ -1085,7 +1102,7 @@
 <a class="reference internal image-reference" href="../_images/orch_rule_new.png"><img alt="../_images/orch_rule_new.png" src="../_images/orch_rule_new.png" style="width: 617.5px; height: 487.0px;" /></a>
 <p>You must create the <a class="reference internal" href="../scripts/index.html#scripts"><span class="std std-ref">Script</span></a> and any <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a> that are required before creating the Rule.</p>
 <div class="section" id="trigger-event">
-<h2>Trigger Event<a class="headerlink" href="#trigger-event" title="Permalink to this headline">¶</a></h2>
+<h3>Trigger Event<a class="headerlink" href="#trigger-event" title="Permalink to this headline">¶</a></h3>
 <p>First select the Trigger Event for this rule. The following table describes each event and the state of the Server when the event fires.</p>
 <table border="1" class="colwidths-given docutils" id="id3">
 <caption><span class="caption-text">Orchestration Events</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
@@ -1151,7 +1168,7 @@
 </ul>
 </div>
 <div class="section" id="target">
-<h2>Target<a class="headerlink" href="#target" title="Permalink to this headline">¶</a></h2>
+<h3>Target<a class="headerlink" href="#target" title="Permalink to this headline">¶</a></h3>
 <p>You must define the target for executing the script. The default is to execute only on the instance that triggered the event. The other options are as follows. Note that availability of targets depends on the scope at which the rule is being defined.</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
@@ -1198,7 +1215,7 @@
 </table>
 </div>
 <div class="section" id="action">
-<h2>Action<a class="headerlink" href="#action" title="Permalink to this headline">¶</a></h2>
+<h3>Action<a class="headerlink" href="#action" title="Permalink to this headline">¶</a></h3>
 <p>There are three choices for the Action for a rule.</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
@@ -1254,7 +1271,7 @@
 </table>
 </div>
 <div class="section" id="advanced-configuration">
-<h2>Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permalink to this headline">¶</a></h2>
+<h3>Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permalink to this headline">¶</a></h3>
 <p>The advanced configuration section allows you to control various aspects of how the Action is executed.</p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
@@ -1287,7 +1304,7 @@
 </div>
 </div>
 <div class="section" id="global-variables-in-roles">
-<h1>Global Variables in Roles<a class="headerlink" href="#global-variables-in-roles" title="Permalink to this headline">¶</a></h1>
+<h2>Global Variables in Roles<a class="headerlink" href="#global-variables-in-roles" title="Permalink to this headline">¶</a></h2>
 <p>When defining Roles you can define new <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a> for use in scripts etc as described in the <a class="reference internal" href="../gvs/index.html#gvs"><span class="std std-ref">Global Variables</span></a> section.
 You may also need to set the value of Global Variables that have been defined at the same or higher scopes. Global Variables defined at the same or higher scope as the role are automatically associated with the Role and will be visible when clicking on the Global Variables tab of the Role screen.</p>
 <a class="reference internal image-reference" href="../_images/role_gv.png"><img alt="../_images/role_gv.png" src="../_images/role_gv.png" style="width: 726.0px; height: 451.0px;" /></a>
@@ -1311,7 +1328,7 @@ You may also need to set the value of Global Variables that have been defined at
 </table>
 </div>
 <div class="section" id="ansible-tower-in-roles">
-<span id="bootstrap-ansible"></span><h1>Ansible Tower in Roles<a class="headerlink" href="#ansible-tower-in-roles" title="Permalink to this headline">¶</a></h1>
+<span id="bootstrap-ansible"></span><h2>Ansible Tower in Roles<a class="headerlink" href="#ansible-tower-in-roles" title="Permalink to this headline">¶</a></h2>
 <p>Ansible Tower can be configured at Scalr or Account scope to be used as means to bootstrap servers. See <a class="reference internal" href="../integrations/ansible.html#ansible"><span class="std std-ref">Ansible Integration</span></a> for more details.</p>
 <p>If an Ansible tower server is configured at the or above the scope for the Role, the Ansible Tower tab will be available on the Role configuration screen. This option allows you to enable Ansible Tower Bootstrap for the Role and define bootstrap configuration to be used.</p>
 <a class="reference internal image-reference" href="../_images/role_ansible.png"><img alt="../_images/role_ansible.png" src="../_images/role_ansible.png" style="width: 711.5px; height: 487.0px;" /></a>
@@ -1319,7 +1336,7 @@ You may also need to set the value of Global Variables that have been defined at
 <a class="reference internal image-reference" href="../_images/role_ansible_job.png"><img alt="../_images/role_ansible_job.png" src="../_images/role_ansible_job.png" style="width: 1040.2px; height: 422.79999999999995px;" /></a>
 </div>
 <div class="section" id="chef-in-roles">
-<span id="bootstrap-chef"></span><h1>Chef in Roles<a class="headerlink" href="#chef-in-roles" title="Permalink to this headline">¶</a></h1>
+<span id="bootstrap-chef"></span><h2>Chef in Roles<a class="headerlink" href="#chef-in-roles" title="Permalink to this headline">¶</a></h2>
 <p>Chef Servers can be configured at Scalr or Account scope to be used as means to bootstrap servers. See <a class="reference internal" href="../integrations/chef.html#chef"><span class="std std-ref">Chef Integration</span></a> for more details.</p>
 <p>If a Chef server is configured at the or above the scope for the Role, the tab will be available on the Role configuration screen. This option allows you to enable Chef Bootstrap for the Role and define either a Chef Server or Chef Solo Cookbook to be used. Within here you can add Chef Roles, Runlists, Cookbooks, and more. All Farm Roles that use this role will inherit the configuration. To add Chef to a role, you must click on the gear icon under Bootstrap Settings in the Roles page and enable Chef:</p>
 <a class="reference internal image-reference" href="../_images/role_chef3.png"><img alt="../_images/role_chef3.png" src="../_images/role_chef3.png" style="width: 331.5px; height: 93.0px;" /></a>
@@ -1332,10 +1349,11 @@ You may also need to set the value of Global Variables that have been defined at
 <p><a class="reference internal" href="../_images/role_chef2.png"><img alt="CHEF2" src="../_images/role_chef2.png" style="width: 743.0px; height: 439.0px;" /></a></p>
 </div>
 <div class="section" id="role-permissions">
-<h1>Role Permissions<a class="headerlink" href="#role-permissions" title="Permalink to this headline">¶</a></h1>
+<h2>Role Permissions<a class="headerlink" href="#role-permissions" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="../_images/scope_acc.png"><img alt="SCOPE_ACC" src="../_images/scope_acc.png" style="width: 25.6px; height: 23.6px;" /></a></p>
 <p>Account scope roles can optionally have permissions set to define which Environments within the Account can have access to the Role. By default all Environments will have access.</p>
 <a class="reference internal image-reference" href="../_images/role_perm.png"><img alt="../_images/role_perm.png" src="../_images/role_perm.png" style="width: 474.0px; height: 487.0px;" /></a>
+</div>
 </div>
 
 

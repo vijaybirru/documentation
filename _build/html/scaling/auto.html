@@ -167,6 +167,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../install_guide/advanced_configurations.html">Advanced Configurations</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#proxy">Proxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#ssl">SSL</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#ldap">LDAP</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#saml">SAML</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../install_guide/advanced_configurations.html#logging">Logging</a></li>
@@ -312,18 +313,20 @@
 <li class="toctree-l2"><a class="reference internal" href="../images_roles/registering_images.html#vmware-images">VMware Images</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#trigger-event">Trigger Event</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#target">Target</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#action">Action</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#advanced-configuration">Advanced Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html">Creating Roles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#role-orchestration">Role Orchestration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#trigger-event">Trigger Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#target">Target</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#action">Action</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../images_roles/creating_roles.html#advanced-configuration">Advanced Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../images_roles/creating_roles.html#role-permissions">Role Permissions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#global-variables-in-roles">Global Variables in Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#ansible-tower-in-roles">Ansible Tower in Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#chef-in-roles">Chef in Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../images_roles/creating_roles.html#role-permissions">Role Permissions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/create_non_scalr.html">Creating Images and Roles from Non-Scalr Servers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../images_roles/multi_cloud.html">Multi-cloud Roles</a></li>
 </ul>
@@ -387,7 +390,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/auto_discovery.html">Service Auto Discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/link_cloud_services.html">Using Cloud Services in Farms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../farms/service_catalog.html">Service Catalog Offerings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../farms/logs.html">Logs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../farms/logs.html#definition-and-scope">Definition and Scope</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../farms/logs.html#orchestration-logs">Orchestration Logs</a></li>
@@ -398,39 +400,35 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Self Service</span></p>
+<p class="caption"><span class="caption-text">Self Service &amp; Farm Templates</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html">The Service Catalog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#creating-service-catalog-offerings">Creating Service Catalog Offerings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#customising-farm-templates">Customising Farm Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#simple-template-example">Simple Template Example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#enabling-options-for-end-users">Enabling Options for End Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#customising-for-multi-cloud">Customising for Multi-Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html">The Service Catalog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#creating-service-catalog-offerings">Creating Service Catalog Offerings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#customising-farm-templates">Customising Farm Templates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/offerings.html#simple-template-example">Simple Template Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/offerings.html#enabling-options-for-end-users">Enabling Options for End Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/offerings.html#customising-for-multi-cloud">Customising for Multi-Cloud</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../service_catalog/offerings.html#publishing-and-promoting-service-catalog-offerings">Publishing and Promoting Service Catalog Offerings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/offerings.html#publishing-and-promoting-service-catalog-offerings">Publishing and Promoting Service Catalog Offerings</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../service_catalog/using_service_catalog.html">Self Service via the Service Catalog</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#requesting-applications">Requesting Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../service_catalog/using_service_catalog.html#managing-applications">Managing Applications</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html">Advanced Farm Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-specific-examples">Cloud Specific Examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-example">AWS Example:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-specific-parameters">AWS Specific Parameters</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#azure-example">Azure Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#vmware-example">VMware Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#gce-example">GCE Example:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#openstack-example">Openstack Example:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#advanced-configuration">Advanced Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-agnostic-template">Cloud Agnostic Template:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#storage-configuration">Storage Configuration:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#conditions-and-allowed-values">Conditions and Allowed Values:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#min-and-max-server-counts">Min and Max Server Counts:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#aws-example">AWS Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#azure-example">Azure Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#vmware-example">VMware Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#gce-example">GCE Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#openstack-example">Openstack Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#service-catalog-advanced-configuration">Service Catalog Advanced Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#cloud-agnostic-template">Cloud Agnostic Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#conditions-and-allowed-values">Conditions and Allowed Values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#storage-configuration">Storage Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../service_catalog/advanced_farm_templates.html#min-and-max-server-counts">Min and Max Server Counts</a></li>
 </ul>
 </li>
 </ul>
@@ -549,9 +547,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../cost/management.html#cost-manager-dashboard">Cost Manager Dashboard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cost/management.html#enabling-tags">Enabling Tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cost/management.html#price-books">Price Books</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cost/management.html#rightsizing">Rightsizing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../cost/rightsizing.html">Rightsizing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/analytics.html">Cost Analytics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cost/garbage_collector.html">Garbage Collector</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../cost/garbage_collector.html#using-the-garbage-collector">Using the Garbage Collector</a></li>
@@ -705,16 +703,18 @@
 </ul>
 <p class="caption"><span class="caption-text">Alternative Interfaces</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Scalr API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api/index.html#generate-api-keys">Generate API Keys</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/index.html#api-explorer">API Explorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/index.html">Scalr API &amp; CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html#id1">API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/index.html#generate-api-keys">Generate API Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/index.html#api-explorer">API Explorer</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../api/cli.html">Command Line Interface (CLI)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#generating-api-keys">Generating API Keys</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#installing-and-configuring-the-cli">Installing and Configuring the CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#using-the-cli">Using the CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../api/cli.html#cli-examples">CLI Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api/index.html#cli">CLI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/index.html#installing-and-configuring-the-cli">Installing and Configuring the CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/index.html#using-the-cli">Using the CLI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/index.html#cli-examples">CLI Examples</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api/csg.html">Cloud Service Gateway</a><ul>
@@ -760,17 +760,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Best Practices</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../best_practices/index.html">Best Practices</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html">Managing Images in Scalr</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#about-images-and-scopes">About Images and Scopes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#image-lifecycle-best-practices">Image Lifecycle Best-Practices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#updating-a-widely-used-image">Updating a Widely Used Image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#approach-1-offering-a-new-version-of-an-image">Approach 1: Offering a new version of an image</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#approach-2-replacing-an-existing-image-with-a-new-version">Approach 2: Replacing an existing image with a new version</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#automating-image-management">Automating Image Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../best_practices/image_management.html#example-image-publishing-pipeline">Example Image publishing pipeline</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../best_practices/image_management.html">Managing Images in Scalr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#about-images-and-scopes">About Images and Scopes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#image-lifecycle-best-practices">Image Lifecycle Best-Practices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#updating-a-widely-used-image">Updating a Widely Used Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#approach-1-offering-a-new-version-of-an-image">Approach 1: Offering a new version of an image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#approach-2-replacing-an-existing-image-with-a-new-version">Approach 2: Replacing an existing image with a new version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#automating-image-management">Automating Image Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../best_practices/image_management.html#example-image-publishing-pipeline">Example Image publishing pipeline</a></li>
 </ul>
 </li>
 </ul>
@@ -779,6 +776,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/one_server_install.html">Scalr Server Install - One Server</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/one_server_install.html#shared-roles">Shared Roles</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/3-tier-app.html">3 Tier App Tutorial (cloud agnostic, orchestration automation)</a><ul>
@@ -844,6 +842,18 @@
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#iam-ssl-certificates">IAM - SSL Certificates</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#vpc-s-and-subnets">VPC’s and Subnets</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#lambda">Lambda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#ecs">ECS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#glacier">Glacier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#api-gateway">API Gateway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#sqs">SQS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#sns">SNS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#ses">SES</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#redshift">Redshift</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#cognito-identity">Cognito Identity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#cognito-user-pools">Cognito User Pools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#device-farm">Device Farm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#mobile">Mobile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#pinpoint">Pinpoint</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/cloud_services.html#azure-features-and-services">Azure Features and Services</a><ul>
@@ -852,6 +862,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#virtual-networks">Virtual Networks</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#security-groups">Security Groups</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#managed-disks">Managed Disks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#web">Web</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#container-registry">Container Registry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#container-services">Container Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#insights">Insights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#database">Database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#event-hubs">Event Hubs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#stream-analytics">Stream Analytics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/cloud_services.html#machine-learning">Machine Learning</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/cloud_services.html#google-cloud-platform-features-and-services">Google Cloud Platform Features and Services</a><ul>
@@ -971,37 +989,6 @@
 <p>Dynamic Autoscaling does everything Simple Autoscaling does, except it also adds and removes Servers based on utilization or activity (e.g. CPU utilization). Scalr will poll for metrics at least every minute, depending on your configuration, and uses those metrics to make the scaling decisions.</p>
 <p>To enable dynamic autoscaling in your Farm Role, find your Farm, click on the Farm Role, go to the Scaling tab and make sure it is set to Automatic. Next, click on the Add Scaling Rule Option which will then present the metrics with which the Server can scale by:</p>
 <a class="reference internal image-reference" href="../_images/dynamic_scaling.png"><img alt="../_images/dynamic_scaling.png" src="../_images/dynamic_scaling.png" style="width: 743.0px; height: 381.0px;" /></a>
-<table border="1" class="colwidths-given docutils">
-<colgroup>
-<col width="20%" />
-<col width="80%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Metric</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Load Average</td>
-<td>Load Averages can be used to scale up and down based on average system utilization. The higher the Load Average, the busier the system is. Note: Available for Linux only.</td>
-</tr>
-<tr class="row-odd"><td>Free RAM</td>
-<td>Free RAM can be used to scale up and down based on system memory utilization. The lower the Free RAM, the busier the system is. Make sure you set thresholds that make sense given the Instance Type you chose. By default, Scalr collects only Free RAM, but you can have Scalr account for cached RAM too.</td>
-</tr>
-<tr class="row-even"><td>URL Response Time</td>
-<td>URL Response Time lets you scale up and down depending on how long a particular URL takes to load. The URL Response Time is collected from the Scalr Server, not from individual Servers.</td>
-</tr>
-<tr class="row-odd"><td>SQS Queue Size</td>
-<td>SQS Queue Size can be used to scale up and down based on an AWS SQS Queue’s Size. Queue Size is checked from the Scalr Server itself.</td>
-</tr>
-<tr class="row-even"><td>Date and Time</td>
-<td>Using the Date and Time Metric, simply define a schedule and Scalr will ensure that an appropriate number of Servers are deployed according to that schedule. Note: The Date and Time Metric may not be used in combination with other metrics.</td>
-</tr>
-<tr class="row-odd"><td>Bandwidth</td>
-<td>Bandwidth can be used to scale up and down based on network activity. You can decide to use either inbound or outbound network bandwidth.</td>
-</tr>
-</tbody>
-</table>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Dynamic Autoscaling is only enabled for Farm Roles that are using the Scalarizr agent.</p>
@@ -1044,81 +1031,9 @@
 <p>Scalr also provides a Custom Scaling option to leave it up to a user to decide when a scaling decision should happen. In this scenario, Scalr reads a file, executes a file, or does a URL Request and based on that value it will scalr up or down depending on the calculation function.</p>
 <p>To create a Custom Scaling Metric, click on the main Scalr menu on the top left <a class="reference internal" href="../_images/menu_env.png"><img alt="MENU_ENV" src="../_images/menu_env.png" style="width: 45.0px; height: 31.5px;" /></a>, and click on Custom Scaling Metrics. On that page, click on the New Metric button:</p>
 <a class="reference internal image-reference" href="../_images/custom_scaling.png"><img alt="../_images/custom_scaling.png" src="../_images/custom_scaling.png" style="width: 743.0px; height: 426.5px;" /></a>
-<table border="1" class="colwidths-given docutils">
-<colgroup>
-<col width="20%" />
-<col width="80%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Retrieve Method</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>File-Read</td>
-<td>Using File-Read, Scalr will try to read a given file on your Server, and expect to find a number there. That number will be used as the Scaling Metric’s value.</td>
-</tr>
-<tr class="row-odd"><td>File-Execute</td>
-<td>Using File-Execute, Scalr will try to execute a given script on your Server, and expect the script to output a number to standard output. That number will be used as the Scaling Metric’s value.</td>
-</tr>
-<tr class="row-even"><td>URL-Request (GET)</td>
-<td>Using URL-Request, Scalr will send a HTTP GET request to the specified URL and expect a number in the returned content body. That number will be used as the Scaling Metric’s value.</td>
-</tr>
-</tbody>
-</table>
 <p>The URL-Request method will return a single value from the target URL, but File-Read and File-Execute methods must run against all Farm Role instances. Each instance will return their own value and Scalr will compute a single result value from them according to your Calculation Function.</p>
 <p>The following Calculation Functions are available for File-Read and File-Get:</p>
-<table border="1" class="colwidths-given docutils">
-<colgroup>
-<col width="20%" />
-<col width="80%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Calculation Function</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Average</td>
-<td>The metric’s value will be averaged from all servers.</td>
-</tr>
-<tr class="row-odd"><td>Sum</td>
-<td>The metric’s value will be the sum of all results from all servers.</td>
-</tr>
-<tr class="row-even"><td>Maximum</td>
-<td>The metric’s value will be the largest value from any one of the servers.</td>
-</tr>
-<tr class="row-odd"><td>Minimum</td>
-<td>The metric’s value will be the smallest value from any one of the servers.</td>
-</tr>
-</tbody>
-</table>
 <p>For example, say you had 3 running instances of a Farm Role using a custom metric with File-Read method.  Scalr polls for the metric and the instances return 2, 3, and 4 respectively.  The table below shows the resulting metric value for each calculation type.</p>
-<table border="1" class="colwidths-given docutils">
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Calculation Function</th>
-<th class="head">Final metric value</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Average</td>
-<td>3</td>
-</tr>
-<tr class="row-odd"><td>Sum</td>
-<td>9</td>
-</tr>
-<tr class="row-even"><td>Maximum</td>
-<td>4</td>
-</tr>
-<tr class="row-odd"><td>Minimum</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
 <p>Once you have created the custom metric it will then appear in the metrics list in the scaling section in each farm role. In the Scaling Metric, select your customer metric and give it rules. The scaling decisions are made based on the custom metric value going above or below a certain value:</p>
 <a class="reference internal image-reference" href="../_images/custom_scaling_fr.png"><img alt="../_images/custom_scaling_fr.png" src="../_images/custom_scaling_fr.png" style="width: 743.0px; height: 189.0px;" /></a>
 </div>

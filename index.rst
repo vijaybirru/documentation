@@ -56,9 +56,11 @@ Scalr Documentation Version 2 Preview!
    farms/launch
    farms/ssh
    farms/storage
+   farms/scaling
    farms/auto_discovery
    farms/link_cloud_services
    farms/logs
+   farms/external_integrations
 
 .. toctree::
    :maxdepth: 3
@@ -94,7 +96,6 @@ Scalr Documentation Version 2 Preview!
    :caption: Cost Control & Visibility
 
    cost/management
-   cost/rightsizing
    cost/analytics
    cost/garbage_collector
 
@@ -110,23 +111,6 @@ Scalr Documentation Version 2 Preview!
 
 .. toctree::
    :maxdepth: 3
-   :caption: Scaling Workloads
-
-   scaling/index
-   scaling/auto
-   scaling/manual
-
-.. toctree::
-   :maxdepth: 3
-   :caption: Integrations
-
-   integrations/ansible
-   integrations/chef
-   integrations/infoblox
-   integrations/servicenow
-
-.. toctree::
-   :maxdepth: 3
    :caption: Importing Cloud Infrastructure
 
    discovery/index
@@ -137,7 +121,6 @@ Scalr Documentation Version 2 Preview!
    :caption: Alternative Interfaces
 
    api/index
-   api/cli
    api/csg
 
 .. toctree::
