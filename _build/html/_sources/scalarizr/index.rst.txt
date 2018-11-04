@@ -445,7 +445,7 @@ You must pass the following options when calling the SetGlobalVariable Queryenv 
 
 .. code-block:: bash
 
-     # Set a Global variable on the Server Scop
+     # Set a Global variable on the Server Scope
      root@haproxy-1:~# szradm queryenv set-global-variable scope=server param-name=ServerVar param-value=ServerValue
 
 .. code-block:: xml
