@@ -1,2 +1,1 @@
-# docs
-Under Construction
+# Scalr v2 Documentation
