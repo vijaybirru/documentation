@@ -1015,7 +1015,7 @@
 <li><strong>Price Lists</strong>: Only one Price List in a Price Book is applied to a Server. See below.</li>
 <li><strong>Price Books</strong>: Price Books are applied cumulatively, so every Price Book that has a Price List that matches a server will contribute to the Cost of the server. Thus you can have a total price made up of an Instance Price Book and one or more Resource Price Books</li>
 </ul>
-<p>In the case of Instance price list it is possible to have multiple entries that could apply to a server, e.g. a price for all Locations and Operating Systems, and a price for a specific operating system. When 2 or more price list entries match a server the cost is calculated based on the most specific Price List entry. For example if Price Lists as configired as follows….</p>
+<p>In the case of Instance price list it is possible to have multiple entries that could apply to a server, e.g. a price for all Locations and Operating Systems, and a price for a specific operating system. When 2 or more price list entries match a server the cost is calculated based on the most specific Price List entry. For example if Price Lists as configured as follows….</p>
 <a class="reference internal image-reference" href="../_images/pl_example_1.png"><img alt="../_images/pl_example_1.png" src="../_images/pl_example_1.png" style="width: 565.0px; height: 181.5px;" /></a>
 <p>If there is one Windows VM and one Ubuntu VM, then the cost for the Windows VM will be $1 per hour and the cost for the Ubuntu VM will be $0.75 per hour. This approach allows you to easily define base prices for all VM’s and override the base price with specific prices for special cases, e.g. to cover the cost of Windows licensing for example.</p>
 </div>
