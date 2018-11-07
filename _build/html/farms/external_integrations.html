@@ -644,46 +644,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Integrations</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../integrations/ansible.html">Ansible Integration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#definition-and-scope">Definition and Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#adding-an-ansible-tower-server">Adding an Ansible Tower Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#adding-an-ansible-tower-group">Adding an Ansible Tower Group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#adding-an-ansible-tower-bootstrap-configuration">Adding an Ansible Tower Bootstrap Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#attaching-bootstrap-configurations-to-a-server">Attaching Bootstrap Configurations to a Server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../integrations/ansible.html#role-scope">Role Scope</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../integrations/ansible.html#farm-role-scope">Farm Role Scope</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../integrations/chef.html">Chef Integration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/chef.html#definition-and-scope">Definition and Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/chef.html#adding-a-chef-server">Adding a Chef Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/chef.html#using-chef-with-scalr">Using Chef with Scalr</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../integrations/chef.html#role-scope">Role Scope</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../integrations/chef.html#farm-role-scope">Farm Role Scope</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/chef.html#troubleshooting">Troubleshooting</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../integrations/infoblox.html">Infoblox Integration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/infoblox.html#definition-and-scope">Definition and Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/infoblox.html#installation-setup">Installation &amp; Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/infoblox.html#configure-farm-roles-to-use-infoblox">Configure Farm Roles to Use Infoblox</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../integrations/servicenow.html">ServiceNow Integration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration-setup">CMDB Integration Setup</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
 <p class="caption"><span class="caption-text">Importing Cloud Infrastructure</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../discovery/index.html">Discovery Manager</a><ul>
@@ -983,7 +943,7 @@
 <p class="first admonition-title">Note</p>
 <p class="last">This document is written for Debian distributions. Adapt as necessary for other distributions. <strong>Prerequisite</strong>: You will need to create a server to host your Webhook, find out more about Webhooks here: <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhooks and Endpoints</span></a>.</p>
 </div>
-<p>First, you will need to create a server to host your Webhook, find out more about Webhhoks here: <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhooks and Endpoints</span></a> . Once you have the server, please follow these directions:</p>
+<p>First, you will need to create a server to host your Webhook, find out more about Webhooks here: <a class="reference internal" href="../sec_comp/integrations.html#webhooks"><span class="std std-ref">Webhooks and Endpoints</span></a> . Once you have the server, please follow these directions:</p>
 <p>On the server that will be hosting the Webhook, create the directory and pull down the Webhook code from Git:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>apt update
 apt install python-pip -y
@@ -1024,7 +984,7 @@ git clone https://github.com/scalr-tutorials/scalr-infoblox-webhook.git /opt/inf
 </table>
 <p>The URL above will point to the server you are hosting the Infoblox Webhook on (<code class="docutils literal notranslate"><span class="pre">http://&lt;webhook</span> <span class="pre">server</span> <span class="pre">IP</span> <span class="pre">or</span> <span class="pre">hostname&gt;:5020/infoblox/</span></code>). Make sure to copy down the Signing Key that is generated as it will be used later on.</p>
 <p>Next, you will want to setup an IP Pool. To create a IP Pool at the Scalr or Account scope, click on the Scalr icon on the top left <a class="reference internal" href="../_images/menu_acc.png"><img alt="MENU_ACC" src="../_images/menu_acc.png" style="width: 44.5px; height: 31.5px;" /></a> and then click on IP Pools. After you click on New IP Pool the following page will show up:</p>
-<a class="reference internal image-reference" href="../_images/new_ip_pool1.png"><img alt="../_images/new_ip_pool1.png" src="../_images/new_ip_pool1.png" style="width: 1220.1px; height: 562.8px;" /></a>
+<a class="reference internal image-reference" href="../_images/new_ip_pool.png"><img alt="../_images/new_ip_pool.png" src="../_images/new_ip_pool.png" style="width: 1220.1px; height: 562.8px;" /></a>
 <p>In this screen you must enter the following information:</p>
 <ul class="simple">
 <li>Both IPAM TYPE and IP ALLOCATION are External.</li>
@@ -1058,7 +1018,7 @@ vi uwsgi.ini
 <div class="section" id="configure-farm-roles-to-use-infoblox">
 <h3>Configure Farm Roles to Use Infoblox<a class="headerlink" href="#configure-farm-roles-to-use-infoblox" title="Permalink to this headline">¶</a></h3>
 <p>When creating a Farm Role you will be prompted for Network information, at that point you should select the Infoblox Endpoint as your IP Source:</p>
-<a class="reference internal image-reference" href="../_images/ip_source1.png"><img alt="../_images/ip_source1.png" src="../_images/ip_source1.png" style="width: 924.0px; height: 361.8px;" /></a>
+<a class="reference internal image-reference" href="../_images/ip_source.png"><img alt="../_images/ip_source.png" src="../_images/ip_source.png" style="width: 924.0px; height: 361.8px;" /></a>
 <p>Furthermore, you can set up a Policy to enforce the IP Pool Source, see more here: <a class="reference internal" href="../sec_comp/policies.html#policy-engine"><span class="std std-ref">Policy Engine</span></a></p>
 </div>
 </div>

@@ -81,7 +81,7 @@ It is important to be aware of how Scalr uses Price Books and their Price Lists 
 * **Price Lists**: Only one Price List in a Price Book is applied to a Server. See below.
 * **Price Books**: Price Books are applied cumulatively, so every Price Book that has a Price List that matches a server will contribute to the Cost of the server. Thus you can have a total price made up of an Instance Price Book and one or more Resource Price Books
 
-In the case of Instance price list it is possible to have multiple entries that could apply to a server, e.g. a price for all Locations and Operating Systems, and a price for a specific operating system. When 2 or more price list entries match a server the cost is calculated based on the most specific Price List entry. For example if Price Lists as configired as follows....
+In the case of Instance price list it is possible to have multiple entries that could apply to a server, e.g. a price for all Locations and Operating Systems, and a price for a specific operating system. When 2 or more price list entries match a server the cost is calculated based on the most specific Price List entry. For example if Price Lists as configured as follows....
 
 .. image:: images/pl_example_1.png
    :scale: 50 %

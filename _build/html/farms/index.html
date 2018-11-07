@@ -417,6 +417,21 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="external_integrations.html">External Integrations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="external_integrations.html#infoblox-integration">Infoblox Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="external_integrations.html#definition-and-scope">Definition and Scope</a></li>
+<li class="toctree-l3"><a class="reference internal" href="external_integrations.html#installation-setup">Installation &amp; Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="external_integrations.html#configure-farm-roles-to-use-infoblox">Configure Farm Roles to Use Infoblox</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="external_integrations.html#servicenow-integration">ServiceNow Integration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="external_integrations.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="external_integrations.html#cmdb-integration">CMDB Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="external_integrations.html#cmdb-integration-setup">CMDB Integration Setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Self Service &amp; Farm Templates</span></p>
 <ul>
@@ -628,46 +643,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../custom_events/index.html">Custom Events</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Integrations</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../integrations/ansible.html">Ansible Integration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#definition-and-scope">Definition and Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#adding-an-ansible-tower-server">Adding an Ansible Tower Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#adding-an-ansible-tower-group">Adding an Ansible Tower Group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#adding-an-ansible-tower-bootstrap-configuration">Adding an Ansible Tower Bootstrap Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/ansible.html#attaching-bootstrap-configurations-to-a-server">Attaching Bootstrap Configurations to a Server</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../integrations/ansible.html#role-scope">Role Scope</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../integrations/ansible.html#farm-role-scope">Farm Role Scope</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../integrations/chef.html">Chef Integration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/chef.html#definition-and-scope">Definition and Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/chef.html#adding-a-chef-server">Adding a Chef Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/chef.html#using-chef-with-scalr">Using Chef with Scalr</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../integrations/chef.html#role-scope">Role Scope</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../integrations/chef.html#farm-role-scope">Farm Role Scope</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/chef.html#troubleshooting">Troubleshooting</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../integrations/infoblox.html">Infoblox Integration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/infoblox.html#definition-and-scope">Definition and Scope</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/infoblox.html#installation-setup">Installation &amp; Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/infoblox.html#configure-farm-roles-to-use-infoblox">Configure Farm Roles to Use Infoblox</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../integrations/servicenow.html">ServiceNow Integration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration">CMDB Integration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../integrations/servicenow.html#cmdb-integration-setup">CMDB Integration Setup</a></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 <p class="caption"><span class="caption-text">Importing Cloud Infrastructure</span></p>
 <ul>
@@ -1308,7 +1283,7 @@ Sequential : Wait until all the servers for a Farm Role are running before launc
 <td>Non-Blocking: Scalarizr will not wait for your Script to finish executing before firing and processing further events</td>
 </tr>
 <tr class="row-even"><td>Timeout</td>
-<td>Length in seconds before the script should timeout. This should be increased for complex actions, especially those that downlada from the internet.</td>
+<td>Length in seconds before the script should timeout. This should be increased for complex actions, especially those that download from the internet.</td>
 </tr>
 <tr class="row-odd"><td>Order</td>
 <td>Sequence in which rules must be executed. This defaults to the order in which the rules are created.</td>
