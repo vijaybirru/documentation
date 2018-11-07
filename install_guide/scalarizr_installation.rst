@@ -258,5 +258,3 @@ We can then delete the repo files which will remove the files from the server:
    root@ip-111-111-111-111:~# scalr-server-manage agent-repo delete 5.5.5
    Reading Scalr configuration...
    Version 5.5.5 has been deleted
-
-Hello
