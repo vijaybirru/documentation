@@ -161,14 +161,14 @@ First you need enable access to Azure and obtain the required access keys.
 19. After selecting Add Credentials, you will be prompted to add your Cloud Credentials and properties:
 
 .. image:: images/Azure-creds.png
-   :scale: 50%
+   :scale: 70%
 
 Add the tenant name to your credentials if you have it available, and then click **continue** at the bottom of the dialogue box.  You will be redirected to authenticate in the Azure Portal.  Complete authentication by following the on-screen instructions.
 
 20. After authentication you will be once again redirected back to Scalr.  Then choose your Subscription, and hit Save.  An example fully configured Cloud Credential object for Azure will look similar to the following:
 
 .. image:: images/Azure-sa-16.png
-   :scale: 50%
+   :scale: 70%
 
 You can now proceed to adding these credentials to your |ENVIRONMENTS|.
 
