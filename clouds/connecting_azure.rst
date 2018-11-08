@@ -175,4 +175,4 @@ You can now proceed to adding these credentials to your |ENVIRONMENTS|.
 Enable Billing
 ----------------
 
-To enable billing, which allows for Scalr :ref:`cost_management` to report on Azure costs, please enter the Azure Tenant ID. The Tenant ID can be retrieved from the Azure Portal. Once that is added it may take a few hours for the cost to show up within Scalr.
+To enable billing, which allows for Scalr :ref:`cost_management` to report on Azure costs, please tick the "Enable Detailed Billing" radio box to on. Once that is enabled it may take a few hours for the cost to show up within Scalr.
