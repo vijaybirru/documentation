@@ -138,7 +138,7 @@ VMware based Farm Roles can have additional virtual disks added. The Volume Sett
    Datastore,Select the datastore that the extra volume should be provisioned to. If the placement strategy is "auto" then all volumes will be placed on the datastore selected by Scalr.
 
 .. image:: images/storage_vmware.png
-   :scale: 70%
+   :scale: 85%
 
 All storage volumes for VMware can be managed in the VMware Virtual Disks page. Go to the main Scalr menu dropdown on the top left |MENU_ENV|, click on VMware and then Virtual Disks:
 
