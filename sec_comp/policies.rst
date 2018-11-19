@@ -182,6 +182,8 @@ The allowed hours policy enforces automatic suspension or termination of a Farm 
 
 .. note:: The default Shutdown Method is Suspend. If you choose Terminate, this will destroy the server and potentially cause data loss.
 
+.. note:: If an Allowed Hours reclamation policy is NOT defined for an Environment then it is possible to define Allowed Hours at the Farm Scope on a Farm by Farm basis. See :ref:`Farm Allowed Hours <farm_allowed_hours>` for more details.
+
 Cloud Service Gateway Policies
 ------------------------------
 
