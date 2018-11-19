@@ -119,6 +119,8 @@ List of :ref:`gvs` for the server. This is all Global Variables configured at an
 .. image:: images/dash_gv.png
            :scale: 50%
 
+.. _farm_allowed_hours:
+
 Allowed Hours
 -------------
 
