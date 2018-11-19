@@ -12,14 +12,19 @@ Definition and Scope
 
 Scripts can be used to automate various configuration items on the operating system that Scalr is provisioning. Scalr supports generic scripting, it is not a proprietary language.
 
-Creating Scripts
-----------------
+Scripts can be created and stored within Scalr or they can be pulled from a Git Repo at the time of execution.
+
+.. note:: The Git Repository feature supports any repository that uses the Git Protocol, such as git, github, bitbucket etc
 
 .. |SCALR_ICON| image:: images/scalr_icon_env.png
    :scale: 70%
 
 Scripts can be created, updated, edited, or deleted at the |SCALR|, |ACCOUNT|, or |ENVIRONMENT| scopes. To create a script you can click on the Scalr icon on the top left of any of the scopes, in this example it is at the |ENVIRONMENT| scope: |MENU_ENV|
-Once you are in the scripts page, click on New Script:
+
+Creating Scripts in Scalr
+-------------------------
+
+Once you are in the scripts screen, click on "New Scalr Script":
 
 .. image:: images/new_script.png
    :scale: 60%
@@ -43,6 +48,32 @@ Once you are in the scripts page, click on New Script:
 | Script Content | String  | Script contents                                                                                                       |
 +----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
 
+Linking a Git Script
+--------------------
+
+Git repositories can be defined before linking a script by navigating to Git Repositories off the main menu |MENU_ENV|. Repositories can also be defined during the script link dialogue. Basic and SSH authentication are supported along with Public repositories.
+
+.. image:: images/git_repo.png
+   :scale: 60%
+
+To link a git script click on "New Git Script" on the main scripts screen:
+
+.. image:: images/new_git.png
+   :scale: 60%
+
+The majority of the parameters are the same as for Scalr Scripts. The additional parameters are as follows.
+
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
+| Item           | Format  | Description                                                                                                           |
++================+=========+=======================================================================================================================+
+| Repository     | String  | Name of the previously defined Git Repo. You can click on the "+" bar to define a new Git repo.                       |
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
+| Path           | String  | The Path to the script in the Repo                                                                                    |
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
+| Version        | String  | The version or Branch to use. "Master" is shown by default. Click the settings button to register additional branches.|
++----------------+---------+-----------------------------------------------------------------------------------------------------------------------+
+
+Git based scripts can be used in Orchestration Rules and for immediate execution in the same way as Scalr Scripts.
 
 Writing a Script
 ^^^^^^^^^^^^^^^^
