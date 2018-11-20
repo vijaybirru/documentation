@@ -124,7 +124,7 @@ Enable Billing
 
     <a href="https://cloud.google.com/bigquery/docs/access-control#bigquery.dataViewer"" target="_blank">bigquery.dataViewer</a>
 
-The Scalr billing integration relies on |gcp_billing| |NEW_WIN|. The cloud credentials added in Scalr must have access to |gcp_billing_2| |NEW_WIN| in the GCP Project where the billing dataset is located.
+The Scalr billing integration relies on |gcp_billing| |NEWWIN|. The cloud credentials added in Scalr must have access to |gcp_billing_2| |NEWWIN| in the GCP Project where the billing dataset is located.
 
 To enable billing, which allows for Scalr :ref:`cost_management` to report on GCP costs, please click Enable Detailed Billing and add the Dataset Name. Once that is added it may take a few hours for the cost to show up within Scalr.
 
