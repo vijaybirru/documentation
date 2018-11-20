@@ -127,12 +127,22 @@ The data populated within the dashboard is summarized from all Kubernetes Cluste
 .. image:: images/kub_cost1.png
 	  :scale: 60 %
 
+The cost allocation is as follows:
+
+* Workloads - The cost of all running pods in all namespaces except kube-sytem.
+* System - The cost of running the Kubernetes Master + the difference between cluster capacity and allocatable space + kube-system namespace.
+* Idle - The cost of idle RAM/CPU resources.
+
 Kubernetes Price Books
 ^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: Kubernetes Price Books apply to ALL Kubernetes offerings, not just Self Managed.
 
-This section covers Price Books specific to Kubernetes, see the Price Books section above for a general overview. The Kubernetes Price Book entries consist of a "Product" and set of Price List Entries per Cluster or All Clusters. The Product can be Kubernetes Master, CPU, or RAM.
+This section covers Price Books specific to Kubernetes, see the Price Books section above for a general overview. The Kubernetes Price Book entries consist of a "Product" and set of Price List Entries per Cluster or All Clusters. The Product can be:
+
+* Kubernetes Master - A single product per cluster.
+* CPU - Specific to workers.
+* RAM - Specific to workers.
 
 .. image:: images/kub_cost2.png
 	  :scale: 60 %
