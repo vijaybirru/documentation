@@ -103,12 +103,12 @@ First you need to create and obtain the required access keys from GCP.
 7. Click on "UPLOAD JSON KEY", enter the Project ID from step 1 and select the JSON file you downloaded in step 5.
 
 .. image:: images/GCE-sa-6.png
-   :scale: 70%
+   :scale: 40%
 
 8. Click Save and the credentials will be validated and saved.
 
 .. image:: images/GCE-sa-7.png
-  :scale: 70%
+  :scale: 80%
 
 You can now proceed to adding these credentials to your |ENVIRONMENTS|.
 
@@ -129,4 +129,4 @@ The Scalr billing integration relies on |gcp_billing||NEW_WIN|. The cloud creden
 To enable billing, which allows for Scalr :ref:`cost_management` to report on GCP costs, please click Enable Detailed Billing and add the Dataset Name. Once that is added it may take a few hours for the cost to show up within Scalr.
 
 .. image:: images/GCE-sa-8.png
-  :scale: 40%
+  :scale: 80%
