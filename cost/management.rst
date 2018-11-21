@@ -30,6 +30,7 @@ Cost Manager currently supports the following Cloud Service Providers:
 	* Microsoft Azure - Azure standard billing and Azure Enterprise Agreements Billing
 	* Google Cloud Platform - Google Cloud Billing
 	* VMWare - Custom Price Lists
+	* Kubernetes - Custom Price Lists
 
 Please see the :ref:`cloud_creds` page to learn how to enable billing for Public Clouds.
 
@@ -49,16 +50,15 @@ In order to view cost data by desired Tags, the Tags need to be enabled. You can
 .. image:: images/EnablingTags.png
    :scale: 60 %
 
-
 Price Books
 -----------
-Scalr Cost Manager Price Books are a new component of Scalr Cost Manager that provide an intuitive way to set prices for cloud resources. Price Books allow administrators to create Products, which can be based on one or more attributes such as cpu, memory, disk, etc. Pricing and price metrics can be established for Products with optional pricing conditions like location and/or operating system.
+Scalr Cost Manager Price Books are a new component of Scalr Cost Manager that provide an intuitive way to set prices for cloud resources. Price Books allow administrators to create Products, which can be based on one or more attributes such as cpu, memory, disk, and Kubernetes master. Pricing and price metrics can be established for Products with optional pricing conditions like location and/or operating system.
 
 .. note:: Cost Manager Price Books are currently separate from Price Lists established within Scalr Cost Analytics. Cost Data reflected within Cost Analytics, as well as at the Farm level are based on Cost Analytics Price Lists, not Cost Manager Price Books. Price Lists will be merged with Price Books in later release.
 
 Scalr uses the Price Book entries to calculate the cost of all servers that are accessible via the Cloud Credentials, not just those that are managed by Scalr. After launching a Farm and/or creating Price Book entries it can take up to 1 hour for the costs to show up in Cost Manager.
 
-Cost Manager Price Books currently supports VMWare private clouds only.
+Cost Manager Price Books currently supports VMWare and Kubernetes (see Kubernetes section below).
 
 .. image:: images/price_books.png
    :scale: 60%
@@ -112,3 +112,37 @@ Once you are in the Recommendations page, you will see the usage over the period
 
 .. image:: images/rightsizing3.png
    :scale: 40%
+
+Kubernetes Cost Dashboard
+-------------------------
+
+Scalr also supports Cost Management for the following Kubernetes platforms:
+
+* Self Managed Kubernetes Clusters
+* Google GKE
+* Amazon EKS - Future Release
+
+The data populated within the dashboard is summarized from all Kubernetes Clusters managed at the |ACCOUNT| scope.
+
+.. image:: images/kub_cost1.png
+	  :scale: 60 %
+
+The cost allocation is as follows:
+
+* Workloads - The cost of all running pods in all namespaces except kube-sytem.
+* System - The cost of running the Kubernetes Master + the difference between cluster capacity and allocatable space + kube-system namespace.
+* Idle - The cost of idle RAM/CPU resources.
+
+Kubernetes Price Books
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: Kubernetes Price Books apply to ALL Kubernetes offerings, not just Self Managed.
+
+This section covers Price Books specific to Kubernetes, see the Price Books section above for a general overview. The Kubernetes Price Book entries consist of a "Product" and set of Price List Entries per Cluster or All Clusters. The Product can be:
+
+* Kubernetes Master - A single product per cluster.
+* CPU - Specific to workers.
+* RAM - Specific to workers.
+
+.. image:: images/kub_cost2.png
+	  :scale: 60 %

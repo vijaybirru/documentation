@@ -108,6 +108,25 @@ First you need to create and obtain the required access keys from GCP.
 8. Click Save and the credentials will be validated and saved.
 
 .. image:: images/GCE-sa-7.png
-  :scale: 40%
+  :scale: 80%
 
 You can now proceed to adding these credentials to your |ENVIRONMENTS|.
+
+
+Enable Billing
+----------------
+
+.. |gcp_billing| raw:: html
+
+   <a href="https://cloud.google.com/billing/docs/how-to/export-data-bigquery" target="_blank">exported billing data</a>
+
+.. |gcp_billing_2| raw:: html
+
+    <a href="https://cloud.google.com/bigquery/docs/access-control#bigquery.dataViewer"" target="_blank">bigquery.dataViewer</a>
+
+The Scalr billing integration relies on |gcp_billing| |NEWWIN|. The cloud credentials added in Scalr must have access to |gcp_billing_2| |NEWWIN| in the GCP Project where the billing dataset is located.
+
+To enable billing, which allows for Scalr :ref:`cost_management` to report on GCP costs, please click Enable Detailed Billing and add the Dataset Name. Once that is added it may take a few hours for the cost to show up within Scalr.
+
+.. image:: images/GCE-sa-8.png
+  :scale: 80%

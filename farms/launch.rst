@@ -118,3 +118,23 @@ List of :ref:`gvs` for the server. This is all Global Variables configured at an
 
 .. image:: images/dash_gv.png
            :scale: 50%
+
+.. _farm_allowed_hours:
+
+Allowed Hours
+-------------
+
+Allowed Hours enforces automatic suspension or termination of a Farm between the specified periods. This helps ensure that servers are only running during hours that an admin sees fit. For example, you may not want a Dev |Environment| running 24 hours a day 7 days a week. To avoid this, you can create an allowed hours policy that only allows Farms to be in a running state Monday - Friday from 8:00AM - 5:00PM. Allowed hours need the following defined:
+
+1. Shutdown Method: Suspend or Terminate
+2. Day(s) of the week that Farms are allowed to be in a Running state.
+3. Hours during the day in which the Farms are allowed to be in a Running state. Note: To determine the hours that apply, the policy will follow the timezone set in the Farm settings.
+4. If the Farm should automatically start back up during the next allowed period.
+5. Notifications to be sent prior to automatic suspension or termination.
+
+.. image:: images/allowed_hours2.png
+   :scale: 60%
+
+There is also an :ref:`allowed_hours` policy, if the Account Admin has created this policy and applied it to your |Environment| then this section cannot be modified.
+
+.. note:: The default Shutdown Method is Suspend. If you choose Terminate, this will destroy the server and potentially cause data loss.

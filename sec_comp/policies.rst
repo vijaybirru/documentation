@@ -164,6 +164,8 @@ The lifetime policy enforces automatic termination of Farms after specified peri
 .. image:: images/reclamation.png
    :scale: 50%
 
+.. _allowed_hours:
+
 Allowed Hours
 ^^^^^^^^^^^^^
 
@@ -172,12 +174,15 @@ The allowed hours policy enforces automatic suspension or termination of a Farm 
 1. Shutdown Method: Suspend or Terminate
 2. Day(s) of the week that Farms are allowed to be in a Running state.
 3. Hours during the day in which the Farms are allowed to be in a Running state. Note: To determine the hours that apply, the policy will follow the timezone set in the Farm settings.
-4. Notifications to be sent prior to automatic suspension or termination.
+4. If the Farm should automatically start back up during the next allowed period.
+5. Notifications to be sent prior to automatic suspension or termination..
 
 .. image:: images/allowed_hours.png
    :scale: 60%
 
 .. note:: The default Shutdown Method is Suspend. If you choose Terminate, this will destroy the server and potentially cause data loss.
+
+.. note:: If an Allowed Hours reclamation policy is NOT defined for an Environment then it is possible to define Allowed Hours at the Farm Scope on a Farm by Farm basis. See :ref:`Farm Allowed Hours <farm_allowed_hours>` for more details.
 
 Cloud Service Gateway Policies
 ------------------------------

@@ -838,7 +838,7 @@ Storage Configuration
 In the following example, the instance type will be determined based on the cloud they select:
 
 * The root device cannot be removed, but can be configured to be between 10-100GB.
-* The second device is completely optional, but if you do choose to have it then it must be between 10-100GB.
+* The second device is completely optional, but if you do choose to have it then it must be between 10-100GB. The mount point can also be chosen by the end user.
 * The index value will correlate with the the order in which the storage shows up in the farm template.
 
 .. code-block:: json
@@ -877,7 +877,10 @@ In the following example, the instance type will be determined based on the clou
                                        "final": false,
                                        "maxValue": 100,
                                        "minValue": 10
-                                   }
+                                   },
+                                   "mounting.mountPoint": {
+                                       "final": false
+                                  }
                                }
                            }
                        ]
