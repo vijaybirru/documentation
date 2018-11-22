@@ -1,7 +1,7 @@
 Field ,Description
 Name,Name of the webhook
 Endpoints,The endpoint URL which should be used for this webhook.
-Events,The event at which the webhook call should be triggered. This can be Server or Farm lifecycle event such as BeforeInstanceLaunch and FarmLaunched. See :ref:`events`.
+Events,The event at which the webhook call should be triggered.
 Farms,Which farm(s) the webhook should trigger on. If left blank it will be trigger on all farms within the scope that the webhook is set.
 Advanced Settings - Timeout,The length of time in which Scalr should get a response back from the webhook before timing out.
 Advance Settings - Max. Delivery Attempts,How many times Scalr should attempt to send a payload if it initially fails to send.
