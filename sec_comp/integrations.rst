@@ -10,7 +10,7 @@ Definition and Scope
 
 |SCOPE_SCALR| |SCOPE_ACC| |SCOPE_ENV|
 
-Webhooks are very simple, yet very powerful way to integrate with external systems such as a CMDB, IPAM, ITSM or Monitoring tools. Using Webhooks, Scalr delivers HTTP notifications to external services of your choosing when lifecycle events occur on your infrastructure, such as a Farm being launched, a server being provisioned or decommissioned. While Scalr Orchestration could be used to integrate with external systems, you may wish to trigger integration events at the Farm/Service Catalog level, e.g. for Approval workflows. For this you should use Webhooks. There are also a few constraints with orchestration as a script runs on the server you are provisioning rather than a central location. This may also mean you need to use a Webhook under the following circumstances:
+Webhooks are very simple, yet very powerful way to integrate with external systems such as a CMDB, IPAM, ITSM or Monitoring tools. Using Webhooks, Scalr delivers HTTP notifications to external services of your choosing when lifecycle events occur on your infrastructure, such as server being provisioned or decommissioned. While Scalr Orchestration could be used to integrate with external systems, there are a few constraints with orchestration as a script runs on the server you are provisioning rather than a central location:
 
 * Those external systems may be firewalled off, and not accessible from your instances. This is commonplace for CMDBs.
 * Those external systems may require credentials that you wouldn’t feel comfortable distributing to all your instances.
@@ -24,17 +24,11 @@ Unlike Orchestration, Webhook Notifications are delivered by Scalr itself to tho
 Overview
 --------
 
-Webhooks and generally one way, in that the webhook payload is sent to the Endpoint and a final response is expected immediately. However Webhooks can be asynchronously bi-directional in the context of Approvals. If Scalr receives a response from an Approval Endpoint indicating it is processing the request (HTTP 102), then Scalr will pause the execution of the triggering event until a final reply is received from the Endpoint. This caters for external approvals through systems like ServiceNow where there is an inherent delay in the process whilst the approval request is processed. In these circumstances the affected Farm will show a status of "PENDING LAUNCH" with an appropriate message showing the reason for the delay.
-
 To setup an integration with an external system the following will be needed:
 
 * A Webhook App
 * An Endpoint that is serving the Webhook App
 * A Webhook configured in Scalr
-
-.. note:: Scalr can provide example webhooks for a variety of use cases, including Approvals, sending emails, logging to a CMDB, IPAM integration etc. Please contact Scalr Support for more details or browse the |scalr_github_link| |NEWWIN| repository. Note that code used from the repository is NOT deemed to be production ready and must be modified and fully tested by customers before using in a production environment.
-
-.. _endpoints:
 
 Configuring Endpoints
 ---------------------
@@ -64,8 +58,6 @@ Configuring Webhooks
 --------------------
 
 .. _webhook_start:
-
-.. note:: To use an Endpoint for Farm Approvals you DO NOT need to configure a Webhook. Approvals are set up when configuring an |ENVIRONMENT| and they use the Endpoint directly. Please see :ref:`approvals` for more details.
 
 The next step is to configure the Webhook, to do this at the |ACCOUNT| or |SCALR| scope, click on the Scalr icon on the top left |MENU_ACC| and then click on Integration Hub > Webhooks.
 
