@@ -61,6 +61,7 @@ At this point you can do the following with |Environments|:
 * :ref:`policy_link`
 * :ref:`apply_quotas`
 * :ref:`teams_env`
+* :ref:`Configuring Approvals <approvals>`
 
 If for any reason you need to suspend the Scalr management of an Environment, click on Suspended at the top right of the Environment page:
 
