@@ -16,3 +16,4 @@ VirtualMachine.Inventory.Create,For internal purposes: creating task for virtual
 VirtualMachine.Inventory.Delete,For internal purposes: running task for virtual machine deleting
 "| VirtualMachine.Provisioning.DeployTemplate| VirtualMachine.Provisioning.CloneTemplate| VirtualMachine.Provisioning.Clone| VirtualMachine.Provisioning.CreateTemplateFromVM| VirtualMachine.Provisioning.Customize| VirtualMachine.Provisioning.ModifyCustSpecs| VirtualMachine.Provisioning.ReadCustSpecs","| For internal purposes: provisioning of virtual machine, working with their templates etc.||||||"
 VirtualMachine.State.CreateSnapshot,Creating snapshot of running virtual machine action
+VirtualMachine.Interact.ConsoleInteract,View host console snapshot
