@@ -9,6 +9,46 @@ Events are automatically fired by Scalr over the lifecycle of your Servers (Inst
 
 You will find the list of events built in to Scalr below along with details of how each event occurs and their uses. Scalr also supports :ref:`custom_events`.
 
+Farm Life Cycle Events
+----------------------
+
+Farm Events can only currently be used with :ref:`webhooks` and :ref:`approvals`
+
+**BeforeFarmLaunch**
+
+* Farm launch has been requested. In this stage a Farm is in the "Pending launch" state and waiting for "approval" (if one is required).
+* Any Farm's cloud resources cannot be launched in this state considering that previous state was Terminated.
+* Event is triggered as soon as Farm is launched.
+
+**FarmLaunched**
+
+* Farm has successfully been launched. Farm status is Running.
+* When "approval" is not required this event is triggered immediately after BeforeFarmLaunch event independently from the statuses of the Farm's Servers. If approval is required the event is triggered as soon the "approval" is received.
+
+**FarmSuspended**
+
+* Farm has been suspended.
+* Triggered as soon as Farm is suspended by the initiator (User, Lease manager / lights out functionality)
+
+**FarmResumed**
+
+* Farm has been resumed.
+* Triggered as soon as Farm has resumed by the initiator (User, Lease manager / lights out functionality)
+
+**BeforeFarmTerminate**
+
+* Termination of Farm has been requested. The Farm will be in "Pending terminate" state and waiting for the "approval" if required.
+* All cloud resources remain in their current state.
+
+**FarmTerminated**
+
+* Farm has been terminated.
+* All Farm's servers are put in the Pending terminate state at this point.
+* Triggered immediately after BeforeFarmTerminate event if the "approval" is not required, or as soon as it is received otherwise.
+
+Server Life Cycle Events
+------------------------
+
 .. note:: The ONLY guaranteed sequence for events occurs when a server is booting up and the events are being processed on the triggering server. |BR| This sequence is HostInit -> BeforeHostUp -> HostUp.
 
 .. warning:: The sequence/order that events are received when the target is NOT the triggering server or the target is a Webhook ARE NOT guaranteed and may vary from case to case due to the multithreaded processing of events in Scalr.
