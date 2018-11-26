@@ -5,14 +5,14 @@
 Event Descriptions
 ==================
 
-Events are automatically fired by Scalr over the lifecycle of your Servers (Instances) and can be used to trigger :ref:`Scope level <sa_orchestration>`, :ref:`Role <role_orchestration>` and :ref:`Farm Role <farm_role_orchestration>` orchestration rules.
+Events are automatically fired by Scalr over the lifecycle of your Farms and Servers (Instances). For Servers these events can be used to trigger :ref:`Scope level <sa_orchestration>`, :ref:`Role <role_orchestration>` and :ref:`Farm Role <farm_role_orchestration>` orchestration rules. For Farms events can be linked to :ref:`webhooks` to trigger integration actions with external systems.
 
 You will find the list of events built in to Scalr below along with details of how each event occurs and their uses. Scalr also supports :ref:`custom_events`.
 
 Farm Life Cycle Events
 ----------------------
 
-Farm Events can only currently be used with :ref:`webhooks` and :ref:`approvals`
+Farm Events can only currently be used with :ref:`webhooks` and :ref:`approvals`.
 
 **BeforeFarmLaunch**
 
@@ -56,7 +56,7 @@ Server Life Cycle Events
 ----
 
 BeforeInstanceLaunch Event
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. csv-table::
    :widths: 20,100
@@ -65,7 +65,7 @@ BeforeInstanceLaunch Event
 ----
 
 HostInit Event
---------------
+~~~~~~~~~~~~~~
 
 .. warning:: The HostInit Event does not fire on reboots! To fire Orchestration Rules on reboot, use the `RebootComplete Event`_.
 
@@ -76,7 +76,7 @@ HostInit Event
 ----
 
 HostInitFailed Event
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 .. csv-table::
    :widths: 30,100
@@ -85,7 +85,7 @@ HostInitFailed Event
 ----
 
 BeforeHostUp Event
-------------------
+~~~~~~~~~~~~~~~~~~
 
 .. warning:: The BeforeHostUp Event does not fire on reboots! To fire Orchestration Rules on reboot, use the `RebootComplete Event`_.
 
@@ -96,7 +96,7 @@ BeforeHostUp Event
 ----
 
 HostUp Event
-------------
+~~~~~~~~~~~~
 
 .. warning:: The HostUp Event does not fire on reboots! To fire Orchestration Rules on reboot, use the `RebootComplete Event`_.
 
@@ -107,7 +107,7 @@ HostUp Event
 ----
 
 IPAddressChanged Event
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. csv-table::
    :widths: 20,100
@@ -118,7 +118,7 @@ IPAddressChanged Event
 ----
 
 EBSVolumeAttached Event
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning:: * This event fires for block devices on all clouds, not just EBS block devices.
              * This event **does not** fire on Windows Servers.
@@ -132,7 +132,7 @@ EBSVolumeAttached Event
 .. _EBSVolumeMounted:
 
 EBSVolumeMounted Event
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. warning:: * This event fires for block devices on all clouds, not just EBS block devices.
 
@@ -143,7 +143,7 @@ EBSVolumeMounted Event
 ----
 
 BeforeHostTerminate Event
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. csv-table::
    :widths: 20,100
@@ -154,7 +154,7 @@ BeforeHostTerminate Event
 ----
 
 HostDown Event
---------------
+~~~~~~~~~~~~~~
 
 .. csv-table::
    :widths: 20,100
@@ -166,7 +166,7 @@ HostDown Event
 ----
 
 RebootComplete Event
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 .. csv-table::
    :widths: 20,100
@@ -175,7 +175,7 @@ RebootComplete Event
 ----
 
 ResumeComplete Event
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 .. csv-table::
    :widths: 20,100
