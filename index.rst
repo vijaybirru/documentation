@@ -90,7 +90,6 @@ Scalr Documentation Version 2 Preview!
    sec_comp/orchestration
    sec_comp/integrations
    sec_comp/acls
-   sec_comp/approvals
 
 .. toctree::
    :maxdepth: 3

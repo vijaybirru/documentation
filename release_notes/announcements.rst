@@ -8,7 +8,7 @@ Announcements
 Suse Support
 -------------
 
-Suse 11.3, 11.4, and 12.1 are now officially supported by Scalarizr. The following software automation tools will be supported:
+Suse 11.3, 11.4, and 12.x are now officially supported by Scalarizr. The following software automation tools will be supported:
 
 * Chef
 * Ansible
