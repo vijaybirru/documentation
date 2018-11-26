@@ -12,7 +12,7 @@ You will find the list of events built in to Scalr below along with details of h
 Farm Life Cycle Events
 ----------------------
 
-Farm Events can only currently be used with :ref:`webhooks` and :ref:`approvals`.
+Farm Events can only currently be used with :ref:`webhooks` and :ref:`approvals`
 
 **BeforeFarmLaunch**
 
