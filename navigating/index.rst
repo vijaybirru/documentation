@@ -106,20 +106,30 @@ Available Widgets
                | Services
                | First Steps
                | License
+               | Inventory
 |SCOPE_ACC|    | New User Checklist
                | Get Your Organization On Scalr
                | Announcements
                | |ENVIRONMENTS| in this |ACCOUNT|
+               | Inventory
 |SCOPE_ENV|    | Create New Farm
                | New User Checklist
                | Announcements
                | Active Policies
                | Resource Quotas
                | AWS Health Status
+               | GCE Usage Monitor
+               | VMware Usage Monitor
                | Last Errors
                | Server Alerts
                | Cost analytics
+               | Inventory
 =============  =======================================================
+
+The Inventory widget will give users a snapshot into their overall cloud usage at each scope within Scalr. If you are logged into the |SCALR| scope you will see the inventory for all resources across all |ACCOUNTS| and |ENVIRONMENTS|. As you log into the lower scopes you will only see the inventory for those scopes.
+
+.. image:: images/inventory.png
+   :scale: 70%
 
 Main Menu
 ---------
