@@ -151,3 +151,18 @@ Once it is successfully added the cluster operation dashboard will appear:
 
 .. image:: images/ops_dashboard.png
    :scale: 50%
+
+From here you can look into cluster details, download the kubeconfig, upgrade the master, etc:
+
+.. image:: images/cluster_details.png
+   :scale: 50%
+
+You can also drill down into each cluster and look at the pods within it:
+
+.. image:: images/pods.png
+   :scale: 50%
+
+By clicking on the Pod dashboard you will be able to see the details per Pod as well as manage them:
+
+.. image:: images/manage_pods.png
+   :scale: 50%
