@@ -45,7 +45,7 @@ To enable the CSG on your deployment, add the following to your scalr-server.rb:
   #  }
   #}
 
-.. note:: If you have a multi server Scalr deployment, the ``csg[:enable] = true`` section must be added to the scalr-server-local.rb of the server that it will run on, not the scalr-server.rb
+.. note:: If you have a multi server Scalr deployment, the ``csg[:enable] = true`` section must be added to the scalr-server-local.rb on the proxy server, not in the scalr-server.rb
 
 .. note:: |SCALR_SERVER_RB|
 
