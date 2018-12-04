@@ -16,7 +16,7 @@ It is completely acceptable to group multiple components onto one virtual machin
 * 1 VM for the Worker:
 
   * 4CPU, 8GB RAM
-  * 100GB storage mounted on /opt/scalr-server on each server
+  * 50GB storage mounted on /opt/scalr-server on each server
   * NOTE: Worker should only be enabled on one server.
 
 * 1 VM for InfluxDB:
@@ -27,7 +27,7 @@ It is completely acceptable to group multiple components onto one virtual machin
 * 2 VMs for Proxy, Sessions, and App:
 
   * 4CPU, 8GB RAM
-  * 100GB storage mounted on /opt/scalr-server on each server
+  * 50GB storage mounted on /opt/scalr-server on each server
 
 * 2 VMs for DB (active/passive):
 
