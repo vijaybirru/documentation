@@ -84,7 +84,7 @@ Policy Tags
 
 Policy Tags provide fine grained control over which Roles a policy will apply to. Policy Tags are defined by the Scalr Administrator at |SCALR| scope and can be applied to Policies and Roles to determine which Roles a Policy applies to. Policy Tags must be defined at the |SCALR| scope BEFORE they can be used in Policies at the |ACCOUNT| scope.
 
-.. note:: Policy Tags are entirely separate for role tags. Although Policy Tags are applied to Roles in the same way as normal role tags it is NOT possible to use existing role tags as Policy Tags. You must define new Policy Tags for this purpose.
+.. note:: Policy Tags are entirely separate from Role tags. Policy tags must be created at the |SCALR| scope and applied to Roles to be enforced.
 
 To create Policy Tags login as the Scalr Admin at |SCALR| Scope and navigate to **Policy Engine -> Policy Tags**. Click on NEW POLICY TAG and enter a name for the tag.
 
